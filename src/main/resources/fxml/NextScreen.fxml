@@ -1,0 +1,1957 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" fx:id="fullScreenPane" minHeight="729.0" prefHeight="729.0" prefWidth="8964.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.ui.uccig.NextScreenController">
+  <children>
+    <ImageView id="fullscreenpane" fx:id="bg" fitHeight="713.8125" fitWidth="1269.0" layoutX="0.0" layoutY="-0.36" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../images/bg.jpeg" />
+      </image>
+    </ImageView>
+    <HBox layoutX="0.0" layoutY="0.0" prefHeight="74.0" prefWidth="1269.0">
+      <children>
+        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="198.0" style="-fx-background-color: rgba(245,245,245, .9);&#10;">
+          <children>
+            <ImageView fitHeight="74.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../images/logo.jpg" />
+              </image>
+            </ImageView>
+          </children>
+          <effect>
+            <Reflection />
+          </effect>
+        </HBox>
+        <HBox alignment="BOTTOM_RIGHT" fillHeight="true" opacity="1.0" prefHeight="60.0" prefWidth="1074.0" spacing="0.0" style="-fx-background-color: rgba(245,245,245, .9);&#10;">
+          <children>
+            <GridPane prefHeight="64.0" prefWidth="602.0">
+              <children>
+                <HBox alignment="CENTER" prefHeight="28.0" prefWidth="197.0" style="" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                <HBox alignment="TOP_LEFT" prefHeight="38.0" prefWidth="228.0" style="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <HBox alignment="CENTER_LEFT" prefHeight="28.0" prefWidth="262.0" style="" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="328.0" minWidth="10.0" prefWidth="258.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="341.0" minWidth="10.0" prefWidth="228.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="176.0" minWidth="10.0" prefWidth="116.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+          </children>
+          <padding>
+            <Insets bottom="2.5" top="10.0" />
+          </padding>
+        </HBox>
+      </children>
+    </HBox>
+    <BorderPane id="registrationPane" fx:id="openingPane" layoutX="448.0" layoutY="152.0" prefHeight="444.0000999999975" prefWidth="356.0" style="-fx-background-color: rgba(245,245,245, 0.8);&#10;-fx-background-radius: 10;">
+      <center>
+        <VBox prefHeight="391.0" prefWidth="316.0">
+          <children>
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+              <children>
+                <Button fx:id="worklist" defaultButton="true" mnemonicParsing="false" prefHeight="50.0" prefWidth="283.0" text="Worklist">
+                  <font>
+                    <Font name="Times New Roman Bold" size="16.0" fx:id="x1" />
+                  </font>
+                </Button>
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+              <children>
+                <Button defaultButton="true" font="$x1" mnemonicParsing="false" onAction="#submitAction1" prefHeight="50.0" prefWidth="283.0" text="New Business" />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+              <children>
+                <Button defaultButton="true" font="$x1" mnemonicParsing="false" prefHeight="50.0" prefWidth="283.0" text="Search Applications" />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+              <children>
+                <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" prefHeight="50.0" prefWidth="283.0" text="Saved Applications" />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="356.0001220703125">
+              <children>
+                <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0" />
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+      </center>
+      <effect>
+        <InnerShadow />
+      </effect>
+      <top>
+        <HBox alignment="CENTER" prefHeight="61.0" prefWidth="351.0">
+          <children>
+            <Label text="" textAlignment="LEFT" textFill="BLACK" underline="true">
+              <font>
+                <Font size="22.0" fx:id="x2" />
+              </font>
+            </Label>
+          </children>
+        </HBox>
+      </top>
+    </BorderPane>
+    <ToolBar layoutX="0.0" layoutY="691.0" prefWidth="1269.0">
+      <items>
+        <Label text="UCCIG © 2014" />
+        <HBox alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="1104.0">
+          <children>
+            <Hyperlink text="About Us">
+              <font>
+                <Font name="System Bold" size="13.0" fx:id="x3" />
+              </font>
+            </Hyperlink>
+          </children>
+        </HBox>
+      </items>
+    </ToolBar>
+    <ImageView fitHeight="949.7759876902725" fitWidth="1267.9998779296875" layoutX="1270.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../images/greywhite.jpg" />
+      </image>
+    </ImageView>
+    <BorderPane id="forgotPasswordPane" fx:id="newBusinessPane" layoutX="420.0" layoutY="235.0" prefHeight="223.0" prefWidth="407.0" style="-fx-background-color: rgba(245,245,245, 0.8);&#10;-fx-background-radius: 10;">
+      <center>
+        <VBox alignment="CENTER" prefHeight="391.0" prefWidth="316.0">
+          <children>
+            <HBox alignment="CENTER" prefHeight="127.0" prefWidth="407.0">
+              <children>
+                <VBox alignment="CENTER" prefHeight="95.0" prefWidth="122.0">
+                  <children>
+                    <Button defaultButton="true" font="$x1" mnemonicParsing="false" onAction="#submitAction2" prefHeight="50.0" prefWidth="283.0" text="Commercial" />
+                  </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="95.0" prefWidth="122.0">
+                  <children>
+                    <Button defaultButton="true" font="$x1" mnemonicParsing="false" prefHeight="50.0" prefWidth="283.0" text="Auto" />
+                  </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="95.0" prefWidth="121.9998779296875">
+                  <children>
+                    <Button defaultButton="true" font="$x1" mnemonicParsing="false" prefHeight="50.0" prefWidth="283.0" text="Both" />
+                  </children>
+                </VBox>
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" />
+          </children>
+        </VBox>
+      </center>
+      <effect>
+        <InnerShadow />
+      </effect>
+      <top>
+        <HBox alignment="CENTER" prefHeight="61.0" prefWidth="351.0">
+          <children>
+            <Label font="$x2" text="New Business" textAlignment="LEFT" textFill="BLACK" underline="true" />
+          </children>
+        </HBox>
+      </top>
+    </BorderPane>
+    <AnchorPane id="AnchorPane" layoutX="1270.0" layoutY="-5.0" minWidth="599.9998779296875" prefHeight="734.0" prefWidth="1269.0">
+      <children>
+        <ImageView fitHeight="729.0" fitWidth="1267.9998779296875" layoutX="1.0" layoutY="5.0" pickOnBounds="true" preserveRatio="false">
+          <image>
+            <Image url="@../images/greywhite.jpg" />
+          </image>
+        </ImageView>
+        <Label layoutX="599.0" layoutY="43.0" prefWidth="149.0" text="Client Profile">
+          <font>
+            <Font name="Times Bold" size="25.0" fx:id="x6" />
+          </font>
+          <textFill>
+            <Color blue="1.000" green="0.400" red="0.000" fx:id="x7" />
+          </textFill>
+        </Label>
+        <Label layoutX="73.0" layoutY="118.0" text="Producer:">
+          <font>
+            <Font name="Times Bold" size="16.0" fx:id="x4" />
+          </font>
+        </Label>
+        <Label font="$x4" layoutX="377.0" layoutY="118.0" text="Branch:" />
+        <Label font="$x4" layoutX="643.0" layoutY="118.0" text="Date:" />
+        <Label font="$x4" layoutX="73.0" layoutY="170.0" text="Key Contact:" />
+        <Label font="$x4" layoutX="421.0" layoutY="170.0" text="Phone:" />
+        <Label font="$x4" layoutX="730.0" layoutY="170.0" text="Email:" />
+        <Label font="$x4" layoutX="73.0" layoutY="207.0" text="Secondary Contact:" />
+        <Label font="$x4" layoutX="421.0" layoutY="207.0" text="Phone:" />
+        <Label font="$x4" layoutX="730.0" layoutY="207.0" text="Email:" />
+        <Label font="$x4" layoutX="82.0" layoutY="255.0" text="Business Name:" />
+        <Label font="$x4" layoutX="73.0" layoutY="295.0" text="Mailing Address:" />
+        <Label font="$x4" layoutX="148.0" layoutY="332.0" text="Fax #:" />
+        <Label font="$x4" layoutX="468.0" layoutY="332.0" text="Website:" />
+        <Label font="$x4" layoutX="90.0" layoutY="369.0" text="# of Locations:" />
+        <Label font="$x4" layoutX="306.0" layoutY="370.0" text="# of Owned Autos:" />
+        <Label font="$x4" layoutX="104.0" layoutY="406.0" text="Entity Type:" />
+        <Label font="$x4" layoutX="377.0" layoutY="410.0" prefWidth="160.0" text="If other, please specify:" />
+        <Label font="$x4" layoutX="73.0" layoutY="470.0" text="Operations and Related Experience:" />
+        <Label font="$x4" layoutX="73.0" layoutY="551.0" text="Owner(s) &amp; Key Personnel:" />
+        <Label font="$x4" layoutX="90.0" layoutY="621.0" text="Board of Directors:" />
+        <Button cancelButton="false" defaultButton="true" layoutX="73.0" layoutY="687.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" text="Exit" textAlignment="LEFT" textFill="WHITE" wrapText="false" />
+        <Button defaultButton="true" layoutX="578.0" layoutY="687.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" text="Save" />
+        <Button defaultButton="true" layoutX="1066.0" layoutY="687.0" mnemonicParsing="false" onAction="#submitAction3" prefHeight="26.0" prefWidth="126.0" text="Continue" />
+        <Label font="$x4" layoutX="171.0" layoutY="118.0" text="Jerry Boutilier" />
+        <Label font="$x4" layoutX="452.0" layoutY="118.0" text="Kingston" />
+        <TextField fx:id="keycontact" layoutX="180.0" layoutY="165.0" prefHeight="26.0" prefWidth="167.0" text="" />
+        <TextField id="keyphone" fx:id="secondaryemail" layoutX="796.0" layoutY="204.0" prefHeight="26.0" prefWidth="219.0" />
+        <TextField id="keyemail" fx:id="secondarycontact" layoutX="215.0" layoutY="202.0" prefHeight="26.0" prefWidth="134.0" text="" />
+        <TextField id="secondarycontact" fx:id="keyphone" layoutX="505.0" layoutY="167.0" prefHeight="26.0" prefWidth="179.0" />
+        <TextField fx:id="secondaryphone" layoutX="505.0" layoutY="204.0" prefHeight="26.0" prefWidth="176.0" />
+        <TextField id="secondaryemail" fx:id="keyemail" layoutX="797.0" layoutY="165.0" prefHeight="26.0" prefWidth="219.0" text="" />
+        <TextField fx:id="businessname" layoutX="199.0" layoutY="250.0" prefHeight="26.0" prefWidth="379.0" />
+        <TextField fx:id="mailingaddress" layoutX="199.0" layoutY="289.0" prefHeight="26.0" prefWidth="330.0" />
+        <TextField fx:id="fax" layoutX="199.0" layoutY="327.0" prefHeight="26.0" prefWidth="197.0" />
+        <TextField fx:id="website" layoutX="545.0" layoutY="327.0" prefHeight="25.9998779296875" prefWidth="249.0" />
+        <RadioButton fx:id="profit" layoutX="845.0" layoutY="406.0" mnemonicParsing="false" text="Profit">
+          <font>
+            <Font name="Times Bold" size="15.0" fx:id="x5" />
+          </font>
+        </RadioButton>
+        <RadioButton fx:id="nonprofit" font="$x5" layoutX="924.0" layoutY="406.0" mnemonicParsing="false" text="Non Profit" />
+        <ChoiceBox fx:id="entitytype" layoutX="199.0" layoutY="401.0" prefHeight="26.0" prefWidth="128.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Corporation" />
+              <String fx:value="Sole Proprietor" />
+              <String fx:value="Other" />
+            </FXCollections>
+          </items>
+        </ChoiceBox>
+        <TextField fx:id="otherspecify" layoutX="540.0" layoutY="405.0" prefHeight="26.0" prefWidth="266.0" />
+        <TextField id="owner" fx:id="owner1" layoutX="306.0" layoutY="529.0" prefHeight="26.0" prefWidth="206.0" />
+        <TextField id="bod" fx:id="bod1" layoutX="305.0" layoutY="607.0" prefWidth="200.0" />
+        <TextField id="keycontact" fx:id="nooflocations" layoutX="199.0" layoutY="365.0" prefHeight="26.0" prefWidth="48.0" text="" />
+        <TextField id="keycontact" fx:id="noofownderautos" layoutX="451.0" layoutY="366.0" prefHeight="26.0" prefWidth="48.0" text="" />
+        <Label font="$x4" layoutX="919.0" layoutY="118.0" text="Severity:" />
+        <Label font="$x4" layoutX="587.0" layoutY="295.0" prefWidth="68.0" text="Pincode:" />
+        <TextField id="mailingaddress" fx:id="pincode" layoutX="662.0" layoutY="289.0" prefHeight="26.0" prefWidth="116.0" />
+        <Label font="$x4" layoutX="806.0" layoutY="295.0" prefWidth="78.0" text="Country:" />
+        <TextField id="mailingaddress" fx:id="country" layoutX="884.0" layoutY="290.0" prefHeight="25.9998779296875" prefWidth="70.0" text="" />
+        <ChoiceBox id="entitytype" fx:id="years" layoutX="662.0" layoutY="365.0" prefHeight="26.0" prefWidth="66.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="0-1 Year" />
+              <String fx:value="1-2 Years" />
+              <String fx:value="2-3 Years" />
+              <String fx:value="3-4 Years" />
+              <String fx:value="4-5 Years" />
+              <String fx:value="5-7 Years" />
+              <String fx:value="7-9 Years" />
+              <String fx:value="&gt;10 Years" />
+            </FXCollections>
+          </items>
+        </ChoiceBox>
+        <TextField fx:id="relatedexperience" layoutX="327.0" layoutY="458.0" prefHeight="48.0" prefWidth="417.0" />
+        <TextField id="owner" fx:id="owner2" layoutX="572.0" layoutY="529.0" prefHeight="26.0" prefWidth="206.0" />
+        <TextField id="owner" fx:id="owner3" layoutX="306.0" layoutY="555.0" prefHeight="26.0" prefWidth="206.0" />
+        <TextField id="owner" fx:id="owner4" layoutX="572.0" layoutY="555.0" prefHeight="26.0" prefWidth="206.0" />
+        <TextField id="bod" fx:id="bod2" layoutX="572.0" layoutY="607.0" prefWidth="200.0" />
+        <TextField id="bod" fx:id="bod3" layoutX="305.0" layoutY="630.0" prefWidth="200.0" />
+        <TextField id="bod" fx:id="bod4" layoutX="573.0" layoutY="630.0" prefWidth="200.0" />
+        <ChoiceBox fx:id="severity" layoutX="996.0" layoutY="116.0" prefWidth="116.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="High" />
+              <String fx:value="Medium" />
+              <String fx:value="Low" />
+            </FXCollections>
+          </items>
+        </ChoiceBox>
+        <Label layoutX="696.0" layoutY="115.0" text="18/08/2014">
+          <font>
+            <Font name="System Bold" size="14.0" />
+          </font>
+        </Label>
+      </children>
+    </AnchorPane>
+    <ImageView fitHeight="967.0038083637871" fitWidth="1290.9998779296875" layoutX="2539.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../images/greywhite.jpg" />
+      </image>
+    </ImageView>
+    <AnchorPane id="AnchorPane" layoutX="2548.0" layoutY="-5.0" minWidth="599.9998779296875" prefHeight="735.0" prefWidth="1260.0">
+      <children>
+        <ImageView fitHeight="729.0" fitWidth="1268.9998779296875" layoutX="-9.0" layoutY="5.0" pickOnBounds="true" preserveRatio="false">
+          <image>
+            <Image url="@../../../../../../Downloads/light_sky_blue_shade.jpg" />
+          </image>
+        </ImageView>
+        <Label font="$x6" layoutX="562.0" layoutY="52.0" prefWidth="179.0" text="Client Profile(2)" textFill="$x7" />
+        <Label font="$x4" layoutX="68.0" layoutY="112.0" text="Financial Year End:" />
+        <Label font="$x4" layoutX="356.0" layoutY="112.0" text="# of Staff:" />
+        <Label font="$x4" layoutX="553.0" layoutY="112.0" text="Payroll$:" />
+        <Label font="$x4" layoutX="750.0" layoutY="114.0" text="Group Benefits:" />
+        <Label layoutX="518.0" layoutY="154.0" prefWidth="299.0" text="Description of Operations &amp; Revenues">
+          <font>
+            <Font name="Times Bold" size="18.0" fx:id="x9" />
+          </font>
+        </Label>
+        <Label font="$x4" layoutX="980.0" layoutY="112.0" text="Pension Plan:" />
+        <Label font="$x4" layoutX="68.0" layoutY="260.0" text="Total Sales:" />
+        <Label font="$x4" layoutX="59.0" layoutY="496.0" text="Largest Customers or Projects:" />
+        <Label font="$x4" layoutX="674.0" layoutY="492.0" text="Largest Suppliers:" />
+        <Button defaultButton="true" layoutX="567.0" layoutY="638.0" minHeight="18.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" text="Save" />
+        <Button defaultButton="true" layoutX="1011.0" layoutY="638.0" mnemonicParsing="false" onAction="#submitAction4" prefHeight="25.9998779296875" prefWidth="126.0" text="Continue" />
+        <ChoiceBox id="FYE" fx:id="finYearEnd" layoutX="218.0" layoutY="109.0" prefWidth="94.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ChoiceBox>
+        <TextField fx:id="noofstaff" layoutX="437.0" layoutY="107.0" prefHeight="26.0" prefWidth="70.0" />
+        <TextField fx:id="payroll" layoutX="630.0" layoutY="107.0" prefHeight="26.0" prefWidth="87.0" />
+        <TextField fx:id="descriptionOfOpAndRev1" layoutX="63.0" layoutY="182.0" prefHeight="26.0" prefWidth="299.0" promptText="Description" />
+        <TextField fx:id="amount1" layoutX="406.0" layoutY="182.0" prefHeight="26.0" prefWidth="94.0" promptText="Revenue" />
+        <ChoiceBox fx:id="currency1" layoutX="522.0" layoutY="182.0" prefHeight="26.0" prefWidth="63.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ChoiceBox>
+        <TextField fx:id="totalsale" layoutX="162.0" layoutY="255.0" prefHeight="26.0" prefWidth="97.0" />
+        <TextField fx:id="largestcustomerorproject1" layoutX="287.0" layoutY="432.0" prefHeight="25.9998779296875" prefWidth="351.0" promptText="Project Name/Customer Name" />
+        <TextField id="largestcustomerorproject1" fx:id="largestcustomerorproject2" layoutX="287.0" layoutY="470.0" prefHeight="25.9998779296875" prefWidth="351.0" promptText="Project Name/Customer Name" />
+        <TextField fx:id="largestSuppliers2" layoutX="810.0" layoutY="470.0" prefHeight="26.0" prefWidth="387.0" promptText="Supplier Name" />
+        <TextField fx:id="largestSuppliers3" layoutX="810.0" layoutY="507.0" prefHeight="25.9998779296875" prefWidth="387.0" promptText="Supplier Name" />
+        <CheckBox fx:id="ecommerce" font="$x4" layoutX="63.0" layoutY="340.0" mnemonicParsing="false" prefWidth="136.0" text="E-Commerce?" />
+        <CheckBox fx:id="profliability" font="$x4" layoutX="268.0" layoutY="340.0" mnemonicParsing="false" text="Professional Liability?" />
+        <CheckBox fx:id="cyberliability" font="$x4" layoutX="542.0" layoutY="340.0" mnemonicParsing="false" text="Cyber Liability exposure?" />
+        <CheckBox fx:id="pollexposure" font="$x4" layoutX="837.0" layoutY="340.0" mnemonicParsing="false" text="Pollution Exposure?" />
+        <CheckBox fx:id="accbenefits" font="$x4" layoutX="63.0" layoutY="374.0" mnemonicParsing="false" text="Accident Benefits BuyUp?" />
+        <CheckBox fx:id="malexposure" font="$x4" layoutX="321.0" layoutY="374.0" mnemonicParsing="false" text="Malpractice Exposure?" />
+        <CheckBox fx:id="abuseexposure" font="$x4" layoutX="580.0" layoutY="374.0" mnemonicParsing="false" text="Abuse Exposure?" />
+        <Label font="$x4" layoutX="63.0" layoutY="300.0" prefHeight="15.9998779296875" text="\% of sales on premises:" />
+        <Label font="$x4" layoutX="287.0" layoutY="300.0" text="\% of sales off premises:" />
+        <Label font="$x4" layoutX="517.0" layoutY="300.0" prefWidth="156.9998779296875" text="\% of sales residential:" />
+        <Label font="$x4" layoutX="726.0" layoutY="300.0" text="\% of sales commercial:" />
+        <Label font="$x4" layoutX="950.0" layoutY="300.0" text="\% of sales sub-contracted:" />
+        <TextField id="perof" fx:id="perofonpremises" layoutX="230.0" layoutY="299.0" prefHeight="19.0" prefWidth="38.0" text="" />
+        <TextField id="perof" fx:id="perofoffpremises" layoutX="456.0" layoutY="299.0" prefHeight="19.0" prefWidth="38.0" />
+        <TextField fx:id="perofresidential" layoutX="674.0" layoutY="299.0" prefHeight="19.0" prefWidth="38.0" />
+        <TextField fx:id="perofcommercial" layoutX="895.0" layoutY="299.0" prefHeight="19.0" prefWidth="38.0" text="" />
+        <TextField fx:id="perofsubcontracted" layoutX="1138.0" layoutY="299.0" prefHeight="19.0" prefWidth="38.0" text="" />
+        <CheckBox fx:id="bondopportunity" font="$x4" layoutX="820.0" layoutY="374.0" mnemonicParsing="false" text="Bonding Opportunity?" />
+        <TextField id="totalsaleUS" fx:id="totalsaleus" layoutX="336.0" layoutY="255.0" prefHeight="26.0" prefWidth="97.0" />
+        <Label layoutX="272.0" layoutY="261.0" prefWidth="51.0" text="CAD$">
+          <font>
+            <Font name="Times Roman" size="14.0" fx:id="x8" />
+          </font>
+        </Label>
+        <Label font="$x8" layoutX="449.0" layoutY="261.0" prefWidth="51.0" text="US$" />
+        <Button defaultButton="true" layoutX="63.0" layoutY="638.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" text="Previous Page" />
+        <ChoiceBox fx:id="groupbenefits" layoutX="871.0" layoutY="107.0" prefHeight="26.0" prefWidth="70.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ChoiceBox>
+        <ChoiceBox fx:id="pensionplan" layoutX="1094.0" layoutY="107.0" prefHeight="26.0" prefWidth="70.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ChoiceBox>
+        <Separator layoutX="638.0" layoutY="184.0" minWidth="0.0" orientation="VERTICAL" prefHeight="50.0" prefWidth="6.0" style="">
+          <effect>
+            <Shadow blurType="GAUSSIAN" color="#003314" />
+          </effect>
+        </Separator>
+        <TextField fx:id="descriptionOfOpAndRev3" layoutX="63.0" layoutY="215.0" prefHeight="26.0" prefWidth="299.0" promptText="Description" />
+        <TextField fx:id="amount3" layoutX="406.0" layoutY="213.0" prefHeight="26.0" prefWidth="92.0" promptText="Revenue" />
+        <ChoiceBox fx:id="currency3" layoutX="522.0" layoutY="213.0" prefHeight="26.0" prefWidth="63.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ChoiceBox>
+        <TextField fx:id="descriptionOfOpAndRev2" layoutX="684.0" layoutY="182.0" prefHeight="26.0" prefWidth="266.0" promptText="Description" />
+        <TextField fx:id="amount2" layoutX="989.0" layoutY="182.0" prefHeight="26.0" prefWidth="92.0" promptText="Revenue" />
+        <ChoiceBox fx:id="currency2" layoutX="1099.0" layoutY="182.0" prefHeight="26.0" prefWidth="64.00009999999747">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ChoiceBox>
+        <TextField fx:id="descriptionOfOpAndRev4" layoutX="684.0" layoutY="215.0" prefHeight="26.0" prefWidth="266.0" promptText="Description" />
+        <TextField fx:id="amount4" layoutX="989.0" layoutY="215.0" prefHeight="26.0" prefWidth="92.0" promptText="Revenue" />
+        <ChoiceBox fx:id="currency4" layoutX="1099.0" layoutY="213.0" prefHeight="26.0" prefWidth="64.00009999999747">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ChoiceBox>
+        <TextField fx:id="largestcustomerorproject3" layoutX="287.0" layoutY="507.0" prefHeight="26.0" prefWidth="351.0" promptText="Project Name/Customer Name" />
+        <TextField fx:id="largestSuppliers1" layoutX="810.0" layoutY="432.0" prefHeight="26.0" prefWidth="387.0" promptText="Supplier Name" text="" />
+        <TextField fx:id="largestcustomerorproject4" layoutX="287.0" layoutY="545.0" prefHeight="26.0" prefWidth="351.0" promptText="Project Name/Customer Name" />
+        <TextField fx:id="largestSuppliers4" layoutX="810.0" layoutY="545.0" prefHeight="25.9998779296875" prefWidth="387.0" promptText="Supplier Name" />
+      </children>
+    </AnchorPane>
+    <ImageView fitHeight="952.7721416318616" fitWidth="1272.0" layoutX="3808.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../images/greywhite.jpg" />
+      </image>
+    </ImageView>
+    <AnchorPane id="AnchorPane" layoutX="3816.0" layoutY="-2.0" minWidth="599.9998779296875" prefHeight="734.0" prefWidth="1260.0">
+      <children>
+        <ImageView fitHeight="734.0" fitWidth="1267.9998779296875" layoutX="-9.0" layoutY="0.0" pickOnBounds="true" preserveRatio="false">
+          <image>
+            <Image url="@../../../../../../Downloads/light_sky_blue_shade.jpg" />
+          </image>
+        </ImageView>
+        <Label font="$x6" layoutX="524.0" layoutY="51.0" prefWidth="183.0" text="Client Profile(3)" textFill="$x7" />
+        <Label font="$x4" layoutX="82.0" layoutY="121.0" text="Future Opportunities or Plans for Growth:" />
+        <Label font="$x4" layoutX="630.0" layoutY="121.0" prefWidth="266.9998779296875" text="Describe Competition:" />
+        <Label font="$x4" layoutX="82.0" layoutY="218.0" text="What Sets Your Business Apart?" />
+        <Label font="$x4" layoutX="640.0" layoutY="222.0" text="Describe Any Advertising:" />
+        <Label font="$x4" layoutX="82.0" layoutY="339.0" text="How Long Would it Take to Recover From a Serious Claim?" />
+        <Button defaultButton="true" layoutX="76.0" layoutY="638.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" text="Previous Page" />
+        <Button defaultButton="true" layoutX="567.0" layoutY="638.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" text="Save" />
+        <Button defaultButton="true" layoutX="1016.0" layoutY="638.0" mnemonicParsing="false" onAction="#submitAction5" prefHeight="26.0" prefWidth="126.0" text="Continue" />
+        <CheckBox fx:id="biw" font="$x4" layoutX="648.0" layoutY="396.0" mnemonicParsing="false" text="Business Interruption Worksheet?" />
+        <Label layoutX="14.0" layoutY="568.0" text="" />
+        <TextArea fx:id="futureopportunity" layoutX="82.0" layoutY="146.0" prefHeight="61.0" prefWidth="523.0" promptText="Description of plans for growth" wrapText="true" />
+        <TextArea fx:id="describecompetition" layoutX="630.0" layoutY="146.0" prefHeight="61.0" prefWidth="523.0" wrapText="true" />
+        <TextArea fx:id="businessapart" layoutX="82.0" layoutY="249.0" prefHeight="61.0" prefWidth="523.0" wrapText="true" />
+        <TextArea fx:id="advertising" layoutX="630.0" layoutY="249.0" prefHeight="61.0" prefWidth="523.0" wrapText="true" />
+        <TextArea fx:id="recover" layoutX="82.0" layoutY="375.0" prefHeight="61.0" prefWidth="523.0" wrapText="true" />
+        <Label font="$x4" layoutX="478.0" layoutY="463.0" text="Details of Past or Potential Claim (&lt;5 Years)" />
+        <Label font="$x4" layoutX="82.0" layoutY="498.0" text="Date:" />
+        <Label font="$x4" layoutX="78.0" layoutY="541.0" prefWidth="60.0" text="Cause:" />
+        <Label font="$x4" layoutX="77.0" layoutY="579.0" text="Amount:" />
+        <TextField fx:id="dateclaimyyyy1" layoutX="138.0" layoutY="495.0" prefHeight="26.0" prefWidth="44.0" promptText="YYYY" />
+        <TextField fx:id="dateclaimmm1" layoutX="194.0" layoutY="495.0" prefHeight="26.0" prefWidth="44.0" promptText="MM" />
+        <TextField fx:id="dateclaimdd1" layoutX="246.0" layoutY="495.0" prefHeight="26.0" prefWidth="44.0" promptText="DD" />
+        <TextField fx:id="claimcause1" layoutX="138.0" layoutY="536.0" prefHeight="26.0" prefWidth="200.0" />
+        <TextField fx:id="claimamount1" layoutX="148.0" layoutY="569.0" prefHeight="26.0" prefWidth="102.0" />
+        <Label font="$x4" layoutX="260.0" layoutY="576.0" text="CAD$" />
+        <Separator layoutX="377.0" layoutY="498.0" orientation="VERTICAL" prefHeight="95.0" />
+        <Label font="$x4" layoutX="421.0" layoutY="500.0" text="Date:" />
+        <Label font="$x4" layoutX="421.0" layoutY="538.0" prefWidth="60.0" text="Cause:" />
+        <Label font="$x4" layoutX="421.0" layoutY="575.0" text="Amount:" />
+        <TextField fx:id="dateclaimyyyy2" layoutX="483.0" layoutY="495.0" prefHeight="26.0" prefWidth="44.0" promptText="YYYY" />
+        <TextField fx:id="dateclaimmm2" layoutX="538.0" layoutY="495.0" prefHeight="26.0" prefWidth="44.0" promptText="MM" />
+        <TextField fx:id="dateclaimdd2" layoutX="594.0" layoutY="495.0" prefHeight="26.0" prefWidth="44.0" promptText="DD" />
+        <TextField fx:id="claimcause3" layoutX="848.0" layoutY="528.0" prefHeight="26.0" prefWidth="200.0" />
+        <TextField fx:id="claimamount3" layoutX="862.0" layoutY="569.0" prefHeight="26.0" prefWidth="102.0" />
+        <Label font="$x4" layoutX="984.0" layoutY="576.0" text="CAD$" />
+        <Separator layoutX="731.0" layoutY="496.0" orientation="VERTICAL" prefHeight="95.0" />
+        <Label font="$x4" layoutX="792.0" layoutY="498.0" text="Date:" />
+        <Label font="$x4" layoutX="792.0" layoutY="533.0" prefWidth="60.0" text="Cause:" />
+        <Label font="$x4" layoutX="792.0" layoutY="572.0" text="Amount:" />
+        <TextField fx:id="dateclaimyyyy3" layoutX="848.0" layoutY="493.0" prefHeight="26.0" prefWidth="44.0" promptText="YYYY" />
+        <TextField fx:id="dateclaimmm3" layoutX="904.0" layoutY="495.0" prefHeight="26.0" prefWidth="44.0" promptText="MM" />
+        <TextField fx:id="dateclaimdd3" layoutX="959.0" layoutY="495.0" prefHeight="26.0" prefWidth="44.0" promptText="DD" />
+        <TextField fx:id="claimcause2" layoutX="483.0" layoutY="534.0" prefHeight="26.0" prefWidth="200.0" />
+        <TextField fx:id="claimamount2" layoutX="497.0" layoutY="570.0" prefHeight="26.0" prefWidth="102.0" />
+        <Label font="$x4" layoutX="619.0" layoutY="577.0" text="CAD$" />
+      </children>
+    </AnchorPane>
+    <ImageView fitHeight="943.7837194043193" fitWidth="1259.9998779296875" layoutX="5075.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../images/greywhite.jpg" />
+      </image>
+    </ImageView>
+    <AnchorPane id="AnchorPane" layoutX="5083.0" layoutY="-2.0" minWidth="599.9998779296875" prefHeight="734.0" prefWidth="1260.0">
+      <children>
+        <ImageView id="aolownedy2" fitHeight="734.0" fitWidth="1267.9998779296875" layoutX="-8.0" layoutY="0.0" pickOnBounds="true" preserveRatio="false">
+          <image>
+            <Image url="@../../../../../../Desktop/greywhite.jpg" />
+          </image>
+        </ImageView>
+        <Label font="$x6" layoutX="475.0" layoutY="57.0" prefWidth="239.0" text="Client Profile(4)" textFill="$x7" />
+        <Label font="$x9" layoutX="425.0" layoutY="113.0" text="Schedule of Current Insurance Policies:" />
+        <Label font="$x4" layoutX="135.0" layoutY="348.0" text="Lienholders:" />
+        <Label font="$x9" layoutX="489.0" layoutY="433.0" text="Address of Locations:" />
+        <Button defaultButton="true" layoutX="220.0" layoutY="638.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" text="Previous Page" />
+        <Button defaultButton="true" layoutX="1012.0" layoutY="638.0" mnemonicParsing="false" onAction="#submitAction6" prefHeight="26.0" prefWidth="126.0" text="Continue" />
+        <Button defaultButton="true" layoutX="586.0" layoutY="638.0" mnemonicParsing="false" prefHeight="25.9998779296875" prefWidth="126.0" text="Save" />
+        <Label layoutX="14.0" layoutY="568.0" text="" />
+        <Label font="$x4" layoutX="690.0" layoutY="317.0" text="LOC#:" />
+        <Label font="$x4" layoutX="690.0" layoutY="351.0" text="LOC#:" />
+        <Label font="$x4" layoutX="306.0" layoutY="145.0" text="Type:" />
+        <Label font="$x4" layoutX="594.0" layoutY="145.0" text="Carrier:" />
+        <Label font="$x4" layoutX="851.0" layoutY="145.0" text="Expiry:" />
+        <Label font="$x4" layoutX="812.0" layoutY="466.0" text="Owned:" />
+        <TextField id="cipexpiryyyyy1" fx:id="cipexpiry1" layoutX="812.0" layoutY="173.0" prefHeight="25.0" prefWidth="119.0" promptText="YYYY" />
+        <TextField fx:id="cipcarrier1" layoutX="544.0" layoutY="173.0" prefHeight="25.0" prefWidth="160.0" />
+        <TextField fx:id="ciptype1" layoutX="254.0" layoutY="173.0" prefHeight="25.0" prefWidth="168.0" />
+        <TextField fx:id="lienholder1" layoutX="254.0" layoutY="316.0" prefHeight="25.0" prefWidth="387.0" />
+        <TextField fx:id="lienholder2" layoutX="254.0" layoutY="347.0" prefHeight="24.9998779296875" prefWidth="387.0" />
+        <TextField fx:id="aoladdress1" layoutX="254.0" layoutY="461.0" prefHeight="25.0" prefWidth="267.0" promptText="Address" />
+        <TextField fx:id="aoluse1" layoutX="586.0" layoutY="462.0" prefHeight="25.0" prefWidth="145.0" promptText="Use" />
+        <TextField fx:id="ciptype2" layoutX="254.0" layoutY="207.0" prefHeight="25.0" prefWidth="167.0" />
+        <TextField fx:id="ciptype3" layoutX="254.0" layoutY="240.0" prefHeight="25.0" prefWidth="166.0" />
+        <TextField fx:id="cipcarrier2" layoutX="544.0" layoutY="207.0" prefHeight="25.0" prefWidth="160.0" />
+        <TextField fx:id="cipcarrier3" layoutX="544.0" layoutY="240.0" prefHeight="25.0" prefWidth="160.0" />
+        <TextField id="cipexpiryyyyy2" fx:id="cipexpiry2" layoutX="812.0" layoutY="207.0" prefHeight="25.0" prefWidth="119.0" promptText="YYYY" />
+        <TextField id="cipexpiryyyyy3" fx:id="cipexpiry3" layoutX="812.0" layoutY="240.0" prefHeight="25.0" prefWidth="119.0" promptText="YYYY" />
+        <TextField fx:id="loc1" layoutX="762.0" layoutY="316.0" prefHeight="25.0" prefWidth="356.0" />
+        <TextField fx:id="loc2" layoutX="762.0" layoutY="347.0" prefHeight="25.0" prefWidth="356.0" />
+        <TextField fx:id="lienholder3" layoutX="254.0" layoutY="375.0" prefHeight="24.9998779296875" prefWidth="387.0" />
+        <Label font="$x4" layoutX="690.0" layoutY="380.0" text="LOC#:" />
+        <TextField fx:id="loc3" layoutX="762.0" layoutY="375.0" prefHeight="25.0" prefWidth="356.0" />
+        <RadioButton fx:id="aolownedy1" layoutX="878.0" layoutY="466.0" mnemonicParsing="false" text="Yes" />
+        <RadioButton fx:id="aolownedn1" layoutX="936.0" layoutY="466.0" mnemonicParsing="false" text="No" />
+        <TextField fx:id="aoladdress2" layoutX="254.0" layoutY="496.0" prefHeight="25.0" prefWidth="266.0" promptText="Address" />
+        <TextField fx:id="aoluse2" layoutX="586.0" layoutY="497.0" prefHeight="25.0" prefWidth="145.0" promptText="Use" />
+        <Label font="$x4" layoutX="812.0" layoutY="501.0" text="Owned:" />
+        <RadioButton fx:id="aolownedy2" layoutX="878.0" layoutY="501.0" mnemonicParsing="false" text="Yes" />
+        <RadioButton fx:id="aolownedn2" layoutX="936.0" layoutY="501.0" mnemonicParsing="false" text="No" />
+        <TextField fx:id="aoladdress3" layoutX="254.0" layoutY="531.0" prefHeight="25.0" prefWidth="267.0" promptText="Address" />
+        <TextField fx:id="aoluse3" layoutX="586.0" layoutY="531.0" prefHeight="25.0" prefWidth="145.0" promptText="Use" />
+        <Label font="$x4" layoutX="812.0" layoutY="536.0" text="Owned:" />
+        <RadioButton fx:id="aolownedy3" layoutX="878.0" layoutY="536.0" mnemonicParsing="false" text="Yes" />
+        <RadioButton fx:id="aolownedn3" layoutX="936.0" layoutY="536.0" mnemonicParsing="false" text="No" />
+        <ImageView fitHeight="713.8125" fitWidth="1269.0" layoutX="1260.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../images/bg.jpeg" />
+          </image>
+        </ImageView>
+        <TextField fx:id="aoladdress4" layoutX="254.0" layoutY="564.0" prefHeight="25.0" prefWidth="267.0" promptText="Address" />
+        <TextField fx:id="aoluse4" layoutX="586.0" layoutY="564.0" prefHeight="25.0" prefWidth="145.0" promptText="Use" />
+        <Label font="$x4" layoutX="814.0" layoutY="569.0" text="Owned:" />
+        <RadioButton fx:id="aolownedy4" layoutX="880.0" layoutY="569.0" mnemonicParsing="false" text="Yes" />
+        <RadioButton fx:id="aolownedn4" layoutX="938.0" layoutY="569.0" mnemonicParsing="false" text="No" />
+        <AnchorPane id="AnchorPane" layoutX="1272.0" layoutY="0.0" minWidth="599.9998779296875" prefHeight="735.0" prefWidth="1257.0">
+          <children>
+            <ImageView fitHeight="734.0" fitWidth="1271.9998779296875" layoutX="-16.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="false">
+              <image>
+                <Image url="@../images/greywhite.jpg" />
+              </image>
+            </ImageView>
+            <Label font="$x6" layoutX="538.0" layoutY="53.0" prefWidth="181.0" text="Client Profile(5)" textFill="$x7" />
+            <Label font="$x4" layoutX="123.0" layoutY="93.0" text="Locations Rented to Others" />
+            <Button defaultButton="true" layoutX="26.0" layoutY="638.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" text="Previous Page" />
+            <Button defaultButton="true" layoutX="566.0" layoutY="635.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" text="Save" />
+            <Button defaultButton="true" layoutX="1044.0" layoutY="635.0" mnemonicParsing="false" onAction="#submitFormAction" prefHeight="26.0" prefWidth="126.0" text="Submit" />
+            <Label layoutX="14.0" layoutY="568.0" text="" />
+            <Label font="$x4" layoutX="123.0" layoutY="153.0" text="Occupancy:" />
+            <Label font="$x4" layoutX="123.0" layoutY="229.0" text="Producer Comments:" />
+            <TextArea fx:id="producercomments" layoutX="123.0" layoutY="266.0" prefHeight="113.0" prefWidth="993.0" wrapText="true" />
+            <TextField fx:id="lrtooccupancy1" layoutX="220.0" layoutY="133.0" prefWidth="200.0" />
+            <TextField fx:id="lrtooccupancy3" layoutX="220.0" layoutY="161.0" prefWidth="200.0" />
+            <TextField fx:id="lrtooccupancy2" layoutX="446.0" layoutY="133.0" prefWidth="200.0" />
+            <TextField fx:id="lrtooccupancy4" layoutX="446.0" layoutY="161.0" prefWidth="200.0" />
+            <Label font="$x4" layoutX="123.0" layoutY="411.0" text="Marketer Comments:" />
+            <TextArea fx:id="marketercomments" layoutX="123.0" layoutY="437.0" prefHeight="113.0" prefWidth="993.0" wrapText="true" />
+          </children>
+        </AnchorPane>
+      </children>
+    </AnchorPane>
+    <ImageView id="fullscreenpane" fitHeight="734.0" fitWidth="1269.0" layoutX="7611.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="false">
+      <image>
+        <Image url="@../images/greywhite.jpg" />
+      </image>
+    </ImageView>
+    <GridPane gridLinesVisible="true" layoutX="7671.0" layoutY="66.0" prefHeight="570.0" prefWidth="415.0">
+      <children>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+          <children>
+            <Label font="$x9" text="Property" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+          <children>
+            <Label font="$x9" text="Limit" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="24.0" prefWidth="140.0" GridPane.columnIndex="2">
+          <children>
+            <Label font="$x9" text="Deductible" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="27.0" prefWidth="152.0" GridPane.rowIndex="1">
+          <children>
+            <Label font="$x5" text="Building" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+          <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <TextField fx:id="buildinglimit" alignment="CENTER" prefWidth="200.0" />
+              </children>
+            </HBox>
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+          <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <TextField fx:id="buildingdeductible" alignment="CENTER" prefWidth="200.0" />
+              </children>
+            </HBox>
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+          <children>
+            <Label font="$x5" text="Contents" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
+          <children>
+            <Label font="$x5" text="Stock" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
+          <children>
+            <Label font="$x5" text="Office Contents" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="5">
+          <children>
+            <Label font="$x5" text="EDP" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
+          <children>
+            <Label font="$x5" text="Equipment" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="7">
+          <children>
+            <Label font="$x5" text="Off Premises" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="9">
+          <children>
+            <Label font="$x5" text="Misc. Property" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="8">
+          <children>
+            <Label font="$x5" text="Transit" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="11">
+          <children>
+            <Label font="$x5" text="Installation Floator" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="10">
+          <children>
+            <Label font="$x5" text="Contractor's Equipment" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="12">
+          <children>
+            <Label font="$x5" text="Tool Floator" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="13">
+          <children>
+            <Label font="$x5" text="Sign Floator" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="16">
+          <children>
+            <Label font="$x5" text="Glass" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="17">
+          <children>
+            <Label font="$x5" text="Sewer Back Up" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="18">
+          <children>
+            <Label font="$x5" text="Flood" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="19">
+          <children>
+            <Label font="$x5" text="Earthquake" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="20">
+          <children>
+            <Label font="$x4" text="Business Interruption" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="21">
+          <children>
+            <Label font="$x5" text="Profits" />
+          </children>
+        </HBox>
+        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="14">
+          <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <Label font="$x5" text="Motor Truck Cargo" />
+              </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <CheckBox mnemonicParsing="false" text="Owner's " />
+                    <CheckBox mnemonicParsing="false" text="Truckman's" />
+                  </children>
+                </HBox>
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="22">
+          <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <Label font="$x5" text="Gross Earnings" />
+              </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <CheckBox mnemonicParsing="false" text="80%" />
+                  </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <CheckBox mnemonicParsing="false" text="50%" />
+                  </children>
+                </HBox>
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="24">
+          <children>
+            <Label font="$x5" text="Rental Income" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="25">
+          <children>
+            <Label font="$x5" text="Extra Expense" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="26">
+          <children>
+            <Label font="$x5" text="Off Premises Power" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+          <children>
+            <TextField fx:id="contentslimit" alignment="CENTER" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+          <children>
+            <TextField fx:id="contentsdeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+          <children>
+            <TextField fx:id="stocklimit" prefWidth="200.0" text="" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+          <children>
+            <TextField fx:id="stockdeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+          <children>
+            <TextField fx:id="officelimit" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+          <children>
+            <TextField fx:id="officedeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+          <children>
+            <TextField fx:id="edplimit" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+          <children>
+            <TextField fx:id="edpdeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+          <children>
+            <TextField fx:id="equipmentlimit" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
+          <children>
+            <TextField fx:id="equipmentdeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+          <children>
+            <TextField fx:id="offpremiseslimit" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
+          <children>
+            <TextField fx:id="offpremisesdeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+          <children>
+            <TextField fx:id="transitlimit" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="8">
+          <children>
+            <TextField fx:id="transitdeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
+          <children>
+            <TextField fx:id="miscpropertylimit" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="9">
+          <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <TextField fx:id="miscpropertydeductible" prefWidth="200.0" />
+              </children>
+            </HBox>
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="10">
+          <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <TextField fx:id="contractorsequipmentlimit" prefWidth="200.0" />
+              </children>
+            </HBox>
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="10">
+          <children>
+            <TextField fx:id="contractorsequipmentdeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="11">
+          <children>
+            <TextField fx:id="installationfloatorlimit" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="11">
+          <children>
+            <TextField fx:id="installationfloatordeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="12">
+          <children>
+            <TextField fx:id="toolfloatorlimit" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="12">
+          <children>
+            <TextField fx:id="toolfloatordeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="13">
+          <children>
+            <TextField fx:id="signfloatorlimit" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="13">
+          <children>
+            <TextField fx:id="signfloatordeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="14">
+          <children>
+            <TextField id="motor" fx:id="motortruckcargolimit" prefHeight="51.0" prefWidth="124.0" text="" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="14">
+          <children>
+            <TextField fx:id="motortruckcargodeductible" prefHeight="50.0" prefWidth="112.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="16">
+          <children>
+            <TextField fx:id="glasscargo" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="16">
+          <children>
+            <TextField fx:id="glassdeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="17">
+          <children>
+            <Label text="Included" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="17">
+          <children>
+            <TextField fx:id="sewerblackupdeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="18">
+          <children>
+            <Label text="Included" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="18">
+          <children>
+            <TextField fx:id="flooddeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="19">
+          <children>
+            <Label text="Included" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="19">
+          <children>
+            <TextField fx:id="earthquakedeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="20">
+          <children>
+            <Label text="Limit" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="20">
+          <children>
+            <Label text="Deductible" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="21">
+          <children>
+            <TextField fx:id="profitslimit" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="21">
+          <children>
+            <TextField fx:id="profitsdeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="22">
+          <children>
+            <TextField fx:id="grossearningslimit" prefHeight="52.0" prefWidth="124.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="22">
+          <children>
+            <TextField fx:id="grossearningsdeductible" prefHeight="52.0" prefWidth="112.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="24">
+          <children>
+            <TextField fx:id="rentalincomelimit" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="24">
+          <children>
+            <TextField fx:id="rentalincomedeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="25">
+          <children>
+            <TextField fx:id="extraexpenselimit" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="25">
+          <children>
+            <TextField fx:id="extraexpensedeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="26">
+          <children>
+            <TextField fx:id="offpremisespowerlimit" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="26">
+          <children>
+            <TextField fx:id="offpremisespowerdeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="179.0" minWidth="10.0" prefWidth="179.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="133.0" minWidth="10.0" prefWidth="121.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="10.0" prefWidth="112.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="22.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="22.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="51.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="22.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="23.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="24.0" minHeight="0.0" prefHeight="1.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="23.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="23.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="23.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+    <GridPane gridLinesVisible="true" layoutX="8087.0" layoutY="67.0" prefHeight="493.0" prefWidth="415.0">
+      <children>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+          <children>
+            <Label font="$x9" text="Crime" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+          <children>
+            <Label font="$x9" text="Limit" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="24.0" prefWidth="140.0" GridPane.columnIndex="2">
+          <children>
+            <Label font="$x9" text="Deductible" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="27.0" prefWidth="152.0" GridPane.rowIndex="2">
+          <children>
+            <Label font="$x5" text="B.F. Money/Secu" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+          <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <TextField fx:id="bfmoneylimit" alignment="CENTER" prefWidth="200.0" />
+              </children>
+            </HBox>
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+          <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <TextField fx:id="bfmoneydeductible" alignment="CENTER" prefWidth="200.0" />
+              </children>
+            </HBox>
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
+          <children>
+            <Label font="$x5" text="Depositor's Forgery" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
+          <children>
+            <Label font="$x5" text="Money Orders/Counterf." />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="5">
+          <children>
+            <Label font="$x5" text="Employee Dishonesty" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
+          <children>
+            <Label font="$x9" text="Liability" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="7">
+          <children>
+            <Label font="$x5" text="C.G.L" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="8">
+          <children>
+            <Label font="$x5" text="Tenants Legal" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="10">
+          <children>
+            <Label font="$x5" text="SEF 96" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="9">
+          <children>
+            <Label font="$x5" text="Non-owned Auto" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="12">
+          <children>
+            <Label font="$x5" text="D&amp;0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="11">
+          <children>
+            <Label font="$x5" text="SEF94" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="13">
+          <children>
+            <Label font="$x5" text="E&amp;0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="14">
+          <children>
+            <Label font="$x5" text="Employer's" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="17">
+          <children>
+            <Label font="$x9" text="Boiler &amp; Machinery" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="18">
+          <children>
+            <Label font="$x5" text="STD. Comprehensive" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="19">
+          <children>
+            <Label font="$x5" text="Air Conditioning" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="20">
+          <children>
+            <Label font="$x5" text="Production Machinery" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="21">
+          <children>
+            <Label font="$x4" text="Other Coverage" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="22">
+          <children>
+            <TextField fx:id="othercoverage1" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="15">
+          <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <Label font="$x5" text="Umbrella" />
+              </children>
+            </HBox>
+            <HBox prefHeight="5.0" prefWidth="179.0" />
+          </children>
+        </VBox>
+        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="23">
+          <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <TextField fx:id="othercoverage2" prefWidth="179.0" />
+                  </children>
+                </HBox>
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+          <children>
+            <TextField fx:id="forgerylimit" alignment="CENTER" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+          <children>
+            <TextField fx:id="forgerydeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+          <children>
+            <TextField fx:id="moneyorderslimit" prefWidth="200.0" text="" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+          <children>
+            <TextField id="m" fx:id="moneyordersdeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+          <children>
+            <TextField fx:id="dishonestylimit" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+          <children>
+            <TextField fx:id="dishonestydeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+          <children>
+            <Label font="$x9" text="Limit" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
+          <children>
+            <Label font="$x9" text="Deductible" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+          <children>
+            <TextField fx:id="cgllimit" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
+          <children>
+            <TextField fx:id="cgldeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+          <children>
+            <TextField fx:id="tenantslimit" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="8">
+          <children>
+            <TextField fx:id="tenantsdeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
+          <children>
+            <TextField fx:id="nonownedlimit" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="9">
+          <children>
+            <TextField fx:id="nonowneddeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="10">
+          <children>
+            <TextField fx:id="sef96limit" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="10">
+          <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <TextField fx:id="sef96deductible" prefWidth="200.0" />
+              </children>
+            </HBox>
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="11">
+          <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <TextField fx:id="sef94limit" prefWidth="200.0" />
+              </children>
+            </HBox>
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="11">
+          <children>
+            <TextField fx:id="sef94deductible" prefWidth="112.00009999999747" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="12">
+          <children>
+            <TextField fx:id="dandlimit" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="12">
+          <children>
+            <TextField fx:id="danddeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="13">
+          <children>
+            <TextField fx:id="eandlimit" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="13">
+          <children>
+            <TextField fx:id="eanddeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="14">
+          <children>
+            <TextField fx:id="employerslimit" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="14">
+          <children>
+            <TextField fx:id="employersdeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="15">
+          <children>
+            <TextField fx:id="umbrellalimit" prefHeight="40.0" prefWidth="124.0" text="" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="15">
+          <children>
+            <TextField fx:id="umbrelladeductible" prefHeight="42.0" prefWidth="112.0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="17">
+          <children>
+            <Label font="$x9" text="Limit" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="17">
+          <children>
+            <Label font="$x9" text="Deductible" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="18">
+          <children>
+            <TextField fx:id="stdlimit" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="18">
+          <children>
+            <TextField fx:id="stddeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="19">
+          <children>
+            <TextField fx:id="aclimit" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="19">
+          <children>
+            <TextField fx:id="acdeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="20">
+          <children>
+            <TextField fx:id="productionmachinerylimit" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="20">
+          <children>
+            <TextField fx:id="productionmachinerydeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="21">
+          <children>
+            <Label font="$x9" text="Limit" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="21">
+          <children>
+            <Label font="$x9" text="Deductible" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="22">
+          <children>
+            <TextField fx:id="othercoverage1limit" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="22">
+          <children>
+            <TextField fx:id="othercoverage1deductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="23">
+          <children>
+            <TextField fx:id="othercoverage2limit" prefHeight="40.0" prefWidth="124.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="23">
+          <children>
+            <TextField fx:id="othercoverage2deductible" prefHeight="42.0" prefWidth="112.0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+          <children>
+            <Label font="$x5" text="Inside/Outside" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+          <children>
+            <TextField fx:id="insideoutsidelimit" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+          <children>
+            <TextField fx:id="insideoutsidedeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="16">
+          <children>
+            <Label font="$x5" text="Wrap Up" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="16">
+          <children>
+            <TextField fx:id="wrapuplimit" prefWidth="200.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="16">
+          <children>
+            <TextField fx:id="wrapupdeductible" prefWidth="200.0" />
+          </children>
+        </HBox>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="179.0" minWidth="10.0" prefWidth="179.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="133.0" minWidth="10.0" prefWidth="121.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="10.0" prefWidth="112.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="22.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="22.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="22.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="22.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="22.0" minHeight="2.0" prefHeight="22.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="22.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="22.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="22.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="22.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="22.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="22.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+    <GridPane gridLinesVisible="true" layoutX="8503.0" layoutY="67.0" prefHeight="20.0" prefWidth="341.0">
+      <children>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+          <children>
+            <Label font="$x9" text="Location#" />
+          </children>
+        </HBox>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+    <GridPane gridLinesVisible="true" layoutX="8503.0" layoutY="87.0" prefWidth="341.0">
+      <children>
+        <HBox alignment="CENTER" prefHeight="42.0" prefWidth="102.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+          <children>
+            <Label text="Address" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+          <children>
+            <Label text="Age" />
+          </children>
+        </HBox>
+        <HBox alignment="BASELINE_LEFT" prefHeight="29.0" prefWidth="264.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+          <children>
+            <TextField alignment="CENTER" prefHeight="20.0" prefWidth="119.0" />
+          </children>
+        </HBox>
+        <TextArea prefHeight="42.0" prefWidth="205.0" text="" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.0" minWidth="10.0" prefWidth="77.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="271.0" minWidth="10.0" prefWidth="264.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints maxHeight="47.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="29.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+    <GridPane gridLinesVisible="true" layoutX="8503.0" layoutY="146.0" prefHeight="68.0" prefWidth="341.0">
+      <children>
+        <VBox prefHeight="39.0" prefWidth="77.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+          <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <Label text="Tot. Sq." />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <Label text="Footage" />
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="0">
+          <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <Label text="Ins'd. Sq." />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <Label text="Footage" />
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+          <children>
+            <TextField prefHeight="22.0" prefWidth="80.0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="0">
+          <children>
+            <TextField prefWidth="76.0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+          <children>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+              <children>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <Label text="No. Of" />
+                  </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <Label text="Stories" />
+                  </children>
+                </HBox>
+              </children>
+            </VBox>
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+          <children>
+            <TextField prefHeight="18.0" prefWidth="80.0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="30.0" prefWidth="81.99990000000253" GridPane.columnIndex="2" GridPane.rowIndex="1">
+          <children>
+            <Label text="Basement:" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+          <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <ChoiceBox prefWidth="81.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ChoiceBox>
+              </children>
+            </HBox>
+          </children>
+        </HBox>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="85.0" minWidth="10.0" prefWidth="77.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="103.0" minWidth="10.0" prefWidth="94.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="85.0" minWidth="10.0" prefWidth="80.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="90.0" minWidth="10.0" prefWidth="90.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="29.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+    <GridPane alignment="CENTER" gridLinesVisible="true" layoutX="8502.0" layoutY="216.0" prefHeight="414.0" prefWidth="341.0">
+      <children>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+          <children>
+            <Label text="Walls:" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+          <children>
+            <Label text="Roof:" />
+          </children>
+        </HBox>
+        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+          <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <CheckBox mnemonicParsing="false" text="Frame" />
+                  </children>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <CheckBox mnemonicParsing="false" text="HCB" />
+                  </children>
+                </HBox>
+              </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <CheckBox mnemonicParsing="false" text="Steel" />
+                  </children>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <CheckBox mnemonicParsing="false" text="BRICK" />
+                  </children>
+                </HBox>
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+          <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <CheckBox mnemonicParsing="false" text="Wood Joist" />
+                  </children>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <CheckBox mnemonicParsing="false" text="Steel Deck" />
+                  </children>
+                </HBox>
+              </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <HBox prefHeight="23.0" prefWidth="159.0">
+                  <children>
+                    <CheckBox mnemonicParsing="false" text="Concrete" />
+                  </children>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <HBox prefHeight="100.0" prefWidth="200.0">
+                      <children>
+                        <Label prefWidth="67.0" text="Updated:" />
+                      </children>
+                    </HBox>
+                    <HBox alignment="TOP_LEFT" prefHeight="100.0" prefWidth="200.0">
+                      <children>
+                        <TextField prefHeight="16.0" prefWidth="66.0" />
+                      </children>
+                    </HBox>
+                  </children>
+                </HBox>
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+          <children>
+            <Label text="Floors:" />
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+          <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="22.9998779296875" prefWidth="127.0">
+              <children>
+                <CheckBox mnemonicParsing="false" text="Concrete" />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <CheckBox mnemonicParsing="false" text="Wood" />
+              </children>
+            </HBox>
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
+          <children>
+            <Label text="Heating:" />
+          </children>
+        </HBox>
+        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+          <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <CheckBox mnemonicParsing="false" text="F/A Gas" />
+                  </children>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <CheckBox mnemonicParsing="false" text="F/A Oil" />
+                  </children>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <CheckBox mnemonicParsing="false" text="Electric" />
+                  </children>
+                </HBox>
+              </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <CheckBox mnemonicParsing="false" text="Other" />
+                  </children>
+                </HBox>
+                <HBox alignment="BASELINE_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <Label prefWidth="63.0" text="Updated:" />
+                  </children>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <TextField prefHeight="18.0" prefWidth="76.0" />
+                  </children>
+                </HBox>
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
+          <children>
+            <Label text="Electrical:" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="5">
+          <children>
+            <Label text="Plumbing:" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
+          <children>
+            <Label text="Fire Protection:">
+              <font>
+                <Font size="10.0" />
+              </font>
+            </Label>
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="7">
+          <children>
+            <Label text="Security:" />
+          </children>
+        </HBox>
+        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+          <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <CheckBox mnemonicParsing="false" text="Breakers" />
+                  </children>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <CheckBox mnemonicParsing="false" text="Fuses" />
+                  </children>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0" />
+              </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <CheckBox mnemonicParsing="false" text="# of AMPS" />
+                  </children>
+                </HBox>
+                <HBox alignment="BASELINE_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <Label prefWidth="63.0" text="Updated:" />
+                  </children>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <TextField prefHeight="15.9998779296875" prefWidth="76.0" />
+                  </children>
+                </HBox>
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+          <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <CheckBox mnemonicParsing="false" text="Copper" />
+                  </children>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <CheckBox mnemonicParsing="false" text="PVC" />
+                  </children>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0" />
+              </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <CheckBox mnemonicParsing="false" text="Other" />
+                  </children>
+                </HBox>
+                <HBox alignment="BASELINE_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <Label prefWidth="63.0" text="Updated:" />
+                  </children>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <TextField prefHeight="15.9998779296875" prefWidth="76.0" />
+                  </children>
+                </HBox>
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+          <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="254.0">
+              <children>
+                <CheckBox mnemonicParsing="false" text="Alarm System" />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="254.0">
+              <children>
+                <CheckBox mnemonicParsing="false" text="Central Monitored" />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="254.0">
+              <children>
+                <CheckBox mnemonicParsing="false" text="Window Bars" />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="254.0">
+              <children>
+                <CheckBox mnemonicParsing="false" text="Dead Bolts" />
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="6">
+          <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <CheckBox mnemonicParsing="false" text="Sprinklers" />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+              <children>
+                <CheckBox mnemonicParsing="false" text="SVC. Contract" />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+              <children>
+                <CheckBox mnemonicParsing="false" text="HYDRANT" />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+              <children>
+                <CheckBox mnemonicParsing="false" text="FIREHALL" />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+              <children>
+                <CheckBox mnemonicParsing="false" text="UNPROTECTED" />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+              <children>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <Label text="Distance:" textAlignment="CENTER" />
+                  </children>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <TextField prefHeight="18.0" prefWidth="64.0" />
+                  </children>
+                </HBox>
+              </children>
+            </HBox>
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.0" minWidth="10.0" prefWidth="87.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="269.0" minWidth="10.0" prefWidth="254.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints maxHeight="47.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="47.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="47.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="67.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="72.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="72.0" minHeight="0.0" prefHeight="43.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="117.0" minHeight="0.0" prefHeight="69.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="149.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+    <TextArea layoutX="8086.0" layoutY="561.0" prefHeight="74.0" prefWidth="415.0" wrapText="true" />
+    <Label layoutX="8087.0" layoutY="563.0" text="Additional Coverage:" />
+  </children>
+</AnchorPane>

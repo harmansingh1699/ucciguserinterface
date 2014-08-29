@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" fx:id="fullScreenPane" minHeight="85.0" minWidth="364.0" prefHeight="1430.0" prefWidth="3807.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.ui.uccig.EnterCodeUIController">
+  <children>
+    <ImageView fitHeight="715.0" fitWidth="1269.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="false">
+      <image>
+        <Image url="@../images/bg.jpeg" />
+      </image>
+    </ImageView>
+    <BorderPane id="registrationPane" layoutX="457.0" layoutY="147.0" prefHeight="444.0000999999975" prefWidth="356.0" style="-fx-background-color: rgba(245,245,245, 0.8);&#10;-fx-background-radius: 10;">
+      <center>
+        <VBox prefHeight="391.0" prefWidth="316.0">
+          <children>
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+              <children>
+                <Button id="worklist" defaultButton="true" mnemonicParsing="false" onAction="#submitAction1" prefHeight="50.0" prefWidth="283.0" text="Worklist">
+                  <font>
+                    <Font name="Times New Roman Bold" size="16.0" fx:id="x1" />
+                  </font>
+                </Button>
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+              <children>
+                <Button defaultButton="true" font="$x1" mnemonicParsing="false" prefHeight="50.0" prefWidth="283.0" text="Unassigned Pool" />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+              <children>
+                <Button defaultButton="true" font="$x1" mnemonicParsing="false" onAction="#submitAction3" prefHeight="50.0" prefWidth="283.0" text="Search Archive" />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+              <children>
+                <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" onAction="#submitAction4" prefHeight="50.0" prefWidth="283.0" text="Saved Applications" />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="356.0001220703125">
+              <children>
+                <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0" />
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+      </center>
+      <effect>
+        <InnerShadow />
+      </effect>
+      <top>
+        <HBox alignment="CENTER" prefHeight="61.0" prefWidth="351.0">
+          <children>
+            <Label text="" textAlignment="LEFT" textFill="BLACK" underline="true">
+              <font>
+                <Font size="22.0" fx:id="x7" />
+              </font>
+            </Label>
+            <Label text="Welcome Sue Naysmith">
+              <font>
+                <Font name="Times Bold" size="20.0" fx:id="x5" />
+              </font>
+              <textFill>
+                <Color blue="1.000" green="0.160" red="0.000" fx:id="x3" />
+              </textFill>
+            </Label>
+          </children>
+        </HBox>
+      </top>
+    </BorderPane>
+    <ImageView fitHeight="715.0" fitWidth="1269.0" layoutX="2537.0" layoutY="0.0" pickOnBounds="true" preserveRatio="false">
+      <image>
+        <Image url="@../../../../../../Desktop/background.jpg" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="715.0" fitWidth="1269.0" layoutX="1268.0" layoutY="0.0" pickOnBounds="true" preserveRatio="false">
+      <image>
+        <Image url="@../images/greywhite.jpg" />
+      </image>
+    </ImageView>
+    <GridPane alignment="CENTER" gridLinesVisible="false" layoutX="1281.0" layoutY="43.0" prefHeight="610.0" prefWidth="1241.0">
+      <children>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+          <children>
+            <AnchorPane id="AnchorPane" minHeight="85.0" minWidth="0.0" prefHeight="85.00009999999747" prefWidth="286.0">
+              <children>
+                <ImageView fitHeight="85.0" fitWidth="286.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="false">
+                  <image>
+                    <Image url="@../../../../../../Desktop/background.jpg" />
+                  </image>
+                </ImageView>
+                <Label layoutX="152.0" layoutY="38.0" text="ID:">
+                  <font>
+                    <Font name="Times Bold" size="15.0" fx:id="x2" />
+                  </font>
+                </Label>
+                <Label font="$x2" layoutX="13.0" layoutY="64.0" text="Business Name:" />
+                <Label font="$x2" layoutX="14.0" layoutY="38.0" text="Producer:" />
+                <Label font="$x2" layoutX="159.0" layoutY="11.0" text="Severity:" />
+                <Label font="$x2" layoutX="13.0" layoutY="11.0" text="Date:" />
+                <Label layoutX="53.0" layoutY="12.0" prefWidth="82.9998779296875" text="13/08/2014" textFill="$x3">
+                  <font>
+                    <Font name="Times Bold" size="14.0" fx:id="x4" />
+                  </font>
+                </Label>
+                <Label font="$x4" layoutX="227.0" layoutY="12.0" text="High" textFill="RED" />
+                <Label font="$x4" layoutX="82.0" layoutY="38.0" text="ehansgh" textFill="$x3" />
+                <Label font="$x4" layoutX="179.0" layoutY="38.0" text="UCCIG123456" textFill="$x3" />
+                <Label font="$x4" layoutX="123.0" layoutY="63.0" text="UCCIG Pvt. Ltd." textFill="$x3" />
+              </children>
+            </AnchorPane>
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+          <children>
+            <AnchorPane id="AnchorPane" minHeight="85.0" minWidth="0.0" prefHeight="85.00009999999747" prefWidth="286.0">
+              <children>
+                <ImageView fitHeight="85.0" fitWidth="286.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="false">
+                  <image>
+                    <Image url="@../../../../../../Desktop/background.jpg" />
+                  </image>
+                </ImageView>
+                <Label font="$x2" layoutX="152.0" layoutY="38.0" text="ID:" />
+                <Label font="$x2" layoutX="13.0" layoutY="64.0" text="Business Name:" />
+                <Label font="$x2" layoutX="14.0" layoutY="38.0" text="Producer:" />
+                <Label font="$x2" layoutX="159.0" layoutY="11.0" text="Severity:" />
+                <Label font="$x2" layoutX="13.0" layoutY="11.0" text="Date:" />
+                <Label font="$x4" layoutX="57.0" layoutY="12.0" prefWidth="82.9998779296875" text="10/08/2014" textFill="$x3" />
+                <Label font="$x4" layoutX="221.0" layoutY="12.0" text="Medium" textFill="#ff7a00" />
+                <Label font="$x4" layoutX="82.0" layoutY="38.0" text="ehansgh" textFill="$x3" />
+                <Label font="$x4" layoutX="179.0" layoutY="38.0" text="UCCIG1435" textFill="$x3" />
+                <Label font="$x4" layoutX="122.0" layoutY="64.0" text="Queen's University" textFill="$x3" />
+              </children>
+            </AnchorPane>
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+          <children>
+            <HBox alignment="CENTER" prefHeight="94.0" prefWidth="310.0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="0">
+          <children>
+            <AnchorPane id="AnchorPane" minHeight="85.0" minWidth="0.0" prefHeight="85.00009999999747" prefWidth="286.0">
+              <children>
+                <ImageView fitHeight="85.0" fitWidth="286.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="false">
+                  <image>
+                    <Image url="@../../../../../../Desktop/background.jpg" />
+                  </image>
+                </ImageView>
+                <Label font="$x2" layoutX="152.0" layoutY="38.0" text="ID:" />
+                <Label font="$x2" layoutX="13.0" layoutY="64.0" text="Business Name:" />
+                <Label font="$x2" layoutX="14.0" layoutY="38.0" text="Producer:" />
+                <Label font="$x2" layoutX="159.0" layoutY="11.0" text="Severity:" />
+                <Label font="$x2" layoutX="13.0" layoutY="11.0" text="Date:" />
+                <Label font="$x4" layoutX="57.0" layoutY="12.0" prefWidth="82.9998779296875" text="1/07/2014" textFill="$x3" />
+                <Label font="$x4" layoutX="227.0" layoutY="12.0" text="Low" textFill="#fff500" />
+                <Label font="$x4" layoutX="82.0" layoutY="38.0" text="ehansgh" textFill="$x3" />
+                <Label font="$x4" layoutX="184.0" layoutY="38.0" text="UCCIG1543" textFill="$x3" />
+                <Label font="$x4" layoutX="123.0" layoutY="63.0" text="Bradley's Insruance" textFill="$x3" />
+              </children>
+            </AnchorPane>
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+    <Label font="$x5" layoutX="1834.0" layoutY="14.0" text="Search Result(s)" textFill="#1400ff" />
+    <ImageView fitHeight="715.0" fitWidth="1269.0" layoutX="0.0" layoutY="715.0" pickOnBounds="true" preserveRatio="false">
+      <image>
+        <Image url="@../images/bg.jpeg" />
+      </image>
+    </ImageView>
+    <BorderPane id="registrationPane" fx:id="searcharchive" layoutX="361.0" layoutY="870.0" prefHeight="445.0" prefWidth="547.0" style="-fx-background-color: rgba(245,245,245, 0.8);&#10;-fx-background-radius: 10;">
+      <bottom>
+        <VBox prefHeight="384.0" prefWidth="483.0">
+          <children>
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+              <children>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <Label text="Search by Producer ID:">
+                      <font>
+                        <Font name="Times Bold" size="16.0" fx:id="x6" />
+                      </font>
+                    </Label>
+                  </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <TextField prefHeight="34.0" prefWidth="177.0" text="" />
+                  </children>
+                </HBox>
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+              <children>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <Label font="$x6" text="Search by Marketer ID:" />
+                  </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <TextField prefHeight="34.0" prefWidth="177.0" />
+                  </children>
+                </HBox>
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+              <children>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <Label font="$x6" text="Search by Application ID:" />
+                  </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0001220703125">
+                  <children>
+                    <TextField prefHeight="34.0" prefWidth="177.0" />
+                  </children>
+                </HBox>
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+              <children>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <Label font="$x6" text="Search by Business Name:" />
+                  </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <TextField alignment="CENTER" prefHeight="34.0" prefWidth="177.0" />
+                  </children>
+                </HBox>
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="356.0001220703125">
+              <children>
+                <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" onAction="#submitAction5" prefHeight="50.0" prefWidth="181.0" text="Next" />
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+      </bottom>
+      <effect>
+        <InnerShadow />
+      </effect>
+      <top>
+        <HBox alignment="CENTER" prefHeight="61.0" prefWidth="351.0">
+          <children>
+            <Label font="$x7" text="" textAlignment="LEFT" textFill="BLACK" underline="true" />
+            <Label font="$x5" prefWidth="140.0" text="Search Archives" textFill="$x3" />
+          </children>
+        </HBox>
+      </top>
+    </BorderPane>
+    <BorderPane id="registrationPane" fx:id="searcharchive2" layoutX="457.0" layoutY="915.0" prefHeight="355.0" prefWidth="356.0" style="-fx-background-color: rgba(245,245,245, 0.8);&#10;-fx-background-radius: 10;">
+      <center>
+        <VBox prefHeight="288.0" prefWidth="356.0">
+          <children>
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+              <children>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <Label prefHeight="19.9998779296875" text="With Us:">
+                      <font>
+                        <Font name="Times Bold" size="18.0" fx:id="x8" />
+                      </font>
+                    </Label>
+                  </children>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <VBox prefHeight="70.0" prefWidth="177.0">
+                      <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                          <children>
+                            <RadioButton font="$x4" graphicTextGap="4.0" mnemonicParsing="false" text="Yes" textAlignment="LEFT" />
+                          </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                          <children>
+                            <RadioButton font="$x4" mnemonicParsing="false" text="No" />
+                          </children>
+                        </HBox>
+                      </children>
+                    </VBox>
+                  </children>
+                </HBox>
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="119.0" prefWidth="356.0">
+              <children>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <Label font="$x8" prefHeight="19.9998779296875" text="Date:" />
+                  </children>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <VBox prefHeight="128.0" prefWidth="177.0">
+                      <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                          <children>
+                            <CheckBox mnemonicParsing="false" text="0-3 months" />
+                          </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                          <children>
+                            <CheckBox mnemonicParsing="false" text="3-9 months" />
+                          </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                          <children>
+                            <CheckBox mnemonicParsing="false" text="9-12 months" />
+                          </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                          <children>
+                            <CheckBox mnemonicParsing="false" text="&gt;12 months" />
+                          </children>
+                        </HBox>
+                      </children>
+                    </VBox>
+                  </children>
+                </HBox>
+              </children>
+              <padding>
+                <Insets top="20.0" />
+              </padding>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="356.0001220703125">
+              <children>
+                <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+                  <children>
+                    <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" prefHeight="50.0" prefWidth="165.0" text="Search" />
+                  </children>
+                </HBox>
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+      </center>
+      <effect>
+        <InnerShadow />
+      </effect>
+      <top>
+        <HBox alignment="CENTER" prefHeight="61.0" prefWidth="351.0">
+          <children>
+            <Label font="$x7" text="" textAlignment="LEFT" textFill="BLACK" underline="true" />
+            <Label font="$x5" text="Search Archive(s)" textFill="$x3" />
+          </children>
+        </HBox>
+      </top>
+    </BorderPane>
+    <ImageView fitHeight="715.0" fitWidth="1269.0" layoutX="1269.0" layoutY="715.0" pickOnBounds="true" preserveRatio="false">
+      <image>
+        <Image url="@../images/greywhite.jpg" />
+      </image>
+    </ImageView>
+    <BorderPane id="registrationPane" layoutX="1296.0" layoutY="924.0" prefHeight="403.0" prefWidth="241.0" style="-fx-background-color: rgba(245,245,245, 0.8);&#10;-fx-background-radius: 10;">
+      <center>
+        <VBox prefHeight="200.0" prefWidth="100.0">
+          <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" prefHeight="50.0" prefWidth="153.0" text="Search Results" />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" prefHeight="50.0" prefWidth="153.0" text="Home" />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" prefHeight="50.0" prefWidth="153.0" text="Workspace" />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" prefHeight="50.0" prefWidth="153.0" text="Search Archive" />
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+      </center>
+      <effect>
+        <InnerShadow />
+      </effect>
+    </BorderPane>
+    <ImageView fitHeight="94.0" fitWidth="177.00009155273438" layoutX="1328.0" layoutY="743.0" pickOnBounds="true" preserveRatio="false">
+      <image>
+        <Image url="@../../../../../../Desktop/logo.jpg" />
+      </image>
+    </ImageView>
+    <GridPane gridLinesVisible="true" layoutX="1652.0" layoutY="924.0" prefHeight="403.0" prefWidth="725.0">
+      <children>
+        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+          <children>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="725.0">
+              <children>
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                  <children>
+                    <Label font="$x5" text="General Data" />
+                  </children>
+                </HBox>
+              </children>
+            </HBox>
+            <HBox prefHeight="140.0" prefWidth="725.0">
+              <children>
+                <VBox prefHeight="140.0" prefWidth="725.0">
+                  <children>
+                    <HBox prefHeight="100.0" prefWidth="200.0">
+                      <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                          <children>
+                            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                              <children>
+                                <Label font="$x2" prefWidth="83.0" text="Producer:">
+                                  <HBox.margin>
+                                    <Insets left="20.0" fx:id="x10" />
+                                  </HBox.margin>
+                                </Label>
+                              </children>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                              <children>
+                                <Label font="$x2" prefWidth="70.0" text="ehansgh">
+                                  <textFill>
+                                    <Color blue="1.000" green="0.161" red="0.000" fx:id="x9" />
+                                  </textFill>
+                                </Label>
+                              </children>
+                            </HBox>
+                          </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                          <children>
+                            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                              <children>
+                                <Label font="$x2" prefWidth="83.0" text="Marketer:" />
+                              </children>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                              <children>
+                                <Label font="$x2" prefWidth="89.0" text="Unassigned" textFill="$x9" />
+                              </children>
+                            </HBox>
+                          </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                          <children>
+                            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                              <children>
+                                <Label font="$x2" text="Type:" />
+                              </children>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                              <children>
+                                <Label font="$x2" text="Both" textFill="$x9" />
+                              </children>
+                            </HBox>
+                          </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                          <children>
+                            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                              <children>
+                                <Label font="$x2" text="Category:" />
+                              </children>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                              <children>
+                                <Label font="$x2" prefWidth="22.0" text="NB" textFill="$x9" />
+                              </children>
+                            </HBox>
+                          </children>
+                        </HBox>
+                      </children>
+                    </HBox>
+                    <HBox prefHeight="100.0" prefWidth="200.0">
+                      <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                          <children>
+                            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="189.0">
+                              <children>
+                                <Label font="$x2" prefWidth="58.0" text="Date:" HBox.margin="$x10" />
+                              </children>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                              <children>
+                                <Label font="$x2" prefWidth="89.0" text="18/08/2014" textFill="$x9" />
+                              </children>
+                            </HBox>
+                          </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                          <children>
+                            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                              <children>
+                                <Label font="$x2" prefWidth="83.0" text="Severity:" />
+                              </children>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                              <children>
+                                <Label font="$x2" prefWidth="89.0" text="High" textFill="RED" />
+                              </children>
+                            </HBox>
+                          </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                          <children>
+                            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                              <children>
+                                <Label font="$x2" text="Branch:" />
+                              </children>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                              <children>
+                                <Label font="$x2" text="Kingston" textFill="$x9" />
+                              </children>
+                            </HBox>
+                          </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                          <children>
+                            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                              <children>
+                                <Label font="$x2" text="With Us:" />
+                              </children>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                              <children>
+                                <Label font="$x2" text="Yes" textFill="$x9" />
+                              </children>
+                            </HBox>
+                          </children>
+                        </HBox>
+                      </children>
+                    </HBox>
+                  </children>
+                </VBox>
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="61.0" prefWidth="725.0">
+              <children>
+                <Label font="$x5" text="Operations" />
+              </children>
+            </HBox>
+            <HBox prefHeight="119.0" prefWidth="725.0">
+              <children>
+                <VBox prefHeight="119.0" prefWidth="725.0" HBox.margin="$x12">
+                  <children>
+                    <HBox prefHeight="100.0" prefWidth="200.0">
+                      <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                          <children>
+                            <Button cancelButton="false" defaultButton="true" mnemonicParsing="false" prefHeight="50.0" prefWidth="165.0" text="View/Edit Application">
+                              <font>
+                                <Font name="Times New Roman Bold" size="14.5" />
+                              </font>
+                              <HBox.margin>
+                                <Insets fx:id="x12" />
+                              </HBox.margin>
+                            </Button>
+                          </children>
+                          <HBox.margin>
+                            <Insets left="50.0" />
+                          </HBox.margin>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                          <children>
+                            <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" prefHeight="50.0" prefWidth="165.0" text="View Conversation" />
+                          </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                          <children>
+                            <Button cancelButton="false" defaultButton="true" mnemonicParsing="false" prefHeight="50.0" prefWidth="165.0" text="Send to Underwriters">
+                              <font>
+                                <Font name="Times New Roman Bold" size="14.0" fx:id="x11" />
+                              </font>
+                            </Button>
+                          </children>
+                        </HBox>
+                      </children>
+                      <VBox.margin>
+                        <Insets left="40.0" />
+                      </VBox.margin>
+                    </HBox>
+                    <HBox prefHeight="100.0" prefWidth="200.0">
+                      <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                          <children>
+                            <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" prefHeight="50.0" prefWidth="165.0" text="Proposal/Binder" />
+                          </children>
+                          <HBox.margin>
+                            <Insets left="90.0" />
+                          </HBox.margin>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                          <children>
+                            <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" prefHeight="50.0" prefWidth="165.0" text="Renew" />
+                          </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                          <children>
+                            <Button cancelButton="false" defaultButton="true" font="$x11" mnemonicParsing="false" prefHeight="50.0" prefWidth="165.0" text="Complete Process" />
+                          </children>
+                        </HBox>
+                      </children>
+                    </HBox>
+                  </children>
+                </VBox>
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+    <BorderPane layoutX="1652.0" layoutY="743.0" prefHeight="94.0" prefWidth="725.0">
+      <center>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+          <children>
+            <Label prefHeight="30.0" prefWidth="468.0" text="UCCIG 123456, Queen's University" textFill="$x3">
+              <font>
+                <Font name="Times Bold" size="30.0" />
+              </font>
+            </Label>
+          </children>
+        </HBox>
+      </center>
+    </BorderPane>
+    <Button defaultButton="true" layoutX="1834.0" layoutY="655.0" mnemonicParsing="false" onAction="#submitAction10" prefHeight="50.0" prefWidth="140.0" text="Home">
+      <font>
+        <Font name="Times New Roman Bold" size="20.0" />
+      </font>
+    </Button>
+  </children>
+</AnchorPane>
