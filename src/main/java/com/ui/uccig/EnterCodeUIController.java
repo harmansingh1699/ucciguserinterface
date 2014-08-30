@@ -6,11 +6,13 @@
 package com.ui.uccig;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.animation.TranslateTransition;
 import javafx.animation.TranslateTransitionBuilder;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 
@@ -22,7 +24,7 @@ import javafx.util.Duration;
 public class EnterCodeUIController implements Initializable, IScreenController {
 
     private ScreenNavigator screenPage;
-
+    ArrayList<String> str=new ArrayList<String>();
     
     
     @FXML
@@ -32,7 +34,8 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     private Pane searcharchive;
     @FXML
     private Pane fullScreenPane;
-    
+    @FXML
+    private GridPane gridpane;
    
     
 
@@ -45,6 +48,14 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
+        str.add("Ravjot");
+        str.add("Chani");
+        str.add("Herman");
+        str.add("YoYo"); 
+        str.add("Ravjot");
+        str.add("Chani");
+        str.add("Herman");
+        str.add("YoYo"); 
             }
 
     @Override
@@ -52,9 +63,19 @@ public class EnterCodeUIController implements Initializable, IScreenController {
         this.screenPage = screenPage;
     }
 @FXML
-    public void submitAction1() {
-        animatedMovement(-1269, 0);
-            
+    public void submitAction1() throws Exception {
+        int j=0;
+        for(int i =0;i<str.size();i++)
+        { System.out.println(str.size());
+        
+           // gridpane.getChildren().add(new dynamicloading());
+        dynamicloading dl = new dynamicloading();
+        dl.getController().setProducer(str.get(i));
+        if(i%4==0&&i>0)
+        {j++;
+        }gridpane.add(dl, i%4, j);
+        }
+        animatedMovement(-1269, 0);    
         }
     @FXML
     public void submitAction3() {

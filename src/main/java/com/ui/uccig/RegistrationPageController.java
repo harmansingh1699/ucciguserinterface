@@ -120,7 +120,7 @@ public class RegistrationPageController implements Initializable, IScreenControl
                     req.setPassword(binding.getPassword());
                     req.setEmailAddress(binding.getEmailAddress());
                   
-                    req.setLastName(binding.getname());
+                    req.setFullName(binding.getname());
                     try {
                         CommonResponseAttributes response= port.getUserOperationsPort().registerUser(req);  
                         if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {

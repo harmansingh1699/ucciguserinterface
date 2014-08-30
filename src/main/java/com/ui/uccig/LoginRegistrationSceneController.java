@@ -51,61 +51,60 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
 
     @FXML
     private PasswordField loginpassword;
-    
+
     @FXML
     ImageView bg;
-    
+
     @FXML
     private TextField name;
-    
+
     @FXML
     private TextField pusername;
-    
+
     @FXML
     private PasswordField password;
-    
+
     @FXML
     private PasswordField rpassword;
-    
+
     @FXML
     private TextField email;
-    
+
     @FXML
     private TextField forgotPasswordEmailAddressField;
-    
+
     @FXML
     private TextField forgotPasswordPassCodeField;
-     
+
     @FXML
     private TextField forgotPasswordPasswordField;
-    
+
     @FXML
     private TextField forgotPasswordRePasswordField;
-    
-    
+
     @FXML
     private Pane registrationPane;
-    
+
     @FXML
     private Pane resetPasswordPane;
-    
+
     @FXML
     private Pane forgotPasswordPane;
-    
 
     private LoginSceneBinding binding;
     private RegistrationPageBinding binding1;
     private ForgotPasswordBinding binding2;
 
-     /**
+    /**
      * Initializes the controller class.
+     *
      * @param url
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         binding = new LoginSceneBinding();
-        binding1=new RegistrationPageBinding();
-        binding2=new ForgotPasswordBinding();
+        binding1 = new RegistrationPageBinding();
+        binding2 = new ForgotPasswordBinding();
         resetPasswordPane.setVisible(false);
         forgotPasswordPane.setVisible(false);
         registrationPane.setVisible(true);
@@ -141,101 +140,117 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
             InvokeAnimation.attentionSeekerWobble(loginpassword);
             loginpassword.setPromptText("Password is incorrect");
         } else {
-           
+
             Task task = new Task<Void>() {
                 @Override
                 public Void call() {
-                    UserOperationsService_Service port=new UserOperationsService_Service();
-                    InsuranceLoginRequest req=new InsuranceLoginRequest(); 
+                    UserOperationsService_Service port = new UserOperationsService_Service();
+                    InsuranceLoginRequest req = new InsuranceLoginRequest();
                     req.setUserId(binding.getUsername());
                     req.setPassword(binding.getPassword());
                     try {
-                        InsuranceLoginResponse response= port.getUserOperationsPort().loginUser(req);
-                       
+                        InsuranceLoginResponse response = port.getUserOperationsPort().loginUser(req);
                         if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
-                            successMessage("You are successfully logged in"); 
-                            ((NextScreenController)(screenPage.getControlledScreen("NextScreen"))).setReceivedemailaddress(response.getUserEmailAddress());
-                            System.out.println(response.getUserEmailAddress()+" "+response.getLoggedInUserEmailAddress());
+                            successMessage("You are successfully logged in");
+                            ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setReceivedemailaddress(response.getUserEmailAddress());
+                            ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setReceivedname(response.getUserFullName());
+                            ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setReceivedname(response.getBranch());
+                            ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setReceivedname(response.getCurrentDate());
+                            System.out.println(response.getUserEmailAddress() + " " + response.getLoggedInUserEmailAddress());
                             screenPage.setScreen("NextScreen");
-                        }    
+                        } else {
+                            errors(response.getErrorMessage());
+                        }
                     } catch (Exception ex) {
                         Logger.getLogger(LoginRegistrationSceneController.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                   return null;
+                    return null;
                 }
 
             };
             new Thread(task).start();
         }
     }
-    
+
     @FXML
     public void submitAction1() {
+        if (CommonValidations.isStringEmpty(binding1.getUsername())) {
+            InvokeAnimation.attentionSeekerWobble(pusername);
+            pusername.setPromptText("Prefered username field cannot be empty");
+        } else if (CommonValidations.isStringEmpty(binding1.getPassword())) {
+            InvokeAnimation.attentionSeekerWobble(password);
+            password.setPromptText("Password field cannot be empty");
+        } else if (CommonValidations.isStringEmpty(binding1.getRPassword())) {
+            InvokeAnimation.attentionSeekerWobble(rpassword);
+            rpassword.setPromptText("Password field cannot be empty");
+        } else if (!binding1.getRPassword().equals(binding1.getPassword())) {
+            InvokeAnimation.attentionSeekerWobble(rpassword);
+            rpassword.setPromptText("Password does not match");
+        } else if (CommonValidations.isValidEmailAddress(binding1.getEmailAddress())) {
+            InvokeAnimation.attentionSeekerWobble(email);
+            email.setPromptText("Please enter valid email address");
+        } else {
             Task task = new Task<Void>() {
                 @Override
                 public Void call() {
-                    UserOperationsService_Service port=new UserOperationsService_Service();
-                    InsuranceRegistrationRequest req1=new InsuranceRegistrationRequest(); 
+                    UserOperationsService_Service port = new UserOperationsService_Service();
+                    InsuranceRegistrationRequest req1 = new InsuranceRegistrationRequest();
                     req1.setUserId(binding1.getUsername());
                     req1.setPassword(binding1.getPassword());
                     req1.setEmailAddress(binding1.getEmailAddress());
-                    req1.setLastName(binding1.getname());
+                    req1.setFullName(binding1.getname());
                     try {
-                        CommonResponseAttributes response= port.getUserOperationsPort().registerUser(req1);  
+                        CommonResponseAttributes response = port.getUserOperationsPort().registerUser(req1);
                         if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
                             successMessage("You are successfully registered, Kindly login");
-                        } 
-                        else {
+                        } else {
                             errors(response.getErrorMessage());
-                    } 
-                    }
-                    catch (com.rav.insurance.useroperations.webservice.Exception ex) {
+                        }
+                    } catch (com.rav.insurance.useroperations.webservice.Exception ex) {
                         Logger.getLogger(RegistrationPageController.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                   return null;
+                    return null;
                 }
 
             };
             new Thread(task).start();
         }
-    
+    }
+
     public void submitAction2() {
         resetPasswordPane.setVisible(false);
         forgotPasswordPane.setVisible(true);
         registrationPane.setVisible(false);
     }
-    
-    public void submitAction3()
-    { if (!CommonValidations.isValidEmailAddress(binding2.getForgotPasswordEmailAddressField())) {
+
+    public void submitAction3() {
+        if (!CommonValidations.isValidEmailAddress(binding2.getForgotPasswordEmailAddressField())) {
             InvokeAnimation.attentionSeekerWobble(forgotPasswordEmailAddressField);
             forgotPasswordEmailAddressField.setPromptText("Please enter Email Address");
-        }  else {
-           
+        } else {
+
             Task task = new Task<Void>() {
                 @Override
                 public Void call() {
-            
-                    UserOperationsService_Service port=new UserOperationsService_Service();
-            
-                    InsuranceForgotCredentialRequest req=new InsuranceForgotCredentialRequest(); 
-            
+
+                    UserOperationsService_Service port = new UserOperationsService_Service();
+
+                    InsuranceForgotCredentialRequest req = new InsuranceForgotCredentialRequest();
+
                     req.setEmailAddress(binding2.getForgotPasswordEmailAddressField());
-            
+
                     try {
-                        CommonResponseAttributes response= port.getUserOperationsPort().forgotPassword(req);
-                       System.out.println("5");
+                        CommonResponseAttributes response = port.getUserOperationsPort().forgotPassword(req);
+
                         if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
-                            System.out.println("5");
-                            successMessage("Please check your Email"); 
                             resetPasswordPane.setVisible(true);
                             forgotPasswordPane.setVisible(false);
                             registrationPane.setVisible(false);
-                        }    
+                        }
                     } catch (Exception ex) {
-                        System.out.println("6");
                         Logger.getLogger(LoginRegistrationSceneController.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                   return null;
+                    return null;
                 }
 
             };
@@ -243,52 +258,53 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
         }
     }
 
-    public void submitAction4()
-    { if (CommonValidations.isStringEmpty(binding2.getforgotPasswordPassCodeField())) {
-            
+    public void submitAction4() {
+        if (CommonValidations.isStringEmpty(binding2.getforgotPasswordPassCodeField())) {
             InvokeAnimation.attentionSeekerWobble(forgotPasswordPassCodeField);
             forgotPasswordPassCodeField.setPromptText("Please enter secret code received in email");
-            
         } else if (CommonValidations.isStringEmpty(binding2.getforgotPasswordPasswordField())) {
-            
             InvokeAnimation.attentionSeekerWobble(forgotPasswordPasswordField);
             forgotPasswordPasswordField.setPromptText("You can't leave password field empty");
         } else if (CommonValidations.isStringEmpty(binding2.getforgotPasswordRePasswordField())) {
             InvokeAnimation.attentionSeekerWobble(forgotPasswordRePasswordField);
             forgotPasswordRePasswordField.setPromptText("You can't leave Re-enter password field empty");
-        } 
-    else {
-           
+        } else if (binding2.getforgotPasswordPasswordField().equals(binding2.getforgotPasswordRePasswordField())) {
+            InvokeAnimation.attentionSeekerWobble(forgotPasswordRePasswordField);
+            forgotPasswordRePasswordField.setPromptText("Password does not match");
+        } else {
+
             Task task = new Task<Void>() {
                 @Override
                 public Void call() {
-                    UserOperationsService_Service port=new UserOperationsService_Service();
-                     
-                    InsuranceUpdateCredentialRequest req=new InsuranceUpdateCredentialRequest(); 
-                     
+                    UserOperationsService_Service port = new UserOperationsService_Service();
+
+                    InsuranceUpdateCredentialRequest req = new InsuranceUpdateCredentialRequest();
+
                     req.setNewPassword(binding2.getforgotPasswordPasswordField());
-                     
+
                     req.setPassword(binding2.getforgotPasswordRePasswordField());
-                     
+
                     req.setCode(binding2.getforgotPasswordPassCodeField());
-                     
+
                     try {
-                     
-                        CommonResponseAttributes response= port.getUserOperationsPort().updatePassword(req);
-                       
+
+                        CommonResponseAttributes response = port.getUserOperationsPort().updatePassword(req);
+
                         if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
-                     
-                            successMessage("Please login with the new password"); 
+
+                            successMessage("Password has been updated.Please login with the new password");
+                            InvokeAnimation.attentionSeekerWobble(loginusername);
                             resetPasswordPane.setVisible(false);
                             forgotPasswordPane.setVisible(false);
                             registrationPane.setVisible(true);
-                        } 
-                        System.out.println(response.getErrorMessage());
-                        
+                        } else {
+                            System.out.println(response.getErrorMessage());
+                        }
+
                     } catch (Exception ex) {
                         Logger.getLogger(LoginRegistrationSceneController.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                   return null;
+                    return null;
                 }
 
             };
@@ -296,15 +312,15 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
         }
     }
 
-    
     public void successMessage(final String message) {
         Platform.runLater(new Runnable() {
             public void run() {
                 Dialogs.showInformationDialog(null, message, "Success", "Success");
-                    
+
             }
         });
     }
+
     public void errors(final String message) {
         Platform.runLater(new Runnable() {
             public void run() {

@@ -20,9 +20,9 @@ public class MainApp extends Application {
     @Override
     public void start(final Stage stage) throws Exception {
         ScreenNavigator screenNavigator = new ScreenNavigator();
-     // screenNavigator.loadScreen("FirstScreen", "/fxml/EnterCodeUI.fxml");
-        screenNavigator.loadScreen("FirstScreen", "/fxml/LoginRegistrationSceneFXML.fxml");
-        screenNavigator.loadScreen("NextScreen", "/fxml/NextScreen.fxml");
+     screenNavigator.loadScreen("FirstScreen", "/fxml/EnterCodeUI.fxml");
+      //  screenNavigator.loadScreen("FirstScreen", "/fxml/LoginRegistrationSceneFXML.fxml");
+       // screenNavigator.loadScreen("NextScreen", "/fxml/NextScreen.fxml");
       
 
          screenNavigator.setScreen("FirstScreen");

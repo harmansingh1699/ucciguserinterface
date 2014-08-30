@@ -16,6 +16,7 @@ import com.ui.binding.FormEntry1Binding;
 import com.ui.binding.FormEntry2Binding;
 import com.ui.binding.FormEntry3Binding;
 import java.net.URL;
+import java.util.Date;
 import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -311,6 +312,24 @@ public class NextScreenController implements Initializable , IScreenController {
     
      private String receivedemailaddress;
      private String receivedname;
+     private String branch;
+     private Date date;
+
+    public String getBranch() {
+        return branch;
+    }
+
+    public void setBranch(String branch) {
+        this.branch = branch;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
     public String getReceivedname() {
         return receivedname;
@@ -721,63 +740,133 @@ public class NextScreenController implements Initializable , IScreenController {
     public void submitFormAction() {
        
             
-            Task task = new Task<Void>() {
-                @Override
-                public Void call() throws Exception {
-                    
-                    InsuranceOperationsService_Service port=new InsuranceOperationsService_Service();
-                    InsuranceFormSubmitRequest req1=new InsuranceFormSubmitRequest(); 
-                    req1.setKeyContact(binding.getKeyContact());
-                    req1.setKeyContactEmailAddress(binding.getKeyEmail());
-                    req1.setKeyContactPhone(binding.getKeyPhone());
-                    req1.setSecondayContact(binding.getSecondaryContact());
-                    req1.setSecondayContactEmailAddress(binding.getSecondaryEmail());
-                    req1.setSecondayContactPhone(binding.getSecondaryPhone());
-                    req1.setBusinessName(binding.getBusinessName());
-                    req1.setMailingAddress(binding.getMailingAddress());
-                    req1.setFax(binding.getFax());
-                    req1.setWebSiteURL(binding.getWebsite());
-                    req1.setRelatedExperience(binding.getRelatedExperience());
-                    req1.setOwner1(binding.getOwner1());
-                    req1.setOwner2(binding.getOwner2());
-                    req1.setOwner3(binding.getOwner3());
-                    req1.setOwner4(binding.getOwner4());
-                    req1.setBoardOfDirector1(binding.getBod1());
-                    req1.setBoardOfDirector2(binding.getBod2());
-                    req1.setBoardOfDirector3(binding.getBod3());
-                    req1.setBoardOfDirector4(binding.getBod4());
-                  /*  req1.setNoOfStaff(Integer.parseInt(binding2.getNoofStaff()));
-                    req1.setPayRoll(Integer.parseInt(binding2.getpayroll()));*/
-                    req1.setDescriptionOfOperationsAndRevenue1(binding2.getdescriptionOfOpAndRev1());
-                    req1.setDescriptionOfOperationsAndRevenue2(binding2.getdescriptionOfOpAndRev2());
-                    req1.setDescriptionOfOperationsAndRevenue3(binding2.getdescriptionOfOpAndRev3());
-                    req1.setDescriptionOfOperationsAndRevenue4(binding2.getdescriptionOfOpAndRev4());
-               /*     req1.setAmount1(Double.parseDouble(binding2.getamount1()));
-                    req1.setAmount2(Double.parseDouble(binding2.getamount2()));
-                    req1.setAmount3(Double.parseDouble(binding2.getamount3()));
-                    req1.setAmount4(Double.parseDouble(binding2.getamount4()));*/
-                   req1.setLoggedInUserEmailAddress(getReceivedemailaddress());
-                    
-                    
-                    try {
-                        InsuranceFormSubmitResponse response= port.getInsuranceOperationsPort().formSubmission(req1);
-                        if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
-                            successMessage("Form has been submitted. Your Form id is:"+response.getFormId());
-                           
-                        } 
-                        else {
-                            errors(response.getErrorMessage());
-                    } 
-                    }
-                    catch (com.rav.insurance.insuranceformoperations.webservice.Exception ex) {
+            Task task;
+        task = new Task<Void>() {
+            @Override
+            public Void call() throws Exception {
+                
+                InsuranceOperationsService_Service port=new InsuranceOperationsService_Service();
+                InsuranceFormSubmitRequest req1=new InsuranceFormSubmitRequest();
+                req1.setSeverity(binding.getSeverity());
+                req1.setEntityType(binding.getEntityType());
+                req1.setFinancialYearEnd(binding2.getfinYearEnd());
+                req1.setGroupBenefits(binding2.getgroupBenefits());
+                req1.setPensionPlan(binding2.getpensionPlan());
+                req1.setCurrency1(binding2.getcurrency1());
+                req1.setCurrency2(binding2.getcurrency2());
+                req1.setCurrency3(binding2.getcurrency3());
+                req1.setCurrency4(binding2.getCurrency4());
+                req1.setEcommerce(binding2.geteCommerce());
+                req1.setProfessionalLiability(binding2.getprofLiability());
+                req1.setCyberLiability(binding2.getcyberLiability());
+                req1.setPollutionexposure(binding2.getpollExposure());
+                req1.setAccidentalBenefits(binding2.getaccBenefits());
+                req1.setMalpracticeExposure(binding2.getmalExposure());
+                req1.setAbuseExposure(binding2.getabuseExposure());
+                req1.setBondingOpportunities(binding2.getbondOpportunity());
+                req1.setBusinessInterruptionSheet(binding3.getbiw());
+                req1.setProfit(binding.getProfit());
+                req1.setAddressOfLocationOwnedyes1(binding3.getaolownedy1());
+                req1.setAddressOfLocationOwnedyes2(binding3.getaolownedy2());
+                req1.setAddressOfLocationOwnedyes3(binding3.getaolownedy3());
+                req1.setAddressOfLocationOwnedno1(binding3.getaolownedy4());
+                req1.setKeyContact(binding.getKeyContact());
+                req1.setKeyContactEmailAddress(binding.getKeyEmail());
+                req1.setKeyContactPhone(binding.getKeyPhone());
+                req1.setSecondayContact(binding.getSecondaryContact());
+                req1.setSecondayContactEmailAddress(binding.getSecondaryEmail());
+                req1.setSecondayContactPhone(binding.getSecondaryPhone());
+                req1.setBusinessName(binding.getBusinessName());
+                req1.setMailingAddress(binding.getMailingAddress());
+                req1.setFax(binding.getFax());
+                req1.setWebSiteURL(binding.getWebsite());
+                req1.setRelatedExperience(binding.getRelatedExperience());
+                req1.setOwner1(binding.getOwner1());
+                req1.setOwner2(binding.getOwner2());
+                req1.setOwner3(binding.getOwner3());
+                req1.setOwner4(binding.getOwner4());
+                req1.setBoardOfDirector1(binding.getBod1());
+                req1.setBoardOfDirector2(binding.getBod2());
+                req1.setBoardOfDirector3(binding.getBod3());
+                req1.setBoardOfDirector4(binding.getBod4());
+                /*req1.setNoOfStaff(Integer.parseInt(binding2.getNoofStaff()));
+                req1.setPayRoll(Integer.parseInt(binding2.getpayroll()));*/
+                req1.setDescriptionOfOperationsAndRevenue1(binding2.getdescriptionOfOpAndRev1());
+                req1.setDescriptionOfOperationsAndRevenue2(binding2.getdescriptionOfOpAndRev2());
+                req1.setDescriptionOfOperationsAndRevenue3(binding2.getdescriptionOfOpAndRev3());
+                req1.setDescriptionOfOperationsAndRevenue4(binding2.getdescriptionOfOpAndRev4());
+                /*     req1.setAmount1(Double.parseDouble(binding2.getamount1()));
+                req1.setAmount2(Double.parseDouble(binding2.getamount2()));
+                req1.setAmount3(Double.parseDouble(binding2.getamount3()));
+                req1.setAmount4(Double.parseDouble(binding2.getamount4()));*/
+                //  req1.setLoggedInUserEmailAddress(getReceivedemailaddress());
+                req1.setTotalSale(Double.parseDouble(binding2.gettotalSale()));
+                req1.setPercentageOfUSSales(Double.parseDouble(binding2.getperOfUsSales()));
+                req1.setOnpremises(Integer.parseInt(binding2.getperOfOnPremises()));
+                req1.setOffpremises(Integer.parseInt(binding2.getperOfOffPremises()));
+                req1.setResidential(Integer.parseInt(binding2.getperOfResidential()));
+                req1.setCommercial(Integer.parseInt(binding2.getperOfCommercial()));
+                req1.setSubcontracted(Integer.parseInt(binding2.getperOfSubContracted()));
+                req1.setLargestCustomerOrProject1(binding2.getlargestCustomerOrProject1());
+                req1.setLargestCustomerOrProject2(binding2.getlargestCustomerOrProject2());
+                req1.setLargestCustomerOrProject3(binding2.getlargestCustomerOrProject3());
+                req1.setLargestCustomerOrProject4(binding2.getlargestCustomerOrProject4());
+                req1.setLargestSuppliers1(binding2.getlargestSuppliers1());
+                req1.setLargestSuppliers2(binding2.getlargestSuppliers2());
+                req1.setLargestSuppliers3(binding2.getlargestSuppliers3());
+                req1.setLargestSuppliers4(binding2.getlargestSuppliers4());
+                req1.setFutureOpportunitiesOrPlanOfGrowth(binding3.getfutureopportunity());
+                req1.setDescribeCompetition(binding3.getdescribecompetition());
+                req1.setBusinessAsset(binding3.getbusinessapart());
+                req1.setAdvertising(binding3.getadvertising());
+                req1.setDurationIncaseOfSeriousClaims(binding3.getrecover());
+                req1.setPastClaimAmount1(Double.parseDouble(binding3.getclaimamount1()));
+                req1.setPastClaimAmount2(Double.parseDouble(binding3.getclaimamount2()));
+                req1.setPastClaimAmount3(Double.parseDouble(binding3.getclaimamount3()));
+                req1.setCurrentInsuranceType1(binding3.getciptype1());
+                req1.setCurrentInsuranceType2(binding3.getciptype2());
+                req1.setCurrentInsuranceType3(binding3.getciptype3());
+                req1.setCurrentInsuranceCarrier1(binding3.getcipcarrier1());
+                req1.setCurrentInsuranceCarrier2(binding3.getcipcarrier2());
+                req1.setCurrentInsuranceCarrier3(binding3.getcipcarrier3());
+                req1.setLineHolders1(binding3.getlienholder1());
+                req1.setLineHolders2(binding3.getlienholder2());
+                req1.setLienHolders3(binding3.getlienholder3());
+                req1.setLineHoldersLoc1(binding3.getloc1());
+                req1.setLineHoldersLoc2(binding3.getloc2());
+                req1.setLineHoldersLoc3(binding3.getloc3());
+                req1.setAddressOfLocation1(binding3.getaoladdress1());
+                req1.setAddressOfLocation2(binding3.getaoladdress2());
+                req1.setAddressOfLocation3(binding3.getaoladdress3());
+                req1.setAddressOfLocation4(binding3.getaoladdress4());
+                req1.setAddressOfLocationUse1(binding3.getaoluse1());
+                req1.setAddressOfLocationUse2(binding3.getaoluse2());
+                req1.setAddressOfLocationUse3(binding3.getaoluse3());
+                req1.setAddressOfLocationUse4(binding3.getaoluse4());
+                req1.setLocationRentedToOthers1(binding3.getlrtooccupancy1());
+                req1.setLocationRentedToOthers3(binding3.getlrtooccupancy3());
+                req1.setLocationRentedToOthers2(binding3.getlrtooccupancy2());
+                req1.setLocationRentedToOthers4(binding3.getlrtooccupancy4());
+                
+                try {
+                    InsuranceFormSubmitResponse response= port.getInsuranceOperationsPort().formSubmission(req1);
+                    if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
+                        successMessage("Form has been submitted. Your Form id is:"+response.getFormId());
                         
-                       
-                        Logger.getLogger(RegistrationPageController.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                   return null;
+                    else {
+                        errors(response.getErrorMessage());
+                    }
                 }
-
-            };
+                catch (com.rav.insurance.insuranceformoperations.webservice.Exception ex) {
+                    
+                    
+                    Logger.getLogger(RegistrationPageController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                return null;
+            }
+            
+        };
             new Thread(task).start();
     }
     

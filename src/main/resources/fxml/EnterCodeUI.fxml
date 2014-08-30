@@ -87,91 +87,17 @@
         <Image url="@../images/greywhite.jpg" />
       </image>
     </ImageView>
-    <GridPane alignment="CENTER" gridLinesVisible="false" layoutX="1281.0" layoutY="43.0" prefHeight="610.0" prefWidth="1241.0">
+    <GridPane fx:id="gridpane" alignment="CENTER" gridLinesVisible="false" layoutX="1281.0" layoutY="43.0" prefHeight="610.0" prefWidth="1241.0">
       <children>
-        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
-          <children>
-            <AnchorPane id="AnchorPane" minHeight="85.0" minWidth="0.0" prefHeight="85.00009999999747" prefWidth="286.0">
-              <children>
-                <ImageView fitHeight="85.0" fitWidth="286.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="false">
-                  <image>
-                    <Image url="@../../../../../../Desktop/background.jpg" />
-                  </image>
-                </ImageView>
-                <Label layoutX="152.0" layoutY="38.0" text="ID:">
-                  <font>
-                    <Font name="Times Bold" size="15.0" fx:id="x2" />
-                  </font>
-                </Label>
-                <Label font="$x2" layoutX="13.0" layoutY="64.0" text="Business Name:" />
-                <Label font="$x2" layoutX="14.0" layoutY="38.0" text="Producer:" />
-                <Label font="$x2" layoutX="159.0" layoutY="11.0" text="Severity:" />
-                <Label font="$x2" layoutX="13.0" layoutY="11.0" text="Date:" />
-                <Label layoutX="53.0" layoutY="12.0" prefWidth="82.9998779296875" text="13/08/2014" textFill="$x3">
-                  <font>
-                    <Font name="Times Bold" size="14.0" fx:id="x4" />
-                  </font>
-                </Label>
-                <Label font="$x4" layoutX="227.0" layoutY="12.0" text="High" textFill="RED" />
-                <Label font="$x4" layoutX="82.0" layoutY="38.0" text="ehansgh" textFill="$x3" />
-                <Label font="$x4" layoutX="179.0" layoutY="38.0" text="UCCIG123456" textFill="$x3" />
-                <Label font="$x4" layoutX="123.0" layoutY="63.0" text="UCCIG Pvt. Ltd." textFill="$x3" />
-              </children>
-            </AnchorPane>
-          </children>
-        </HBox>
-        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
-          <children>
-            <AnchorPane id="AnchorPane" minHeight="85.0" minWidth="0.0" prefHeight="85.00009999999747" prefWidth="286.0">
-              <children>
-                <ImageView fitHeight="85.0" fitWidth="286.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="false">
-                  <image>
-                    <Image url="@../../../../../../Desktop/background.jpg" />
-                  </image>
-                </ImageView>
-                <Label font="$x2" layoutX="152.0" layoutY="38.0" text="ID:" />
-                <Label font="$x2" layoutX="13.0" layoutY="64.0" text="Business Name:" />
-                <Label font="$x2" layoutX="14.0" layoutY="38.0" text="Producer:" />
-                <Label font="$x2" layoutX="159.0" layoutY="11.0" text="Severity:" />
-                <Label font="$x2" layoutX="13.0" layoutY="11.0" text="Date:" />
-                <Label font="$x4" layoutX="57.0" layoutY="12.0" prefWidth="82.9998779296875" text="10/08/2014" textFill="$x3" />
-                <Label font="$x4" layoutX="221.0" layoutY="12.0" text="Medium" textFill="#ff7a00" />
-                <Label font="$x4" layoutX="82.0" layoutY="38.0" text="ehansgh" textFill="$x3" />
-                <Label font="$x4" layoutX="179.0" layoutY="38.0" text="UCCIG1435" textFill="$x3" />
-                <Label font="$x4" layoutX="122.0" layoutY="64.0" text="Queen's University" textFill="$x3" />
-              </children>
-            </AnchorPane>
-          </children>
-        </HBox>
-        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
-          <children>
-            <HBox alignment="CENTER" prefHeight="94.0" prefWidth="310.0" />
-          </children>
-        </HBox>
-        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="0">
-          <children>
-            <AnchorPane id="AnchorPane" minHeight="85.0" minWidth="0.0" prefHeight="85.00009999999747" prefWidth="286.0">
-              <children>
-                <ImageView fitHeight="85.0" fitWidth="286.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="false">
-                  <image>
-                    <Image url="@../../../../../../Desktop/background.jpg" />
-                  </image>
-                </ImageView>
-                <Label font="$x2" layoutX="152.0" layoutY="38.0" text="ID:" />
-                <Label font="$x2" layoutX="13.0" layoutY="64.0" text="Business Name:" />
-                <Label font="$x2" layoutX="14.0" layoutY="38.0" text="Producer:" />
-                <Label font="$x2" layoutX="159.0" layoutY="11.0" text="Severity:" />
-                <Label font="$x2" layoutX="13.0" layoutY="11.0" text="Date:" />
-                <Label font="$x4" layoutX="57.0" layoutY="12.0" prefWidth="82.9998779296875" text="1/07/2014" textFill="$x3" />
-                <Label font="$x4" layoutX="227.0" layoutY="12.0" text="Low" textFill="#fff500" />
-                <Label font="$x4" layoutX="82.0" layoutY="38.0" text="ehansgh" textFill="$x3" />
-                <Label font="$x4" layoutX="184.0" layoutY="38.0" text="UCCIG1543" textFill="$x3" />
-                <Label font="$x4" layoutX="123.0" layoutY="63.0" text="Bradley's Insruance" textFill="$x3" />
-              </children>
-            </AnchorPane>
-          </children>
-        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="1" />
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
       </children>
       <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -180,13 +106,13 @@
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       </columnConstraints>
       <rowConstraints>
-        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="88.0" minHeight="10.0" prefHeight="88.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="87.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="87.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="87.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="87.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="87.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="87.0" vgrow="SOMETIMES" />
       </rowConstraints>
     </GridPane>
     <Label font="$x5" layoutX="1834.0" layoutY="14.0" text="Search Result(s)" textFill="#1400ff" />
@@ -195,7 +121,7 @@
         <Image url="@../images/bg.jpeg" />
       </image>
     </ImageView>
-    <BorderPane id="registrationPane" fx:id="searcharchive" layoutX="361.0" layoutY="870.0" prefHeight="445.0" prefWidth="547.0" style="-fx-background-color: rgba(245,245,245, 0.8);&#10;-fx-background-radius: 10;">
+    <BorderPane id="registrationPane" fx:id="searcharchive" layoutX="161.0" layoutY="870.0" prefHeight="445.0" prefWidth="547.0" style="-fx-background-color: rgba(245,245,245, 0.8);&#10;-fx-background-radius: 10;">
       <bottom>
         <VBox prefHeight="384.0" prefWidth="483.0">
           <children>
@@ -300,7 +226,11 @@
                       <children>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                           <children>
-                            <RadioButton font="$x4" graphicTextGap="4.0" mnemonicParsing="false" text="Yes" textAlignment="LEFT" />
+                            <RadioButton graphicTextGap="4.0" mnemonicParsing="false" text="Yes" textAlignment="LEFT">
+                              <font>
+                                <Font name="Times Bold" size="14.0" fx:id="x4" />
+                              </font>
+                            </RadioButton>
                           </children>
                         </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
@@ -442,7 +372,10 @@
                           <children>
                             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                               <children>
-                                <Label font="$x2" prefWidth="83.0" text="Producer:">
+                                <Label prefWidth="83.0" text="Producer:">
+                                  <font>
+                                    <Font name="Times Bold" size="15.0" fx:id="x2" />
+                                  </font>
                                   <HBox.margin>
                                     <Insets left="20.0" fx:id="x10" />
                                   </HBox.margin>

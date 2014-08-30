@@ -36,16 +36,10 @@ public class FormEntry3Binding {
     private StringProperty ciptype3;
     private StringProperty cipcarrier1;
     private StringProperty cipcarrier2;
-    private StringProperty cipcarrier3;
-    private StringProperty cipexpiryyyyy1;
-    private StringProperty cipexpiryyyyy2;
-    private StringProperty cipexpiryyyyy3;
+    private StringProperty cipcarrier3;           
     private StringProperty cipexpirymm1;
     private StringProperty cipexpirymm2;
-    private StringProperty cipexpirymm3;
-    private StringProperty cipexpirydd1;   
-    private StringProperty cipexpirydd2;
-    private StringProperty cipexpirydd3;
+    private StringProperty cipexpirymm3;    
     private StringProperty lienholder1;
     private StringProperty lienholder2;
     private StringProperty lienholder3;
@@ -103,9 +97,9 @@ public class FormEntry3Binding {
         cipcarrier1=new SimpleStringProperty();
         cipcarrier2=new SimpleStringProperty();
         cipcarrier3=new SimpleStringProperty();
-        cipexpiryyyyy1=new SimpleStringProperty();
         cipexpirymm1=new SimpleStringProperty();
-        cipexpirydd1=new SimpleStringProperty();
+        cipexpirymm2=new SimpleStringProperty();
+        cipexpirymm3=new SimpleStringProperty();
         lienholder1=new SimpleStringProperty();
         lienholder2=new SimpleStringProperty();
         lienholder3=new SimpleStringProperty();
@@ -461,18 +455,6 @@ public class FormEntry3Binding {
         return this.cipcarrier3;
     }
     
-    public String getcipexpiryyyyy1() {
-        return (String) this.cipexpiryyyyy1.get();
-    }
-
-    public void setcipexpiryyyyy1(String cipexpiryyyyy1) {
-        this.cipexpiryyyyy1.set(cipexpiryyyyy1);
-    }
-
-    public StringProperty cipexpiryyyyy1Property() {
-        return this.cipexpiryyyyy1;
-    }
-    
     public String getcipexpirymm1() {
         return (String) this.cipexpirymm1.get();
     }
@@ -485,16 +467,28 @@ public class FormEntry3Binding {
         return this.cipexpirymm1;
     }
     
-    public String getcipexpirydd1() {
-        return (String) this.cipexpirydd1.get();
+    public String getcipexpirymm2() {
+        return (String) this.cipexpirymm2.get();
     }
 
-    public void setcipexpirydd1(String cipexpirydd1) {
-        this.cipexpirydd1.set(cipexpirydd1);
+    public void setcipexpirymm2(String cipexpirymm2) {
+        this.cipexpirymm2.set(cipexpirymm2);
     }
 
-    public StringProperty cipexpirydd1Property() {
-        return this.cipexpirydd1;
+    public StringProperty cipexpirymm2Property() {
+        return this.cipexpirymm2;
+    }
+    
+    public String getcipexpirymm3() {
+        return (String) this.cipexpirymm3.get();
+    }
+
+    public void setcipexpirymm3(String cipexpirymm3) {
+        this.cipexpirymm3.set(cipexpirymm3);
+    }
+
+    public StringProperty cipexpirymm3Property() {
+        return this.cipexpirymm3;
     }
     
     public String getlienholder1() {
@@ -795,7 +789,7 @@ public class FormEntry3Binding {
     }
 
     public StringProperty aolownedy2Property() {
-        return this.aolownedy3;
+        return this.aolownedy2;
     }
     
      public String getaoluse2() {
