@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.ui.uccig;
 
 import com.calendar.DatePicker;
@@ -20,8 +19,10 @@ import com.ui.binding.FormEntry3Binding;
 import com.ui.util.CommonValidations;
 import com.ui.util.SavingFile;
 import com.ui.util.savinglocally;
+import java.io.File;
 import java.net.URL;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -39,6 +40,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Dialogs;
@@ -50,8 +52,10 @@ import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.stage.Window;
 import javafx.util.Duration;
 
 /**
@@ -59,10 +63,18 @@ import javafx.util.Duration;
  *
  * @author harsimransingh
  */
-public class NextScreenController implements Initializable , IScreenController {
+public class NextScreenController implements Initializable, IScreenController {
 
     private ScreenNavigator screenPage;
+
+    @FXML
+    private Label uploadlabel;
+
+    @FXML
+    private Button upload;
     
+    private List<File> fileList;
+
     @FXML
     private ChoiceBox<String> severity;
     @FXML
@@ -400,6 +412,164 @@ public class NextScreenController implements Initializable , IScreenController {
     private TextField offpremisespowerlimit;
     @FXML
     private TextField offpremisespowerdeductible;
+    @FXML
+    private TextField insideoutsidelimit;
+    @FXML
+    private TextField insideoutsidedeductible;
+    @FXML
+    private TextField bfmoneylimit;
+    @FXML
+    private TextField bfmoneydeductible;
+    @FXML
+    private TextField forgerylimit;
+    @FXML
+    private TextField forgerydeductible;
+    @FXML
+    private TextField moneyorderslimit;
+    @FXML
+    private TextField moneyordersdeductible;
+    @FXML
+    private TextField dishonestylimit;
+    @FXML
+    private TextField dishonestydeductible;
+    @FXML
+    private TextField cgllimit;
+    @FXML
+    private TextField cgldeductible;
+    @FXML
+    private TextField tenantslimit;
+    @FXML
+    private TextField tenantsdeductible;
+    @FXML
+    private TextField nonownedlimit;
+    @FXML
+    private TextField nonowneddeductible;
+    @FXML
+    private TextField sef96limit;
+    @FXML
+    private TextField sef96deductible;
+    @FXML
+    private TextField sef94limit;
+    @FXML
+    private TextField sef94deductible;
+    @FXML
+    private TextField dandlimit;
+    @FXML
+    private TextField danddeductible;
+    @FXML
+    private TextField eanddeductible;
+    @FXML
+    private TextField eandlimit;
+    @FXML
+    private TextField employerslimit;
+    @FXML
+    private TextField employersdeductible;
+    @FXML
+    private TextField umbrellalimit;
+    @FXML
+    private TextField umbrelladeductible;
+    @FXML
+    private TextField wrapuplimit;
+    @FXML
+    private TextField wrapupdeductible;
+    @FXML
+    private TextField stdlimit;
+    @FXML
+    private TextField stddeductible;
+    @FXML
+    private TextField aclimit;
+    @FXML
+    private TextField acdeductible;
+    @FXML
+    private TextField productionmachinerylimit;
+    @FXML
+    private TextField productionmachinerydeductible;
+    @FXML
+    private TextField othercoverage1;
+    @FXML
+    private TextField othercoverage2;
+    @FXML
+    private TextField othercoverage1limit;
+    @FXML
+    private TextField othercoverage1deductible;
+    @FXML
+    private TextField othercoverage2limit;
+    @FXML
+    private TextField othercoverage2deductible;
+    @FXML
+    private TextArea additionalcoverage;
+    @FXML
+    private TextField locationaddress;
+    @FXML
+    private TextField locationage;
+    @FXML
+    private TextField totsqfootage;
+    @FXML
+    private TextField insidesqfootage;
+    @FXML
+    private TextField noofstories;
+    @FXML
+    private ChoiceBox<String> basement;
+    @FXML
+    private CheckBox wallsframe;
+    @FXML
+    private CheckBox wallshcb;
+    @FXML
+    private CheckBox wallssteel;
+    @FXML
+    private CheckBox wallsbrick;
+    @FXML
+    private CheckBox woodjoist;
+    @FXML
+    private CheckBox steeldeck;
+    @FXML
+    private CheckBox roofconcrete;
+    @FXML
+    private CheckBox floorsconcrete;
+    @FXML
+    private CheckBox floorswood;
+    @FXML
+    private CheckBox fagas;
+    @FXML
+    private CheckBox faoil;
+    @FXML
+    private CheckBox heatingelectric;
+    @FXML
+    private CheckBox heatingother;
+    @FXML
+    private CheckBox electricalbreakers;
+    @FXML
+    private CheckBox electricalfuses;
+    @FXML
+    private CheckBox noofamps;
+    @FXML
+    private CheckBox copper;
+    @FXML
+    private CheckBox pvc;
+    @FXML
+    private CheckBox plumbingother;
+    @FXML
+    private CheckBox sprinklers;
+    @FXML
+    private CheckBox svccontract;
+    @FXML
+    private CheckBox hydrant;
+    @FXML
+    private CheckBox firehall;
+    @FXML
+    private CheckBox unprotected;
+    @FXML
+    private CheckBox alarmsystem;
+    @FXML
+    private CheckBox centralmonitored;
+    @FXML
+    private CheckBox windowbars;
+    @FXML
+    private CheckBox deadbolts;
+    
+    
+     
+    
     
     
     
@@ -412,17 +582,17 @@ public class NextScreenController implements Initializable , IScreenController {
     private Pane newBusinessPane;
     @FXML
     ImageView bg;
-   
+
     DatePicker datePicker = new DatePicker();
-    int insurancetypeflag=0;
+    int insurancetypeflag = 0;
     private FormEntry1Binding binding;
     private FormEntry2Binding binding2;
     private FormEntry3Binding binding3;
-    
-     private String receivedemailaddress;
-     private String receivedname;
-     private String branch;
-     private Date date;
+
+    private String receivedemailaddress;
+    private String receivedname;
+    private String branch;
+    private Date date;
 
     public String getBranch() {
         return branch;
@@ -458,19 +628,20 @@ public class NextScreenController implements Initializable , IScreenController {
 
     /**
      * Initializes the controller class.
+     *
      * @param url
      * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+
         binding = new FormEntry1Binding();
-        binding2=new FormEntry2Binding();
-        binding3=new FormEntry3Binding();
+        binding2 = new FormEntry2Binding();
+        binding3 = new FormEntry3Binding();
         fullScreenPane.setVisible(true);
         openingPane.setVisible(true);
         newBusinessPane.setVisible(false);
-        
+
         Bindings.bindBidirectional(keycontact.textProperty(), binding.keyContactProperty());
         Bindings.bindBidirectional(keyphone.textProperty(), binding.keyPhoneProperty());
         Bindings.bindBidirectional(keyemail.textProperty(), binding.keyEmailProperty());
@@ -560,138 +731,149 @@ public class NextScreenController implements Initializable , IScreenController {
         Bindings.bindBidirectional(marketercomments.textProperty(),binding3.marketercommentsProperty());
         Bindings.bindBidirectional(null, null);
       
-        
         //choicebox
         severity.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-        @Override public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) { 
-        if(oldSelection!=null)
-              {binding.setSeverity(newSelection);}       
-        }
+            @Override
+            public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) {
+                if (oldSelection != null) {
+                    binding.setSeverity(newSelection);
+                }
+            }
         });
-        
+
         entitytype.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-        @Override public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) { 
-        if(oldSelection!=null)
-                {binding.setEntityType(newSelection); }
-        }
+            @Override
+            public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) {
+                if (oldSelection != null) {
+                    binding.setEntityType(newSelection);
+                }
+            }
         });
         finYearEnd.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-        @Override public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) { 
-        if(oldSelection!=null)
-                {binding2.setfinYearEnd(newSelection); }
-        }
+            @Override
+            public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) {
+                if (oldSelection != null) {
+                    binding2.setfinYearEnd(newSelection);
+                }
+            }
         });
         groupbenefits.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-        @Override public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) { 
-        if(oldSelection!=null)
-                {binding2.setgroupBenefits(newSelection); }
-        }
+            @Override
+            public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) {
+                if (oldSelection != null) {
+                    binding2.setgroupBenefits(newSelection);
+                }
+            }
         });
         pensionplan.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-        @Override public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) { 
-        if(oldSelection!=null)
-                {binding2.setpensionPlan(newSelection); }
-        }
+            @Override
+            public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) {
+                if (oldSelection != null) {
+                    binding2.setpensionPlan(newSelection);
+                }
+            }
         });
         currency1.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-        @Override public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) { 
-        if(oldSelection!=null)
-                {binding2.setcurrency1(newSelection); }
-        }
+            @Override
+            public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) {
+                if (oldSelection != null) {
+                    binding2.setcurrency1(newSelection);
+                }
+            }
         });
         currency2.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-        @Override public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) { 
-        if(oldSelection!=null)
-                {binding2.setcurrency2(newSelection); }
-        }
+            @Override
+            public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) {
+                if (oldSelection != null) {
+                    binding2.setcurrency2(newSelection);
+                }
+            }
         });
         currency3.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-        @Override public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) { 
-        if(oldSelection!=null)
-                {binding2.setcurrency3(newSelection); }
-        }
+            @Override
+            public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) {
+                if (oldSelection != null) {
+                    binding2.setcurrency3(newSelection);
+                }
+            }
         });
         currency4.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-        @Override public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) { 
-        if(oldSelection!=null)
-                {binding2.setCurrency4(newSelection); }
-        }
+            @Override
+            public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) {
+                if (oldSelection != null) {
+                    binding2.setCurrency4(newSelection);
+                }
+            }
         });
-        
+
         //radio button   
-        ToggleGroup tg= new ToggleGroup();
+        ToggleGroup tg = new ToggleGroup();
         profit.setToggleGroup(tg);
         nonprofit.setToggleGroup(tg);
-        ChangeListener<Toggle> listener1 = new ChangeListener<Toggle>()
-                {        
-         @Override
+        ChangeListener<Toggle> listener1 = new ChangeListener<Toggle>() {
+            @Override
             public void changed(ObservableValue<? extends Toggle> prop, Toggle old, Toggle val) {
-                RadioButton t= (RadioButton)val.getToggleGroup().getSelectedToggle();
+                RadioButton t = (RadioButton) val.getToggleGroup().getSelectedToggle();
                 binding.setProfit(t.getText());
-                }
-                };
+            }
+        };
         tg.selectedToggleProperty().addListener(listener1);
-        
-        ToggleGroup tg1= new ToggleGroup();
+
+        ToggleGroup tg1 = new ToggleGroup();
         aolownedy1.setToggleGroup(tg1);
         aolownedn1.setToggleGroup(tg1);
-        ChangeListener<Toggle> listener10 = new ChangeListener<Toggle>()
-                {        
-         @Override
+        ChangeListener<Toggle> listener10 = new ChangeListener<Toggle>() {
+            @Override
             public void changed(ObservableValue<? extends Toggle> prop, Toggle old, Toggle val) {
-                RadioButton t= (RadioButton)val.getToggleGroup().getSelectedToggle();
+                RadioButton t = (RadioButton) val.getToggleGroup().getSelectedToggle();
                 binding3.setaolownedy1(t.getText());
-                }
-                };
+            }
+        };
         tg1.selectedToggleProperty().addListener(listener10);
-        
-        ToggleGroup tg2= new ToggleGroup();
+
+        ToggleGroup tg2 = new ToggleGroup();
         aolownedy2.setToggleGroup(tg2);
         aolownedn2.setToggleGroup(tg2);
-        ChangeListener<Toggle> listener11 = new ChangeListener<Toggle>()
-                {        
-         @Override
+        ChangeListener<Toggle> listener11 = new ChangeListener<Toggle>() {
+            @Override
             public void changed(ObservableValue<? extends Toggle> prop, Toggle old, Toggle val) {
-                RadioButton t= (RadioButton)val.getToggleGroup().getSelectedToggle();
+                RadioButton t = (RadioButton) val.getToggleGroup().getSelectedToggle();
                 binding3.setaolownedy2(t.getText());
-                }
-                };
+            }
+        };
         tg2.selectedToggleProperty().addListener(listener11);
-        
-        ToggleGroup tg3= new ToggleGroup();
+
+        ToggleGroup tg3 = new ToggleGroup();
         aolownedy3.setToggleGroup(tg3);
         aolownedn3.setToggleGroup(tg3);
-        ChangeListener<Toggle> listener12 = new ChangeListener<Toggle>()
-                {        
-         @Override
+        ChangeListener<Toggle> listener12 = new ChangeListener<Toggle>() {
+            @Override
             public void changed(ObservableValue<? extends Toggle> prop, Toggle old, Toggle val) {
-                RadioButton t= (RadioButton)val.getToggleGroup().getSelectedToggle();
+                RadioButton t = (RadioButton) val.getToggleGroup().getSelectedToggle();
                 binding3.setaolownedy3(t.getText());
-                }
-                };
+            }
+        };
         tg3.selectedToggleProperty().addListener(listener12);
-        
-        ToggleGroup tg4= new ToggleGroup();
+
+        ToggleGroup tg4 = new ToggleGroup();
         aolownedy3.setToggleGroup(tg4);
         aolownedn3.setToggleGroup(tg4);
-        ChangeListener<Toggle> listener13 = new ChangeListener<Toggle>()
-                {        
-         @Override
+        ChangeListener<Toggle> listener13 = new ChangeListener<Toggle>() {
+            @Override
             public void changed(ObservableValue<? extends Toggle> prop, Toggle old, Toggle val) {
-                RadioButton t= (RadioButton)val.getToggleGroup().getSelectedToggle();
+                RadioButton t = (RadioButton) val.getToggleGroup().getSelectedToggle();
                 binding3.setaolownedy4(t.getText());
-                }
-                };
+            }
+        };
         tg4.selectedToggleProperty().addListener(listener13);
-        
-        
+
         //checkbox
         ChangeListener<Boolean> listener = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
-                if(ecommerce.isSelected())
-                {System.out.println("Selected");
-                binding2.seteCommerce("ecommerce selected");
+                if (ecommerce.isSelected()) {
+                    System.out.println("Selected");
+                    binding2.seteCommerce("ecommerce selected");
                 }
             }
         };
@@ -700,435 +882,433 @@ public class NextScreenController implements Initializable , IScreenController {
         ChangeListener<Boolean> listener2 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
-                if(profliability.isSelected())
-                {
-                binding2.setprofLiability("selected");
+                if (profliability.isSelected()) {
+                    binding2.setprofLiability("selected");
                 }
             }
         };
         profliability.selectedProperty().addListener(listener2);
-        
+
         ChangeListener<Boolean> listener3 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
-                if(cyberliability.isSelected())
-                {
-                binding2.setcyberLiability("selected");
+                if (cyberliability.isSelected()) {
+                    binding2.setcyberLiability("selected");
                 }
             }
         };
         cyberliability.selectedProperty().addListener(listener3);
-        
+
         ChangeListener<Boolean> listener4 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
-                if(pollexposure.isSelected())
-                {
-                binding2.setpollExposure("selected");
+                if (pollexposure.isSelected()) {
+                    binding2.setpollExposure("selected");
                 }
             }
         };
         pollexposure.selectedProperty().addListener(listener4);
-        
+
         ChangeListener<Boolean> listener5 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
-                if(accbenefits.isSelected())
-                {
-                binding2.setaccBenefits("selected");
+                if (accbenefits.isSelected()) {
+                    binding2.setaccBenefits("selected");
                 }
             }
         };
         accbenefits.selectedProperty().addListener(listener5);
-        
+
         ChangeListener<Boolean> listener6 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
-                if(malexposure.isSelected())
-                {
-                binding2.setmalExposure("selected");
+                if (malexposure.isSelected()) {
+                    binding2.setmalExposure("selected");
                 }
             }
         };
         malexposure.selectedProperty().addListener(listener6);
-        
+
         ChangeListener<Boolean> listener7 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
-                if(abuseexposure.isSelected())
-                {
-                binding2.setabuseExposure("selected");
+                if (abuseexposure.isSelected()) {
+                    binding2.setabuseExposure("selected");
                 }
             }
         };
         abuseexposure.selectedProperty().addListener(listener7);
-        
+
         ChangeListener<Boolean> listener8 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
-                if(bondopportunity.isSelected())
-                {
-                binding2.setbondOpportunity("selected");
+                if (bondopportunity.isSelected()) {
+                    binding2.setbondOpportunity("selected");
                 }
             }
         };
         bondopportunity.selectedProperty().addListener(listener8);
-        
+
         ChangeListener<Boolean> listener9 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
-                if(biw.isSelected())
-                {
-                binding3.setbiw("selected");
+                if (biw.isSelected()) {
+                    binding3.setbiw("selected");
                 }
             }
         };
         biw.selectedProperty().addListener(listener9);
-        
-       
-        
-        
-        
+
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
                 bg.requestFocus();
             }
         });
-     
+
         /*datePicker.localeProperty().set(Locale.ENGLISH);
-        datePicker.setLayoutX(0.0);
-        datePicker.setLayoutY(81.0);
-        datePicker.setPrefWidth(200.0);
-        datePicker.selectedDateProperty().addListener(new InvalidationListener() {
-        @Override
-        public void invalidated(Observable observable) {
-        }
-            });
-        datePicker.setPromptText("DOB");
-        datePicker.setLocale(Locale.ENGLISH);
-        datePicker.getCalendarView().todayButtonTextProperty().set("AAJ KA DIN");
-        datePicker.getCalendarView().setShowWeeks(false);
-        fullScreenPane.getChildren().add(datePicker);*/
-        
-    }    
+         datePicker.setLayoutX(0.0);
+         datePicker.setLayoutY(81.0);
+         datePicker.setPrefWidth(200.0);
+         datePicker.selectedDateProperty().addListener(new InvalidationListener() {
+         @Override
+         public void invalidated(Observable observable) {
+         }
+         });
+         datePicker.setPromptText("DOB");
+         datePicker.setLocale(Locale.ENGLISH);
+         datePicker.getCalendarView().todayButtonTextProperty().set("AAJ KA DIN");
+         datePicker.getCalendarView().setShowWeeks(false);
+         fullScreenPane.getChildren().add(datePicker);*/
+    }
 
     public void setScreenParent(ScreenNavigator screenPage) {
         this.screenPage = screenPage;
     }
+
     @FXML
     public void submitAction1() {
-        
-            openingPane.setVisible(false);
-            newBusinessPane.setVisible(true);
-        }
+
+        openingPane.setVisible(false);
+        newBusinessPane.setVisible(true);
+    }
+
     @FXML
     public void submitActionCommercial() {
         animatedMovement(-1269, 0);
-       returnedname.setText(getReceivedname());
-       returnedbranch.setText(getBranch());
-       returneddate.setText(getDate().getDate()+"/"+getDate().getMonth()+"/"+getDate().getYear());
-        }
+        returnedname.setText(getReceivedname());
+        returnedbranch.setText(getBranch());
+        returneddate.setText(getDate().getDate() + "/" + getDate().getMonth() + "/" + getDate().getYear());
+    }
+
     @FXML
     public void submitActionAuto() {
         animatedMovement(-1269, 0);
-       returnedname.setText(getReceivedname());
-       returnedbranch.setText(getBranch());
-       returneddate.setText(getDate().getDate()+"/"+getDate().getMonth()+"/"+getDate().getYear());
-        }
+        returnedname.setText(getReceivedname());
+        returnedbranch.setText(getBranch());
+        returneddate.setText(getDate().getDate() + "/" + getDate().getMonth() + "/" + getDate().getYear());
+    }
+
     @FXML
     public void submitActionBoth() {
         animatedMovement(-1269, 0);
-       returnedname.setText(getReceivedname());
-       returnedbranch.setText(getBranch());
-       returneddate.setText(getDate().getDate()+"/"+getDate().getMonth()+"/"+getDate().getYear());
-        }
+        returnedname.setText(getReceivedname());
+        returnedbranch.setText(getBranch());
+        returneddate.setText(getDate().getDate() + "/" + getDate().getMonth() + "/" + getDate().getYear());
+    }
+
     @FXML
     public void submitAction3() {
         animatedMovement(-2538, 0);
-        }
+    }
+
     @FXML
     public void submitAction4() {
         animatedMovement(-3807, 0);
-        }
+    }
+
     @FXML
     public void submitAction5() {
         animatedMovement(-5076, 0);
-        }
+    }
+
     @FXML
     public void submitAction6() {
-       animatedMovement(-6345, 0);
-        }
+        animatedMovement(-6345, 0);
+    }
+
     @FXML
     public void submitSave() {
-       SavingFile sf=new SavingFile();
-       savinglocally.toFile(sf, "Harman");
-        }
-   
-    
-    public void viewApplication(GetInsuranceFormResponse form){
-       keycontact.setText(form.getKeyContact());
-       keyphone.setText(form.getKeyContactPhone());
-       keyemail.setText(form.getKeyContactEmailAddress());
-       secondarycontact.setText(form.getSecondayContact());
-       secondaryphone.setText(form.getSecondayContactPhone());
-       secondaryemail.setText(form.getSecondayContactEmailAddress());
-       mailingaddress.setText(form.getMailingAddress());
-       fax.setText(form.getFax());
-       website.setText(form.getWebSiteURL());
-      // otherspecify.setText(form.getotherSpecify);
-       relatedexperience.setText(form.getRelatedExperience());
-       owner1.setText(form.getOwner1());
-       owner2.setText(form.getOwner2());
-       owner3.setText(form.getOwner3());
-       owner4.setText(form.getOwner4());
-       bod1.setText(form.getBoardOfDirector1());
-       bod2.setText(form.getBoardOfDirector2());
-       bod3.setText(form.getBoardOfDirector3());
-       bod4.setText(form.getBoardOfDirector4());
-       nooflocations.setText(Integer.toString(form.getNumberOfLocations()));
-       noofownderautos.setText(Integer.toString(form.getNumberOfOwnedAutos()));
-       noofstaff.setText(Integer.toString(form.getNoOfStaff()));
-       payroll.setText(Double.toString(form.getPayRoll()));
-       descriptionOfOpAndRev1.setText(form.getDescriptionOfOperationsAndRevenue1());
-       descriptionOfOpAndRev2.setText(form.getDescriptionOfOperationsAndRevenue2());
-       descriptionOfOpAndRev3.setText(form.getDescriptionOfOperationsAndRevenue3());
-       descriptionOfOpAndRev4.setText(form.getDescriptionOfOperationsAndRevenue4());
-       amount1.setText(Double.toString(form.getAmount1()));
-       amount2.setText(Double.toString(form.getAmount2()));
-       amount3.setText(Double.toString(form.getAmount3()));
-       amount4.setText(Double.toString(form.getAmount4()));
-       totalsale.setText(Double.toString(form.getTotalSale()));
-       totalsaleus.setText(Double.toString(form.getPercentageOfUSSales()));
-       perofonpremises.setText(Integer.toString(form.getOnpremises()));
-       perofoffpremises.setText(Integer.toString(form.getOffpremises()));
-       perofresidential.setText(Integer.toString(form.getResidential()));
-       perofcommercial.setText(Integer.toString(form.getCommercial()));
-       perofsubcontracted.setText(Integer.toString(form.getSubcontracted()));
-       largestcustomerorproject1.setText(form.getLargestCustomerOrProject1());
-       largestcustomerorproject2.setText(form.getLargestCustomerOrProject2());
-       largestcustomerorproject3.setText(form.getLargestCustomerOrProject3());
-       largestcustomerorproject4.setText(form.getLargestCustomerOrProject4());
-       largestSuppliers1.setText(form.getLargestSuppliers1());
-       largestSuppliers2.setText(form.getLargestSuppliers2());
-       largestSuppliers3.setText(form.getLargestSuppliers3());
-       largestSuppliers4.setText(form.getLargestSuppliers4());
-       futureopportunity.setText(form.getFutureOpportunitiesOrPlanOfGrowth());
-       describecompetition.setText(form.getDescribeCompetition());
-       businessapart.setText(form.getBusinessAsset());
-       advertising.setText(form.getAdvertising());
-       recover.setText(form.getDurationIncaseOfSeriousClaims());
-       claimcause1.setText(form.getPastClaimCause1());
-       claimcause2.setText(form.getPastClaimCause2());
-       claimcause3.setText(form.getPastClaimCause3());
-       claimamount1.setText(Double.toString(form.getPastClaimAmount1()));
-       claimamount2.setText(Double.toString(form.getPastClaimAmount2()));
-       claimamount3.setText(Double.toString(form.getPastClaimAmount3()));
-       ciptype1.setText(form.getCurrentInsuranceType1());
-       ciptype2.setText(form.getCurrentInsuranceType2());
-       ciptype3.setText(form.getCurrentInsuranceType3());
-       cipcarrier1.setText(form.getCurrentInsuranceCarrier1());
-       cipcarrier2.setText(form.getCurrentInsuranceCarrier2());
-       cipcarrier3.setText(form.getCurrentInsuranceCarrier3());
-       lienholder1.setText(form.getLienHolders1());
-       lienholder2.setText(form.getLienHolders2());
-       lienholder3.setText(form.getLienHolders3());
-       loc1.setText(form.getLineHoldersLoc1());
-       loc2.setText(form.getLineHoldersLoc2());
-       loc3.setText(form.getLineHoldersLoc3());
-       aoladdress1.setText(form.getAddressOfLocation1());
-       aoladdress2.setText(form.getAddressOfLocation2());
-       aoladdress3.setText(form.getAddressOfLocation3());
-       aoladdress4.setText(form.getAddressOfLocation4());
-       aoluse1.setText(form.getAddressOfLocationUse1());
-       aoluse2.setText(form.getAddressOfLocationUse2());
-       aoluse3.setText(form.getAddressOfLocationUse3());
-       aoluse4.setText(form.getAddressOfLocationUse4());
-       lrtooccupancy1.setText(form.getLocationRentedToOthers1());
-       lrtooccupancy2.setText(form.getLocationRentedToOthers2());
-       lrtooccupancy3.setText(form.getLocationRentedToOthers3());
-       lrtooccupancy4.setText(form.getLocationRentedToOthers4());
-       producercomments.setText(form.getProducercomments());
-       marketercomments.setText(form.getMarketercomments());
+        SavingFile sf = new SavingFile();
+        savinglocally.toFile(sf, "Harman");
     }
-    
+
+    public void viewApplication(GetInsuranceFormResponse form) {
+        keycontact.setText(form.getKeyContact());
+        keyphone.setText(form.getKeyContactPhone());
+        keyemail.setText(form.getKeyContactEmailAddress());
+        secondarycontact.setText(form.getSecondayContact());
+        secondaryphone.setText(form.getSecondayContactPhone());
+        secondaryemail.setText(form.getSecondayContactEmailAddress());
+        mailingaddress.setText(form.getMailingAddress());
+        fax.setText(form.getFax());
+        website.setText(form.getWebSiteURL());
+        // otherspecify.setText(form.getotherSpecify);
+        relatedexperience.setText(form.getRelatedExperience());
+        owner1.setText(form.getOwner1());
+        owner2.setText(form.getOwner2());
+        owner3.setText(form.getOwner3());
+        owner4.setText(form.getOwner4());
+        bod1.setText(form.getBoardOfDirector1());
+        bod2.setText(form.getBoardOfDirector2());
+        bod3.setText(form.getBoardOfDirector3());
+        bod4.setText(form.getBoardOfDirector4());
+        nooflocations.setText(Integer.toString(form.getNumberOfLocations()));
+        noofownderautos.setText(Integer.toString(form.getNumberOfOwnedAutos()));
+        noofstaff.setText(Integer.toString(form.getNoOfStaff()));
+        payroll.setText(Double.toString(form.getPayRoll()));
+        descriptionOfOpAndRev1.setText(form.getDescriptionOfOperationsAndRevenue1());
+        descriptionOfOpAndRev2.setText(form.getDescriptionOfOperationsAndRevenue2());
+        descriptionOfOpAndRev3.setText(form.getDescriptionOfOperationsAndRevenue3());
+        descriptionOfOpAndRev4.setText(form.getDescriptionOfOperationsAndRevenue4());
+        amount1.setText(Double.toString(form.getAmount1()));
+        amount2.setText(Double.toString(form.getAmount2()));
+        amount3.setText(Double.toString(form.getAmount3()));
+        amount4.setText(Double.toString(form.getAmount4()));
+        totalsale.setText(Double.toString(form.getTotalSale()));
+        totalsaleus.setText(Double.toString(form.getPercentageOfUSSales()));
+        perofonpremises.setText(Integer.toString(form.getOnpremises()));
+        perofoffpremises.setText(Integer.toString(form.getOffpremises()));
+        perofresidential.setText(Integer.toString(form.getResidential()));
+        perofcommercial.setText(Integer.toString(form.getCommercial()));
+        perofsubcontracted.setText(Integer.toString(form.getSubcontracted()));
+        largestcustomerorproject1.setText(form.getLargestCustomerOrProject1());
+        largestcustomerorproject2.setText(form.getLargestCustomerOrProject2());
+        largestcustomerorproject3.setText(form.getLargestCustomerOrProject3());
+        largestcustomerorproject4.setText(form.getLargestCustomerOrProject4());
+        largestSuppliers1.setText(form.getLargestSuppliers1());
+        largestSuppliers2.setText(form.getLargestSuppliers2());
+        largestSuppliers3.setText(form.getLargestSuppliers3());
+        largestSuppliers4.setText(form.getLargestSuppliers4());
+        futureopportunity.setText(form.getFutureOpportunitiesOrPlanOfGrowth());
+        describecompetition.setText(form.getDescribeCompetition());
+        businessapart.setText(form.getBusinessAsset());
+        advertising.setText(form.getAdvertising());
+        recover.setText(form.getDurationIncaseOfSeriousClaims());
+        claimcause1.setText(form.getPastClaimCause1());
+        claimcause2.setText(form.getPastClaimCause2());
+        claimcause3.setText(form.getPastClaimCause3());
+        claimamount1.setText(Double.toString(form.getPastClaimAmount1()));
+        claimamount2.setText(Double.toString(form.getPastClaimAmount2()));
+        claimamount3.setText(Double.toString(form.getPastClaimAmount3()));
+        ciptype1.setText(form.getCurrentInsuranceType1());
+        ciptype2.setText(form.getCurrentInsuranceType2());
+        ciptype3.setText(form.getCurrentInsuranceType3());
+        cipcarrier1.setText(form.getCurrentInsuranceCarrier1());
+        cipcarrier2.setText(form.getCurrentInsuranceCarrier2());
+        cipcarrier3.setText(form.getCurrentInsuranceCarrier3());
+        lienholder1.setText(form.getLienHolders1());
+        lienholder2.setText(form.getLienHolders2());
+        lienholder3.setText(form.getLienHolders3());
+        loc1.setText(form.getLineHoldersLoc1());
+        loc2.setText(form.getLineHoldersLoc2());
+        loc3.setText(form.getLineHoldersLoc3());
+        aoladdress1.setText(form.getAddressOfLocation1());
+        aoladdress2.setText(form.getAddressOfLocation2());
+        aoladdress3.setText(form.getAddressOfLocation3());
+        aoladdress4.setText(form.getAddressOfLocation4());
+        aoluse1.setText(form.getAddressOfLocationUse1());
+        aoluse2.setText(form.getAddressOfLocationUse2());
+        aoluse3.setText(form.getAddressOfLocationUse3());
+        aoluse4.setText(form.getAddressOfLocationUse4());
+        lrtooccupancy1.setText(form.getLocationRentedToOthers1());
+        lrtooccupancy2.setText(form.getLocationRentedToOthers2());
+        lrtooccupancy3.setText(form.getLocationRentedToOthers3());
+        lrtooccupancy4.setText(form.getLocationRentedToOthers4());
+        producercomments.setText(form.getProducercomments());
+        marketercomments.setText(form.getMarketercomments());
+    }
+
     @FXML
     public void submitFormAction() {
-            if (CommonValidations.isStringEmpty(binding.getBusinessName())) {
+        if (CommonValidations.isStringEmpty(binding.getBusinessName())) {
             InvokeAnimation.attentionSeekerWobble(businessname);
             businessname.setPromptText("Business Name can not be empty");
         } else if (CommonValidations.isStringEmpty(binding.getKeyContact())) {
             InvokeAnimation.attentionSeekerWobble(keycontact);
             keycontact.setPromptText("Key Contact cannot be empty");
-        }else if (CommonValidations.isStringEmpty(binding.getKeyPhone())) {
+        } else if (CommonValidations.isStringEmpty(binding.getKeyPhone())) {
             InvokeAnimation.attentionSeekerWobble(keyphone);
             keyphone.setPromptText("Key phone cannot be empty");
-        }else if (CommonValidations.isStringEmpty(binding.getMailingAddress())) {
+        } else if (CommonValidations.isStringEmpty(binding.getMailingAddress())) {
             InvokeAnimation.attentionSeekerWobble(mailingaddress);
             mailingaddress.setPromptText("Please enter Mailing address");
-        }else if (CommonValidations.isStringEmpty(binding.getMailingAddress())) {
+        } else if (CommonValidations.isStringEmpty(binding.getMailingAddress())) {
             InvokeAnimation.attentionSeekerWobble(mailingaddress);
             mailingaddress.setPromptText("Please enter Mailing address");
-        }else if (CommonValidations.isStringEmpty(binding.getSeverity())) {
+        } else if (CommonValidations.isStringEmpty(binding.getSeverity())) {
             InvokeAnimation.attentionSeekerWobble(severity);
-        }
-        else {
+        } else {
             Task task;
-        task = new Task<Void>() {
-            @Override
-            public Void call() throws Exception {
-                
-                InsuranceOperationsService_Service port=new InsuranceOperationsService_Service();
-                InsuranceFormSubmitRequest req1=new InsuranceFormSubmitRequest();
-                req1.setSeverity(binding.getSeverity());
-                req1.setEntityType(binding.getEntityType());
-                req1.setFinancialYearEnd(binding2.getfinYearEnd());
-                req1.setGroupBenefits(binding2.getgroupBenefits());
-                req1.setPensionPlan(binding2.getpensionPlan());
-                req1.setCurrency1(binding2.getcurrency1());
-                req1.setCurrency2(binding2.getcurrency2());
-                req1.setCurrency3(binding2.getcurrency3());
-                req1.setCurrency4(binding2.getCurrency4());
-                req1.setEcommerce(binding2.geteCommerce());
-                req1.setProfessionalLiability(binding2.getprofLiability());
-                req1.setCyberLiability(binding2.getcyberLiability());
-                req1.setPollutionexposure(binding2.getpollExposure());
-                req1.setAccidentalBenefits(binding2.getaccBenefits());
-                req1.setMalpracticeExposure(binding2.getmalExposure());
-                req1.setAbuseExposure(binding2.getabuseExposure());
-                req1.setBondingOpportunities(binding2.getbondOpportunity());
-                req1.setBusinessInterruptionSheet(binding3.getbiw());
-                req1.setProfit(binding.getProfit());
-                req1.setAddressOfLocationOwnedyes1(binding3.getaolownedy1());
-                req1.setAddressOfLocationOwnedyes2(binding3.getaolownedy2());
-                req1.setAddressOfLocationOwnedyes3(binding3.getaolownedy3());
-                req1.setAddressOfLocationOwnedno1(binding3.getaolownedy4());
-                req1.setKeyContact(binding.getKeyContact());
-                req1.setKeyContactEmailAddress(binding.getKeyEmail());
-                req1.setKeyContactPhone(binding.getKeyPhone());
-                req1.setSecondayContact(binding.getSecondaryContact());
-                req1.setSecondayContactEmailAddress(binding.getSecondaryEmail());
-                req1.setSecondayContactPhone(binding.getSecondaryPhone());
-                req1.setBusinessName(binding.getBusinessName());
-                req1.setMailingAddress(binding.getMailingAddress());
-                req1.setFax(binding.getFax());
-                req1.setWebSiteURL(binding.getWebsite());
-                req1.setRelatedExperience(binding.getRelatedExperience());
-                req1.setOwner1(binding.getOwner1());
-                req1.setOwner2(binding.getOwner2());
-                req1.setOwner3(binding.getOwner3());
-                req1.setOwner4(binding.getOwner4());
-                req1.setBoardOfDirector1(binding.getBod1());
-                req1.setBoardOfDirector2(binding.getBod2());
-                req1.setBoardOfDirector3(binding.getBod3());
-                req1.setBoardOfDirector4(binding.getBod4());
-                if (!binding2.getNoofStaff().equals(null))
-                {req1.setNoOfStaff(Integer.parseInt(binding2.getNoofStaff()));}
-                if (!binding2.getpayroll().equals(null))
-                {req1.setPayRoll(Integer.parseInt(binding2.getpayroll()));}
-                if (!binding2.getamount1().equals(null))
-                {req1.setAmount1(Double.parseDouble(binding2.getamount1()));}
-                if (!binding2.getamount2().equals(null))
-                {req1.setAmount2(Double.parseDouble(binding2.getamount2()));}
-                if (!binding2.getamount3().equals(null))
-                {req1.setAmount3(Double.parseDouble(binding2.getamount3()));}
-                if (!binding2.getamount4().equals(null))
-                {req1.setAmount4(Double.parseDouble(binding2.getamount4()));}
-                req1.setDescriptionOfOperationsAndRevenue1(binding2.getdescriptionOfOpAndRev1());
-                req1.setDescriptionOfOperationsAndRevenue2(binding2.getdescriptionOfOpAndRev2());
-                req1.setDescriptionOfOperationsAndRevenue3(binding2.getdescriptionOfOpAndRev3());
-                req1.setDescriptionOfOperationsAndRevenue4(binding2.getdescriptionOfOpAndRev4());
-                req1.setTotalSale(Double.parseDouble(binding2.gettotalSale()));
-                req1.setPercentageOfUSSales(Double.parseDouble(binding2.getperOfUsSales()));
-                req1.setOnpremises(Integer.parseInt(binding2.getperOfOnPremises()));
-                req1.setOffpremises(Integer.parseInt(binding2.getperOfOffPremises()));
-                req1.setResidential(Integer.parseInt(binding2.getperOfResidential()));
-                req1.setCommercial(Integer.parseInt(binding2.getperOfCommercial()));
-                req1.setSubcontracted(Integer.parseInt(binding2.getperOfSubContracted()));
-                req1.setLargestCustomerOrProject1(binding2.getlargestCustomerOrProject1());
-                req1.setLargestCustomerOrProject2(binding2.getlargestCustomerOrProject2());
-                req1.setLargestCustomerOrProject3(binding2.getlargestCustomerOrProject3());
-                req1.setLargestCustomerOrProject4(binding2.getlargestCustomerOrProject4());
-                req1.setLargestSuppliers1(binding2.getlargestSuppliers1());
-                req1.setLargestSuppliers2(binding2.getlargestSuppliers2());
-                req1.setLargestSuppliers3(binding2.getlargestSuppliers3());
-                req1.setLargestSuppliers4(binding2.getlargestSuppliers4());
-                req1.setFutureOpportunitiesOrPlanOfGrowth(binding3.getfutureopportunity());
-                req1.setDescribeCompetition(binding3.getdescribecompetition());
-                req1.setBusinessAsset(binding3.getbusinessapart());
-                req1.setAdvertising(binding3.getadvertising());
-                req1.setDurationIncaseOfSeriousClaims(binding3.getrecover());
-                req1.setPastClaimAmount1(Double.parseDouble(binding3.getclaimamount1()));
-                req1.setPastClaimAmount2(Double.parseDouble(binding3.getclaimamount2()));
-                req1.setPastClaimAmount3(Double.parseDouble(binding3.getclaimamount3()));
-                req1.setCurrentInsuranceType1(binding3.getciptype1());
-                req1.setCurrentInsuranceType2(binding3.getciptype2());
-                req1.setCurrentInsuranceType3(binding3.getciptype3());
-                req1.setCurrentInsuranceCarrier1(binding3.getcipcarrier1());
-                req1.setCurrentInsuranceCarrier2(binding3.getcipcarrier2());
-                req1.setCurrentInsuranceCarrier3(binding3.getcipcarrier3());
-                req1.setLineHolders1(binding3.getlienholder1());
-                req1.setLineHolders2(binding3.getlienholder2());
-                req1.setLienHolders3(binding3.getlienholder3());
-                req1.setLineHoldersLoc1(binding3.getloc1());
-                req1.setLineHoldersLoc2(binding3.getloc2());
-                req1.setLineHoldersLoc3(binding3.getloc3());
-                req1.setAddressOfLocation1(binding3.getaoladdress1());
-                req1.setAddressOfLocation2(binding3.getaoladdress2());
-                req1.setAddressOfLocation3(binding3.getaoladdress3());
-                req1.setAddressOfLocation4(binding3.getaoladdress4());
-                req1.setAddressOfLocationUse1(binding3.getaoluse1());
-                req1.setAddressOfLocationUse2(binding3.getaoluse2());
-                req1.setAddressOfLocationUse3(binding3.getaoluse3());
-                req1.setAddressOfLocationUse4(binding3.getaoluse4());
-                req1.setLocationRentedToOthers1(binding3.getlrtooccupancy1());
-                req1.setLocationRentedToOthers3(binding3.getlrtooccupancy3());
-                req1.setLocationRentedToOthers2(binding3.getlrtooccupancy2());
-                req1.setLocationRentedToOthers4(binding3.getlrtooccupancy4());
-                
-                try {
-                    InsuranceFormSubmitResponse response= port.getInsuranceOperationsPort().formSubmission(req1);
-                    if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
-                        successMessage("Form has been submitted. Your Form id is:"+response.getFormId());
-                        
+            task = new Task<Void>() {
+                @Override
+                public Void call() throws Exception {
+
+                    InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
+                    InsuranceFormSubmitRequest req1 = new InsuranceFormSubmitRequest();
+                    req1.setSeverity(binding.getSeverity());
+                    req1.setEntityType(binding.getEntityType());
+                    req1.setFinancialYearEnd(binding2.getfinYearEnd());
+                    req1.setGroupBenefits(binding2.getgroupBenefits());
+                    req1.setPensionPlan(binding2.getpensionPlan());
+                    req1.setCurrency1(binding2.getcurrency1());
+                    req1.setCurrency2(binding2.getcurrency2());
+                    req1.setCurrency3(binding2.getcurrency3());
+                    req1.setCurrency4(binding2.getCurrency4());
+                    req1.setEcommerce(binding2.geteCommerce());
+                    req1.setProfessionalLiability(binding2.getprofLiability());
+                    req1.setCyberLiability(binding2.getcyberLiability());
+                    req1.setPollutionexposure(binding2.getpollExposure());
+                    req1.setAccidentalBenefits(binding2.getaccBenefits());
+                    req1.setMalpracticeExposure(binding2.getmalExposure());
+                    req1.setAbuseExposure(binding2.getabuseExposure());
+                    req1.setBondingOpportunities(binding2.getbondOpportunity());
+                    req1.setBusinessInterruptionSheet(binding3.getbiw());
+                    req1.setProfit(binding.getProfit());
+                    req1.setAddressOfLocationOwnedyes1(binding3.getaolownedy1());
+                    req1.setAddressOfLocationOwnedyes2(binding3.getaolownedy2());
+                    req1.setAddressOfLocationOwnedyes3(binding3.getaolownedy3());
+                    req1.setAddressOfLocationOwnedno1(binding3.getaolownedy4());
+                    req1.setKeyContact(binding.getKeyContact());
+                    req1.setKeyContactEmailAddress(binding.getKeyEmail());
+                    req1.setKeyContactPhone(binding.getKeyPhone());
+                    req1.setSecondayContact(binding.getSecondaryContact());
+                    req1.setSecondayContactEmailAddress(binding.getSecondaryEmail());
+                    req1.setSecondayContactPhone(binding.getSecondaryPhone());
+                    req1.setBusinessName(binding.getBusinessName());
+                    req1.setMailingAddress(binding.getMailingAddress());
+                    req1.setFax(binding.getFax());
+                    req1.setWebSiteURL(binding.getWebsite());
+                    req1.setRelatedExperience(binding.getRelatedExperience());
+                    req1.setOwner1(binding.getOwner1());
+                    req1.setOwner2(binding.getOwner2());
+                    req1.setOwner3(binding.getOwner3());
+                    req1.setOwner4(binding.getOwner4());
+                    req1.setBoardOfDirector1(binding.getBod1());
+                    req1.setBoardOfDirector2(binding.getBod2());
+                    req1.setBoardOfDirector3(binding.getBod3());
+                    req1.setBoardOfDirector4(binding.getBod4());
+                    if (!binding2.getNoofStaff().equals(null)) {
+                        req1.setNoOfStaff(Integer.parseInt(binding2.getNoofStaff()));
                     }
-                    else {
-                        errors(response.getErrorMessage());
+                    if (!binding2.getpayroll().equals(null)) {
+                        req1.setPayRoll(Integer.parseInt(binding2.getpayroll()));
                     }
+                    if (!binding2.getamount1().equals(null)) {
+                        req1.setAmount1(Double.parseDouble(binding2.getamount1()));
+                    }
+                    if (!binding2.getamount2().equals(null)) {
+                        req1.setAmount2(Double.parseDouble(binding2.getamount2()));
+                    }
+                    if (!binding2.getamount3().equals(null)) {
+                        req1.setAmount3(Double.parseDouble(binding2.getamount3()));
+                    }
+                    if (!binding2.getamount4().equals(null)) {
+                        req1.setAmount4(Double.parseDouble(binding2.getamount4()));
+                    }
+                    req1.setDescriptionOfOperationsAndRevenue1(binding2.getdescriptionOfOpAndRev1());
+                    req1.setDescriptionOfOperationsAndRevenue2(binding2.getdescriptionOfOpAndRev2());
+                    req1.setDescriptionOfOperationsAndRevenue3(binding2.getdescriptionOfOpAndRev3());
+                    req1.setDescriptionOfOperationsAndRevenue4(binding2.getdescriptionOfOpAndRev4());
+                    req1.setTotalSale(Double.parseDouble(binding2.gettotalSale()));
+                    req1.setPercentageOfUSSales(Double.parseDouble(binding2.getperOfUsSales()));
+                    req1.setOnpremises(Integer.parseInt(binding2.getperOfOnPremises()));
+                    req1.setOffpremises(Integer.parseInt(binding2.getperOfOffPremises()));
+                    req1.setResidential(Integer.parseInt(binding2.getperOfResidential()));
+                    req1.setCommercial(Integer.parseInt(binding2.getperOfCommercial()));
+                    req1.setSubcontracted(Integer.parseInt(binding2.getperOfSubContracted()));
+                    req1.setLargestCustomerOrProject1(binding2.getlargestCustomerOrProject1());
+                    req1.setLargestCustomerOrProject2(binding2.getlargestCustomerOrProject2());
+                    req1.setLargestCustomerOrProject3(binding2.getlargestCustomerOrProject3());
+                    req1.setLargestCustomerOrProject4(binding2.getlargestCustomerOrProject4());
+                    req1.setLargestSuppliers1(binding2.getlargestSuppliers1());
+                    req1.setLargestSuppliers2(binding2.getlargestSuppliers2());
+                    req1.setLargestSuppliers3(binding2.getlargestSuppliers3());
+                    req1.setLargestSuppliers4(binding2.getlargestSuppliers4());
+                    req1.setFutureOpportunitiesOrPlanOfGrowth(binding3.getfutureopportunity());
+                    req1.setDescribeCompetition(binding3.getdescribecompetition());
+                    req1.setBusinessAsset(binding3.getbusinessapart());
+                    req1.setAdvertising(binding3.getadvertising());
+                    req1.setDurationIncaseOfSeriousClaims(binding3.getrecover());
+                    req1.setPastClaimAmount1(Double.parseDouble(binding3.getclaimamount1()));
+                    req1.setPastClaimAmount2(Double.parseDouble(binding3.getclaimamount2()));
+                    req1.setPastClaimAmount3(Double.parseDouble(binding3.getclaimamount3()));
+                    req1.setCurrentInsuranceType1(binding3.getciptype1());
+                    req1.setCurrentInsuranceType2(binding3.getciptype2());
+                    req1.setCurrentInsuranceType3(binding3.getciptype3());
+                    req1.setCurrentInsuranceCarrier1(binding3.getcipcarrier1());
+                    req1.setCurrentInsuranceCarrier2(binding3.getcipcarrier2());
+                    req1.setCurrentInsuranceCarrier3(binding3.getcipcarrier3());
+                    req1.setLineHolders1(binding3.getlienholder1());
+                    req1.setLineHolders2(binding3.getlienholder2());
+                    req1.setLienHolders3(binding3.getlienholder3());
+                    req1.setLineHoldersLoc1(binding3.getloc1());
+                    req1.setLineHoldersLoc2(binding3.getloc2());
+                    req1.setLineHoldersLoc3(binding3.getloc3());
+                    req1.setAddressOfLocation1(binding3.getaoladdress1());
+                    req1.setAddressOfLocation2(binding3.getaoladdress2());
+                    req1.setAddressOfLocation3(binding3.getaoladdress3());
+                    req1.setAddressOfLocation4(binding3.getaoladdress4());
+                    req1.setAddressOfLocationUse1(binding3.getaoluse1());
+                    req1.setAddressOfLocationUse2(binding3.getaoluse2());
+                    req1.setAddressOfLocationUse3(binding3.getaoluse3());
+                    req1.setAddressOfLocationUse4(binding3.getaoluse4());
+                    req1.setLocationRentedToOthers1(binding3.getlrtooccupancy1());
+                    req1.setLocationRentedToOthers3(binding3.getlrtooccupancy3());
+                    req1.setLocationRentedToOthers2(binding3.getlrtooccupancy2());
+                    req1.setLocationRentedToOthers4(binding3.getlrtooccupancy4());
+
+                    try {
+                        InsuranceFormSubmitResponse response = port.getInsuranceOperationsPort().formSubmission(req1);
+                        if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
+                            successMessage("Form has been submitted. Your Form id is:" + response.getFormId());
+
+                        } else {
+                            errors(response.getErrorMessage());
+                        }
+                    } catch (com.rav.insurance.insuranceformoperations.webservice.Exception ex) {
+
+                        Logger.getLogger(RegistrationPageController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    return null;
                 }
-                catch (com.rav.insurance.insuranceformoperations.webservice.Exception ex) {
-                    
-                    
-                    Logger.getLogger(RegistrationPageController.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                return null;
-            }
-            
-        };
+
+            };
             new Thread(task).start();
+        }
     }
-    }
-    
 
     public void successMessage(final String message) {
         Platform.runLater(new Runnable() {
             public void run() {
-               
+
                 Dialogs.showInformationDialog(null, message, "Success", "Success");
-                 animatedMovement(0, 0);
-                 openingPane.setVisible(true);
-                 newBusinessPane.setVisible(false);
+                animatedMovement(0, 0);
+                openingPane.setVisible(true);
+                newBusinessPane.setVisible(false);
             }
         });
     }
+
     public void errors(final String message) {
         Platform.runLater(new Runnable() {
             public void run() {
-               
+
                 Dialogs.showErrorDialog(null, message, "Oops!!", "Error");
             }
         });
     }
+
     public void animatedMovement(int x, int y) {
         TranslateTransition animatedMove = TranslateTransitionBuilder.
                 create().
@@ -1137,6 +1317,34 @@ public class NextScreenController implements Initializable , IScreenController {
                 duration(Duration.seconds(0.5)).
                 node(fullScreenPane).
                 build();
-                animatedMove.play();
+        animatedMove.play();
+    }
+
+    @FXML
+    public void uploadfiles() {
+
+        FileChooser fileChooser = new FileChooser();
+
+        //FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("name", "filter");
+        //fileChooser.getExtensionFilters().add(extFilter);
+        Scene scene = upload.getScene();
+        if (scene != null) {
+
+            Window window = scene.getWindow();
+            if (window != null) {
+                List<File> list
+                        = fileChooser.showOpenMultipleDialog(window);
+                if (list != null) {
+                    String files = "";
+                    for (File file : list) {
+                        System.out.println(file.getPath());
+                        files = files + file.getName() + ",";
+                    }
+                    this.fileList = list;
+                    uploadlabel.setText(files.substring(0, files.length() - 1));
+                }
+            }
+        }
+
     }
 }
