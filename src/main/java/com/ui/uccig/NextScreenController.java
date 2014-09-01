@@ -306,6 +306,103 @@ public class NextScreenController implements Initializable , IScreenController {
     private TextArea producercomments;
     @FXML
     private TextArea marketercomments; 
+    @FXML
+    private TextField buildinglimit; 
+    @FXML
+    private TextField buildingdeductible; 
+    @FXML
+    private TextField contentslimit;
+    @FXML
+    private TextField contentsdeductible;
+    @FXML
+    private TextField stocklimit;
+    @FXML
+    private TextField stockdeductible;
+    @FXML
+    private TextField officelimit;
+    @FXML
+    private TextField officedeductible;
+    @FXML
+    private TextField edplimit;
+    @FXML
+    private TextField edpdeductible;
+    @FXML
+    private TextField equipmentlimit;
+    @FXML
+    private TextField equipmentdeductible;
+    @FXML
+    private TextField offpremiseslimit;
+    @FXML
+    private TextField offpremisesdeductible;
+    @FXML
+    private TextField transitlimit;
+    @FXML
+    private TextField transitdeductible;
+    @FXML
+    private TextField miscpropertylimit;
+    @FXML
+    private TextField miscpropertydeductible;
+    @FXML
+    private TextField contractorsequipmentlimit;
+    @FXML
+    private TextField contractorsequipmentdeductible;
+    @FXML
+    private TextField installationfloatorlimit;
+    @FXML
+    private TextField installationfloatordeductible;
+    @FXML
+    private TextField toolfloatorlimit;
+    @FXML
+    private TextField toolfloatordeductible;
+    @FXML
+    private TextField signfloatorlimit;
+    @FXML
+    private TextField signfloatordeductible;
+    @FXML
+    private TextField motortruckcargolimit;
+    @FXML
+    private TextField motortruckcargodeductible;
+    @FXML
+    private CheckBox mtcowner;
+    @FXML
+    private CheckBox mtctruckman;
+    @FXML
+    private TextField glasslimit;
+    @FXML
+    private TextField glassdeductible;
+    @FXML
+    private TextField sewerbackupdeductible;
+    @FXML
+    private TextField flooddeductible;
+    @FXML
+    private TextField earthquakedeductible;
+    @FXML
+    private TextField profitslimit;
+    @FXML
+    private TextField profitsdeductible;
+    @FXML
+    private TextField grossearningslimit;
+    @FXML
+    private TextField grossearningsdeductible;
+    @FXML
+    private CheckBox ge80;
+    @FXML
+    private CheckBox ge50;
+    @FXML
+    private TextField rentalincomelimit;
+    @FXML
+    private TextField rentalincomedeductible;
+    @FXML
+    private TextField extraexpenselimit;
+    @FXML
+    private TextField extraexpensedeductible;
+    @FXML
+    private TextField offpremisespowerlimit;
+    @FXML
+    private TextField offpremisespowerdeductible;
+    
+    
+    
     
     @FXML
     private Pane openingPane;
@@ -461,7 +558,7 @@ public class NextScreenController implements Initializable , IScreenController {
         Bindings.bindBidirectional(lrtooccupancy4.textProperty(),binding3.lrtooccupancy4Property());
         Bindings.bindBidirectional(producercomments.textProperty(),binding3.producercommentsProperty());
         Bindings.bindBidirectional(marketercomments.textProperty(),binding3.marketercommentsProperty());
-      
+        Bindings.bindBidirectional(null, null);
       
         
         //choicebox

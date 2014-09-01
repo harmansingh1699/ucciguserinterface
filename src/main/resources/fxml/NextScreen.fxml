@@ -910,7 +910,7 @@
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="16">
           <children>
-            <TextField id="glasslimit" fx:id="glasscargo" prefWidth="200.0" />
+            <TextField fx:id="glasslimit" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="16">
