@@ -19,6 +19,7 @@ import com.ui.binding.LoginSceneBinding;
 import com.ui.binding.RegistrationPageBinding;
 import com.ui.util.CommonValidations;
 import java.net.URL;
+import java.util.Calendar;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -154,10 +155,12 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
                             successMessage("You are successfully logged in");
                             ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setReceivedemailaddress(response.getUserEmailAddress());
                             ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setReceivedname(response.getUserFullName());
-                            ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setReceivedname(response.getBranch());
-                            ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setReceivedname(response.getCurrentDate());
-                            System.out.println(response.getUserEmailAddress() + " " + response.getLoggedInUserEmailAddress());
+                            ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setBranch(response.getBranch());
+                            Calendar c = Calendar.getInstance();
+                            c.setTimeInMillis(response.getCurrentDate().getMillisecond());
+                            ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setDate(c.getTime());
                             screenPage.setScreen("NextScreen");
+                            System.out.println(response.getUserFullName());
                         } else {
                             errors(response.getErrorMessage());
                         }
@@ -186,7 +189,7 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
         } else if (!binding1.getRPassword().equals(binding1.getPassword())) {
             InvokeAnimation.attentionSeekerWobble(rpassword);
             rpassword.setPromptText("Password does not match");
-        } else if (CommonValidations.isValidEmailAddress(binding1.getEmailAddress())) {
+        } else if (!CommonValidations.isValidEmailAddress(binding1.getEmailAddress())) {
             InvokeAnimation.attentionSeekerWobble(email);
             email.setPromptText("Please enter valid email address");
         } else {

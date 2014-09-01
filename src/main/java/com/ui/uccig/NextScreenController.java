@@ -12,9 +12,13 @@ import com.rav.insurance.insuranceformoperations.webservice.InsuranceOperationsS
 import com.rav.insurance.insuranceformoperations.webservice.contracts.CommonResponseAttributes;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.InsuranceFormSubmitRequest;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.InsuranceFormSubmitResponse;
+import com.ui.animation.InvokeAnimation;
 import com.ui.binding.FormEntry1Binding;
 import com.ui.binding.FormEntry2Binding;
 import com.ui.binding.FormEntry3Binding;
+import com.ui.util.CommonValidations;
+import com.ui.util.SavingFile;
+import com.ui.util.savinglocally;
 import java.net.URL;
 import java.util.Date;
 import java.util.Locale;
@@ -37,6 +41,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Dialogs;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -59,6 +64,12 @@ public class NextScreenController implements Initializable , IScreenController {
     
     @FXML
     private ChoiceBox<String> severity;
+    @FXML
+    private Label returnedname;
+    @FXML
+    private Label returnedbranch;
+    @FXML
+    private Label returneddate;
     @FXML
     private TextField keycontact;
     @FXML
@@ -305,7 +316,7 @@ public class NextScreenController implements Initializable , IScreenController {
     ImageView bg;
    
     DatePicker datePicker = new DatePicker();
-    
+    int insurancetypeflag=0;
     private FormEntry1Binding binding;
     private FormEntry2Binding binding2;
     private FormEntry3Binding binding3;
@@ -714,8 +725,25 @@ public class NextScreenController implements Initializable , IScreenController {
             newBusinessPane.setVisible(true);
         }
     @FXML
-    public void submitAction2() {
+    public void submitActionCommercial() {
         animatedMovement(-1269, 0);
+       returnedname.setText(getReceivedname());
+       returnedbranch.setText(getBranch());
+       returneddate.setText(getDate().getDate()+"/"+getDate().getMonth()+"/"+getDate().getYear());
+        }
+    @FXML
+    public void submitActionAuto() {
+        animatedMovement(-1269, 0);
+       returnedname.setText(getReceivedname());
+       returnedbranch.setText(getBranch());
+       returneddate.setText(getDate().getDate()+"/"+getDate().getMonth()+"/"+getDate().getYear());
+        }
+    @FXML
+    public void submitActionBoth() {
+        animatedMovement(-1269, 0);
+       returnedname.setText(getReceivedname());
+       returnedbranch.setText(getBranch());
+       returneddate.setText(getDate().getDate()+"/"+getDate().getMonth()+"/"+getDate().getYear());
         }
     @FXML
     public void submitAction3() {
@@ -732,14 +760,34 @@ public class NextScreenController implements Initializable , IScreenController {
     @FXML
     public void submitAction6() {
        animatedMovement(-6345, 0);
-//marketercomments.setText(getReceivedemailaddress());
-          
+        }
+    @FXML
+    public void submitSave() {
+       SavingFile sf=new SavingFile();
+       savinglocally.toFile(sf, "Harman");
         }
     
     @FXML
     public void submitFormAction() {
-       
-            
+            if (CommonValidations.isStringEmpty(binding.getBusinessName())) {
+            InvokeAnimation.attentionSeekerWobble(businessname);
+            businessname.setPromptText("Business Name can not be empty");
+        } else if (CommonValidations.isStringEmpty(binding.getKeyContact())) {
+            InvokeAnimation.attentionSeekerWobble(keycontact);
+            keycontact.setPromptText("Key Contact cannot be empty");
+        }else if (CommonValidations.isStringEmpty(binding.getKeyPhone())) {
+            InvokeAnimation.attentionSeekerWobble(keyphone);
+            keyphone.setPromptText("Key phone cannot be empty");
+        }else if (CommonValidations.isStringEmpty(binding.getMailingAddress())) {
+            InvokeAnimation.attentionSeekerWobble(mailingaddress);
+            mailingaddress.setPromptText("Please enter Mailing address");
+        }else if (CommonValidations.isStringEmpty(binding.getMailingAddress())) {
+            InvokeAnimation.attentionSeekerWobble(mailingaddress);
+            mailingaddress.setPromptText("Please enter Mailing address");
+        }else if (CommonValidations.isStringEmpty(binding.getSeverity())) {
+            InvokeAnimation.attentionSeekerWobble(severity);
+        }
+        else {
             Task task;
         task = new Task<Void>() {
             @Override
@@ -789,17 +837,22 @@ public class NextScreenController implements Initializable , IScreenController {
                 req1.setBoardOfDirector2(binding.getBod2());
                 req1.setBoardOfDirector3(binding.getBod3());
                 req1.setBoardOfDirector4(binding.getBod4());
-                /*req1.setNoOfStaff(Integer.parseInt(binding2.getNoofStaff()));
-                req1.setPayRoll(Integer.parseInt(binding2.getpayroll()));*/
+                if (!binding2.getNoofStaff().equals(null))
+                {req1.setNoOfStaff(Integer.parseInt(binding2.getNoofStaff()));}
+                if (!binding2.getpayroll().equals(null))
+                {req1.setPayRoll(Integer.parseInt(binding2.getpayroll()));}
+                if (!binding2.getamount1().equals(null))
+                {req1.setAmount1(Double.parseDouble(binding2.getamount1()));}
+                if (!binding2.getamount2().equals(null))
+                {req1.setAmount2(Double.parseDouble(binding2.getamount2()));}
+                if (!binding2.getamount3().equals(null))
+                {req1.setAmount3(Double.parseDouble(binding2.getamount3()));}
+                if (!binding2.getamount4().equals(null))
+                {req1.setAmount4(Double.parseDouble(binding2.getamount4()));}
                 req1.setDescriptionOfOperationsAndRevenue1(binding2.getdescriptionOfOpAndRev1());
                 req1.setDescriptionOfOperationsAndRevenue2(binding2.getdescriptionOfOpAndRev2());
                 req1.setDescriptionOfOperationsAndRevenue3(binding2.getdescriptionOfOpAndRev3());
                 req1.setDescriptionOfOperationsAndRevenue4(binding2.getdescriptionOfOpAndRev4());
-                /*     req1.setAmount1(Double.parseDouble(binding2.getamount1()));
-                req1.setAmount2(Double.parseDouble(binding2.getamount2()));
-                req1.setAmount3(Double.parseDouble(binding2.getamount3()));
-                req1.setAmount4(Double.parseDouble(binding2.getamount4()));*/
-                //  req1.setLoggedInUserEmailAddress(getReceivedemailaddress());
                 req1.setTotalSale(Double.parseDouble(binding2.gettotalSale()));
                 req1.setPercentageOfUSSales(Double.parseDouble(binding2.getperOfUsSales()));
                 req1.setOnpremises(Integer.parseInt(binding2.getperOfOnPremises()));
@@ -868,6 +921,7 @@ public class NextScreenController implements Initializable , IScreenController {
             
         };
             new Thread(task).start();
+    }
     }
     
 
