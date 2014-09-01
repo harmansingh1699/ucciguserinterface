@@ -12,6 +12,7 @@ import com.rav.insurance.insuranceformoperations.webservice.contracts.CommonResp
 import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuranceFormResponse;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.InsuranceFormSubmitRequest;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.InsuranceFormSubmitResponse;
+import com.rav.insurance.util.WriteByteArray;
 import com.ui.animation.InvokeAnimation;
 import com.ui.binding.FormEntry1Binding;
 import com.ui.binding.FormEntry2Binding;
@@ -73,7 +74,7 @@ public class NextScreenController implements Initializable, IScreenController {
 
     @FXML
     private Button upload;
-    
+
     private List<File> fileList;
 
     @FXML
@@ -318,11 +319,11 @@ public class NextScreenController implements Initializable, IScreenController {
     @FXML
     private TextArea producercomments;
     @FXML
-    private TextArea marketercomments; 
+    private TextArea marketercomments;
     @FXML
-    private TextField buildinglimit; 
+    private TextField buildinglimit;
     @FXML
-    private TextField buildingdeductible; 
+    private TextField buildingdeductible;
     @FXML
     private TextField contentslimit;
     @FXML
@@ -692,42 +693,42 @@ public class NextScreenController implements Initializable, IScreenController {
         Bindings.bindBidirectional(futureopportunity.textProperty(), binding3.futureopportunityProperty());
         Bindings.bindBidirectional(describecompetition.textProperty(), binding3.describecompetitionProperty());
         Bindings.bindBidirectional(businessapart.textProperty(), binding3.businessapartProperty());
-        Bindings.bindBidirectional(advertising.textProperty(),binding3.advertisingProperty());
-        Bindings.bindBidirectional(recover.textProperty(),binding3.recoverProperty());
-        Bindings.bindBidirectional(claimcause1.textProperty(),binding3.claimcause1Property());
-        Bindings.bindBidirectional(claimcause2.textProperty(),binding3.claimcause2Property());
-        Bindings.bindBidirectional(claimcause3.textProperty(),binding3.claimcause3Property());
-        Bindings.bindBidirectional(claimamount1.textProperty(),binding3.claimamount1Property());
-        Bindings.bindBidirectional(claimamount2.textProperty(),binding3.claimamount2Property());
-        Bindings.bindBidirectional(claimamount3.textProperty(),binding3.claimamount3Property());
-        Bindings.bindBidirectional(ciptype1.textProperty(),binding3.ciptype1Property());
-        Bindings.bindBidirectional(ciptype2.textProperty(),binding3.ciptype2Property());
-        Bindings.bindBidirectional(ciptype3.textProperty(),binding3.ciptype3Property());
-        Bindings.bindBidirectional(cipcarrier1.textProperty(),binding3.cipcarrier1Property());
-        Bindings.bindBidirectional(cipcarrier2.textProperty(),binding3.cipcarrier2Property());
-        Bindings.bindBidirectional(cipcarrier3.textProperty(),binding3.cipcarrier3Property());
-        Bindings.bindBidirectional(lienholder1.textProperty(),binding3.lienholder1Property());
-        Bindings.bindBidirectional(lienholder2.textProperty(),binding3.lienholder2Property());
-        Bindings.bindBidirectional(lienholder3.textProperty(),binding3.lienholder3Property());
-        Bindings.bindBidirectional(loc1.textProperty(),binding3.loc1Property());
-        Bindings.bindBidirectional(loc2.textProperty(),binding3.loc2Property());
-        Bindings.bindBidirectional(loc3.textProperty(),binding3.loc3Property());
-        Bindings.bindBidirectional(aoladdress1.textProperty(),binding3.aoladdress1Property());
-        Bindings.bindBidirectional(aoladdress2.textProperty(),binding3.aoladdress2Property());
-        Bindings.bindBidirectional(aoladdress3.textProperty(),binding3.aoladdress3Property());
-        Bindings.bindBidirectional(aoladdress4.textProperty(),binding3.aoladdress4Property());
-        Bindings.bindBidirectional(aoluse1.textProperty(),binding3.aoluse1Property());
-        Bindings.bindBidirectional(aoluse2.textProperty(),binding3.aoluse2Property());
-        Bindings.bindBidirectional(aoluse3.textProperty(),binding3.aoluse3Property());
-        Bindings.bindBidirectional(aoluse4.textProperty(),binding3.aoluse4Property());
-        Bindings.bindBidirectional(lrtooccupancy1.textProperty(),binding3.lrtooccupancy1Property());
-        Bindings.bindBidirectional(lrtooccupancy2.textProperty(),binding3.lrtooccupancy2Property());
-        Bindings.bindBidirectional(lrtooccupancy3.textProperty(),binding3.lrtooccupancy3Property());
-        Bindings.bindBidirectional(lrtooccupancy4.textProperty(),binding3.lrtooccupancy4Property());
-        Bindings.bindBidirectional(producercomments.textProperty(),binding3.producercommentsProperty());
-        Bindings.bindBidirectional(marketercomments.textProperty(),binding3.marketercommentsProperty());
+        Bindings.bindBidirectional(advertising.textProperty(), binding3.advertisingProperty());
+        Bindings.bindBidirectional(recover.textProperty(), binding3.recoverProperty());
+        Bindings.bindBidirectional(claimcause1.textProperty(), binding3.claimcause1Property());
+        Bindings.bindBidirectional(claimcause2.textProperty(), binding3.claimcause2Property());
+        Bindings.bindBidirectional(claimcause3.textProperty(), binding3.claimcause3Property());
+        Bindings.bindBidirectional(claimamount1.textProperty(), binding3.claimamount1Property());
+        Bindings.bindBidirectional(claimamount2.textProperty(), binding3.claimamount2Property());
+        Bindings.bindBidirectional(claimamount3.textProperty(), binding3.claimamount3Property());
+        Bindings.bindBidirectional(ciptype1.textProperty(), binding3.ciptype1Property());
+        Bindings.bindBidirectional(ciptype2.textProperty(), binding3.ciptype2Property());
+        Bindings.bindBidirectional(ciptype3.textProperty(), binding3.ciptype3Property());
+        Bindings.bindBidirectional(cipcarrier1.textProperty(), binding3.cipcarrier1Property());
+        Bindings.bindBidirectional(cipcarrier2.textProperty(), binding3.cipcarrier2Property());
+        Bindings.bindBidirectional(cipcarrier3.textProperty(), binding3.cipcarrier3Property());
+        Bindings.bindBidirectional(lienholder1.textProperty(), binding3.lienholder1Property());
+        Bindings.bindBidirectional(lienholder2.textProperty(), binding3.lienholder2Property());
+        Bindings.bindBidirectional(lienholder3.textProperty(), binding3.lienholder3Property());
+        Bindings.bindBidirectional(loc1.textProperty(), binding3.loc1Property());
+        Bindings.bindBidirectional(loc2.textProperty(), binding3.loc2Property());
+        Bindings.bindBidirectional(loc3.textProperty(), binding3.loc3Property());
+        Bindings.bindBidirectional(aoladdress1.textProperty(), binding3.aoladdress1Property());
+        Bindings.bindBidirectional(aoladdress2.textProperty(), binding3.aoladdress2Property());
+        Bindings.bindBidirectional(aoladdress3.textProperty(), binding3.aoladdress3Property());
+        Bindings.bindBidirectional(aoladdress4.textProperty(), binding3.aoladdress4Property());
+        Bindings.bindBidirectional(aoluse1.textProperty(), binding3.aoluse1Property());
+        Bindings.bindBidirectional(aoluse2.textProperty(), binding3.aoluse2Property());
+        Bindings.bindBidirectional(aoluse3.textProperty(), binding3.aoluse3Property());
+        Bindings.bindBidirectional(aoluse4.textProperty(), binding3.aoluse4Property());
+        Bindings.bindBidirectional(lrtooccupancy1.textProperty(), binding3.lrtooccupancy1Property());
+        Bindings.bindBidirectional(lrtooccupancy2.textProperty(), binding3.lrtooccupancy2Property());
+        Bindings.bindBidirectional(lrtooccupancy3.textProperty(), binding3.lrtooccupancy3Property());
+        Bindings.bindBidirectional(lrtooccupancy4.textProperty(), binding3.lrtooccupancy4Property());
+        Bindings.bindBidirectional(producercomments.textProperty(), binding3.producercommentsProperty());
+        Bindings.bindBidirectional(marketercomments.textProperty(), binding3.marketercommentsProperty());
         Bindings.bindBidirectional(null, null);
-      
+
         //choicebox
         severity.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
