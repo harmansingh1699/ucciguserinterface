@@ -1265,6 +1265,7 @@ public class NextScreenController implements Initializable, IScreenController {
                     req1.setLocationRentedToOthers3(binding3.getlrtooccupancy3());
                     req1.setLocationRentedToOthers2(binding3.getlrtooccupancy2());
                     req1.setLocationRentedToOthers4(binding3.getlrtooccupancy4());
+
                     req1.setProducercomments(binding3.getproducercomments());
                     req1.setMarketercomments(binding3.getmarketercomments());
                     req1.setBuildingLimit(Double.parseDouble(binding4.getbuildinglimit()));
@@ -1325,6 +1326,56 @@ public class NextScreenController implements Initializable, IScreenController {
                     
                     
                     
+
+
+                    int i = 0;
+                    for (File file : fileList) {
+                        byte[] bytes = WriteByteArray.getByteFromFile(file);
+                        switch (i) {
+                            case 0:
+                                req1.setFile1(bytes);
+                                req1.setFile1Name(file.getName());
+                                break;
+                            case 1:
+                                req1.setFile2(bytes);
+                                req1.setFile2Name(file.getName());
+                                break;
+                            case 2:
+                                req1.setFile3(bytes);
+                                req1.setFile3Name(file.getName());
+                                break;
+                            case 3:
+                                req1.setFile4(bytes);
+                                req1.setFile4Name(file.getName());
+                                break;
+                            case 4:
+                                req1.setFile5(bytes);
+                                req1.setFile5Name(file.getName());
+                                break;
+                            case 5:
+                                req1.setFile6(bytes);
+                                req1.setFile6Name(file.getName());
+                                break;
+                            case 6:
+                                req1.setFile7(bytes);
+                                req1.setFile7Name(file.getName());
+                                break;
+                            case 7:
+                                req1.setFile8(bytes);
+                                req1.setFile8Name(file.getName());
+                                break;
+                            case 8:
+                                req1.setFile9(bytes);
+                                req1.setFile9Name(file.getName());
+                                break;
+                            case 9:
+                                req1.setFile10(bytes);
+                                req1.setFile10Name(file.getName());
+                                break;
+                        }
+                    }
+
+
                     try {
                         InsuranceFormSubmitResponse response = port.getInsuranceOperationsPort().formSubmission(req1);
                         if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
