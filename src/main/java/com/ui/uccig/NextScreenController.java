@@ -16,6 +16,7 @@ import com.ui.animation.InvokeAnimation;
 import com.ui.binding.FormEntry1Binding;
 import com.ui.binding.FormEntry2Binding;
 import com.ui.binding.FormEntry3Binding;
+import com.ui.binding.FormEntry4Binding;
 import com.ui.util.CommonValidations;
 import com.ui.util.SavingFile;
 import com.ui.util.savinglocally;
@@ -566,13 +567,7 @@ public class NextScreenController implements Initializable, IScreenController {
     private CheckBox windowbars;
     @FXML
     private CheckBox deadbolts;
-    
-    
      
-    
-    
-    
-    
     
     @FXML
     private Pane openingPane;
@@ -588,6 +583,7 @@ public class NextScreenController implements Initializable, IScreenController {
     private FormEntry1Binding binding;
     private FormEntry2Binding binding2;
     private FormEntry3Binding binding3;
+    private FormEntry4Binding binding4;
 
     private String receivedemailaddress;
     private String receivedname;
@@ -638,6 +634,7 @@ public class NextScreenController implements Initializable, IScreenController {
         binding = new FormEntry1Binding();
         binding2 = new FormEntry2Binding();
         binding3 = new FormEntry3Binding();
+        binding4=new FormEntry4Binding();
         fullScreenPane.setVisible(true);
         openingPane.setVisible(true);
         newBusinessPane.setVisible(false);
@@ -1267,7 +1264,66 @@ public class NextScreenController implements Initializable, IScreenController {
                     req1.setLocationRentedToOthers3(binding3.getlrtooccupancy3());
                     req1.setLocationRentedToOthers2(binding3.getlrtooccupancy2());
                     req1.setLocationRentedToOthers4(binding3.getlrtooccupancy4());
-
+                    req1.setProducercomments(binding3.getproducercomments());
+                    req1.setMarketercomments(binding3.getmarketercomments());
+                    req1.setBuildingLimit(Double.parseDouble(binding4.getbuildinglimit()));
+                    req1.setBuildingDeductible(Double.parseDouble(binding4.getbuildingdeductible()));
+                    req1.setContentsLimit(Double.parseDouble(binding4.getcontentslimit()));
+                    req1.setContentsDeductible(Double.parseDouble(binding4.getcontentsdeductible()));
+                    req1.setStockLimit(Double.parseDouble(binding4.getstocklimit()));
+                    req1.setStockDeductible(Double.parseDouble(binding4.getstockdeductible()));
+                    req1.setOfficeContentLimit(Double.parseDouble(binding4.getofficelimit()));
+                    req1.setOfficeContentDeductible(Double.parseDouble(binding4.getofficedeductible()));
+                    req1.setEdpLimit(Double.parseDouble(binding4.getedplimit()));
+                    req1.setEdpDeductible(Double.parseDouble(binding4.getedpdeductible()));
+                    req1.setEquipmentLimit(Double.parseDouble(binding4.getequipmentlimit()));
+                    req1.setEquipmentDeductible(Double.parseDouble(binding4.getequipmentdeductible()));
+                    req1.setOffPremisesLimit(Double.parseDouble(binding4.getoffpremiseslimit()));
+                    req1.setOffPremisesDeductible(Double.parseDouble(binding4.getoffpremisesdeductible()));
+                    req1.setTransitLimit(Double.parseDouble(binding4.gettransitlimit()));
+                    req1.setTransitDeductible(Double.parseDouble(binding4.gettransitdeductible()));
+                    req1.setMiscPropertyLimit(Double.parseDouble(binding4.getmiscpropertylimit()));
+                    req1.setMiscPropertyDeductible(Double.parseDouble(binding4.getmiscpropertydeductible()));
+                    req1.setContractorEquipmentLimit(Double.parseDouble(binding4.getcontractorsequipmentlimit()));
+                    req1.setContractorEquipmentDeductible(Double.parseDouble(binding4.getcontractorsequipmentdeductible()));
+                    req1.setInstallationFloaterLimit(Double.parseDouble(binding4.getinstallationfloatorlimit()));
+                    req1.setInstallationFloaterDeductible(Double.parseDouble(binding4.getinstallationfloatordeductible()));
+                    req1.setToolFloaterLimit(Double.parseDouble(binding4.gettoolfloatorlimit()));
+                    req1.setToolFloaterDeductible(Double.parseDouble(binding4.gettoolfloatordeductible()));
+                    req1.setSignFloaterLimit(Double.parseDouble(binding4.getsignfloatorlimit()));
+                    req1.setSignFloaterDeductible(Double.parseDouble(binding4.getsignfloatordeductible()));
+                    req1.setMotorTruckLimit(Double.parseDouble(binding4.getmotortruckcargolimit()));
+                    req1.setMotorTruckDeductible(Double.parseDouble(binding4.getmotortruckcargodeductible()));
+                    req1.setGlassLimit(Double.parseDouble(binding4.getglasslimit()));
+                    req1.setGlassDeductible(Double.parseDouble(binding4.getglassdeductible()));
+                    req1.setSewerBackupDeductible(Double.parseDouble(binding4.getsewerblackupdeductible()));
+                    req1.setFloodDeductible(Double.parseDouble(binding4.getflooddeductible()));
+                    req1.setEarthquakeDeductible(Double.parseDouble(binding4.getearthquakedeductible()));
+                    req1.setProfitLimit(Double.parseDouble(binding4.getprofitslimit()));
+                    req1.setProfitDeductible(Double.parseDouble(binding4.getprofitsdeductible()));
+                    req1.setGrossEarningLimit(Double.parseDouble(binding4.getgrossearningslimit()));
+                    req1.setGrossEarningDeductible(Double.parseDouble(binding4.getgrossearningsdeductible()));
+                    req1.setRentalIncomeLimit(Double.parseDouble(binding4.getrentalincomelimit()));
+                    req1.setRentalIncomeDeductible(Double.parseDouble(binding4.getrentalincomedeductible()));
+                    req1.setExtraExpenseLimit(Double.parseDouble(binding4.getextraexpenselimit()));
+                    req1.setExtraExpenseDeductible(Double.parseDouble(binding4.getextraexpensedeductible()));
+                    req1.setOffPremisesPowerLimit(Double.parseDouble(binding4.getoffpremiseslimit()));
+                    req1.setOffPremisesPowerDeductible(Double.parseDouble(binding4.getoffpremisesdeductible()));
+                    req1.setInsideOutsideLimit(Double.parseDouble(binding4.getinsideoutsidelimit()));
+                    req1.setInsideOutsideDeductible(Double.parseDouble(binding4.getinsideoutsidedeductible()));
+                    req1.setBfMoneyLimit(Double.parseDouble(binding4.getbfmoneylimit()));
+                    req1.setBfMoneyDeductible(Double.parseDouble(binding4.getbfmoneydeductible()));
+                    req1.setDeopistorForgeryDeductible(Double.parseDouble(binding4.getforgerylimit()));
+                    req1.setMoneyOrdersLimit(Double.parseDouble(binding4.getmoneyorderslimit()));
+                    req1.setMoneyOrdersDeductible(Double.parseDouble(binding4.getmoneyordersdeductible()));
+                    req1.setEmployDishonestyLimit(Double.parseDouble(binding4.getdishonestylimit()));
+                    req1.setEmployDishonestyDeductible(Double.parseDouble(binding4.getdishonestydeductible()));
+                    req1.setCglLimit(Double.parseDouble(binding4.getcgllimit()));
+                    req1.setCglDeductible(Double.parseDouble(binding4.getcgldeductible()));
+                    req1.setTenantsLegalLimit(Double.parseDouble(binding4.gettenantslimit()));
+                    
+                    
+                    
                     try {
                         InsuranceFormSubmitResponse response = port.getInsuranceOperationsPort().formSubmission(req1);
                         if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {

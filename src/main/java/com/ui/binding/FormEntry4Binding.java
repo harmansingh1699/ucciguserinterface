@@ -19,6 +19,7 @@ public class FormEntry4Binding {
     private StringProperty officelimit;
     private StringProperty officedeductible;
     private StringProperty edplimit;
+    private StringProperty edpdeductible;
     private StringProperty equipmentlimit;
     private StringProperty equipmentdeductible;
     private StringProperty offpremiseslimit;
@@ -193,6 +194,7 @@ public class FormEntry4Binding {
         officelimit = new SimpleStringProperty();
         officedeductible = new SimpleStringProperty();
         edplimit = new SimpleStringProperty();
+        edpdeductible=new SimpleStringProperty();
         equipmentlimit = new SimpleStringProperty();
         equipmentdeductible = new SimpleStringProperty();
         offpremiseslimit = new SimpleStringProperty();
@@ -1181,6 +1183,17 @@ public class FormEntry4Binding {
 
     public StringProperty edplimitProperty() {
         return this.edplimit;
+    }
+    public String getedpdeductible() {
+        return (String) this.edpdeductible.get();
+    }
+
+    public void setedpdeductible(String edpdeductible) {
+        this.edpdeductible.set(edpdeductible);
+    }
+
+    public StringProperty edpdeductibleProperty() {
+        return this.edpdeductible;
     }
     
     public String getequipmentlimit() {
