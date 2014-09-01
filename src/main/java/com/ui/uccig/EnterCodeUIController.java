@@ -5,8 +5,11 @@
  */
 package com.ui.uccig;
 
+import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuranceFormResponse;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.animation.TranslateTransition;
 import javafx.animation.TranslateTransitionBuilder;
@@ -25,7 +28,8 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     private ScreenNavigator screenPage;
     ArrayList<String> str=new ArrayList<String>();
-    
+    List<String> messages = Arrays.asList("Hello", "World!", "How", "Are", "You");
+    private GetInsuranceFormResponse form;
     
     @FXML
     private Pane searcharchive2;
@@ -95,8 +99,9 @@ public class EnterCodeUIController implements Initializable, IScreenController {
         }
      @FXML
     public void submitAction10() {
-        animatedMovement(0, 0);
-        }
+        NextScreenController controller = (NextScreenController)screenPage.getControlledScreen("NextScreen");
+        controller.viewApplication(form);
+    }
     
     
     public void animatedMovement(int x, int y) {

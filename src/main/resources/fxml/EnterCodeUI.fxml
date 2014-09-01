@@ -519,7 +519,7 @@
                       <children>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                           <children>
-                            <Button defaultButton="true" font="$x6" mnemonicParsing="false" prefHeight="36.0" prefWidth="153.0" text="View Application" />
+                            <Button defaultButton="true" font="$x6" mnemonicParsing="false" onAction="#submitViewApplication" prefHeight="36.0" prefWidth="153.0" text="View Application" />
                           </children>
                           <HBox.margin>
                             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x11" />
@@ -527,17 +527,17 @@
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" HBox.margin="$x11">
                           <children>
-                            <Button defaultButton="true" font="$x6" mnemonicParsing="false" prefHeight="36.0" prefWidth="153.0" text="Assign" />
+                            <Button defaultButton="true" font="$x6" mnemonicParsing="false" onAction="#submitAssign" prefHeight="36.0" prefWidth="153.0" text="Assign" />
                           </children>
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" HBox.margin="$x11">
                           <children>
-                            <Button defaultButton="true" font="$x6" mnemonicParsing="false" prefHeight="36.0" prefWidth="153.0" text="Conversation" />
+                            <Button defaultButton="true" font="$x6" mnemonicParsing="false" onAction="#submitConversation" prefHeight="36.0" prefWidth="153.0" text="Conversation" />
                           </children>
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" HBox.margin="$x11">
                           <children>
-                            <Button defaultButton="true" font="$x6" mnemonicParsing="false" prefHeight="36.0" prefWidth="153.0" text="Proposal/Binder" />
+                            <Button defaultButton="true" font="$x6" mnemonicParsing="false" onAction="#submitProposalBinder" prefHeight="36.0" prefWidth="153.0" text="Proposal/Binder" />
                           </children>
                         </HBox>
                       </children>
@@ -546,7 +546,7 @@
                       <children>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" HBox.margin="$x11">
                           <children>
-                            <Button defaultButton="true" font="$x4" mnemonicParsing="false" prefHeight="36.0" prefWidth="153.0" text="Send to Underwriter" />
+                            <Button defaultButton="true" font="$x4" mnemonicParsing="false" onAction="#submitSendtoUnderwriter" prefHeight="36.0" prefWidth="153.0" text="Send to Underwriter" />
                           </children>
                           <padding>
                             <Insets fx:id="x12" />
@@ -554,12 +554,12 @@
                         </HBox>
                         <HBox alignment="CENTER" padding="$x11" prefHeight="100.0" prefWidth="200.0" HBox.margin="$x11">
                           <children>
-                            <Button defaultButton="true" font="$x6" mnemonicParsing="false" prefHeight="36.0" prefWidth="153.0" text="Renew Business" />
+                            <Button defaultButton="true" font="$x6" mnemonicParsing="false" onAction="#submitRenewBusiness" prefHeight="36.0" prefWidth="153.0" text="Renew Business" />
                           </children>
                         </HBox>
                         <HBox alignment="CENTER" padding="$x11" prefHeight="100.0" prefWidth="200.0" HBox.margin="$x11">
                           <children>
-                            <Button defaultButton="true" font="$x6" mnemonicParsing="false" prefHeight="36.0" prefWidth="153.0" text="Save Quotes" />
+                            <Button defaultButton="true" font="$x6" mnemonicParsing="false" onAction="#submitSaveQuotes" prefHeight="36.0" prefWidth="153.0" text="Save Quotes" />
                           </children>
                         </HBox>
                         <HBox alignment="CENTER" padding="$x11" prefHeight="100.0" prefWidth="200.0" HBox.margin="$x11">
@@ -590,7 +590,7 @@
       <center>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
           <children>
-            <Label prefHeight="30.0" prefWidth="468.0" text="UCCIG 123456, Queen's University" textFill="$x3">
+            <Label fx:id="title" prefHeight="30.0" prefWidth="468.0" text="UCCIG 123456, Queen's University" textFill="$x3">
               <font>
                 <Font name="Times Bold" size="30.0" />
               </font>

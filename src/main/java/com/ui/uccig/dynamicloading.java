@@ -16,18 +16,18 @@ import javafx.scene.layout.Pane;
  */
 public class dynamicloading extends Pane {
 
-    private sceneController controller = null;
+    private SceneController controller = null;
 
     public dynamicloading() throws Exception {
         FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/fxml/Scene.fxml"));
         Parent loadScreen = (Parent) myLoader.load();
         controller
-                = ((sceneController) myLoader.getController());
+                = ((SceneController) myLoader.getController());
         // Parent root = FXMLLoader.load(getClass().getResource();
         this.getChildren().add(loadScreen);
     }
 
-    public sceneController getController() {
+    public SceneController getController() {
         return controller;
     }
 }

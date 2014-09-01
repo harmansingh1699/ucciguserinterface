@@ -9,7 +9,7 @@ package com.ui.binding;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class searcharchivebinding {
+public class SearchArchivebinding {
     private StringProperty searchproducerid;
     private StringProperty searchmarketerid;
     private StringProperty searchapplicationid;
@@ -21,7 +21,7 @@ public class searcharchivebinding {
     private StringProperty searchdate3;
     private StringProperty searchdate4;
        
-    public searcharchivebinding() {
+    public SearchArchivebinding() {
         searchproducerid = new SimpleStringProperty();
         searchmarketerid = new SimpleStringProperty();
         searchapplicationid = new SimpleStringProperty();

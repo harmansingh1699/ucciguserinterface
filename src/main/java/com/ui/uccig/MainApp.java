@@ -1,9 +1,5 @@
 package com.ui.uccig;
 
-import com.ui.util.CommonValidations;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.event.EventHandler;

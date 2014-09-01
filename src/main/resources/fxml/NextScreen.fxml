@@ -1789,7 +1789,7 @@
               <children>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <CheckBox id="heatingbreakers" fx:id="electricalgbreakers" mnemonicParsing="false" text="Breakers" />
+                    <CheckBox id="heatingbreakers" fx:id="electricalbreakers" mnemonicParsing="false" text="Breakers" />
                   </children>
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">

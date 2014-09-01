@@ -16,7 +16,7 @@ import javafx.scene.layout.Pane;
  *
  * @author harsimransingh
  */
-public class sceneController implements Initializable {
+public class SceneController implements Initializable {
 
     private ScreenNavigator screenPage;
     @FXML
