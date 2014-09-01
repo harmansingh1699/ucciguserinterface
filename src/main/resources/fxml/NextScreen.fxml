@@ -13,9 +13,9 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" fx:id="fullScreenPane" minHeight="729.0" prefHeight="729.0" prefWidth="8964.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.ui.uccig.NextScreenController">
+<AnchorPane id="AnchorPane" fx:id="fullScreenPane" minHeight="729.0" prefHeight="729.0" prefWidth="8964.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ui.uccig.NextScreenController">
   <children>
-    <ImageView id="fullscreenpane" fx:id="bg" fitHeight="713.8125" fitWidth="1269.0" layoutX="0.0" layoutY="-0.36" pickOnBounds="true" preserveRatio="true">
+    <ImageView id="fullscreenpane" fx:id="bg" fitHeight="713.8125" fitWidth="1269.0" layoutY="-0.36" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@../images/bg.jpeg" />
       </image>
@@ -572,8 +572,15 @@
             <TextField fx:id="lrtooccupancy3" layoutX="220.0" layoutY="161.0" prefWidth="200.0" />
             <TextField fx:id="lrtooccupancy2" layoutX="446.0" layoutY="133.0" prefWidth="200.0" />
             <TextField fx:id="lrtooccupancy4" layoutX="446.0" layoutY="161.0" prefWidth="200.0" />
-            <Label font="$x4" layoutX="123.0" layoutY="377.0" text="Marketer Comments:" />
-            <TextArea fx:id="marketercomments" layoutX="123.0" layoutY="413.0" prefHeight="113.0" prefWidth="993.0" wrapText="true" />
+            <Label font="$x4" layoutX="123.0" layoutY="358.0" text="Marketer Comments:" />
+            <TextArea fx:id="marketercomments" layoutX="123.0" layoutY="383.0" prefHeight="113.0" prefWidth="993.0" wrapText="true" />
+                  <Label layoutX="123.0" layoutY="511.0" text="Attach file:">
+                     <font>
+                        <Font name="Times Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="uploadlabel" layoutX="203.0" layoutY="513.0" text="Label" />
+                  <Button defaultButton="true" layoutX="272.0" layoutY="508.0" mnemonicParsing="false" onAction="#uploadfiles" prefHeight="26.0" prefWidth="109.0" text="Upload" />
           </children>
         </AnchorPane>
       </children>
