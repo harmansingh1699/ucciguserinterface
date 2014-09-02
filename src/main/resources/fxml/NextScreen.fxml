@@ -13,7 +13,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" fx:id="fullScreenPane" minHeight="729.0" prefHeight="729.0" prefWidth="8964.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ui.uccig.NextScreenController">
+<AnchorPane id="AnchorPane" fx:id="fullScreenPane" minHeight="729.0" prefHeight="729.0" prefWidth="8964.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.ui.uccig.NextScreenController">
   <children>
     <ImageView id="fullscreenpane" fx:id="bg" fitHeight="713.8125" fitWidth="1269.0" layoutY="-0.36" pickOnBounds="true" preserveRatio="true">
       <image>
@@ -195,7 +195,7 @@
         <Label font="$x4" layoutX="73.0" layoutY="207.0" text="Secondary Contact:" />
         <Label font="$x4" layoutX="421.0" layoutY="207.0" text="Phone:" />
         <Label font="$x4" layoutX="730.0" layoutY="207.0" text="Email:" />
-        <Label font="$x4" layoutX="82.0" layoutY="255.0" text="Business Name:" />
+        <Label font="$x4" layoutX="73.0" layoutY="255.0" text="Business Name:" />
         <Label font="$x4" layoutX="73.0" layoutY="295.0" text="Mailing Address:" />
         <Label font="$x4" layoutX="148.0" layoutY="332.0" text="Fax #:" />
         <Label font="$x4" layoutX="468.0" layoutY="332.0" text="Website:" />
@@ -203,7 +203,7 @@
         <Label font="$x4" layoutX="306.0" layoutY="370.0" text="# of Owned Autos:" />
         <Label font="$x4" layoutX="104.0" layoutY="406.0" text="Entity Type:" />
         <Label font="$x4" layoutX="377.0" layoutY="410.0" prefWidth="160.0" text="If other, please specify:" />
-        <Label font="$x4" layoutX="73.0" layoutY="470.0" text="Operations and Related Experience:" />
+        <Label font="$x4" layoutX="73.0" layoutY="474.0" text="Operations and Related Experience:" />
         <Label font="$x4" layoutX="73.0" layoutY="551.0" text="Owner(s) &amp; Key Personnel:" />
         <Label font="$x4" layoutX="90.0" layoutY="621.0" text="Board of Directors:" />
         <Button cancelButton="false" defaultButton="true" layoutX="73.0" layoutY="687.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" text="Exit" textAlignment="LEFT" textFill="WHITE" wrapText="false" />
@@ -218,7 +218,7 @@
         <TextField fx:id="secondaryphone" layoutX="505.0" layoutY="204.0" prefHeight="26.0" prefWidth="176.0" />
         <TextField id="secondaryemail" fx:id="keyemail" layoutX="797.0" layoutY="165.0" prefHeight="26.0" prefWidth="219.0" text="" />
         <TextField fx:id="businessname" layoutX="199.0" layoutY="250.0" prefHeight="26.0" prefWidth="379.0" />
-        <TextField fx:id="mailingaddress" layoutX="199.0" layoutY="289.0" prefHeight="26.0" prefWidth="330.0" />
+        <TextField fx:id="mailingaddress" layoutX="199.0" layoutY="289.0" prefHeight="26.0" prefWidth="379.0" />
         <TextField fx:id="fax" layoutX="199.0" layoutY="327.0" prefHeight="26.0" prefWidth="197.0" />
         <TextField fx:id="website" layoutX="545.0" layoutY="327.0" prefHeight="25.9998779296875" prefWidth="249.0" />
         <RadioButton fx:id="profit" layoutX="845.0" layoutY="406.0" mnemonicParsing="false" text="Profit">
@@ -240,12 +240,8 @@
         <TextField id="owner" fx:id="owner1" layoutX="306.0" layoutY="529.0" prefHeight="26.0" prefWidth="206.0" />
         <TextField id="bod" fx:id="bod1" layoutX="305.0" layoutY="607.0" prefWidth="200.0" />
         <TextField id="keycontact" fx:id="nooflocations" layoutX="199.0" layoutY="365.0" prefHeight="26.0" prefWidth="48.0" text="" />
-        <TextField id="keycontact" fx:id="noofownderautos" layoutX="451.0" layoutY="366.0" prefHeight="26.0" prefWidth="48.0" text="" />
+        <TextField id="keycontact" fx:id="noofownderautos" layoutX="444.0" layoutY="366.0" prefHeight="26.0" prefWidth="48.0" text="" />
         <Label font="$x4" layoutX="919.0" layoutY="118.0" text="Severity:" />
-        <Label font="$x4" layoutX="587.0" layoutY="295.0" prefWidth="68.0" text="Pincode:" />
-        <TextField id="mailingaddress" fx:id="pincode" layoutX="662.0" layoutY="289.0" prefHeight="26.0" prefWidth="116.0" />
-        <Label font="$x4" layoutX="806.0" layoutY="295.0" prefWidth="78.0" text="Country:" />
-        <TextField id="mailingaddress" fx:id="country" layoutX="884.0" layoutY="290.0" prefHeight="25.9998779296875" prefWidth="70.0" text="" />
         <ChoiceBox id="entitytype" fx:id="years" layoutX="662.0" layoutY="365.0" prefHeight="26.0" prefWidth="66.0">
           <items>
             <FXCollections fx:factory="observableArrayList">
@@ -339,12 +335,12 @@
         <TextField fx:id="largestSuppliers2" layoutX="810.0" layoutY="470.0" prefHeight="26.0" prefWidth="387.0" promptText="Supplier Name" />
         <TextField fx:id="largestSuppliers3" layoutX="810.0" layoutY="507.0" prefHeight="25.9998779296875" prefWidth="387.0" promptText="Supplier Name" />
         <CheckBox fx:id="ecommerce" font="$x4" layoutX="63.0" layoutY="340.0" mnemonicParsing="false" prefWidth="136.0" text="E-Commerce?" />
-        <CheckBox fx:id="profliability" font="$x4" layoutX="268.0" layoutY="340.0" mnemonicParsing="false" text="Professional Liability?" />
-        <CheckBox fx:id="cyberliability" font="$x4" layoutX="542.0" layoutY="340.0" mnemonicParsing="false" text="Cyber Liability exposure?" />
-        <CheckBox fx:id="pollexposure" font="$x4" layoutX="837.0" layoutY="340.0" mnemonicParsing="false" text="Pollution Exposure?" />
+        <CheckBox fx:id="profliability" font="$x4" layoutX="321.0" layoutY="340.0" mnemonicParsing="false" text="Professional Liability?" />
+        <CheckBox fx:id="cyberliability" font="$x4" layoutX="551.0" layoutY="340.0" mnemonicParsing="false" text="Cyber Liability exposure?" />
+        <CheckBox fx:id="pollexposure" font="$x4" layoutX="820.0" layoutY="340.0" mnemonicParsing="false" text="Pollution Exposure?" />
         <CheckBox fx:id="accbenefits" font="$x4" layoutX="63.0" layoutY="374.0" mnemonicParsing="false" text="Accident Benefits BuyUp?" />
         <CheckBox fx:id="malexposure" font="$x4" layoutX="321.0" layoutY="374.0" mnemonicParsing="false" text="Malpractice Exposure?" />
-        <CheckBox fx:id="abuseexposure" font="$x4" layoutX="580.0" layoutY="374.0" mnemonicParsing="false" text="Abuse Exposure?" />
+        <CheckBox fx:id="abuseexposure" font="$x4" layoutX="551.0" layoutY="374.0" mnemonicParsing="false" text="Abuse Exposure?" />
         <Label font="$x4" layoutX="63.0" layoutY="300.0" prefHeight="15.9998779296875" text="\% of sales on premises:" />
         <Label font="$x4" layoutX="287.0" layoutY="300.0" text="\% of sales off premises:" />
         <Label font="$x4" layoutX="517.0" layoutY="300.0" prefWidth="156.9998779296875" text="\% of sales residential:" />
@@ -504,7 +500,7 @@
         <Label font="$x9" layoutX="489.0" layoutY="433.0" text="Address of Locations:" />
         <Button defaultButton="true" layoutX="97.0" layoutY="638.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" text="Previous Page" />
         <Button defaultButton="true" layoutX="1012.0" layoutY="638.0" mnemonicParsing="false" onAction="#submitAction6" prefHeight="26.0" prefWidth="126.0" text="Continue" />
-        <Button defaultButton="true" layoutX="504.0" layoutY="635.0" mnemonicParsing="false" onAction="#submitSave" prefHeight="25.9998779296875" prefWidth="126.0" text="Save" />
+        <Button defaultButton="true" layoutX="544.0" layoutY="638.0" mnemonicParsing="false" onAction="#submitSave" prefHeight="25.9998779296875" prefWidth="126.0" text="Save" />
         <Label layoutX="14.0" layoutY="568.0" text="" />
         <Label font="$x4" layoutX="690.0" layoutY="317.0" text="LOC#:" />
         <Label font="$x4" layoutX="690.0" layoutY="351.0" text="LOC#:" />
@@ -574,13 +570,9 @@
             <TextField fx:id="lrtooccupancy4" layoutX="446.0" layoutY="161.0" prefWidth="200.0" />
             <Label font="$x4" layoutX="123.0" layoutY="358.0" text="Marketer Comments:" />
             <TextArea fx:id="marketercomments" layoutX="123.0" layoutY="383.0" prefHeight="113.0" prefWidth="993.0" wrapText="true" />
-                  <Label layoutX="123.0" layoutY="511.0" text="Attach file:">
-                     <font>
-                        <Font name="Times Bold" size="16.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="uploadlabel" layoutX="203.0" layoutY="513.0" text="Label" />
-                  <Button defaultButton="true" layoutX="272.0" layoutY="508.0" mnemonicParsing="false" onAction="#uploadfiles" prefHeight="26.0" prefWidth="109.0" text="Upload" />
+            <Label font="$x4" layoutX="123.0" layoutY="511.0" text="Attach file:" />
+            <Label fx:id="uploadlabel" layoutX="220.0" layoutY="511.0" text="Label" />
+            <Button defaultButton="true" layoutX="320.0" layoutY="508.0" mnemonicParsing="false" onAction="#uploadfiles" prefHeight="26.0" prefWidth="109.0" text="Upload" />
           </children>
         </AnchorPane>
       </children>
@@ -955,7 +947,7 @@
             <TextField fx:id="earthquakedeductible" prefWidth="200.0" />
           </children>
         </HBox>
-        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="20">
+        <HBox alignment="CENTER" prefHeight="25.9998779296875" prefWidth="124.0" GridPane.columnIndex="1" GridPane.rowIndex="20">
           <children>
             <Label text="Limit" />
           </children>
@@ -1578,7 +1570,7 @@
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
           <children>
-            <TextField fx:id="noofstories" prefHeight="18.0" prefWidth="80.0" />
+            <TextField fx:id="noofstories" prefHeight="20.0" prefWidth="80.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="30.0" prefWidth="81.99990000000253" GridPane.columnIndex="2" GridPane.rowIndex="1">
@@ -1691,7 +1683,7 @@
                     </HBox>
                     <HBox alignment="TOP_LEFT" prefHeight="100.0" prefWidth="200.0">
                       <children>
-                        <TextField fx:id="roofupdated" prefHeight="16.0" prefWidth="66.0" />
+                        <TextField fx:id="roofupdated" prefHeight="18.0" prefWidth="66.0" />
                       </children>
                     </HBox>
                   </children>
@@ -1759,7 +1751,7 @@
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <TextField fx:id="heatingupdated" prefHeight="18.0" prefWidth="76.0" />
+                    <TextField fx:id="heatingupdated" prefHeight="21.0" prefWidth="76.0" />
                   </children>
                 </HBox>
               </children>
@@ -1859,7 +1851,7 @@
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <TextField fx:id="plumbingupdated" prefHeight="15.9998779296875" prefWidth="76.0" />
+                    <TextField fx:id="plumbingupdated" prefHeight="18.0" prefWidth="76.0" />
                   </children>
                 </HBox>
               </children>
@@ -1904,17 +1896,17 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
               <children>
-                <CheckBox fx:id="hydrant" mnemonicParsing="false" text="HYDRANT" />
+                <CheckBox fx:id="hydrant" mnemonicParsing="false" text="Hydrant" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
               <children>
-                <CheckBox fx:id="firehall" mnemonicParsing="false" text="FIREHALL" />
+                <CheckBox fx:id="firehall" mnemonicParsing="false" text="Firehall" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
               <children>
-                <CheckBox fx:id="unprotected" mnemonicParsing="false" text="UNPROTECTED" />
+                <CheckBox fx:id="unprotected" mnemonicParsing="false" text="Unprotected" />
               </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -1928,6 +1920,9 @@
                   <children>
                     <TextField fx:id="distance" prefHeight="18.0" prefWidth="64.0" />
                   </children>
+                  <HBox.margin>
+                    <Insets />
+                  </HBox.margin>
                 </HBox>
               </children>
             </HBox>
@@ -1960,5 +1955,8 @@
     </GridPane>
     <TextArea fx:id="additionalcoverage" layoutX="8086.0" layoutY="561.0" prefHeight="74.0" prefWidth="415.0" wrapText="true" />
     <Label layoutX="8087.0" layoutY="563.0" text="Additional Coverage:" />
+    <Button defaultButton="true" layoutX="7671.0" layoutY="665.0" mnemonicParsing="false" onAction="#submitFormAction" prefHeight="26.0" prefWidth="126.0" text="Back" />
+    <Button defaultButton="true" layoutX="8342.0" layoutY="665.0" mnemonicParsing="false" onAction="#submitFormAction" prefHeight="26.0" prefWidth="126.0" text="Submit" />
+    <Label font="$x6" layoutX="8056.0" layoutY="26.0" prefWidth="239.0" text="Commercial Property" textFill="$x7" />
   </children>
 </AnchorPane>

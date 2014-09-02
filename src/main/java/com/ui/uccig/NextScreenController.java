@@ -102,10 +102,6 @@ public class NextScreenController implements Initializable, IScreenController {
     @FXML
     private TextField mailingaddress;
     @FXML
-    private TextField pincode;
-    @FXML
-    private TextField country;
-    @FXML
     private TextField fax;
     @FXML
     private TextField website;
@@ -648,8 +644,6 @@ public class NextScreenController implements Initializable, IScreenController {
         Bindings.bindBidirectional(secondaryemail.textProperty(), binding.secondaryEmailProperty());
         Bindings.bindBidirectional(businessname.textProperty(), binding.businessNameProperty());
         Bindings.bindBidirectional(mailingaddress.textProperty(), binding.mailingAddressProperty());
-        Bindings.bindBidirectional(pincode.textProperty(), binding.pincodeProperty());
-        Bindings.bindBidirectional(country.textProperty(), binding.countryProperty());
         Bindings.bindBidirectional(fax.textProperty(), binding.faxProperty());
         Bindings.bindBidirectional(website.textProperty(), binding.websiteProperty());
         Bindings.bindBidirectional(otherspecify.textProperty(), binding.otherSpecifyProperty());
@@ -727,8 +721,97 @@ public class NextScreenController implements Initializable, IScreenController {
         Bindings.bindBidirectional(lrtooccupancy4.textProperty(), binding3.lrtooccupancy4Property());
         Bindings.bindBidirectional(producercomments.textProperty(), binding3.producercommentsProperty());
         Bindings.bindBidirectional(marketercomments.textProperty(), binding3.marketercommentsProperty());
-        Bindings.bindBidirectional(null, null);
-
+        Bindings.bindBidirectional(buildinglimit.textProperty(), binding4.buildinglimitProperty());
+        Bindings.bindBidirectional(buildingdeductible.textProperty(), binding4.buildingdeductibleProperty());
+        Bindings.bindBidirectional(contentslimit.textProperty(), binding4.contentslimitProperty());
+        Bindings.bindBidirectional(contentsdeductible.textProperty(), binding4.contentsdeductibleProperty());
+        Bindings.bindBidirectional(stocklimit.textProperty(), binding4.stocklimitProperty());
+        Bindings.bindBidirectional(stockdeductible.textProperty(), binding4.stockdeductibleProperty());
+        Bindings.bindBidirectional(officelimit.textProperty(), binding4.officelimitProperty());
+        Bindings.bindBidirectional(officedeductible.textProperty(), binding4.officedeductibleProperty());
+        Bindings.bindBidirectional(edplimit.textProperty(), binding4.edplimitProperty());
+        Bindings.bindBidirectional(edpdeductible.textProperty(), binding4.edpdeductibleProperty());
+        Bindings.bindBidirectional(equipmentlimit.textProperty(), binding4.equipmentlimitProperty());
+        Bindings.bindBidirectional(equipmentdeductible.textProperty(), binding4.equipmentdeductibleProperty());
+        Bindings.bindBidirectional(offpremiseslimit.textProperty(), binding4.offpremiseslimitProperty());
+        Bindings.bindBidirectional(offpremisesdeductible.textProperty(), binding4.offpremisesdeductibleProperty());
+        Bindings.bindBidirectional(transitlimit.textProperty(), binding4.transitlimitProperty());
+        Bindings.bindBidirectional(transitdeductible.textProperty(), binding4.transitdeductibleProperty());
+        Bindings.bindBidirectional(miscpropertylimit.textProperty(), binding4.miscpropertylimitProperty());
+        Bindings.bindBidirectional(miscpropertydeductible.textProperty(), binding4.miscpropertydeductibleProperty());
+        Bindings.bindBidirectional(contractorsequipmentlimit.textProperty(), binding4.contractorsequipmentlimitProperty());
+        Bindings.bindBidirectional(contractorsequipmentdeductible.textProperty(), binding4.contractorsequipmentdeductibleProperty());
+        Bindings.bindBidirectional(installationfloatorlimit.textProperty(), binding4.installationfloatorlimitProperty());
+        Bindings.bindBidirectional(installationfloatordeductible.textProperty(), binding4.installationfloatordeductibleProperty());
+        Bindings.bindBidirectional(toolfloatorlimit.textProperty(), binding4.toolfloatorlimitProperty());
+        Bindings.bindBidirectional(toolfloatordeductible.textProperty(), binding4.toolfloatordeductibleProperty());
+        Bindings.bindBidirectional(signfloatorlimit.textProperty(), binding4.signfloatorlimitProperty());
+        Bindings.bindBidirectional(signfloatordeductible.textProperty(), binding4.signfloatordeductibleProperty());
+        Bindings.bindBidirectional(motortruckcargolimit.textProperty(), binding4.motortruckcargolimitProperty());
+        Bindings.bindBidirectional(motortruckcargodeductible.textProperty(), binding4.motortruckcargodeductibleProperty());
+        Bindings.bindBidirectional(glasslimit.textProperty(), binding4.glasslimitProperty());
+        Bindings.bindBidirectional(glassdeductible.textProperty(), binding4.glassdeductibleProperty());
+        Bindings.bindBidirectional(sewerbackupdeductible.textProperty(), binding4.sewerblackupdeductibleProperty());
+        Bindings.bindBidirectional(flooddeductible.textProperty(), binding4.flooddeductibleProperty());
+        Bindings.bindBidirectional(earthquakedeductible.textProperty(), binding4.earthquakedeductibleProperty());
+        Bindings.bindBidirectional(profitslimit.textProperty(), binding4.profitslimitProperty());
+        Bindings.bindBidirectional(profitsdeductible.textProperty(), binding4.profitsdeductibleProperty());
+        Bindings.bindBidirectional(grossearningslimit.textProperty(), binding4.grossearningslimitProperty());
+        Bindings.bindBidirectional(grossearningsdeductible.textProperty(), binding4.grossearningsdeductibleProperty());
+        Bindings.bindBidirectional(rentalincomelimit.textProperty(), binding4.rentalincomelimitProperty());
+        Bindings.bindBidirectional(rentalincomedeductible.textProperty(), binding4.rentalincomedeductibleProperty());
+        Bindings.bindBidirectional(extraexpenselimit.textProperty(), binding4.extraexpenselimitProperty());
+        Bindings.bindBidirectional(extraexpensedeductible.textProperty(), binding4.extraexpensedeductibleProperty());
+        Bindings.bindBidirectional(offpremiseslimit.textProperty(), binding4.offpremiseslimitProperty());
+        Bindings.bindBidirectional(offpremisesdeductible.textProperty(), binding4.offpremisesdeductibleProperty());
+        Bindings.bindBidirectional(insideoutsidelimit.textProperty(), binding4.insideoutsidelimitProperty());
+        Bindings.bindBidirectional(insideoutsidedeductible.textProperty(), binding4.insideoutsidedeductibleProperty());
+        Bindings.bindBidirectional(bfmoneylimit.textProperty(), binding4.bfmoneylimitProperty());
+        Bindings.bindBidirectional(bfmoneydeductible.textProperty(), binding4.bfmoneydeductibleProperty());
+        Bindings.bindBidirectional(forgerylimit.textProperty(), binding4.forgerylimitProperty());
+        Bindings.bindBidirectional(forgerydeductible.textProperty(), binding4.forgerydeductibleProperty());
+        Bindings.bindBidirectional(moneyorderslimit.textProperty(), binding4.moneyorderslimitProperty());
+        Bindings.bindBidirectional(moneyordersdeductible.textProperty(), binding4.moneyordersdeductibleProperty());
+        Bindings.bindBidirectional(dishonestylimit.textProperty(), binding4.dishonestylimitProperty());
+        Bindings.bindBidirectional(dishonestydeductible.textProperty(), binding4.dishonestydeductibleProperty());
+        Bindings.bindBidirectional(cgllimit.textProperty(), binding4.cgllimitProperty());
+        Bindings.bindBidirectional(cgldeductible.textProperty(), binding4.cgldeductibleProperty());
+        Bindings.bindBidirectional(tenantslimit.textProperty(), binding4.tenantslimitProperty());
+        Bindings.bindBidirectional(tenantsdeductible.textProperty(), binding4.tenantsdeductibleProperty());
+        Bindings.bindBidirectional(nonownedlimit.textProperty(), binding4.nonownedlimitProperty());
+        Bindings.bindBidirectional(nonowneddeductible.textProperty(), binding4.nonowneddeductibleProperty());
+        Bindings.bindBidirectional(sef96limit.textProperty(), binding4.sef96limitProperty());
+        Bindings.bindBidirectional(sef96deductible.textProperty(), binding4.sef96deductibleProperty());
+        Bindings.bindBidirectional(sef94deductible.textProperty(), binding4.sef94deductibleProperty());
+        Bindings.bindBidirectional(dandlimit.textProperty(), binding4.dandlimitProperty());
+        Bindings.bindBidirectional(danddeductible.textProperty(), binding4.danddeductibleProperty());
+        Bindings.bindBidirectional(eandlimit.textProperty(), binding4.eandlimitProperty());
+        Bindings.bindBidirectional(eanddeductible.textProperty(), binding4.eanddeductibleProperty());
+        Bindings.bindBidirectional(employerslimit.textProperty(), binding4.employerslimitProperty());
+        Bindings.bindBidirectional(employersdeductible.textProperty(), binding4.employersdeductibleProperty());
+        Bindings.bindBidirectional(umbrellalimit.textProperty(), binding4.umbrellalimitProperty());
+        Bindings.bindBidirectional(umbrelladeductible.textProperty(), binding4.umbrelladeductibleProperty());
+        Bindings.bindBidirectional(wrapuplimit.textProperty(), binding4.wrapuplimitProperty());
+        Bindings.bindBidirectional(wrapupdeductible.textProperty(), binding4.wrapupdeductibleProperty());
+        Bindings.bindBidirectional(stdlimit.textProperty(), binding4.stdlimitProperty());
+        Bindings.bindBidirectional(stddeductible.textProperty(), binding4.stddeductibleProperty());
+        Bindings.bindBidirectional(aclimit.textProperty(), binding4.aclimitProperty());
+        Bindings.bindBidirectional(acdeductible.textProperty(), binding4.acdeductibleProperty());
+        Bindings.bindBidirectional(productionmachinerylimit.textProperty(), binding4.productionmachinerylimitProperty());
+        Bindings.bindBidirectional(productionmachinerydeductible.textProperty(), binding4.productionmachinerydeductibleProperty());
+        Bindings.bindBidirectional(othercoverage1.textProperty(), binding4.othercoverage1Property());
+        Bindings.bindBidirectional(othercoverage2.textProperty(), binding4.othercoverage2Property());
+        Bindings.bindBidirectional(othercoverage1limit.textProperty(), binding4.othercoverage1limitProperty());
+        Bindings.bindBidirectional(othercoverage2limit.textProperty(), binding4.othercoverage2limitProperty());
+        Bindings.bindBidirectional(othercoverage1deductible.textProperty(), binding4.othercoverage1deductibleProperty());
+        Bindings.bindBidirectional(othercoverage2deductible.textProperty(), binding4.othercoverage2deductibleProperty());
+        Bindings.bindBidirectional(additionalcoverage.textProperty(), binding4.additionalcoverageProperty());
+        Bindings.bindBidirectional(locationaddress.textProperty(), binding4.locationaddressProperty());
+        Bindings.bindBidirectional(locationage.textProperty(), binding4.locationageProperty());
+        Bindings.bindBidirectional(totsqfootage.textProperty(), binding4.totsqfootageProperty());
+        Bindings.bindBidirectional(insidesqfootage.textProperty(), binding4.insidesqfootageProperty());
+        Bindings.bindBidirectional(noofstories.textProperty(), binding4.noofstoriesProperty());
+        
         //choicebox
         severity.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
@@ -1323,11 +1406,44 @@ public class NextScreenController implements Initializable, IScreenController {
                     req1.setCglLimit(Double.parseDouble(binding4.getcgllimit()));
                     req1.setCglDeductible(Double.parseDouble(binding4.getcgldeductible()));
                     req1.setTenantsLegalLimit(Double.parseDouble(binding4.gettenantslimit()));
+                    req1.setTenantsLegalDeductible(Double.parseDouble(binding4.gettenantsdeductible()));
+                    req1.setNonOwnedAutoLimit(Double.parseDouble(binding4.getnonownedlimit()));
+                    req1.setNonOwnedAutoDeductible(Double.parseDouble(binding4.getnonowneddeductible()));
+                    req1.setSef96Limit(Double.parseDouble(binding4.getsef96limit()));
+                    req1.setSef96Deductible(Double.parseDouble(binding4.getsef96deductible()));
+                    req1.setSef94Limit(Double.parseDouble(binding4.getsef94limit()));
+                    req1.setSef94Deductible(Double.parseDouble(binding4.getsef94deductible()));
+                    req1.setDoLimit(Double.parseDouble(binding4.getdandlimit()));
+                    req1.setDoDeductible(Double.parseDouble(binding4.getdanddeductible()));
+                    req1.setEoLimit(Double.parseDouble(binding4.geteandlimit()));
+                    req1.setEoDeductible(Double.parseDouble(binding4.geteanddeductible()));
+                    req1.setEmployerLimit(Double.parseDouble(binding4.getemployerslimit()));
+                    req1.setEmployerDeductible(Double.parseDouble(binding4.getemployersdeductible()));
+                    req1.setUmbrellaLimit(Double.parseDouble(binding4.getumbrellalimit()));
+                    req1.setUmbrellaDeductible(Double.parseDouble(binding4.getumbrelladeductible()));
+                    req1.setWrapUpLimit(Double.parseDouble(binding4.getwrapuplimit()));
+                    req1.setWrapUpDeductible(Double.parseDouble(binding4.getwrapupdeductible()));
+                    req1.setStdComprehensiveLimit(Double.parseDouble(binding4.getstdlimit()));
+                    req1.setStdComprehensiveDeductible(Double.parseDouble(binding4.getstddeductible()));
+                    req1.setAirConditioningLimit(Double.parseDouble(binding4.getaclimit()));
+                    req1.setAirConditioningDeductible(Double.parseDouble(binding4.getacdeductible()));
+                    req1.setProductionMachineryLimit(Double.parseDouble(binding4.getproductionmachinerylimit()));
+                    req1.setProductionMachineryDeductible(Double.parseDouble(binding4.getproductionmachinerydeductible()));
+                    req1.setOtherCoverageLimit(Double.parseDouble(binding4.getothercoverage1()));
+                    //req1.setOtherCoverage1(Double.parseDouble(binding4.getothercoverage1()));
+                    //req1.setOtherCoverage2(Double.parseDouble(binding4.getothercoverage2()));
+                    req1.setOtherCoverageLimit(Double.parseDouble(binding4.getothercoverage1limit()));
+                    req1.setOtherCoverageDeductible(Double.parseDouble(binding4.getothercoverage1deductible()));
+                    //ADDITIONAL COVERAGE
+                    req1.setAddress(binding4.getlocationaddress());
+                    req1.setAge(Integer.parseInt(binding4.getlocationage()));
+                    req1.setTotalSqFootage(Double.parseDouble(binding4.gettotsqfootage()));
+                    req1.setInsdSqFootage(Double.parseDouble(binding4.getinsidesqfootage()));
+                    req1.setNoOfStories(Integer.parseInt(binding4.getnoofstories()));
                     
                     
-                    
-
-
+                            
+                            
                     int i = 0;
                     for (File file : fileList) {
                         byte[] bytes = WriteByteArray.getByteFromFile(file);
