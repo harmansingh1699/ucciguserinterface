@@ -213,7 +213,7 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
         animatedMovement(0, 0);
     }
     @FXML
-    public void submitform(){
+    public void submitFormAction(){
         ((NextScreenController)screenPage.getControlledScreen("NextScreen")).submitFormAction();
     }
     
@@ -221,6 +221,11 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
     public void submitSave() {
         SavingFile sf = new SavingFile();
         savinglocally.toFile(sf, "Harman");
+    }
+    
+    @FXML
+    public void continueAuto() {
+        animatedMovement(-1269, 0);
     }
     
     

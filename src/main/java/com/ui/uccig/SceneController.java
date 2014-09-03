@@ -9,6 +9,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 
@@ -26,7 +27,7 @@ public class SceneController implements Initializable {
     @FXML
     private Label producer;
     @FXML
-    private Label applicationid;
+    private Hyperlink applicationid;
     @FXML
     private Label businessname;
 
@@ -40,7 +41,24 @@ public class SceneController implements Initializable {
     }
     
     public void setBusinessName(String producer){
-        this.producer.setText(producer);
+        this.businessname.setText(producer);
+    }
+    
+     public void setDate(String producer){
+        this.date.setText(producer);
+    }
+    
+    public void setSeverity(String producer){
+        this.severity.setText(producer);
+    }
+    
+    public void setApplicationId(String producer){
+        this.applicationid.setText(producer);
+    }
+    
+    @FXML
+    public void openForm(){
+        ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setApplicationId(applicationid.getText());
     }
     
     

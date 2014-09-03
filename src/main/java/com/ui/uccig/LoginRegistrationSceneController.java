@@ -91,7 +91,8 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
 
     @FXML
     private Pane forgotPasswordPane;
-
+    
+    
     private LoginSceneBinding binding;
     private RegistrationPageBinding binding1;
     private ForgotPasswordBinding binding2;
@@ -127,6 +128,9 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
         });
     }
 
+    
+    
+
     @Override
     public void setScreenParent(ScreenNavigator screenPage) {
         this.screenPage = screenPage;
@@ -152,14 +156,25 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
                     try {
                         InsuranceLoginResponse response = port.getUserOperationsPort().loginUser(req);
                         if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
-                            successMessage("You are successfully logged in");
-                            ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setReceivedemailaddress(response.getUserEmailAddress());
-                            ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setReceivedname(response.getUserFullName());
-                            ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setBranch(response.getBranch());
-                            Calendar c = Calendar.getInstance();
-                            c.setTimeInMillis(response.getCurrentDate().getMillisecond());
-                            ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setDate(c.getTime());
-                            screenPage.setScreen("NextScreen");
+                            System.out.println(response.getRole());
+                            //   successMessage("You are successfully logged in");
+                            if (response.getRole().equals("MARKETER") || response.getRole().equals("MANAGER")) {
+                                System.out.println("asdfasdsad");
+                                ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setMarketerId(binding.getUsername());
+                                
+                                Calendar c = Calendar.getInstance();
+                                c.setTimeInMillis(response.getCurrentDate().getMillisecond());
+                                ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setDate(c.getTime());
+                                screenPage.setScreen("OtherScreen");
+                            } else {
+                                ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setReceivedemailaddress(response.getUserEmailAddress());
+                                ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setReceivedname(response.getUserFullName());
+                                ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setBranch(response.getBranch());
+                                Calendar c = Calendar.getInstance();
+                                c.setTimeInMillis(response.getCurrentDate().getMillisecond());
+                                ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setDate(c.getTime());
+                                screenPage.setScreen("NextScreen");
+                            }
                             System.out.println(response.getUserFullName());
                         } else {
                             errors(response.getErrorMessage());

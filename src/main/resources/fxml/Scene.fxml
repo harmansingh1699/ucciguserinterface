@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" minHeight="85.0" minWidth="0.0" prefHeight="85.00009999999747" prefWidth="286.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.ui.uccig.sceneController">
+<AnchorPane id="AnchorPane" minHeight="85.0" minWidth="0.0" prefHeight="85.00009999999747" prefWidth="286.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.ui.uccig.SceneController">
   <children>
     <ImageView fitHeight="85.0" fitWidth="286.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="false">
       <image>
@@ -27,7 +27,7 @@
     <Label fx:id="date" layoutX="57.0" layoutY="10.0" prefWidth="82.9998779296875" text="13/08/2014" />
     <Label fx:id="severity" layoutX="227.0" layoutY="10.0" text="High" />
     <Label fx:id="producer" layoutX="82.0" layoutY="37.0" text="ehansgh" />
-    <Label fx:id="applicationid" layoutX="179.0" layoutY="37.0" text="UCCIG123456" />
     <Label fx:id="businessname" layoutX="123.0" layoutY="63.0" text="UCCIG Pvt. Ltd." />
+    <Hyperlink fx:id="applicationid" layoutX="175.0" layoutY="34.0" onAction="#openForm" text="UCCIG123456" />
   </children>
 </AnchorPane>

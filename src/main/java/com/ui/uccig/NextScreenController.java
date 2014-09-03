@@ -6,7 +6,6 @@
 package com.ui.uccig;
 
 import com.calendar.DatePicker;
-import com.rav.insurance.insuranceformoperations.webservice.Exception;
 import com.rav.insurance.insuranceformoperations.webservice.InsuranceOperationsService_Service;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuranceFormResponse;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.InsuranceFormSubmitRequest;
@@ -564,8 +563,7 @@ public class NextScreenController implements Initializable, IScreenController {
     private Button autoinsurancebutton;
     @FXML
     private Button CommercialSubmit;
-     
-    
+
     @FXML
     private Pane openingPane;
     @FXML
@@ -579,7 +577,7 @@ public class NextScreenController implements Initializable, IScreenController {
     DatePicker datePicker1 = new DatePicker();
     DatePicker datePicker2 = new DatePicker();
     DatePicker datePicker3 = new DatePicker();
-    
+
     int insurancetypeflag = 0;
     private FormEntry1Binding binding;
     private FormEntry2Binding binding2;
@@ -635,7 +633,7 @@ public class NextScreenController implements Initializable, IScreenController {
         binding = new FormEntry1Binding();
         binding2 = new FormEntry2Binding();
         binding3 = new FormEntry3Binding();
-        binding4=new FormEntry4Binding();
+        binding4 = new FormEntry4Binding();
         fullScreenPane.setVisible(true);
         openingPane.setVisible(true);
         newBusinessPane.setVisible(false);
@@ -815,7 +813,7 @@ public class NextScreenController implements Initializable, IScreenController {
         Bindings.bindBidirectional(totsqfootage.textProperty(), binding4.totsqfootageProperty());
         Bindings.bindBidirectional(insidesqfootage.textProperty(), binding4.insidesqfootageProperty());
         Bindings.bindBidirectional(noofstories.textProperty(), binding4.noofstoriesProperty());
-        
+
         //choicebox
         severity.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
@@ -1051,7 +1049,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         });
 
-       /*  datePicker.localeProperty().set(Locale.ENGLISH);
+        /*  datePicker.localeProperty().set(Locale.ENGLISH);
          datePicker1.localeProperty().set(Locale.ENGLISH);
          datePicker2.localeProperty().set(Locale.ENGLISH);
          datePicker3.localeProperty().set(Locale.ENGLISH);
@@ -1083,7 +1081,7 @@ public class NextScreenController implements Initializable, IScreenController {
 
     @FXML
     public void submitActionCommercial() {
-        insurancetypeflag=1;
+        insurancetypeflag = 1;
         animatedMovement(-1269, 0);
         returnedname.setText(getReceivedname());
         returnedbranch.setText(getBranch());
@@ -1092,7 +1090,7 @@ public class NextScreenController implements Initializable, IScreenController {
 
     @FXML
     public void submitActionAuto() {
-        insurancetypeflag=2;
+        insurancetypeflag = 2;
         animatedMovement(-1269, 0);
         returnedname.setText(getReceivedname());
         returnedbranch.setText(getBranch());
@@ -1101,7 +1099,7 @@ public class NextScreenController implements Initializable, IScreenController {
 
     @FXML
     public void submitActionBoth() {
-        insurancetypeflag=3;
+        insurancetypeflag = 3;
         animatedMovement(-1269, 0);
         returnedname.setText(getReceivedname());
         returnedbranch.setText(getBranch());
@@ -1127,29 +1125,25 @@ public class NextScreenController implements Initializable, IScreenController {
     public void continue4() {
         animatedMovement(-6345, 0);
     }
-    @FXML
-    public void continueAuto() {
-        animatedMovement(-1269, 0);
-    }
-    
+
     @FXML
     public void continue5() {
         System.out.println(insurancetypeflag);
-        if(insurancetypeflag==1)
-        {animatedMovement(-7614, 0);
-        autoinsurancebutton.setVisible(false);}
-        else if(insurancetypeflag==2)
-        {screenPage.setScreen("AutoSubmission");
+        if (insurancetypeflag == 1) {
+            animatedMovement(-7614, 0);
+            autoinsurancebutton.setVisible(false);
+        } else if (insurancetypeflag == 2) {
+            screenPage.setScreen("AutoSubmission");
+        } else if (insurancetypeflag == 3) {
+            animatedMovement(-7614, 0);
+            CommercialSubmit.setVisible(false);
+            autoinsurancebutton.setVisible(true);
         }
-        else if(insurancetypeflag==2)
-        { animatedMovement(-7614, 0);
-          CommercialSubmit.setVisible(false);
-          autoinsurancebutton.setVisible(true);
-        }
-        
+
     }
+
     @FXML
-    public void autobutton(){
+    public void autobutton() {
         screenPage.setScreen("AutoSubmission");
     }
 
@@ -1243,333 +1237,365 @@ public class NextScreenController implements Initializable, IScreenController {
         lrtooccupancy4.setText(form.getLocationRentedToOthers4());
         producercomments.setText(form.getProducercomments());
         marketercomments.setText(form.getMarketercomments());
+        buildinglimit.setText(Double.toString(form.getBuildingLimit()));
+        buildingdeductible.setText(Double.toString(form.getBuildingDeductible()));
+        contentslimit.setText(Double.toString(form.getContentsLimit()));
+        contentsdeductible.setText(Double.toString(form.getContentsDeductible()));
+        stocklimit.setText(Double.toString(form.getStockLimit()));
+        stockdeductible.setText(Double.toString(form.getStockDeductible()));
+        officelimit.setText(Double.toString(form.getOfficeContentLimit()));
+        officedeductible.setText(Double.toString(form.getOfficeContentDeductible()));
+        edplimit.setText(Double.toString(form.getEdpLimit()));
+        edpdeductible.setText(Double.toString(form.getEdpDeductible()));
+        equipmentdeductible.setText(Double.toString(form.getEquipmentDeductible()));
+        equipmentlimit.setText(Double.toString(form.getEquipmentLimit()));
+        offpremisesdeductible.setText(Double.toString(form.getOffPremisesDeductible()));
+        offpremiseslimit.setText(Double.toString(form.getOffPremisesLimit()));
+        transitlimit.setText(Double.toString(form.getTransitLimit()));
+        transitdeductible.setText(Double.toString(form.getTransitDeductible()));
+        //missing
+        locationaddress.setText(form.getAddress());
+        locationage.setText(Integer.toString(form.getAge()));
+
     }
 
     @FXML
     public void submitFormAction() {
         if (CommonValidations.isStringEmpty(binding.getBusinessName())) {
+            System.out.println("1");
             InvokeAnimation.attentionSeekerWobble(businessname);
             businessname.setPromptText("Business Name can not be empty");
         } else if (CommonValidations.isStringEmpty(binding.getKeyContact())) {
+            System.out.println("2");
             InvokeAnimation.attentionSeekerWobble(keycontact);
             keycontact.setPromptText("Key Contact cannot be empty");
         } else if (CommonValidations.isStringEmpty(binding.getKeyPhone())) {
+            System.out.println("3");
             InvokeAnimation.attentionSeekerWobble(keyphone);
             keyphone.setPromptText("Key phone cannot be empty");
         } else if (CommonValidations.isStringEmpty(binding.getMailingAddress())) {
+            System.out.println("4");
             InvokeAnimation.attentionSeekerWobble(mailingaddress);
             mailingaddress.setPromptText("Please enter Mailing address");
-        } else if (CommonValidations.isStringEmpty(binding.getMailingAddress())) {
-            InvokeAnimation.attentionSeekerWobble(mailingaddress);
-            mailingaddress.setPromptText("Please enter Mailing address");
-        } else if (CommonValidations.isStringEmpty(binding.getSeverity())) {
-            InvokeAnimation.attentionSeekerWobble(severity);
         } else {
+            System.out.println("5");
             Task task;
             task = new Task<Void>() {
                 @Override
                 public Void call() throws Exception {
-
-                    InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
-                    InsuranceFormSubmitRequest req1 = new InsuranceFormSubmitRequest();
-                    req1.setSeverity(binding.getSeverity());
-                    req1.setEntityType(binding.getEntityType());
-                    req1.setFinancialYearEnd(binding2.getfinYearEnd());
-                    req1.setGroupBenefits(binding2.getgroupBenefits());
-                    req1.setPensionPlan(binding2.getpensionPlan());
-                    req1.setCurrency1(binding2.getcurrency1());
-                    req1.setCurrency2(binding2.getcurrency2());
-                    req1.setCurrency3(binding2.getcurrency3());
-                    req1.setCurrency4(binding2.getCurrency4());
-                    req1.setEcommerce(binding2.geteCommerce());
-                    req1.setProfessionalLiability(binding2.getprofLiability());
-                    req1.setCyberLiability(binding2.getcyberLiability());
-                    req1.setPollutionexposure(binding2.getpollExposure());
-                    req1.setAccidentalBenefits(binding2.getaccBenefits());
-                    req1.setMalpracticeExposure(binding2.getmalExposure());
-                    req1.setAbuseExposure(binding2.getabuseExposure());
-                    req1.setBondingOpportunities(binding2.getbondOpportunity());
-                    req1.setBusinessInterruptionSheet(binding3.getbiw());
-                    req1.setProfit(binding.getProfit());
-                    req1.setAddressOfLocationOwnedyes1(binding3.getaolownedy1());
-                    req1.setAddressOfLocationOwnedyes2(binding3.getaolownedy2());
-                    req1.setAddressOfLocationOwnedyes3(binding3.getaolownedy3());
-                    req1.setAddressOfLocationOwnedno1(binding3.getaolownedy4());
-                    req1.setKeyContact(binding.getKeyContact());
-                    req1.setKeyContactEmailAddress(binding.getKeyEmail());
-                    req1.setKeyContactPhone(binding.getKeyPhone());
-                    req1.setSecondayContact(binding.getSecondaryContact());
-                    req1.setSecondayContactEmailAddress(binding.getSecondaryEmail());
-                    req1.setSecondayContactPhone(binding.getSecondaryPhone());
-                    req1.setBusinessName(binding.getBusinessName());
-                    req1.setMailingAddress(binding.getMailingAddress());
-                    req1.setFax(binding.getFax());
-                    req1.setWebSiteURL(binding.getWebsite());
-                    req1.setRelatedExperience(binding.getRelatedExperience());
-                    req1.setOwner1(binding.getOwner1());
-                    req1.setOwner2(binding.getOwner2());
-                    req1.setOwner3(binding.getOwner3());
-                    req1.setOwner4(binding.getOwner4());
-                    req1.setBoardOfDirector1(binding.getBod1());
-                    req1.setBoardOfDirector2(binding.getBod2());
-                    req1.setBoardOfDirector3(binding.getBod3());
-                    req1.setBoardOfDirector4(binding.getBod4());
-                    if (!binding2.getNoofStaff().equals(null)) {
-                        req1.setNoOfStaff(Integer.parseInt(binding2.getNoofStaff()));
-                    }
-                    if (!binding2.getpayroll().equals(null)) {
-                        req1.setPayRoll(Integer.parseInt(binding2.getpayroll()));
-                    }
-                    if (!binding2.getamount1().equals(null)) {
-                        req1.setAmount1(Double.parseDouble(binding2.getamount1()));
-                    }
-                    if (!binding2.getamount2().equals(null)) {
-                        req1.setAmount2(Double.parseDouble(binding2.getamount2()));
-                    }
-                    if (!binding2.getamount3().equals(null)) {
-                        req1.setAmount3(Double.parseDouble(binding2.getamount3()));
-                    }
-                    if (!binding2.getamount4().equals(null)) {
-                        req1.setAmount4(Double.parseDouble(binding2.getamount4()));
-                    }
-                    req1.setDescriptionOfOperationsAndRevenue1(binding2.getdescriptionOfOpAndRev1());
-                    req1.setDescriptionOfOperationsAndRevenue2(binding2.getdescriptionOfOpAndRev2());
-                    req1.setDescriptionOfOperationsAndRevenue3(binding2.getdescriptionOfOpAndRev3());
-                    req1.setDescriptionOfOperationsAndRevenue4(binding2.getdescriptionOfOpAndRev4());
-                    req1.setTotalSale(Double.parseDouble(binding2.gettotalSale()));
-                    req1.setPercentageOfUSSales(Double.parseDouble(binding2.getperOfUsSales()));
-                    req1.setOnpremises(Integer.parseInt(binding2.getperOfOnPremises()));
-                    req1.setOffpremises(Integer.parseInt(binding2.getperOfOffPremises()));
-                    req1.setResidential(Integer.parseInt(binding2.getperOfResidential()));
-                    req1.setCommercial(Integer.parseInt(binding2.getperOfCommercial()));
-                    req1.setSubcontracted(Integer.parseInt(binding2.getperOfSubContracted()));
-                    req1.setLargestCustomerOrProject1(binding2.getlargestCustomerOrProject1());
-                    req1.setLargestCustomerOrProject2(binding2.getlargestCustomerOrProject2());
-                    req1.setLargestCustomerOrProject3(binding2.getlargestCustomerOrProject3());
-                    req1.setLargestCustomerOrProject4(binding2.getlargestCustomerOrProject4());
-                    req1.setLargestSuppliers1(binding2.getlargestSuppliers1());
-                    req1.setLargestSuppliers2(binding2.getlargestSuppliers2());
-                    req1.setLargestSuppliers3(binding2.getlargestSuppliers3());
-                    req1.setLargestSuppliers4(binding2.getlargestSuppliers4());
-                    req1.setFutureOpportunitiesOrPlanOfGrowth(binding3.getfutureopportunity());
-                    req1.setDescribeCompetition(binding3.getdescribecompetition());
-                    req1.setBusinessAsset(binding3.getbusinessapart());
-                    req1.setAdvertising(binding3.getadvertising());
-                    req1.setDurationIncaseOfSeriousClaims(binding3.getrecover());
-                    req1.setPastClaimAmount1(Double.parseDouble(binding3.getclaimamount1()));
-                    req1.setPastClaimAmount2(Double.parseDouble(binding3.getclaimamount2()));
-                    req1.setPastClaimAmount3(Double.parseDouble(binding3.getclaimamount3()));
-                    req1.setCurrentInsuranceType1(binding3.getciptype1());
-                    req1.setCurrentInsuranceType2(binding3.getciptype2());
-                    req1.setCurrentInsuranceType3(binding3.getciptype3());
-                    req1.setCurrentInsuranceCarrier1(binding3.getcipcarrier1());
-                    req1.setCurrentInsuranceCarrier2(binding3.getcipcarrier2());
-                    req1.setCurrentInsuranceCarrier3(binding3.getcipcarrier3());
-                    req1.setLineHolders1(binding3.getlienholder1());
-                    req1.setLineHolders2(binding3.getlienholder2());
-                    req1.setLienHolders3(binding3.getlienholder3());
-                    req1.setLineHoldersLoc1(binding3.getloc1());
-                    req1.setLineHoldersLoc2(binding3.getloc2());
-                    req1.setLineHoldersLoc3(binding3.getloc3());
-                    req1.setAddressOfLocation1(binding3.getaoladdress1());
-                    req1.setAddressOfLocation2(binding3.getaoladdress2());
-                    req1.setAddressOfLocation3(binding3.getaoladdress3());
-                    req1.setAddressOfLocation4(binding3.getaoladdress4());
-                    req1.setAddressOfLocationUse1(binding3.getaoluse1());
-                    req1.setAddressOfLocationUse2(binding3.getaoluse2());
-                    req1.setAddressOfLocationUse3(binding3.getaoluse3());
-                    req1.setAddressOfLocationUse4(binding3.getaoluse4());
-                    req1.setLocationRentedToOthers1(binding3.getlrtooccupancy1());
-                    req1.setLocationRentedToOthers3(binding3.getlrtooccupancy3());
-                    req1.setLocationRentedToOthers2(binding3.getlrtooccupancy2());
-                    req1.setLocationRentedToOthers4(binding3.getlrtooccupancy4());
-
-                    req1.setProducercomments(binding3.getproducercomments());
-                    req1.setMarketercomments(binding3.getmarketercomments());
-                    req1.setBuildingLimit(Double.parseDouble(binding4.getbuildinglimit()));
-                    req1.setBuildingDeductible(Double.parseDouble(binding4.getbuildingdeductible()));
-                    req1.setContentsLimit(Double.parseDouble(binding4.getcontentslimit()));
-                    req1.setContentsDeductible(Double.parseDouble(binding4.getcontentsdeductible()));
-                    req1.setStockLimit(Double.parseDouble(binding4.getstocklimit()));
-                    req1.setStockDeductible(Double.parseDouble(binding4.getstockdeductible()));
-                    req1.setOfficeContentLimit(Double.parseDouble(binding4.getofficelimit()));
-                    req1.setOfficeContentDeductible(Double.parseDouble(binding4.getofficedeductible()));
-                    req1.setEdpLimit(Double.parseDouble(binding4.getedplimit()));
-                    req1.setEdpDeductible(Double.parseDouble(binding4.getedpdeductible()));
-                    req1.setEquipmentLimit(Double.parseDouble(binding4.getequipmentlimit()));
-                    req1.setEquipmentDeductible(Double.parseDouble(binding4.getequipmentdeductible()));
-                    req1.setOffPremisesLimit(Double.parseDouble(binding4.getoffpremiseslimit()));
-                    req1.setOffPremisesDeductible(Double.parseDouble(binding4.getoffpremisesdeductible()));
-                    req1.setTransitLimit(Double.parseDouble(binding4.gettransitlimit()));
-                    req1.setTransitDeductible(Double.parseDouble(binding4.gettransitdeductible()));
-                    req1.setMiscPropertyLimit(Double.parseDouble(binding4.getmiscpropertylimit()));
-                    req1.setMiscPropertyDeductible(Double.parseDouble(binding4.getmiscpropertydeductible()));
-                    req1.setContractorEquipmentLimit(Double.parseDouble(binding4.getcontractorsequipmentlimit()));
-                    req1.setContractorEquipmentDeductible(Double.parseDouble(binding4.getcontractorsequipmentdeductible()));
-                    req1.setInstallationFloaterLimit(Double.parseDouble(binding4.getinstallationfloatorlimit()));
-                    req1.setInstallationFloaterDeductible(Double.parseDouble(binding4.getinstallationfloatordeductible()));
-                    req1.setToolFloaterLimit(Double.parseDouble(binding4.gettoolfloatorlimit()));
-                    req1.setToolFloaterDeductible(Double.parseDouble(binding4.gettoolfloatordeductible()));
-                    req1.setSignFloaterLimit(Double.parseDouble(binding4.getsignfloatorlimit()));
-                    req1.setSignFloaterDeductible(Double.parseDouble(binding4.getsignfloatordeductible()));
-                    req1.setMotorTruckLimit(Double.parseDouble(binding4.getmotortruckcargolimit()));
-                    req1.setMotorTruckDeductible(Double.parseDouble(binding4.getmotortruckcargodeductible()));
-                    req1.setGlassLimit(Double.parseDouble(binding4.getglasslimit()));
-                    req1.setGlassDeductible(Double.parseDouble(binding4.getglassdeductible()));
-                    req1.setSewerBackupDeductible(Double.parseDouble(binding4.getsewerblackupdeductible()));
-                    req1.setFloodDeductible(Double.parseDouble(binding4.getflooddeductible()));
-                    req1.setEarthquakeDeductible(Double.parseDouble(binding4.getearthquakedeductible()));
-                    req1.setProfitLimit(Double.parseDouble(binding4.getprofitslimit()));
-                    req1.setProfitDeductible(Double.parseDouble(binding4.getprofitsdeductible()));
-                    req1.setGrossEarningLimit(Double.parseDouble(binding4.getgrossearningslimit()));
-                    req1.setGrossEarningDeductible(Double.parseDouble(binding4.getgrossearningsdeductible()));
-                    req1.setRentalIncomeLimit(Double.parseDouble(binding4.getrentalincomelimit()));
-                    req1.setRentalIncomeDeductible(Double.parseDouble(binding4.getrentalincomedeductible()));
-                    req1.setExtraExpenseLimit(Double.parseDouble(binding4.getextraexpenselimit()));
-                    req1.setExtraExpenseDeductible(Double.parseDouble(binding4.getextraexpensedeductible()));
-                    req1.setOffPremisesPowerLimit(Double.parseDouble(binding4.getoffpremiseslimit()));
-                    req1.setOffPremisesPowerDeductible(Double.parseDouble(binding4.getoffpremisesdeductible()));
-                    req1.setInsideOutsideLimit(Double.parseDouble(binding4.getinsideoutsidelimit()));
-                    req1.setInsideOutsideDeductible(Double.parseDouble(binding4.getinsideoutsidedeductible()));
-                    req1.setBfMoneyLimit(Double.parseDouble(binding4.getbfmoneylimit()));
-                    req1.setBfMoneyDeductible(Double.parseDouble(binding4.getbfmoneydeductible()));
-                    req1.setDeopistorForgeryDeductible(Double.parseDouble(binding4.getforgerylimit()));
-                    req1.setMoneyOrdersLimit(Double.parseDouble(binding4.getmoneyorderslimit()));
-                    req1.setMoneyOrdersDeductible(Double.parseDouble(binding4.getmoneyordersdeductible()));
-                    req1.setEmployDishonestyLimit(Double.parseDouble(binding4.getdishonestylimit()));
-                    req1.setEmployDishonestyDeductible(Double.parseDouble(binding4.getdishonestydeductible()));
-                    req1.setCglLimit(Double.parseDouble(binding4.getcgllimit()));
-                    req1.setCglDeductible(Double.parseDouble(binding4.getcgldeductible()));
-                    req1.setTenantsLegalLimit(Double.parseDouble(binding4.gettenantslimit()));
-                    req1.setTenantsLegalDeductible(Double.parseDouble(binding4.gettenantsdeductible()));
-                    req1.setNonOwnedAutoLimit(Double.parseDouble(binding4.getnonownedlimit()));
-                    req1.setNonOwnedAutoDeductible(Double.parseDouble(binding4.getnonowneddeductible()));
-                    req1.setSef96Limit(Double.parseDouble(binding4.getsef96limit()));
-                    req1.setSef96Deductible(Double.parseDouble(binding4.getsef96deductible()));
-                    req1.setSef94Limit(Double.parseDouble(binding4.getsef94limit()));
-                    req1.setSef94Deductible(Double.parseDouble(binding4.getsef94deductible()));
-                    req1.setDoLimit(Double.parseDouble(binding4.getdandlimit()));
-                    req1.setDoDeductible(Double.parseDouble(binding4.getdanddeductible()));
-                    req1.setEoLimit(Double.parseDouble(binding4.geteandlimit()));
-                    req1.setEoDeductible(Double.parseDouble(binding4.geteanddeductible()));
-                    req1.setEmployerLimit(Double.parseDouble(binding4.getemployerslimit()));
-                    req1.setEmployerDeductible(Double.parseDouble(binding4.getemployersdeductible()));
-                    req1.setUmbrellaLimit(Double.parseDouble(binding4.getumbrellalimit()));
-                    req1.setUmbrellaDeductible(Double.parseDouble(binding4.getumbrelladeductible()));
-                    req1.setWrapUpLimit(Double.parseDouble(binding4.getwrapuplimit()));
-                    req1.setWrapUpDeductible(Double.parseDouble(binding4.getwrapupdeductible()));
-                    req1.setStdComprehensiveLimit(Double.parseDouble(binding4.getstdlimit()));
-                    req1.setStdComprehensiveDeductible(Double.parseDouble(binding4.getstddeductible()));
-                    req1.setAirConditioningLimit(Double.parseDouble(binding4.getaclimit()));
-                    req1.setAirConditioningDeductible(Double.parseDouble(binding4.getacdeductible()));
-                    req1.setProductionMachineryLimit(Double.parseDouble(binding4.getproductionmachinerylimit()));
-                    req1.setProductionMachineryDeductible(Double.parseDouble(binding4.getproductionmachinerydeductible()));
-                   // req1.setOtherCoverageLimit(Double.parseDouble(binding4.getothercoverage1()));
-                    //req1.setOtherCoverage1(Double.parseDouble(binding4.getothercoverage1()));
-                    //req1.setOtherCoverage2(Double.parseDouble(binding4.getothercoverage2()));
-                    //req1.setOtherCoverageLimit(Double.parseDouble(binding4.getothercoverage1limit()));
-                   // req1.setOtherCoverageDeductible(Double.parseDouble(binding4.getothercoverage1deductible()));
-                    //ADDITIONAL COVERAGE
-                    req1.setAddress(binding4.getlocationaddress());
-                    req1.setAge(Integer.parseInt(binding4.getlocationage()));
-                    req1.setTotalSqFootage(Double.parseDouble(binding4.gettotsqfootage()));
-                    req1.setInsdSqFootage(Double.parseDouble(binding4.getinsidesqfootage()));
-                    req1.setNoOfStories(Integer.parseInt(binding4.getnoofstories()));
-                    req1.setCurrentInsurer(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentinsurer());
-                   // req1.setCurrentExpDate(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentexpirydate()); 
-                    req1.setPremiumTarget(Double.parseDouble(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautopremiumtarget()));
-                    req1.setLienHolders1(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getlessholder1());
-                    req1.setLienHolders2(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getlessholder2());
-                    req1.setLienHolders3(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getlessholder3());
-                    req1.setLienHoldersVehicle1(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautovehicle1());
-                    req1.setLienHoldersVehicle2(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautovehicle2());
-                    req1.setLienHoldersVehicle3(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautovehicle3());
-                    //req1.setClaimDate1(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodateofclaim1());
-                    //req1.setClaimDate2(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodateofclaim2());
-                    //req1.setClaimDate3(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodateofclaim3());
-                    req1.setClaimDesc1(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodescriptionofclaim1());
-                    req1.setClaimDesc2(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodescriptionofclaim2());
-                    req1.setClaimDesc3(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodescriptionofclaim3());
-                   // req1.setCommoditiesTransportedBy(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getcommoditiestransported());
-                     req1.setFilingState1(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getliststate1());
-                     req1.setFilingState2(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getliststate2());
-                     req1.setFilingState3(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getliststate3());
-                     req1.setFilingState4(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getliststate4());
-                     req1.setFilingUSDot1(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getusdot1());
-                     req1.setFilingUSDot2(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getusdot2());
-                     req1.setFilingUSDot3(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getusdot3());
-                     req1.setFilingUSDot4(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getusdot4());
-                     req1.setDilingDocket1(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getdocket1());
-                     req1.setDilingDocket2(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getdocket2());
-                     req1.setDilingDocket3(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getdocket3());
-                     req1.setDilingDocket4(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getdocket4());
-                     req1.setFilingType1(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeoffiling1());
-                     req1.setFilingType2(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeoffiling2());
-                     req1.setFilingType3(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeoffiling3());
-                     req1.setFilingType4(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeoffiling4());
-                     req1.setFilingName1(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getnamerequired1());
-                     req1.setFilingName2(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getnamerequired2());
-                     req1.setFilingName3(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getnamerequired3());
-                     req1.setFilingName4(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getnamerequired4());
-                     //req1.setVehicleNonOwned(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getnonownedliability());
-                     //req1.setContract((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getnonownedcontract);
-                     req1.setTypeOfNonOwned(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeofnonowned());
-                     req1.setAvgNoOfVehicles(Double.parseDouble(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getanytime()));
-                     req1.setAvgValue(Double.parseDouble(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getavgvalue()));
-                     req1.setMaxVehicleValue(Double.parseDouble(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getmaxannually()));
-                     req1.setMaxCostValue(Double.parseDouble(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getmostexpensive()));
-                     req1.setInstructionNotes(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautosubmissioncomments());
-                     
-                     
-                    int i = 0;
-                    for (File file : fileList) {
-                        byte[] bytes = WriteByteArray.getByteFromFile(file);
-                        switch (i) {
-                            case 0:
-                                req1.setFile1(bytes);
-                                req1.setFile1Name(file.getName());
-                                break;
-                            case 1:
-                                req1.setFile2(bytes);
-                                req1.setFile2Name(file.getName());
-                                break;
-                            case 2:
-                                req1.setFile3(bytes);
-                                req1.setFile3Name(file.getName());
-                                break;
-                            case 3:
-                                req1.setFile4(bytes);
-                                req1.setFile4Name(file.getName());
-                                break;
-                            case 4:
-                                req1.setFile5(bytes);
-                                req1.setFile5Name(file.getName());
-                                break;
-                            case 5:
-                                req1.setFile6(bytes);
-                                req1.setFile6Name(file.getName());
-                                break;
-                            case 6:
-                                req1.setFile7(bytes);
-                                req1.setFile7Name(file.getName());
-                                break;
-                            case 7:
-                                req1.setFile8(bytes);
-                                req1.setFile8Name(file.getName());
-                                break;
-                            case 8:
-                                req1.setFile9(bytes);
-                                req1.setFile9Name(file.getName());
-                                break;
-                            case 9:
-                                req1.setFile10(bytes);
-                                req1.setFile10Name(file.getName());
-                                break;
-                        }
-                    }
-
-
+                    System.out.println("1213");
                     try {
+                        InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
+                        InsuranceFormSubmitRequest req1 = new InsuranceFormSubmitRequest();
+                        req1.setSeverity(binding.getSeverity());
+                        req1.setEntityType(binding.getEntityType());
+                        req1.setFinancialYearEnd(binding2.getfinYearEnd());
+                        req1.setGroupBenefits(binding2.getgroupBenefits());
+                        req1.setPensionPlan(binding2.getpensionPlan());
+                        req1.setCurrency1(binding2.getcurrency1());
+                        req1.setCurrency2(binding2.getcurrency2());
+                        req1.setCurrency3(binding2.getcurrency3());
+                        req1.setCurrency4(binding2.getCurrency4());
+                        req1.setEcommerce(binding2.geteCommerce());
+                        req1.setProfessionalLiability(binding2.getprofLiability());
+                        req1.setCyberLiability(binding2.getcyberLiability());
+                        req1.setPollutionexposure(binding2.getpollExposure());
+                        req1.setAccidentalBenefits(binding2.getaccBenefits());
+                        req1.setMalpracticeExposure(binding2.getmalExposure());
+                        req1.setAbuseExposure(binding2.getabuseExposure());
+                        req1.setBondingOpportunities(binding2.getbondOpportunity());
+                        req1.setBusinessInterruptionSheet(binding3.getbiw());
+                        req1.setProfit(binding.getProfit());
+                        req1.setAddressOfLocationOwnedyes1(binding3.getaolownedy1());
+                        req1.setAddressOfLocationOwnedyes2(binding3.getaolownedy2());
+                        req1.setAddressOfLocationOwnedyes3(binding3.getaolownedy3());
+                        req1.setAddressOfLocationOwnedno1(binding3.getaolownedy4());
+                        req1.setKeyContact(binding.getKeyContact());
+                        req1.setKeyContactEmailAddress(binding.getKeyEmail());
+                        req1.setKeyContactPhone(binding.getKeyPhone());
+                        req1.setSecondayContact(binding.getSecondaryContact());
+                        req1.setSecondayContactEmailAddress(binding.getSecondaryEmail());
+                        req1.setSecondayContactPhone(binding.getSecondaryPhone());
+                        req1.setBusinessName(binding.getBusinessName());
+                        req1.setMailingAddress(binding.getMailingAddress());
+                        req1.setFax(binding.getFax());
+                        req1.setWebSiteURL(binding.getWebsite());
+                        req1.setRelatedExperience(binding.getRelatedExperience());
+                        req1.setOwner1(binding.getOwner1());
+                        req1.setOwner2(binding.getOwner2());
+                        req1.setOwner3(binding.getOwner3());
+                        req1.setOwner4(binding.getOwner4());
+                        req1.setBoardOfDirector1(binding.getBod1());
+                        req1.setBoardOfDirector2(binding.getBod2());
+                        req1.setBoardOfDirector3(binding.getBod3());
+                        req1.setBoardOfDirector4(binding.getBod4());
+                        System.out.println("2222");
+                        if (!CommonValidations.isStringEmpty(binding2.getNoofStaff())) {
+                            req1.setNoOfStaff(Integer.parseInt(binding2.getNoofStaff()));
+                        }
+                        if (!CommonValidations.isStringEmpty(binding2.getpayroll())) {
+                            req1.setPayRoll(Integer.parseInt(binding2.getpayroll()));
+                        }
+                        if (!CommonValidations.isStringEmpty(binding2.getamount1())) {
+                            req1.setAmount1(Double.parseDouble(binding2.getamount1()));
+                        }
+                        if (!CommonValidations.isStringEmpty(binding2.getamount2())) {
+                            req1.setAmount2(Double.parseDouble(binding2.getamount2()));
+                        }
+                        if (!CommonValidations.isStringEmpty(binding2.getamount3())) {
+                            req1.setAmount3(Double.parseDouble(binding2.getamount3()));
+                        }
+                        if (!CommonValidations.isStringEmpty(binding2.getamount4())) {
+                            req1.setAmount4(Double.parseDouble(binding2.getamount4()));
+                        }
+                        System.out.println("123456");
+                        req1.setDescriptionOfOperationsAndRevenue1(binding2.getdescriptionOfOpAndRev1());
+                        req1.setDescriptionOfOperationsAndRevenue2(binding2.getdescriptionOfOpAndRev2());
+                        req1.setDescriptionOfOperationsAndRevenue3(binding2.getdescriptionOfOpAndRev3());
+                        req1.setDescriptionOfOperationsAndRevenue4(binding2.getdescriptionOfOpAndRev4());
+                        //req1.setTotalSale(Double.parseDouble(binding2.gettotalSale()));
+                        //req1.setPercentageOfUSSales(Double.parseDouble(binding2.getperOfUsSales()));
+                        //req1.setOnpremises(Integer.parseInt(binding2.getperOfOnPremises()));
+                        //req1.setOffpremises(Integer.parseInt(binding2.getperOfOffPremises()));
+                        //req1.setResidential(Integer.parseInt(binding2.getperOfResidential()));
+                        //req1.setCommercial(Integer.parseInt(binding2.getperOfCommercial()));
+                        //req1.setSubcontracted(Integer.parseInt(binding2.getperOfSubContracted()));
+                        req1.setLargestCustomerOrProject1(binding2.getlargestCustomerOrProject1());
+                        req1.setLargestCustomerOrProject2(binding2.getlargestCustomerOrProject2());
+                        req1.setLargestCustomerOrProject3(binding2.getlargestCustomerOrProject3());
+                        req1.setLargestCustomerOrProject4(binding2.getlargestCustomerOrProject4());
+                        System.out.println("1234567");
+                        req1.setLargestSuppliers1(binding2.getlargestSuppliers1());
+                        req1.setLargestSuppliers2(binding2.getlargestSuppliers2());
+                        req1.setLargestSuppliers3(binding2.getlargestSuppliers3());
+                        req1.setLargestSuppliers4(binding2.getlargestSuppliers4());
+                        req1.setFutureOpportunitiesOrPlanOfGrowth(binding3.getfutureopportunity());
+                        req1.setDescribeCompetition(binding3.getdescribecompetition());
+                        req1.setBusinessAsset(binding3.getbusinessapart());
+                        req1.setAdvertising(binding3.getadvertising());
+                        req1.setDurationIncaseOfSeriousClaims(binding3.getrecover());
+                        // req1.setPastClaimAmount1(Double.parseDouble(binding3.getclaimamount1()));
+                        //req1.setPastClaimAmount2(Double.parseDouble(binding3.getclaimamount2()));
+                        //req1.setPastClaimAmount3(Double.parseDouble(binding3.getclaimamount3()));
+                        req1.setCurrentInsuranceType1(binding3.getciptype1());
+                        req1.setCurrentInsuranceType2(binding3.getciptype2());
+                        req1.setCurrentInsuranceType3(binding3.getciptype3());
+                        req1.setCurrentInsuranceCarrier1(binding3.getcipcarrier1());
+                        req1.setCurrentInsuranceCarrier2(binding3.getcipcarrier2());
+                        req1.setCurrentInsuranceCarrier3(binding3.getcipcarrier3());
+                        System.out.println("12345678");
+                        req1.setLineHolders1(binding3.getlienholder1());
+                        req1.setLineHolders2(binding3.getlienholder2());
+                        req1.setLienHolders3(binding3.getlienholder3());
+                        req1.setLineHoldersLoc1(binding3.getloc1());
+                        req1.setLineHoldersLoc2(binding3.getloc2());
+                        req1.setLineHoldersLoc3(binding3.getloc3());
+                        req1.setAddressOfLocation1(binding3.getaoladdress1());
+                        req1.setAddressOfLocation2(binding3.getaoladdress2());
+                        req1.setAddressOfLocation3(binding3.getaoladdress3());
+                        req1.setAddressOfLocation4(binding3.getaoladdress4());
+                        req1.setAddressOfLocationUse1(binding3.getaoluse1());
+                        req1.setAddressOfLocationUse2(binding3.getaoluse2());
+                        req1.setAddressOfLocationUse3(binding3.getaoluse3());
+                        req1.setAddressOfLocationUse4(binding3.getaoluse4());
+                        req1.setLocationRentedToOthers1(binding3.getlrtooccupancy1());
+                        req1.setLocationRentedToOthers3(binding3.getlrtooccupancy3());
+                        req1.setLocationRentedToOthers2(binding3.getlrtooccupancy2());
+                        req1.setLocationRentedToOthers4(binding3.getlrtooccupancy4());
+                        req1.setProducercomments(binding3.getproducercomments());
+                        req1.setMarketercomments(binding3.getmarketercomments());
+
+                        /*  req1.setBuildingLimit(Double.parseDouble(binding4.getbuildinglimit()));
+                         req1.setBuildingDeductible(Double.parseDouble(binding4.getbuildingdeductible()));
+                         req1.setContentsLimit(Double.parseDouble(binding4.getcontentslimit()));
+                         req1.setContentsDeductible(Double.parseDouble(binding4.getcontentsdeductible()));
+                         req1.setStockLimit(Double.parseDouble(binding4.getstocklimit()));
+                         req1.setStockDeductible(Double.parseDouble(binding4.getstockdeductible()));
+                         req1.setOfficeContentLimit(Double.parseDouble(binding4.getofficelimit()));
+                         req1.setOfficeContentDeductible(Double.parseDouble(binding4.getofficedeductible()));
+                         req1.setEdpLimit(Double.parseDouble(binding4.getedplimit()));
+                         req1.setEdpDeductible(Double.parseDouble(binding4.getedpdeductible()));
+                         req1.setEquipmentLimit(Double.parseDouble(binding4.getequipmentlimit()));
+                         req1.setEquipmentDeductible(Double.parseDouble(binding4.getequipmentdeductible()));
+                         req1.setOffPremisesLimit(Double.parseDouble(binding4.getoffpremiseslimit()));
+                         req1.setOffPremisesDeductible(Double.parseDouble(binding4.getoffpremisesdeductible()));
+                         req1.setTransitLimit(Double.parseDouble(binding4.gettransitlimit()));
+                         req1.setTransitDeductible(Double.parseDouble(binding4.gettransitdeductible()));
+                         req1.setMiscPropertyLimit(Double.parseDouble(binding4.getmiscpropertylimit()));
+                         req1.setMiscPropertyDeductible(Double.parseDouble(binding4.getmiscpropertydeductible()));
+                         req1.setContractorEquipmentLimit(Double.parseDouble(binding4.getcontractorsequipmentlimit()));
+                         req1.setContractorEquipmentDeductible(Double.parseDouble(binding4.getcontractorsequipmentdeductible()));
+                         req1.setInstallationFloaterLimit(Double.parseDouble(binding4.getinstallationfloatorlimit()));
+                         req1.setInstallationFloaterDeductible(Double.parseDouble(binding4.getinstallationfloatordeductible()));
+                         req1.setToolFloaterLimit(Double.parseDouble(binding4.gettoolfloatorlimit()));
+                         req1.setToolFloaterDeductible(Double.parseDouble(binding4.gettoolfloatordeductible()));
+                         req1.setSignFloaterLimit(Double.parseDouble(binding4.getsignfloatorlimit()));
+                         req1.setSignFloaterDeductible(Double.parseDouble(binding4.getsignfloatordeductible()));
+                         req1.setMotorTruckLimit(Double.parseDouble(binding4.getmotortruckcargolimit()));
+                         req1.setMotorTruckDeductible(Double.parseDouble(binding4.getmotortruckcargodeductible()));
+                         req1.setGlassLimit(Double.parseDouble(binding4.getglasslimit()));
+                         req1.setGlassDeductible(Double.parseDouble(binding4.getglassdeductible()));
+                         req1.setSewerBackupDeductible(Double.parseDouble(binding4.getsewerblackupdeductible()));
+                         req1.setFloodDeductible(Double.parseDouble(binding4.getflooddeductible()));
+                         req1.setEarthquakeDeductible(Double.parseDouble(binding4.getearthquakedeductible()));
+                         req1.setProfitLimit(Double.parseDouble(binding4.getprofitslimit()));
+                         req1.setProfitDeductible(Double.parseDouble(binding4.getprofitsdeductible()));
+                         req1.setGrossEarningLimit(Double.parseDouble(binding4.getgrossearningslimit()));
+                         req1.setGrossEarningDeductible(Double.parseDouble(binding4.getgrossearningsdeductible()));
+                         req1.setRentalIncomeLimit(Double.parseDouble(binding4.getrentalincomelimit()));
+                         req1.setRentalIncomeDeductible(Double.parseDouble(binding4.getrentalincomedeductible()));
+                         req1.setExtraExpenseLimit(Double.parseDouble(binding4.getextraexpenselimit()));
+                         req1.setExtraExpenseDeductible(Double.parseDouble(binding4.getextraexpensedeductible()));
+                         req1.setOffPremisesPowerLimit(Double.parseDouble(binding4.getoffpremiseslimit()));
+                         req1.setOffPremisesPowerDeductible(Double.parseDouble(binding4.getoffpremisesdeductible()));
+                         req1.setInsideOutsideLimit(Double.parseDouble(binding4.getinsideoutsidelimit()));
+                         req1.setInsideOutsideDeductible(Double.parseDouble(binding4.getinsideoutsidedeductible()));
+                         req1.setBfMoneyLimit(Double.parseDouble(binding4.getbfmoneylimit()));
+                         req1.setBfMoneyDeductible(Double.parseDouble(binding4.getbfmoneydeductible()));
+                         req1.setDeopistorForgeryDeductible(Double.parseDouble(binding4.getforgerylimit()));
+                         req1.setMoneyOrdersLimit(Double.parseDouble(binding4.getmoneyorderslimit()));
+                         req1.setMoneyOrdersDeductible(Double.parseDouble(binding4.getmoneyordersdeductible()));
+                         req1.setEmployDishonestyLimit(Double.parseDouble(binding4.getdishonestylimit()));
+                         req1.setEmployDishonestyDeductible(Double.parseDouble(binding4.getdishonestydeductible()));
+                         req1.setCglLimit(Double.parseDouble(binding4.getcgllimit()));
+                         req1.setCglDeductible(Double.parseDouble(binding4.getcgldeductible()));
+                         req1.setTenantsLegalLimit(Double.parseDouble(binding4.gettenantslimit()));
+                         req1.setTenantsLegalDeductible(Double.parseDouble(binding4.gettenantsdeductible()));
+                         req1.setNonOwnedAutoLimit(Double.parseDouble(binding4.getnonownedlimit()));
+                         req1.setNonOwnedAutoDeductible(Double.parseDouble(binding4.getnonowneddeductible()));
+                         req1.setSef96Limit(Double.parseDouble(binding4.getsef96limit()));
+                         req1.setSef96Deductible(Double.parseDouble(binding4.getsef96deductible()));
+                         req1.setSef94Limit(Double.parseDouble(binding4.getsef94limit()));
+                         req1.setSef94Deductible(Double.parseDouble(binding4.getsef94deductible()));
+                         req1.setDoLimit(Double.parseDouble(binding4.getdandlimit()));
+                         req1.setDoDeductible(Double.parseDouble(binding4.getdanddeductible()));
+                         req1.setEoLimit(Double.parseDouble(binding4.geteandlimit()));
+                         req1.setEoDeductible(Double.parseDouble(binding4.geteanddeductible()));
+                         req1.setEmployerLimit(Double.parseDouble(binding4.getemployerslimit()));
+                         req1.setEmployerDeductible(Double.parseDouble(binding4.getemployersdeductible()));
+                         req1.setUmbrellaLimit(Double.parseDouble(binding4.getumbrellalimit()));
+                         req1.setUmbrellaDeductible(Double.parseDouble(binding4.getumbrelladeductible()));
+                         req1.setWrapUpLimit(Double.parseDouble(binding4.getwrapuplimit()));
+                         req1.setWrapUpDeductible(Double.parseDouble(binding4.getwrapupdeductible()));
+                         req1.setStdComprehensiveLimit(Double.parseDouble(binding4.getstdlimit()));
+                         req1.setStdComprehensiveDeductible(Double.parseDouble(binding4.getstddeductible()));
+                         req1.setAirConditioningLimit(Double.parseDouble(binding4.getaclimit()));
+                         req1.setAirConditioningDeductible(Double.parseDouble(binding4.getacdeductible()));
+                         req1.setProductionMachineryLimit(Double.parseDouble(binding4.getproductionmachinerylimit()));
+                         req1.setProductionMachineryDeductible(Double.parseDouble(binding4.getproductionmachinerydeductible()));
+                         // req1.setOtherCoverageLimit(Double.parseDouble(binding4.getothercoverage1()));
+                         //req1.setOtherCoverage1(Double.parseDouble(binding4.getothercoverage1()));
+                         //req1.setOtherCoverage2(Double.parseDouble(binding4.getothercoverage2()));
+                         //req1.setOtherCoverageLimit(Double.parseDouble(binding4.getothercoverage1limit()));
+                         // req1.setOtherCoverageDeductible(Double.parseDouble(binding4.getothercoverage1deductible()));*/
+                        //ADDITIONAL COVERAGE
+                        req1.setAddress(binding4.getlocationaddress());
+                        System.out.println("1111");
+                        /*     req1.setAge(Integer.parseInt(binding4.getlocationage()));
+                         req1.setTotalSqFootage(Double.parseDouble(binding4.gettotsqfootage()));
+                         req1.setInsdSqFootage(Double.parseDouble(binding4.getinsidesqfootage()));
+                         req1.setNoOfStories(Integer.parseInt(binding4.getnoofstories())); */
+                        req1.setCurrentInsurer(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentinsurer());
+                        // req1.setCurrentExpDate(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentexpirydate()); 
+                        //   req1.setPremiumTarget(Double.parseDouble(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautopremiumtarget()));
+                        req1.setLienHolders1(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getlessholder1());
+                        req1.setLienHolders2(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getlessholder2());
+                        req1.setLienHolders3(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getlessholder3());
+                        req1.setLienHoldersVehicle1(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautovehicle1());
+                        req1.setLienHoldersVehicle2(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautovehicle2());
+                        req1.setLienHoldersVehicle3(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautovehicle3());
+                        //req1.setClaimDate1(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodateofclaim1());
+                        //req1.setClaimDate2(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodateofclaim2());
+                        //req1.setClaimDate3(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodateofclaim3());
+                        req1.setClaimDesc1(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautodescriptionofclaim1());
+                        req1.setClaimDesc2(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautodescriptionofclaim2());
+                        req1.setClaimDesc3(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautodescriptionofclaim3());
+                        // req1.setCommoditiesTransportedBy(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getcommoditiestransported());
+                        req1.setFilingState1(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getliststate1());
+                        req1.setFilingState2(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getliststate2());
+                        req1.setFilingState3(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getliststate3());
+                        req1.setFilingState4(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getliststate4());
+                        req1.setFilingUSDot1(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getusdot1());
+                        req1.setFilingUSDot2(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getusdot2());
+                        req1.setFilingUSDot3(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getusdot3());
+                        System.out.println("1010");
+                        req1.setFilingUSDot4(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getusdot4());
+                        req1.setDilingDocket1(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getdocket1());
+                        req1.setDilingDocket2(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getdocket2());
+                        req1.setDilingDocket3(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getdocket3());
+                        req1.setDilingDocket4(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getdocket4());
+                        req1.setFilingType1(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeoffiling1());
+                        req1.setFilingType2(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeoffiling2());
+                        req1.setFilingType3(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeoffiling3());
+                        req1.setFilingType4(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeoffiling4());
+                        req1.setFilingName1(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getnamerequired1());
+                        req1.setFilingName2(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getnamerequired2());
+                        req1.setFilingName3(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getnamerequired3());
+                        req1.setFilingName4(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getnamerequired4());
+                        //req1.setVehicleNonOwned(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getnonownedliability());
+                        //req1.setContract((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getnonownedcontract);
+                        req1.setTypeOfNonOwned(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeofnonowned());
+                        //   req1.setAvgNoOfVehicles(Double.parseDouble(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getanytime()));
+                        //  req1.setAvgValue(Double.parseDouble(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getavgvalue()));
+                        //  req1.setMaxVehicleValue(Double.parseDouble(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getmaxannually()));
+                        //  req1.setMaxCostValue(Double.parseDouble(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getmostexpensive()));
+                        req1.setInstructionNotes(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautosubmissioncomments());
+                        req1.setLoggedInUserEmailAddress(getReceivedemailaddress());
+                        System.out.println(getReceivedemailaddress());
+                        System.out.println("101010");
+                        int i = 0;
+                        if (fileList != null) {
+                            for (File file : fileList) {
+                                if (file != null) {
+                                    byte[] bytes = WriteByteArray.getByteFromFile(file);
+                                    switch (i) {
+                                        case 0:
+                                            req1.setFile1(bytes);
+                                            req1.setFile1Name(file.getName());
+                                            break;
+                                        case 1:
+                                            req1.setFile2(bytes);
+                                            req1.setFile2Name(file.getName());
+                                            break;
+                                        case 2:
+                                            req1.setFile3(bytes);
+                                            req1.setFile3Name(file.getName());
+                                            break;
+                                        case 3:
+                                            req1.setFile4(bytes);
+                                            req1.setFile4Name(file.getName());
+                                            break;
+                                        case 4:
+                                            req1.setFile5(bytes);
+                                            req1.setFile5Name(file.getName());
+                                            break;
+                                        case 5:
+                                            req1.setFile6(bytes);
+                                            req1.setFile6Name(file.getName());
+                                            break;
+                                        case 6:
+                                            req1.setFile7(bytes);
+                                            req1.setFile7Name(file.getName());
+                                            break;
+                                        case 7:
+                                            req1.setFile8(bytes);
+                                            req1.setFile8Name(file.getName());
+                                            break;
+                                        case 8:
+                                            req1.setFile9(bytes);
+                                            req1.setFile9Name(file.getName());
+                                            break;
+                                        case 9:
+                                            req1.setFile10(bytes);
+                                            req1.setFile10Name(file.getName());
+                                            break;
+                                    }
+                                }
+                            }
+                        }
+                        System.out.println("123");
+
+                        System.out.println("12345");
                         InsuranceFormSubmitResponse response = port.getInsuranceOperationsPort().formSubmission(req1);
                         if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
                             successMessage("Form has been submitted. Your Form id is:" + response.getFormId());
@@ -1577,9 +1603,9 @@ public class NextScreenController implements Initializable, IScreenController {
                         } else {
                             errors(response.getErrorMessage());
                         }
-                    } catch (com.rav.insurance.insuranceformoperations.webservice.Exception ex) {
+                    } catch (Exception ex) {
 
-                        Logger.getLogger(RegistrationPageController.class.getName()).log(Level.SEVERE, null, ex);
+                        ex.printStackTrace();
                     }
                     return null;
                 }
@@ -1623,28 +1649,23 @@ public class NextScreenController implements Initializable, IScreenController {
 
     @FXML
     public void uploadfiles() {
-
+        System.out.println("Inside");
         FileChooser fileChooser = new FileChooser();
 
         //FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("name", "filter");
         //fileChooser.getExtensionFilters().add(extFilter);
-        Scene scene = upload.getScene();
-        if (scene != null) {
-
-            Window window = scene.getWindow();
-            if (window != null) {
-                List<File> list
-                        = fileChooser.showOpenMultipleDialog(window);
-                if (list != null) {
-                    String files = "";
-                    for (File file : list) {
-                        System.out.println(file.getPath());
-                        files = files + file.getName() + ",";
-                    }
-                    this.fileList = list;
-                    uploadlabel.setText(files.substring(0, files.length() - 1));
-                }
+        List<File> list
+                = fileChooser.showOpenMultipleDialog(null);
+        if (list != null) {
+            System.out.println("Inside1");
+            String files = "";
+            for (File file : list) {
+                System.out.println(file.getPath());
+                files = files + file.getName() + ",";
             }
+            this.fileList = list;
+            uploadlabel.setText(files.substring(0, files.length() - 1));
+
         }
 
     }
