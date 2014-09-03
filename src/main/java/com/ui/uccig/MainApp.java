@@ -19,7 +19,7 @@ public class MainApp extends Application {
         //screenNavigator.loadScreen("FirstScreen", "/fxml/EnterCodeUI.fxml");
         screenNavigator.loadScreen("FirstScreen", "/fxml/LoginRegistrationSceneFXML.fxml");
         screenNavigator.loadScreen("NextScreen", "/fxml/NextScreen.fxml");
-      
+        screenNavigator.loadScreen("AutoSubmission", "/fxml/autosubmission.fxml");
 
          screenNavigator.setScreen("FirstScreen");
         

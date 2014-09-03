@@ -12,11 +12,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="610.875" prefWidth="1269.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.ui.uccig.LoginRegistrationSceneController">
+<AnchorPane id="AnchorPane" fx:id="fullScreenPane" prefHeight="610.875" prefWidth="1269.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.ui.uccig.AutoSubmissionController">
   <children>
     <ImageView fitHeight="715.0" fitWidth="2538.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="false">
       <image>
-        <Image url="@../../../../../../Desktop/1280x1024-deep-sky-blue-solid-color-background.jpg" />
+        <Image url="@../images/light_sky_blue_shade.jpg" />
       </image>
     </ImageView>
     <Label layoutX="502.0" layoutY="22.0" prefWidth="265.0" text="Commercial Auto Submission">
@@ -50,9 +50,9 @@
     <TextField fx:id="autodescriptionofclaim3" layoutX="449.0" layoutY="369.0" prefWidth="200.0" promptText="Description of Claim" />
     <Label font="$x1" layoutX="102.0" layoutY="461.0" text="Commodities Transported (by%):" />
     <TextArea fx:id="commoditiestransported" layoutX="349.0" layoutY="434.0" prefHeight="70.0" prefWidth="494.0" wrapText="true" />
-    <Button layoutX="102.0" layoutY="602.0" mnemonicParsing="false" text="Button" />
-    <Button layoutX="603.0" layoutY="602.0" mnemonicParsing="false" text="Button" />
-    <Button layoutX="1105.0" layoutY="602.0" mnemonicParsing="false" text="Button" />
+    <Button defaultButton="true" layoutX="102.0" layoutY="602.0" mnemonicParsing="false" onAction="#backAuto" prefHeight="34.0" prefWidth="109.0" text="Back" />
+    <Button defaultButton="true" layoutX="595.0" layoutY="602.0" mnemonicParsing="false" onAction="#submitSave" prefHeight="34.0" prefWidth="109.0" text="Save" />
+    <Button defaultButton="true" layoutX="1059.0" layoutY="602.0" mnemonicParsing="false" onAction="#continueAuto" prefHeight="34.0" prefWidth="113.0" text="Submit" />
     <Label font="$x2" layoutX="1903.5" layoutY="22.0" prefWidth="265.0" text="Commercial Auto Submission" />
     <Label font="$x1" layoutX="1366.0" layoutY="98.0" text="Hauling for Others?" />
     <Label font="$x1" layoutX="1366.0" layoutY="199.0" text="Filings Required:" />
@@ -108,10 +108,10 @@
     <TextField fx:id="avgvalue" layoutX="1455.0" layoutY="405.0" prefWidth="113.0" />
     <TextField fx:id="maxannually" layoutX="1919.0" layoutY="405.0" prefWidth="87.0" />
     <TextField fx:id="mostexpensive" layoutX="2269.0" layoutY="405.0" prefWidth="109.0" />
-    <Label font="$x1" layoutX="1366.0" layoutY="477.0" text="Instructions/Notes/Comments:" />
+    <Label font="$x1" layoutX="1366.0" layoutY="470.0" text="Instructions/Notes/Comments:" />
     <TextArea fx:id="autosubmissioncomments" layoutX="1608.0" layoutY="443.0" prefHeight="70.0" prefWidth="770.0" wrapText="true" />
-    <Button layoutX="1371.0" layoutY="602.0" mnemonicParsing="false" text="Button" />
-    <Button layoutX="2004.0" layoutY="602.0" mnemonicParsing="false" text="Button" />
-    <Button layoutX="2392.0" layoutY="602.0" mnemonicParsing="false" text="Button" />
+    <Button defaultButton="true" layoutX="1371.0" layoutY="602.0" mnemonicParsing="false" onAction="#back1" prefHeight="34.0" prefWidth="113.0" text="Back" />
+    <Button defaultButton="true" layoutX="2350.0" layoutY="602.0" mnemonicParsing="false" onAction="#submitFormAction" prefHeight="34.0" prefWidth="112.99990000000253" text="Submit" />
+    <Button defaultButton="true" layoutX="1872.0" layoutY="602.0" mnemonicParsing="false" onAction="#submitSave" prefHeight="34.0" prefWidth="113.0" text="Save" />
   </children>
 </AnchorPane>

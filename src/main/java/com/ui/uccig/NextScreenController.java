@@ -8,7 +8,6 @@ package com.ui.uccig;
 import com.calendar.DatePicker;
 import com.rav.insurance.insuranceformoperations.webservice.Exception;
 import com.rav.insurance.insuranceformoperations.webservice.InsuranceOperationsService_Service;
-import com.rav.insurance.insuranceformoperations.webservice.contracts.CommonResponseAttributes;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuranceFormResponse;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.InsuranceFormSubmitRequest;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.InsuranceFormSubmitResponse;
@@ -40,7 +39,6 @@ import javafx.beans.value.ObservableValue;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -55,8 +53,6 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.stage.Window;
 import javafx.util.Duration;
 
@@ -108,7 +104,7 @@ public class NextScreenController implements Initializable, IScreenController {
     @FXML
     private TextField otherspecify;
     @FXML
-    private ChoiceBox<String> years;
+    private TextField yearsinbusiness;
     @FXML
     private TextField relatedexperience;
     @FXML
@@ -497,7 +493,7 @@ public class NextScreenController implements Initializable, IScreenController {
     @FXML
     private TextArea additionalcoverage;
     @FXML
-    private TextField locationaddress;
+    private TextArea locationaddress;
     @FXML
     private TextField locationage;
     @FXML
@@ -564,6 +560,10 @@ public class NextScreenController implements Initializable, IScreenController {
     private CheckBox windowbars;
     @FXML
     private CheckBox deadbolts;
+    @FXML
+    private Button autoinsurancebutton;
+    @FXML
+    private Button CommercialSubmit;
      
     
     @FXML
@@ -576,6 +576,10 @@ public class NextScreenController implements Initializable, IScreenController {
     ImageView bg;
 
     DatePicker datePicker = new DatePicker();
+    DatePicker datePicker1 = new DatePicker();
+    DatePicker datePicker2 = new DatePicker();
+    DatePicker datePicker3 = new DatePicker();
+    
     int insurancetypeflag = 0;
     private FormEntry1Binding binding;
     private FormEntry2Binding binding2;
@@ -1047,7 +1051,10 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         });
 
-        /*datePicker.localeProperty().set(Locale.ENGLISH);
+       /*  datePicker.localeProperty().set(Locale.ENGLISH);
+         datePicker1.localeProperty().set(Locale.ENGLISH);
+         datePicker2.localeProperty().set(Locale.ENGLISH);
+         datePicker3.localeProperty().set(Locale.ENGLISH);
          datePicker.setLayoutX(0.0);
          datePicker.setLayoutY(81.0);
          datePicker.setPrefWidth(200.0);
@@ -1068,7 +1075,7 @@ public class NextScreenController implements Initializable, IScreenController {
     }
 
     @FXML
-    public void submitAction1() {
+    public void submitNewBusiness() {
 
         openingPane.setVisible(false);
         newBusinessPane.setVisible(true);
@@ -1076,6 +1083,7 @@ public class NextScreenController implements Initializable, IScreenController {
 
     @FXML
     public void submitActionCommercial() {
+        insurancetypeflag=1;
         animatedMovement(-1269, 0);
         returnedname.setText(getReceivedname());
         returnedbranch.setText(getBranch());
@@ -1084,6 +1092,7 @@ public class NextScreenController implements Initializable, IScreenController {
 
     @FXML
     public void submitActionAuto() {
+        insurancetypeflag=2;
         animatedMovement(-1269, 0);
         returnedname.setText(getReceivedname());
         returnedbranch.setText(getBranch());
@@ -1092,6 +1101,7 @@ public class NextScreenController implements Initializable, IScreenController {
 
     @FXML
     public void submitActionBoth() {
+        insurancetypeflag=3;
         animatedMovement(-1269, 0);
         returnedname.setText(getReceivedname());
         returnedbranch.setText(getBranch());
@@ -1099,23 +1109,48 @@ public class NextScreenController implements Initializable, IScreenController {
     }
 
     @FXML
-    public void submitAction3() {
+    public void continue1() {
         animatedMovement(-2538, 0);
     }
 
     @FXML
-    public void submitAction4() {
+    public void continue2() {
         animatedMovement(-3807, 0);
     }
 
     @FXML
-    public void submitAction5() {
+    public void continue3() {
         animatedMovement(-5076, 0);
     }
 
     @FXML
-    public void submitAction6() {
+    public void continue4() {
         animatedMovement(-6345, 0);
+    }
+    @FXML
+    public void continueAuto() {
+        animatedMovement(-1269, 0);
+    }
+    
+    @FXML
+    public void continue5() {
+        System.out.println(insurancetypeflag);
+        if(insurancetypeflag==1)
+        {animatedMovement(-7614, 0);
+        autoinsurancebutton.setVisible(false);}
+        else if(insurancetypeflag==2)
+        {screenPage.setScreen("AutoSubmission");
+        }
+        else if(insurancetypeflag==2)
+        { animatedMovement(-7614, 0);
+          CommercialSubmit.setVisible(false);
+          autoinsurancebutton.setVisible(true);
+        }
+        
+    }
+    @FXML
+    public void autobutton(){
+        screenPage.setScreen("AutoSubmission");
     }
 
     @FXML
@@ -1429,21 +1464,63 @@ public class NextScreenController implements Initializable, IScreenController {
                     req1.setAirConditioningDeductible(Double.parseDouble(binding4.getacdeductible()));
                     req1.setProductionMachineryLimit(Double.parseDouble(binding4.getproductionmachinerylimit()));
                     req1.setProductionMachineryDeductible(Double.parseDouble(binding4.getproductionmachinerydeductible()));
-                    req1.setOtherCoverageLimit(Double.parseDouble(binding4.getothercoverage1()));
+                   // req1.setOtherCoverageLimit(Double.parseDouble(binding4.getothercoverage1()));
                     //req1.setOtherCoverage1(Double.parseDouble(binding4.getothercoverage1()));
                     //req1.setOtherCoverage2(Double.parseDouble(binding4.getothercoverage2()));
-                    req1.setOtherCoverageLimit(Double.parseDouble(binding4.getothercoverage1limit()));
-                    req1.setOtherCoverageDeductible(Double.parseDouble(binding4.getothercoverage1deductible()));
+                    //req1.setOtherCoverageLimit(Double.parseDouble(binding4.getothercoverage1limit()));
+                   // req1.setOtherCoverageDeductible(Double.parseDouble(binding4.getothercoverage1deductible()));
                     //ADDITIONAL COVERAGE
                     req1.setAddress(binding4.getlocationaddress());
                     req1.setAge(Integer.parseInt(binding4.getlocationage()));
                     req1.setTotalSqFootage(Double.parseDouble(binding4.gettotsqfootage()));
                     req1.setInsdSqFootage(Double.parseDouble(binding4.getinsidesqfootage()));
                     req1.setNoOfStories(Integer.parseInt(binding4.getnoofstories()));
-                    
-                    
-                            
-                            
+                    req1.setCurrentInsurer(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentinsurer());
+                   // req1.setCurrentExpDate(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentexpirydate()); 
+                    req1.setPremiumTarget(Double.parseDouble(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautopremiumtarget()));
+                    req1.setLienHolders1(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getlessholder1());
+                    req1.setLienHolders2(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getlessholder2());
+                    req1.setLienHolders3(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getlessholder3());
+                    req1.setLienHoldersVehicle1(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautovehicle1());
+                    req1.setLienHoldersVehicle2(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautovehicle2());
+                    req1.setLienHoldersVehicle3(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautovehicle3());
+                    //req1.setClaimDate1(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodateofclaim1());
+                    //req1.setClaimDate2(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodateofclaim2());
+                    //req1.setClaimDate3(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodateofclaim3());
+                    req1.setClaimDesc1(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodescriptionofclaim1());
+                    req1.setClaimDesc2(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodescriptionofclaim2());
+                    req1.setClaimDesc3(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodescriptionofclaim3());
+                   // req1.setCommoditiesTransportedBy(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getcommoditiestransported());
+                     req1.setFilingState1(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getliststate1());
+                     req1.setFilingState2(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getliststate2());
+                     req1.setFilingState3(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getliststate3());
+                     req1.setFilingState4(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getliststate4());
+                     req1.setFilingUSDot1(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getusdot1());
+                     req1.setFilingUSDot2(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getusdot2());
+                     req1.setFilingUSDot3(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getusdot3());
+                     req1.setFilingUSDot4(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getusdot4());
+                     req1.setDilingDocket1(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getdocket1());
+                     req1.setDilingDocket2(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getdocket2());
+                     req1.setDilingDocket3(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getdocket3());
+                     req1.setDilingDocket4(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getdocket4());
+                     req1.setFilingType1(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeoffiling1());
+                     req1.setFilingType2(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeoffiling2());
+                     req1.setFilingType3(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeoffiling3());
+                     req1.setFilingType4(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeoffiling4());
+                     req1.setFilingName1(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getnamerequired1());
+                     req1.setFilingName2(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getnamerequired2());
+                     req1.setFilingName3(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getnamerequired3());
+                     req1.setFilingName4(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getnamerequired4());
+                     //req1.setVehicleNonOwned(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getnonownedliability());
+                     //req1.setContract((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getnonownedcontract);
+                     req1.setTypeOfNonOwned(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeofnonowned());
+                     req1.setAvgNoOfVehicles(Double.parseDouble(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getanytime()));
+                     req1.setAvgValue(Double.parseDouble(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getavgvalue()));
+                     req1.setMaxVehicleValue(Double.parseDouble(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getmaxannually()));
+                     req1.setMaxCostValue(Double.parseDouble(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getmostexpensive()));
+                     req1.setInstructionNotes(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautosubmissioncomments());
+                     
+                     
                     int i = 0;
                     for (File file : fileList) {
                         byte[] bytes = WriteByteArray.getByteFromFile(file);

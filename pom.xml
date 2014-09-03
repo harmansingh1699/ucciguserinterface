@@ -125,6 +125,11 @@
                             <goal>wsimport</goal>
                         </goals>
                         <configuration>
+                            <args>
+                                <arg>
+                                    -B-XautoNameResolution
+                                </arg>
+                            </args>
                             <wsdlUrls>
                                 <wsdlUrl>http://harsimran-singhs-macbook-pro.local:8080/InsuranceWebService/InsuranceOperationsService?wsdl</wsdlUrl>
                             </wsdlUrls>
