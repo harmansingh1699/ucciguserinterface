@@ -26,6 +26,11 @@
             <id>in-project</id>
             <name>In Project Repo</name>
             <url>file://${basedir}/src/main/resources/libs</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <checksumPolicy>fail</checksumPolicy>
+            </snapshots>
+
         </repository>
     </repositories>
     
@@ -37,8 +42,8 @@
         </dependency>
     
         <dependency>
-            <groupId>RavAutorun</groupId>
-            <artifactId>RavAutorun-API</artifactId>
+            <groupId>Autorun</groupId>
+            <artifactId>Autorun-API</artifactId>
             <version>1</version>
         </dependency>
     </dependencies>
@@ -143,7 +148,7 @@
                     </execution>
                                         
                                         
-                   <!-- <execution>
+                    <!-- <execution>
                         <id>UserOperations</id>
                         <goals>
                             <goal>wsimport</goal>

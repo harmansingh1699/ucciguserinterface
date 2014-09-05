@@ -28,5 +28,13 @@
                 <goal>clean</goal>
                 <goal>package</goal>
             </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-update snapshots clean package</actionName>
+            <displayName>update snapshots clean package</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>package</goal>
+            </goals>
         </action>        
     </actions>
