@@ -57,6 +57,12 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     private Pane fullScreenPane;
 
     @FXML
+    private Pane sendmailPane;
+
+    @FXML
+    private Pane closeapplicationpane;
+
+    @FXML
     private GridPane gridpane;
 
     @FXML
@@ -88,7 +94,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     @FXML
     private CheckBox searchdate4;
-    
+
     @FXML
     private Label title;
 
@@ -99,8 +105,8 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     private String marketerId;
 
     private String formId;
-    
-    public void setApplicationId(String applicationId){
+
+    public void setApplicationId(String applicationId) {
         title.setText(applicationId);
     }
 
@@ -193,20 +199,35 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     }
 
     @FXML
+    public void sendMailNow() {
+        animatedMovement(-2538, 0);
+    }
+
+    @FXML
+    public void sendMailLater() {
+        animatedMovement(-2538, -715);
+    }
+
+    @FXML
     public void submitAssign() {
 
         Task task = new Task<Void>() {
             @Override
             public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception {
-                InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
-                AssignMarketerRequest request = new AssignMarketerRequest();
-                request.setMarketerUserId(getMarketerId());
-                request.setFormId(getFormId());
-                CommonResponseAttributes response = port.getInsuranceOperationsPort().assignMarketer(request);
-                if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
-                    successMessage("Assigned "+getFormId()+" to "+getMarketerId());
-                }
+                try {
+                    InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
 
+                    AssignMarketerRequest request = new AssignMarketerRequest();
+                  
+                    request.setMarketerUserId(getMarketerId());
+                    request.setFormId(title.getText());
+                    CommonResponseAttributes response = port.getInsuranceOperationsPort().assignMarketer(request);
+                    if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
+                        successMessage("Assigned " + getFormId() + " to " + getMarketerId());
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 //   successMessage("You are successfully logged in");
                 return null;
             }
@@ -237,7 +258,6 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     }
 
-    
     public void successMessage(final String message) {
         Platform.runLater(new Runnable() {
             public void run() {
@@ -254,7 +274,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
             }
         });
     }
-    
+
     @FXML
     public void submitConversation() {
     }
@@ -265,6 +285,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     @FXML
     public void submitSendtoUnderwriter() {
+        sendmailPane.setVisible(true);
     }
 
     @FXML
@@ -273,10 +294,23 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     @FXML
     public void submitSaveQuotes() {
+        animatedMovement(-1269, -1430);
+    }
+
+    @FXML
+    public void homebutton() {
+        animatedMovement(0, 0);
+    }
+
+    @FXML
+    public void saveQuotes() {
+        animatedMovement(-1269, -715);
     }
 
     @FXML
     public void submitCloseApplication() {
+        closeapplicationpane.setVisible(true);
+
     }
 
     @FXML
@@ -284,23 +318,22 @@ public class EnterCodeUIController implements Initializable, IScreenController {
         Task task = new Task<Void>() {
             @Override
             public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception, Exception {
-               try{ System.out.println("Andar");
-                InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
-                GetInsuranceFormListRequest req = new GetInsuranceFormListRequest();
-                req.setProducerId(binding.getsearchproducerid());
-                req.setMarketerId(binding.getsearchmarketerid());
-                req.setBusinessName(binding.getsearchbusinessname());
-                req.setFormId(Integer.parseInt(binding.getsearchapplicationid()));
-                GetInsuranceFormListResponse response = port.getInsuranceOperationsPort().getFormList(req);
-                System.out.println(response.getStatus()+"AAGE");
-                if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
-                    System.out.println("Bello");
-                    abstractFormInfoList = response.getFormList();
-                    successSearch();
+                try {
+                    InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
+                    GetInsuranceFormListRequest req = new GetInsuranceFormListRequest();
+                    req.setProducerId(binding.getsearchproducerid());
+                    req.setMarketerId(binding.getsearchmarketerid());
+                    req.setBusinessName(binding.getsearchbusinessname());
+                    //req.setFormId(Integer.parseInt(binding.getsearchapplicationid()));
+                    GetInsuranceFormListResponse response = port.getInsuranceOperationsPort().getFormList(req);
+
+                    if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
+                        abstractFormInfoList = response.getFormList();
+                        successSearch();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-               }catch(Exception e){
-                   e.printStackTrace();
-               }
                 //   successMessage("You are successfully logged in");
                 return null;
             }
@@ -311,11 +344,10 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     public void showAbstractInfo() throws Exception {
         int j = 0;
-        for (int i = 0; i < 24 + offset; i++) {
-            System.out.println("Insideloop");
+        for (int i = 0; i < abstractFormInfoList.size() % 24 + offset; i++) {
 
             // gridpane.getChildren().add(new dynamicloading());
-            dynamicloading dl = new dynamicloading();
+            dynamicloading dl = new dynamicloading(screenPage);
             dl.getController().setProducer(abstractFormInfoList.get(i + offset).getProducerId());
             dl.getController().setApplicationId(abstractFormInfoList.get(i + offset).getFormId());
             //dl.getController().setBusinessName(abstractFormInfoList.get(i + offset).get);
@@ -329,20 +361,21 @@ public class EnterCodeUIController implements Initializable, IScreenController {
         }
     }
 
-     public void successSearch() {
+    public void successSearch() {
         Platform.runLater(new Runnable() {
-            
+
             public void run() {
-                System.out.println("HEllo");    offset = 0;
+                offset = 0;
                 try {
                     showAbstractInfo();
                 } catch (Exception ex) {
-                   ex.printStackTrace();
+                    ex.printStackTrace();
                 }
-                    animatedMovement(-1269, 0);
+                animatedMovement(-1269, 0);
             }
         });
     }
+
     @FXML
     public void searchAgain() {
         NextScreenController controller = (NextScreenController) screenPage.getControlledScreen("NextScreen");

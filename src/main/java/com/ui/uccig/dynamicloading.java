@@ -18,11 +18,12 @@ public class dynamicloading extends Pane {
 
     private SceneController controller = null;
 
-    public dynamicloading() throws Exception {
+    public dynamicloading(ScreenNavigator screenNavigator) throws Exception {
         FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/fxml/Scene.fxml"));
         Parent loadScreen = (Parent) myLoader.load();
         controller
                 = ((SceneController) myLoader.getController());
+        controller.setScreenNavigator(screenNavigator);
         // Parent root = FXMLLoader.load(getClass().getResource();
         this.getChildren().add(loadScreen);
     }
