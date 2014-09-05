@@ -281,6 +281,8 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     @FXML
     public void submitProposalBinder() {
+        //yaha
+        new Rav("a.docx").execute();
     }
 
     @FXML

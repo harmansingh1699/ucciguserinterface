@@ -35,8 +35,13 @@
             <artifactId>JavaFxDialogs-API</artifactId>
             <version>1</version>
         </dependency>
+    
+        <dependency>
+            <groupId>RavAutorun</groupId>
+            <artifactId>RavAutorun-API</artifactId>
+            <version>1</version>
+        </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
