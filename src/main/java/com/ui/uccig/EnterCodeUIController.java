@@ -14,6 +14,7 @@ import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuran
 import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuranceFormListResponse;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuranceFormResponse;
 import com.ui.binding.SearchArchivebinding;
+import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -283,7 +284,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     @FXML
     public void submitProposalBinder() {
         //yaha
-        new Rav("a.docx").execute();
+        new Rav(new File("a.docx").getAbsolutePath()).execute();
     }
 
     @FXML
