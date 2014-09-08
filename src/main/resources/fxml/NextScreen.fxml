@@ -124,7 +124,7 @@
         </HBox>
       </items>
     </ToolBar>
-    <ImageView fitHeight="949.7759876902725" fitWidth="1267.9998779296875" layoutX="1270.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="729.0" fitWidth="1268.0001220703125" layoutX="1270.0" layoutY="0.0" pickOnBounds="true" preserveRatio="false">
       <image>
         <Image url="@../images/greywhite.jpg" />
       </image>
@@ -174,7 +174,7 @@
             <Image url="@../images/greywhite.jpg" />
           </image>
         </ImageView>
-        <Label layoutX="599.0" layoutY="43.0" prefWidth="149.0" text="Client Profile">
+        <Label layoutX="599.0" layoutY="43.0" prefWidth="182.0" text="Client Profile(1)">
           <font>
             <Font name="Times Bold" size="25.0" fx:id="x6" />
           </font>
@@ -267,7 +267,7 @@
         <TextField id="keycontact" fx:id="yearsinbusiness" layoutX="696.0" layoutY="365.0" prefHeight="26.0" prefWidth="48.0" text="" />
       </children>
     </AnchorPane>
-    <ImageView fitHeight="967.0038083637871" fitWidth="1290.9998779296875" layoutX="2539.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="729.0" fitWidth="1268.0001220703125" layoutX="2539.0" layoutY="0.0" pickOnBounds="true" preserveRatio="false">
       <image>
         <Image url="@../images/greywhite.jpg" />
       </image>
@@ -410,7 +410,7 @@
         <TextField fx:id="largestSuppliers4" layoutX="810.0" layoutY="545.0" prefHeight="25.9998779296875" prefWidth="387.0" promptText="Supplier Name" />
       </children>
     </AnchorPane>
-    <ImageView fitHeight="952.7721416318616" fitWidth="1272.0" layoutX="3808.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="733.9999389648438" fitWidth="1272.0" layoutX="3808.0" layoutY="0.0" pickOnBounds="true" preserveRatio="false">
       <image>
         <Image url="@../images/greywhite.jpg" />
       </image>
@@ -470,7 +470,7 @@
         <Label font="$x4" layoutX="619.0" layoutY="577.0" text="CAD$" />
       </children>
     </AnchorPane>
-    <ImageView fitHeight="943.7837194043193" fitWidth="1259.9998779296875" layoutX="5075.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="729.0" fitWidth="1259.9998779296875" layoutX="5075.0" layoutY="0.0" pickOnBounds="true" preserveRatio="false">
       <image>
         <Image url="@../images/greywhite.jpg" />
       </image>
@@ -482,7 +482,7 @@
             <Image url="@../../../../../../Desktop/greywhite.jpg" />
           </image>
         </ImageView>
-        <Label font="$x6" layoutX="475.0" layoutY="57.0" prefWidth="239.0" text="Client Profile(4)" textFill="$x7" />
+        <Label font="$x6" layoutX="475.0" layoutY="53.0" prefWidth="182.0" text="Client Profile(4)" textFill="$x7" />
         <Label font="$x9" layoutX="425.0" layoutY="113.0" text="Schedule of Current Insurance Policies:" />
         <Label font="$x4" layoutX="135.0" layoutY="348.0" text="Lienholders:" />
         <Label font="$x9" layoutX="489.0" layoutY="433.0" text="Address of Locations:" />
@@ -907,7 +907,11 @@
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="17">
           <children>
-            <Label text="Included" />
+            <Label text="Included">
+              <font>
+                <Font name="Times Bold" size="13.0" fx:id="x10" />
+              </font>
+            </Label>
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="17">
@@ -917,7 +921,7 @@
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="18">
           <children>
-            <Label text="Included" />
+            <Label font="$x10" text="Included" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="18">
@@ -927,7 +931,7 @@
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="19">
           <children>
-            <Label text="Included" />
+            <Label font="$x10" text="Included" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="19">
@@ -937,12 +941,12 @@
         </HBox>
         <HBox alignment="CENTER" prefHeight="25.9998779296875" prefWidth="124.0" GridPane.columnIndex="1" GridPane.rowIndex="20">
           <children>
-            <Label text="Limit" />
+            <Label font="$x9" text="Limit" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="20">
           <children>
-            <Label text="Deductible" />
+            <Label font="$x9" text="Deductible" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="21">
@@ -1474,12 +1478,12 @@
       <children>
         <HBox alignment="CENTER" prefHeight="42.0" prefWidth="102.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
           <children>
-            <Label text="Address" />
+            <Label font="$x4" text="Address" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
           <children>
-            <Label text="Age" />
+            <Label font="$x4" text="Age" />
           </children>
         </HBox>
         <HBox alignment="BASELINE_LEFT" prefHeight="29.0" prefWidth="264.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -1504,12 +1508,12 @@
           <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <Label text="Tot. Sq." />
+                <Label font="$x4" text="Tot. Sq." />
               </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <Label text="Footage" />
+                <Label font="$x4" text="Footage" />
               </children>
             </HBox>
           </children>
@@ -1518,12 +1522,12 @@
           <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <Label text="Ins'd. Sq." />
+                <Label font="$x4" text="Ins'd. Sq." />
               </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <Label text="Footage" />
+                <Label font="$x4" text="Footage" />
               </children>
             </HBox>
           </children>
@@ -1544,13 +1548,19 @@
               <children>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <Label text="No. Of" />
+                    <Label font="$x4" text="No. Of" />
                   </children>
+                  <VBox.margin>
+                    <Insets top="4.0" />
+                  </VBox.margin>
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <Label text="Stories" />
+                    <Label font="$x4" text="Stories" />
                   </children>
+                  <VBox.margin>
+                    <Insets bottom="5.0" />
+                  </VBox.margin>
                 </HBox>
               </children>
             </VBox>
@@ -1563,7 +1573,7 @@
         </HBox>
         <HBox alignment="CENTER" prefHeight="30.0" prefWidth="81.99990000000253" GridPane.columnIndex="2" GridPane.rowIndex="1">
           <children>
-            <Label text="Basement:" />
+            <Label font="$x4" text="Basement:" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
@@ -1573,9 +1583,8 @@
                 <ChoiceBox fx:id="basement" prefWidth="81.0">
                   <items>
                     <FXCollections fx:factory="observableArrayList">
-                      <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
+                      <String fx:value="Yes" />
+                      <String fx:value="No" />
                     </FXCollections>
                   </items>
                 </ChoiceBox>
@@ -1599,12 +1608,12 @@
       <children>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
           <children>
-            <Label text="Walls:" />
+            <Label font="$x4" text="Walls" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
           <children>
-            <Label text="Roof:" />
+            <Label font="$x4" text="Roof" />
           </children>
         </HBox>
         <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
@@ -1613,12 +1622,12 @@
               <children>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <CheckBox id="frame" fx:id="wallsframe" mnemonicParsing="false" text="Frame" />
+                    <CheckBox id="frame" fx:id="wallsframe" font="$x8" mnemonicParsing="false" text="Frame" />
                   </children>
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <CheckBox id="hcb" fx:id="wallshcb" mnemonicParsing="false" text="HCB" />
+                    <CheckBox id="hcb" fx:id="wallshcb" font="$x8" mnemonicParsing="false" text="HCB" />
                   </children>
                 </HBox>
               </children>
@@ -1627,12 +1636,12 @@
               <children>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <CheckBox id="steel" fx:id="wallssteel" mnemonicParsing="false" text="Steel" />
+                    <CheckBox id="steel" fx:id="wallssteel" font="$x8" mnemonicParsing="false" text="Steel" />
                   </children>
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <CheckBox id="brick" fx:id="wallsbrick" mnemonicParsing="false" text="BRICK" />
+                    <CheckBox id="brick" fx:id="wallsbrick" font="$x8" mnemonicParsing="false" text="Brick" />
                   </children>
                 </HBox>
               </children>
@@ -1645,34 +1654,37 @@
               <children>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <CheckBox fx:id="woodjoist" mnemonicParsing="false" text="Wood Joist" />
+                    <CheckBox fx:id="woodjoist" font="$x8" mnemonicParsing="false" text="Wood Joist" />
                   </children>
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <CheckBox fx:id="steeldeck" mnemonicParsing="false" text="Steel Deck" />
+                    <CheckBox fx:id="steeldeck" font="$x8" mnemonicParsing="false" text="Steel Deck" />
                   </children>
                 </HBox>
               </children>
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
               <children>
-                <HBox prefHeight="23.0" prefWidth="159.0">
+                <HBox alignment="TOP_LEFT" prefHeight="23.0" prefWidth="159.0">
                   <children>
-                    <CheckBox id="concrete" fx:id="roofconcrete" mnemonicParsing="false" text="Concrete" />
+                    <CheckBox id="concrete" fx:id="roofconcrete" font="$x8" mnemonicParsing="false" text="Concrete" />
                   </children>
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <HBox prefHeight="100.0" prefWidth="200.0">
+                    <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
                       <children>
-                        <Label prefWidth="67.0" text="Updated:" />
+                        <Label font="$x8" prefWidth="67.0" text="Updated:" />
                       </children>
                     </HBox>
                     <HBox alignment="TOP_LEFT" prefHeight="100.0" prefWidth="200.0">
                       <children>
-                        <TextField fx:id="roofupdated" prefHeight="18.0" prefWidth="66.0" />
+                        <TextField fx:id="roofupdated" prefHeight="17.0" prefWidth="66.0" />
                       </children>
+                      <HBox.margin>
+                        <Insets fx:id="x11" />
+                      </HBox.margin>
                     </HBox>
                   </children>
                 </HBox>
@@ -1682,26 +1694,26 @@
         </VBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
           <children>
-            <Label text="Floors:" />
+            <Label font="$x4" text="Floors" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
           <children>
             <HBox alignment="CENTER_LEFT" prefHeight="22.9998779296875" prefWidth="127.0">
               <children>
-                <CheckBox fx:id="floorsconcrete" mnemonicParsing="false" text="Concrete" />
+                <CheckBox fx:id="floorsconcrete" font="$x8" mnemonicParsing="false" text="Concrete" />
               </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox fx:id="floorswood" mnemonicParsing="false" text="Wood" />
+                <CheckBox fx:id="floorswood" font="$x8" mnemonicParsing="false" text="Wood" />
               </children>
             </HBox>
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
           <children>
-            <Label text="Heating:" />
+            <Label font="$x4" text="Heating" />
           </children>
         </HBox>
         <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
@@ -1710,20 +1722,23 @@
               <children>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <CheckBox fx:id="fagas" mnemonicParsing="false" text="F/A Gas" />
+                    <CheckBox fx:id="fagas" font="$x8" mnemonicParsing="false" text="F/A Gas" />
                   </children>
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <CheckBox fx:id="faoil" mnemonicParsing="false" text="F/A Oil" />
+                    <CheckBox fx:id="faoil" font="$x8" mnemonicParsing="false" text="F/A Oil" />
                   </children>
                 </HBox>
-                <HBox prefHeight="100.0" prefWidth="200.0">
+                <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" HBox.margin="$x11">
                   <children>
-                    <CheckBox fx:id="heatingelectric" mnemonicParsing="false" text="Electric" />
+                    <CheckBox fx:id="heatingelectric" font="$x8" mnemonicParsing="false" text="Electric" />
                   </children>
                 </HBox>
               </children>
+              <VBox.margin>
+                <Insets top="5.0" fx:id="x12" />
+              </VBox.margin>
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
               <children>
@@ -1732,9 +1747,9 @@
                     <CheckBox fx:id="heatingother" mnemonicParsing="false" text="Other" />
                   </children>
                 </HBox>
-                <HBox alignment="BASELINE_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <Label prefWidth="63.0" text="Updated:" />
+                    <Label font="$x8" prefWidth="63.0" text="Updated:" />
                   </children>
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
@@ -1748,40 +1763,31 @@
         </VBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
           <children>
-            <Label text="Electrical:" />
+            <Label font="$x4" text="Electrical" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="5">
           <children>
-            <Label text="Plumbing:" />
-          </children>
-        </HBox>
-        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
-          <children>
-            <Label text="Fire Protection:">
-              <font>
-                <Font size="10.0" />
-              </font>
-            </Label>
+            <Label font="$x4" text="Plumbing" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="7">
           <children>
-            <Label text="Security:" />
+            <Label font="$x4" text="Security:" />
           </children>
         </HBox>
         <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
           <children>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <HBox prefHeight="100.0" prefWidth="200.0" VBox.margin="$x12">
               <children>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <CheckBox id="heatingbreakers" fx:id="electricalbreakers" mnemonicParsing="false" text="Breakers" />
+                    <CheckBox id="heatingbreakers" fx:id="electricalbreakers" font="$x8" mnemonicParsing="false" text="Breakers" />
                   </children>
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <CheckBox id="heatingfuses" fx:id="electricalfuses" mnemonicParsing="false" text="Fuses" />
+                    <CheckBox id="heatingfuses" fx:id="electricalfuses" font="$x8" mnemonicParsing="false" text="Fuses" />
                   </children>
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0" />
@@ -1791,12 +1797,12 @@
               <children>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <CheckBox id="heating" fx:id="noofamps" mnemonicParsing="false" text="# of AMPS" />
+                    <CheckBox id="heating" fx:id="noofamps" font="$x8" mnemonicParsing="false" prefHeight="19.0" prefWidth="98.0" text="# AMPS" />
                   </children>
                 </HBox>
-                <HBox alignment="BASELINE_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <Label prefWidth="63.0" text="Updated:" />
+                    <Label font="$x8" prefWidth="63.0" text="Updated:" />
                   </children>
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
@@ -1812,14 +1818,14 @@
           <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
               <children>
-                <HBox prefHeight="100.0" prefWidth="200.0">
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <CheckBox fx:id="copper" mnemonicParsing="false" text="Copper" />
+                    <CheckBox fx:id="copper" font="$x8" mnemonicParsing="false" text="Copper" />
                   </children>
                 </HBox>
-                <HBox prefHeight="100.0" prefWidth="200.0">
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <CheckBox fx:id="pvc" mnemonicParsing="false" text="PVC" />
+                    <CheckBox fx:id="pvc" font="$x8" mnemonicParsing="false" text="PVC" />
                   </children>
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0" />
@@ -1829,12 +1835,12 @@
               <children>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <CheckBox fx:id="plumbingother" mnemonicParsing="false" text="Other" />
+                    <CheckBox fx:id="plumbingother" font="$x8" mnemonicParsing="false" text="Other" />
                   </children>
                 </HBox>
-                <HBox alignment="BASELINE_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <Label prefWidth="63.0" text="Updated:" />
+                    <Label font="$x8" prefWidth="63.0" text="Updated:" />
                   </children>
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
@@ -1850,22 +1856,22 @@
           <children>
             <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="254.0">
               <children>
-                <CheckBox fx:id="alarmsystem" mnemonicParsing="false" text="Alarm System" />
+                <CheckBox fx:id="alarmsystem" font="$x8" mnemonicParsing="false" text="Alarm System" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="254.0">
               <children>
-                <CheckBox fx:id="centralmonitored" mnemonicParsing="false" text="Central Monitored" />
+                <CheckBox fx:id="centralmonitored" font="$x8" mnemonicParsing="false" text="Central Monitored" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="254.0">
               <children>
-                <CheckBox fx:id="windowbars" mnemonicParsing="false" text="Window Bars" />
+                <CheckBox fx:id="windowbars" font="$x8" mnemonicParsing="false" text="Window Bars" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="254.0">
               <children>
-                <CheckBox fx:id="deadbolts" mnemonicParsing="false" text="Dead Bolts" />
+                <CheckBox fx:id="deadbolts" font="$x8" mnemonicParsing="false" text="Dead Bolts" />
               </children>
             </HBox>
           </children>
@@ -1874,42 +1880,42 @@
           <children>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox fx:id="sprinklers" mnemonicParsing="false" text="Sprinklers" />
+                <CheckBox fx:id="sprinklers" font="$x8" mnemonicParsing="false" text="Sprinklers" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
               <children>
-                <CheckBox fx:id="svccontract" mnemonicParsing="false" text="SVC. Contract" />
+                <CheckBox fx:id="svccontract" font="$x8" mnemonicParsing="false" text="SVC. Contract" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
               <children>
-                <CheckBox fx:id="hydrant" mnemonicParsing="false" text="Hydrant" />
+                <CheckBox fx:id="hydrant" font="$x8" mnemonicParsing="false" text="Hydrant" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
               <children>
-                <CheckBox fx:id="firehall" mnemonicParsing="false" text="Firehall" />
+                <CheckBox fx:id="firehall" font="$x8" mnemonicParsing="false" text="Firehall" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
               <children>
-                <CheckBox fx:id="unprotected" mnemonicParsing="false" text="Unprotected" />
+                <CheckBox fx:id="unprotected" font="$x8" mnemonicParsing="false" text="Unprotected" />
               </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
               <children>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <Label text="Distance:" textAlignment="CENTER" />
+                    <Label font="$x8" text="Distance:" textAlignment="CENTER" />
                   </children>
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <TextField fx:id="distance" prefHeight="18.0" prefWidth="64.0" />
+                    <TextField fx:id="distance" prefHeight="18.0001220703125" prefWidth="59.0" />
                   </children>
                   <HBox.margin>
-                    <Insets />
+                    <Insets left="5.0" right="5.0" />
                   </HBox.margin>
                 </HBox>
               </children>
@@ -1925,6 +1931,20 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
+        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="6">
+          <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <Label font="$x4" text="Fire" />
+              </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <Label font="$x4" text="Protection" />
+              </children>
+            </HBox>
+          </children>
+        </VBox>
       </children>
       <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.0" minWidth="10.0" prefWidth="87.0" />

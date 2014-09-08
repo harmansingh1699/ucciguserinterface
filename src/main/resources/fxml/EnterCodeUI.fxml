@@ -65,12 +65,7 @@
       <top>
         <HBox alignment="CENTER" prefHeight="61.0" prefWidth="351.0">
           <children>
-            <Label text="" textAlignment="LEFT" textFill="BLACK" underline="true">
-              <font>
-                <Font size="22.0" fx:id="x7" />
-              </font>
-            </Label>
-            <Label text="Welcome Sue Naysmith">
+            <Label text="Welcome ">
               <font>
                 <Font name="Times Bold" size="20.0" fx:id="x5" />
               </font>
@@ -78,6 +73,7 @@
                 <Color blue="1.000" green="0.160" red="0.000" fx:id="x3" />
               </textFill>
             </Label>
+            <Label fx:id="welcomename" font="$x5" text="Name" textFill="#0029ff" />
           </children>
         </HBox>
       </top>
@@ -204,7 +200,11 @@
       <top>
         <HBox alignment="CENTER" prefHeight="61.0" prefWidth="351.0">
           <children>
-            <Label font="$x7" text="" textAlignment="LEFT" textFill="BLACK" underline="true" />
+            <Label text="" textAlignment="LEFT" textFill="BLACK" underline="true">
+              <font>
+                <Font size="22.0" fx:id="x7" />
+              </font>
+            </Label>
             <Label font="$x5" prefWidth="140.0" text="Search Archives" textFill="$x3" />
           </children>
         </HBox>
@@ -324,7 +324,7 @@
           <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" prefHeight="50.0" prefWidth="153.0" text="Search Results" />
+                <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" onAction="#goToSearchResults" prefHeight="50.0" prefWidth="153.0" text="Search Results" />
               </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
@@ -334,12 +334,12 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" prefHeight="50.0" prefWidth="153.0" text="Workspace" />
+                <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" onAction="#submitWorklist" prefHeight="50.0" prefWidth="153.0" text="Worklist" />
               </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" prefHeight="50.0" prefWidth="153.0" text="Search Archive" />
+                <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" onAction="#searchArchive" prefHeight="50.0" prefWidth="153.0" text="Search Archive" />
               </children>
             </HBox>
           </children>
@@ -601,7 +601,7 @@
     </BorderPane>
     <Button defaultButton="true" layoutX="1834.0" layoutY="655.0" mnemonicParsing="false" onAction="#searchAgain" prefHeight="50.0" prefWidth="165.0" text="Search Again">
       <font>
-        <Font name="Times New Roman Bold" size="20.0" />
+        <Font name="Times New Roman Bold" size="20.0" fx:id="x16" />
       </font>
     </Button>
     <Label font="$x8" layoutX="3094.0" layoutY="21.0" text="Send Mail to Underwriter" textFill="BLACK" />
@@ -1141,7 +1141,7 @@
         <HBox alignment="CENTER" prefHeight="61.0" prefWidth="351.0">
           <children>
             <Label font="$x7" text="" textAlignment="LEFT" textFill="BLACK" underline="true" />
-            <Label font="$x5" text="Close Application" textFill="#0029ff" />
+            <Label font="$x5" text="Close Application" textFill="$x9" />
           </children>
         </HBox>
       </top>
@@ -1416,5 +1416,86 @@
         </HBox>
       </top>
     </BorderPane>
+    <BorderPane id="registrationPane" fx:id="proposalbinder" layoutX="1840.0" layoutY="974.0" prefHeight="313.0" prefWidth="356.0" style="-fx-background-color: rgba(245,245,245, 0.8);&#10;-fx-background-radius: 10;">
+      <center>
+        <VBox prefHeight="288.0" prefWidth="356.0">
+          <children>
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+              <children>
+                <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <Label font="$x8" prefHeight="19.9998779296875" text="Proposal:   " />
+                  </children>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <VBox prefHeight="70.0" prefWidth="177.0">
+                      <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                          <children>
+                            <Button defaultButton="true" mnemonicParsing="false" onAction="#uploadProposal" text="Upload">
+                              <font>
+                                <Font size="16.0" fx:id="x15" />
+                              </font>
+                            </Button>
+                          </children>
+                        </HBox>
+                      </children>
+                    </VBox>
+                  </children>
+                </HBox>
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" minHeight="16.0" prefHeight="44.0" prefWidth="356.0">
+              <children>
+                <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <Label font="$x8" prefHeight="19.9998779296875" text="Binder:    " />
+                  </children>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <VBox prefHeight="128.0" prefWidth="177.0">
+                      <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                          <children>
+                            <Button defaultButton="true" font="$x15" mnemonicParsing="false" onAction="#uploadBinder" text="Upload" />
+                          </children>
+                        </HBox>
+                      </children>
+                    </VBox>
+                  </children>
+                </HBox>
+              </children>
+              <padding>
+                <Insets top="20.0" />
+              </padding>
+            </HBox>
+            <HBox alignment="CENTER" minHeight="22.0" prefHeight="94.0" prefWidth="356.0">
+              <children>
+                <HBox alignment="CENTER" prefHeight="60.0" prefWidth="115.0">
+                  <children>
+                    <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" onAction="#searchSubmit" prefHeight="40.0" prefWidth="100.0" text="Close" />
+                  </children>
+                </HBox>
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+      </center>
+      <effect>
+        <InnerShadow />
+      </effect>
+      <top>
+        <HBox alignment="CENTER" prefHeight="61.0" prefWidth="351.0">
+          <children>
+            <Label font="$x7" text="" textAlignment="LEFT" textFill="BLACK" underline="true" />
+            <Label font="$x5" text="Proposal/Binder" textFill="$x9" />
+          </children>
+        </HBox>
+      </top>
+    </BorderPane>
+    <Button defaultButton="true" font="$x16" layoutX="2200.0" layoutY="655.0" mnemonicParsing="false" onAction="#searchNext" prefHeight="50.0" prefWidth="165.0" text="Next" />
+    <Button defaultButton="true" font="$x16" layoutX="1500.0" layoutY="655.0" mnemonicParsing="false" onAction="#searchPrevious" prefHeight="50.0" prefWidth="165.0" text="Previous" />
   </children>
 </AnchorPane>

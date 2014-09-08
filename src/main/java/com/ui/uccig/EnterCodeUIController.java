@@ -8,19 +8,18 @@ package com.ui.uccig;
 import com.rav.insurance.insuranceformoperations.webservice.InsuranceOperationsService_Service;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.AbstractFormInfo;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.AssignMarketerRequest;
-import com.rav.insurance.insuranceformoperations.webservice.contracts.CommonRequestAttributes;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.CommonResponseAttributes;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuranceFormListRequest;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuranceFormListResponse;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuranceFormResponse;
+import com.rav.insurance.insuranceformoperations.webservice.contracts.UploadProposalBinderRequest;
+import com.rav.insurance.util.WriteByteArray;
 import com.ui.binding.SearchArchivebinding;
 import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.animation.TranslateTransition;
 import javafx.animation.TranslateTransitionBuilder;
 import javafx.application.Platform;
@@ -35,8 +34,8 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
-import ravrun.Rav;
 
 /**
  * FXML Controller class
@@ -44,13 +43,16 @@ import ravrun.Rav;
  * @author ravjotsingh
  */
 public class EnterCodeUIController implements Initializable, IScreenController {
-
+    private Stage stage = new Stage();
     private ScreenNavigator screenPage;
     List<AbstractFormInfo> abstractFormInfoList = new ArrayList<AbstractFormInfo>();
     private GetInsuranceFormResponse form;
 
     @FXML
     private Pane searcharchive2;
+
+    @FXML
+    private Pane proposalbinder;
 
     @FXML
     private Pane searcharchive;
@@ -220,7 +222,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
 
                     AssignMarketerRequest request = new AssignMarketerRequest();
-                  
+
                     request.setMarketerUserId(getMarketerId());
                     request.setFormId(title.getText());
                     CommonResponseAttributes response = port.getInsuranceOperationsPort().assignMarketer(request);
@@ -284,12 +286,94 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     @FXML
     public void submitProposalBinder() {
         //yaha
-        new Rav(new File("a.docx").getAbsolutePath()).execute();
+        proposalbinder.setVisible(true);
+    }
+
+    @FXML
+    public void uploadProposal() {
+        //yaha
+        Task task = new Task<Void>() {
+            @Override
+            public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception, Exception {
+                try {
+                    InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
+                    UploadProposalBinderRequest request = new UploadProposalBinderRequest();
+                    request.setProposal(WriteByteArray.getByteFromFile(new File("/Users/harsimransingh/Desktop/RevisedProposal.docx")));
+                    request.setFormId(formId);
+                    CommonResponseAttributes response = port.getInsuranceOperationsPort().uploadProposalBinder(request);
+                    if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
+                        successSearch();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                //   successMessage("You are successfully logged in");
+                return null;
+            }
+
+        };
+        new Thread(task).start();
+    }
+
+    @FXML
+    public void searchPrevious() {
+        if (offset > 0) {
+            offset -= 1;
+            gridpane.getChildren().removeAll(gridpane.getChildren());
+            try {
+                showAbstractInfo();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+
+    @FXML
+    public void searchNext() {
+        offset += 1;
+        gridpane.getChildren().removeAll(gridpane.getChildren());
+        try {
+            showAbstractInfo();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void uploadBinder() {
+        //yaha
+        Task task = new Task<Void>() {
+            @Override
+            public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception, Exception {
+                try {
+                    
+                    InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
+                    UploadProposalBinderRequest request = new UploadProposalBinderRequest();
+                    request.setProposal(WriteByteArray.getByteFromFile(new File("/Users/harsimransingh/Desktop/RevisedProposal.docx")));
+                    request.setFormId(formId);
+                    CommonResponseAttributes response = port.getInsuranceOperationsPort().uploadProposalBinder(request);
+                    if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
+                        successSearch();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                //   successMessage("You are successfully logged in");
+                return null;
+            }
+
+        };
+        new Thread(task).start();
     }
 
     @FXML
     public void submitSendtoUnderwriter() {
         sendmailPane.setVisible(true);
+    }
+
+    @FXML
+    public void goToSearchResults() {
+        animatedMovement(-1269, -715);
     }
 
     @FXML

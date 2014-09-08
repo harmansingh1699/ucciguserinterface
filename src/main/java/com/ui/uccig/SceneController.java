@@ -7,21 +7,17 @@ package com.ui.uccig;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.animation.TranslateTransition;
-import javafx.animation.TranslateTransitionBuilder;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
-import javafx.scene.layout.Pane;
-import javafx.util.Duration;
 
 /**
  *
  * @author harsimransingh
  */
 public class SceneController implements Initializable {
-
+    
     @FXML
     private Label date;
     @FXML
@@ -34,42 +30,41 @@ public class SceneController implements Initializable {
     private Label businessname;
     
     private ScreenNavigator screenPage;
-
-    public void setScreenNavigator(ScreenNavigator screenPage){
+    
+    public void setScreenNavigator(ScreenNavigator screenPage) {
         this.screenPage = screenPage;
     }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        
     }
     
-    public void setProducer(String producer){
+    public void setProducer(String producer) {
         this.producer.setText(producer);
     }
     
-    public void setBusinessName(String producer){
+    public void setBusinessName(String producer) {
         this.businessname.setText(producer);
     }
     
-     public void setDate(String producer){
+    public void setDate(String producer) {
         this.date.setText(producer);
     }
     
-    public void setSeverity(String producer){
+    public void setSeverity(String producer) {
         this.severity.setText(producer);
     }
     
-    public void setApplicationId(String producer){
+    public void setApplicationId(String producer) {
         this.applicationid.setText(producer);
     }
     
     @FXML
-    public void openForm(){
+    public void openForm() {
         ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setApplicationId(applicationid.getText());
         ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).animatedMovement(-1269, -715);
+        ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setFormId(applicationid.getText());
     }
-    
-    
-   
     
 }

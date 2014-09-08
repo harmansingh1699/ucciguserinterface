@@ -33,6 +33,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Dialogs;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -45,6 +46,7 @@ import javafx.stage.StageStyle;
  */
 public class LoginRegistrationSceneController implements Initializable, IScreenController {
 
+    private Stage stage = new Stage();
     private ScreenNavigator screenPage;
 
     @FXML
@@ -91,8 +93,7 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
 
     @FXML
     private Pane forgotPasswordPane;
-    
-    
+
     private LoginSceneBinding binding;
     private RegistrationPageBinding binding1;
     private ForgotPasswordBinding binding2;
@@ -104,6 +105,17 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        Group root = new Group();
+            ImageView imageView = new ImageView(new Image("http://www.justjeweller.com/images/animation.gif"));
+            root.getChildren().add(imageView);
+            root.autosize();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.setTitle("Please Wait");
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.centerOnScreen();
+            stage.setFocused(true);
         binding = new LoginSceneBinding();
         binding1 = new RegistrationPageBinding();
         binding2 = new ForgotPasswordBinding();
@@ -128,9 +140,6 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
         });
     }
 
-    
-    
-
     @Override
     public void setScreenParent(ScreenNavigator screenPage) {
         this.screenPage = screenPage;
@@ -145,7 +154,7 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
             InvokeAnimation.attentionSeekerWobble(loginpassword);
             loginpassword.setPromptText("Password is incorrect");
         } else {
-
+            stage.show();
             Task task = new Task<Void>() {
                 @Override
                 public Void call() {
@@ -157,11 +166,11 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
                         InsuranceLoginResponse response = port.getUserOperationsPort().loginUser(req);
                         if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
                             System.out.println(response.getRole());
-                            //   successMessage("You are successfully logged in");
+                            stopLoading();
                             if (response.getRole().equals("MARKETER") || response.getRole().equals("MANAGER")) {
                                 System.out.println("asdfasdsad");
                                 ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setMarketerId(binding.getUsername());
-                                
+
                                 Calendar c = Calendar.getInstance();
                                 c.setTimeInMillis(response.getCurrentDate().getMillisecond());
                                 ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setDate(c.getTime());
@@ -310,7 +319,7 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
 
                         if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
 
-                            successMessage("Password has been updated.Please login with the new password");
+                            successMessage("Password has been updated. Please login with the new password");
                             InvokeAnimation.attentionSeekerWobble(loginusername);
                             resetPasswordPane.setVisible(false);
                             forgotPasswordPane.setVisible(false);
@@ -343,6 +352,17 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
         Platform.runLater(new Runnable() {
             public void run() {
                 Dialogs.showErrorDialog(null, message, "Oops!!", "Error");
+                stopLoading();
+            }
+        });
+    }
+
+    public void stopLoading() {
+        Platform.runLater(new Runnable() {
+            public void run() {
+                if (stage != null) {
+                    stage.hide();
+                }
             }
         });
     }

@@ -1253,6 +1253,41 @@ public class NextScreenController implements Initializable, IScreenController {
         offpremiseslimit.setText(Double.toString(form.getOffPremisesLimit()));
         transitlimit.setText(Double.toString(form.getTransitLimit()));
         transitdeductible.setText(Double.toString(form.getTransitDeductible()));
+        miscpropertylimit.setText(Double.toString(form.getMiscPropertyLimit()));
+        miscpropertydeductible.setText(Double.toString(form.getMiscPropertyDeductible()));
+        contractorsequipmentlimit.setText(Double.toString(form.getContractorEquipmentLimit()));
+        contractorsequipmentdeductible.setText(Double.toString(form.getContractorEquipmentDeductible()));
+        installationfloatorlimit.setText(Double.toString(form.getInstallationFloaterLimit()));
+        installationfloatordeductible.setText(Double.toString(form.getInstallationFloaterDeductible()));
+        toolfloatorlimit.setText(Double.toString(form.getToolFloaterLimit()));
+        toolfloatordeductible.setText(Double.toString(form.getToolFloaterDeductible()));
+        signfloatorlimit.setText(Double.toString(form.getSignFloaterLimit()));
+        signfloatordeductible.setText(Double.toString(form.getSignFloaterDeductible()));
+        motortruckcargolimit.setText(Double.toString(form.getMotorTruckLimit()));
+        motortruckcargodeductible.setText(Double.toString(form.getMotorTruckDeductible()));
+        glasslimit.setText(Double.toString(form.getGlassLimit()));
+        glassdeductible.setText(Double.toString(form.getGlassDeductible()));
+        sewerbackupdeductible.setText(Double.toString(form.getSewerBackupDeductible()));
+        flooddeductible.setText(Double.toString(form.getFloodDeductible()));
+        earthquakedeductible.setText(Double.toString(form.getEarthquakeDeductible()));
+        profitslimit.setText(Double.toString(form.getProfitLimit()));
+        profitsdeductible.setText(Double.toString(form.getProfitDeductible()));
+        grossearningslimit.setText(Double.toString(form.getGrossEarningLimit()));
+        grossearningsdeductible.setText(Double.toString(form.getGrossEarningDeductible()));
+        rentalincomelimit.setText(Double.toString(form.getRentalIncomeLimit()));
+        rentalincomedeductible.setText(Double.toString(form.getRentalIncomeDeductible()));
+        extraexpenselimit.setText(Double.toString(form.getExtraExpenseLimit()));
+        extraexpensedeductible.setText(Double.toString(form.getExtraExpenseDeductible()));
+        offpremisesdeductible.setText(Double.toString(form.getOffPremisesDeductible()));
+        offpremiseslimit.setText(Double.toString(form.getOffPremisesLimit()));
+        insideoutsidelimit.setText(Double.toString(form.getInsideOutsideLimit()));
+        insideoutsidedeductible.setText(Double.toString(form.getInsideOutsideDeductible()));
+        bfmoneylimit.setText(Double.toString(form.getBfMoneyLimit()));
+        bfmoneydeductible.setText(Double.toString(form.getBfMoneyDeductible()));
+        forgerylimit.setText(Double.toString(form.getDeopistorForgeryLimit()));
+        forgerydeductible.setText(Double.toString(form.getDeopistorForgeryDeductible()));
+        
+    
         //missing
         locationaddress.setText(form.getAddress());
         locationage.setText(Integer.toString(form.getAge()));
