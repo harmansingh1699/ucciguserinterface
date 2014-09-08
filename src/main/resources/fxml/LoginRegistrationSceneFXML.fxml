@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
@@ -11,7 +12,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="610.875" prefWidth="1269.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.ui.uccig.LoginRegistrationSceneController">
+<AnchorPane id="AnchorPane" prefHeight="610.875" prefWidth="1269.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ui.uccig.LoginRegistrationSceneController">
   <children>
     <ImageView fitHeight="713.8125" fitWidth="1269.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
       <image>
@@ -38,7 +39,7 @@
               <children>
                 <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="289.0" style="-fx-background-color: rgba(245,245,245, 0.8);" GridPane.columnIndex="1" GridPane.rowIndex="0">
                   <children>
-                    <PasswordField id="loginPasswordField" fx:id="loginpassword" alignment="CENTER_LEFT" prefHeight="28.0" prefWidth="229.0" promptText="Password" style="-fx-font: 17px Times;&#10;-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);&#10;-fx-stroke: black;&#10;-fx-stroke-width: 1;&#10;-fx-prompt-text-fill:grey;" />
+                              <PasswordField id="loginPasswordField" fx:id="loginpassword" alignment="CENTER_LEFT" prefHeight="28.0" prefWidth="229.0" promptText="Password" style="-fx-font: 17px Times;&#10;-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);&#10;-fx-stroke: black;&#10;-fx-stroke-width: 1;&#10;-fx-prompt-text-fill:grey;" />
                   </children>
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="28.0" prefWidth="197.0" style="" GridPane.columnIndex="2" GridPane.rowIndex="0">
@@ -52,16 +53,16 @@
                 </HBox>
                 <HBox alignment="TOP_LEFT" prefHeight="38.0" prefWidth="228.0" style="" GridPane.columnIndex="1" GridPane.rowIndex="1">
                   <children>
-                    <Hyperlink minHeight="14.0" onAction="#submitAction2" prefHeight="26.0" text="Forgot Password?" textFill="RED">
+                    <Hyperlink minHeight="14.0" onAction="#submitAction2" prefHeight="26.0" text="Forgot Password?" textFill="#0002ff">
                       <font>
-                        <Font name="Times Bold" size="15.0" />
+                        <Font name="Times Roman" size="13.0" />
                       </font>
                     </Hyperlink>
                   </children>
                 </HBox>
                 <HBox alignment="CENTER_LEFT" prefHeight="28.0" prefWidth="262.0" style="" GridPane.columnIndex="0" GridPane.rowIndex="0">
                   <children>
-                    <TextField id="loginEmailAddressTextField" fx:id="loginusername" alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="237.0" promptText="Username" style="-fx-font: 17px Times;&#10;-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);&#10;-fx-stroke: black;&#10;-fx-stroke-width: 1;&#10;-fx-prompt-text-fill:grey;" />
+                              <TextField id="loginEmailAddressTextField" fx:id="loginusername" alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="237.0" promptText="Username" style="-fx-font: 17px Times;&#10;-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);&#10;-fx-stroke: black;&#10;-fx-stroke-width: 1;&#10;-fx-prompt-text-fill:grey;" />
                   </children>
                 </HBox>
               </children>

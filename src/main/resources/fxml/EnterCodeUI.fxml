@@ -559,7 +559,7 @@
                         </HBox>
                         <HBox alignment="CENTER" padding="$x11" prefHeight="100.0" prefWidth="200.0" HBox.margin="$x11">
                           <children>
-                            <Button defaultButton="true" font="$x6" mnemonicParsing="false" onAction="#submitSaveQuotes" prefHeight="36.0" prefWidth="153.0" text="Save Quotes" />
+                            <Button defaultButton="true" font="$x6" mnemonicParsing="false" onAction="#saveQuotes" prefHeight="36.0" prefWidth="153.0" text="Save Quotes" />
                           </children>
                         </HBox>
                         <HBox alignment="CENTER" padding="$x11" prefHeight="100.0" prefWidth="200.0" HBox.margin="$x11">
@@ -1056,8 +1056,8 @@
     <Label font="$x6" layoutX="2635.0" layoutY="1248.0" text="Date:" />
     <TextField layoutX="2693.0" layoutY="1239.0" prefHeight="30.0" prefWidth="200.0" promptText="*Select previous day" />
     <Label font="$x6" layoutX="2903.0" layoutY="1246.0" text="*Mail will be sent at 23:59" />
-    <Button defaultButton="true" font="$x2" layoutX="2593.0" layoutY="19.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="124.0" text="Back" />
-    <Button defaultButton="true" font="$x2" layoutX="2582.0" layoutY="737.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="124.0" text="Back" />
+    <Button defaultButton="true" font="$x2" layoutX="2593.0" layoutY="19.0" mnemonicParsing="false" onAction="#backMail" prefHeight="34.0" prefWidth="124.0" text="Back" />
+    <Button defaultButton="true" font="$x2" layoutX="2582.0" layoutY="737.0" mnemonicParsing="false" onAction="#backDelayMail" prefHeight="34.0" prefWidth="124.0" text="Back" />
     <BorderPane id="registrationPane" fx:id="closeapplicationpane" layoutX="1800.0" layoutY="950.0" prefHeight="355.0" prefWidth="356.0" style="-fx-background-color: rgba(245,245,245, 0.8);&#10;-fx-background-radius: 10;" visible="false">
       <center>
         <VBox prefHeight="288.0" prefWidth="356.0">
@@ -1177,122 +1177,102 @@
         </HBox>
         <HBox alignment="CENTER" padding="$x14" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
           <children>
-            <TextField prefWidth="147.0" promptText="Enter Company Name" />
+            <TextField fx:id="companyname1" prefWidth="147.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" padding="$x14" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
           <children>
-            <TextField prefHeight="22.0" prefWidth="104.0" />
+            <TextField fx:id="quote1" prefHeight="22.0" prefWidth="104.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.margin="$x14" GridPane.rowIndex="2">
           <children>
-            <TextField prefWidth="200.0" promptText="Enter Company Name" />
+            <TextField fx:id="companyname2" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.margin="$x14" GridPane.rowIndex="2">
           <children>
-            <TextField prefHeight="22.0" prefWidth="104.0" />
+            <TextField fx:id="quote2" prefHeight="22.0" prefWidth="104.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.margin="$x14" GridPane.rowIndex="3">
           <children>
-            <TextField prefWidth="200.0" promptText="Enter Company Name" />
+            <TextField fx:id="companyname3" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.margin="$x14" GridPane.rowIndex="3">
           <children>
-            <TextField prefWidth="104.0" />
+            <TextField fx:id="quote3" prefWidth="104.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.margin="$x14" GridPane.rowIndex="4">
           <children>
-            <TextField prefWidth="200.0" promptText="Enter Company Name" />
+            <TextField fx:id="companyname4" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.margin="$x14" GridPane.rowIndex="4">
           <children>
-            <TextField prefWidth="104.0" />
+            <TextField fx:id="quote4" prefWidth="104.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.margin="$x14" GridPane.rowIndex="5">
           <children>
-            <TextField prefWidth="200.0" promptText="Enter Company Name" />
+            <TextField fx:id="companyname5" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.margin="$x14" GridPane.rowIndex="5">
           <children>
-            <TextField prefWidth="104.0" />
+            <TextField fx:id="quote5" prefWidth="104.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.margin="$x14" GridPane.rowIndex="6">
           <children>
-            <TextField prefWidth="200.0" promptText="Enter Company Name" />
+            <TextField fx:id="companyname6" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.margin="$x14" GridPane.rowIndex="6">
           <children>
-            <TextField prefWidth="104.0" />
+            <TextField fx:id="quote6" prefWidth="104.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.margin="$x14" GridPane.rowIndex="7">
           <children>
-            <TextField prefWidth="200.0" promptText="Enter Company Name" />
+            <TextField fx:id="companyname7" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.margin="$x14" GridPane.rowIndex="7">
           <children>
-            <TextField prefWidth="104.0" />
+            <TextField fx:id="quote7" prefWidth="104.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.margin="$x14" GridPane.rowIndex="8">
           <children>
-            <TextField prefWidth="200.0" promptText="Enter Company Name" />
+            <TextField fx:id="companyname8" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.margin="$x14" GridPane.rowIndex="8">
           <children>
-            <TextField prefWidth="104.0" />
+            <TextField fx:id="quote8" prefWidth="104.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.margin="$x14" GridPane.rowIndex="9">
           <children>
-            <TextField prefWidth="200.0" promptText="Enter Company Name" />
+            <TextField fx:id="companyname9" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.margin="$x14" GridPane.rowIndex="9">
           <children>
-            <TextField prefWidth="104.0" />
+            <TextField fx:id="quote9" prefWidth="104.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.margin="$x14" GridPane.rowIndex="10">
           <children>
-            <TextField prefWidth="200.0" promptText="Enter Company Name" />
+            <TextField fx:id="companyname10" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.margin="$x14" GridPane.rowIndex="10">
           <children>
-            <TextField prefWidth="104.0" />
-          </children>
-        </HBox>
-        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.margin="$x14" GridPane.rowIndex="11">
-          <children>
-            <TextField prefWidth="200.0" promptText="Enter Company Name" />
-          </children>
-        </HBox>
-        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.margin="$x14" GridPane.rowIndex="11">
-          <children>
-            <TextField prefWidth="104.0" />
-          </children>
-        </HBox>
-        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.margin="$x14" GridPane.rowIndex="12">
-          <children>
-            <TextField prefWidth="200.0" promptText="Enter Company Name" />
-          </children>
-        </HBox>
-        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.margin="$x14" GridPane.rowIndex="12">
-          <children>
-            <TextField prefWidth="104.0" />
+            <TextField fx:id="quote10" prefWidth="104.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="0">
@@ -1302,62 +1282,52 @@
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
           <children>
-            <TextField prefWidth="241.0" />
+            <TextField fx:id="comment2" prefWidth="241.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
           <children>
-            <TextField prefWidth="241.0" />
+            <TextField fx:id="comment3" prefWidth="241.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
           <children>
-            <TextField prefWidth="241.0" />
+            <TextField fx:id="comment4" prefWidth="241.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
           <children>
-            <TextField prefWidth="241.0" />
+            <TextField fx:id="comment5" prefWidth="241.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
           <children>
-            <TextField prefWidth="241.0" />
+            <TextField fx:id="comment6" prefWidth="241.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
           <children>
-            <TextField prefWidth="241.0" />
+            <TextField fx:id="comment7" prefWidth="241.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="8">
           <children>
-            <TextField prefWidth="241.0" />
+            <TextField fx:id="comment8" prefWidth="241.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="9">
           <children>
-            <TextField prefWidth="241.0" />
+            <TextField fx:id="comment9" prefWidth="241.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="10">
           <children>
-            <TextField prefWidth="241.0" />
-          </children>
-        </HBox>
-        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="11">
-          <children>
-            <TextField prefWidth="241.0" />
-          </children>
-        </HBox>
-        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="12">
-          <children>
-            <TextField prefWidth="241.0" />
+            <TextField fx:id="comment10" prefWidth="241.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
           <children>
-            <TextField prefWidth="241.0" />
+            <TextField fx:id="comment1" prefWidth="241.0" />
           </children>
         </HBox>
       </children>
@@ -1378,11 +1348,12 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       </rowConstraints>
     </GridPane>
-    <Button defaultButton="true" font="$x5" layoutX="2234.0" layoutY="1771.0" mnemonicParsing="false" onAction="#saveQuotes" prefHeight="70.0" prefWidth="147.0" text="Save Quotes" />
+    <Button defaultButton="true" layoutX="2234.0" layoutY="1771.0" mnemonicParsing="false" onAction="#submitSaveQuotes" prefHeight="60.0" prefWidth="147.0" text="Save Quotes">
+         <font>
+            <Font name="Times Bold" size="18.0" />
+         </font></Button>
     <BorderPane id="forgotPasswordPane" fx:id="sendmailPane" layoutX="1750.0" layoutY="1000.0" prefHeight="223.0" prefWidth="407.0" style="-fx-background-color: rgba(245,245,245, 0.8);&#10;-fx-background-radius: 10;" visible="false">
       <center>
         <VBox alignment="CENTER" prefHeight="391.0" prefWidth="316.0">
@@ -1416,7 +1387,7 @@
         </HBox>
       </top>
     </BorderPane>
-    <BorderPane id="registrationPane" fx:id="proposalbinder" layoutX="1840.0" layoutY="974.0" prefHeight="313.0" prefWidth="356.0" style="-fx-background-color: rgba(245,245,245, 0.8);&#10;-fx-background-radius: 10;">
+    <BorderPane id="registrationPane" fx:id="proposalbinder" layoutX="1840.0" layoutY="974.0" prefHeight="313.0" prefWidth="356.0" style="-fx-background-color: rgba(245,245,245, 0.8);&#10;-fx-background-radius: 10;" visible="false">
       <center>
         <VBox prefHeight="288.0" prefWidth="356.0">
           <children>
@@ -1479,7 +1450,7 @@
               <children>
                 <HBox alignment="CENTER" prefHeight="60.0" prefWidth="115.0">
                   <children>
-                    <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" onAction="#searchSubmit" prefHeight="40.0" prefWidth="100.0" text="Close" />
+                    <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" onAction="#closeProposal" prefHeight="40.0" prefWidth="100.0" text="Close" />
                   </children>
                 </HBox>
               </children>
@@ -1501,5 +1472,215 @@
     </BorderPane>
     <Button defaultButton="true" font="$x16" layoutX="2200.0" layoutY="655.0" mnemonicParsing="false" onAction="#searchNext" prefHeight="50.0" prefWidth="165.0" text="Next" />
     <Button defaultButton="true" font="$x16" layoutX="1500.0" layoutY="655.0" mnemonicParsing="false" onAction="#searchPrevious" prefHeight="50.0" prefWidth="165.0" text="Previous" />
+      <ImageView fitHeight="715.0" fitWidth="1269.0" layoutX="1.0" layoutY="1430.0" pickOnBounds="true" preserveRatio="false">
+         <image>
+            <Image url="@../images/greywhite.jpg" />
+         </image>
+      </ImageView>
+      <GridPane gridLinesVisible="true" layoutX="100.0" layoutY="1510.0" prefHeight="489.0" prefWidth="1053.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Application ID">
+                     <font>
+                        <Font name="Times Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="35.0" prefWidth="223.0" GridPane.columnIndex="1">
+               <children>
+                  <Label text="Business Name">
+                     <font>
+                        <Font name="Times Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2">
+               <children>
+                  <Label text="Searched Company">
+                     <font>
+                        <Font name="Times Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3">
+               <children>
+                  <Label text="Quote">
+                     <font>
+                        <Font name="Times Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="4">
+               <children>
+                  <Label text="Winning Company">
+                     <font>
+                        <Font name="Times Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="5">
+               <children>
+                  <Label text="Quote">
+                     <font>
+                        <Font name="Times Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="6">
+               <children>
+                  <Label text="Bound">
+                     <font>
+                        <Font name="Times Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="7">
+               <children>
+                  <Label text="Marketer">
+                     <font>
+                        <Font name="Times Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="10.0" prefWidth="108.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="236.0" minWidth="10.0" prefWidth="218.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="174.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="179.0" minWidth="10.0" prefWidth="120.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="251.0" minWidth="10.0" prefWidth="185.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.0" minWidth="10.0" prefWidth="117.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.0" minWidth="10.0" prefWidth="76.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.0" minWidth="10.0" prefWidth="98.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <BorderPane id="registrationPane" fx:id="searcharchive21" layoutX="467.0" layoutY="1600.0" prefHeight="355.0" prefWidth="356.0" style="-fx-background-color: rgba(245,245,245, 0.8);&#10;-fx-background-radius: 10;">
+         <center>
+            <VBox prefHeight="288.0" prefWidth="356.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label prefHeight="19.9998779296875" text="With Us:">
+                                 <font>
+                                    <Font name="Times Bold" size="18.0" fx:id="x81" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="70.0" prefWidth="177.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <RadioButton id="searchwithus" fx:id="searchwithusyes1" graphicTextGap="4.0" mnemonicParsing="false" text="Yes" textAlignment="LEFT">
+                                             <font>
+                                                <Font name="Times Bold" size="14.0" fx:id="x41" />
+                                             </font>
+                                          </RadioButton>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <RadioButton fx:id="searchwithusno1" font="$x41" mnemonicParsing="false" text="No" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="119.0" prefWidth="356.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label font="$x81" prefHeight="19.9998779296875" text="Date:" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="128.0" prefWidth="177.0">
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <CheckBox id="searchdate" fx:id="searchdate11" mnemonicParsing="false" text="0-3 months" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <CheckBox fx:id="searchdate21" mnemonicParsing="false" text="3-9 months" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <CheckBox fx:id="searchdate31" mnemonicParsing="false" text="9-12 months" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <CheckBox fx:id="searchdate41" mnemonicParsing="false" text="&gt;12 months" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets top="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="356.0001220703125">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+                           <children>
+                              <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" onAction="#searchSubmit" prefHeight="50.0" prefWidth="165.0" text="Search" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+         <effect>
+            <InnerShadow />
+         </effect>
+         <top>
+            <HBox alignment="CENTER" prefHeight="61.0" prefWidth="351.0">
+               <children>
+                  <Label font="$x7" text="" textAlignment="LEFT" textFill="BLACK" underline="true" />
+                  <Label font="$x5" text="Marketing logs" textFill="$x3" />
+               </children>
+            </HBox>
+         </top>
+      </BorderPane>
   </children>
 </AnchorPane>

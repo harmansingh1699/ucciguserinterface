@@ -78,23 +78,21 @@
    <TextField fx:id="namerequired4" layoutX="2146.0" layoutY="234.0" prefWidth="113.0" promptText="Name required" />
    <Label font="$x1" layoutX="1934.0" layoutY="279.0" text="Non-Owned Vehicles/Trailers" />
    <Label font="$x1" layoutX="1366.0" layoutY="305.0" text="Does the applicant need 27/27B liability " />
-   <Label font="$x1" layoutX="1878.0" layoutY="305.0" text="Has liability been assumed under contract or agreement?" />
-   <ChoiceBox fx:id="nonownedliability" layoutX="1648.0" layoutY="317.0">
+   <Label font="$x1" layoutX="1878.0" layoutY="321.0" text="Has liability been assumed under contract or agreement?" />
+   <ChoiceBox fx:id="nonownedliability" layoutX="1648.0" layoutY="317.0" prefHeight="26.0" prefWidth="74.0">
      <items>
        <FXCollections fx:factory="observableArrayList">
-         <String fx:value="Item 1" />
-         <String fx:value="Item 2" />
-         <String fx:value="Item 3" />
+         <String fx:value="Yes" />
+         <String fx:value="No" />
        </FXCollections>
      </items>
    </ChoiceBox>
    <Label font="$x1" layoutX="1366.0" layoutY="330.0" text="damage to non-owned vehicles?" />
-   <ChoiceBox fx:id="nonownedcontract" layoutX="2291.0" layoutY="303.0">
+   <ChoiceBox fx:id="nonownedcontract" layoutX="2288.0" layoutY="318.0" prefHeight="26.0" prefWidth="74.0">
      <items>
        <FXCollections fx:factory="observableArrayList">
-         <String fx:value="Item 1" />
-         <String fx:value="Item 2" />
-         <String fx:value="Item 3" />
+         <String fx:value="Yes" />
+         <String fx:value="No" />
        </FXCollections>
      </items>
    </ChoiceBox>
@@ -113,675 +111,115 @@
    <Button defaultButton="true" layoutX="1371.0" layoutY="602.0" mnemonicParsing="false" onAction="#back1" prefHeight="34.0" prefWidth="113.0" text="Back" />
    <Button defaultButton="true" layoutX="2350.0" layoutY="602.0" mnemonicParsing="false" onAction="#submitFormAction" prefHeight="34.0" prefWidth="112.99990000000253" text="Submit" />
    <Button defaultButton="true" layoutX="1872.0" layoutY="602.0" mnemonicParsing="false" onAction="#submitSave" prefHeight="34.0" prefWidth="113.0" text="Save" />
-     <Label font="$x2" layoutX="3136.0" layoutY="22.0" prefHeight="24.0" prefWidth="304.0" text="Contractors Equipment Schedule" />
-     <Button layoutX="3258.0" layoutY="623.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="81.0" text="Button" />
-     <GridPane gridLinesVisible="true" layoutX="2912.0" layoutY="76.0" prefHeight="521.0" prefWidth="860.0">
-       <columnConstraints>
-           <ColumnConstraints hgrow="SOMETIMES" maxWidth="281.0" minWidth="10.0" prefWidth="59.0" />
-         <ColumnConstraints hgrow="SOMETIMES" maxWidth="515.0" minWidth="10.0" prefWidth="457.0" />
-         <ColumnConstraints hgrow="SOMETIMES" maxWidth="182.0" minWidth="10.0" prefWidth="158.0" />
-           <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" minWidth="10.0" prefWidth="173.0" />
-       </columnConstraints>
-       <rowConstraints>
-           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-       </rowConstraints>
-        <children>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-              <children>
-                 <Label text="#">
-                    <font>
-                       <Font name="Times Bold" size="16.0" />
-                    </font>
-                 </Label>
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" fillHeight="false" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
-              <padding>
-                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="27.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="27.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                    <padding>
-                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                    </padding>
-                    <children>
-                       <TextField prefHeight="26.0" prefWidth="27.0" />
-                    </children>
-                 </HBox>
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="5">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="27.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="27.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="27.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="7">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="27.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="8">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="27.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="9">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="27.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="10">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="27.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="11">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="27.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="12">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="27.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="13">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="27.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="14">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="27.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="15">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="27.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="16">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="27.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="17">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="27.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
-              <children>
-                 <Label text="Description">
-                    <font>
-                       <Font name="Times Bold" size="16.0" />
-                    </font>
-                    <padding>
-                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                    </padding>
-                 </Label>
-              </children>
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2">
-              <children>
-                 <Label text="Deductible">
-                    <font>
-                       <Font name="Times Bold" size="16.0" />
-                    </font>
-                    <padding>
-                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                    </padding>
-                 </Label>
-              </children>
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3">
-              <children>
-                 <Label text="Amount of Insurance">
-                    <font>
-                       <Font name="Times Bold" size="16.0" />
-                    </font>
-                    <padding>
-                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                    </padding>
-                 </Label>
-              </children>
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="454.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="454.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="454.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="454.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="454.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="454.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="454.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="454.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="10">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="454.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="11">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="454.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="12">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="454.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="13">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="454.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="14">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="454.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="15">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="454.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="16">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="454.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="17">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="454.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="18">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="454.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="8">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="9">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="10">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="11">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="12">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="13">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="14">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="15">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="16">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="17">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="18">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="158.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="158.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="158.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="158.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="158.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="6">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="158.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="7">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="158.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="8">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="158.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="9">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="158.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="10">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="158.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="11">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="158.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="12">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="158.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="13">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="158.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="14">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="158.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="15">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="158.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="16">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="158.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="17">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="158.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="18">
-              <padding>
-                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="158.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="18">
-              <GridPane.margin>
-                 <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
-              </GridPane.margin>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="27.0" />
-              </children>
-           </HBox>
-           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-              <padding>
-                 <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
-              </padding>
-              <children>
-                 <TextField prefHeight="26.0" prefWidth="454.0" />
-              </children>
-           </HBox>
-        </children>
-     </GridPane>
+      <ChoiceBox fx:id="hauling" layoutX="1523.0" layoutY="95.0" prefHeight="26.0" prefWidth="87.0" />
+      <Label layoutX="1366.0" layoutY="536.0" text="Vehicle Details:">
+         <font>
+            <Font name="Times Bold" size="16.0" />
+         </font>
+      </Label>
+      <Hyperlink layoutX="1486.0" layoutY="532.0" text="Fill out details">
+         <font>
+            <Font name="Times Bold" size="16.0" />
+         </font>
+      </Hyperlink>
+      <Separator layoutX="687.0" layoutY="285.0" orientation="VERTICAL" prefHeight="117.0" prefWidth="8.0" />
+      <TextField fx:id="autodateofclaim11" layoutX="711.0" layoutY="284.0" prefWidth="113.0" promptText="Date of Claim" />
+      <TextField fx:id="autodateofclaim12" layoutX="711.0" layoutY="330.0" prefWidth="113.0" promptText="Date of Claim" />
+      <TextField fx:id="autodateofclaim121" layoutX="711.0" layoutY="369.0" prefWidth="113.0" promptText="Date of Claim" />
+      <TextField fx:id="autodescriptionofclaim11" layoutX="876.0" layoutY="284.0" prefWidth="200.0" promptText="Description of Claim" />
+      <TextField fx:id="autodescriptionofclaim12" layoutX="876.0" layoutY="330.0" prefWidth="200.0" promptText="Description of Claim" />
+      <TextField fx:id="autodescriptionofclaim13" layoutX="876.0" layoutY="369.0" prefWidth="200.0" promptText="Description of Claim" />
+      <GridPane gridLinesVisible="true" layoutX="2686.0" layoutY="94.0" prefHeight="489.0" prefWidth="1053.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="10.0" prefWidth="108.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="236.0" minWidth="10.0" prefWidth="218.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="174.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="179.0" minWidth="10.0" prefWidth="120.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="251.0" minWidth="10.0" prefWidth="190.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.0" minWidth="10.0" prefWidth="117.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.0" minWidth="10.0" prefWidth="91.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Application ID">
+                     <font>
+                        <Font name="Times Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="35.0" prefWidth="223.0" GridPane.columnIndex="1">
+               <children>
+                  <Label text="Business Name">
+                     <font>
+                        <Font name="Times Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2">
+               <children>
+                  <Label text="Searched Company">
+                     <font>
+                        <Font name="Times Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3">
+               <children>
+                  <Label text="Quote Provided">
+                     <font>
+                        <Font name="Times Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="4">
+               <children>
+                  <Label text="Winning Company">
+                     <font>
+                        <Font name="Times Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="5">
+               <children>
+                  <Label text="Quote">
+                     <font>
+                        <Font name="Times Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="6">
+               <children>
+                  <Label text="Bound">
+                     <font>
+                        <Font name="Times Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
  </children>
 </AnchorPane>

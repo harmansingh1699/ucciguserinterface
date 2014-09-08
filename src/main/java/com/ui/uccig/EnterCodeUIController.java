@@ -273,6 +273,10 @@ public class EnterCodeUIController implements Initializable, IScreenController {
         });
     }
     
+     @FXML
+    public void closeProposal(){
+        proposalbinder.setVisible(false);
+    }
     @FXML
     public void openProposal(){
         new Rav("/Users/harsimransingh/Desktop/RevisedProposal.docx").execute();
@@ -387,6 +391,14 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     public void goToSearchResults() {
         animatedMovement(-1269, -715);
     }
+    @FXML
+    public void backMail() {
+        animatedMovement(-1269, -715);
+    }
+    @FXML
+    public void backDelayMail() {
+        animatedMovement(-1269, -715);
+    }
 
     @FXML
     public void submitRenewBusiness() {
@@ -408,7 +420,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     @FXML
     public void submitSaveQuotes() {
-        animatedMovement(-1269, -1430);
+        
     }
 
     @FXML

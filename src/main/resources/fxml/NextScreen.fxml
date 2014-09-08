@@ -13,7 +13,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" fx:id="fullScreenPane" minHeight="729.0" prefHeight="729.0" prefWidth="8964.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.ui.uccig.NextScreenController">
+<AnchorPane id="AnchorPane" fx:id="fullScreenPane" minHeight="729.0" prefHeight="729.0" prefWidth="8964.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ui.uccig.NextScreenController">
   <children>
     <ImageView id="fullscreenpane" fx:id="bg" fitHeight="713.8125" fitWidth="1269.0" layoutY="-0.36" pickOnBounds="true" preserveRatio="true">
       <image>
@@ -79,7 +79,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
               <children>
-                <Button defaultButton="true" font="$x1" mnemonicParsing="false" prefHeight="50.0" prefWidth="283.0" text="Search Applications" />
+                <Button defaultButton="true" font="$x1" mnemonicParsing="false" prefHeight="50.0" prefWidth="283.0" text="Search Archive" />
               </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
@@ -355,7 +355,7 @@
           </font>
         </Label>
         <Label font="$x8" layoutX="449.0" layoutY="261.0" prefWidth="51.0" text="US$" />
-        <Button defaultButton="true" layoutX="63.0" layoutY="638.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" text="Previous Page" />
+        <Button defaultButton="true" layoutX="63.0" layoutY="638.0" mnemonicParsing="false" onAction="#clientprofile2previous" prefHeight="26.0" prefWidth="126.0" text="Previous Page" />
         <ChoiceBox fx:id="groupbenefits" layoutX="871.0" layoutY="107.0" prefHeight="26.0" prefWidth="70.0">
           <items>
             <FXCollections fx:factory="observableArrayList">
@@ -431,7 +431,7 @@
         <Label font="$x4" layoutX="82.0" layoutY="218.0" text="What Sets Your Business Apart?" />
         <Label font="$x4" layoutX="640.0" layoutY="222.0" text="Describe Any Advertising:" />
         <Label font="$x4" layoutX="82.0" layoutY="339.0" text="How Long Would it Take to Recover From a Serious Claim?" />
-        <Button defaultButton="true" layoutX="76.0" layoutY="638.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" text="Previous Page" />
+        <Button defaultButton="true" layoutX="76.0" layoutY="638.0" mnemonicParsing="false" onAction="#clientprofile3previous" prefHeight="26.0" prefWidth="126.0" text="Previous Page" />
         <Button defaultButton="true" layoutX="567.0" layoutY="638.0" mnemonicParsing="false" onAction="#submitSave" prefHeight="26.0" prefWidth="126.0" text="Save" />
         <Button defaultButton="true" layoutX="1016.0" layoutY="638.0" mnemonicParsing="false" onAction="#continue3" prefHeight="26.0" prefWidth="126.0" text="Continue" />
         <CheckBox fx:id="biw" font="$x4" layoutX="648.0" layoutY="396.0" mnemonicParsing="false" text="Business Interruption Worksheet?" />
@@ -489,7 +489,7 @@
         <Label font="$x9" layoutX="425.0" layoutY="113.0" text="Schedule of Current Insurance Policies:" />
         <Label font="$x4" layoutX="135.0" layoutY="348.0" text="Lienholders:" />
         <Label font="$x9" layoutX="489.0" layoutY="433.0" text="Address of Locations:" />
-        <Button defaultButton="true" layoutX="97.0" layoutY="638.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" text="Previous Page" />
+        <Button defaultButton="true" layoutX="97.0" layoutY="638.0" mnemonicParsing="false" onAction="#clientprofile4previous" prefHeight="26.0" prefWidth="126.0" text="Previous Page" />
         <Button defaultButton="true" layoutX="1012.0" layoutY="638.0" mnemonicParsing="false" onAction="#continue4" prefHeight="26.0" prefWidth="126.0" text="Continue" />
         <Button defaultButton="true" layoutX="544.0" layoutY="638.0" mnemonicParsing="false" onAction="#submitSave" prefHeight="25.9998779296875" prefWidth="126.0" text="Save" />
         <Label layoutX="14.0" layoutY="568.0" text="" />
@@ -548,7 +548,7 @@
             </ImageView>
             <Label font="$x6" layoutX="538.0" layoutY="53.0" prefWidth="181.0" text="Client Profile(5)" textFill="$x7" />
             <Label font="$x4" layoutX="123.0" layoutY="93.0" text="Locations Rented to Others" />
-            <Button defaultButton="true" layoutX="48.0" layoutY="638.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" text="Previous Page" />
+            <Button defaultButton="true" layoutX="48.0" layoutY="638.0" mnemonicParsing="false" onAction="#clientprofile5previous" prefHeight="26.0" prefWidth="126.0" text="Previous Page" />
             <Button defaultButton="true" layoutX="566.0" layoutY="638.0" mnemonicParsing="false" onAction="#submitSave" prefHeight="26.0" prefWidth="126.0" text="Save" />
             <Button defaultButton="true" layoutX="1044.0" layoutY="638.0" mnemonicParsing="false" onAction="#continue5" prefHeight="26.0" prefWidth="126.0" text="Continue" />
             <Label layoutX="14.0" layoutY="568.0" text="" />
@@ -561,9 +561,17 @@
             <TextField fx:id="lrtooccupancy4" layoutX="446.0" layoutY="161.0" prefWidth="200.0" />
             <Label font="$x4" layoutX="123.0" layoutY="358.0" text="Marketer Comments:" />
             <TextArea fx:id="marketercomments" layoutX="123.0" layoutY="383.0" prefHeight="113.0" prefWidth="993.0" wrapText="true" />
-            <Label font="$x4" layoutX="123.0" layoutY="511.0" text="Attach file:" />
-            <Label fx:id="uploadlabel" layoutX="350.0" layoutY="510.0" prefHeight="22.0" text="Label" />
-            <Button defaultButton="true" layoutX="211.0" layoutY="506.0" mnemonicParsing="false" onAction="#uploadfiles" prefHeight="26.0" prefWidth="109.0" text="Upload" />
+            <Label font="$x4" layoutX="123.0" layoutY="511.0" text="Attach file(s):" />
+            <Label fx:id="uploadlabel" layoutX="231.0" layoutY="551.0" prefHeight="22.0" prefWidth="341.0" text="   " textFill="#275cc4">
+                     <font>
+                        <Font name="Times Roman" size="16.0" />
+                     </font></Label>
+            <Button defaultButton="true" layoutX="231.0" layoutY="508.0" mnemonicParsing="false" onAction="#uploadfiles" prefHeight="26.0" prefWidth="109.0" text="Upload" />
+                  <Label layoutX="123.0" layoutY="552.0" text="Files attached:">
+                     <font>
+                        <Font name="Times Bold" size="16.0" />
+                     </font>
+                  </Label>
           </children>
         </AnchorPane>
       </children>
@@ -1966,10 +1974,15 @@
     </GridPane>
     <TextArea fx:id="additionalcoverage" layoutX="8086.0" layoutY="561.0" prefHeight="74.0" prefWidth="415.0" wrapText="true" />
     <Label layoutX="8087.0" layoutY="563.0" text="Additional Coverage:" />
-    <Button defaultButton="true" layoutX="7671.0" layoutY="665.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" text="PreviousPage" />
+    <Button defaultButton="true" layoutX="7671.0" layoutY="665.0" mnemonicParsing="false" onAction="#commercialprevious" prefHeight="26.0" prefWidth="126.0" text="PreviousPage" />
     <Button fx:id="CommercialSubmit" defaultButton="true" layoutX="8721.0" layoutY="665.0" mnemonicParsing="false" onAction="#submitFormAction" prefHeight="26.0" prefWidth="126.0" text="Submit" />
-    <Label font="$x6" layoutX="8056.0" layoutY="26.0" prefWidth="239.0" text="Commercial Property" textFill="$x7" />
+    <Label font="$x6" layoutX="8100.0" layoutY="28.0" prefWidth="239.0" text="Commercial Property" textFill="$x7" />
     <Button fx:id="autoinsurancebutton" defaultButton="true" disable="false" layoutX="8688.0" layoutY="27.0" mnemonicParsing="false" onAction="#autobutton" prefHeight="25.9998779296875" prefWidth="126.0" text="Auto Insurance" visible="true" />
     <Button defaultButton="true" layoutX="8152.0" layoutY="665.0" mnemonicParsing="false" onAction="#submitSave" prefHeight="26.0" prefWidth="126.0" text="Save" />
+      <Hyperlink layoutX="7671.0" layoutY="30.0" text="Contractors Equipment Schedule" textFill="#216eb2">
+         <font>
+            <Font name="Times Roman" size="16.0" />
+         </font>
+      </Hyperlink>
   </children>
 </AnchorPane>
