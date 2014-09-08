@@ -1424,7 +1424,11 @@
               <children>
                 <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <Label font="$x8" prefHeight="19.9998779296875" text="Proposal:   " />
+                    <Hyperlink fx:id="proposalhyperlink" font="$x8" text="Proposal:">
+                      <textFill>
+                        <Color blue="1.000" green="0.640" red="0.000" fx:id="x17" />
+                      </textFill>
+                    </Hyperlink>
                   </children>
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
@@ -1450,7 +1454,7 @@
               <children>
                 <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <Label font="$x8" prefHeight="19.9998779296875" text="Binder:    " />
+                    <Hyperlink fx:id="binderhyperlink" font="$x8" text="Binder:" textFill="$x17" />
                   </children>
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">

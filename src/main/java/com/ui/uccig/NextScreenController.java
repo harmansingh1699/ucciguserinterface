@@ -1154,6 +1154,7 @@ public class NextScreenController implements Initializable, IScreenController {
     }
 
     public void viewApplication(GetInsuranceFormResponse form) {
+        
         keycontact.setText(form.getKeyContact());
         keyphone.setText(form.getKeyContactPhone());
         keyemail.setText(form.getKeyContactEmailAddress());
@@ -1286,11 +1287,47 @@ public class NextScreenController implements Initializable, IScreenController {
         bfmoneydeductible.setText(Double.toString(form.getBfMoneyDeductible()));
         forgerylimit.setText(Double.toString(form.getDeopistorForgeryLimit()));
         forgerydeductible.setText(Double.toString(form.getDeopistorForgeryDeductible()));
-        
-    
-        //missing
+        moneyorderslimit.setText(Double.toString(form.getMoneyOrdersLimit()));
+        moneyordersdeductible.setText(Double.toString(form.getMoneyOrdersDeductible()));
+        dishonestylimit.setText(Double.toString(form.getEmployDishonestyLimit()));
+        dishonestydeductible.setText(Double.toString(form.getEmployDishonestyDeductible()));
+        cgllimit.setText(Double.toString(form.getCglLimit()));
+        cgldeductible.setText(Double.toString(form.getCglDeductible()));
+        tenantslimit.setText(Double.toString(form.getTenantsLegalLimit()));
+        tenantsdeductible.setText(Double.toString(form.getTenantsLegalDeductible()));
+        nonownedlimit.setText(Double.toString(form.getNonOwnedAutoLimit()));
+        nonowneddeductible.setText(Double.toString(form.getNonOwnedAutoDeductible()));
+        sef94limit.setText(Double.toString(form.getSef94Limit()));
+        sef94deductible.setText(Double.toString(form.getSef94Deductible()));
+        sef96limit.setText(Double.toString(form.getSef96Limit()));
+        sef96deductible.setText(Double.toString(form.getSef96Deductible()));
+        dandlimit.setText(Double.toString(form.getDoLimit()));
+        danddeductible.setText(Double.toString(form.getDoDeductible()));
+        eanddeductible.setText(Double.toString(form.getEoDeductible()));
+        eandlimit.setText(Double.toString(form.getEoLimit()));
+        employerslimit.setText(Double.toString(form.getEmployerLimit()));
+        employersdeductible.setText(Double.toString(form.getEmployerDeductible()));
+        umbrellalimit.setText(Double.toString(form.getUmbrellaLimit()));
+        umbrelladeductible.setText(Double.toString(form.getUmbrellaDeductible()));
+        wrapuplimit.setText(Double.toString(form.getWrapUpLimit()));
+        wrapupdeductible.setText(Double.toString(form.getWrapUpDeductible()));
+        stdlimit.setText(Double.toString(form.getStdComprehensiveLimit()));
+        stddeductible.setText(Double.toString(form.getStdComprehensiveDeductible()));
+        aclimit.setText(Double.toString(form.getAirConditioningLimit()));
+        acdeductible.setText(Double.toString(form.getAirConditioningDeductible()));
+        productionmachinerylimit.setText(Double.toString(form.getProductionMachineryLimit()));
+        productionmachinerydeductible.setText(Double.toString(form.getProductionMachineryDeductible()));
+        othercoverage1.setText(form.getOthercoverage1());
+        othercoverage2.setText(form.getOthercoverage2());
+        othercoverage1limit.setText(Double.toString(form.getOtherCoverageLimit1()));
+        othercoverage2limit.setText(Double.toString(form.getOtherCoverageLimit2()));
+        othercoverage1deductible.setText(Double.toString(form.getOtherCoverageDeductible1()));
+        othercoverage2deductible.setText(Double.toString(form.getOtherCoverageDeductible2()));
         locationaddress.setText(form.getAddress());
         locationage.setText(Integer.toString(form.getAge()));
+        totsqfootage.setText(Double.toString(form.getTotalSqFootage()));
+        insidesqfootage.setText(Double.toString(form.getInsdSqFootage()));
+        noofstories.setText(Integer.toString(form.getNoOfStories()));
 
     }
 
