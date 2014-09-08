@@ -17,10 +17,15 @@ import com.ui.binding.FormEntry2Binding;
 import com.ui.binding.FormEntry3Binding;
 import com.ui.binding.FormEntry4Binding;
 import com.ui.util.CommonValidations;
+import com.ui.util.HTMLToPDF;
 import com.ui.util.SavingFile;
 import com.ui.util.savinglocally;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -54,6 +59,8 @@ import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
 import javafx.util.Duration;
+import org.antlr.stringtemplate.StringTemplate;
+import org.antlr.stringtemplate.StringTemplateGroup;
 
 /**
  * FXML Controller class
@@ -1154,7 +1161,7 @@ public class NextScreenController implements Initializable, IScreenController {
     }
 
     public void viewApplication(GetInsuranceFormResponse form) {
-        
+
         keycontact.setText(form.getKeyContact());
         keyphone.setText(form.getKeyContactPhone());
         keyemail.setText(form.getKeyContactEmailAddress());
@@ -1666,7 +1673,25 @@ public class NextScreenController implements Initializable, IScreenController {
                             }
                         }
                         System.out.println("123");
-
+                               StringTemplateGroup emailTemplateGroup = new StringTemplateGroup(
+                                "welcomeloginemail group", "/Users/ravjotsingh/Desktop");
+                        StringTemplate submitFormMail = emailTemplateGroup
+                                .getInstanceOf("pdfTemplate");
+                        submitFormMail.setAttribute("date", new SimpleDateFormat("dd/mm/yyyy").format(Calendar.getInstance().getTime()));
+                        String message = submitFormMail.toString();
+                         BufferedWriter b  = null;
+                         try{
+                           b= new BufferedWriter(new FileWriter(new File("pdf.html")));
+                            b.append(message);
+                            
+                        }catch(Exception e){
+                            e.printStackTrace();
+                        }finally{
+                           if(b!=null)
+                               b.close();
+                        }
+                         
+                         HTMLToPDF.convertHtmlToPdf(new File("pdf.html").getAbsolutePath());
                         System.out.println("12345");
                         InsuranceFormSubmitResponse response = port.getInsuranceOperationsPort().formSubmission(req1);
                         if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
