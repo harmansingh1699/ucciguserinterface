@@ -36,6 +36,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import ravrun.Rav;
 
 /**
  * FXML Controller class
@@ -43,6 +44,7 @@ import javafx.util.Duration;
  * @author ravjotsingh
  */
 public class EnterCodeUIController implements Initializable, IScreenController {
+
     private Stage stage = new Stage();
     private ScreenNavigator screenPage;
     List<AbstractFormInfo> abstractFormInfoList = new ArrayList<AbstractFormInfo>();
@@ -270,6 +272,16 @@ public class EnterCodeUIController implements Initializable, IScreenController {
             }
         });
     }
+    
+    @FXML
+    public void openProposal(){
+        new Rav("/Users/harsimransingh/Desktop/RevisedProposal.docx").execute();
+    }
+    
+    @FXML
+    public void openBinder(){
+        new Rav("/Users/harsimransingh/Desktop/RevisedProposal.docx").execute();
+    }
 
     public void errors(final String message) {
         Platform.runLater(new Runnable() {
@@ -346,7 +358,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
             @Override
             public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception, Exception {
                 try {
-                    
+
                     InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
                     UploadProposalBinderRequest request = new UploadProposalBinderRequest();
                     request.setProposal(WriteByteArray.getByteFromFile(new File("/Users/harsimransingh/Desktop/RevisedProposal.docx")));
@@ -378,6 +390,20 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     @FXML
     public void submitRenewBusiness() {
+        NextScreenController controller = (NextScreenController) screenPage.getControlledScreen("NextScreen");
+        controller.viewApplication(form);
+        screenPage.setScreen("NextScreen");
+        switch (form.getType()) {
+            case "Auto":
+                controller.submitActionAuto();
+                break;
+            case "Both":
+                controller.submitActionBoth();
+                break;
+            case "Commercial":
+                controller.submitActionCommercial();
+                break;
+        }
     }
 
     @FXML

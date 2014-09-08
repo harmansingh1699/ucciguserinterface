@@ -11,7 +11,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" fx:id="fullScreenPane" minHeight="85.0" minWidth="364.0" prefHeight="1430.0" prefWidth="3807.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.ui.uccig.EnterCodeUIController">
+<AnchorPane id="AnchorPane" fx:id="fullScreenPane" minHeight="85.0" minWidth="364.0" prefHeight="1430.0" prefWidth="3807.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ui.uccig.EnterCodeUIController">
   <children>
     <ImageView fitHeight="715.0001068115234" fitWidth="1268.9999000000025" layoutX="2538.0" layoutY="715.0" pickOnBounds="true" preserveRatio="false">
       <image>
@@ -1424,7 +1424,7 @@
               <children>
                 <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <Hyperlink fx:id="proposalhyperlink" font="$x8" text="Proposal:">
+                    <Hyperlink fx:id="proposalhyperlink" font="$x8" onAction="#openProposal" text="Proposal:">
                       <textFill>
                         <Color blue="1.000" green="0.640" red="0.000" fx:id="x17" />
                       </textFill>
@@ -1454,7 +1454,7 @@
               <children>
                 <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <Hyperlink fx:id="binderhyperlink" font="$x8" text="Binder:" textFill="$x17" />
+                    <Hyperlink fx:id="binderhyperlink" font="$x8" onAction="#openBinder" text="Binder:" textFill="$x17" />
                   </children>
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
