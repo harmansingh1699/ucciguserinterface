@@ -189,14 +189,14 @@
         </Label>
         <Label font="$x4" layoutX="377.0" layoutY="118.0" text="Branch:" />
         <Label font="$x4" layoutX="643.0" layoutY="118.0" text="Date:" />
-        <Label font="$x4" layoutX="73.0" layoutY="170.0" text="Key Contact:" />
-        <Label font="$x4" layoutX="421.0" layoutY="170.0" text="Phone:" />
+        <Label font="$x4" layoutX="73.0" layoutY="170.0" text="*Key Contact:" textFill="#bb1818" />
+        <Label font="$x4" layoutX="421.0" layoutY="170.0" text="*Phone:" textFill="#bb1818" />
         <Label font="$x4" layoutX="730.0" layoutY="170.0" text="Email:" />
         <Label font="$x4" layoutX="73.0" layoutY="207.0" text="Secondary Contact:" />
         <Label font="$x4" layoutX="421.0" layoutY="207.0" text="Phone:" />
         <Label font="$x4" layoutX="730.0" layoutY="207.0" text="Email:" />
-        <Label font="$x4" layoutX="73.0" layoutY="255.0" text="Business Name:" />
-        <Label font="$x4" layoutX="73.0" layoutY="295.0" text="Mailing Address:" />
+        <Label font="$x4" layoutX="73.0" layoutY="255.0" text="*Business Name:" textFill="#bb1818" />
+        <Label font="$x4" layoutX="73.0" layoutY="295.0" text="*Mailing Address:" textFill="#bb1818" />
         <Label font="$x4" layoutX="148.0" layoutY="332.0" text="Fax #:" />
         <Label font="$x4" layoutX="468.0" layoutY="332.0" text="Website:" />
         <Label font="$x4" layoutX="90.0" layoutY="369.0" text="# of Locations:" />
@@ -241,7 +241,7 @@
         <TextField id="bod" fx:id="bod1" layoutX="305.0" layoutY="607.0" prefWidth="200.0" />
         <TextField id="keycontact" fx:id="nooflocations" layoutX="199.0" layoutY="365.0" prefHeight="26.0" prefWidth="48.0" text="" />
         <TextField id="keycontact" fx:id="noofownderautos" layoutX="444.0" layoutY="366.0" prefHeight="26.0" prefWidth="48.0" text="" />
-        <Label font="$x4" layoutX="919.0" layoutY="118.0" text="Severity:" />
+        <Label font="$x4" layoutX="919.0" layoutY="118.0" text="*Severity:" textFill="#bb1818" />
         <TextField fx:id="relatedexperience" layoutX="327.0" layoutY="458.0" prefHeight="48.0" prefWidth="417.0" />
         <TextField id="owner" fx:id="owner2" layoutX="572.0" layoutY="529.0" prefHeight="26.0" prefWidth="206.0" />
         <TextField id="owner" fx:id="owner3" layoutX="306.0" layoutY="555.0" prefHeight="26.0" prefWidth="206.0" />
@@ -258,7 +258,7 @@
             </FXCollections>
           </items>
         </ChoiceBox>
-        <Label fx:id="returneddate" layoutX="696.0" layoutY="115.0" text="18/08/2014">
+        <Label fx:id="returneddate" layoutX="699.0" layoutY="119.0" text="18/08/2014">
           <font>
             <Font name="System Bold" size="14.0" />
           </font>
@@ -436,7 +436,7 @@
         <Button defaultButton="true" layoutX="1016.0" layoutY="638.0" mnemonicParsing="false" onAction="#continue3" prefHeight="26.0" prefWidth="126.0" text="Continue" />
         <CheckBox fx:id="biw" font="$x4" layoutX="648.0" layoutY="396.0" mnemonicParsing="false" text="Business Interruption Worksheet?" />
         <Label layoutX="14.0" layoutY="568.0" text="" />
-        <TextArea fx:id="futureopportunity" layoutX="82.0" layoutY="146.0" prefHeight="61.0" prefWidth="523.0" promptText="Description of plans for growth" wrapText="true" />
+        <TextArea fx:id="futureopportunity" layoutX="82.0" layoutY="146.0" prefHeight="61.0" prefWidth="523.0" wrapText="true" />
         <TextArea fx:id="describecompetition" layoutX="630.0" layoutY="146.0" prefHeight="61.0" prefWidth="523.0" wrapText="true" />
         <TextArea fx:id="businessapart" layoutX="82.0" layoutY="249.0" prefHeight="61.0" prefWidth="523.0" wrapText="true" />
         <TextArea fx:id="advertising" layoutX="630.0" layoutY="249.0" prefHeight="61.0" prefWidth="523.0" wrapText="true" />
@@ -560,7 +560,7 @@
             <TextField fx:id="lrtooccupancy2" layoutX="446.0" layoutY="133.0" prefWidth="200.0" />
             <TextField fx:id="lrtooccupancy4" layoutX="446.0" layoutY="161.0" prefWidth="200.0" />
             <Label font="$x4" layoutX="123.0" layoutY="358.0" text="Marketer Comments:" />
-            <TextArea fx:id="marketercomments" layoutX="123.0" layoutY="383.0" prefHeight="113.0" prefWidth="993.0" wrapText="true" />
+            <TextArea fx:id="marketercomments" disable="true" layoutX="123.0" layoutY="383.0" prefHeight="113.0" prefWidth="993.0" wrapText="true" />
             <Label font="$x4" layoutX="123.0" layoutY="511.0" text="Attach file(s):" />
             <Label fx:id="uploadlabel" layoutX="231.0" layoutY="551.0" prefHeight="22.0" prefWidth="341.0" text="   " textFill="#275cc4">
                      <font>
@@ -1684,7 +1684,7 @@
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                       <children>
                         <Label font="$x8" prefWidth="67.0" text="Updated:" />
                       </children>
@@ -1923,7 +1923,7 @@
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <TextField fx:id="distance" prefHeight="18.0001220703125" prefWidth="59.0" />
+                    <TextField fx:id="fireprotectiondistance" prefHeight="18.0001220703125" prefWidth="59.0" />
                   </children>
                   <HBox.margin>
                     <Insets left="5.0" right="5.0" />
@@ -1972,14 +1972,13 @@
         <RowConstraints maxHeight="149.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
       </rowConstraints>
     </GridPane>
-    <TextArea fx:id="additionalcoverage" layoutX="8086.0" layoutY="561.0" prefHeight="74.0" prefWidth="415.0" wrapText="true" />
-    <Label layoutX="8087.0" layoutY="563.0" text="Additional Coverage:" />
+    <TextArea fx:id="additionalcoverage" layoutX="8086.0" layoutY="561.0" prefHeight="74.0" prefWidth="415.0" promptText="Additional Coverage" wrapText="true" />
     <Button defaultButton="true" layoutX="7671.0" layoutY="665.0" mnemonicParsing="false" onAction="#commercialprevious" prefHeight="26.0" prefWidth="126.0" text="PreviousPage" />
-    <Button fx:id="CommercialSubmit" defaultButton="true" layoutX="8721.0" layoutY="665.0" mnemonicParsing="false" onAction="#submitFormAction" prefHeight="26.0" prefWidth="126.0" text="Submit" />
+    <Button fx:id="CommercialSubmit" defaultButton="true" layoutX="8718.0" layoutY="665.0" mnemonicParsing="false" onAction="#submitFormAction" prefHeight="26.0" prefWidth="126.0" text="Submit" />
     <Label font="$x6" layoutX="8100.0" layoutY="28.0" prefWidth="239.0" text="Commercial Property" textFill="$x7" />
-    <Button fx:id="autoinsurancebutton" defaultButton="true" disable="false" layoutX="8688.0" layoutY="27.0" mnemonicParsing="false" onAction="#autobutton" prefHeight="25.9998779296875" prefWidth="126.0" text="Auto Insurance" visible="true" />
-    <Button defaultButton="true" layoutX="8152.0" layoutY="665.0" mnemonicParsing="false" onAction="#submitSave" prefHeight="26.0" prefWidth="126.0" text="Save" />
-      <Hyperlink layoutX="7671.0" layoutY="30.0" text="Contractors Equipment Schedule" textFill="#216eb2">
+    <Button fx:id="autoinsurancebutton" defaultButton="true" disable="false" layoutX="8183.0" layoutY="665.0" mnemonicParsing="false" onAction="#autobutton" prefHeight="25.9998779296875" prefWidth="126.0" text="Auto Insurance" visible="true" />
+    <Button defaultButton="true" layoutX="8649.0" layoutY="31.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="162.0" text="Add another location" />
+      <Hyperlink layoutX="7671.0" layoutY="30.0" text="Contractors Equipment Schedule" textFill="#20bf20">
          <font>
             <Font name="Times Roman" size="16.0" />
          </font>

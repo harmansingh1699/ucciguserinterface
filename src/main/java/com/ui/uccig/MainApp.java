@@ -15,6 +15,7 @@ public class MainApp extends Application {
 
     @Override
     public void start(final Stage stage) throws Exception {
+      
         ScreenNavigator screenNavigator = new ScreenNavigator();
         //screenNavigator.loadScreen("FirstScreen", "/fxml/EnterCodeUI.fxml");
         screenNavigator.loadScreen("FirstScreen", "/fxml/LoginRegistrationSceneFXML.fxml");
@@ -44,6 +45,7 @@ public class MainApp extends Application {
         });
         root.autosize();
         Scene scene = new Scene(root);
+        scene.getStylesheets().add("/styles/calendarstyle.css");
 
         //stage.initStyle(StageStyle.UNDECORATED);
         stage.sizeToScene();

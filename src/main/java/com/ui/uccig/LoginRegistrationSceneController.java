@@ -167,15 +167,19 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
                         if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
                             System.out.println(response.getRole());
                             stopLoading();
+                            System.out.println("1");
                             if (response.getRole().equals("MARKETER") || response.getRole().equals("MANAGER")) {
-                                System.out.println("asdfasdsad");
+                                
                                 ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setMarketerId(binding.getUsername());
+                                ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setReceivedname(response.getUserFullName());
 
                                 Calendar c = Calendar.getInstance();
                                 c.setTimeInMillis(response.getCurrentDate().getMillisecond());
-                                ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setDate(c.getTime());
+                                ((NextScreenController) (screenPage.getControlledScreen("OtherScreen"))).setDate(c.getTime());
                                 screenPage.setScreen("OtherScreen");
                             } else {
+                                System.out.println("2");
+                                ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setProducerid(binding.getUsername());
                                 ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setReceivedemailaddress(response.getUserEmailAddress());
                                 ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setReceivedname(response.getUserFullName());
                                 ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setBranch(response.getBranch());
@@ -295,7 +299,7 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
         } else if (CommonValidations.isStringEmpty(binding2.getforgotPasswordRePasswordField())) {
             InvokeAnimation.attentionSeekerWobble(forgotPasswordRePasswordField);
             forgotPasswordRePasswordField.setPromptText("You can't leave Re-enter password field empty");
-        } else if (binding2.getforgotPasswordPasswordField().equals(binding2.getforgotPasswordRePasswordField())) {
+        } else if (!binding2.getforgotPasswordPasswordField().equals(binding2.getforgotPasswordRePasswordField())) {
             InvokeAnimation.attentionSeekerWobble(forgotPasswordRePasswordField);
             forgotPasswordRePasswordField.setPromptText("Password does not match");
         } else {

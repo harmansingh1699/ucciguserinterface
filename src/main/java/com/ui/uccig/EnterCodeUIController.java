@@ -5,33 +5,56 @@
  */
 package com.ui.uccig;
 
+import antlr.CommonAST;
 import com.rav.insurance.insuranceformoperations.webservice.InsuranceOperationsService_Service;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.AbstractFormInfo;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.AssignMarketerRequest;
+import com.rav.insurance.insuranceformoperations.webservice.contracts.CloseFormRequest;
+import com.rav.insurance.insuranceformoperations.webservice.contracts.CloseFormResponse;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.CommonResponseAttributes;
+import com.rav.insurance.insuranceformoperations.webservice.contracts.GetCloseFormNQuoteDetailsResponse2;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuranceFormListRequest;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuranceFormListResponse;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuranceFormResponse;
+import com.rav.insurance.insuranceformoperations.webservice.contracts.MailInfo;
+import com.rav.insurance.insuranceformoperations.webservice.contracts.QuoteDetailsRequest;
+import com.rav.insurance.insuranceformoperations.webservice.contracts.SearchMailRequest;
+import com.rav.insurance.insuranceformoperations.webservice.contracts.SearchMailResponse;
+import com.rav.insurance.insuranceformoperations.webservice.contracts.SearchMailResponse2;
+import com.rav.insurance.insuranceformoperations.webservice.contracts.SearchQuotesRequest;
+import com.rav.insurance.insuranceformoperations.webservice.contracts.SearchQuotesResponse;
+import com.rav.insurance.insuranceformoperations.webservice.contracts.SearchQuotesResponse2;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.UploadProposalBinderRequest;
 import com.rav.insurance.util.WriteByteArray;
+import com.ui.binding.FormEntry4Binding;
 import com.ui.binding.SearchArchivebinding;
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.animation.TranslateTransition;
 import javafx.animation.TranslateTransitionBuilder;
 import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
 import javafx.concurrent.Task;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Dialogs;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -64,6 +87,9 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     @FXML
     private Pane sendmailPane;
+    
+     @FXML
+    private Pane marketinglogpane;
 
     @FXML
     private Pane closeapplicationpane;
@@ -100,15 +126,130 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     @FXML
     private CheckBox searchdate4;
+    
+    @FXML
+    private TextField companyname1;
+    @FXML
+    private TextField companyname2;
+    @FXML
+    private TextField companyname3;
+    @FXML
+    private TextField companyname4;
+    @FXML
+    private TextField companyname5;
+    @FXML
+    private TextField companyname6;
+    @FXML
+    private TextField companyname7;
+    @FXML
+    private TextField companyname8;
+    @FXML
+    private TextField companyname9;
+    @FXML
+    private TextField companyname10;
+    
+    @FXML
+    private TextField quote1;
+    @FXML
+    private TextField quote2;
+    @FXML
+    private TextField quote3;
+    @FXML
+    private TextField quote4;
+    @FXML
+    private TextField quote5;
+    @FXML
+    private TextField quote6;
+    @FXML
+    private TextField quote7;
+    @FXML
+    private TextField quote8;
+    @FXML
+    private TextField quote9;
+    @FXML
+    private TextField quote10;
+    @FXML
+    private TextField comment1;
+    @FXML
+    private TextField comment2;
+    @FXML
+    private TextField comment3;
+    @FXML
+    private TextField comment4;
+    @FXML
+    private TextField comment5;
+    @FXML
+    private TextField comment6;
+    @FXML
+    private TextField comment7;
+    @FXML
+    private TextField comment8;
+    @FXML
+    private TextField comment9;
+    @FXML
+    private TextField comment10;
+    
+    @FXML
+    private TextField logsdate;
+    
+    @FXML
+    private TextField logscompanyname;
+    
+    @FXML
+    private TextField logsmarketerid;
+
+    
+    @FXML
+    private Label welcomeName;
+    
+    @FXML
+    private Label l10;
+    @FXML
+    private Label l11;
+    @FXML
+    private Label l12;
+    @FXML
+    private Label l13;
+    @FXML
+    private Label l14;
+    @FXML
+    private Label l15;
+    @FXML
+    private Label l16;
+    @FXML
+    private Label l17;
+    
+    private List<MailInfo> mailList;
+    
+    @FXML
+    private Hyperlink l131;
+    
 
     @FXML
     private Label title;
+    
+    @FXML
+    private TextField closecompany;
+    @FXML
+    private TextField closequote;
+    
 
     private SearchArchivebinding binding;
+    private FormEntry4Binding binding1;
 
     private int offset;
 
     private String marketerId;
+    private String receivedname;
+
+    public String getReceivedname() {
+        return receivedname;
+    }
+
+    public void setReceivedname(String receivedname) {
+        this.receivedname = receivedname;
+    }
+    
 
     private String formId;
 
@@ -123,6 +264,34 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     public void setFormId(String formId) {
         this.formId = formId;
     }
+    
+    @FXML
+    public void hyderlinkAction1(){
+        try { 
+            stage = new Stage();
+            FlowPane root = new FlowPane();
+        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/fxml/mailScene.fxml"));
+            Parent loadScreen;
+      ((mailSceneController) myLoader.getController()).getWebView().getEngine().load(mailList.get(0).getMailBody());
+            loadScreen = (Parent) myLoader.load();
+        
+        root.getChildren().addAll(loadScreen);
+        
+        
+        root.autosize();
+        Scene scene = new Scene(root);
+
+        //stage.initStyle(StageStyle.UNDECORATED);
+        stage.sizeToScene();
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.centerOnScreen();
+        stage.setTitle("UCCIG");
+        stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(EnterCodeUIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     /**
      * Initializes the controller class.
@@ -132,11 +301,47 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         binding = new SearchArchivebinding();
+        binding1=new FormEntry4Binding();
         Bindings.bindBidirectional(searchproducerid.textProperty(), binding.searchproduceridProperty());
         Bindings.bindBidirectional(searchmarketerid.textProperty(), binding.searchmarketeridProperty());
         Bindings.bindBidirectional(searchbusinessname.textProperty(), binding.searchbusinessnameProperty());
         Bindings.bindBidirectional(searchapplicationid.textProperty(), binding.searchapplicationidProperty());
-
+         Bindings.bindBidirectional(companyname1.textProperty(), binding1.companyName1Property());
+         Bindings.bindBidirectional(companyname2.textProperty(), binding1.companyName2Property());
+         Bindings.bindBidirectional(companyname3.textProperty(), binding1.companyName3Property());
+         Bindings.bindBidirectional(companyname4.textProperty(), binding1.companyName4Property());
+         Bindings.bindBidirectional(companyname5.textProperty(), binding1.companyName5Property());
+         Bindings.bindBidirectional(companyname6.textProperty(), binding1.companyName6Property());
+         Bindings.bindBidirectional(companyname7.textProperty(), binding1.companyName7Property());
+         Bindings.bindBidirectional(companyname8.textProperty(), binding1.companyName8Property());
+         Bindings.bindBidirectional(companyname9.textProperty(), binding1.companyName9Property());
+         Bindings.bindBidirectional(companyname10.textProperty(), binding1.companyName10Property());
+         Bindings.bindBidirectional(quote1.textProperty(), binding1.quote1Property());
+         Bindings.bindBidirectional(quote2.textProperty(), binding1.quote2Property());
+         Bindings.bindBidirectional(quote3.textProperty(), binding1.quote3Property());
+         Bindings.bindBidirectional(quote4.textProperty(), binding1.quote4Property());
+         Bindings.bindBidirectional(quote5.textProperty(), binding1.quote5Property());
+         Bindings.bindBidirectional(quote6.textProperty(), binding1.quote6Property());
+         Bindings.bindBidirectional(quote7.textProperty(), binding1.quote7Property());
+         Bindings.bindBidirectional(quote8.textProperty(), binding1.quote8Property());
+         Bindings.bindBidirectional(quote9.textProperty(), binding1.quote9Property());
+         Bindings.bindBidirectional(quote10.textProperty(), binding1.quote10Property());
+         Bindings.bindBidirectional(comment1.textProperty(), binding1.comment1Property());
+         Bindings.bindBidirectional(comment2.textProperty(), binding1.comment2Property());
+         Bindings.bindBidirectional(comment3.textProperty(), binding1.comment3Property());
+         Bindings.bindBidirectional(comment4.textProperty(), binding1.comment4Property());
+         Bindings.bindBidirectional(comment5.textProperty(), binding1.comment5Property());
+         Bindings.bindBidirectional(comment6.textProperty(), binding1.comment6Property());
+         Bindings.bindBidirectional(comment7.textProperty(), binding1.comment7Property());
+         Bindings.bindBidirectional(comment8.textProperty(), binding1.comment8Property());
+         Bindings.bindBidirectional(comment9.textProperty(), binding1.comment9Property());
+         Bindings.bindBidirectional(comment10.textProperty(), binding1.comment10Property());
+         Bindings.bindBidirectional(logsmarketerid.textProperty(), binding1.logsMarketerIdProperty());
+         Bindings.bindBidirectional(logscompanyname.textProperty(), binding1.logsCompanyNameProperty());
+         Bindings.bindBidirectional(logsdate.textProperty(), binding1.logsDateProperty());
+         Bindings.bindBidirectional(closecompany.textProperty(), binding1.closeCompanyProperty());
+         Bindings.bindBidirectional(closequote.textProperty(), binding1.closeQuoteProperty());
+         welcomeName.setText(receivedname);
     }
 
     @Override
@@ -154,6 +359,34 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     @FXML
     public void submitWorklist() throws Exception {
+        
+        Task task = new Task<Void>() {
+            @Override
+            public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception, Exception {
+                try {
+                    InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
+                    GetInsuranceFormListRequest req = new GetInsuranceFormListRequest();
+                    
+                    req.setMarketerId(marketerId);
+                    
+                    //req.setFormId(Integer.parseInt(binding.getsearchapplicationid()));
+                    GetInsuranceFormListResponse response = port.getInsuranceOperationsPort().getFormList(req);
+
+                    if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
+                        abstractFormInfoList = response.getFormList();
+                        successSearch();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                //   successMessage("You are successfully logged in");
+                return null;
+            }
+
+        };
+        new Thread(task).start();
+    
+        
         /*  int j = 0;
          for (int i = 0; i < str.size(); i++) {
          System.out.println(str.size());
@@ -171,6 +404,31 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     @FXML
     public void submitUnassigned() throws Exception {
+        Task task = new Task<Void>() {
+            @Override
+            public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception, Exception {
+                try {
+                    InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
+                    GetInsuranceFormListRequest req = new GetInsuranceFormListRequest();
+                    req.setProducerId(binding.getsearchproducerid());
+                    req.setStatus("NEW");
+                    //req.setFormId(Integer.parseInt(binding.getsearchapplicationid()));
+                    GetInsuranceFormListResponse response = port.getInsuranceOperationsPort().getFormList(req);
+
+                    if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
+                        abstractFormInfoList = response.getFormList();
+                        successSearch();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                //   successMessage("You are successfully logged in");
+                return null;
+            }
+
+        };
+        new Thread(task).start();
+    
         /* int j = 0;
          for (int i = 0; i < str.size(); i++) {
          System.out.println(str.size());
@@ -201,6 +459,20 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     @FXML
     public void submitViewApplication() {
+         NextScreenController controller = (NextScreenController) screenPage.getControlledScreen("NextScreen");
+        controller.viewApplication(form);
+        screenPage.setScreen("NextScreen");
+        switch (form.getType()) {
+            case "Auto":
+                controller.submitActionAuto();
+                break;
+            case "Both":
+                controller.submitActionBoth();
+                break;
+            case "Commercial":
+                controller.submitActionCommercial();
+                break;
+        }
 
     }
 
@@ -297,6 +569,43 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     @FXML
     public void submitConversation() {
+         Task task = new Task<Void>() {
+            @Override
+            public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception, Exception {
+                try {
+                    InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
+                    SearchMailRequest request = new SearchMailRequest();
+                    request.setFormId(getFormId());
+                    
+                    
+                    
+                    SearchMailResponse2 response = port.getInsuranceOperationsPort().searchMail(request);
+                    if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
+                        mailList = response.getMailList();
+                        int i =0;
+                        for(MailInfo a:mailList){
+                           switch(i){
+                               case 0: l10.setText(a.getMailBody());
+                               
+                                   break;
+                               case 1:
+                                   break;
+                               case 2:
+                                   break;
+                               case 3:
+                                   break;
+                           }
+                           
+                        }
+                        successSearch();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+        };
+        new Thread(task).start();
     }
 
     @FXML
@@ -304,6 +613,51 @@ public class EnterCodeUIController implements Initializable, IScreenController {
         //yaha
         proposalbinder.setVisible(true);
     }
+    
+    @FXML
+    public void submitGenerateLogs()
+    { marketinglogpane.setVisible(false);
+        Task task = new Task<Void>() {
+            @Override
+            public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception, Exception {
+                try {
+                    InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
+                    SearchQuotesRequest request = new SearchQuotesRequest();
+                    request.setCompanyName(binding1.getLogsCompanyName());
+                    //request.setCreationDate(binding1.getLogsDate());
+                    request.setMarketerId(binding1.getLogsMarketerId());
+                    SearchQuotesResponse2 response = port.getInsuranceOperationsPort().searchQuotes(request);
+                    if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
+                        List<QuoteDetailsRequest> list = response.getList();
+                        int i =0;
+                        for(QuoteDetailsRequest a:list){
+                           switch(i){
+                               case 0: l10.setText(a.getApplicationid());
+                               
+                                   break;
+                               case 1:
+                                   break;
+                               case 2:
+                                   break;
+                               case 3:
+                                   break;
+                           }
+                           
+                        }
+                        successSearch();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+        };
+        new Thread(task).start();
+        
+            }
+     @FXML
+    public void clickMarketingLogs()
+            {animatedMovement(0, -1430);}
 
     @FXML
     public void uploadProposal() {
@@ -432,10 +786,39 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     public void saveQuotes() {
         animatedMovement(-1269, -715);
     }
+    
+    @FXML
+    public void clickCloseApplication() {
+        closeapplicationpane.setVisible(true);
+    }
 
     @FXML
     public void submitCloseApplication() {
-        closeapplicationpane.setVisible(true);
+      
+        Task task = new Task<Void>() {
+            @Override
+            public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception, Exception {
+                try {
+                    InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
+                    CloseFormRequest req = new CloseFormRequest();
+                    req.setFormId(getFormId());
+                    req.setCompany(binding1.getCloseCompany());
+                    req.setQuote(Double.parseDouble(binding1.getCloseQuote()));
+                    //req.setFormId(Integer.parseInt(binding.getsearchapplicationid()));
+                    CommonResponseAttributes response = port.getInsuranceOperationsPort().closeForm(req);
+                    if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
+                     successMessage("Status of the form has been updated as Closed");
+
+                  }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                //   successMessage("You are successfully logged in");
+                return null;
+            }
+
+        };
+        new Thread(task).start();
 
     }
 

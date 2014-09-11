@@ -511,6 +511,18 @@ public class NextScreenController implements Initializable, IScreenController {
     private TextField noofstories;
     @FXML
     private ChoiceBox<String> basement;
+    
+    @FXML 
+    private TextField roofupdated;
+    @FXML 
+    private TextField heatingupdated;
+    @FXML 
+    private TextField electricalupdated;
+    @FXML 
+    private TextField plumbingupdated;
+     @FXML 
+    private TextField fireprotectiondistance;
+     
     @FXML
     private CheckBox wallsframe;
     @FXML
@@ -596,6 +608,15 @@ public class NextScreenController implements Initializable, IScreenController {
     private String receivedname;
     private String branch;
     private Date date;
+    private String producerid;
+
+    public String getProducerid() {
+        return producerid;
+    }
+
+    public void setProducerid(String producerid) {
+        this.producerid = producerid;
+    }
 
     public String getBranch() {
         return branch;
@@ -821,12 +842,18 @@ public class NextScreenController implements Initializable, IScreenController {
         Bindings.bindBidirectional(totsqfootage.textProperty(), binding4.totsqfootageProperty());
         Bindings.bindBidirectional(insidesqfootage.textProperty(), binding4.insidesqfootageProperty());
         Bindings.bindBidirectional(noofstories.textProperty(), binding4.noofstoriesProperty());
+        Bindings.bindBidirectional(roofupdated.textProperty(), binding4.roofupdatedProperty());
+        Bindings.bindBidirectional(heatingupdated.textProperty(), binding4.heatingupdatedProperty());
+        Bindings.bindBidirectional(electricalupdated.textProperty(), binding4.electricalupdatedProperty());
+        Bindings.bindBidirectional(plumbingupdated.textProperty(), binding4.plumbingupdatedProperty());
+        Bindings.bindBidirectional(fireprotectiondistance.textProperty(), binding4.distanceProperty());
 
         //choicebox
         severity.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) {
                 if (oldSelection != null) {
+                    System.out.println("inside");
                     binding.setSeverity(newSelection);
                 }
             }
@@ -1057,7 +1084,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         });
 
-        /*  datePicker.localeProperty().set(Locale.ENGLISH);
+         datePicker.localeProperty().set(Locale.ENGLISH);
          datePicker1.localeProperty().set(Locale.ENGLISH);
          datePicker2.localeProperty().set(Locale.ENGLISH);
          datePicker3.localeProperty().set(Locale.ENGLISH);
@@ -1070,10 +1097,11 @@ public class NextScreenController implements Initializable, IScreenController {
          }
          });
          datePicker.setPromptText("DOB");
+        
          datePicker.setLocale(Locale.ENGLISH);
          datePicker.getCalendarView().todayButtonTextProperty().set("AAJ KA DIN");
          datePicker.getCalendarView().setShowWeeks(false);
-         fullScreenPane.getChildren().add(datePicker);*/
+         fullScreenPane.getChildren().add(datePicker);
     }
 
     public void setScreenParent(ScreenNavigator screenPage) {
@@ -1274,7 +1302,7 @@ public class NextScreenController implements Initializable, IScreenController {
         lrtooccupancy4.setText(form.getLocationRentedToOthers4());
         producercomments.setText(form.getProducercomments());
         marketercomments.setText(form.getMarketercomments());
-        buildinglimit.setText(Double.toString(form.getBuildingLimit()));
+        /*buildinglimit.setText(Double.toString(form.getBuildingLimit()));
         buildingdeductible.setText(Double.toString(form.getBuildingDeductible()));
         contentslimit.setText(Double.toString(form.getContentsLimit()));
         contentsdeductible.setText(Double.toString(form.getContentsDeductible()));
@@ -1363,8 +1391,7 @@ public class NextScreenController implements Initializable, IScreenController {
         locationage.setText(Integer.toString(form.getAge()));
         totsqfootage.setText(Double.toString(form.getTotalSqFootage()));
         insidesqfootage.setText(Double.toString(form.getInsdSqFootage()));
-        noofstories.setText(Integer.toString(form.getNoOfStories()));
-
+        noofstories.setText(Integer.toString(form.getNoOfStories()));*/
     }
 
     @FXML
@@ -1374,6 +1401,7 @@ public class NextScreenController implements Initializable, IScreenController {
                 System.out.println("1");
                 InvokeAnimation.attentionSeekerWobble(businessname);
                 businessname.setPromptText("Business Name can not be empty");
+                
             } else if (CommonValidations.isStringEmpty(binding.getKeyContact())) {
                 System.out.println("2");
                 InvokeAnimation.attentionSeekerWobble(keycontact);
@@ -1396,6 +1424,7 @@ public class NextScreenController implements Initializable, IScreenController {
                         try {
                             InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
                             InsuranceFormSubmitRequest req1 = new InsuranceFormSubmitRequest();
+                            req1.setProducer(producerid);
                             req1.setSeverity(binding.getSeverity());
                             req1.setEntityType(binding.getEntityType());
                             req1.setFinancialYearEnd(binding2.getfinYearEnd());
@@ -1438,7 +1467,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setBoardOfDirector2(binding.getBod2());
                             req1.setBoardOfDirector3(binding.getBod3());
                             req1.setBoardOfDirector4(binding.getBod4());
-                            System.out.println("2222");
+                            
                             if (!CommonValidations.isStringEmpty(binding2.getNoofStaff())) {
                                 req1.setNoOfStaff(Integer.parseInt(binding2.getNoofStaff()));
                             }
@@ -1462,18 +1491,32 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setDescriptionOfOperationsAndRevenue2(binding2.getdescriptionOfOpAndRev2());
                             req1.setDescriptionOfOperationsAndRevenue3(binding2.getdescriptionOfOpAndRev3());
                             req1.setDescriptionOfOperationsAndRevenue4(binding2.getdescriptionOfOpAndRev4());
-                        //req1.setTotalSale(Double.parseDouble(binding2.gettotalSale()));
-                            //req1.setPercentageOfUSSales(Double.parseDouble(binding2.getperOfUsSales()));
-                            //req1.setOnpremises(Integer.parseInt(binding2.getperOfOnPremises()));
-                            //req1.setOffpremises(Integer.parseInt(binding2.getperOfOffPremises()));
-                            //req1.setResidential(Integer.parseInt(binding2.getperOfResidential()));
-                            //req1.setCommercial(Integer.parseInt(binding2.getperOfCommercial()));
-                            //req1.setSubcontracted(Integer.parseInt(binding2.getperOfSubContracted()));
+                            if (!CommonValidations.isStringEmpty(binding2.gettotalSale())) {
+                               req1.setTotalSale(Double.parseDouble(binding2.gettotalSale()));
+                            }
+                        if (!CommonValidations.isStringEmpty(binding2.getperOfUsSales())) {
+                               req1.setTotalSale(Double.parseDouble(binding2.getperOfUsSales()));
+                            }
+                          if (!CommonValidations.isStringEmpty(binding2.getperOfOnPremises())) {
+                               req1.setTotalSale(Double.parseDouble(binding2.getperOfOnPremises()));
+                            }
+                            
+                             if (!CommonValidations.isStringEmpty(binding2.getperOfOffPremises())) {
+                               req1.setOffpremises(Integer.parseInt(binding2.getperOfOffPremises()));
+                            }
+                            if (!CommonValidations.isStringEmpty(binding2.getperOfResidential())) {
+                                req1.setResidential(Integer.parseInt(binding2.getperOfResidential()));
+                            }
+                            if (!CommonValidations.isStringEmpty(binding2.getperOfCommercial())) {
+                                req1.setCommercial(Integer.parseInt(binding2.getperOfCommercial()));
+                            }
+                            if (!CommonValidations.isStringEmpty(binding2.getperOfSubContracted())) {
+                              req1.setSubcontracted(Integer.parseInt(binding2.getperOfSubContracted()));
+                            }
                             req1.setLargestCustomerOrProject1(binding2.getlargestCustomerOrProject1());
                             req1.setLargestCustomerOrProject2(binding2.getlargestCustomerOrProject2());
                             req1.setLargestCustomerOrProject3(binding2.getlargestCustomerOrProject3());
                             req1.setLargestCustomerOrProject4(binding2.getlargestCustomerOrProject4());
-                            System.out.println("1234567");
                             req1.setLargestSuppliers1(binding2.getlargestSuppliers1());
                             req1.setLargestSuppliers2(binding2.getlargestSuppliers2());
                             req1.setLargestSuppliers3(binding2.getlargestSuppliers3());
@@ -1483,9 +1526,15 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setBusinessAsset(binding3.getbusinessapart());
                             req1.setAdvertising(binding3.getadvertising());
                             req1.setDurationIncaseOfSeriousClaims(binding3.getrecover());
-                        // req1.setPastClaimAmount1(Double.parseDouble(binding3.getclaimamount1()));
-                            //req1.setPastClaimAmount2(Double.parseDouble(binding3.getclaimamount2()));
-                            //req1.setPastClaimAmount3(Double.parseDouble(binding3.getclaimamount3()));
+                            if (!CommonValidations.isStringEmpty(binding3.getclaimamount1())) {
+                            req1.setPastClaimAmount1(Double.parseDouble(binding3.getclaimamount1()));
+                            }
+                            if (!CommonValidations.isStringEmpty(binding3.getclaimamount2())) {
+                            req1.setPastClaimAmount1(Double.parseDouble(binding3.getclaimamount2()));
+                            }
+                            if (!CommonValidations.isStringEmpty(binding3.getclaimamount3())) {
+                            req1.setPastClaimAmount1(Double.parseDouble(binding3.getclaimamount3()));
+                            }
                             req1.setCurrentInsuranceType1(binding3.getciptype1());
                             req1.setCurrentInsuranceType2(binding3.getciptype2());
                             req1.setCurrentInsuranceType3(binding3.getciptype3());
@@ -1514,53 +1563,150 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setProducercomments(binding3.getproducercomments());
                             req1.setMarketercomments(binding3.getmarketercomments());
 
-                            /*  req1.setBuildingLimit(Double.parseDouble(binding4.getbuildinglimit()));
-                             req1.setBuildingDeductible(Double.parseDouble(binding4.getbuildingdeductible()));
-                             req1.setContentsLimit(Double.parseDouble(binding4.getcontentslimit()));
-                             req1.setContentsDeductible(Double.parseDouble(binding4.getcontentsdeductible()));
-                             req1.setStockLimit(Double.parseDouble(binding4.getstocklimit()));
-                             req1.setStockDeductible(Double.parseDouble(binding4.getstockdeductible()));
-                             req1.setOfficeContentLimit(Double.parseDouble(binding4.getofficelimit()));
-                             req1.setOfficeContentDeductible(Double.parseDouble(binding4.getofficedeductible()));
-                             req1.setEdpLimit(Double.parseDouble(binding4.getedplimit()));
-                             req1.setEdpDeductible(Double.parseDouble(binding4.getedpdeductible()));
-                             req1.setEquipmentLimit(Double.parseDouble(binding4.getequipmentlimit()));
-                             req1.setEquipmentDeductible(Double.parseDouble(binding4.getequipmentdeductible()));
-                             req1.setOffPremisesLimit(Double.parseDouble(binding4.getoffpremiseslimit()));
-                             req1.setOffPremisesDeductible(Double.parseDouble(binding4.getoffpremisesdeductible()));
-                             req1.setTransitLimit(Double.parseDouble(binding4.gettransitlimit()));
-                             req1.setTransitDeductible(Double.parseDouble(binding4.gettransitdeductible()));
-                             req1.setMiscPropertyLimit(Double.parseDouble(binding4.getmiscpropertylimit()));
-                             req1.setMiscPropertyDeductible(Double.parseDouble(binding4.getmiscpropertydeductible()));
-                             req1.setContractorEquipmentLimit(Double.parseDouble(binding4.getcontractorsequipmentlimit()));
-                             req1.setContractorEquipmentDeductible(Double.parseDouble(binding4.getcontractorsequipmentdeductible()));
-                             req1.setInstallationFloaterLimit(Double.parseDouble(binding4.getinstallationfloatorlimit()));
-                             req1.setInstallationFloaterDeductible(Double.parseDouble(binding4.getinstallationfloatordeductible()));
+                             if (!CommonValidations.isStringEmpty(binding4.getbuildinglimit())) {
+                            req1.setBuildingLimit(Double.parseDouble(binding4.getbuildinglimit()));
+                            }
+                              if (!CommonValidations.isStringEmpty(binding4.getbuildingdeductible())) {
+                            req1.setBuildingLimit(Double.parseDouble(binding4.getbuildingdeductible()));
+                            }
+                             if (!CommonValidations.isStringEmpty(binding4.getcontentslimit())) {
+                            req1.setContentsLimit(Double.parseDouble(binding4.getcontentslimit()));
+                            }
+                              if (!CommonValidations.isStringEmpty(binding4.getcontentsdeductible())) {
+                            req1.setContentsDeductible(Double.parseDouble(binding4.getcontentsdeductible()));
+                            }
+                              if (!CommonValidations.isStringEmpty(binding4.getstocklimit())) {
+                            req1.setStockLimit(Double.parseDouble(binding4.getstocklimit()));
+                            }
+                             if (!CommonValidations.isStringEmpty(binding4.getstockdeductible())) {
+                            req1.setStockDeductible(Double.parseDouble(binding4.getstockdeductible()));
+                            }
+                            if (!CommonValidations.isStringEmpty(binding4.getofficelimit())) {
+                            req1.setOfficeContentLimit(Double.parseDouble(binding4.getofficelimit()));
+                            }
+                             if (!CommonValidations.isStringEmpty(binding4.getofficedeductible())) {
+                            req1.setOfficeContentDeductible(Double.parseDouble(binding4.getofficedeductible()));
+                            }
+                             if (!CommonValidations.isStringEmpty(binding4.getedplimit())) {
+                            req1.setEdpLimit(Double.parseDouble(binding4.getedplimit()));
+                            }
+                              if (!CommonValidations.isStringEmpty(binding4.getedpdeductible())) {
+                            req1.setEdpDeductible(Double.parseDouble(binding4.getedpdeductible()));
+                            }
+                             if (!CommonValidations.isStringEmpty(binding4.getequipmentlimit())) {
+                            req1.setEquipmentLimit(Double.parseDouble(binding4.getequipmentlimit()));
+                            }
+                             
+                              if (!CommonValidations.isStringEmpty(binding4.getequipmentdeductible())) {
+                            req1.setEquipmentDeductible(Double.parseDouble(binding4.getequipmentdeductible()));
+                            }
+                             
+                               if (!CommonValidations.isStringEmpty(binding4.getoffpremiseslimit())) {
+                            req1.setOffPremisesLimit(Double.parseDouble(binding4.getoffpremiseslimit()));
+                            }
+                               if (!CommonValidations.isStringEmpty(binding4.getoffpremisesdeductible())) {
+                            req1.setOffPremisesDeductible(Double.parseDouble(binding4.getoffpremisesdeductible()));
+                            }
+                              if (!CommonValidations.isStringEmpty(binding4.gettransitlimit())) {
+                            req1.setTransitLimit(Double.parseDouble(binding4.gettransitlimit()));
+                            }
+                              
+                                if (!CommonValidations.isStringEmpty(binding4.gettransitdeductible())) {
+                            req1.setTransitDeductible(Double.parseDouble(binding4.gettransitdeductible()));
+                            }
+                             
+                                if (!CommonValidations.isStringEmpty(binding4.getmiscpropertylimit())) {
+                            req1.setMiscPropertyLimit(Double.parseDouble(binding4.getmiscpropertylimit()));
+                            }
+                             
+                                 if (!CommonValidations.isStringEmpty(binding4.getmiscpropertydeductible())) {
+                            req1.setMiscPropertyDeductible(Double.parseDouble(binding4.getmiscpropertydeductible()));
+                            }
+                             if (!CommonValidations.isStringEmpty(binding4.getcontractorsequipmentlimit())) {
+                            req1.setContractorEquipmentLimit(Double.parseDouble(binding4.getcontractorsequipmentlimit()));
+                            }
+                              if (!CommonValidations.isStringEmpty(binding4.getcontractorsequipmentdeductible())) {
+                            req1.setContractorEquipmentDeductible(Double.parseDouble(binding4.getcontractorsequipmentdeductible()));
+                            }
+                               if (!CommonValidations.isStringEmpty(binding4.getinstallationfloatorlimit())) {
+                            req1.setInstallationFloaterLimit(Double.parseDouble(binding4.getinstallationfloatorlimit()));
+                            }
+                                if (!CommonValidations.isStringEmpty(binding4.getinstallationfloatordeductible())) {
+                            req1.setInstallationFloaterDeductible(Double.parseDouble(binding4.getinstallationfloatordeductible()));
+                            }
+                             
+                                 if (!CommonValidations.isStringEmpty(binding4.gettoolfloatorlimit())) {
                              req1.setToolFloaterLimit(Double.parseDouble(binding4.gettoolfloatorlimit()));
+                            }
+                             if (!CommonValidations.isStringEmpty(binding4.gettoolfloatordeductible())) {
                              req1.setToolFloaterDeductible(Double.parseDouble(binding4.gettoolfloatordeductible()));
+                            }
+                              if (!CommonValidations.isStringEmpty(binding4.getsignfloatorlimit())) {
                              req1.setSignFloaterLimit(Double.parseDouble(binding4.getsignfloatorlimit()));
+                            }
+                              if (!CommonValidations.isStringEmpty(binding4.getsignfloatordeductible())) {
                              req1.setSignFloaterDeductible(Double.parseDouble(binding4.getsignfloatordeductible()));
-                             req1.setMotorTruckLimit(Double.parseDouble(binding4.getmotortruckcargolimit()));
-                             req1.setMotorTruckDeductible(Double.parseDouble(binding4.getmotortruckcargodeductible()));
-                             req1.setGlassLimit(Double.parseDouble(binding4.getglasslimit()));
-                             req1.setGlassDeductible(Double.parseDouble(binding4.getglassdeductible()));
-                             req1.setSewerBackupDeductible(Double.parseDouble(binding4.getsewerblackupdeductible()));
-                             req1.setFloodDeductible(Double.parseDouble(binding4.getflooddeductible()));
-                             req1.setEarthquakeDeductible(Double.parseDouble(binding4.getearthquakedeductible()));
-                             req1.setProfitLimit(Double.parseDouble(binding4.getprofitslimit()));
-                             req1.setProfitDeductible(Double.parseDouble(binding4.getprofitsdeductible()));
-                             req1.setGrossEarningLimit(Double.parseDouble(binding4.getgrossearningslimit()));
-                             req1.setGrossEarningDeductible(Double.parseDouble(binding4.getgrossearningsdeductible()));
-                             req1.setRentalIncomeLimit(Double.parseDouble(binding4.getrentalincomelimit()));
-                             req1.setRentalIncomeDeductible(Double.parseDouble(binding4.getrentalincomedeductible()));
-                             req1.setExtraExpenseLimit(Double.parseDouble(binding4.getextraexpenselimit()));
-                             req1.setExtraExpenseDeductible(Double.parseDouble(binding4.getextraexpensedeductible()));
-                             req1.setOffPremisesPowerLimit(Double.parseDouble(binding4.getoffpremiseslimit()));
-                             req1.setOffPremisesPowerDeductible(Double.parseDouble(binding4.getoffpremisesdeductible()));
-                             req1.setInsideOutsideLimit(Double.parseDouble(binding4.getinsideoutsidelimit()));
-                             req1.setInsideOutsideDeductible(Double.parseDouble(binding4.getinsideoutsidedeductible()));
-                             req1.setBfMoneyLimit(Double.parseDouble(binding4.getbfmoneylimit()));
-                             req1.setBfMoneyDeductible(Double.parseDouble(binding4.getbfmoneydeductible()));
+                            }
+                              if (!CommonValidations.isStringEmpty(binding4.getmotortruckcargolimit())) {
+                             req1.setMotorTruckLimit(Double.parseDouble(binding4.getmotortruckcargolimit()));}
+                              
+                               if (!CommonValidations.isStringEmpty(binding4.getmotortruckcargodeductible())) {
+                             req1.setMotorTruckDeductible(Double.parseDouble(binding4.getmotortruckcargodeductible()));}
+                               
+                                if (!CommonValidations.isStringEmpty(binding4.getglasslimit())) {
+                             req1.setGlassLimit(Double.parseDouble(binding4.getglasslimit()));}
+                               if (!CommonValidations.isStringEmpty(binding4.getglassdeductible())) { 
+                             req1.setGlassDeductible(Double.parseDouble(binding4.getglassdeductible()));}
+                               
+                               if (!CommonValidations.isStringEmpty(binding4.getsewerblackupdeductible())) {
+                             req1.setSewerBackupDeductible(Double.parseDouble(binding4.getsewerblackupdeductible()));}
+                               
+                             if (!CommonValidations.isStringEmpty(binding4.getflooddeductible())) {
+                             req1.setFloodDeductible(Double.parseDouble(binding4.getflooddeductible()));}
+                             
+                             if (!CommonValidations.isStringEmpty(binding4.getearthquakedeductible())) {
+                             req1.setEarthquakeDeductible(Double.parseDouble(binding4.getearthquakedeductible()));}
+                             
+                             if (!CommonValidations.isStringEmpty(binding4.getprofitslimit())) {
+                             req1.setProfitLimit(Double.parseDouble(binding4.getprofitslimit()));}
+                             
+                             if (!CommonValidations.isStringEmpty(binding4.getprofitsdeductible())) {
+                             req1.setProfitDeductible(Double.parseDouble(binding4.getprofitsdeductible()));}
+                             
+                             if (!CommonValidations.isStringEmpty(binding4.getgrossearningslimit())) {
+                             req1.setGrossEarningLimit(Double.parseDouble(binding4.getgrossearningslimit()));}
+                             
+                             if (!CommonValidations.isStringEmpty(binding4.getgrossearningsdeductible())) {
+                             req1.setGrossEarningDeductible(Double.parseDouble(binding4.getgrossearningsdeductible()));}
+                             
+                             if (!CommonValidations.isStringEmpty(binding4.getrentalincomelimit())) {
+                             req1.setRentalIncomeLimit(Double.parseDouble(binding4.getrentalincomelimit()));}
+                             
+                             if (!CommonValidations.isStringEmpty(binding4.getrentalincomedeductible())) {
+                             req1.setRentalIncomeDeductible(Double.parseDouble(binding4.getrentalincomedeductible()));}
+                             
+                             if (!CommonValidations.isStringEmpty(binding4.getextraexpenselimit())) {
+                             req1.setExtraExpenseLimit(Double.parseDouble(binding4.getextraexpenselimit()));}
+                             
+                             if (!CommonValidations.isStringEmpty(binding4.getextraexpensedeductible())) {
+                             req1.setExtraExpenseDeductible(Double.parseDouble(binding4.getextraexpensedeductible()));}
+                             
+                             if (!CommonValidations.isStringEmpty(binding4.getoffpremiseslimit())) {
+                             req1.setOffPremisesPowerLimit(Double.parseDouble(binding4.getoffpremiseslimit()));}
+                             
+                             if (!CommonValidations.isStringEmpty(binding4.getoffpremisesdeductible())) {
+                             req1.setOffPremisesPowerDeductible(Double.parseDouble(binding4.getoffpremisesdeductible()));}
+                             
+                             if (!CommonValidations.isStringEmpty(binding4.getinsideoutsidelimit())) {
+                             req1.setInsideOutsideLimit(Double.parseDouble(binding4.getinsideoutsidelimit()));}
+                             
+                             if (!CommonValidations.isStringEmpty(binding4.getinsideoutsidedeductible())) {
+                             req1.setInsideOutsideDeductible(Double.parseDouble(binding4.getinsideoutsidedeductible()));}
+                             
+                             if (!CommonValidations.isStringEmpty(binding4.getbfmoneylimit())) {
+                             req1.setBfMoneyLimit(Double.parseDouble(binding4.getbfmoneylimit()));}
+                             if (!CommonValidations.isStringEmpty(binding4.getbfmoneydeductible())) {
+                             req1.setBfMoneyDeductible(Double.parseDouble(binding4.getbfmoneydeductible()));}
                              req1.setDeopistorForgeryDeductible(Double.parseDouble(binding4.getforgerylimit()));
                              req1.setMoneyOrdersLimit(Double.parseDouble(binding4.getmoneyorderslimit()));
                              req1.setMoneyOrdersDeductible(Double.parseDouble(binding4.getmoneyordersdeductible()));
@@ -1597,7 +1743,11 @@ public class NextScreenController implements Initializable, IScreenController {
                              //req1.setOtherCoverage2(Double.parseDouble(binding4.getothercoverage2()));
                              //req1.setOtherCoverageLimit(Double.parseDouble(binding4.getothercoverage1limit()));
                              // req1.setOtherCoverageDeductible(Double.parseDouble(binding4.getothercoverage1deductible()));*/
-                            //ADDITIONAL COVERAGE
+                            req1.setAdditionalcoverage(binding4.getadditionalcoverage());
+                            req1.setRoofupdated(binding4.getroofupdated());
+                            req1.setHeatingupdated(binding4.getheatingupdated());
+                            req1.setElectricalupdated(binding4.getelectricalupdated());
+                            req1.setFireProtectiondistance(binding4.getdistance());
                             req1.setAddress(binding4.getlocationaddress());
                             System.out.println("1111");
                             /*     req1.setAge(Integer.parseInt(binding4.getlocationage()));

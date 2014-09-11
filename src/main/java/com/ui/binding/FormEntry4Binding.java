@@ -181,9 +181,43 @@ public class FormEntry4Binding {
     private StringProperty mostexpensive;
     private StringProperty autosubmissioncomments;
     
+    private StringProperty comment1;
+    private StringProperty comment2;
+    private StringProperty comment3;
+    private StringProperty comment4;
+    private StringProperty comment5;
+    private StringProperty comment6;
+    private StringProperty comment7;
+    private StringProperty comment8;
+    private StringProperty comment9;
+    private StringProperty comment10;
+    private StringProperty quote1;
+    private StringProperty quote2;
+    private StringProperty quote3;
+    private StringProperty quote4;
+    private StringProperty quote5;
+    private StringProperty quote6;
+    private StringProperty quote7;
+    private StringProperty quote8;
+    private StringProperty quote9;
+    private StringProperty quote10;
+    private StringProperty companyname1;
+    private StringProperty companyname2;
+    private StringProperty companyname3;
+    private StringProperty companyname4;
+    private StringProperty companyname5;
+    private StringProperty companyname6;
+    private StringProperty companyname7;
+    private StringProperty companyname8;
+    private StringProperty companyname9;
+    private StringProperty companyname10;
     
-    
-    
+    private StringProperty logscompanyname;
+    private StringProperty logsdate;
+    private StringProperty logsmarketerid;
+    private StringProperty closecompany;
+    private StringProperty closequote;
+   
     public FormEntry4Binding() {
         buildinglimit = new SimpleStringProperty();
         buildingdeductible = new SimpleStringProperty();
@@ -355,7 +389,466 @@ public class FormEntry4Binding {
         maxannually=new SimpleStringProperty();
         mostexpensive=new SimpleStringProperty();
         autosubmissioncomments=new SimpleStringProperty();  
+        comment1=new SimpleStringProperty();
+        comment2=new SimpleStringProperty();
+        comment3=new SimpleStringProperty();
+        comment4=new SimpleStringProperty();
+        comment5=new SimpleStringProperty();
+        comment6=new SimpleStringProperty();
+        comment7=new SimpleStringProperty();
+        comment8=new SimpleStringProperty();
+        comment9=new SimpleStringProperty();
+        comment10=new SimpleStringProperty();     
+        quote1=new SimpleStringProperty();
+        quote2=new SimpleStringProperty();
+        quote3=new SimpleStringProperty();
+        quote4=new SimpleStringProperty();
+        quote5=new SimpleStringProperty();
+        quote6=new SimpleStringProperty();
+        quote7=new SimpleStringProperty();
+        quote8=new SimpleStringProperty();
+        quote9=new SimpleStringProperty();
+        quote10=new SimpleStringProperty();
+        companyname1=new SimpleStringProperty();
+        companyname2=new SimpleStringProperty();
+        companyname3=new SimpleStringProperty();
+        companyname4=new SimpleStringProperty();
+        companyname5=new SimpleStringProperty();
+        companyname6=new SimpleStringProperty();
+        companyname7=new SimpleStringProperty();
+        companyname8=new SimpleStringProperty();
+        companyname9=new SimpleStringProperty();
+        companyname10=new SimpleStringProperty();
+        logsmarketerid=new SimpleStringProperty();
+        logsdate=new SimpleStringProperty();
+        logscompanyname=new SimpleStringProperty();
+        closecompany=new SimpleStringProperty();
+        closequote=new SimpleStringProperty();
     }
+    
+    public String getCloseCompany() {
+        return (String) this.closecompany.get();
+    }
+
+    public void setCloseCompany(String closecompany) {
+        this.closecompany.set(closecompany);
+    }
+
+    public StringProperty closeCompanyProperty() {
+        return this.closecompany;
+    }
+    
+    public String getCloseQuote() {
+        return (String) this.closecompany.get();
+    }
+
+    public void setCloseQuote(String closequote) {
+        this.closequote.set(closequote);
+    }
+
+    public StringProperty closeQuoteProperty() {
+        return this.closequote;
+    }
+    
+    public String getLogsCompanyName() {
+        return (String) this.logscompanyname.get();
+    }
+
+    public void setLogsCompanyName(String logscompanyName) {
+        this.logscompanyname.set(logscompanyName);
+    }
+
+    public StringProperty logsCompanyNameProperty() {
+        return this.logscompanyname;
+    }
+    
+    public String getLogsDate() {
+        return (String) this.logsdate.get();
+    }
+
+    public void setLogsDate(String logsdate) {
+        this.logsdate.set(logsdate);
+    }
+
+    public StringProperty logsDateProperty() {
+        return this.logsdate;
+    }
+    
+    public String getLogsMarketerId() {
+        return (String) this.logsmarketerid.get();
+    }
+
+    public void setLogsMarketerId(String logsmarketerid) {
+        this.logsmarketerid.set(logsmarketerid);
+    }
+
+    public StringProperty logsMarketerIdProperty() {
+        return this.logsmarketerid;
+    }
+    
+     public String getCompanyName2() {
+        return (String) this.companyname2.get();
+    }
+
+    public void setCompanyName2(String companyName2) {
+        this.companyname2.set(companyName2);
+    }
+
+    public StringProperty companyName2Property() {
+        return this.companyname2;
+    }
+    
+    public String getCompanyName3() {
+        return (String) this.companyname3.get();
+    }
+
+    public void setCompanyName3(String companyName3) {
+        this.companyname3.set(companyName3);
+    }
+
+    public StringProperty companyName3Property() {
+        return this.companyname3; 
+    }
+    
+    public String getCompanyName4() {
+        return (String) this.companyname4.get();
+    }
+
+    public void setCompanyName4(String companyName4) {
+        this.companyname4.set(companyName4);
+    }
+
+    public StringProperty companyName4Property() {
+        return this.companyname4;
+    }
+    
+    public String getCompanyName5() {
+        return (String) this.companyname5.get();
+    }
+
+    public void setCompanyName5(String companyName5) {
+        this.companyname5.set(companyName5);
+    }
+
+    public StringProperty companyName5Property() {
+        return this.companyname5;
+    }
+    
+    public String getCompanyName6() {
+        return (String) this.companyname6.get();
+    }
+
+    public void setCompanyName6(String companyName6) {
+        this.companyname6.set(companyName6);
+    }
+
+    public StringProperty companyName6Property() {
+        return this.companyname6;
+    }
+    
+    
+    public String getCompanyName7() {
+        return (String) this.companyname7.get();
+    }
+
+    public void setCompanyName7(String companyName7) {
+        this.companyname7.set(companyName7);
+    }
+
+    public StringProperty companyName7Property() {
+        return this.companyname7;
+    }
+    
+    
+    public String getCompanyName8() {
+        return (String) this.companyname8.get();
+    }
+
+    public void setCompanyName8(String companyName8) {
+        this.companyname8.set(companyName8);
+    }
+
+    public StringProperty companyName8Property() {
+        return this.companyname8;
+    }
+    
+    public String getCompanyName9() {
+        return (String) this.companyname9.get();
+    }
+
+    public void setCompanyName9(String companyName9) {
+        this.companyname9.set(companyName9);
+    }
+
+    public StringProperty companyName9Property() {
+        return this.companyname9;
+    }
+    
+    public String getCompanyName10() {
+        return (String) this.companyname10.get();
+    }
+
+    public void setCompanyName10(String companyName10) {
+        this.companyname10.set(companyName10);
+    }
+
+    public StringProperty companyName10Property() {
+        return this.companyname10;
+    }
+    
+    public String getCompanyName1() {
+        return (String) this.companyname1.get();
+    }
+
+    public void setCompanyName1(String companyName1) {
+        this.companyname1.set(companyName1);
+    }
+
+    public StringProperty companyName1Property() {
+        return this.companyname1;
+    }
+    
+    public String getComment1() {
+        return (String) this.comment1.get();
+    }
+
+    public void setComment1(String comment1) {
+        this.comment1.set(comment1);
+    }
+
+    public StringProperty comment1Property() {
+        return this.comment1;
+    }
+    
+     public String getComment2() {
+        return (String) this.comment2.get();
+    }
+
+    public void setComment2(String comment2) {
+        this.comment2.set(comment2);
+    }
+
+    public StringProperty comment2Property() {
+        return this.comment2;
+    }
+    
+     public String getComment3() {
+        return (String) this.comment3.get();
+    }
+
+    public void setComment3(String comment3) {
+        this.comment3.set(comment3);
+    }
+
+    public StringProperty comment3Property() {
+        return this.comment3;
+    }
+    
+     public String getComment4() {
+        return (String) this.comment4.get();
+    }
+
+    public void setComment4(String comment4) {
+        this.comment4.set(comment4);
+    }
+
+    public StringProperty comment4Property() {
+        return this.comment4;
+    }
+    
+     public String getComment5() {
+        return (String) this.comment5.get();
+    }
+
+    public void setComment5(String comment5) {
+        this.comment5.set(comment5);
+    }
+
+    public StringProperty comment5Property() {
+        return this.comment5;
+    }
+    
+     public String getComment6() {
+        return (String) this.comment6.get();
+    }
+
+    public void setComment6(String comment6) {
+        this.comment6.set(comment6);
+    }
+
+    public StringProperty comment6Property() {
+        return this.comment6;
+    }
+    
+     public String getComment7() {
+        return (String) this.comment7.get();
+    }
+
+    public void setComment7(String comment7) {
+        this.comment7.set(comment7);
+    }
+
+    public StringProperty comment7Property() {
+        return this.comment7;
+    }
+    
+     public String getComment8() {
+        return (String) this.comment8.get();
+    }
+
+    public void setComment8(String comment8) {
+        this.comment8.set(comment8);
+    }
+
+    public StringProperty comment8Property() {
+        return this.comment8;
+    }
+    
+     public String getComment9() {
+        return (String) this.comment9.get();
+    }
+
+    public void setComment9(String comment9) {
+        this.comment9.set(comment9);
+    }
+
+    public StringProperty comment9Property() {
+        return this.comment9;
+    }
+    
+    public String getComment10() {
+        return (String) this.comment10.get();
+    }
+
+    public void setComment10(String comment10) {
+        this.comment10.set(comment10);
+    }
+
+    public StringProperty comment10Property() {
+        return this.comment10;
+    }
+    
+    public String getQuote1() {
+        return (String) this.quote1.get();
+    }
+
+    public void setQuote1(String quote1) {
+        this.quote1.set(quote1);
+    }
+
+    public StringProperty quote1Property() {
+        return this.quote1;
+    }
+    
+    public String getQuote2() {
+        return (String) this.quote2.get();
+    }
+
+    public void setQuote2(String quote2) {
+        this.quote2.set(quote2);
+    }
+
+    public StringProperty quote2Property() {
+        return this.quote2;
+    }
+    
+    public String getQuote3() {
+        return (String) this.quote3.get();
+    }
+
+    public void setQuote3(String quote3) {
+        this.quote3.set(quote3);
+    }
+
+    public StringProperty quote3Property() {
+        return this.quote3;
+    }
+    
+    public String getQuote4() {
+        return (String) this.quote4.get();
+    }
+
+    public void setQuote4(String quote4) {
+        this.quote4.set(quote4);
+    }
+
+    public StringProperty quote4Property() {
+        return this.quote4;
+    }
+    
+    public String getQuote5() {
+        return (String) this.quote5.get();
+    }
+
+    public void setQuote5(String quote5) {
+        this.quote5.set(quote5);
+    }
+
+    public StringProperty quote5Property() {
+        return this.quote5;
+    }
+    
+    public String getQuote6() {
+        return (String) this.quote6.get();
+    }
+
+    public void setQuote6(String quote6) {
+        this.quote6.set(quote6);
+    }
+
+    public StringProperty quote6Property() {
+        return this.quote6;
+    }
+    
+    public String getQuote7() {
+        return (String) this.quote7.get();
+    }
+
+    public void setQuote7(String quote7) {
+        this.quote7.set(quote7);
+    }
+
+    public StringProperty quote7Property() {
+        return this.quote7;
+    }
+    
+    public String getQuote8() {
+        return (String) this.quote8.get();
+    }
+
+    public void setQuote8(String quote8) {
+        this.quote8.set(quote8);
+    }
+
+    public StringProperty quote8Property() {
+        return this.quote8;
+    }
+    
+    public String getQuote9() {
+        return (String) this.quote9.get();
+    }
+
+    public void setQuote9(String quote9) {
+        this.quote9.set(quote9);
+    }
+
+    public StringProperty quote9Property() {
+        return this.quote9;
+    }
+    
+    public String getQuote10() {
+        return (String) this.quote10.get();
+    }
+
+    public void setQuote10(String quote10) {
+        this.quote10.set(quote10);
+    }
+
+    public StringProperty quote10Property() {
+        return this.quote10;
+    }
+    
+    
     
      public String getlocationaddress() {
         return (String) this.locationaddress.get();
