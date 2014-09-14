@@ -1670,6 +1670,16 @@ public class NextScreenController implements Initializable, IScreenController {
          req1.setFireProtection(binding4.getFireProtection());
          req1.setSecurity(binding4.getSecurity());
          */
+ if(form!=null){
+     System.out.println("Form is not null");
+ }else{
+     System.out.println("Form is null");
+ }
+ if(keycontact!=null){
+      System.out.println("keycontact is not null");
+ }else{
+      System.out.println("keycontact is null");
+ }
         keycontact.setText(form.getKeyContact());
         keyphone.setText(form.getKeyContactPhone());
         keyemail.setText(form.getKeyContactEmailAddress());
