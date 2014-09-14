@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -17,14 +17,18 @@ import java.util.ResourceBundle;
 import javafx.animation.TranslateTransition;
 import javafx.animation.TranslateTransitionBuilder;
 import javafx.beans.binding.Bindings;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
+import ravrun.Rav;
 
 /**
  * FXML Controller class
@@ -67,6 +71,13 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
     private TextField autodateofclaim2;
     @FXML
     private TextField autodateofclaim3;
+    @FXML
+    private TextField autodateofclaim4;
+    @FXML
+    private TextField autodateofclaim5;
+    @FXML
+    private TextField autodateofclaim6;
+    
 
     @FXML
     private TextField autodescriptionofclaim1;
@@ -74,6 +85,12 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
     private TextField autodescriptionofclaim2;
     @FXML
     private TextField autodescriptionofclaim3;
+    @FXML
+    private TextField autodescriptionofclaim4;
+    @FXML
+    private TextField autodescriptionofclaim5;
+    @FXML
+    private TextField autodescriptionofclaim6;
 
     @FXML
     private TextArea commoditiestransported;
@@ -84,8 +101,7 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
     private TextField liststate2;
     @FXML
     private TextField liststate3;
-    @FXML
-    private TextField liststate4;
+    
     
     @FXML
     private TextField usdot1;
@@ -93,8 +109,7 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
     private TextField usdot2;
     @FXML
     private TextField usdot3;
-    @FXML
-    private TextField usdot4;
+    
     
     @FXML
     private TextField docket1;
@@ -102,8 +117,7 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
     private TextField docket2;
     @FXML
     private TextField docket3;
-    @FXML
-    private TextField docket4;
+    
     
     @FXML
     private TextField typeoffiling1;
@@ -111,8 +125,7 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
     private TextField typeoffiling2;
     @FXML
     private TextField typeoffiling3;
-    @FXML
-    private TextField typeoffiling4;
+    
     
     @FXML
     private TextField namerequired1;
@@ -120,12 +133,13 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
     private TextField namerequired2;
     @FXML
     private TextField namerequired3;
-    @FXML
-    private TextField namerequired4;
+   
     @FXML
     private ChoiceBox<String> nonownedliability;
     @FXML
     private ChoiceBox<String> nonownedcontract;
+    @FXML
+    private ChoiceBox<String> hauling;
     
     @FXML
     private TextField typeofnonowned;
@@ -145,6 +159,9 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
     @FXML
     private TextArea autosubmissioncomments;
    
+    @FXML
+    private Hyperlink vehicledetails;
+            
     @FXML
     private Pane fullScreenPane;
 
@@ -169,27 +186,36 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
         Bindings.bindBidirectional(autodateofclaim1.textProperty(), binding4.autodateofclaim1Property());
         Bindings.bindBidirectional(autodateofclaim2.textProperty(), binding4.autodateofclaim2Property());
         Bindings.bindBidirectional(autodateofclaim3.textProperty(), binding4.autodateofclaim3Property());
+        Bindings.bindBidirectional(autodateofclaim4.textProperty(), binding4.autodateofclaim4Property());
+        Bindings.bindBidirectional(autodateofclaim5.textProperty(), binding4.autodateofclaim5Property());
+        Bindings.bindBidirectional(autodateofclaim6.textProperty(), binding4.autodateofclaim6Property());
+        Bindings.bindBidirectional(autodescriptionofclaim1.textProperty(), binding4.autodescriptionofclaim1Property());
+        Bindings.bindBidirectional(autodescriptionofclaim2.textProperty(), binding4.autodescriptionofclaim2Property());
+        Bindings.bindBidirectional(autodescriptionofclaim3.textProperty(), binding4.autodescriptionofclaim3Property());
+        Bindings.bindBidirectional(autodescriptionofclaim4.textProperty(), binding4.autodescriptionofclaim4Property());
+        Bindings.bindBidirectional(autodescriptionofclaim5.textProperty(), binding4.autodescriptionofclaim5Property());
+        Bindings.bindBidirectional(autodescriptionofclaim6.textProperty(), binding4.autodescriptionofclaim6Property());
         Bindings.bindBidirectional(commoditiestransported.textProperty(), binding4.commoditiestransportedProperty());
         Bindings.bindBidirectional(liststate1.textProperty(), binding4.liststate1Property());
         Bindings.bindBidirectional(liststate2.textProperty(), binding4.liststate2Property());
         Bindings.bindBidirectional(liststate3.textProperty(), binding4.liststate3Property());
-        Bindings.bindBidirectional(liststate4.textProperty(), binding4.liststate4Property());
+        
         Bindings.bindBidirectional(usdot1.textProperty(), binding4.usdot1Property());
         Bindings.bindBidirectional(usdot2.textProperty(), binding4.usdot2Property());
         Bindings.bindBidirectional(usdot3.textProperty(), binding4.usdot3Property());
-        Bindings.bindBidirectional(usdot4.textProperty(), binding4.usdot4Property());
+        
         Bindings.bindBidirectional(docket1.textProperty(), binding4.docket1Property());
         Bindings.bindBidirectional(docket2.textProperty(), binding4.docket2Property());
         Bindings.bindBidirectional(docket3.textProperty(), binding4.docket3Property());
-        Bindings.bindBidirectional(docket4.textProperty(), binding4.docket4Property());
+        
         Bindings.bindBidirectional(typeoffiling1.textProperty(), binding4.typeoffiling1Property());
         Bindings.bindBidirectional(typeoffiling2.textProperty(), binding4.typeoffiling2Property());
         Bindings.bindBidirectional(typeoffiling3.textProperty(), binding4.typeoffiling3Property());
-        Bindings.bindBidirectional(typeoffiling4.textProperty(), binding4.typeoffiling4Property());
+        
         Bindings.bindBidirectional(namerequired1.textProperty(), binding4.namerequired1Property());
         Bindings.bindBidirectional(namerequired2.textProperty(), binding4.namerequired2Property());
         Bindings.bindBidirectional(namerequired3.textProperty(), binding4.namerequired3Property());
-        Bindings.bindBidirectional(namerequired4.textProperty(), binding4.namerequired4Property());
+        
         Bindings.bindBidirectional(typeofnonowned.textProperty(), binding4.typeofnonownedProperty());
         Bindings.bindBidirectional(anytime.textProperty(), binding4.anytimeProperty());
         Bindings.bindBidirectional(avgvalue.textProperty(), binding4.avgvalueProperty());
@@ -197,6 +223,27 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
         Bindings.bindBidirectional(maxannually.textProperty(), binding4.maxannuallyProperty());
         Bindings.bindBidirectional(mostexpensive.textProperty(), binding4.mostexpensiveProperty());
         Bindings.bindBidirectional(autosubmissioncomments.textProperty(), binding4.autosubmissioncommentsProperty());
+        
+         hauling.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) {
+                    binding4.sethauling(newSelection);
+                }
+            
+        });
+         nonownedliability.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) {
+                    binding4.setnonownedliability(newSelection);
+                } 
+        });
+         nonownedcontract.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) {
+                    binding4.setnonownedcontract(newSelection);
+                }
+        });
+        
             }
 
     @Override
@@ -226,6 +273,11 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
     @FXML
     public void continueAuto() {
         animatedMovement(-1269, 0);
+    }
+    
+    @FXML
+    public void openVehicleDetails(){
+        new Rav("/Users/harsimransingh/Desktop/RevisedProposal.docx").execute();
     }
     
     

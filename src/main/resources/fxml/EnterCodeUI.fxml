@@ -1679,7 +1679,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
       </GridPane>
-      <BorderPane fx:id="marketinglogpane" layoutX="428.0" layoutY="1200.0" prefHeight="303.0" prefWidth="459.0" style="-fx-background-color: rgba(245,245,245, 0.8); -fx-background-radius: 10;">
+      <BorderPane fx:id="marketinglogpane" layoutX="428.0" layoutY="1600.0" prefHeight="303.0" prefWidth="459.0" style="-fx-background-color: rgba(245,245,245, 0.8); -fx-background-radius: 10;">
          <top>
             <VBox prefHeight="302.0" prefWidth="459.0" BorderPane.alignment="CENTER">
                <children>

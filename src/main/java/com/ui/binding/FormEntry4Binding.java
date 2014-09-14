@@ -37,7 +37,9 @@ public class FormEntry4Binding {
     private StringProperty signfloatorlimit;
     private StringProperty signfloatordeductible;
     private StringProperty motortruckcargolimit;
-    private StringProperty motortruckcargodeductible;           
+    private StringProperty motortruckcargodeductible;  
+    private StringProperty motortruckcargoowner;
+    private StringProperty motortruckcargotruckman;
     private StringProperty glasslimit;
     private StringProperty glassdeductible;
     private StringProperty sewerblackupdeductible;    
@@ -47,6 +49,7 @@ public class FormEntry4Binding {
     private StringProperty profitsdeductible;
     private StringProperty grossearningslimit;
     private StringProperty grossearningsdeductible;
+    private StringProperty gecheckbox;
     private StringProperty rentalincomelimit;
     private StringProperty rentalincomedeductible;
     private StringProperty extraexpenselimit;
@@ -125,16 +128,9 @@ public class FormEntry4Binding {
     private StringProperty pvc;           
     private StringProperty plumbingother;
     private StringProperty plumbingupdated;
-    private StringProperty sprinklers;    
-    private StringProperty svccontract;
-    private StringProperty hydrant;
-    private StringProperty firehall;
-    private StringProperty unprotected;
+    private StringProperty fireprotection;    
     private StringProperty distance;
-    private StringProperty alarmsystem;
-    private StringProperty centralmonitored;
-    private StringProperty windowbars;
-    private StringProperty deadbolts;
+    private StringProperty security;
     private StringProperty aoladdress4;
     private StringProperty autocurrentinsurer;
     private StringProperty autocurrentexpirydate;
@@ -148,10 +144,17 @@ public class FormEntry4Binding {
     private StringProperty autodateofclaim1;
     private StringProperty autodateofclaim2;
     private StringProperty autodateofclaim3;
+    private StringProperty autodateofclaim4;
+    private StringProperty autodateofclaim5;
+    private StringProperty autodateofclaim6;
     private StringProperty autodescriptionofclaim1;
     private StringProperty autodescriptionofclaim2;
     private StringProperty autodescriptionofclaim3;
+    private StringProperty autodescriptionofclaim4;
+    private StringProperty autodescriptionofclaim5;
+    private StringProperty autodescriptionofclaim6;
     private StringProperty commoditiestransported;
+    private StringProperty hauling;
     private StringProperty liststate1;
     private StringProperty liststate2;
     private StringProperty liststate3;
@@ -247,6 +250,8 @@ public class FormEntry4Binding {
         signfloatordeductible=new SimpleStringProperty();
         motortruckcargolimit=new SimpleStringProperty();
         motortruckcargodeductible=new SimpleStringProperty();
+        motortruckcargoowner=new SimpleStringProperty();
+        motortruckcargotruckman=new SimpleStringProperty();
         glasslimit=new SimpleStringProperty();
         glassdeductible=new SimpleStringProperty();
         sewerblackupdeductible=new SimpleStringProperty();
@@ -256,6 +261,7 @@ public class FormEntry4Binding {
         profitsdeductible=new SimpleStringProperty();
         grossearningslimit=new SimpleStringProperty();
         grossearningsdeductible=new SimpleStringProperty();
+        gecheckbox=new SimpleStringProperty();
         rentalincomelimit=new SimpleStringProperty();
         rentalincomedeductible=new SimpleStringProperty();
         extraexpenselimit=new SimpleStringProperty();
@@ -334,16 +340,9 @@ public class FormEntry4Binding {
         pvc=new SimpleStringProperty();
         plumbingother=new SimpleStringProperty();
         plumbingupdated=new SimpleStringProperty();
-        sprinklers=new SimpleStringProperty();
-        svccontract=new SimpleStringProperty();
-        hydrant=new SimpleStringProperty();
-        firehall=new SimpleStringProperty();
-        unprotected=new SimpleStringProperty();
+        fireprotection=new SimpleStringProperty();
         distance=new SimpleStringProperty();
-        alarmsystem=new SimpleStringProperty();
-        centralmonitored=new SimpleStringProperty();
-        windowbars=new SimpleStringProperty();
-        deadbolts=new SimpleStringProperty();
+        security=new SimpleStringProperty();
         aoladdress4=new SimpleStringProperty();
         autocurrentinsurer=new SimpleStringProperty();
         autocurrentexpirydate=new SimpleStringProperty();
@@ -354,7 +353,11 @@ public class FormEntry4Binding {
         autodescriptionofclaim1=new SimpleStringProperty();
         autodescriptionofclaim2=new SimpleStringProperty();
         autodescriptionofclaim3=new SimpleStringProperty();
+        autodescriptionofclaim4=new SimpleStringProperty();
+        autodescriptionofclaim5=new SimpleStringProperty();
+        autodescriptionofclaim6=new SimpleStringProperty();
         commoditiestransported=new SimpleStringProperty();
+        hauling=new SimpleStringProperty();
         liststate1=new SimpleStringProperty();
         liststate2=new SimpleStringProperty();
         liststate3=new SimpleStringProperty();
@@ -362,6 +365,9 @@ public class FormEntry4Binding {
         autodateofclaim1=new SimpleStringProperty();
         autodateofclaim2=new SimpleStringProperty();
         autodateofclaim3=new SimpleStringProperty();
+        autodateofclaim4=new SimpleStringProperty();
+        autodateofclaim5=new SimpleStringProperty();
+        autodateofclaim6=new SimpleStringProperty();
         lessholder2=new SimpleStringProperty();
         autovehicle3= new SimpleStringProperty();
         autovehicle2= new SimpleStringProperty();
@@ -424,6 +430,55 @@ public class FormEntry4Binding {
         logscompanyname=new SimpleStringProperty();
         closecompany=new SimpleStringProperty();
         closequote=new SimpleStringProperty();
+    }
+    
+    public String gethauling() {
+        return (String) this.hauling.get();
+    }
+
+    public void sethauling(String hauling) {
+        this.hauling.set(hauling);
+    }
+
+    public StringProperty haulingProperty() {
+        return this.hauling;
+    }
+    
+    
+    public String getmotortruckcargoowner() {
+        return (String) this.motortruckcargoowner.get();
+    }
+
+    public void setmotortruckcargoowner(String motortruckcargoowner) {
+        this.motortruckcargoowner.set(motortruckcargoowner);
+    }
+
+    public StringProperty motortruckcargoownerProperty() {
+        return this.motortruckcargoowner;
+    }
+    
+     public String getgecheckbox() {
+        return (String) this.gecheckbox.get();
+    }
+
+    public void setgecheckbox(String gecheckbox) {
+        this.gecheckbox.set(gecheckbox);
+    }
+
+    public StringProperty gecheckboxProperty() {
+        return this.gecheckbox;
+    }
+    
+    public String getmotortruckcargotruckman() {
+        return (String) this.motortruckcargotruckman.get();
+    }
+
+    public void setmotortruckcargotruckman(String motortruckcargotruckman) {
+        this.motortruckcargotruckman.set(motortruckcargotruckman);
+    }
+
+    public StringProperty motortruckcargotruckmanProperty() {
+        return this.motortruckcargotruckman;
     }
     
     public String getCloseCompany() {
@@ -1199,64 +1254,16 @@ public class FormEntry4Binding {
         return this.plumbingupdated;
     }
     
-    public String getsprinklers() {
-        return (String) this.sprinklers.get();
+    public String getFireProtection() {
+        return (String) this.fireprotection.get();
     }
 
-    public void setsprinklers(String sprinklers) {
-        this.sprinklers.set(sprinklers);
+    public void setFireProtection(String fireProtection) {
+        this.fireprotection.set(fireProtection);
     }
 
-    public StringProperty sprinklersProperty() {
-        return this.sprinklers;
-    }
-    
-    public String getsvccontract() {
-        return (String) this.svccontract.get();
-    }
-
-    public void setsvccontract(String svccontract) {
-        this.svccontract.set(svccontract);
-    }
-
-    public StringProperty svccontractProperty() {
-        return this.svccontract;
-    }
-    
-    public String gethydrant() {
-        return (String) this.hydrant.get();
-    }
-
-    public void sethydrant(String hydrant) {
-        this.hydrant.set(hydrant);
-    }
-
-    public StringProperty hydrantProperty() {
-        return this.hydrant;
-    }
-    
-    public String getfirehall() {
-        return (String) this.firehall.get();
-    }
-
-    public void setfirehall(String firehall) {
-        this.firehall.set(firehall);
-    }
-
-    public StringProperty firehallProperty() {
-        return this.firehall;
-    }
-    
-    public String getunprotected() {
-        return (String) this.unprotected.get();
-    }
-
-    public void setunprotected(String unprotected) {
-        this.unprotected.set(unprotected);
-    }
-
-    public StringProperty unprotectedProperty() {
-        return this.unprotected;
+    public StringProperty fireProtectionProperty() {
+        return this.fireprotection;
     }
     
     public String getdistance() {
@@ -1271,52 +1278,16 @@ public class FormEntry4Binding {
         return this.distance;
     }
     
-    public String getalarmsystem() {
-        return (String) this.alarmsystem.get();
+    public String getSecurity() {
+        return (String) this.security.get();
     }
 
-    public void setalarmsystem(String alarmsystem) {
-        this.alarmsystem.set(alarmsystem);
+    public void setSecurity(String security) {
+        this.security.set(security);
     }
 
-    public StringProperty alarmsystemProperty() {
-        return this.alarmsystem;
-    }
-    
-    public String getcentralmonitored() {
-        return (String) this.centralmonitored.get();
-    }
-
-    public void setcentralmonitored(String centralmonitored) {
-        this.centralmonitored.set(centralmonitored);
-    }
-
-    public StringProperty centralmonitoredProperty() {
-        return this.centralmonitored;
-    }
-    
-    public String getwindowbars() {
-        return (String) this.windowbars.get();
-    }
-
-    public void setwindowbars(String windowbars) {
-        this.windowbars.set(windowbars);
-    }
-
-    public StringProperty windowbarsProperty() {
-        return this.windowbars;
-    }
-    
-    public String getdeadbolts() {
-        return (String) this.deadbolts.get();
-    }
-
-    public void setdeadbolts(String deadbolts) {
-        this.deadbolts.set(deadbolts);
-    }
-
-    public StringProperty deadboltsProperty() {
-        return this.deadbolts;
+    public StringProperty securityProperty() {
+        return this.security;
     }
     
     public String getaoladdress4() {
@@ -1377,6 +1348,42 @@ public class FormEntry4Binding {
 
     public StringProperty autodescriptionofclaim1Property() {
         return this.autodescriptionofclaim1;
+    }   
+    
+    public String getautodescriptionofclaim4() {
+        return (String) this.autodescriptionofclaim4.get();
+    }
+
+    public void setautodescriptionofclaim4(String autodescriptionofclaim4) {
+        this.autodescriptionofclaim4.set(autodescriptionofclaim4);
+    }
+
+    public StringProperty autodescriptionofclaim4Property() {
+        return this.autodescriptionofclaim4;
+    }   
+    
+    public String getautodescriptionofclaim5() {
+        return (String) this.autodescriptionofclaim5.get();
+    }
+
+    public void setautodescriptionofclaim5(String autodescriptionofclaim5) {
+        this.autodescriptionofclaim5.set(autodescriptionofclaim5);
+    }
+
+    public StringProperty autodescriptionofclaim5Property() {
+        return this.autodescriptionofclaim5;
+    }   
+    
+    public String getautodescriptionofclaim6() {
+        return (String) this.autodescriptionofclaim6.get();
+    }
+
+    public void setautodescriptionofclaim6(String autodescriptionofclaim6) {
+        this.autodescriptionofclaim6.set(autodescriptionofclaim6);
+    }
+
+    public StringProperty autodescriptionofclaim6Property() {
+        return this.autodescriptionofclaim6;
     }   
     
      public String getlessholder3() {
@@ -1496,6 +1503,43 @@ public class FormEntry4Binding {
 
     public StringProperty autodateofclaim3Property() {
         return this.autodateofclaim3;
+    }
+    
+    
+     public String getautodateofclaim4() {
+        return (String) this.autodateofclaim4.get();
+    }
+
+    public void setautodateofclaim4(String autodateofclaim4) {
+        this.autodateofclaim4.set(autodateofclaim4);
+    }
+
+    public StringProperty autodateofclaim4Property() {
+        return this.autodateofclaim4;
+    }
+    
+     public String getautodateofclaim5() {
+        return (String) this.autodateofclaim5.get();
+    }
+
+    public void setautodateofclaim5(String autodateofclaim5) {
+        this.autodateofclaim5.set(autodateofclaim5);
+    }
+
+    public StringProperty autodateofclaim5Property() {
+        return this.autodateofclaim5;
+    }
+    
+     public String getautodateofclaim6() {
+        return (String) this.autodateofclaim6.get();
+    }
+
+    public void setautodateofclaim6(String autodateofclaim6) {
+        this.autodateofclaim6.set(autodateofclaim6);
+    }
+
+    public StringProperty autodateofclaim6Property() {
+        return this.autodateofclaim6;
     }
     
     public String getlessholder2() {

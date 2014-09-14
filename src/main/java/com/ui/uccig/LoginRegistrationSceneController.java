@@ -169,14 +169,16 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
                             stopLoading();
                             System.out.println("1");
                             if (response.getRole().equals("MARKETER") || response.getRole().equals("MANAGER")) {
-                                
+                                  
                                 ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setMarketerId(binding.getUsername());
                                 ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setReceivedname(response.getUserFullName());
-
+                                   System.out.println("Hello");
                                 Calendar c = Calendar.getInstance();
                                 c.setTimeInMillis(response.getCurrentDate().getMillisecond());
-                                ((NextScreenController) (screenPage.getControlledScreen("OtherScreen"))).setDate(c.getTime());
+                                ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setDate(c.getTime());
+                                System.out.println("Hello1");
                                 screenPage.setScreen("OtherScreen");
+                                System.out.println("Hello2");
                             } else {
                                 System.out.println("2");
                                 ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setProducerid(binding.getUsername());

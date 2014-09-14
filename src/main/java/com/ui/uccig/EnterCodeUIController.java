@@ -67,7 +67,7 @@ import ravrun.Rav;
  * @author ravjotsingh
  */
 public class EnterCodeUIController implements Initializable, IScreenController {
-
+    
     private Stage stage = new Stage();
     private ScreenNavigator screenPage;
     List<AbstractFormInfo> abstractFormInfoList = new ArrayList<AbstractFormInfo>();
@@ -459,20 +459,12 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     @FXML
     public void submitViewApplication() {
-         NextScreenController controller = (NextScreenController) screenPage.getControlledScreen("NextScreen");
-        controller.viewApplication(form);
-        screenPage.setScreen("NextScreen");
-        switch (form.getType()) {
-            case "Auto":
-                controller.submitActionAuto();
-                break;
-            case "Both":
-                controller.submitActionBoth();
-                break;
-            case "Commercial":
-                controller.submitActionCommercial();
-                break;
-        }
+        ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setFormId(formId);
+        ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).setIsEdit(true);
+        System.out.println("Form ID is"+formId); 
+        NextScreenController controller = (NextScreenController) screenPage.getControlledScreen("NextScreen");
+        controller.viewApplication(form,formId);
+       
 
     }
 
@@ -757,7 +749,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     @FXML
     public void submitRenewBusiness() {
         NextScreenController controller = (NextScreenController) screenPage.getControlledScreen("NextScreen");
-        controller.viewApplication(form);
+        controller.viewApplication(form,form.getFormId());
         screenPage.setScreen("NextScreen");
         switch (form.getType()) {
             case "Auto":
@@ -888,7 +880,8 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     @FXML
     public void searchAgain() {
         NextScreenController controller = (NextScreenController) screenPage.getControlledScreen("NextScreen");
-        controller.viewApplication(form);
+        
+        controller.viewApplication(form,form.getFormId());
     }
 
     public void animatedMovement(int x, int y) {

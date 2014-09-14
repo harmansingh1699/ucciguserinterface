@@ -5,10 +5,17 @@
  */
 package com.ui.uccig;
 
+import com.rav.insurance.insuranceformoperations.webservice.InsuranceOperationsService_Service;
+import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuranceFormListRequest;
+import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuranceFormRequest;
+import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuranceFormResponse;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Dialogs;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 
@@ -62,9 +69,44 @@ public class SceneController implements Initializable {
     
     @FXML
     public void openForm() {
-        ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setApplicationId(applicationid.getText());
+        Task task = new Task<Void>() {
+            @Override
+            public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception, Exception {
+                try {
+                    InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
+                    GetInsuranceFormRequest req = new GetInsuranceFormRequest();
+                    req.setFormId(applicationid.getText());
+                   // req.setProducerId(binding.getsearchproducerid());
+                    //req.setStatus("NEW");
+                    //req.setFormId(Integer.parseInt(binding.getsearchapplicationid()));
+                    
+                    GetInsuranceFormResponse response = port.getInsuranceOperationsPort().getForm(req);
+
+                    if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
+                        setAttributes(  response);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                //   successMessage("You are successfully logged in");
+                return null;
+            }
+
+        };
+        new Thread(task).start();
+        
+    }
+    
+    public void setAttributes( final GetInsuranceFormResponse response){
+         Platform.runLater(new Runnable() {
+            public void run() {
+
+                ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setApplicationId(applicationid.getText());
         ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).animatedMovement(-1269, -715);
         ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setFormId(applicationid.getText());
+        ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).viewApplication(response,applicationid.getText());
+            }
+        });
     }
     
 }

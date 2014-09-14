@@ -174,7 +174,7 @@
             <Image url="@../images/greywhite.jpg" />
           </image>
         </ImageView>
-        <Label layoutX="599.0" layoutY="43.0" prefWidth="182.0" text="Client Profile(1)">
+        <Label layoutX="512.0" layoutY="44.0" prefWidth="182.0" text="Client Profile(1)">
           <font>
             <Font name="Times Bold" size="25.0" fx:id="x6" />
           </font>
@@ -188,7 +188,7 @@
           </font>
         </Label>
         <Label font="$x4" layoutX="377.0" layoutY="118.0" text="Branch:" />
-        <Label font="$x4" layoutX="643.0" layoutY="118.0" text="Date:" />
+        <Label font="$x4" layoutX="646.0" layoutY="118.0" text="Date:" />
         <Label font="$x4" layoutX="73.0" layoutY="170.0" text="*Key Contact:" textFill="#bb1818" />
         <Label font="$x4" layoutX="421.0" layoutY="170.0" text="*Phone:" textFill="#bb1818" />
         <Label font="$x4" layoutX="730.0" layoutY="170.0" text="Email:" />
@@ -209,8 +209,8 @@
         <Button cancelButton="false" defaultButton="true" layoutX="73.0" layoutY="687.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" text="Exit" textAlignment="LEFT" textFill="WHITE" wrapText="false" />
         <Button defaultButton="true" layoutX="578.0" layoutY="687.0" mnemonicParsing="false" onAction="#submitSave" prefHeight="26.0" prefWidth="126.0" text="Save" />
         <Button defaultButton="true" layoutX="1066.0" layoutY="687.0" mnemonicParsing="false" onAction="#continue1" prefHeight="26.0" prefWidth="126.0" text="Continue" />
-        <Label fx:id="returnedname" font="$x4" layoutX="171.0" layoutY="118.0" text="Jerry Boutilier" />
-        <Label fx:id="returnedbranch" font="$x4" layoutX="452.0" layoutY="118.0" text="Kingston" />
+        <Label fx:id="returnedname" font="$x4" layoutX="149.0" layoutY="118.0" text="Jerry Boutilier" />
+        <Label fx:id="returnedbranch" font="$x4" layoutX="438.0" layoutY="118.0" text="Kingston" />
         <TextField fx:id="keycontact" layoutX="180.0" layoutY="165.0" prefHeight="26.0" prefWidth="167.0" text="" />
         <TextField id="keyphone" fx:id="secondaryemail" layoutX="796.0" layoutY="204.0" prefHeight="26.0" prefWidth="219.0" />
         <TextField id="keyemail" fx:id="secondarycontact" layoutX="215.0" layoutY="202.0" prefHeight="26.0" prefWidth="134.0" text="" />
@@ -230,7 +230,8 @@
         <ChoiceBox fx:id="entitytype" layoutX="199.0" layoutY="406.0" prefHeight="26.0" prefWidth="128.0">
           <items>
             <FXCollections fx:factory="observableArrayList">
-              <String fx:value="Corporation" />
+                 <String fx:value="Select" />
+                <String fx:value="Corporation" />
               <String fx:value="Sole Proprietor" />
               <String fx:value="Other" />
             </FXCollections>
@@ -249,16 +250,17 @@
         <TextField id="bod" fx:id="bod2" layoutX="572.0" layoutY="607.0" prefWidth="200.0" />
         <TextField id="bod" fx:id="bod3" layoutX="305.0" layoutY="630.0" prefWidth="200.0" />
         <TextField id="bod" fx:id="bod4" layoutX="573.0" layoutY="630.0" prefWidth="200.0" />
-        <ChoiceBox fx:id="severity" layoutX="996.0" layoutY="116.0" prefWidth="116.0">
+        <ChoiceBox fx:id="severity" layoutX="996.0" layoutY="116.0" prefHeight="26.0" prefWidth="76.0" value="Select">
           <items>
             <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Select" />
               <String fx:value="High" />
               <String fx:value="Medium" />
               <String fx:value="Low" />
             </FXCollections>
           </items>
         </ChoiceBox>
-        <Label fx:id="returneddate" layoutX="699.0" layoutY="119.0" text="18/08/2014">
+        <Label fx:id="returneddate" layoutX="685.0" layoutY="119.0" text="18/08/2014">
           <font>
             <Font name="System Bold" size="14.0" />
           </font>
@@ -289,7 +291,7 @@
             <Font name="Times Bold" size="18.0" fx:id="x9" />
           </font>
         </Label>
-        <Label font="$x4" layoutX="980.0" layoutY="112.0" text="Pension Plan:" />
+        <Label font="$x4" layoutX="994.0" layoutY="112.0" text="Pension Plan:" />
         <Label font="$x4" layoutX="68.0" layoutY="260.0" text="Total Sales:" />
         <Label font="$x4" layoutX="59.0" layoutY="496.0" text="Largest Customers or Projects:" />
         <Label font="$x4" layoutX="674.0" layoutY="492.0" text="Largest Suppliers:" />
@@ -320,8 +322,9 @@
         <ChoiceBox fx:id="currency1" layoutX="522.0" layoutY="182.0" prefHeight="26.0" prefWidth="83.0">
           <items>
             <FXCollections fx:factory="observableArrayList">
-              <String fx:value="US$" />
               <String fx:value="CAN$" />
+                <String fx:value="US$" />
+              
             </FXCollections>
           </items>
         </ChoiceBox>
@@ -356,18 +359,20 @@
         </Label>
         <Label font="$x8" layoutX="449.0" layoutY="261.0" prefWidth="51.0" text="US$" />
         <Button defaultButton="true" layoutX="63.0" layoutY="638.0" mnemonicParsing="false" onAction="#clientprofile2previous" prefHeight="26.0" prefWidth="126.0" text="Previous Page" />
-        <ChoiceBox fx:id="groupbenefits" layoutX="871.0" layoutY="107.0" prefHeight="26.0" prefWidth="70.0">
+        <ChoiceBox fx:id="groupbenefits" layoutX="871.0" layoutY="107.0" prefHeight="26.0" prefWidth="90.0">
           <items>
             <FXCollections fx:factory="observableArrayList">
-              <String fx:value="Yes" />
+              <String fx:value="Select" />
+                <String fx:value="Yes" />
               <String fx:value="No" />
             </FXCollections>
           </items>
         </ChoiceBox>
-        <ChoiceBox fx:id="pensionplan" layoutX="1094.0" layoutY="107.0" prefHeight="26.0" prefWidth="70.0">
+        <ChoiceBox fx:id="pensionplan" layoutX="1094.0" layoutY="107.0" prefHeight="26.0" prefWidth="83.0">
           <items>
             <FXCollections fx:factory="observableArrayList">
-              <String fx:value="Yes" />
+              <String fx:value="Select" />
+                <String fx:value="Yes" />
               <String fx:value="No" />
             </FXCollections>
           </items>
@@ -382,8 +387,9 @@
         <ChoiceBox fx:id="currency3" layoutX="522.0" layoutY="213.0" prefHeight="26.0" prefWidth="83.0">
           <items>
             <FXCollections fx:factory="observableArrayList">
-              <String fx:value="US$" />
-              <String fx:value="CAN$" />
+               <String fx:value="CAN$" />
+                <String fx:value="US$" />
+             
             </FXCollections>
           </items>
         </ChoiceBox>
@@ -392,8 +398,9 @@
         <ChoiceBox fx:id="currency2" layoutX="1099.0" layoutY="182.0" prefHeight="26.0" prefWidth="83.0">
           <items>
             <FXCollections fx:factory="observableArrayList">
-              <String fx:value="US$" />
               <String fx:value="CAN$" />
+                <String fx:value="US$" />
+              
             </FXCollections>
           </items>
         </ChoiceBox>
@@ -402,8 +409,9 @@
         <ChoiceBox fx:id="currency4" layoutX="1099.0" layoutY="213.0" prefHeight="26.0" prefWidth="83.0">
           <items>
             <FXCollections fx:factory="observableArrayList">
-              <String fx:value="US$" />
               <String fx:value="CAN$" />
+                <String fx:value="US$" />
+              
             </FXCollections>
           </items>
         </ChoiceBox>
@@ -1677,7 +1685,7 @@
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
               <children>
-                <HBox alignment="TOP_LEFT" prefHeight="23.0" prefWidth="159.0">
+                <HBox alignment="CENTER_LEFT" prefHeight="23.0" prefWidth="159.0">
                   <children>
                     <CheckBox id="concrete" fx:id="roofconcrete" font="$x8" mnemonicParsing="false" text="Concrete" />
                   </children>
@@ -1753,7 +1761,7 @@
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
               <children>
-                <HBox prefHeight="100.0" prefWidth="200.0">
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                   <children>
                     <CheckBox fx:id="heatingother" mnemonicParsing="false" text="Other" />
                   </children>
