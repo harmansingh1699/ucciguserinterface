@@ -464,7 +464,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
         System.out.println("Form ID is"+formId); 
         NextScreenController controller = (NextScreenController) screenPage.getControlledScreen("NextScreen");
         controller.viewApplication(form,formId);
-       
+        
 
     }
 
@@ -624,7 +624,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                         int i =0;
                         for(QuoteDetailsRequest a:list){
                            switch(i){
-                               case 0: l10.setText(a.getApplicationid());
+                               case 0: //l10.setText(a.formId);
                                
                                    break;
                                case 1:

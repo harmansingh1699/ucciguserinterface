@@ -7,6 +7,7 @@ package com.ui.uccig;
 
 import com.calendar.DatePicker;
 import com.rav.insurance.insuranceformoperations.webservice.InsuranceOperationsService_Service;
+import com.rav.insurance.insuranceformoperations.webservice.contracts.CommonResponseAttributes;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.EditFormSubmissionRequest;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuranceFormRequest;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuranceFormResponse;
@@ -1589,7 +1590,7 @@ public class NextScreenController implements Initializable, IScreenController {
     }
 
     public void viewApplication(final GetInsuranceFormResponse form, final String formId) {
-        Task task = new Task<Void>() {
+      isEdit=true;  Task task = new Task<Void>() {
             @Override
             public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception, Exception {
                 try {
@@ -1603,7 +1604,9 @@ public class NextScreenController implements Initializable, IScreenController {
                     GetInsuranceFormResponse response = port.getInsuranceOperationsPort().getForm(req);
 
                     if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
-                        assign(form);
+                        System.out.println("formid is "+formId);
+                        setFormId(formId);
+                        assign(response);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -1854,6 +1857,19 @@ public class NextScreenController implements Initializable, IScreenController {
          totsqfootage.setText(Double.toString(form.getTotalSqFootage()));
          insidesqfootage.setText(Double.toString(form.getInsdSqFootage()));
          noofstories.setText(Integer.toString(form.getNoOfStories()));*/
+        screenPage.setScreen("NextScreen");
+       
+        switch (form.getType()) {
+            case "Auto":
+                submitActionAuto();
+                break;
+            case "Both":
+                submitActionBoth();
+                break;
+            case "Commercial":
+                submitActionCommercial();
+                break;
+        }
                 }
         });
     }
@@ -1874,11 +1890,13 @@ public class NextScreenController implements Initializable, IScreenController {
                 public Void call() throws Exception {
                     System.out.println("1213");
                     try {
+                        System.out.println("edit "+isEdit );
                         if (isEdit) {
+                            System.out.println("samta");
                             InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
                             EditFormSubmissionRequest req1 = new EditFormSubmissionRequest();
                             
-                           port.getInsuranceOperationsPort().editFormSubmission(req1);
+                          
                            req1.setProducer(producerid);
                             if (insurancetypeflag == 1) {
                                 req1.setType("Auto");
@@ -1888,6 +1906,7 @@ public class NextScreenController implements Initializable, IScreenController {
                                 req1.setType("Commercial");
                             }
                             //choicebox
+                            System.out.println("Form Id of the "+getFormId());
                             req1.setFormId(getFormId());
                             req1.setSeverity(binding.getSeverity());
                             req1.setEntityType(binding.getEntityType());
@@ -2511,6 +2530,13 @@ public class NextScreenController implements Initializable, IScreenController {
                             }
 
                             HTMLToPDF.convertHtmlToPdf(new File("pdf.html").getAbsolutePath());
+                            CommonResponseAttributes response =  port.getInsuranceOperationsPort().editFormSubmission(req1);
+                            if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
+                                successMessage("Form has been updated");
+
+                            } else {
+                                errors(response.getErrorMessage());
+                            }
                         } else {
                             InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
                             InsuranceFormSubmitRequest req1 = new InsuranceFormSubmitRequest();
