@@ -69,7 +69,7 @@ public class SceneController implements Initializable {
     
     @FXML
     public void openForm() {
-        Task task = new Task<Void>() {
+        /*Task task = new Task<Void>() {
             @Override
             public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception, Exception {
                 try {
@@ -93,7 +93,12 @@ public class SceneController implements Initializable {
             }
 
         };
-        new Thread(task).start();
+        new Thread(task).start();*/
+                    ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setApplicationId(applicationid.getText());
+        ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).animatedMovement(-1269, -715);
+        ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setFormId(applicationid.getText());
+        //((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).viewApplication(null,applicationid.getText());
+        
         
     }
     
