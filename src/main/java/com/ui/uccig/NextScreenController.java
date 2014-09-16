@@ -19,6 +19,7 @@ import com.ui.binding.FormEntry1Binding;
 import com.ui.binding.FormEntry2Binding;
 import com.ui.binding.FormEntry3Binding;
 import com.ui.binding.FormEntry4Binding;
+import com.ui.util.AddAnotherInfo;
 import com.ui.util.CommonValidations;
 import com.ui.util.HTMLToPDF;
 import com.ui.util.SavingFile;
@@ -28,6 +29,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.net.URL;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -615,6 +617,10 @@ public class NextScreenController implements Initializable, IScreenController {
     
     
     int insurancetypeflag = 0;
+    
+    private int offset;
+    private List<AddAnotherInfo> listAddInfo;
+    
     private FormEntry1Binding binding;
     private FormEntry2Binding binding2;
     private FormEntry3Binding binding3;
@@ -692,7 +698,7 @@ public class NextScreenController implements Initializable, IScreenController {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        listAddInfo = new ArrayList();
         binding = new FormEntry1Binding();
         binding2 = new FormEntry2Binding();
         binding3 = new FormEntry3Binding();
@@ -1452,7 +1458,7 @@ public class NextScreenController implements Initializable, IScreenController {
         datePicker3.localeProperty().set(Locale.ENGLISH);
         datePicker4.localeProperty().set(Locale.ENGLISH);
         datePicker5.localeProperty().set(Locale.ENGLISH);
-        datePicker6.localeProperty().set(Locale.ENGLISH);
+       
         
         datePicker.setLayoutX(0.0);
         datePicker.setLayoutY(81.0);
@@ -1461,6 +1467,23 @@ public class NextScreenController implements Initializable, IScreenController {
         datePicker1.setLayoutX(0.0);
         datePicker1.setLayoutY(81.0);
         datePicker1.setPrefWidth(200.0);
+        
+        datePicker2.setLayoutX(0.0);
+        datePicker2.setLayoutY(81.0);
+        datePicker2.setPrefWidth(200.0);
+        
+        datePicker3.setLayoutX(0.0);
+        datePicker3.setLayoutY(81.0);
+        datePicker3.setPrefWidth(200.0);
+        
+        datePicker4.setLayoutX(0.0);
+        datePicker4.setLayoutY(81.0);
+        datePicker4.setPrefWidth(200.0);
+        
+        datePicker5.setLayoutX(0.0);
+        datePicker5.setLayoutY(81.0);
+        datePicker5.setPrefWidth(200.0);
+        
         
         datePicker.selectedDateProperty().addListener(new InvalidationListener() {
             @Override
@@ -1473,6 +1496,32 @@ public class NextScreenController implements Initializable, IScreenController {
             public void invalidated(Observable observable) {
             }
         });
+        
+        datePicker2.selectedDateProperty().addListener(new InvalidationListener() {
+            @Override
+            public void invalidated(Observable observable) {
+            }
+        });
+        
+        datePicker3.selectedDateProperty().addListener(new InvalidationListener() {
+            @Override
+            public void invalidated(Observable observable) {
+            }
+        });
+        
+        datePicker4.selectedDateProperty().addListener(new InvalidationListener() {
+            @Override
+            public void invalidated(Observable observable) {
+            }
+        });
+        
+        datePicker5.selectedDateProperty().addListener(new InvalidationListener() {
+            @Override
+            public void invalidated(Observable observable) {
+            }
+        });
+        
+        
         datePicker.setPromptText("Date of Claim");
         datePicker.setLocale(Locale.ENGLISH);
         datePicker.getCalendarView().todayButtonTextProperty().set("TODAY");
@@ -1618,6 +1667,35 @@ public class NextScreenController implements Initializable, IScreenController {
             autoinsurancebutton.setVisible(true);
         }
         
+    }
+   
+    @FXML
+    public void addAdditionNext() {
+        if (offset < 10) {
+            try {
+                if (listAddInfo.get(offset).getAddress1() != null) {
+                    listAddInfo.get(offset).setAddress1(binding4.getlocationaddress());
+                }
+                offset += 1;
+                if (listAddInfo.get(offset).getAddress1() != null) {
+                    binding4.setlocationaddress(listAddInfo.get(offset).getAddress1());
+                }
+            } catch (Exception e) {
+            }
+        }
+    }
+
+    @FXML
+    public void addAdditionPrev() {
+        if (offset > 0) {
+            try {
+                offset -= 1;
+                if (listAddInfo.get(offset).getAddress1() != null) {
+                    binding4.setlocationaddress(listAddInfo.get(offset).getAddress1());
+                }
+            } catch (Exception e) {
+            }
+        }
     }
     
     @FXML

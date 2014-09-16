@@ -221,7 +221,7 @@ public class FormEntry4Binding {
     private StringProperty closecompany;
     private StringProperty closequote;
     
-    //send email
+    //send email-checkbox
     private StringProperty mail1;
     private StringProperty mail2;
     private StringProperty mail3;
@@ -240,7 +240,22 @@ public class FormEntry4Binding {
     private StringProperty mail16;
     private StringProperty mail17;
     private StringProperty mail18;
+    private StringProperty mail19;
+    private StringProperty mail20;
+    private StringProperty mail21;
+    private StringProperty mail22;
+    private StringProperty mail23;
+    private StringProperty mail24;
+    private StringProperty mail25;
+    private StringProperty mail26;
+    private StringProperty mail27;
+    private StringProperty mail28;
+    private StringProperty mail29;
     
+    private StringProperty email1;
+    private StringProperty email2;
+    private StringProperty email3;
+    private StringProperty email4;
     
    
     public FormEntry4Binding() {
@@ -455,6 +470,38 @@ public class FormEntry4Binding {
         
         mail1=new SimpleStringProperty();
         mail2=new SimpleStringProperty();
+        mail3=new SimpleStringProperty();
+        mail4=new SimpleStringProperty();
+        mail5=new SimpleStringProperty();
+        mail6=new SimpleStringProperty();
+        mail7=new SimpleStringProperty();
+        mail8=new SimpleStringProperty();
+        mail9=new SimpleStringProperty();
+        mail10=new SimpleStringProperty();
+        mail11=new SimpleStringProperty();
+        mail12=new SimpleStringProperty();
+        mail13=new SimpleStringProperty();
+        mail14=new SimpleStringProperty();
+        mail15=new SimpleStringProperty();
+        mail16=new SimpleStringProperty();
+        mail17=new SimpleStringProperty();
+        mail18=new SimpleStringProperty();
+        mail19=new SimpleStringProperty();
+        mail20=new SimpleStringProperty();
+        mail21=new SimpleStringProperty();
+        mail22=new SimpleStringProperty();
+        mail23=new SimpleStringProperty();
+        mail24=new SimpleStringProperty();
+        mail25=new SimpleStringProperty();
+        mail26=new SimpleStringProperty();
+        mail27=new SimpleStringProperty();
+        mail28=new SimpleStringProperty();
+        mail29=new SimpleStringProperty();
+        email1=new SimpleStringProperty();
+        email2=new SimpleStringProperty();
+        email4=new SimpleStringProperty();
+        email3=new SimpleStringProperty();
+        
     }
     
     public String gethauling() {
