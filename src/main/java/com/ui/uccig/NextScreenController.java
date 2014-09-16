@@ -2143,11 +2143,11 @@ public class NextScreenController implements Initializable, IScreenController {
                             
                             req1.setProducer(producerid);
                             if (insurancetypeflag == 1) {
-                                req1.setType("Auto");
-                            } else if (insurancetypeflag == 2) {
-                                req1.setType("Both");
-                            } else if (insurancetypeflag == 3) {
                                 req1.setType("Commercial");
+                            } else if (insurancetypeflag == 2) {
+                                req1.setType("Auto");
+                            } else if (insurancetypeflag == 3) {
+                                req1.setType("Both");
                             }
                             //choicebox
                             System.out.println("Form Id of the " + getFormId());
@@ -2279,6 +2279,26 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setBusinessAsset(binding3.getbusinessapart());
                             req1.setAdvertising(binding3.getadvertising());
                             req1.setDurationIncaseOfSeriousClaims(binding3.getrecover());
+                            
+                            GregorianCalendar c1 = new GregorianCalendar();
+                            c1.setTime(datePicker.getSelectedDate());
+                            XMLGregorianCalendar date1 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c1);
+                            req1.setPastClaimDate1(date1);
+                            
+                            GregorianCalendar c2 = new GregorianCalendar();
+                            c2.setTime(datePicker1.getSelectedDate());
+                            XMLGregorianCalendar date2 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c2);
+                            req1.setPastClaimDate2(date2);
+                            
+                            GregorianCalendar c3 = new GregorianCalendar();
+                            c3.setTime(datePicker2.getSelectedDate());
+                            XMLGregorianCalendar date3 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c3);
+                            req1.setPastClaimDate3(date3);
+                            
+                            req1.setPastClaimCause1(binding3.getclaimcause1());
+                            req1.setPastClaimCause2(binding3.getclaimcause2());
+                            req1.setPastClaimCause3(binding3.getclaimcause3());
+                            
                             if (!CommonValidations.isStringEmpty(binding3.getclaimamount1())) {
                                 req1.setPastClaimAmount1(Double.parseDouble(binding3.getclaimamount1()));
                             }
@@ -2288,12 +2308,29 @@ public class NextScreenController implements Initializable, IScreenController {
                             if (!CommonValidations.isStringEmpty(binding3.getclaimamount3())) {
                                 req1.setPastClaimAmount1(Double.parseDouble(binding3.getclaimamount3()));
                             }
+                            
                             req1.setCurrentInsuranceType1(binding3.getciptype1());
                             req1.setCurrentInsuranceType2(binding3.getciptype2());
                             req1.setCurrentInsuranceType3(binding3.getciptype3());
                             req1.setCurrentInsuranceCarrier1(binding3.getcipcarrier1());
                             req1.setCurrentInsuranceCarrier2(binding3.getcipcarrier2());
                             req1.setCurrentInsuranceCarrier3(binding3.getcipcarrier3());
+                            
+                            GregorianCalendar c4 = new GregorianCalendar();
+                            c4.setTime(datePicker3.getSelectedDate());
+                            XMLGregorianCalendar date4 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c4);
+                            req1.setCurrentInsuranceExpiry1(date4);
+                            
+                            GregorianCalendar c5 = new GregorianCalendar();
+                            c5.setTime(datePicker4.getSelectedDate());
+                            XMLGregorianCalendar date5 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c5);
+                            req1.setCurrentInsuranceExpiry2(date5);
+                            
+                            GregorianCalendar c6 = new GregorianCalendar();
+                            c6.setTime(datePicker5.getSelectedDate());
+                            XMLGregorianCalendar date6 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c6);
+                            req1.setCurrentInsuranceExpiry3(date6);
+                            
                             req1.setLineHolders1(binding3.getlienholder1());
                             req1.setLineHolders2(binding3.getlienholder2());
                             req1.setLienHolders3(binding3.getlienholder3());
@@ -2644,6 +2681,8 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setLienHoldersVehicle1(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautovehicle1());
                             req1.setLienHoldersVehicle2(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautovehicle2());
                             req1.setLienHoldersVehicle3(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautovehicle3());
+                            
+                            
                             //req1.setClaimDate1(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodateofclaim1());
                             //req1.setClaimDate2(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodateofclaim2());
                             //req1.setClaimDate3(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodateofclaim3());
@@ -3275,10 +3314,7 @@ public class NextScreenController implements Initializable, IScreenController {
                                 req1.setNoOfStories(Integer.parseInt(binding4.getnoofstories()));
                             }
                             req1.setCurrentInsurer(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentinsurer());
-                            GregorianCalendar c1 = new GregorianCalendar();
-                            c1.setTime(datePicker.getSelectedDate());
-                            XMLGregorianCalendar date1 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c1);
-                            req1.setCurrentExpDate(date1);
+                            //req1.setCurrentExpDate(date1);
                             //req1.setCurrentExpDate(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentexpirydate()); 
                             if (!CommonValidations.isStringEmpty(binding4.getautopremiumtarget())) {
                                 req1.setPremiumTarget(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautopremiumtarget()));

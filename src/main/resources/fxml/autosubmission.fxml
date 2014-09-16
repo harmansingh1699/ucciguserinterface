@@ -34,7 +34,6 @@
    <Label font="$x1" layoutX="102.0" layoutY="191.0" text="Liendholders/Lessors:" />
    <Label font="$x1" layoutX="102.0" layoutY="334.0" text="Claims In Last 6 Years:" />
    <TextField fx:id="autocurrentinsurer" layoutX="229.0" layoutY="92.0" prefHeight="26.0" prefWidth="241.0" />
-   <TextField fx:id="autocurrentexpirydate" layoutX="692.0" layoutY="92.0" prefWidth="151.0" />
    <TextField fx:id="autopremiumtarget" layoutX="1021.0" layoutY="92.0" prefWidth="151.0" />
    <TextField fx:id="lessholder1" layoutX="271.0" layoutY="150.0" prefWidth="200.0" promptText="Lessholder/Lienholder" />
    <TextField fx:id="lessholder2" layoutX="271.0" layoutY="188.0" prefWidth="200.0" promptText="Lessholder/Lienholder" />
@@ -42,9 +41,6 @@
    <TextField fx:id="autovehicle1" layoutX="549.0" layoutY="150.0" prefWidth="200.0" promptText="vehicle#" />
    <TextField id="autovehicle1" fx:id="autovehicle2" layoutX="549.0" layoutY="188.0" prefWidth="200.0" promptText="vehicle#" />
    <TextField fx:id="autovehicle3" layoutX="549.0" layoutY="231.0" prefWidth="200.0" promptText="vehicle#" />
-   <TextField fx:id="autodateofclaim1" layoutX="285.0" layoutY="284.0" prefWidth="113.0" promptText="Date of Claim" />
-   <TextField fx:id="autodateofclaim2" layoutX="285.0" layoutY="328.0" prefWidth="113.0" promptText="Date of Claim" />
-   <TextField fx:id="autodateofclaim3" layoutX="285.0" layoutY="369.0" prefWidth="113.0" promptText="Date of Claim" />
    <TextField fx:id="autodescriptionofclaim1" layoutX="449.0" layoutY="284.0" prefWidth="200.0" promptText="Description of Claim" />
    <TextField fx:id="autodescriptionofclaim2" layoutX="449.0" layoutY="328.0" prefWidth="200.0" promptText="Description of Claim" />
    <TextField fx:id="autodescriptionofclaim3" layoutX="449.0" layoutY="369.0" prefWidth="200.0" promptText="Description of Claim" />
@@ -126,9 +122,6 @@
          </font>
       </Hyperlink>
       <Separator layoutX="687.0" layoutY="285.0" orientation="VERTICAL" prefHeight="117.0" prefWidth="8.0" />
-      <TextField fx:id="autodateofclaim4" layoutX="711.0" layoutY="284.0" prefWidth="113.0" promptText="Date of Claim" />
-      <TextField fx:id="autodateofclaim5" layoutX="711.0" layoutY="330.0" prefWidth="113.0" promptText="Date of Claim" />
-      <TextField fx:id="autodateofclaim6" layoutX="711.0" layoutY="369.0" prefWidth="113.0" promptText="Date of Claim" />
       <TextField fx:id="autodescriptionofclaim4" layoutX="876.0" layoutY="284.0" prefWidth="200.0" promptText="Description of Claim" />
       <TextField fx:id="autodescriptionofclaim5" layoutX="876.0" layoutY="330.0" prefWidth="200.0" promptText="Description of Claim" />
       <TextField fx:id="autodescriptionofclaim6" layoutX="876.0" layoutY="369.0" prefWidth="200.0" promptText="Description of Claim" />
@@ -223,6 +216,62 @@
                </children>
             </HBox>
          </children>
+      </GridPane>
+      <GridPane fx:id="gridpane11" layoutX="687.0" layoutY="90.0" prefHeight="26.0" prefWidth="126.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+      <GridPane fx:id="gridpane12" layoutX="280.0" layoutY="283.0" prefHeight="26.0" prefWidth="100.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+      <GridPane fx:id="gridpane13" layoutX="280.0" layoutY="326.0" prefHeight="26.0" prefWidth="100.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+      <GridPane fx:id="gridpane14" layoutX="280.0" layoutY="371.0" prefHeight="26.0" prefWidth="100.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+      <GridPane fx:id="gridpane15" layoutX="720.0" layoutY="284.0" prefHeight="26.0" prefWidth="100.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+      <GridPane fx:id="gridpane16" layoutX="710.0" layoutY="332.0" prefHeight="26.0" prefWidth="100.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+      <GridPane fx:id="gridpane17" layoutX="710.0" layoutY="367.0" prefHeight="26.0" prefWidth="100.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
       </GridPane>
  </children>
 </AnchorPane>

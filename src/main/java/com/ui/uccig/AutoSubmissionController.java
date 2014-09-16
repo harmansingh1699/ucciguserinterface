@@ -5,17 +5,22 @@
  */
 package com.ui.uccig;
 
+import com.calendar.DatePicker;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuranceFormResponse;
 import com.ui.binding.FormEntry4Binding;
 import com.ui.util.SavingFile;
 import com.ui.util.savinglocally;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.ResourceBundle;
 import javafx.animation.TranslateTransition;
 import javafx.animation.TranslateTransitionBuilder;
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
 import javafx.beans.binding.Bindings;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -42,8 +47,7 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
     @FXML
     TextField autocurrentinsurer;
 
-    @FXML
-    private TextField autocurrentexpirydate;
+    
 
     @FXML
     private TextField autopremiumtarget;
@@ -65,18 +69,6 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
     @FXML
     private TextField autovehicle3;
 
-    @FXML
-    private TextField autodateofclaim1;
-    @FXML
-    private TextField autodateofclaim2;
-    @FXML
-    private TextField autodateofclaim3;
-    @FXML
-    private TextField autodateofclaim4;
-    @FXML
-    private TextField autodateofclaim5;
-    @FXML
-    private TextField autodateofclaim6;
     
 
     @FXML
@@ -163,6 +155,22 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
     private Hyperlink vehicledetails;
             
     @FXML
+    private GridPane gridpane11;
+    @FXML
+    private GridPane gridpane12;
+    @FXML
+    private GridPane gridpane13;
+    @FXML
+    private GridPane gridpane14;
+    @FXML
+    private GridPane gridpane15;
+    @FXML
+    private GridPane gridpane16;
+    @FXML
+    private GridPane gridpane17;
+    
+    
+    @FXML
     private Pane fullScreenPane;
 
     public FormEntry4Binding binding4;
@@ -175,7 +183,7 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
     public void initialize(URL url, ResourceBundle rb) {
         binding4=new FormEntry4Binding();
         Bindings.bindBidirectional(autocurrentinsurer.textProperty(), binding4.autocurrentinsurerProperty());
-        Bindings.bindBidirectional(autocurrentexpirydate.textProperty(), binding4.autocurrentexpirydateProperty());
+        
         Bindings.bindBidirectional(autopremiumtarget.textProperty(), binding4.autopremiumtargetProperty());
         Bindings.bindBidirectional(lessholder1.textProperty(), binding4.lessholder1Property());
         Bindings.bindBidirectional(lessholder2.textProperty(), binding4.lessholder2Property());
@@ -183,12 +191,7 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
         Bindings.bindBidirectional(autovehicle1.textProperty(), binding4.autovehicle1Property());
         Bindings.bindBidirectional(autovehicle2.textProperty(), binding4.autovehicle2Property());
         Bindings.bindBidirectional(autovehicle3.textProperty(), binding4.autovehicle3Property());
-        Bindings.bindBidirectional(autodateofclaim1.textProperty(), binding4.autodateofclaim1Property());
-        Bindings.bindBidirectional(autodateofclaim2.textProperty(), binding4.autodateofclaim2Property());
-        Bindings.bindBidirectional(autodateofclaim3.textProperty(), binding4.autodateofclaim3Property());
-        Bindings.bindBidirectional(autodateofclaim4.textProperty(), binding4.autodateofclaim4Property());
-        Bindings.bindBidirectional(autodateofclaim5.textProperty(), binding4.autodateofclaim5Property());
-        Bindings.bindBidirectional(autodateofclaim6.textProperty(), binding4.autodateofclaim6Property());
+        
         Bindings.bindBidirectional(autodescriptionofclaim1.textProperty(), binding4.autodescriptionofclaim1Property());
         Bindings.bindBidirectional(autodescriptionofclaim2.textProperty(), binding4.autodescriptionofclaim2Property());
         Bindings.bindBidirectional(autodescriptionofclaim3.textProperty(), binding4.autodescriptionofclaim3Property());
@@ -243,7 +246,142 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
                     binding4.setnonownedcontract(newSelection);
                 }
         });
+         
+    DatePicker datePicker11 = new DatePicker();
+    DatePicker datePicker12 = new DatePicker();
+    DatePicker datePicker13 = new DatePicker();
+    DatePicker datePicker14 = new DatePicker();
+    DatePicker datePicker15 = new DatePicker();
+    DatePicker datePicker16 = new DatePicker();
+    DatePicker datePicker17 = new DatePicker();
+    
+    datePicker11.localeProperty().set(Locale.ENGLISH);
+    datePicker12.localeProperty().set(Locale.ENGLISH);
+    datePicker13.localeProperty().set(Locale.ENGLISH);
+    datePicker14.localeProperty().set(Locale.ENGLISH);
+    datePicker15.localeProperty().set(Locale.ENGLISH);
+    datePicker16.localeProperty().set(Locale.ENGLISH);
+    datePicker17.localeProperty().set(Locale.ENGLISH);
+    
+        datePicker11.setLayoutX(0.0);
+        datePicker11.setLayoutY(81.0);
+        datePicker11.setPrefWidth(200.0);
         
+        datePicker12.setLayoutX(0.0);
+        datePicker12.setLayoutY(81.0);
+        datePicker12.setPrefWidth(200.0);
+        
+        datePicker13.setLayoutX(0.0);
+        datePicker13.setLayoutY(81.0);
+        datePicker13.setPrefWidth(200.0);
+    
+        datePicker14.setLayoutX(0.0);
+        datePicker14.setLayoutY(81.0);
+        datePicker14.setPrefWidth(200.0);
+        
+        datePicker15.setLayoutX(0.0);
+        datePicker15.setLayoutY(81.0);
+        datePicker15.setPrefWidth(200.0);
+        
+        datePicker16.setLayoutX(0.0);
+        datePicker16.setLayoutY(81.0);
+        datePicker16.setPrefWidth(200.0);
+        
+        datePicker17.setLayoutX(0.0);
+        datePicker17.setLayoutY(81.0);
+        datePicker17.setPrefWidth(200.0);
+        
+        datePicker11.selectedDateProperty().addListener(new InvalidationListener() {
+            @Override
+            public void invalidated(Observable observable) {
+            }
+        });
+        
+        datePicker12.selectedDateProperty().addListener(new InvalidationListener() {
+            @Override
+            public void invalidated(Observable observable) {
+            }
+        });
+        
+        datePicker13.selectedDateProperty().addListener(new InvalidationListener() {
+            @Override
+            public void invalidated(Observable observable) {
+            }
+        });
+        
+        datePicker14.selectedDateProperty().addListener(new InvalidationListener() {
+            @Override
+            public void invalidated(Observable observable) {
+            }
+        });
+        
+        datePicker15.selectedDateProperty().addListener(new InvalidationListener() {
+            @Override
+            public void invalidated(Observable observable) {
+            }
+        });
+        
+        datePicker16.selectedDateProperty().addListener(new InvalidationListener() {
+            @Override
+            public void invalidated(Observable observable) {
+            }
+        });
+        
+        datePicker17.selectedDateProperty().addListener(new InvalidationListener() {
+            @Override
+            public void invalidated(Observable observable) {
+            }
+        });
+    
+        datePicker11.setPromptText("Date of Claim");
+        datePicker11.setLocale(Locale.ENGLISH);
+        datePicker11.getCalendarView().todayButtonTextProperty().set("TODAY");
+        datePicker11.getCalendarView().setShowWeeks(false);
+        datePicker11.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
+        
+        datePicker12.setPromptText("Date of Claim");
+        datePicker12.setLocale(Locale.ENGLISH);
+        datePicker12.getCalendarView().todayButtonTextProperty().set("TODAY");
+        datePicker12.getCalendarView().setShowWeeks(false);
+        datePicker12.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
+        
+        datePicker13.setPromptText("Date of Claim");
+        datePicker13.setLocale(Locale.ENGLISH);
+        datePicker13.getCalendarView().todayButtonTextProperty().set("TODAY");
+        datePicker13.getCalendarView().setShowWeeks(false);
+        datePicker13.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
+        
+        datePicker14.setPromptText("Date of Claim");
+        datePicker14.setLocale(Locale.ENGLISH);
+        datePicker14.getCalendarView().todayButtonTextProperty().set("TODAY");
+        datePicker14.getCalendarView().setShowWeeks(false);
+        datePicker14.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
+        
+        datePicker15.setPromptText("Date of Claim");
+        datePicker15.setLocale(Locale.ENGLISH);
+        datePicker15.getCalendarView().todayButtonTextProperty().set("TODAY");
+        datePicker15.getCalendarView().setShowWeeks(false);
+        datePicker15.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
+        
+        datePicker16.setPromptText("Date of Claim");
+        datePicker16.setLocale(Locale.ENGLISH);
+        datePicker16.getCalendarView().todayButtonTextProperty().set("TODAY");
+        datePicker16.getCalendarView().setShowWeeks(false);
+        datePicker16.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
+        
+        datePicker17.setPromptText("Date of Claim");
+        datePicker17.setLocale(Locale.ENGLISH);
+        datePicker17.getCalendarView().todayButtonTextProperty().set("TODAY");
+        datePicker17.getCalendarView().setShowWeeks(false);
+        datePicker17.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
+        
+        gridpane11.add(datePicker11, 0,0);
+        gridpane12.add(datePicker12, 0,0);
+        gridpane13.add(datePicker13, 0,0);
+        gridpane14.add(datePicker14, 0,0);
+        gridpane15.add(datePicker15, 0,0);
+        gridpane16.add(datePicker16, 0,0);
+        gridpane17.add(datePicker17, 0,0);
             }
 
     @Override
