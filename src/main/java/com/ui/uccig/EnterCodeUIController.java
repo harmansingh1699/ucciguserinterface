@@ -12,10 +12,12 @@ import com.rav.insurance.insuranceformoperations.webservice.contracts.AssignMark
 import com.rav.insurance.insuranceformoperations.webservice.contracts.CloseFormRequest;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.CloseFormResponse;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.CommonResponseAttributes;
+import com.rav.insurance.insuranceformoperations.webservice.contracts.FormMailToUnderWriterRequest;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.GetCloseFormNQuoteDetailsResponse2;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuranceFormListRequest;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuranceFormListResponse;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuranceFormResponse;
+import com.rav.insurance.insuranceformoperations.webservice.contracts.InsuranceFormSubmitRequest;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.MailInfo;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.QuoteDetailsRequest;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.SearchMailRequest;
@@ -40,6 +42,8 @@ import javafx.animation.TranslateTransition;
 import javafx.animation.TranslateTransitionBuilder;
 import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.concurrent.Task;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -114,7 +118,13 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     @FXML
     private RadioButton searchwithusno;
+    
+    @FXML
+    private CheckBox mail1;
 
+    @FXML
+    private CheckBox mail2;
+    
     @FXML
     private CheckBox searchdate1;
 
@@ -242,6 +252,14 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     private String marketerId;
     private String receivedname;
 
+    public String getReceivedemailaddress() {
+        return receivedemailaddress;
+    }
+
+    public void setReceivedemailaddress(String receivedemailaddress) {
+        this.receivedemailaddress = receivedemailaddress;
+    }
+    private String receivedemailaddress;
     public String getReceivedname() {
         return receivedname;
     }
@@ -342,7 +360,42 @@ public class EnterCodeUIController implements Initializable, IScreenController {
          Bindings.bindBidirectional(closecompany.textProperty(), binding1.closeCompanyProperty());
          Bindings.bindBidirectional(closequote.textProperty(), binding1.closeQuoteProperty());
          welcomeName.setText(receivedname);
+   
+         
+         ChangeListener<Boolean> listener = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail1.isSelected()) {
+                    binding1.setmail1("quotes@abexinsurance.com");
+                }
+            }
+        };
+        mail1.selectedProperty().addListener(listener);
+        
+         ChangeListener<Boolean> listener1 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail2.isSelected()) {
+                    binding1.setmail2("quotes@amfredericks.com");
+                }
+            }
+        };
+        mail2.selectedProperty().addListener(listener1);
     }
+    
+   
+
+    public EnterCodeUIController() {
+    }
+    
+   ChangeListener<Boolean> listener1 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail1.isSelected()) {
+                    binding1.setmail1("Selected");
+                }
+            }
+        };
 
     @Override
     public void setScreenParent(ScreenNavigator screenPage) {
@@ -444,6 +497,25 @@ public class EnterCodeUIController implements Initializable, IScreenController {
          animatedMovement(-1269, 0);*/
     }
 
+@FXML
+    public void submitSendEmail() {
+       InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
+       FormMailToUnderWriterRequest req1 = new FormMailToUnderWriterRequest();
+       req1.setFormId(formId);
+       req1.setFrom(receivedemailaddress);
+       String mail ="";
+       if(binding1.getmail1()!=null && !binding1.getmail1().trim().equals("")){
+           mail+=binding1.getmail1()+",";
+       }
+       req1.setRecpients(mail.substring(0, mail.length()));
+       req1.setRecpients(formId);
+    }
+    
+    @FXML
+    public void submitSendDelayEmail() {
+    }
+
+    
     @FXML
     public void searchArchive() {
         animatedMovement(0, -715);

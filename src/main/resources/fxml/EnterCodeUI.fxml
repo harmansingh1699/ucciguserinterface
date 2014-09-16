@@ -617,7 +617,7 @@
           <children>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="quotes@abexinsurance.com" />
+                <CheckBox fx:id="mail1" font="$x4" mnemonicParsing="false" text="quotes@abexinsurance.com" />
               </children>
               <padding>
                 <Insets left="5.0" fx:id="x13" />
@@ -625,7 +625,7 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="quotes@amfredericks.com">
+                <CheckBox fx:id="mail2" font="$x4" mnemonicParsing="false" text="quotes@amfredericks.com">
                   <HBox.margin>
                     <Insets fx:id="x1a" />
                   </HBox.margin>
@@ -789,7 +789,7 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <TextField prefWidth="189.0" promptText="Email ID" />
+                <TextField fx:id="email1" prefWidth="189.0" promptText="Email ID" />
               </children>
               <padding>
                 <Insets left="5.0" right="5.0" fx:id="x14a" />
@@ -797,7 +797,7 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <TextField prefWidth="200.0" promptText="Email ID" />
+                <TextField fx:id="email2" prefWidth="200.0" promptText="Email ID" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
@@ -825,7 +825,7 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       </rowConstraints>
     </GridPane>
-    <Button defaultButton="true" font="$x6" layoutX="2884.0" layoutY="610.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="183.0" text="Send Email" />
+    <Button defaultButton="true" font="$x6" layoutX="2884.0" layoutY="610.0" mnemonicParsing="false" onAction="#submitSendEmail" prefHeight="50.0" prefWidth="183.0" text="Send Email" />
     <Label font="$x8" layoutX="3097.0" layoutY="745.0" text="Send Delayed Mail to Underwriter" textFill="BLACK" />
     <Label font="$x6" layoutX="2615.0" layoutY="811.0" text="Subject:" />
     <TextField layoutX="2695.0" layoutY="808.0" prefHeight="30.0" prefWidth="618.0" />
@@ -1052,7 +1052,7 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       </rowConstraints>
     </GridPane>
-    <Button defaultButton="true" font="$x6" layoutX="2903.0" layoutY="1334.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="183.0" text="Send Email" />
+    <Button defaultButton="true" font="$x6" layoutX="2903.0" layoutY="1334.0" mnemonicParsing="false" onAction="#submitSendDelayEmail" prefHeight="50.0" prefWidth="183.0" text="Send Email" />
     <Label font="$x6" layoutX="2635.0" layoutY="1248.0" text="Date:" />
     <TextField layoutX="2693.0" layoutY="1239.0" prefHeight="30.0" prefWidth="200.0" promptText="*Select previous day" />
     <Label font="$x6" layoutX="2903.0" layoutY="1246.0" text="*Mail will be sent at 23:59" />

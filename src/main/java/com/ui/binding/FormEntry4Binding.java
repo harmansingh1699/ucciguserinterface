@@ -220,6 +220,28 @@ public class FormEntry4Binding {
     private StringProperty logsmarketerid;
     private StringProperty closecompany;
     private StringProperty closequote;
+    
+    //send email
+    private StringProperty mail1;
+    private StringProperty mail2;
+    private StringProperty mail3;
+    private StringProperty mail4;
+    private StringProperty mail5;
+    private StringProperty mail6;
+    private StringProperty mail7;
+    private StringProperty mail8;
+    private StringProperty mail9;
+    private StringProperty mail10;
+    private StringProperty mail11;
+    private StringProperty mail12;
+    private StringProperty mail13;
+    private StringProperty mail14;
+    private StringProperty mail15;
+    private StringProperty mail16;
+    private StringProperty mail17;
+    private StringProperty mail18;
+    
+    
    
     public FormEntry4Binding() {
         buildinglimit = new SimpleStringProperty();
@@ -430,6 +452,9 @@ public class FormEntry4Binding {
         logscompanyname=new SimpleStringProperty();
         closecompany=new SimpleStringProperty();
         closequote=new SimpleStringProperty();
+        
+        mail1=new SimpleStringProperty();
+        mail2=new SimpleStringProperty();
     }
     
     public String gethauling() {
@@ -442,6 +467,30 @@ public class FormEntry4Binding {
 
     public StringProperty haulingProperty() {
         return this.hauling;
+    }
+    
+    public String getmail1() {
+        return (String) this.mail1.get();
+    }
+
+    public void setmail1(String mail1) {
+        this.mail1.set(mail1);
+    }
+
+    public StringProperty mail1Property() {
+        return this.mail1;
+    }
+    
+    public String getmail2() {
+        return (String) this.mail2.get();
+    }
+
+    public void setmail2(String mail2) {
+        this.mail2.set(mail2);
+    }
+
+    public StringProperty mail2Property() {
+        return this.mail2;
     }
     
     

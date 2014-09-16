@@ -172,6 +172,7 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
                                   
                                 ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setMarketerId(binding.getUsername());
                                 ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setReceivedname(response.getUserFullName());
+                                ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setReceivedemailaddress(response.getUserEmailAddress());
                                    System.out.println("Hello");
                                 Calendar c = Calendar.getInstance();
                                 c.setTimeInMillis(response.getCurrentDate().getMillisecond());

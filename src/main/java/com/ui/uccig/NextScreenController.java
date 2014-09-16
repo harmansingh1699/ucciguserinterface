@@ -56,10 +56,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.util.Duration;
 import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 import org.antlr.stringtemplate.StringTemplate;
 import org.antlr.stringtemplate.StringTemplateGroup;
 import ravrun.Rav;
@@ -70,17 +72,32 @@ import ravrun.Rav;
  * @author harsimransingh
  */
 public class NextScreenController implements Initializable, IScreenController {
-
+    
     private ScreenNavigator screenPage;
-
+    
     @FXML
     private Label uploadlabel;
-
+    
+    @FXML
+    private GridPane gridpane1;
+    
+    @FXML
+    private GridPane gridpane2;
+    @FXML
+    private GridPane gridpane3;
+    @FXML
+    private GridPane gridpane4;
+    @FXML
+    private GridPane gridpane5;
+    @FXML
+    private GridPane gridpane6;
+    
+    
     @FXML
     private Button upload;
-
+    
     private List<File> fileList;
-
+    
     @FXML
     private ChoiceBox<String> severity;
     @FXML
@@ -258,12 +275,6 @@ public class NextScreenController implements Initializable, IScreenController {
     private TextField cipcarrier2;
     @FXML
     private TextField cipcarrier3;
-    @FXML
-    private TextField cipexpiry1;
-    @FXML
-    private TextField cipexpiry2;
-    @FXML
-    private TextField cipexpiry3;
     @FXML
     private TextField lienholder1;
     @FXML
@@ -512,7 +523,7 @@ public class NextScreenController implements Initializable, IScreenController {
     private TextField noofstories;
     @FXML
     private ChoiceBox<String> basement;
-
+    
     @FXML
     private TextField roofupdated;
     @FXML
@@ -523,7 +534,7 @@ public class NextScreenController implements Initializable, IScreenController {
     private TextField plumbingupdated;
     @FXML
     private TextField fireprotectiondistance;
-
+    
     @FXML
     private CheckBox wallsframe;
     @FXML
@@ -584,7 +595,7 @@ public class NextScreenController implements Initializable, IScreenController {
     private Button autoinsurancebutton;
     @FXML
     private Button CommercialSubmit;
-
+    
     @FXML
     private Pane openingPane;
     @FXML
@@ -593,78 +604,82 @@ public class NextScreenController implements Initializable, IScreenController {
     private Pane newBusinessPane;
     @FXML
     ImageView bg;
-
+    
     DatePicker datePicker = new DatePicker();
     DatePicker datePicker1 = new DatePicker();
     DatePicker datePicker2 = new DatePicker();
     DatePicker datePicker3 = new DatePicker();
-
+    DatePicker datePicker4 = new DatePicker();
+    DatePicker datePicker5 = new DatePicker();
+    DatePicker datePicker6 = new DatePicker();
+    
+    
     int insurancetypeflag = 0;
     private FormEntry1Binding binding;
     private FormEntry2Binding binding2;
     private FormEntry3Binding binding3;
     private FormEntry4Binding binding4;
-
+    
     private String receivedemailaddress;
     private String receivedname;
     private String branch;
     private Date date;
     private String producerid;
     private String formId;
-
+    
     public String getFormId() {
         return formId;
     }
-
+    
     public void setFormId(String formId) {
         this.formId = formId;
     }
-
+    
     public boolean isIsEdit() {
         return isEdit;
     }
-
+    
     public void setIsEdit(boolean isEdit) {
         this.isEdit = isEdit;
     }
     private boolean isEdit;
-
+    
     public String getProducerid() {
         return producerid;
     }
-
+    
     public void setProducerid(String producerid) {
         this.producerid = producerid;
     }
-
+    
     public String getBranch() {
         return branch;
     }
-
+    
     public void setBranch(String branch) {
         this.branch = branch;
     }
-
+    
     public Date getDate() {
         return date;
     }
-
+    
     public void setDate(Date date) {
         this.date = date;
     }
-
+    
     public String getReceivedname() {
         return receivedname;
     }
-
+    
     public void setReceivedname(String receivedname) {
         this.receivedname = receivedname;
     }
-
+    
     public String getReceivedemailaddress() {
         return receivedemailaddress;
     }
-
+    
     public void setReceivedemailaddress(String receivedemailaddress) {
         this.receivedemailaddress = receivedemailaddress;
     }
@@ -677,7 +692,7 @@ public class NextScreenController implements Initializable, IScreenController {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        
         binding = new FormEntry1Binding();
         binding2 = new FormEntry2Binding();
         binding3 = new FormEntry3Binding();
@@ -695,7 +710,7 @@ public class NextScreenController implements Initializable, IScreenController {
         groupbenefits.getSelectionModel().selectFirst();
         pensionplan.getSelectionModel().selectFirst();
         basement.getSelectionModel().selectFirst();
-
+        
         Bindings.bindBidirectional(keycontact.textProperty(), binding.keyContactProperty());
         Bindings.bindBidirectional(keyphone.textProperty(), binding.keyPhoneProperty());
         Bindings.bindBidirectional(keyemail.textProperty(), binding.keyEmailProperty());
@@ -883,71 +898,71 @@ public class NextScreenController implements Initializable, IScreenController {
             public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) {
                 binding.setSeverity(newSelection);
             }
-
+            
         });
-
+        
         entitytype.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) {
-
+                
                 binding.setEntityType(newSelection);
-
+                
             }
         });
         finYearEnd.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) {
-
+                
                 binding2.setfinYearEnd(newSelection);
-
+                
             }
         });
         groupbenefits.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) {
-
+                
                 binding2.setgroupBenefits(newSelection);
-
+                
             }
         });
         pensionplan.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) {
-
+                
                 binding2.setpensionPlan(newSelection);
-
+                
             }
         });
         currency1.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) {
-
+                
                 binding2.setcurrency1(newSelection);
-
+                
             }
         });
         currency2.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) {
-
+                
                 binding2.setcurrency2(newSelection);
-
+                
             }
         });
         currency3.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) {
-
+                
                 binding2.setcurrency3(newSelection);
-
+                
             }
         });
         currency4.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) {
-
+                
                 binding2.setCurrency4(newSelection);
-
+                
             }
         });
 
@@ -963,7 +978,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         tg.selectedToggleProperty().addListener(listener1);
-
+        
         ToggleGroup tg1 = new ToggleGroup();
         aolownedy1.setToggleGroup(tg1);
         aolownedn1.setToggleGroup(tg1);
@@ -975,7 +990,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         tg1.selectedToggleProperty().addListener(listener10);
-
+        
         ToggleGroup tg2 = new ToggleGroup();
         aolownedy2.setToggleGroup(tg2);
         aolownedn2.setToggleGroup(tg2);
@@ -987,7 +1002,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         tg2.selectedToggleProperty().addListener(listener11);
-
+        
         ToggleGroup tg3 = new ToggleGroup();
         aolownedy3.setToggleGroup(tg3);
         aolownedn3.setToggleGroup(tg3);
@@ -999,7 +1014,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         tg3.selectedToggleProperty().addListener(listener12);
-
+        
         ToggleGroup tg4 = new ToggleGroup();
         aolownedy3.setToggleGroup(tg4);
         aolownedn3.setToggleGroup(tg4);
@@ -1033,7 +1048,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         profliability.selectedProperty().addListener(listener2);
-
+        
         ChangeListener<Boolean> listener3 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1043,7 +1058,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         cyberliability.selectedProperty().addListener(listener3);
-
+        
         ChangeListener<Boolean> listener4 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1053,7 +1068,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         pollexposure.selectedProperty().addListener(listener4);
-
+        
         ChangeListener<Boolean> listener5 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1063,7 +1078,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         accbenefits.selectedProperty().addListener(listener5);
-
+        
         ChangeListener<Boolean> listener6 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1073,7 +1088,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         malexposure.selectedProperty().addListener(listener6);
-
+        
         ChangeListener<Boolean> listener7 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1083,7 +1098,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         abuseexposure.selectedProperty().addListener(listener7);
-
+        
         ChangeListener<Boolean> listener8 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1093,7 +1108,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         bondopportunity.selectedProperty().addListener(listener8);
-
+        
         ChangeListener<Boolean> listener9 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1103,7 +1118,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         biw.selectedProperty().addListener(listener9);
-
+        
         ChangeListener<Boolean> listener20 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1113,7 +1128,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         mtcowner.selectedProperty().addListener(listener20);
-
+        
         ChangeListener<Boolean> listener21 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1123,7 +1138,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         mtctruckman.selectedProperty().addListener(listener21);
-
+        
         ChangeListener<Boolean> listener22 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1133,7 +1148,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         ge80.selectedProperty().addListener(listener22);
-
+        
         ChangeListener<Boolean> listener23 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1143,7 +1158,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         ge50.selectedProperty().addListener(listener23);
-
+        
         ChangeListener<Boolean> listener24 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1153,7 +1168,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         wallsframe.selectedProperty().addListener(listener24);
-
+        
         ChangeListener<Boolean> listener25 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1163,7 +1178,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         wallsbrick.selectedProperty().addListener(listener25);
-
+        
         ChangeListener<Boolean> listener26 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1173,7 +1188,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         wallshcb.selectedProperty().addListener(listener26);
-
+        
         ChangeListener<Boolean> listener27 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1183,7 +1198,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         wallssteel.selectedProperty().addListener(listener27);
-
+        
         ChangeListener<Boolean> listener28 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1193,7 +1208,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         woodjoist.selectedProperty().addListener(listener28);
-
+        
         ChangeListener<Boolean> listener29 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1203,7 +1218,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         steeldeck.selectedProperty().addListener(listener29);
-
+        
         ChangeListener<Boolean> listener30 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1213,7 +1228,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         roofconcrete.selectedProperty().addListener(listener30);
-
+        
         ChangeListener<Boolean> listener31 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1223,7 +1238,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         floorsconcrete.selectedProperty().addListener(listener31);
-
+        
         ChangeListener<Boolean> listener32 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1233,7 +1248,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         floorswood.selectedProperty().addListener(listener32);
-
+        
         ChangeListener<Boolean> listener33 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1243,7 +1258,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         fagas.selectedProperty().addListener(listener33);
-
+        
         ChangeListener<Boolean> listener34 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1253,7 +1268,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         faoil.selectedProperty().addListener(listener34);
-
+        
         ChangeListener<Boolean> listener35 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1263,7 +1278,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         heatingelectric.selectedProperty().addListener(listener35);
-
+        
         ChangeListener<Boolean> listener36 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1273,7 +1288,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         heatingother.selectedProperty().addListener(listener36);
-
+        
         ChangeListener<Boolean> listener37 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1283,7 +1298,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         electricalbreakers.selectedProperty().addListener(listener37);
-
+        
         ChangeListener<Boolean> listener38 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1293,7 +1308,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         electricalfuses.selectedProperty().addListener(listener38);
-
+        
         ChangeListener<Boolean> listener39 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1303,7 +1318,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         noofamps.selectedProperty().addListener(listener39);
-
+        
         ChangeListener<Boolean> listener40 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1313,7 +1328,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         copper.selectedProperty().addListener(listener40);
-
+        
         ChangeListener<Boolean> listener41 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1323,7 +1338,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         pvc.selectedProperty().addListener(listener41);
-
+        
         ChangeListener<Boolean> listener42 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1333,7 +1348,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         plumbingother.selectedProperty().addListener(listener42);
-
+        
         ChangeListener<Boolean> listener43 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1343,7 +1358,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         sprinklers.selectedProperty().addListener(listener43);
-
+        
         ChangeListener<Boolean> listener44 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1353,7 +1368,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         svccontract.selectedProperty().addListener(listener44);
-
+        
         ChangeListener<Boolean> listener45 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1363,7 +1378,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         hydrant.selectedProperty().addListener(listener45);
-
+        
         ChangeListener<Boolean> listener46 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1373,7 +1388,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         firehall.selectedProperty().addListener(listener46);
-
+        
         ChangeListener<Boolean> listener47 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1383,7 +1398,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         unprotected.selectedProperty().addListener(listener47);
-
+        
         ChangeListener<Boolean> listener48 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1393,7 +1408,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         alarmsystem.selectedProperty().addListener(listener48);
-
+        
         ChangeListener<Boolean> listener49 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1403,7 +1418,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         centralmonitored.selectedProperty().addListener(listener49);
-
+        
         ChangeListener<Boolean> listener50 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1413,7 +1428,7 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         windowbars.selectedProperty().addListener(listener50);
-
+        
         ChangeListener<Boolean> listener51 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1423,46 +1438,98 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         };
         deadbolts.selectedProperty().addListener(listener51);
-
+        
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
                 bg.requestFocus();
             }
         });
-
+        
         datePicker.localeProperty().set(Locale.ENGLISH);
         datePicker1.localeProperty().set(Locale.ENGLISH);
         datePicker2.localeProperty().set(Locale.ENGLISH);
         datePicker3.localeProperty().set(Locale.ENGLISH);
+        datePicker4.localeProperty().set(Locale.ENGLISH);
+        datePicker5.localeProperty().set(Locale.ENGLISH);
+        datePicker6.localeProperty().set(Locale.ENGLISH);
+        
         datePicker.setLayoutX(0.0);
         datePicker.setLayoutY(81.0);
         datePicker.setPrefWidth(200.0);
+        
+        datePicker1.setLayoutX(0.0);
+        datePicker1.setLayoutY(81.0);
+        datePicker1.setPrefWidth(200.0);
+        
         datePicker.selectedDateProperty().addListener(new InvalidationListener() {
             @Override
             public void invalidated(Observable observable) {
             }
         });
-        datePicker.setPromptText("DOB");
+        
+        datePicker1.selectedDateProperty().addListener(new InvalidationListener() {
+            @Override
+            public void invalidated(Observable observable) {
+            }
+        });
+        datePicker.setPromptText("Date of Claim");
         datePicker.setLocale(Locale.ENGLISH);
         datePicker.getCalendarView().todayButtonTextProperty().set("TODAY");
         datePicker.getCalendarView().setShowWeeks(false);
         datePicker.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
-        fullScreenPane.getChildren().add(datePicker);
-        System.out.println(datePicker.getSelectedDate());
+        
+        datePicker1.setPromptText("Date of Claim");
+        datePicker1.setLocale(Locale.ENGLISH);
+        datePicker1.getCalendarView().todayButtonTextProperty().set("TODAY");
+        datePicker1.getCalendarView().setShowWeeks(false);
+        datePicker1.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
+        
+        datePicker2.setPromptText("Date of Claim");
+        datePicker2.setLocale(Locale.ENGLISH);
+        datePicker2.getCalendarView().todayButtonTextProperty().set("TODAY");
+        datePicker2.getCalendarView().setShowWeeks(false);
+        datePicker2.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
+        
+        datePicker3.setPromptText("Expiry");
+        datePicker3.setLocale(Locale.ENGLISH);
+        datePicker3.getCalendarView().todayButtonTextProperty().set("TODAY");
+        datePicker3.getCalendarView().setShowWeeks(false);
+        datePicker3.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
+        
+        datePicker4.setPromptText("Expiry");
+        datePicker4.setLocale(Locale.ENGLISH);
+        datePicker4.getCalendarView().todayButtonTextProperty().set("TODAY");
+        datePicker4.getCalendarView().setShowWeeks(false);
+        datePicker4.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
+        
+        datePicker5.setPromptText("Expiry");
+        datePicker5.setLocale(Locale.ENGLISH);
+        datePicker5.getCalendarView().todayButtonTextProperty().set("TODAY");
+        datePicker5.getCalendarView().setShowWeeks(false);
+        datePicker5.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
+        
+        
+        //fullScreenPane.getChildren().add(datePicker,138,495);
+        gridpane1.add(datePicker, 0,0);
+        gridpane2.add(datePicker1, 0,0);
+        gridpane3.add(datePicker2, 0,0);
+        gridpane4.add(datePicker3, 0,0);
+        gridpane5.add(datePicker4, 0,0);
+        gridpane6.add(datePicker5, 0,0);
     }
-
+    
     public void setScreenParent(ScreenNavigator screenPage) {
         this.screenPage = screenPage;
     }
-
+    
     @FXML
     public void submitNewBusiness() {
-
+        
         openingPane.setVisible(false);
         newBusinessPane.setVisible(true);
     }
-
+    
     @FXML
     public void submitActionCommercial() {
         insurancetypeflag = 1;
@@ -1474,7 +1541,7 @@ public class NextScreenController implements Initializable, IScreenController {
         c.setTime(getDate());
         returneddate.setText(new SimpleDateFormat("mm/dd/yyyy").format(c.getTime()));
     }
-
+    
     @FXML
     public void submitActionAuto() {
         insurancetypeflag = 2;
@@ -1483,7 +1550,7 @@ public class NextScreenController implements Initializable, IScreenController {
         returnedbranch.setText(getBranch());
         returneddate.setText(getDate().getDate() + "/" + getDate().getMonth() + "/" + getDate().getYear());
     }
-
+    
     @FXML
     public void submitActionBoth() {
         insurancetypeflag = 3;
@@ -1492,19 +1559,19 @@ public class NextScreenController implements Initializable, IScreenController {
         returnedbranch.setText(getBranch());
         returneddate.setText(getDate().getDate() + "/" + getDate().getMonth() + "/" + getDate().getYear());
     }
-
+    
     @FXML
     public void openProposal() {
         new Rav("/Users/harsimransingh/Desktop/Contractors Equipment.docx").execute();
     }
-
+    
     @FXML
     public void continue1() {
         if (CommonValidations.isStringEmpty(binding.getBusinessName())) {
             System.out.println("1");
             InvokeAnimation.attentionSeekerWobble(businessname);
             businessname.setPromptText("Business Name can not be empty");
-
+            
         } else if (CommonValidations.isStringEmpty(binding.getKeyContact())) {
             System.out.println("2");
             InvokeAnimation.attentionSeekerWobble(keycontact);
@@ -1521,22 +1588,22 @@ public class NextScreenController implements Initializable, IScreenController {
             animatedMovement(-2538, 0);
         }
     }
-
+    
     @FXML
     public void continue2() {
         animatedMovement(-3807, 0);
     }
-
+    
     @FXML
     public void continue3() {
         animatedMovement(-5076, 0);
     }
-
+    
     @FXML
     public void continue4() {
         animatedMovement(-6345, 0);
     }
-
+    
     @FXML
     public void continue5() {
         System.out.println(insurancetypeflag);
@@ -1550,61 +1617,62 @@ public class NextScreenController implements Initializable, IScreenController {
             CommercialSubmit.setVisible(false);
             autoinsurancebutton.setVisible(true);
         }
-
+        
     }
-
+    
     @FXML
     public void clientprofile2previous() {
         animatedMovement(-1269, 0);
     }
-
+    
     @FXML
     public void clientprofile3previous() {
         animatedMovement(-2538, 0);
     }
-
+    
     @FXML
     public void clientprofile4previous() {
         animatedMovement(-3807, 0);
     }
-
+    
     @FXML
     public void clientprofile5previous() {
         animatedMovement(-5076, 0);
     }
-
+    
     @FXML
     public void commercialprevious() {
         animatedMovement(-6345, 0);
     }
-
+    
     @FXML
     public void autobutton() {
         screenPage.setScreen("AutoSubmission");
     }
-
+    
     @FXML
     public void submitSave() {
         SavingFile sf = new SavingFile();
         savinglocally.toFile(sf, "Harman");
     }
-
+    
     public void viewApplication(final GetInsuranceFormResponse form, final String formId) {
-      isEdit=true;  Task task = new Task<Void>() {
+        isEdit = true;
+        Task task = new Task<Void>() {
             @Override
             public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception, Exception {
                 try {
                     InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
                     GetInsuranceFormRequest req = new GetInsuranceFormRequest();
                     req.setFormId(formId);
-                   // req.setProducerId(binding.getsearchproducerid());
+                    // req.setProducerId(binding.getsearchproducerid());
                     //req.setStatus("NEW");
                     //req.setFormId(Integer.parseInt(binding.getsearchapplicationid()));
 
                     GetInsuranceFormResponse response = port.getInsuranceOperationsPort().getForm(req);
-
+                    
                     if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
-                        System.out.println("formid is "+formId);
+                        System.out.println("formid is " + formId);
                         setFormId(formId);
                         assign(response);
                     }
@@ -1614,275 +1682,374 @@ public class NextScreenController implements Initializable, IScreenController {
                 //   successMessage("You are successfully logged in");
                 return null;
             }
-
+            
         };
         new Thread(task).start();
-
+        
     }
-
+    
     public void assign(final GetInsuranceFormResponse form) {
         Platform.runLater(new Runnable() {
             public void run() {
- severity.getSelectionModel().select("High");
-
-        /*
-         req1.setEntityType(binding.getEntityType());
-         req1.setFinancialYearEnd(binding2.getfinYearEnd());
-         req1.setGroupBenefits(binding2.getgroupBenefits());
-         req1.setPensionPlan(binding2.getpensionPlan());
-         req1.setCurrency1(binding2.getcurrency1());
-         req1.setCurrency2(binding2.getcurrency2());
-         req1.setCurrency3(binding2.getcurrency3());
-         req1.setCurrency4(binding2.getCurrency4());
-         req1.setEcommerce(binding2.geteCommerce());
-         req1.setProfessionalLiability(binding2.getprofLiability());
-         req1.setCyberLiability(binding2.getcyberLiability());
-         req1.setPollutionexposure(binding2.getpollExposure());
-         req1.setAccidentalBenefits(binding2.getaccBenefits());
-         req1.setMalpracticeExposure(binding2.getmalExposure());
-         req1.setAbuseExposure(binding2.getabuseExposure());
-         req1.setBondingOpportunities(binding2.getbondOpportunity());
-         req1.setBusinessInterruptionSheet(binding3.getbiw());
-         req1.setProfit(binding.getProfit());
-         req1.setAddressOfLocationOwnedyes1(binding3.getaolownedy1());
-         req1.setAddressOfLocationOwnedyes2(binding3.getaolownedy2());
-         req1.setAddressOfLocationOwnedyes3(binding3.getaolownedy3());
-         req1.setAddressOfLocationOwnedno1(binding3.getaolownedy4());
-         req1.setOwner(binding4.getmotortruckcargoowner());
-         req1.setTruckMan(binding4.getmotortruckcargotruckman());
-         req1.setGrossEarningCheckBox(binding4.getgecheckbox());
-         req1.setWallsframe(binding4.getwallsframe());
-         req1.setWallshcb(binding4.getwallshcb());
-         req1.setWallssteel(binding4.getwallssteel());
-         req1.setWallsbrick(binding4.getwallsbrick());
-         req1.setRoofwood(binding4.getwoodjoist());
-         req1.setRoofsteel(binding4.getsteeldeck());
-         req1.setRoofconcrete(binding4.getroofconcrete());
-         req1.setFloorsconcrete(binding4.getfloorsconcrete());
-         req1.setFloorswood(binding4.getfloorswood());
-         req1.setHeatinggas(binding4.getfagas());
-         req1.setHeatingoil(binding4.getfaoil());
-         req1.setHeatingelectric(binding4.getheatingelectric());
-         req1.setHeatingother(binding4.getheatingother());
-         req1.setElectricalbreakers(binding4.getelectricalbreakers());
-         req1.setElectricalfuses(binding4.getelectricalfuses());
-         req1.setElectricalamps(binding4.getnoofamps());
-         req1.setPlumbingcopper(binding4.getcopper());
-         req1.setPlumbingpvc(binding4.getpvc());
-         req1.setPlumbingother(binding4.getplumbingother());
-         req1.setFireProtection(binding4.getFireProtection());
-         req1.setSecurity(binding4.getSecurity());
-         */
- if(form!=null){
-     System.out.println("Form is not null");
- }else{
-     System.out.println("Form is null");
- }
- if(keycontact!=null){
-      System.out.println("keycontact is not null");
- }else{
-      System.out.println("keycontact is null");
- }
-        keycontact.setText(form.getKeyContact());
-        keyphone.setText(form.getKeyContactPhone());
-        keyemail.setText(form.getKeyContactEmailAddress());
-        secondarycontact.setText(form.getSecondayContact());
-        secondaryphone.setText(form.getSecondayContactPhone());
-        secondaryemail.setText(form.getSecondayContactEmailAddress());
-        businessname.setText(form.getBusinessName());
-        mailingaddress.setText(form.getMailingAddress());
-        fax.setText(form.getFax());
-        website.setText(form.getWebSiteURL());
-        // otherspecify.setText(form.getotherSpecify);
-        relatedexperience.setText(form.getRelatedExperience());
-        owner1.setText(form.getOwner1());
-        owner2.setText(form.getOwner2());
-        owner3.setText(form.getOwner3());
-        owner4.setText(form.getOwner4());
-        bod1.setText(form.getBoardOfDirector1());
-        bod2.setText(form.getBoardOfDirector2());
-        bod3.setText(form.getBoardOfDirector3());
-        bod4.setText(form.getBoardOfDirector4());
-        nooflocations.setText(Integer.toString(form.getNumberOfLocations()));
-        noofownderautos.setText(Integer.toString(form.getNumberOfOwnedAutos()));
-        noofstaff.setText(Integer.toString(form.getNoOfStaff()));
-        payroll.setText(Double.toString(form.getPayRoll()));
-        descriptionOfOpAndRev1.setText(form.getDescriptionOfOperationsAndRevenue1());
-        descriptionOfOpAndRev2.setText(form.getDescriptionOfOperationsAndRevenue2());
-        descriptionOfOpAndRev3.setText(form.getDescriptionOfOperationsAndRevenue3());
-        descriptionOfOpAndRev4.setText(form.getDescriptionOfOperationsAndRevenue4());
-        amount1.setText(Double.toString(form.getAmount1()));
-        amount2.setText(Double.toString(form.getAmount2()));
-        amount3.setText(Double.toString(form.getAmount3()));
-        amount4.setText(Double.toString(form.getAmount4()));
-        totalsale.setText(Double.toString(form.getTotalSale()));
-        totalsaleus.setText(Double.toString(form.getPercentageOfUSSales()));
-        perofonpremises.setText(Integer.toString(form.getOnpremises()));
-        perofoffpremises.setText(Integer.toString(form.getOffpremises()));
-        perofresidential.setText(Integer.toString(form.getResidential()));
-        perofcommercial.setText(Integer.toString(form.getCommercial()));
-        perofsubcontracted.setText(Integer.toString(form.getSubcontracted()));
-        largestcustomerorproject1.setText(form.getLargestCustomerOrProject1());
-        largestcustomerorproject2.setText(form.getLargestCustomerOrProject2());
-        largestcustomerorproject3.setText(form.getLargestCustomerOrProject3());
-        largestcustomerorproject4.setText(form.getLargestCustomerOrProject4());
-        largestSuppliers1.setText(form.getLargestSuppliers1());
-        largestSuppliers2.setText(form.getLargestSuppliers2());
-        largestSuppliers3.setText(form.getLargestSuppliers3());
-        largestSuppliers4.setText(form.getLargestSuppliers4());
-        futureopportunity.setText(form.getFutureOpportunitiesOrPlanOfGrowth());
-        describecompetition.setText(form.getDescribeCompetition());
-        businessapart.setText(form.getBusinessAsset());
-        advertising.setText(form.getAdvertising());
-        recover.setText(form.getDurationIncaseOfSeriousClaims());
-        claimcause1.setText(form.getPastClaimCause1());
-        claimcause2.setText(form.getPastClaimCause2());
-        claimcause3.setText(form.getPastClaimCause3());
-        claimamount1.setText(Double.toString(form.getPastClaimAmount1()));
-        claimamount2.setText(Double.toString(form.getPastClaimAmount2()));
-        claimamount3.setText(Double.toString(form.getPastClaimAmount3()));
-        ciptype1.setText(form.getCurrentInsuranceType1());
-        ciptype2.setText(form.getCurrentInsuranceType2());
-        ciptype3.setText(form.getCurrentInsuranceType3());
-        cipcarrier1.setText(form.getCurrentInsuranceCarrier1());
-        cipcarrier2.setText(form.getCurrentInsuranceCarrier2());
-        cipcarrier3.setText(form.getCurrentInsuranceCarrier3());
-        lienholder1.setText(form.getLienHolders1());
-        lienholder2.setText(form.getLienHolders2());
-        lienholder3.setText(form.getLienHolders3());
-        loc1.setText(form.getLineHoldersLoc1());
-        loc2.setText(form.getLineHoldersLoc2());
-        loc3.setText(form.getLineHoldersLoc3());
-        aoladdress1.setText(form.getAddressOfLocation1());
-        aoladdress2.setText(form.getAddressOfLocation2());
-        aoladdress3.setText(form.getAddressOfLocation3());
-        aoladdress4.setText(form.getAddressOfLocation4());
-        aoluse1.setText(form.getAddressOfLocationUse1());
-        aoluse2.setText(form.getAddressOfLocationUse2());
-        aoluse3.setText(form.getAddressOfLocationUse3());
-        aoluse4.setText(form.getAddressOfLocationUse4());
-        lrtooccupancy1.setText(form.getLocationRentedToOthers1());
-        lrtooccupancy2.setText(form.getLocationRentedToOthers2());
-        lrtooccupancy3.setText(form.getLocationRentedToOthers3());
-        lrtooccupancy4.setText(form.getLocationRentedToOthers4());
-        producercomments.setText(form.getProducercomments());
-        marketercomments.setText(form.getMarketercomments());
-        /*buildinglimit.setText(Double.toString(form.getBuildingLimit()));
-         buildingdeductible.setText(Double.toString(form.getBuildingDeductible()));
-         contentslimit.setText(Double.toString(form.getContentsLimit()));
-         contentsdeductible.setText(Double.toString(form.getContentsDeductible()));
-         stocklimit.setText(Double.toString(form.getStockLimit()));
-         stockdeductible.setText(Double.toString(form.getStockDeductible()));
-         officelimit.setText(Double.toString(form.getOfficeContentLimit()));
-         officedeductible.setText(Double.toString(form.getOfficeContentDeductible()));
-         edplimit.setText(Double.toString(form.getEdpLimit()));
-         edpdeductible.setText(Double.toString(form.getEdpDeductible()));
-         equipmentdeductible.setText(Double.toString(form.getEquipmentDeductible()));
-         equipmentlimit.setText(Double.toString(form.getEquipmentLimit()));
-         offpremisesdeductible.setText(Double.toString(form.getOffPremisesDeductible()));
-         offpremiseslimit.setText(Double.toString(form.getOffPremisesLimit()));
-         transitlimit.setText(Double.toString(form.getTransitLimit()));
-         transitdeductible.setText(Double.toString(form.getTransitDeductible()));
-         miscpropertylimit.setText(Double.toString(form.getMiscPropertyLimit()));
-         miscpropertydeductible.setText(Double.toString(form.getMiscPropertyDeductible()));
-         contractorsequipmentlimit.setText(Double.toString(form.getContractorEquipmentLimit()));
-         contractorsequipmentdeductible.setText(Double.toString(form.getContractorEquipmentDeductible()));
-         installationfloatorlimit.setText(Double.toString(form.getInstallationFloaterLimit()));
-         installationfloatordeductible.setText(Double.toString(form.getInstallationFloaterDeductible()));
-         toolfloatorlimit.setText(Double.toString(form.getToolFloaterLimit()));
-         toolfloatordeductible.setText(Double.toString(form.getToolFloaterDeductible()));
-         signfloatorlimit.setText(Double.toString(form.getSignFloaterLimit()));
-         signfloatordeductible.setText(Double.toString(form.getSignFloaterDeductible()));
-         motortruckcargolimit.setText(Double.toString(form.getMotorTruckLimit()));
-         motortruckcargodeductible.setText(Double.toString(form.getMotorTruckDeductible()));
-         glasslimit.setText(Double.toString(form.getGlassLimit()));
-         glassdeductible.setText(Double.toString(form.getGlassDeductible()));
-         sewerbackupdeductible.setText(Double.toString(form.getSewerBackupDeductible()));
-         flooddeductible.setText(Double.toString(form.getFloodDeductible()));
-         earthquakedeductible.setText(Double.toString(form.getEarthquakeDeductible()));
-         profitslimit.setText(Double.toString(form.getProfitLimit()));
-         profitsdeductible.setText(Double.toString(form.getProfitDeductible()));
-         grossearningslimit.setText(Double.toString(form.getGrossEarningLimit()));
-         grossearningsdeductible.setText(Double.toString(form.getGrossEarningDeductible()));
-         rentalincomelimit.setText(Double.toString(form.getRentalIncomeLimit()));
-         rentalincomedeductible.setText(Double.toString(form.getRentalIncomeDeductible()));
-         extraexpenselimit.setText(Double.toString(form.getExtraExpenseLimit()));
-         extraexpensedeductible.setText(Double.toString(form.getExtraExpenseDeductible()));
-         offpremisesdeductible.setText(Double.toString(form.getOffPremisesDeductible()));
-         offpremiseslimit.setText(Double.toString(form.getOffPremisesLimit()));
-         insideoutsidelimit.setText(Double.toString(form.getInsideOutsideLimit()));
-         insideoutsidedeductible.setText(Double.toString(form.getInsideOutsideDeductible()));
-         bfmoneylimit.setText(Double.toString(form.getBfMoneyLimit()));
-         bfmoneydeductible.setText(Double.toString(form.getBfMoneyDeductible()));
-         forgerylimit.setText(Double.toString(form.getDeopistorForgeryLimit()));
-         forgerydeductible.setText(Double.toString(form.getDeopistorForgeryDeductible()));
-         moneyorderslimit.setText(Double.toString(form.getMoneyOrdersLimit()));
-         moneyordersdeductible.setText(Double.toString(form.getMoneyOrdersDeductible()));
-         dishonestylimit.setText(Double.toString(form.getEmployDishonestyLimit()));
-         dishonestydeductible.setText(Double.toString(form.getEmployDishonestyDeductible()));
-         cgllimit.setText(Double.toString(form.getCglLimit()));
-         cgldeductible.setText(Double.toString(form.getCglDeductible()));
-         tenantslimit.setText(Double.toString(form.getTenantsLegalLimit()));
-         tenantsdeductible.setText(Double.toString(form.getTenantsLegalDeductible()));
-         nonownedlimit.setText(Double.toString(form.getNonOwnedAutoLimit()));
-         nonowneddeductible.setText(Double.toString(form.getNonOwnedAutoDeductible()));
-         sef94limit.setText(Double.toString(form.getSef94Limit()));
-         sef94deductible.setText(Double.toString(form.getSef94Deductible()));
-         sef96limit.setText(Double.toString(form.getSef96Limit()));
-         sef96deductible.setText(Double.toString(form.getSef96Deductible()));
-         dandlimit.setText(Double.toString(form.getDoLimit()));
-         danddeductible.setText(Double.toString(form.getDoDeductible()));
-         eanddeductible.setText(Double.toString(form.getEoDeductible()));
-         eandlimit.setText(Double.toString(form.getEoLimit()));
-         employerslimit.setText(Double.toString(form.getEmployerLimit()));
-         employersdeductible.setText(Double.toString(form.getEmployerDeductible()));
-         umbrellalimit.setText(Double.toString(form.getUmbrellaLimit()));
-         umbrelladeductible.setText(Double.toString(form.getUmbrellaDeductible()));
-         wrapuplimit.setText(Double.toString(form.getWrapUpLimit()));
-         wrapupdeductible.setText(Double.toString(form.getWrapUpDeductible()));
-         stdlimit.setText(Double.toString(form.getStdComprehensiveLimit()));
-         stddeductible.setText(Double.toString(form.getStdComprehensiveDeductible()));
-         aclimit.setText(Double.toString(form.getAirConditioningLimit()));
-         acdeductible.setText(Double.toString(form.getAirConditioningDeductible()));
-         productionmachinerylimit.setText(Double.toString(form.getProductionMachineryLimit()));
-         productionmachinerydeductible.setText(Double.toString(form.getProductionMachineryDeductible()));
-         othercoverage1.setText(form.getOthercoverage1());
-         othercoverage2.setText(form.getOthercoverage2());
-         othercoverage1limit.setText(Double.toString(form.getOtherCoverageLimit1()));
-         othercoverage2limit.setText(Double.toString(form.getOtherCoverageLimit2()));
-         othercoverage1deductible.setText(Double.toString(form.getOtherCoverageDeductible1()));
-         othercoverage2deductible.setText(Double.toString(form.getOtherCoverageDeductible2()));
-         locationaddress.setText(form.getAddress());
-         locationage.setText(Integer.toString(form.getAge()));
-         totsqfootage.setText(Double.toString(form.getTotalSqFootage()));
-         insidesqfootage.setText(Double.toString(form.getInsdSqFootage()));
-         noofstories.setText(Integer.toString(form.getNoOfStories()));*/
-        screenPage.setScreen("NextScreen");
-       
-        switch (form.getType()) {
-            case "Auto":
-                submitActionAuto();
-                break;
-            case "Both":
-                submitActionBoth();
-                break;
-            case "Commercial":
-                submitActionCommercial();
-                break;
-        }
+                
+                if (form != null) {
+                    System.out.println("Form is not null");
+                } else {
+                    System.out.println("Form is null");
                 }
+                if (keycontact != null) {
+                    System.out.println("keycontact is not null");
+                } else {
+                    System.out.println("keycontact is null");
+                }
+               /* if (form.getSeverity().equals("High")) {
+                    severity.getSelectionModel().select("High");
+                } else if (form.getSeverity().equals("Medium")) {
+                    severity.getSelectionModel().select("Medium");
+                } else {
+                    severity.getSelectionModel().select("Low");
+                }
+                
+                if (form.getEntityType().equals("Corporation")) {
+                    entitytype.getSelectionModel().select("Corporation");
+                }else if (form.getEntityType().equals("Select")){
+                entitytype.getSelectionModel().select("Select");
+                }
+                else if (form.getEntityType().equals("Sole Proprietor")) {
+                    entitytype.getSelectionModel().select("Sole Proprietor");
+                } else {
+                    entitytype.getSelectionModel().select("Other");
+                }
+                System.out.println("Here");
+                if ("January".equals(form.getFinancialYearEnd())) {
+                    finYearEnd.getSelectionModel().select("January");
+                } else if ("February".equals(form.getFinancialYearEnd())) 
+               {    finYearEnd.getSelectionModel().select("February");
+                } else if ("March".equals(form.getFinancialYearEnd())) {
+                    finYearEnd.getSelectionModel().select("March");
+                } else if ("April".equals(form.getFinancialYearEnd())) {
+                    finYearEnd.getSelectionModel().select("April");
+                } else if ("May".equals(form.getFinancialYearEnd())) {
+                    finYearEnd.getSelectionModel().select("May");
+                } else if ("June".equals(form.getFinancialYearEnd())) {
+                    finYearEnd.getSelectionModel().select("June");
+                } else if (form.getFinancialYearEnd().equals("July")) {
+                    finYearEnd.getSelectionModel().select("July");
+                } else if (form.getFinancialYearEnd().equals("August")) {
+                    finYearEnd.getSelectionModel().select("August");
+                } else if (form.getFinancialYearEnd().equals("September")) {
+                    finYearEnd.getSelectionModel().select("September");
+                } else if (form.getFinancialYearEnd().equals("October")) {
+                    finYearEnd.getSelectionModel().select("October");
+                } else if (form.getFinancialYearEnd().equals("November")) {
+                    finYearEnd.getSelectionModel().select("November");
+                } else if (form.getFinancialYearEnd().equals("December")) {
+                    finYearEnd.getSelectionModel().select("December");
+                }
+                else{}
+                System.out.println("There");
+                
+                if ("Select".equals(form.getGroupBenefits())) {
+                    groupbenefits.getSelectionModel().select("Select");
+                } else if ("Yes".equals(form.getGroupBenefits())) {
+                    groupbenefits.getSelectionModel().select("Yes");
+                } else {
+                    groupbenefits.getSelectionModel().select("No");
+                }
+                
+                if ("Select".equals(form.getPensionPlan())) {
+                    pensionplan.getSelectionModel().select("Select");
+                } else if ("Yes".equals(form.getPensionPlan())) {
+                    pensionplan.getSelectionModel().select("Yes");
+                } else {
+                    pensionplan.getSelectionModel().select("No");
+                }
+                
+                if (form.getCurrency1().equals("US$")) {
+                    currency1.getSelectionModel().select("US$");
+                } else if (form.getCurrency1().equals("CAN$")) {
+                    currency1.getSelectionModel().select("CAN$");
+                }
+                
+                if (form.getCurrency2().equals("US$")) {
+                    currency2.getSelectionModel().select("US$");
+                } else if (form.getCurrency2().equals("CAN$")) {
+                    currency2.getSelectionModel().select("CAN$");
+                }
+                
+                if (form.getCurrency3().equals("US$")) {
+                    currency3.getSelectionModel().select("US$");
+                } else if (form.getCurrency3().equals("CAN$")) {
+                    currency3.getSelectionModel().select("CAN$");
+                }
+                
+                if (form.getCurrency4().equals("US$")) {
+                    currency4.getSelectionModel().select("US$");
+                } else if (form.getCurrency4().equals("CAN$")) {
+                    currency4.getSelectionModel().select("CAN$");
+                }
+                
+                if (form.getBasement().equals("Yes")) {
+                    basement.getSelectionModel().select("Yes");
+                } else if (form.getBasement().equals("No")) {
+                    basement.getSelectionModel().select("No");
+                }
+                
+                if (form.getEcommerce().equals("selected")) {
+                    ecommerce.setSelected(true);
+                }
+                
+                if (form.getProfessionalLiability().equals("selected")) {
+                    profliability.setSelected(true);
+                }
+                
+                if (form.getProfit().equals("Profit")) {
+                    profit.setSelected(true);
+                } else if (form.getProfit().equals("Non Profit")) {
+                    nonprofit.setSelected(true);
+                }
+
+                
+        
+                 req1.setEcommerce(binding2.geteCommerce());
+                 req1.setProfessionalLiability(binding2.getprofLiability());
+                 req1.setCyberLiability(binding2.getcyberLiability());
+                 req1.setPollutionexposure(binding2.getpollExposure());
+                 req1.setAccidentalBenefits(binding2.getaccBenefits());
+                 req1.setMalpracticeExposure(binding2.getmalExposure());
+                 req1.setAbuseExposure(binding2.getabuseExposure());
+                 req1.setBondingOpportunities(binding2.getbondOpportunity());
+                 req1.setBusinessInterruptionSheet(binding3.getbiw());
+                 req1.setProfit(binding.getProfit());
+                 req1.setAddressOfLocationOwnedyes1(binding3.getaolownedy1());
+                 req1.setAddressOfLocationOwnedyes2(binding3.getaolownedy2());
+                 req1.setAddressOfLocationOwnedyes3(binding3.getaolownedy3());
+                 req1.setAddressOfLocationOwnedno1(binding3.getaolownedy4());
+                 req1.setOwner(binding4.getmotortruckcargoowner());
+                 req1.setTruckMan(binding4.getmotortruckcargotruckman());
+                 req1.setGrossEarningCheckBox(binding4.getgecheckbox());
+                 req1.setWallsframe(binding4.getwallsframe());
+                 req1.setWallshcb(binding4.getwallshcb());
+                 req1.setWallssteel(binding4.getwallssteel());
+                 req1.setWallsbrick(binding4.getwallsbrick());
+                 req1.setRoofwood(binding4.getwoodjoist());
+                 req1.setRoofsteel(binding4.getsteeldeck());
+                 req1.setRoofconcrete(binding4.getroofconcrete());
+                 req1.setFloorsconcrete(binding4.getfloorsconcrete());
+                 req1.setFloorswood(binding4.getfloorswood());
+                 req1.setHeatinggas(binding4.getfagas());
+                 req1.setHeatingoil(binding4.getfaoil());
+                 req1.setHeatingelectric(binding4.getheatingelectric());
+                 req1.setHeatingother(binding4.getheatingother());
+                 req1.setElectricalbreakers(binding4.getelectricalbreakers());
+                 req1.setElectricalfuses(binding4.getelectricalfuses());
+                 req1.setElectricalamps(binding4.getnoofamps());
+                 req1.setPlumbingcopper(binding4.getcopper());
+                 req1.setPlumbingpvc(binding4.getpvc());
+                 req1.setPlumbingother(binding4.getplumbingother());
+                 req1.setFireProtection(binding4.getFireProtection());
+                 req1.setSecurity(binding4.getSecurity());
+                 */
+                keycontact.setText(form.getKeyContact());
+                keyphone.setText(form.getKeyContactPhone());
+                keyemail.setText(form.getKeyContactEmailAddress());
+                secondarycontact.setText(form.getSecondayContact());
+                secondaryphone.setText(form.getSecondayContactPhone());
+                secondaryemail.setText(form.getSecondayContactEmailAddress());
+                businessname.setText(form.getBusinessName());
+                mailingaddress.setText(form.getMailingAddress());
+                fax.setText(form.getFax());
+                website.setText(form.getWebSiteURL());
+                // otherspecify.setText(form.getotherSpecify);
+                relatedexperience.setText(form.getRelatedExperience());
+                owner1.setText(form.getOwner1());
+                owner2.setText(form.getOwner2());
+                owner3.setText(form.getOwner3());
+                owner4.setText(form.getOwner4());
+                bod1.setText(form.getBoardOfDirector1());
+                bod2.setText(form.getBoardOfDirector2());
+                bod3.setText(form.getBoardOfDirector3());
+                bod4.setText(form.getBoardOfDirector4());
+                nooflocations.setText(Integer.toString(form.getNumberOfLocations()));
+                noofownderautos.setText(Integer.toString(form.getNumberOfOwnedAutos()));
+                noofstaff.setText(Integer.toString(form.getNoOfStaff()));
+                payroll.setText(Double.toString(form.getPayRoll()));
+                descriptionOfOpAndRev1.setText(form.getDescriptionOfOperationsAndRevenue1());
+                descriptionOfOpAndRev2.setText(form.getDescriptionOfOperationsAndRevenue2());
+                descriptionOfOpAndRev3.setText(form.getDescriptionOfOperationsAndRevenue3());
+                descriptionOfOpAndRev4.setText(form.getDescriptionOfOperationsAndRevenue4());
+                amount1.setText(Double.toString(form.getAmount1()));
+                amount2.setText(Double.toString(form.getAmount2()));
+                amount3.setText(Double.toString(form.getAmount3()));
+                amount4.setText(Double.toString(form.getAmount4()));
+                totalsale.setText(Double.toString(form.getTotalSale()));
+                totalsaleus.setText(Double.toString(form.getPercentageOfUSSales()));
+                perofonpremises.setText(Integer.toString(form.getOnpremises()));
+                perofoffpremises.setText(Integer.toString(form.getOffpremises()));
+                perofresidential.setText(Integer.toString(form.getResidential()));
+                perofcommercial.setText(Integer.toString(form.getCommercial()));
+                perofsubcontracted.setText(Integer.toString(form.getSubcontracted()));
+                largestcustomerorproject1.setText(form.getLargestCustomerOrProject1());
+                largestcustomerorproject2.setText(form.getLargestCustomerOrProject2());
+                largestcustomerorproject3.setText(form.getLargestCustomerOrProject3());
+                largestcustomerorproject4.setText(form.getLargestCustomerOrProject4());
+                largestSuppliers1.setText(form.getLargestSuppliers1());
+                largestSuppliers2.setText(form.getLargestSuppliers2());
+                largestSuppliers3.setText(form.getLargestSuppliers3());
+                largestSuppliers4.setText(form.getLargestSuppliers4());
+                futureopportunity.setText(form.getFutureOpportunitiesOrPlanOfGrowth());
+                describecompetition.setText(form.getDescribeCompetition());
+                businessapart.setText(form.getBusinessAsset());
+                advertising.setText(form.getAdvertising());
+                recover.setText(form.getDurationIncaseOfSeriousClaims());
+                claimcause1.setText(form.getPastClaimCause1());
+                claimcause2.setText(form.getPastClaimCause2());
+                claimcause3.setText(form.getPastClaimCause3());
+                claimamount1.setText(Double.toString(form.getPastClaimAmount1()));
+                claimamount2.setText(Double.toString(form.getPastClaimAmount2()));
+                claimamount3.setText(Double.toString(form.getPastClaimAmount3()));
+                ciptype1.setText(form.getCurrentInsuranceType1());
+                ciptype2.setText(form.getCurrentInsuranceType2());
+                ciptype3.setText(form.getCurrentInsuranceType3());
+                cipcarrier1.setText(form.getCurrentInsuranceCarrier1());
+                cipcarrier2.setText(form.getCurrentInsuranceCarrier2());
+                cipcarrier3.setText(form.getCurrentInsuranceCarrier3());
+                lienholder1.setText(form.getLienHolders1());
+                lienholder2.setText(form.getLienHolders2());
+                lienholder3.setText(form.getLienHolders3());
+                loc1.setText(form.getLineHoldersLoc1());
+                loc2.setText(form.getLineHoldersLoc2());
+                loc3.setText(form.getLineHoldersLoc3());
+                aoladdress1.setText(form.getAddressOfLocation1());
+                aoladdress2.setText(form.getAddressOfLocation2());
+                aoladdress3.setText(form.getAddressOfLocation3());
+                aoladdress4.setText(form.getAddressOfLocation4());
+                aoluse1.setText(form.getAddressOfLocationUse1());
+                aoluse2.setText(form.getAddressOfLocationUse2());
+                aoluse3.setText(form.getAddressOfLocationUse3());
+                aoluse4.setText(form.getAddressOfLocationUse4());
+                lrtooccupancy1.setText(form.getLocationRentedToOthers1());
+                lrtooccupancy2.setText(form.getLocationRentedToOthers2());
+                lrtooccupancy3.setText(form.getLocationRentedToOthers3());
+                lrtooccupancy4.setText(form.getLocationRentedToOthers4());
+                producercomments.setText(form.getProducercomments());
+                marketercomments.setText(form.getMarketercomments());
+                /*buildinglimit.setText(Double.toString(form.getBuildingLimit()));
+                 buildingdeductible.setText(Double.toString(form.getBuildingDeductible()));
+                 contentslimit.setText(Double.toString(form.getContentsLimit()));
+                 contentsdeductible.setText(Double.toString(form.getContentsDeductible()));
+                 stocklimit.setText(Double.toString(form.getStockLimit()));
+                 stockdeductible.setText(Double.toString(form.getStockDeductible()));
+                 officelimit.setText(Double.toString(form.getOfficeContentLimit()));
+                 officedeductible.setText(Double.toString(form.getOfficeContentDeductible()));
+                 edplimit.setText(Double.toString(form.getEdpLimit()));
+                 edpdeductible.setText(Double.toString(form.getEdpDeductible()));
+                 equipmentdeductible.setText(Double.toString(form.getEquipmentDeductible()));
+                 equipmentlimit.setText(Double.toString(form.getEquipmentLimit()));
+                 offpremisesdeductible.setText(Double.toString(form.getOffPremisesDeductible()));
+                 offpremiseslimit.setText(Double.toString(form.getOffPremisesLimit()));
+                 transitlimit.setText(Double.toString(form.getTransitLimit()));
+                 transitdeductible.setText(Double.toString(form.getTransitDeductible()));
+                 miscpropertylimit.setText(Double.toString(form.getMiscPropertyLimit()));
+                 miscpropertydeductible.setText(Double.toString(form.getMiscPropertyDeductible()));
+                 contractorsequipmentlimit.setText(Double.toString(form.getContractorEquipmentLimit()));
+                 contractorsequipmentdeductible.setText(Double.toString(form.getContractorEquipmentDeductible()));
+                 installationfloatorlimit.setText(Double.toString(form.getInstallationFloaterLimit()));
+                 installationfloatordeductible.setText(Double.toString(form.getInstallationFloaterDeductible()));
+                 toolfloatorlimit.setText(Double.toString(form.getToolFloaterLimit()));
+                 toolfloatordeductible.setText(Double.toString(form.getToolFloaterDeductible()));
+                 signfloatorlimit.setText(Double.toString(form.getSignFloaterLimit()));
+                 signfloatordeductible.setText(Double.toString(form.getSignFloaterDeductible()));
+                 motortruckcargolimit.setText(Double.toString(form.getMotorTruckLimit()));
+                 motortruckcargodeductible.setText(Double.toString(form.getMotorTruckDeductible()));
+                 glasslimit.setText(Double.toString(form.getGlassLimit()));
+                 glassdeductible.setText(Double.toString(form.getGlassDeductible()));
+                 sewerbackupdeductible.setText(Double.toString(form.getSewerBackupDeductible()));
+                 flooddeductible.setText(Double.toString(form.getFloodDeductible()));
+                 earthquakedeductible.setText(Double.toString(form.getEarthquakeDeductible()));
+                 profitslimit.setText(Double.toString(form.getProfitLimit()));
+                 profitsdeductible.setText(Double.toString(form.getProfitDeductible()));
+                 grossearningslimit.setText(Double.toString(form.getGrossEarningLimit()));
+                 grossearningsdeductible.setText(Double.toString(form.getGrossEarningDeductible()));
+                 rentalincomelimit.setText(Double.toString(form.getRentalIncomeLimit()));
+                 rentalincomedeductible.setText(Double.toString(form.getRentalIncomeDeductible()));
+                 extraexpenselimit.setText(Double.toString(form.getExtraExpenseLimit()));
+                 extraexpensedeductible.setText(Double.toString(form.getExtraExpenseDeductible()));
+                 offpremisesdeductible.setText(Double.toString(form.getOffPremisesDeductible()));
+                 offpremiseslimit.setText(Double.toString(form.getOffPremisesLimit()));
+                 insideoutsidelimit.setText(Double.toString(form.getInsideOutsideLimit()));
+                 insideoutsidedeductible.setText(Double.toString(form.getInsideOutsideDeductible()));
+                 bfmoneylimit.setText(Double.toString(form.getBfMoneyLimit()));
+                 bfmoneydeductible.setText(Double.toString(form.getBfMoneyDeductible()));
+                 forgerylimit.setText(Double.toString(form.getDeopistorForgeryLimit()));
+                 forgerydeductible.setText(Double.toString(form.getDeopistorForgeryDeductible()));
+                 moneyorderslimit.setText(Double.toString(form.getMoneyOrdersLimit()));
+                 moneyordersdeductible.setText(Double.toString(form.getMoneyOrdersDeductible()));
+                 dishonestylimit.setText(Double.toString(form.getEmployDishonestyLimit()));
+                 dishonestydeductible.setText(Double.toString(form.getEmployDishonestyDeductible()));
+                 cgllimit.setText(Double.toString(form.getCglLimit()));
+                 cgldeductible.setText(Double.toString(form.getCglDeductible()));
+                 tenantslimit.setText(Double.toString(form.getTenantsLegalLimit()));
+                 tenantsdeductible.setText(Double.toString(form.getTenantsLegalDeductible()));
+                 nonownedlimit.setText(Double.toString(form.getNonOwnedAutoLimit()));
+                 nonowneddeductible.setText(Double.toString(form.getNonOwnedAutoDeductible()));
+                 sef94limit.setText(Double.toString(form.getSef94Limit()));
+                 sef94deductible.setText(Double.toString(form.getSef94Deductible()));
+                 sef96limit.setText(Double.toString(form.getSef96Limit()));
+                 sef96deductible.setText(Double.toString(form.getSef96Deductible()));
+                 dandlimit.setText(Double.toString(form.getDoLimit()));
+                 danddeductible.setText(Double.toString(form.getDoDeductible()));
+                 eanddeductible.setText(Double.toString(form.getEoDeductible()));
+                 eandlimit.setText(Double.toString(form.getEoLimit()));
+                 employerslimit.setText(Double.toString(form.getEmployerLimit()));
+                 employersdeductible.setText(Double.toString(form.getEmployerDeductible()));
+                 umbrellalimit.setText(Double.toString(form.getUmbrellaLimit()));
+                 umbrelladeductible.setText(Double.toString(form.getUmbrellaDeductible()));
+                 wrapuplimit.setText(Double.toString(form.getWrapUpLimit()));
+                 wrapupdeductible.setText(Double.toString(form.getWrapUpDeductible()));
+                 stdlimit.setText(Double.toString(form.getStdComprehensiveLimit()));
+                 stddeductible.setText(Double.toString(form.getStdComprehensiveDeductible()));
+                 aclimit.setText(Double.toString(form.getAirConditioningLimit()));
+                 acdeductible.setText(Double.toString(form.getAirConditioningDeductible()));
+                 productionmachinerylimit.setText(Double.toString(form.getProductionMachineryLimit()));
+                 productionmachinerydeductible.setText(Double.toString(form.getProductionMachineryDeductible()));
+                 othercoverage1.setText(form.getOthercoverage1());
+                 othercoverage2.setText(form.getOthercoverage2());
+                 othercoverage1limit.setText(Double.toString(form.getOtherCoverageLimit1()));
+                 othercoverage2limit.setText(Double.toString(form.getOtherCoverageLimit2()));
+                 othercoverage1deductible.setText(Double.toString(form.getOtherCoverageDeductible1()));
+                 othercoverage2deductible.setText(Double.toString(form.getOtherCoverageDeductible2()));
+                 locationaddress.setText(form.getAddress());
+                 locationage.setText(Integer.toString(form.getAge()));
+                 totsqfootage.setText(Double.toString(form.getTotalSqFootage()));
+                 insidesqfootage.setText(Double.toString(form.getInsdSqFootage()));
+                 noofstories.setText(Integer.toString(form.getNoOfStories()));*/
+                screenPage.setScreen("NextScreen");
+                
+                switch (form.getType()) {
+                    case "Auto":
+                        submitActionAuto();
+                        break;
+                    case "Both":
+                        submitActionBoth();
+                        break;
+                    case "Commercial":
+                        submitActionCommercial();
+                        break;
+                }
+            }
         });
     }
-
+    
     @FXML
     public void submitFormAction() {
-
+        
         if (CommonValidations.isStringEmpty(binding.getMailingAddress())) {
             System.out.println("4");
             InvokeAnimation.attentionSeekerWobble(mailingaddress);
             mailingaddress.setPromptText("Please enter Mailing address");
         } else {
-
+            
             System.out.println("5");
             Task task;
             task = new Task<Void>() {
@@ -1890,14 +2057,13 @@ public class NextScreenController implements Initializable, IScreenController {
                 public Void call() throws Exception {
                     System.out.println("1213");
                     try {
-                        System.out.println("edit "+isEdit );
+                        System.out.println("edit " + isEdit);
                         if (isEdit) {
                             System.out.println("samta");
                             InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
                             EditFormSubmissionRequest req1 = new EditFormSubmissionRequest();
                             
-                          
-                           req1.setProducer(producerid);
+                            req1.setProducer(producerid);
                             if (insurancetypeflag == 1) {
                                 req1.setType("Auto");
                             } else if (insurancetypeflag == 2) {
@@ -1906,7 +2072,7 @@ public class NextScreenController implements Initializable, IScreenController {
                                 req1.setType("Commercial");
                             }
                             //choicebox
-                            System.out.println("Form Id of the "+getFormId());
+                            System.out.println("Form Id of the " + getFormId());
                             req1.setFormId(getFormId());
                             req1.setSeverity(binding.getSeverity());
                             req1.setEntityType(binding.getEntityType());
@@ -1977,7 +2143,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setBoardOfDirector2(binding.getBod2());
                             req1.setBoardOfDirector3(binding.getBod3());
                             req1.setBoardOfDirector4(binding.getBod4());
-
+                            
                             if (!CommonValidations.isStringEmpty(binding2.getNoofStaff())) {
                                 req1.setNoOfStaff(Integer.parseInt(binding2.getNoofStaff()));
                             }
@@ -2009,7 +2175,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             if (!CommonValidations.isStringEmpty(binding2.getperOfOnPremises())) {
                                 req1.setTotalSale(Double.parseDouble(binding2.getperOfOnPremises()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding2.getperOfOffPremises())) {
                                 req1.setOffpremises(Integer.parseInt(binding2.getperOfOffPremises()));
                             }
@@ -2070,7 +2236,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setLocationRentedToOthers4(binding3.getlrtooccupancy4());
                             req1.setProducercomments(binding3.getproducercomments());
                             req1.setMarketercomments(binding3.getmarketercomments());
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getbuildinglimit())) {
                                 req1.setBuildingLimit(Double.parseDouble(binding4.getbuildinglimit()));
                             }
@@ -2104,11 +2270,11 @@ public class NextScreenController implements Initializable, IScreenController {
                             if (!CommonValidations.isStringEmpty(binding4.getequipmentlimit())) {
                                 req1.setEquipmentLimit(Double.parseDouble(binding4.getequipmentlimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getequipmentdeductible())) {
                                 req1.setEquipmentDeductible(Double.parseDouble(binding4.getequipmentdeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getoffpremiseslimit())) {
                                 req1.setOffPremisesLimit(Double.parseDouble(binding4.getoffpremiseslimit()));
                             }
@@ -2118,15 +2284,15 @@ public class NextScreenController implements Initializable, IScreenController {
                             if (!CommonValidations.isStringEmpty(binding4.gettransitlimit())) {
                                 req1.setTransitLimit(Double.parseDouble(binding4.gettransitlimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.gettransitdeductible())) {
                                 req1.setTransitDeductible(Double.parseDouble(binding4.gettransitdeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getmiscpropertylimit())) {
                                 req1.setMiscPropertyLimit(Double.parseDouble(binding4.getmiscpropertylimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getmiscpropertydeductible())) {
                                 req1.setMiscPropertyDeductible(Double.parseDouble(binding4.getmiscpropertydeductible()));
                             }
@@ -2142,7 +2308,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             if (!CommonValidations.isStringEmpty(binding4.getinstallationfloatordeductible())) {
                                 req1.setInstallationFloaterDeductible(Double.parseDouble(binding4.getinstallationfloatordeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.gettoolfloatorlimit())) {
                                 req1.setToolFloaterLimit(Double.parseDouble(binding4.gettoolfloatorlimit()));
                             }
@@ -2158,209 +2324,209 @@ public class NextScreenController implements Initializable, IScreenController {
                             if (!CommonValidations.isStringEmpty(binding4.getmotortruckcargolimit())) {
                                 req1.setMotorTruckLimit(Double.parseDouble(binding4.getmotortruckcargolimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getmotortruckcargodeductible())) {
                                 req1.setMotorTruckDeductible(Double.parseDouble(binding4.getmotortruckcargodeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getglasslimit())) {
                                 req1.setGlassLimit(Double.parseDouble(binding4.getglasslimit()));
                             }
                             if (!CommonValidations.isStringEmpty(binding4.getglassdeductible())) {
                                 req1.setGlassDeductible(Double.parseDouble(binding4.getglassdeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getsewerblackupdeductible())) {
                                 req1.setSewerBackupDeductible(Double.parseDouble(binding4.getsewerblackupdeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getflooddeductible())) {
                                 req1.setFloodDeductible(Double.parseDouble(binding4.getflooddeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getearthquakedeductible())) {
                                 req1.setEarthquakeDeductible(Double.parseDouble(binding4.getearthquakedeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getprofitslimit())) {
                                 req1.setProfitLimit(Double.parseDouble(binding4.getprofitslimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getprofitsdeductible())) {
                                 req1.setProfitDeductible(Double.parseDouble(binding4.getprofitsdeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getgrossearningslimit())) {
                                 req1.setGrossEarningLimit(Double.parseDouble(binding4.getgrossearningslimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getgrossearningsdeductible())) {
                                 req1.setGrossEarningDeductible(Double.parseDouble(binding4.getgrossearningsdeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getrentalincomelimit())) {
                                 req1.setRentalIncomeLimit(Double.parseDouble(binding4.getrentalincomelimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getrentalincomedeductible())) {
                                 req1.setRentalIncomeDeductible(Double.parseDouble(binding4.getrentalincomedeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getextraexpenselimit())) {
                                 req1.setExtraExpenseLimit(Double.parseDouble(binding4.getextraexpenselimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getextraexpensedeductible())) {
                                 req1.setExtraExpenseDeductible(Double.parseDouble(binding4.getextraexpensedeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getoffpremiseslimit())) {
                                 req1.setOffPremisesPowerLimit(Double.parseDouble(binding4.getoffpremiseslimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getoffpremisesdeductible())) {
                                 req1.setOffPremisesPowerDeductible(Double.parseDouble(binding4.getoffpremisesdeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getinsideoutsidelimit())) {
                                 req1.setInsideOutsideLimit(Double.parseDouble(binding4.getinsideoutsidelimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getinsideoutsidedeductible())) {
                                 req1.setInsideOutsideDeductible(Double.parseDouble(binding4.getinsideoutsidedeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getbfmoneylimit())) {
                                 req1.setBfMoneyLimit(Double.parseDouble(binding4.getbfmoneylimit()));
                             }
                             if (!CommonValidations.isStringEmpty(binding4.getbfmoneydeductible())) {
                                 req1.setBfMoneyDeductible(Double.parseDouble(binding4.getbfmoneydeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getforgerylimit())) {
                                 req1.setDeopistorForgeryLimit(Double.parseDouble(binding4.getforgerylimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getforgerydeductible())) {
                                 req1.setDeopistorForgeryDeductible(Double.parseDouble(binding4.getforgerydeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getmoneyorderslimit())) {
                                 req1.setMoneyOrdersLimit(Double.parseDouble(binding4.getmoneyorderslimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getmoneyordersdeductible())) {
                                 req1.setMoneyOrdersDeductible(Double.parseDouble(binding4.getmoneyordersdeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getdishonestylimit())) {
                                 req1.setEmployDishonestyLimit(Double.parseDouble(binding4.getdishonestylimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getdishonestydeductible())) {
                                 req1.setEmployDishonestyDeductible(Double.parseDouble(binding4.getdishonestydeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getcgllimit())) {
                                 req1.setCglLimit(Double.parseDouble(binding4.getcgllimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getcgldeductible())) {
                                 req1.setCglDeductible(Double.parseDouble(binding4.getcgldeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.gettenantslimit())) {
                                 req1.setTenantsLegalLimit(Double.parseDouble(binding4.gettenantslimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.gettenantsdeductible())) {
                                 req1.setTenantsLegalDeductible(Double.parseDouble(binding4.gettenantsdeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getnonownedlimit())) {
                                 req1.setNonOwnedAutoLimit(Double.parseDouble(binding4.getnonownedlimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getnonowneddeductible())) {
                                 req1.setNonOwnedAutoDeductible(Double.parseDouble(binding4.getnonowneddeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getsef96limit())) {
                                 req1.setSef96Limit(Double.parseDouble(binding4.getsef96limit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getsef94deductible())) {
                                 req1.setSef96Deductible(Double.parseDouble(binding4.getsef96deductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getsef94limit())) {
                                 req1.setSef94Limit(Double.parseDouble(binding4.getsef94limit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getsef94deductible())) {
                                 req1.setSef94Deductible(Double.parseDouble(binding4.getsef94deductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getdandlimit())) {
                                 req1.setDoLimit(Double.parseDouble(binding4.getdandlimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getdanddeductible())) {
                                 req1.setDoDeductible(Double.parseDouble(binding4.getdanddeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.geteandlimit())) {
                                 req1.setEoLimit(Double.parseDouble(binding4.geteandlimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.geteanddeductible())) {
                                 req1.setEoDeductible(Double.parseDouble(binding4.geteanddeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getemployerslimit())) {
                                 req1.setEmployerLimit(Double.parseDouble(binding4.getemployerslimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getemployersdeductible())) {
                                 req1.setEmployerDeductible(Double.parseDouble(binding4.getemployersdeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getumbrellalimit())) {
                                 req1.setUmbrellaLimit(Double.parseDouble(binding4.getumbrellalimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getumbrelladeductible())) {
                                 req1.setUmbrellaDeductible(Double.parseDouble(binding4.getumbrelladeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getwrapuplimit())) {
                                 req1.setWrapUpLimit(Double.parseDouble(binding4.getwrapuplimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getwrapupdeductible())) {
                                 req1.setWrapUpDeductible(Double.parseDouble(binding4.getwrapupdeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getstdlimit())) {
                                 req1.setStdComprehensiveLimit(Double.parseDouble(binding4.getstdlimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getstddeductible())) {
                                 req1.setStdComprehensiveDeductible(Double.parseDouble(binding4.getstddeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getaclimit())) {
                                 req1.setAirConditioningLimit(Double.parseDouble(binding4.getaclimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getacdeductible())) {
                                 req1.setAirConditioningDeductible(Double.parseDouble(binding4.getacdeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getproductionmachinerylimit())) {
                                 req1.setProductionMachineryLimit(Double.parseDouble(binding4.getproductionmachinerylimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getproductionmachinerydeductible())) {
                                 req1.setProductionMachineryDeductible(Double.parseDouble(binding4.getproductionmachinerydeductible()));
                             }
@@ -2376,7 +2542,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setElectricalupdated(binding4.getelectricalupdated());
                             req1.setFireProtectiondistance(binding4.getdistance());
                             req1.setAddress(binding4.getlocationaddress());
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getlocationage())) {
                                 req1.setAge(Integer.parseInt(binding4.getlocationage()));
                             }
@@ -2390,7 +2556,7 @@ public class NextScreenController implements Initializable, IScreenController {
                                 req1.setNoOfStories(Integer.parseInt(binding4.getnoofstories()));
                             }
                             req1.setCurrentInsurer(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentinsurer());
-                            //req1.setCurrentExpDate(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentexpirydate()); 
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getautopremiumtarget())) {
                                 req1.setPremiumTarget(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautopremiumtarget()));
                             }
@@ -2416,19 +2582,19 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setFilingState1(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getliststate1());
                             req1.setFilingState2(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getliststate2());
                             req1.setFilingState3(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getliststate3());
-
+                            
                             req1.setFilingUSDot1(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getusdot1());
                             req1.setFilingUSDot2(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getusdot2());
                             req1.setFilingUSDot3(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getusdot3());
-
+                            
                             req1.setDilingDocket1(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getdocket1());
                             req1.setDilingDocket2(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getdocket2());
                             req1.setDilingDocket3(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getdocket3());
-
+                            
                             req1.setFilingType1(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeoffiling1());
                             req1.setFilingType2(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeoffiling2());
                             req1.setFilingType3(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeoffiling3());
-
+                            
                             req1.setFilingName1(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getnamerequired1());
                             req1.setFilingName2(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getnamerequired2());
                             req1.setFilingName3(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getnamerequired3());
@@ -2436,19 +2602,19 @@ public class NextScreenController implements Initializable, IScreenController {
                             //req1.setVehicleNonOwned(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getnonownedliability());
                             //req1.setContract((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getnonownedcontract);
                             req1.setTypeOfNonOwned(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeofnonowned());
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getanytime())) {
                                 req1.setAvgNoOfVehicles(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getanytime()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getavgvalue())) {
                                 req1.setAvgValue(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getavgvalue()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getmaxannually())) {
                                 req1.setMaxVehicleValue(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getmaxannually()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getmostexpensive())) {
                                 req1.setMaxCostValue(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getmostexpensive()));
                             }
@@ -2458,7 +2624,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setContract(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getnonownedcontract());
                             req1.setLoggedInUserEmailAddress(getReceivedemailaddress());
                             System.out.println(getReceivedemailaddress());
-
+                            
                             int i = 0;
                             if (fileList != null) {
                                 for (File file : fileList) {
@@ -2520,7 +2686,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             try {
                                 b = new BufferedWriter(new FileWriter(new File("pdf.html")));
                                 b.append(message);
-
+                                
                             } catch (Exception e) {
                                 e.printStackTrace();
                             } finally {
@@ -2528,12 +2694,12 @@ public class NextScreenController implements Initializable, IScreenController {
                                     b.close();
                                 }
                             }
-
+                            
                             HTMLToPDF.convertHtmlToPdf(new File("pdf.html").getAbsolutePath());
-                            CommonResponseAttributes response =  port.getInsuranceOperationsPort().editFormSubmission(req1);
+                            CommonResponseAttributes response = port.getInsuranceOperationsPort().editFormSubmission(req1);
                             if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
                                 successMessage("Form has been updated");
-
+                                
                             } else {
                                 errors(response.getErrorMessage());
                             }
@@ -2618,7 +2784,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setBoardOfDirector2(binding.getBod2());
                             req1.setBoardOfDirector3(binding.getBod3());
                             req1.setBoardOfDirector4(binding.getBod4());
-
+                            
                             if (!CommonValidations.isStringEmpty(binding2.getNoofStaff())) {
                                 req1.setNoOfStaff(Integer.parseInt(binding2.getNoofStaff()));
                             }
@@ -2650,7 +2816,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             if (!CommonValidations.isStringEmpty(binding2.getperOfOnPremises())) {
                                 req1.setTotalSale(Double.parseDouble(binding2.getperOfOnPremises()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding2.getperOfOffPremises())) {
                                 req1.setOffpremises(Integer.parseInt(binding2.getperOfOffPremises()));
                             }
@@ -2711,7 +2877,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setLocationRentedToOthers4(binding3.getlrtooccupancy4());
                             req1.setProducercomments(binding3.getproducercomments());
                             req1.setMarketercomments(binding3.getmarketercomments());
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getbuildinglimit())) {
                                 req1.setBuildingLimit(Double.parseDouble(binding4.getbuildinglimit()));
                             }
@@ -2745,11 +2911,11 @@ public class NextScreenController implements Initializable, IScreenController {
                             if (!CommonValidations.isStringEmpty(binding4.getequipmentlimit())) {
                                 req1.setEquipmentLimit(Double.parseDouble(binding4.getequipmentlimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getequipmentdeductible())) {
                                 req1.setEquipmentDeductible(Double.parseDouble(binding4.getequipmentdeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getoffpremiseslimit())) {
                                 req1.setOffPremisesLimit(Double.parseDouble(binding4.getoffpremiseslimit()));
                             }
@@ -2759,15 +2925,15 @@ public class NextScreenController implements Initializable, IScreenController {
                             if (!CommonValidations.isStringEmpty(binding4.gettransitlimit())) {
                                 req1.setTransitLimit(Double.parseDouble(binding4.gettransitlimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.gettransitdeductible())) {
                                 req1.setTransitDeductible(Double.parseDouble(binding4.gettransitdeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getmiscpropertylimit())) {
                                 req1.setMiscPropertyLimit(Double.parseDouble(binding4.getmiscpropertylimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getmiscpropertydeductible())) {
                                 req1.setMiscPropertyDeductible(Double.parseDouble(binding4.getmiscpropertydeductible()));
                             }
@@ -2783,7 +2949,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             if (!CommonValidations.isStringEmpty(binding4.getinstallationfloatordeductible())) {
                                 req1.setInstallationFloaterDeductible(Double.parseDouble(binding4.getinstallationfloatordeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.gettoolfloatorlimit())) {
                                 req1.setToolFloaterLimit(Double.parseDouble(binding4.gettoolfloatorlimit()));
                             }
@@ -2799,209 +2965,209 @@ public class NextScreenController implements Initializable, IScreenController {
                             if (!CommonValidations.isStringEmpty(binding4.getmotortruckcargolimit())) {
                                 req1.setMotorTruckLimit(Double.parseDouble(binding4.getmotortruckcargolimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getmotortruckcargodeductible())) {
                                 req1.setMotorTruckDeductible(Double.parseDouble(binding4.getmotortruckcargodeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getglasslimit())) {
                                 req1.setGlassLimit(Double.parseDouble(binding4.getglasslimit()));
                             }
                             if (!CommonValidations.isStringEmpty(binding4.getglassdeductible())) {
                                 req1.setGlassDeductible(Double.parseDouble(binding4.getglassdeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getsewerblackupdeductible())) {
                                 req1.setSewerBackupDeductible(Double.parseDouble(binding4.getsewerblackupdeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getflooddeductible())) {
                                 req1.setFloodDeductible(Double.parseDouble(binding4.getflooddeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getearthquakedeductible())) {
                                 req1.setEarthquakeDeductible(Double.parseDouble(binding4.getearthquakedeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getprofitslimit())) {
                                 req1.setProfitLimit(Double.parseDouble(binding4.getprofitslimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getprofitsdeductible())) {
                                 req1.setProfitDeductible(Double.parseDouble(binding4.getprofitsdeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getgrossearningslimit())) {
                                 req1.setGrossEarningLimit(Double.parseDouble(binding4.getgrossearningslimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getgrossearningsdeductible())) {
                                 req1.setGrossEarningDeductible(Double.parseDouble(binding4.getgrossearningsdeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getrentalincomelimit())) {
                                 req1.setRentalIncomeLimit(Double.parseDouble(binding4.getrentalincomelimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getrentalincomedeductible())) {
                                 req1.setRentalIncomeDeductible(Double.parseDouble(binding4.getrentalincomedeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getextraexpenselimit())) {
                                 req1.setExtraExpenseLimit(Double.parseDouble(binding4.getextraexpenselimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getextraexpensedeductible())) {
                                 req1.setExtraExpenseDeductible(Double.parseDouble(binding4.getextraexpensedeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getoffpremiseslimit())) {
                                 req1.setOffPremisesPowerLimit(Double.parseDouble(binding4.getoffpremiseslimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getoffpremisesdeductible())) {
                                 req1.setOffPremisesPowerDeductible(Double.parseDouble(binding4.getoffpremisesdeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getinsideoutsidelimit())) {
                                 req1.setInsideOutsideLimit(Double.parseDouble(binding4.getinsideoutsidelimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getinsideoutsidedeductible())) {
                                 req1.setInsideOutsideDeductible(Double.parseDouble(binding4.getinsideoutsidedeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getbfmoneylimit())) {
                                 req1.setBfMoneyLimit(Double.parseDouble(binding4.getbfmoneylimit()));
                             }
                             if (!CommonValidations.isStringEmpty(binding4.getbfmoneydeductible())) {
                                 req1.setBfMoneyDeductible(Double.parseDouble(binding4.getbfmoneydeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getforgerylimit())) {
                                 req1.setDeopistorForgeryLimit(Double.parseDouble(binding4.getforgerylimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getforgerydeductible())) {
                                 req1.setDeopistorForgeryDeductible(Double.parseDouble(binding4.getforgerydeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getmoneyorderslimit())) {
                                 req1.setMoneyOrdersLimit(Double.parseDouble(binding4.getmoneyorderslimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getmoneyordersdeductible())) {
                                 req1.setMoneyOrdersDeductible(Double.parseDouble(binding4.getmoneyordersdeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getdishonestylimit())) {
                                 req1.setEmployDishonestyLimit(Double.parseDouble(binding4.getdishonestylimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getdishonestydeductible())) {
                                 req1.setEmployDishonestyDeductible(Double.parseDouble(binding4.getdishonestydeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getcgllimit())) {
                                 req1.setCglLimit(Double.parseDouble(binding4.getcgllimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getcgldeductible())) {
                                 req1.setCglDeductible(Double.parseDouble(binding4.getcgldeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.gettenantslimit())) {
                                 req1.setTenantsLegalLimit(Double.parseDouble(binding4.gettenantslimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.gettenantsdeductible())) {
                                 req1.setTenantsLegalDeductible(Double.parseDouble(binding4.gettenantsdeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getnonownedlimit())) {
                                 req1.setNonOwnedAutoLimit(Double.parseDouble(binding4.getnonownedlimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getnonowneddeductible())) {
                                 req1.setNonOwnedAutoDeductible(Double.parseDouble(binding4.getnonowneddeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getsef96limit())) {
                                 req1.setSef96Limit(Double.parseDouble(binding4.getsef96limit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getsef94deductible())) {
                                 req1.setSef96Deductible(Double.parseDouble(binding4.getsef96deductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getsef94limit())) {
                                 req1.setSef94Limit(Double.parseDouble(binding4.getsef94limit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getsef94deductible())) {
                                 req1.setSef94Deductible(Double.parseDouble(binding4.getsef94deductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getdandlimit())) {
                                 req1.setDoLimit(Double.parseDouble(binding4.getdandlimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getdanddeductible())) {
                                 req1.setDoDeductible(Double.parseDouble(binding4.getdanddeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.geteandlimit())) {
                                 req1.setEoLimit(Double.parseDouble(binding4.geteandlimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.geteanddeductible())) {
                                 req1.setEoDeductible(Double.parseDouble(binding4.geteanddeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getemployerslimit())) {
                                 req1.setEmployerLimit(Double.parseDouble(binding4.getemployerslimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getemployersdeductible())) {
                                 req1.setEmployerDeductible(Double.parseDouble(binding4.getemployersdeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getumbrellalimit())) {
                                 req1.setUmbrellaLimit(Double.parseDouble(binding4.getumbrellalimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getumbrelladeductible())) {
                                 req1.setUmbrellaDeductible(Double.parseDouble(binding4.getumbrelladeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getwrapuplimit())) {
                                 req1.setWrapUpLimit(Double.parseDouble(binding4.getwrapuplimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getwrapupdeductible())) {
                                 req1.setWrapUpDeductible(Double.parseDouble(binding4.getwrapupdeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getstdlimit())) {
                                 req1.setStdComprehensiveLimit(Double.parseDouble(binding4.getstdlimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getstddeductible())) {
                                 req1.setStdComprehensiveDeductible(Double.parseDouble(binding4.getstddeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getaclimit())) {
                                 req1.setAirConditioningLimit(Double.parseDouble(binding4.getaclimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getacdeductible())) {
                                 req1.setAirConditioningDeductible(Double.parseDouble(binding4.getacdeductible()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getproductionmachinerylimit())) {
                                 req1.setProductionMachineryLimit(Double.parseDouble(binding4.getproductionmachinerylimit()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getproductionmachinerydeductible())) {
                                 req1.setProductionMachineryDeductible(Double.parseDouble(binding4.getproductionmachinerydeductible()));
                             }
@@ -3017,7 +3183,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setElectricalupdated(binding4.getelectricalupdated());
                             req1.setFireProtectiondistance(binding4.getdistance());
                             req1.setAddress(binding4.getlocationaddress());
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getlocationage())) {
                                 req1.setAge(Integer.parseInt(binding4.getlocationage()));
                             }
@@ -3031,6 +3197,10 @@ public class NextScreenController implements Initializable, IScreenController {
                                 req1.setNoOfStories(Integer.parseInt(binding4.getnoofstories()));
                             }
                             req1.setCurrentInsurer(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentinsurer());
+                            GregorianCalendar c1 = new GregorianCalendar();
+                            c1.setTime(datePicker.getSelectedDate());
+                            XMLGregorianCalendar date1 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c1);
+                            req1.setCurrentExpDate(date1);
                             //req1.setCurrentExpDate(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentexpirydate()); 
                             if (!CommonValidations.isStringEmpty(binding4.getautopremiumtarget())) {
                                 req1.setPremiumTarget(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautopremiumtarget()));
@@ -3057,19 +3227,19 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setFilingState1(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getliststate1());
                             req1.setFilingState2(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getliststate2());
                             req1.setFilingState3(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getliststate3());
-
+                            
                             req1.setFilingUSDot1(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getusdot1());
                             req1.setFilingUSDot2(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getusdot2());
                             req1.setFilingUSDot3(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getusdot3());
-
+                            
                             req1.setDilingDocket1(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getdocket1());
                             req1.setDilingDocket2(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getdocket2());
                             req1.setDilingDocket3(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getdocket3());
-
+                            
                             req1.setFilingType1(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeoffiling1());
                             req1.setFilingType2(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeoffiling2());
                             req1.setFilingType3(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeoffiling3());
-
+                            
                             req1.setFilingName1(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getnamerequired1());
                             req1.setFilingName2(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getnamerequired2());
                             req1.setFilingName3(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getnamerequired3());
@@ -3077,19 +3247,19 @@ public class NextScreenController implements Initializable, IScreenController {
                             //req1.setVehicleNonOwned(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getnonownedliability());
                             //req1.setContract((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getnonownedcontract);
                             req1.setTypeOfNonOwned(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeofnonowned());
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getanytime())) {
                                 req1.setAvgNoOfVehicles(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getanytime()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getavgvalue())) {
                                 req1.setAvgValue(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getavgvalue()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getmaxannually())) {
                                 req1.setMaxVehicleValue(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getmaxannually()));
                             }
-
+                            
                             if (!CommonValidations.isStringEmpty(binding4.getmostexpensive())) {
                                 req1.setMaxCostValue(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getmostexpensive()));
                             }
@@ -3099,7 +3269,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setContract(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getnonownedcontract());
                             req1.setLoggedInUserEmailAddress(getReceivedemailaddress());
                             System.out.println(getReceivedemailaddress());
-
+                            
                             int i = 0;
                             if (fileList != null) {
                                 for (File file : fileList) {
@@ -3161,7 +3331,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             try {
                                 b = new BufferedWriter(new FileWriter(new File("pdf.html")));
                                 b.append(message);
-
+                                
                             } catch (Exception e) {
                                 e.printStackTrace();
                             } finally {
@@ -3169,36 +3339,36 @@ public class NextScreenController implements Initializable, IScreenController {
                                     b.close();
                                 }
                             }
-
+                            
                             HTMLToPDF.convertHtmlToPdf(new File("pdf.html").getAbsolutePath());
                             System.out.println("12345");
                             InsuranceFormSubmitResponse response = port.getInsuranceOperationsPort().formSubmission(req1);
                             if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
                                 successMessage("Form has been submitted. Your Form id is:" + response.getFormId());
-
+                                
                             } else {
                                 errors(response.getErrorMessage());
                             }
                         }
                     } catch (Exception ex) {
-
+                        
                         ex.printStackTrace();
                     }
                     return null;
                 }
-
+                
             };
-
+            
             new Thread(task).start();
-
+            
         }
-
+        
     }
-
+    
     public void successMessage(final String message) {
         Platform.runLater(new Runnable() {
             public void run() {
-
+                
                 Dialogs.showInformationDialog(null, message, "Success", "Success");
                 animatedMovement(0, 0);
                 openingPane.setVisible(true);
@@ -3206,16 +3376,16 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         });
     }
-
+    
     public void errors(final String message) {
         Platform.runLater(new Runnable() {
             public void run() {
-
+                
                 Dialogs.showErrorDialog(null, message, "Oops!!", "Error");
             }
         });
     }
-
+    
     public void animatedMovement(int x, int y) {
         TranslateTransition animatedMove = TranslateTransitionBuilder.
                 create().
@@ -3226,7 +3396,7 @@ public class NextScreenController implements Initializable, IScreenController {
                 build();
         animatedMove.play();
     }
-
+    
     @FXML
     public void uploadfiles() {
         System.out.println("Inside");
@@ -3245,8 +3415,8 @@ public class NextScreenController implements Initializable, IScreenController {
             }
             this.fileList = list;
             uploadlabel.setText(files.substring(0, files.length() - 1));
-
+            
         }
-
+        
     }
 }
