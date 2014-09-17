@@ -243,6 +243,15 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     @FXML
     private TextField closequote;
     
+    @FXML
+    private TextField email1;
+    @FXML
+    private TextField email2;
+    @FXML
+    private TextField email3;
+    @FXML
+    private TextField email4;
+    
 
     private SearchArchivebinding binding;
     private FormEntry4Binding binding1;
@@ -359,6 +368,10 @@ public class EnterCodeUIController implements Initializable, IScreenController {
          Bindings.bindBidirectional(logsdate.textProperty(), binding1.logsDateProperty());
          Bindings.bindBidirectional(closecompany.textProperty(), binding1.closeCompanyProperty());
          Bindings.bindBidirectional(closequote.textProperty(), binding1.closeQuoteProperty());
+         Bindings.bindBidirectional(email1.textProperty(), binding1.email1Property());
+         Bindings.bindBidirectional(email2.textProperty(), binding1.email2Property());
+         Bindings.bindBidirectional(email3.textProperty(), binding1.email3Property());
+         Bindings.bindBidirectional(email4.textProperty(), binding1.email4Property());
          welcomeName.setText(receivedname);
    
          
@@ -421,6 +434,8 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     GetInsuranceFormListRequest req = new GetInsuranceFormListRequest();
                     
                     req.setMarketerId(marketerId);
+                    String s="NEW,ASSIGN";
+                    req.setStatus(s);
                     
                     //req.setFormId(Integer.parseInt(binding.getsearchapplicationid()));
                     GetInsuranceFormListResponse response = port.getInsuranceOperationsPort().getFormList(req);
@@ -428,6 +443,52 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
                         abstractFormInfoList = response.getFormList();
                         successSearch();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                //   successMessage("You are successfully logged in");
+                return null;
+            }
+
+        };
+        new Thread(task).start();
+    
+        
+        /*  int j = 0;
+         for (int i = 0; i < str.size(); i++) {
+         System.out.println(str.size());
+
+         // gridpane.getChildren().add(new dynamicloading());
+         dynamicloading dl = new dynamicloading();
+         dl.getController().setProducer(str.get(i));
+         if (i % 4 == 0 && i > 0) {
+         j++;
+         }
+         gridpane.add(dl, i % 4, j);
+         }
+         animatedMovement(-1269, 0);*/
+    }
+    
+    public void submitWorklist(final String producerid) throws Exception {
+       System.out.println("Inside worklist1");
+        Task task = new Task<Void>() {
+            @Override
+            public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception, Exception {
+                try {
+                    InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
+                    GetInsuranceFormListRequest req = new GetInsuranceFormListRequest();
+                    String s="NEW,ASSIGN";
+                    req.setProducerId(producerid);
+                    req.setStatus(s);
+                    
+                    //req.setFormId(Integer.parseInt(binding.getsearchapplicationid()));
+                    GetInsuranceFormListResponse response = port.getInsuranceOperationsPort().getFormList(req);
+
+                    if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
+                        abstractFormInfoList = response.getFormList();
+                        System.out.println("Inside2");
+                        successSearch1();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -507,8 +568,19 @@ public class EnterCodeUIController implements Initializable, IScreenController {
        if(binding1.getmail1()!=null && !binding1.getmail1().trim().equals("")){
            mail+=binding1.getmail1()+",";
        }
+       if(binding1.getemail1()!=null && !binding1.getmail1().trim().equals("")){
+           mail+=binding1.getemail1()+",";
+       }
+       if(binding1.getemail2()!=null && !binding1.getemail2().trim().equals("")){
+           mail+=binding1.getemail2()+",";
+       }
+       if(binding1.getemail3()!=null && !binding1.getemail3().trim().equals("")){
+           mail+=binding1.getemail3()+",";
+       }
+       if(binding1.getemail4()!=null && !binding1.getemail4().trim().equals("")){
+           mail+=binding1.getemail4()+",";
+       }
        req1.setRecpients(mail.substring(0, mail.length()));
-       req1.setRecpients(formId);
     }
     
     @FXML
@@ -855,6 +927,20 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     public void clickCloseApplication() {
         closeapplicationpane.setVisible(true);
     }
+     @FXML
+    public void searcharchiveback2() {
+        searcharchive2.setVisible(false);
+    }
+     @FXML
+    public void searcharchiveback1() {
+         animatedMovement(0, 0);
+    }
+    
+    @FXML
+    public void backSaveQuote() {
+         closeapplicationpane.setVisible(false);
+         sendmailPane.setVisible(false);
+    }
 
     @FXML
     public void submitCloseApplication() {
@@ -897,6 +983,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     req.setProducerId(binding.getsearchproducerid());
                     req.setMarketerId(binding.getsearchmarketerid());
                     req.setBusinessName(binding.getsearchbusinessname());
+                    req.setFormId(Integer.parseInt(binding.getsearchapplicationid()));
                     //req.setFormId(Integer.parseInt(binding.getsearchapplicationid()));
                     GetInsuranceFormListResponse response = port.getInsuranceOperationsPort().getFormList(req);
 
@@ -944,6 +1031,23 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
+                
+                animatedMovement(-1269, 0);
+            }
+        });
+    }
+     public void successSearch1() {
+        Platform.runLater(new Runnable() {
+
+            public void run() {
+                offset = 0;
+                try {
+                    showAbstractInfo();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+                System.out.println("Inside3");
+                screenPage.setScreen("OtherScreen");
                 animatedMovement(-1269, 0);
             }
         });
@@ -951,9 +1055,10 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     @FXML
     public void searchAgain() {
-        NextScreenController controller = (NextScreenController) screenPage.getControlledScreen("NextScreen");
-        
-        controller.viewApplication(form,form.getFormId());
+        animatedMovement(0, -715);
+        searcharchive2.setVisible(false);
+        //NextScreenController controller = (NextScreenController) screenPage.getControlledScreen("NextScreen");
+        //controller.viewApplication(form,form.getFormId());
     }
 
     public void animatedMovement(int x, int y) {

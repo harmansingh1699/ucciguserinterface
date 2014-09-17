@@ -65,7 +65,7 @@
           <children>
             <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
               <children>
-                <Button fx:id="worklist" defaultButton="true" mnemonicParsing="false" prefHeight="50.0" prefWidth="283.0" text="Worklist">
+                <Button fx:id="worklist" defaultButton="true" mnemonicParsing="false" onAction="#submitWorkList" prefHeight="50.0" prefWidth="283.0" text="Worklist">
                   <font>
                     <Font name="Times New Roman Bold" size="16.0" fx:id="x1" />
                   </font>
@@ -227,7 +227,7 @@
           </font>
         </RadioButton>
         <RadioButton fx:id="nonprofit" font="$x5" layoutX="924.0" layoutY="410.0" mnemonicParsing="false" text="Non Profit" />
-        <ChoiceBox fx:id="entitytype" layoutX="199.0" layoutY="406.0" prefHeight="26.0" prefWidth="128.0">
+        <ChoiceBox value="Select" fx:id="entitytype" layoutX="199.0" layoutY="406.0" prefHeight="26.0" prefWidth="128.0">
           <items>
             <FXCollections fx:factory="observableArrayList">
                  <String fx:value="Select" />
@@ -297,10 +297,11 @@
         <Label font="$x4" layoutX="674.0" layoutY="492.0" text="Largest Suppliers:" />
         <Button defaultButton="true" layoutX="567.0" layoutY="638.0" minHeight="18.0" mnemonicParsing="false" onAction="#submitSave" prefHeight="26.0" prefWidth="126.0" text="Save" />
         <Button defaultButton="true" layoutX="1011.0" layoutY="638.0" mnemonicParsing="false" onAction="#continue2" prefHeight="25.9998779296875" prefWidth="126.0" text="Continue" />
-        <ChoiceBox id="FYE" fx:id="finYearEnd" layoutX="218.0" layoutY="109.0" prefWidth="94.0">
+        <ChoiceBox value="Select" id="FYE" fx:id="finYearEnd" layoutX="218.0" layoutY="109.0" prefWidth="94.0">
           <items>
             <FXCollections fx:factory="observableArrayList">
-              <String fx:value="January" />
+              <String fx:value="Select" />
+                <String fx:value="January" />
               <String fx:value="February" />
               <String fx:value="March" />
               <String fx:value="April" />
@@ -319,7 +320,7 @@
         <TextField fx:id="payroll" layoutX="630.0" layoutY="107.0" prefHeight="26.0" prefWidth="87.0" />
         <TextField fx:id="descriptionOfOpAndRev1" layoutX="63.0" layoutY="182.0" prefHeight="26.0" prefWidth="299.0" promptText="Description" />
         <TextField fx:id="amount1" layoutX="406.0" layoutY="182.0" prefHeight="26.0" prefWidth="94.0" promptText="Revenue" />
-        <ChoiceBox fx:id="currency1" layoutX="522.0" layoutY="182.0" prefHeight="26.0" prefWidth="83.0">
+        <ChoiceBox value="CAN$" fx:id="currency1" layoutX="522.0" layoutY="182.0" prefHeight="26.0" prefWidth="83.0">
           <items>
             <FXCollections fx:factory="observableArrayList">
               <String fx:value="CAN$" />
@@ -359,7 +360,7 @@
         </Label>
         <Label font="$x8" layoutX="449.0" layoutY="261.0" prefWidth="51.0" text="US$" />
         <Button defaultButton="true" layoutX="63.0" layoutY="638.0" mnemonicParsing="false" onAction="#clientprofile2previous" prefHeight="26.0" prefWidth="126.0" text="Previous Page" />
-        <ChoiceBox fx:id="groupbenefits" layoutX="871.0" layoutY="107.0" prefHeight="26.0" prefWidth="90.0">
+        <ChoiceBox value="Select" fx:id="groupbenefits" layoutX="871.0" layoutY="107.0" prefHeight="26.0" prefWidth="90.0">
           <items>
             <FXCollections fx:factory="observableArrayList">
               <String fx:value="Select" />
@@ -368,7 +369,7 @@
             </FXCollections>
           </items>
         </ChoiceBox>
-        <ChoiceBox fx:id="pensionplan" layoutX="1094.0" layoutY="107.0" prefHeight="26.0" prefWidth="83.0">
+        <ChoiceBox value="Select" fx:id="pensionplan" layoutX="1094.0" layoutY="107.0" prefHeight="26.0" prefWidth="83.0">
           <items>
             <FXCollections fx:factory="observableArrayList">
               <String fx:value="Select" />
@@ -384,7 +385,7 @@
         </Separator>
         <TextField fx:id="descriptionOfOpAndRev3" layoutX="63.0" layoutY="215.0" prefHeight="26.0" prefWidth="299.0" promptText="Description" />
         <TextField fx:id="amount3" layoutX="406.0" layoutY="213.0" prefHeight="26.0" prefWidth="92.0" promptText="Revenue" />
-        <ChoiceBox fx:id="currency3" layoutX="522.0" layoutY="213.0" prefHeight="26.0" prefWidth="83.0">
+        <ChoiceBox value="CAN$" fx:id="currency3" layoutX="522.0" layoutY="213.0" prefHeight="26.0" prefWidth="83.0">
           <items>
             <FXCollections fx:factory="observableArrayList">
                <String fx:value="CAN$" />
@@ -395,7 +396,7 @@
         </ChoiceBox>
         <TextField fx:id="descriptionOfOpAndRev2" layoutX="684.0" layoutY="182.0" prefHeight="26.0" prefWidth="266.0" promptText="Description" />
         <TextField fx:id="amount2" layoutX="989.0" layoutY="182.0" prefHeight="26.0" prefWidth="92.0" promptText="Revenue" />
-        <ChoiceBox fx:id="currency2" layoutX="1099.0" layoutY="182.0" prefHeight="26.0" prefWidth="83.0">
+        <ChoiceBox value="CAN$" fx:id="currency2" layoutX="1099.0" layoutY="182.0" prefHeight="26.0" prefWidth="83.0">
           <items>
             <FXCollections fx:factory="observableArrayList">
               <String fx:value="CAN$" />
@@ -406,7 +407,7 @@
         </ChoiceBox>
         <TextField fx:id="descriptionOfOpAndRev4" layoutX="684.0" layoutY="215.0" prefHeight="26.0" prefWidth="266.0" promptText="Description" />
         <TextField fx:id="amount4" layoutX="989.0" layoutY="215.0" prefHeight="26.0" prefWidth="92.0" promptText="Revenue" />
-        <ChoiceBox fx:id="currency4" layoutX="1099.0" layoutY="213.0" prefHeight="26.0" prefWidth="83.0">
+        <ChoiceBox value="CAN$" fx:id="currency4" layoutX="1099.0" layoutY="213.0" prefHeight="26.0" prefWidth="83.0">
           <items>
             <FXCollections fx:factory="observableArrayList">
               <String fx:value="CAN$" />
@@ -1635,10 +1636,11 @@
           <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <ChoiceBox fx:id="basement" prefWidth="81.0">
+                <ChoiceBox value="Select" fx:id="basement" prefWidth="81.0">
                   <items>
                     <FXCollections fx:factory="observableArrayList">
-                      <String fx:value="Yes" />
+                      <String fx:value="Select" />
+                        <String fx:value="Yes" />
                       <String fx:value="No" />
                     </FXCollections>
                   </items>

@@ -94,6 +94,13 @@ public class NextScreenController implements Initializable, IScreenController {
     @FXML
     private GridPane gridpane6;
     
+    private XMLGregorianCalendar date11;
+    private XMLGregorianCalendar date12;
+    private XMLGregorianCalendar date13;
+    private XMLGregorianCalendar date14;
+    private XMLGregorianCalendar date15;
+    private XMLGregorianCalendar date16;
+    private XMLGregorianCalendar date17;
     
     @FXML
     private Button upload;
@@ -632,6 +639,15 @@ public class NextScreenController implements Initializable, IScreenController {
     private Date date;
     private String producerid;
     private String formId;
+    private String produceridfromform;
+
+    public String getProduceridfromform() {
+        return produceridfromform;
+    }
+
+    public void setProduceridfromform(String produceridfromform) {
+        this.produceridfromform = produceridfromform;
+    }
     
     public String getFormId() {
         return formId;
@@ -1573,6 +1589,18 @@ public class NextScreenController implements Initializable, IScreenController {
     }
     
     @FXML
+    public void submitWorkList() throws Exception {
+        System.out.println("Inside worklist");
+        System.out.println(producerid);
+        ((EnterCodeUIController)screenPage.getControlledScreen("OtherScreen")).submitWorklist(producerid);
+    }
+    
+    @FXML
+    public void searchArchive() throws Exception {
+        ((EnterCodeUIController)screenPage.getControlledScreen("OtherScreen")).searchArchive();
+    }
+    
+    @FXML
     public void submitNewBusiness() {
         
         openingPane.setVisible(false);
@@ -1633,7 +1661,12 @@ public class NextScreenController implements Initializable, IScreenController {
             System.out.println("4");
             InvokeAnimation.attentionSeekerWobble(mailingaddress);
             mailingaddress.setPromptText("Please enter Mailing address");
-        } else {
+        }else if (CommonValidations.isStringEmpty(binding.getSeverity())) {
+            System.out.println("Severity");
+            successMessage1("Select Severity level");
+            
+        }
+        else {
             animatedMovement(-2538, 0);
         }
     }
@@ -1780,9 +1813,10 @@ public class NextScreenController implements Initializable, IScreenController {
                 } else {
                     System.out.println("keycontact is null");
                 }
-               /* if (form.getSeverity().equals("High")) {
+                if (form.getSeverity().equals("High")) {
                     severity.getSelectionModel().select("High");
-                } else if (form.getSeverity().equals("Medium")) {
+                } 
+                else if (form.getSeverity().equals("Medium")) {
                     severity.getSelectionModel().select("Medium");
                 } else {
                     severity.getSelectionModel().select("Low");
@@ -1803,7 +1837,10 @@ public class NextScreenController implements Initializable, IScreenController {
                     finYearEnd.getSelectionModel().select("January");
                 } else if ("February".equals(form.getFinancialYearEnd())) 
                {    finYearEnd.getSelectionModel().select("February");
-                } else if ("March".equals(form.getFinancialYearEnd())) {
+                } else if ("Select".equals(form.getFinancialYearEnd())) 
+               {    finYearEnd.getSelectionModel().select("Select");
+                }
+                else if ("March".equals(form.getFinancialYearEnd())) {
                     finYearEnd.getSelectionModel().select("March");
                 } else if ("April".equals(form.getFinancialYearEnd())) {
                     finYearEnd.getSelectionModel().select("April");
@@ -1873,22 +1910,168 @@ public class NextScreenController implements Initializable, IScreenController {
                     basement.getSelectionModel().select("No");
                 }
                 
-                if (form.getEcommerce().equals("selected")) {
+                if ("selected".equals(form.getEcommerce())) {
                     ecommerce.setSelected(true);
                 }
                 
-                if (form.getProfessionalLiability().equals("selected")) {
+                if ("selected".equals(form.getProfessionalLiability())) {
                     profliability.setSelected(true);
                 }
+                if ("selected".equals(form.getCyberLiability())) {
+                    cyberliability.setSelected(true);
+                }
+                if ("selected".equals(form.getPollutionexposure())) {
+                    pollexposure.setSelected(true);
+                }
+                if ("selected".equals(form.getAccidentalBenefits())) {
+                    accbenefits.setSelected(true);
+                }
+                if ("selected".equals(form.getMalpracticeExposure())) {
+                    malexposure.setSelected(true);
+                }
+                if ("selected".equals(form.getAbuseExposure())) {
+                    abuseexposure.setSelected(true);
+                }
+                if ("selected".equals(form.getBondingOpportunities())) {
+                    bondopportunity.setSelected(true);
+                }
+                if ("selected".equals(form.getBusinessInterruptionSheet())) {
+                    biw.setSelected(true);
+                }
+                if ("selected".equals(form.getTruckMan())) {
+                    mtctruckman.setSelected(true);
+                }
+                if ("selected".equals(form.getOwner())) {
+                    mtcowner.setSelected(true);
+                }
+                if ("selected80".equals(form.getGrossEarningCheckbox())) {
+                    ge80.setSelected(true);
+                }
+                if ("selected50".equals(form.getGrossEarningCheckbox())) {
+                    ge50.setSelected(true);
+                }
                 
-                if (form.getProfit().equals("Profit")) {
+                
+                if ("selected".equals(form.getWallsframe())) {
+                    wallsframe.setSelected(true);
+                }
+                if ("selected".equals(form.getWallshcb())) {
+                    wallshcb.setSelected(true);
+                }
+                if ("selected".equals(form.getWallssteel())) {
+                    wallssteel.setSelected(true);
+                }
+                if ("selected".equals(form.getWallsbrick())) {
+                    wallsbrick.setSelected(true);
+                }
+                
+                if ("selected".equals(form.getRoofwood())) {
+                    woodjoist.setSelected(true);
+                }
+                if ("selected".equals(form.getRoofsteel())) {
+                    steeldeck.setSelected(true);
+                }
+                if ("selected".equals(form.getRoofconcrete())) {
+                    roofconcrete.setSelected(true);
+                }
+                if ("selected".equals(form.getFloorsconcrete())) {
+                    floorsconcrete.setSelected(true);
+                }
+                if ("selected".equals(form.getFloorswood())) {
+                    floorswood.setSelected(true);
+                }
+                if ("selected".equals(form.getHeatinggas())) {
+                    fagas.setSelected(true);
+                }
+                if ("selected".equals(form.getHeatingoil())) {
+                    faoil.setSelected(true);
+                }
+                if ("selected".equals(form.getHeatingelectric())) {
+                    heatingelectric.setSelected(true);
+                }
+                if ("selected".equals(form.getHeatingother())) {
+                    heatingother.setSelected(true);
+                }
+                if ("selected".equals(form.getElectricalbreakers())) {
+                    electricalbreakers.setSelected(true);
+                }
+                if ("selected".equals(form.getElectricalfuses())) {
+                    electricalfuses.setSelected(true);
+                }
+                if ("selected".equals(form.getElectricalamps())) {
+                    noofamps.setSelected(true);
+                }
+                if ("selected".equals(form.getPlumbingcopper())) {
+                    copper.setSelected(true);
+                }
+                if ("selected".equals(form.getPlumbingpvc())) {
+                    pvc.setSelected(true);
+                }
+                if ("selected".equals(form.getPlumbingother())) {
+                    plumbingother.setSelected(true);
+                }
+                if ("Sprinklers".equals(form.getFireProtection())) {
+                    sprinklers.setSelected(true);
+                }
+                if ("SVC".equals(form.getFireProtection())) {
+                    svccontract.setSelected(true);
+                }
+                if ("Hydrant".equals(form.getFireProtection())) {
+                    hydrant.setSelected(true);
+                }
+                if ("Firehall".equals(form.getFireProtection())) {
+                    firehall.setSelected(true);
+                }
+                if ("Unprotected".equals(form.getFireProtection())) {
+                    unprotected.setSelected(true);
+                }
+                if ("Alarm System".equals(form.getSecurity())) {
+                    alarmsystem.setSelected(true);
+                }
+                if ("Central Monitored".equals(form.getSecurity())) {
+                    centralmonitored.setSelected(true);
+                }
+                if ("Window Bars".equals(form.getSecurity())) {
+                    windowbars.setSelected(true);
+                }
+                if ("Dead Bolts".equals(form.getSecurity())) {
+                    deadbolts.setSelected(true);
+                }
+                if("Select".equals(form.getBasement()))
+                {
+                    basement.getSelectionModel().select("Select");}
+                else if("Yes".equals(form.getBasement()))
+                {basement.getSelectionModel().select("Yes");}
+                else if("No".equals(form.getBasement()))
+                {basement.getSelectionModel().select("No");}
+                
+                if ("Profit".equals(form.getProfit())) {
                     profit.setSelected(true);
-                } else if (form.getProfit().equals("Non Profit")) {
+                } else if ("Non Profit".equals(form.getProfit())) {
                     nonprofit.setSelected(true);
                 }
-
+                if ("Yes".equals(form.getAddressOfLocationOwnedyes1())){
+                    aolownedy1.setSelected(true);
+                }else if ("NO".equals(form.getAddressOfLocationOwnedyes1()))
+                {aolownedn1.setSelected(true);
+                }
+                if ("Yes".equals(form.getAddressOfLocationOwnedyes2())){
+                    aolownedy2.setSelected(true);
+                }else if ("NO".equals(form.getAddressOfLocationOwnedyes2()))
+                {aolownedn2.setSelected(true);
+                }
+                if ("Yes".equals(form.getAddressOfLocationOwnedyes3())){
+                    aolownedy3.setSelected(true);
+                }else if ("NO".equals(form.getAddressOfLocationOwnedyes3()))
+                {aolownedn3.setSelected(true);
+                }
+                if ("Yes".equals(form.getAddressOfLocationOwnedno1())){
+                    aolownedy4.setSelected(true);
+                }else if ("NO".equals(form.getAddressOfLocationOwnedno1()))
+                {aolownedn4.setSelected(true);
+                }
                 
-        
+                  /*
                  req1.setEcommerce(binding2.geteCommerce());
                  req1.setProfessionalLiability(binding2.getprofLiability());
                  req1.setCyberLiability(binding2.getcyberLiability());
@@ -1927,7 +2110,9 @@ public class NextScreenController implements Initializable, IScreenController {
                  req1.setPlumbingother(binding4.getplumbingother());
                  req1.setFireProtection(binding4.getFireProtection());
                  req1.setSecurity(binding4.getSecurity());
-                 */
+                */
+                produceridfromform=form.getProducer();
+                System.out.println("producer id from form"+produceridfromform);
                 keycontact.setText(form.getKeyContact());
                 keyphone.setText(form.getKeyContactPhone());
                 keyemail.setText(form.getKeyContactEmailAddress());
@@ -2121,13 +2306,6 @@ public class NextScreenController implements Initializable, IScreenController {
     
     @FXML
     public void submitFormAction() {
-        
-        if (CommonValidations.isStringEmpty(binding.getMailingAddress())) {
-            System.out.println("4");
-            InvokeAnimation.attentionSeekerWobble(mailingaddress);
-            mailingaddress.setPromptText("Please enter Mailing address");
-        } else {
-            
             System.out.println("5");
             Task task;
             task = new Task<Void>() {
@@ -2141,7 +2319,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
                             EditFormSubmissionRequest req1 = new EditFormSubmissionRequest();
                             
-                            req1.setProducer(producerid);
+                            req1.setProducer(produceridfromform);
                             if (insurancetypeflag == 1) {
                                 req1.setType("Commercial");
                             } else if (insurancetypeflag == 2) {
@@ -2226,7 +2404,7 @@ public class NextScreenController implements Initializable, IScreenController {
                                 req1.setNoOfStaff(Integer.parseInt(binding2.getNoofStaff()));
                             }
                             if (!CommonValidations.isStringEmpty(binding2.getpayroll())) {
-                                req1.setPayRoll(Integer.parseInt(binding2.getpayroll()));
+                                req1.setPayRoll(Double.parseDouble(binding2.getpayroll()));
                             }
                             if (!CommonValidations.isStringEmpty(binding2.getamount1())) {
                                 req1.setAmount1(Double.parseDouble(binding2.getamount1()));
@@ -2683,12 +2861,12 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setLienHoldersVehicle3(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautovehicle3());
                             
                             
-                            //req1.setClaimDate1(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodateofclaim1());
-                            //req1.setClaimDate2(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodateofclaim2());
-                            //req1.setClaimDate3(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodateofclaim3());
-                            //req1.setClaimDate4(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodateofclaim4());
-                            //req1.setClaimDate5(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodateofclaim5());
-                            //req1.setClaimDate6(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodateofclaim6());
+                            req1.setClaimDate1((getDate12()));
+                            req1.setClaimDate2((getDate13()));
+                            req1.setClaimDate3((getDate14()));
+                            req1.setClaimDate4((getDate15()));
+                            req1.setClaimDate5((getDate16()));
+                            req1.setClaimDate6((getDate17()));
                             req1.setClaimDesc1(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautodescriptionofclaim1());
                             req1.setClaimDesc2(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautodescriptionofclaim2());
                             req1.setClaimDesc3(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautodescriptionofclaim3());
@@ -2906,7 +3084,7 @@ public class NextScreenController implements Initializable, IScreenController {
                                 req1.setNoOfStaff(Integer.parseInt(binding2.getNoofStaff()));
                             }
                             if (!CommonValidations.isStringEmpty(binding2.getpayroll())) {
-                                req1.setPayRoll(Integer.parseInt(binding2.getpayroll()));
+                                req1.setPayRoll(Double.parseDouble(binding2.getpayroll()));
                             }
                             if (!CommonValidations.isStringEmpty(binding2.getamount1())) {
                                 req1.setAmount1(Double.parseDouble(binding2.getamount1()));
@@ -3314,7 +3492,7 @@ public class NextScreenController implements Initializable, IScreenController {
                                 req1.setNoOfStories(Integer.parseInt(binding4.getnoofstories()));
                             }
                             req1.setCurrentInsurer(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentinsurer());
-                            //req1.setCurrentExpDate(date1);
+                            req1.setCurrentExpDate((getDate11()));
                             //req1.setCurrentExpDate(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentexpirydate()); 
                             if (!CommonValidations.isStringEmpty(binding4.getautopremiumtarget())) {
                                 req1.setPremiumTarget(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautopremiumtarget()));
@@ -3325,12 +3503,12 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setLienHoldersVehicle1(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautovehicle1());
                             req1.setLienHoldersVehicle2(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautovehicle2());
                             req1.setLienHoldersVehicle3(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautovehicle3());
-                            //req1.setClaimDate1(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodateofclaim1());
-                            //req1.setClaimDate2(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodateofclaim2());
-                            //req1.setClaimDate3(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodateofclaim3());
-                            //req1.setClaimDate4(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodateofclaim4());
-                            //req1.setClaimDate5(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodateofclaim5());
-                            //req1.setClaimDate6(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautodateofclaim6());
+                            req1.setClaimDate1((getDate12()));
+                            req1.setClaimDate2((getDate13()));
+                            req1.setClaimDate3((getDate14()));
+                            req1.setClaimDate4((getDate15()));
+                            req1.setClaimDate5((getDate16()));
+                            req1.setClaimDate6((getDate17()));
                             req1.setClaimDesc1(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautodescriptionofclaim1());
                             req1.setClaimDesc2(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautodescriptionofclaim2());
                             req1.setClaimDesc3(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautodescriptionofclaim3());
@@ -3475,18 +3653,24 @@ public class NextScreenController implements Initializable, IScreenController {
             
             new Thread(task).start();
             
-        }
+        
         
     }
     
     public void successMessage(final String message) {
         Platform.runLater(new Runnable() {
             public void run() {
-                
                 Dialogs.showInformationDialog(null, message, "Success", "Success");
                 animatedMovement(0, 0);
                 openingPane.setVisible(true);
                 newBusinessPane.setVisible(false);
+            }
+        });
+    }
+        public void successMessage1(final String message) {
+        Platform.runLater(new Runnable() {
+            public void run() {
+                Dialogs.showInformationDialog(null, message, "Success", "Success");
             }
         });
     }
@@ -3533,4 +3717,62 @@ public class NextScreenController implements Initializable, IScreenController {
         }
         
     }
+
+    public XMLGregorianCalendar getDate12() {
+        return date12;
+    }
+
+    public void setDate12(XMLGregorianCalendar date12) {
+        this.date12 = date12;
+    }
+
+    public XMLGregorianCalendar getDate13() {
+        return date13;
+    }
+
+    public void setDate13(XMLGregorianCalendar date13) {
+        this.date13 = date13;
+    }
+
+    public XMLGregorianCalendar getDate14() {
+        return date14;
+    }
+
+    public void setDate14(XMLGregorianCalendar date14) {
+        this.date14 = date14;
+    }
+
+    public XMLGregorianCalendar getDate15() {
+        return date15;
+    }
+
+    public void setDate15(XMLGregorianCalendar date15) {
+        this.date15 = date15;
+    }
+
+    public XMLGregorianCalendar getDate16() {
+        return date16;
+    }
+
+    public void setDate16(XMLGregorianCalendar date16) {
+        this.date16 = date16;
+    }
+
+    public XMLGregorianCalendar getDate17() {
+        return date17;
+    }
+
+    public void setDate17(XMLGregorianCalendar date17) {
+        this.date17 = date17;
+    }
+
+    public XMLGregorianCalendar getDate11() {
+        return date11;
+    }
+
+    public void setDate11(XMLGregorianCalendar date11) {
+        this.date11 = date11;
+    }
+    
+    
 }

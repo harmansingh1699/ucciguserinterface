@@ -516,6 +516,54 @@ public class FormEntry4Binding {
         return this.hauling;
     }
     
+    public String getemail1() {
+        return (String) this.email1.get();
+    }
+
+    public void setemail1(String email1) {
+        this.email1.set(email1);
+    }
+
+    public StringProperty email1Property() {
+        return this.email1;
+    }
+    
+    public String getemail2() {
+        return (String) this.email2.get();
+    }
+
+    public void setemail2(String email2) {
+        this.email2.set(email2);
+    }
+
+    public StringProperty email2Property() {
+        return this.email2;
+    }
+    
+    public String getemail3() {
+        return (String) this.email3.get();
+    }
+
+    public void setemail3(String email3) {
+        this.email3.set(email3);
+    }
+
+    public StringProperty email3Property() {
+        return this.email3;
+    }
+    
+    public String getemail4() {
+        return (String) this.email4.get();
+    }
+
+    public void setemail4(String email4) {
+        this.email4.set(email4);
+    }
+
+    public StringProperty email4Property() {
+        return this.email4;
+    }
+    
     public String getmail1() {
         return (String) this.mail1.get();
     }

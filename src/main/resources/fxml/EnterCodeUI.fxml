@@ -206,6 +206,7 @@
               </font>
             </Label>
             <Label font="$x5" prefWidth="140.0" text="Search Archives" textFill="$x3" />
+                  <Button fx:id="searcharchiveback1" mnemonicParsing="false" prefHeight="26.0" prefWidth="0.0" text="&lt;" />
           </children>
         </HBox>
       </top>
@@ -309,6 +310,7 @@
           <children>
             <Label font="$x7" text="" textAlignment="LEFT" textFill="BLACK" underline="true" />
             <Label font="$x5" text="Search Archive(s)" textFill="$x3" />
+                  <Button mnemonicParsing="false" onAction="#searcharchiveback2" prefHeight="26.0" prefWidth="3.0" text="&lt;" />
           </children>
         </HBox>
       </top>
@@ -836,7 +838,7 @@
       </rowConstraints>
     </GridPane>
     <Button defaultButton="true" font="$x6" layoutX="2884.0" layoutY="610.0" mnemonicParsing="false" onAction="#submitSendEmail" prefHeight="50.0" prefWidth="183.0" text="Send Email" />
-    <Label font="$x8" layoutX="3097.0" layoutY="745.0" text="Send Delayed Mail to Underwriter" textFill="BLACK" />
+    <Label font="$x8" layoutX="3039.0" layoutY="743.0" text="Send Delayed Mail to Underwriter" textFill="BLACK" />
     <Label font="$x6" layoutX="2615.0" layoutY="811.0" text="Subject:" />
     <TextField layoutX="2695.0" layoutY="808.0" prefHeight="30.0" prefWidth="618.0" />
     <TextArea layoutX="2695.0" layoutY="867.0" prefHeight="355.0" prefWidth="618.0" wrapText="true" />
@@ -1920,5 +1922,12 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
       </GridPane>
+      <Button defaultButton="true" layoutX="1296.0" layoutY="1467.0" mnemonicParsing="false" onAction="#backSaveQuote" prefHeight="26.0" prefWidth="83.0" text="Back" />
+      <Label layoutX="3151.0" layoutY="1464.0" text="Conversations">
+         <font>
+            <Font name="Times Bold" size="26.0" />
+         </font>
+      </Label>
+      <Button defaultButton="true" layoutX="2605.0" layoutY="1467.0" mnemonicParsing="false" onAction="#backSaveQuote" prefHeight="26.0" prefWidth="77.0" text="Back" />
   </children>
 </AnchorPane>
