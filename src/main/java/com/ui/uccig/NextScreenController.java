@@ -28,6 +28,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.net.URL;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -1613,10 +1614,9 @@ public class NextScreenController implements Initializable, IScreenController {
         animatedMovement(-1269, 0);
         returnedname.setText(getReceivedname());
         returnedbranch.setText(getBranch());
-        //new SimpleDateFormat("dd/mm/yyyy").format(getDate());
-        Calendar c = Calendar.getInstance();
-        c.setTime(getDate());
-        returneddate.setText(new SimpleDateFormat("mm/dd/yyyy").format(c.getTime()));
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        Date date = new Date();
+        returneddate.setText(dateFormat.format(date));
     }
     
     @FXML
@@ -1625,7 +1625,9 @@ public class NextScreenController implements Initializable, IScreenController {
         animatedMovement(-1269, 0);
         returnedname.setText(getReceivedname());
         returnedbranch.setText(getBranch());
-        returneddate.setText(getDate().getDate() + "/" + getDate().getMonth() + "/" + getDate().getYear());
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        Date date = new Date();
+        returneddate.setText(dateFormat.format(date));
     }
     
     @FXML
@@ -1634,7 +1636,9 @@ public class NextScreenController implements Initializable, IScreenController {
         animatedMovement(-1269, 0);
         returnedname.setText(getReceivedname());
         returnedbranch.setText(getBranch());
-        returneddate.setText(getDate().getDate() + "/" + getDate().getMonth() + "/" + getDate().getYear());
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        Date date = new Date();
+        returneddate.setText(dateFormat.format(date));
     }
     
     @FXML
@@ -2972,7 +2976,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             }
                             System.out.println("123");
                             StringTemplateGroup emailTemplateGroup = new StringTemplateGroup(
-                                    "welcomeloginemail group", "/Users/harsimransingh/Desktop");
+                                    "welcomeloginemail group", new File("bin").getAbsolutePath());
                             StringTemplate submitFormMail = emailTemplateGroup
                                     .getInstanceOf("pdfTemplate");
                             submitFormMail.setAttribute("date", new SimpleDateFormat("yyyy/mm/dd").format(Calendar.getInstance().getTime()));

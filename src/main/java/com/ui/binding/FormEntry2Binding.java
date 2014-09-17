@@ -512,7 +512,7 @@ public class FormEntry2Binding {
     }
 
     public StringProperty largestSuppliers2Property() {
-        return this.largestSuppliers1;
+        return this.largestSuppliers2;
     }
     
      public String getlargestSuppliers3() {
