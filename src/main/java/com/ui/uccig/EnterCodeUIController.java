@@ -434,7 +434,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     GetInsuranceFormListRequest req = new GetInsuranceFormListRequest();
                     
                     req.setMarketerId(marketerId);
-                    String s="NEW,ASSIGN";
+                    String s="NEW,ASSIGNED";
                     req.setStatus(s);
                     
                     //req.setFormId(Integer.parseInt(binding.getsearchapplicationid()));
@@ -478,7 +478,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                 try {
                     InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
                     GetInsuranceFormListRequest req = new GetInsuranceFormListRequest();
-                    String s="NEW,ASSIGN";
+                    String s="NEW,ASSIGNED";
                     req.setProducerId(producerid);
                     req.setStatus(s);
                     
@@ -524,9 +524,9 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                 try {
                     InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
                     GetInsuranceFormListRequest req = new GetInsuranceFormListRequest();
-                    req.setProducerId(binding.getsearchproducerid());
+                    
                     req.setStatus("NEW");
-                    //req.setFormId(Integer.parseInt(binding.getsearchapplicationid()));
+                    
                     GetInsuranceFormListResponse response = port.getInsuranceOperationsPort().getFormList(req);
 
                     if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
@@ -590,6 +590,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     
     @FXML
     public void searchArchive() {
+        
         animatedMovement(0, -715);
         searcharchive.setVisible(true);
         searcharchive2.setVisible(false);
@@ -636,8 +637,13 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     request.setMarketerUserId(getMarketerId());
                     request.setFormId(title.getText());
                     CommonResponseAttributes response = port.getInsuranceOperationsPort().assignMarketer(request);
+                    System.out.println("Assign1");
+                    System.out.println("Response is"+response.getStatus());
                     if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
+                        System.out.println("Assign2");
+
                         successMessage("Assigned " + getFormId() + " to " + getMarketerId());
+                        System.out.println("Assign3");
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -676,7 +682,6 @@ public class EnterCodeUIController implements Initializable, IScreenController {
         Platform.runLater(new Runnable() {
             public void run() {
                 Dialogs.showInformationDialog(null, message, "Success", "Success");
-
             }
         });
     }
@@ -685,6 +690,11 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     public void closeProposal(){
         proposalbinder.setVisible(false);
     }
+    @FXML
+    public void sendmailPaneBack(){
+        sendmailPane.setVisible(false);
+    }
+    
     @FXML
     public void openProposal(){
         new Rav("/Users/harsimransingh/Desktop/RevisedProposal.docx").execute();
@@ -711,12 +721,10 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                 try {
                     InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
                     SearchMailRequest request = new SearchMailRequest();
-                    request.setFormId(getFormId());
-                    
-                    
-                    
+                    request.setFormId(getFormId());                    
                     SearchMailResponse2 response = port.getInsuranceOperationsPort().searchMail(request);
                     if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
+                        animatedMovement(-2538, -1430);
                         mailList = response.getMailList();
                         int i =0;
                         for(MailInfo a:mailList){
@@ -827,6 +835,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
             offset -= 1;
             gridpane.getChildren().removeAll(gridpane.getChildren());
             try {
+                gridpane.getChildren().removeAll(gridpane.getChildren());
                 showAbstractInfo();
             } catch (Exception ex) {
                 ex.printStackTrace();
@@ -839,6 +848,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
         offset += 1;
         gridpane.getChildren().removeAll(gridpane.getChildren());
         try {
+            gridpane.getChildren().removeAll(gridpane.getChildren());
             showAbstractInfo();
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -879,15 +889,17 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     @FXML
     public void goToSearchResults() {
-        animatedMovement(-1269, -715);
+        animatedMovement(-1269, 0);
     }
     @FXML
     public void backMail() {
         animatedMovement(-1269, -715);
+        sendmailPane.setVisible(false);
     }
     @FXML
     public void backDelayMail() {
         animatedMovement(-1269, -715);
+        sendmailPane.setVisible(false);
     }
 
     @FXML
@@ -920,7 +932,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     @FXML
     public void saveQuotes() {
-        animatedMovement(-1269, -715);
+        animatedMovement(-1269, -1430);
     }
     
     @FXML
@@ -930,6 +942,8 @@ public class EnterCodeUIController implements Initializable, IScreenController {
      @FXML
     public void searcharchiveback2() {
         searcharchive2.setVisible(false);
+        searcharchive.setVisible(true);
+        
     }
      @FXML
     public void searcharchiveback1() {
@@ -937,9 +951,15 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     }
     
     @FXML
+    public void opencloseApplication() {
+         closeapplicationpane.setVisible(true);
+    }
+    
+    @FXML
     public void backSaveQuote() {
          closeapplicationpane.setVisible(false);
          sendmailPane.setVisible(false);
+         animatedMovement(-1269, -715);
     }
 
     @FXML
@@ -957,7 +977,8 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     //req.setFormId(Integer.parseInt(binding.getsearchapplicationid()));
                     CommonResponseAttributes response = port.getInsuranceOperationsPort().closeForm(req);
                     if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
-                     successMessage("Status of the form has been updated as Closed");
+                        closeapplicationpane.setVisible(false);
+                        successMessage("Status of the form has been updated as Closed");
 
                   }
                 } catch (Exception e) {
@@ -983,7 +1004,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     req.setProducerId(binding.getsearchproducerid());
                     req.setMarketerId(binding.getsearchmarketerid());
                     req.setBusinessName(binding.getsearchbusinessname());
-                    req.setFormId(Integer.parseInt(binding.getsearchapplicationid()));
+                    
                     //req.setFormId(Integer.parseInt(binding.getsearchapplicationid()));
                     GetInsuranceFormListResponse response = port.getInsuranceOperationsPort().getFormList(req);
 
@@ -1027,6 +1048,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
             public void run() {
                 offset = 0;
                 try {
+                    gridpane.getChildren().removeAll(gridpane.getChildren());
                     showAbstractInfo();
                 } catch (Exception ex) {
                     ex.printStackTrace();
@@ -1042,6 +1064,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
             public void run() {
                 offset = 0;
                 try {
+                    gridpane.getChildren().removeAll(gridpane.getChildren());
                     showAbstractInfo();
                 } catch (Exception ex) {
                     ex.printStackTrace();
@@ -1057,6 +1080,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     public void searchAgain() {
         animatedMovement(0, -715);
         searcharchive2.setVisible(false);
+        searcharchive.setVisible(true);
         //NextScreenController controller = (NextScreenController) screenPage.getControlledScreen("NextScreen");
         //controller.viewApplication(form,form.getFormId());
     }

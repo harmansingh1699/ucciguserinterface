@@ -641,6 +641,15 @@ public class NextScreenController implements Initializable, IScreenController {
     private String producerid;
     private String formId;
     private String produceridfromform;
+    private String branchfromform;
+
+    public String getBranchfromform() {
+        return branchfromform;
+    }
+
+    public void setBranchfromform(String branchfromform) {
+        this.branchfromform = branchfromform;
+    }
 
     public String getProduceridfromform() {
         return produceridfromform;
@@ -1594,11 +1603,16 @@ public class NextScreenController implements Initializable, IScreenController {
         System.out.println("Inside worklist");
         System.out.println(producerid);
         ((EnterCodeUIController)screenPage.getControlledScreen("OtherScreen")).submitWorklist(producerid);
+        
     }
     
     @FXML
     public void searchArchive() throws Exception {
+        System.out.println("Inside SearchArchive");
         ((EnterCodeUIController)screenPage.getControlledScreen("OtherScreen")).searchArchive();
+        System.out.println("Inside SearchArchive1");
+        screenPage.setScreen("OtherScreen");
+        
     }
     
     @FXML
@@ -1665,7 +1679,7 @@ public class NextScreenController implements Initializable, IScreenController {
             System.out.println("4");
             InvokeAnimation.attentionSeekerWobble(mailingaddress);
             mailingaddress.setPromptText("Please enter Mailing address");
-        }else if (CommonValidations.isStringEmpty(binding.getSeverity())) {
+        }else if (CommonValidations.isStringEmpty(binding.getSeverity())||binding.getSeverity().equalsIgnoreCase("select")) {
             System.out.println("Severity");
             successMessage1("Select Severity level");
             
@@ -1817,26 +1831,26 @@ public class NextScreenController implements Initializable, IScreenController {
                 } else {
                     System.out.println("keycontact is null");
                 }
-                if (form.getSeverity().equals("High")) {
+                if ("High".equals(form.getSeverity())) {
                     severity.getSelectionModel().select("High");
                 } 
-                else if (form.getSeverity().equals("Medium")) {
+                else if ("Medium".equals(form.getSeverity())) {
                     severity.getSelectionModel().select("Medium");
-                } else {
+                } else if ("Low".equals(form.getSeverity())){
                     severity.getSelectionModel().select("Low");
                 }
                 
-                if (form.getEntityType().equals("Corporation")) {
+                if ("Corporation".equals(form.getEntityType())) {
                     entitytype.getSelectionModel().select("Corporation");
-                }else if (form.getEntityType().equals("Select")){
+                }else if ("Select".equals(form.getEntityType())){
                 entitytype.getSelectionModel().select("Select");
                 }
-                else if (form.getEntityType().equals("Sole Proprietor")) {
+                else if ("Sole Proprietor".equals(form.getEntityType())) {
                     entitytype.getSelectionModel().select("Sole Proprietor");
                 } else {
                     entitytype.getSelectionModel().select("Other");
                 }
-                System.out.println("Here");
+                
                 if ("January".equals(form.getFinancialYearEnd())) {
                     finYearEnd.getSelectionModel().select("January");
                 } else if ("February".equals(form.getFinancialYearEnd())) 
@@ -1852,17 +1866,17 @@ public class NextScreenController implements Initializable, IScreenController {
                     finYearEnd.getSelectionModel().select("May");
                 } else if ("June".equals(form.getFinancialYearEnd())) {
                     finYearEnd.getSelectionModel().select("June");
-                } else if (form.getFinancialYearEnd().equals("July")) {
+                } else if ("July".equals(form.getFinancialYearEnd())) {
                     finYearEnd.getSelectionModel().select("July");
-                } else if (form.getFinancialYearEnd().equals("August")) {
+                } else if ("August".equals(form.getFinancialYearEnd())) {
                     finYearEnd.getSelectionModel().select("August");
-                } else if (form.getFinancialYearEnd().equals("September")) {
+                } else if ("September".equals(form.getFinancialYearEnd())) {
                     finYearEnd.getSelectionModel().select("September");
-                } else if (form.getFinancialYearEnd().equals("October")) {
+                } else if ("October".equals(form.getFinancialYearEnd())) {
                     finYearEnd.getSelectionModel().select("October");
-                } else if (form.getFinancialYearEnd().equals("November")) {
+                } else if ("November".equals(form.getFinancialYearEnd())) {
                     finYearEnd.getSelectionModel().select("November");
-                } else if (form.getFinancialYearEnd().equals("December")) {
+                } else if ("December".equals(form.getFinancialYearEnd())) {
                     finYearEnd.getSelectionModel().select("December");
                 }
                 else{}
@@ -1883,37 +1897,28 @@ public class NextScreenController implements Initializable, IScreenController {
                 } else {
                     pensionplan.getSelectionModel().select("No");
                 }
-                
-                if (form.getCurrency1().equals("US$")) {
+                if ("US$".equals(form.getCurrency1())) {
                     currency1.getSelectionModel().select("US$");
-                } else if (form.getCurrency1().equals("CAN$")) {
+                } else if ("CAN$".equals(form.getCurrency1())) {
                     currency1.getSelectionModel().select("CAN$");
                 }
-                
-                if (form.getCurrency2().equals("US$")) {
+                if ("US$".equals(form.getCurrency2())){
                     currency2.getSelectionModel().select("US$");
-                } else if (form.getCurrency2().equals("CAN$")) {
+                } else if ("CAN$".equals(form.getCurrency2())) {
                     currency2.getSelectionModel().select("CAN$");
                 }
                 
-                if (form.getCurrency3().equals("US$")) {
+                if ("US$".equals(form.getCurrency3())){
                     currency3.getSelectionModel().select("US$");
-                } else if (form.getCurrency3().equals("CAN$")) {
+                } else if ("CAN$".equals(form.getCurrency3())) {
                     currency3.getSelectionModel().select("CAN$");
                 }
                 
-                if (form.getCurrency4().equals("US$")) {
+               if ("US$".equals(form.getCurrency4())){
                     currency4.getSelectionModel().select("US$");
-                } else if (form.getCurrency4().equals("CAN$")) {
+                } else if ("CAN$".equals(form.getCurrency4())) {
                     currency4.getSelectionModel().select("CAN$");
                 }
-                
-                if (form.getBasement().equals("Yes")) {
-                    basement.getSelectionModel().select("Yes");
-                } else if (form.getBasement().equals("No")) {
-                    basement.getSelectionModel().select("No");
-                }
-                
                 if ("selected".equals(form.getEcommerce())) {
                     ecommerce.setSelected(true);
                 }
@@ -2042,8 +2047,7 @@ public class NextScreenController implements Initializable, IScreenController {
                     deadbolts.setSelected(true);
                 }
                 if("Select".equals(form.getBasement()))
-                {
-                    basement.getSelectionModel().select("Select");}
+                { basement.getSelectionModel().select("Select");}
                 else if("Yes".equals(form.getBasement()))
                 {basement.getSelectionModel().select("Yes");}
                 else if("No".equals(form.getBasement()))
@@ -2116,6 +2120,7 @@ public class NextScreenController implements Initializable, IScreenController {
                  req1.setSecurity(binding4.getSecurity());
                 */
                 produceridfromform=form.getProducer();
+                branchfromform=form.getBranch();
                 System.out.println("producer id from form"+produceridfromform);
                 keycontact.setText(form.getKeyContact());
                 keyphone.setText(form.getKeyContactPhone());
@@ -2319,11 +2324,15 @@ public class NextScreenController implements Initializable, IScreenController {
                     try {
                         System.out.println("edit " + isEdit);
                         if (isEdit) {
-                            System.out.println("samta");
+                            
+                            System.out.println("View Application");
                             InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
                             EditFormSubmissionRequest req1 = new EditFormSubmissionRequest();
                             
                             req1.setProducer(produceridfromform);
+                            System.out.println(insurancetypeflag);
+                            req1.setBranch(branchfromform);
+                            
                             if (insurancetypeflag == 1) {
                                 req1.setType("Commercial");
                             } else if (insurancetypeflag == 2) {
@@ -2485,10 +2494,10 @@ public class NextScreenController implements Initializable, IScreenController {
                                 req1.setPastClaimAmount1(Double.parseDouble(binding3.getclaimamount1()));
                             }
                             if (!CommonValidations.isStringEmpty(binding3.getclaimamount2())) {
-                                req1.setPastClaimAmount1(Double.parseDouble(binding3.getclaimamount2()));
+                                req1.setPastClaimAmount2(Double.parseDouble(binding3.getclaimamount2()));
                             }
                             if (!CommonValidations.isStringEmpty(binding3.getclaimamount3())) {
-                                req1.setPastClaimAmount1(Double.parseDouble(binding3.getclaimamount3()));
+                                req1.setPastClaimAmount3(Double.parseDouble(binding3.getclaimamount3()));
                             }
                             
                             req1.setCurrentInsuranceType1(binding3.getciptype1());
@@ -3006,6 +3015,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
                             InsuranceFormSubmitRequest req1 = new InsuranceFormSubmitRequest();
                             req1.setProducer(producerid);
+                            req1.setBranch(branch);
                             if (insurancetypeflag == 1) {
                                 req1.setType("Commercial");
                             } else if (insurancetypeflag == 2) {
@@ -3141,14 +3151,15 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setBusinessAsset(binding3.getbusinessapart());
                             req1.setAdvertising(binding3.getadvertising());
                             req1.setDurationIncaseOfSeriousClaims(binding3.getrecover());
+                            
                             if (!CommonValidations.isStringEmpty(binding3.getclaimamount1())) {
                                 req1.setPastClaimAmount1(Double.parseDouble(binding3.getclaimamount1()));
                             }
                             if (!CommonValidations.isStringEmpty(binding3.getclaimamount2())) {
-                                req1.setPastClaimAmount1(Double.parseDouble(binding3.getclaimamount2()));
+                                req1.setPastClaimAmount2(Double.parseDouble(binding3.getclaimamount2()));
                             }
                             if (!CommonValidations.isStringEmpty(binding3.getclaimamount3())) {
-                                req1.setPastClaimAmount1(Double.parseDouble(binding3.getclaimamount3()));
+                                req1.setPastClaimAmount3(Double.parseDouble(binding3.getclaimamount3()));
                             }
                             req1.setCurrentInsuranceType1(binding3.getciptype1());
                             req1.setCurrentInsuranceType2(binding3.getciptype2());
@@ -3156,6 +3167,10 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setCurrentInsuranceCarrier1(binding3.getcipcarrier1());
                             req1.setCurrentInsuranceCarrier2(binding3.getcipcarrier2());
                             req1.setCurrentInsuranceCarrier3(binding3.getcipcarrier3());
+                            
+                            req1.setPastClaimCause1(binding3.getclaimcause1());
+                            req1.setPastClaimCause2(binding3.getclaimcause2());
+                            req1.setPastClaimCause3(binding3.getclaimcause3());
                             
                             GregorianCalendar c1 = new GregorianCalendar();
                             c1.setTime(datePicker.getSelectedDate());
