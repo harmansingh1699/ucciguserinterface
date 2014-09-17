@@ -1055,8 +1055,8 @@ public class NextScreenController implements Initializable, IScreenController {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
                 if (ecommerce.isSelected()) {
-                    System.out.println("Selected");
-                    binding2.seteCommerce("ecommerce selected");
+                    
+                    binding2.seteCommerce("selected");
                 }
             }
         };
@@ -1884,36 +1884,31 @@ public class NextScreenController implements Initializable, IScreenController {
                     pensionplan.getSelectionModel().select("No");
                 }
                 
-                if (form.getCurrency1().equals("US$")) {
+                if ("US$".equals(form.getCurrency1())) {
                     currency1.getSelectionModel().select("US$");
-                } else if (form.getCurrency1().equals("CAN$")) {
+                } else if ("CAN$".equals(form.getCurrency1())) {
                     currency1.getSelectionModel().select("CAN$");
                 }
                 
-                if (form.getCurrency2().equals("US$")) {
+                if ("US$".equals(form.getCurrency2())) {
                     currency2.getSelectionModel().select("US$");
-                } else if (form.getCurrency2().equals("CAN$")) {
+                } else if ("CAN$".equals(form.getCurrency2())) {
                     currency2.getSelectionModel().select("CAN$");
                 }
                 
-                if (form.getCurrency3().equals("US$")) {
+                if ("US$".equals(form.getCurrency3())) {
                     currency3.getSelectionModel().select("US$");
-                } else if (form.getCurrency3().equals("CAN$")) {
+                } else if ("CAN$".equals(form.getCurrency3())) {
                     currency3.getSelectionModel().select("CAN$");
                 }
                 
-                if (form.getCurrency4().equals("US$")) {
+                if ("US$".equals(form.getCurrency4())) {
                     currency4.getSelectionModel().select("US$");
-                } else if (form.getCurrency4().equals("CAN$")) {
+                } else if ("CAN$".equals(form.getCurrency4())) {
                     currency4.getSelectionModel().select("CAN$");
                 }
                 
-                if (form.getBasement().equals("Yes")) {
-                    basement.getSelectionModel().select("Yes");
-                } else if (form.getBasement().equals("No")) {
-                    basement.getSelectionModel().select("No");
-                }
-                
+                                
                 if ("selected".equals(form.getEcommerce())) {
                     ecommerce.setSelected(true);
                 }
@@ -3618,7 +3613,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             }
                             System.out.println("123");
                             StringTemplateGroup emailTemplateGroup = new StringTemplateGroup(
-                                    "welcomeloginemail group", "/Users/harsimransingh/Desktop");
+                                    "welcomeloginemail group", new File("bin").getAbsolutePath());
                             StringTemplate submitFormMail = emailTemplateGroup
                                     .getInstanceOf("pdfTemplate");
                             submitFormMail.setAttribute("date", new SimpleDateFormat("yyyy/mm/dd").format(Calendar.getInstance().getTime()));
