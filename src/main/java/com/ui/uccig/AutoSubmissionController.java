@@ -394,7 +394,7 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
     }
     @FXML
     public void backAuto() {
-        screenPage.setScreen("AutoSubmission");
+        screenPage.setScreen("NextScreen");
         animatedMovement(-6345, 0);
     }
     @FXML

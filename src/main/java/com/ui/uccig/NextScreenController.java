@@ -1056,7 +1056,7 @@ public class NextScreenController implements Initializable, IScreenController {
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
                 if (ecommerce.isSelected()) {
                     System.out.println("Selected");
-                    binding2.seteCommerce("ecommerce selected");
+                    binding2.seteCommerce("selected");
                 }
             }
         };
@@ -2310,12 +2310,12 @@ public class NextScreenController implements Initializable, IScreenController {
     
     @FXML
     public void submitFormAction() {
-            System.out.println("5");
+            System.out.println("InsideSubmitFormAction");
             Task task;
             task = new Task<Void>() {
                 @Override
                 public Void call() throws Exception {
-                    System.out.println("1213");
+                    System.out.println("Call");
                     try {
                         System.out.println("edit " + isEdit);
                         if (isEdit) {
@@ -3007,11 +3007,11 @@ public class NextScreenController implements Initializable, IScreenController {
                             InsuranceFormSubmitRequest req1 = new InsuranceFormSubmitRequest();
                             req1.setProducer(producerid);
                             if (insurancetypeflag == 1) {
-                                req1.setType("Auto");
-                            } else if (insurancetypeflag == 2) {
-                                req1.setType("Both");
-                            } else if (insurancetypeflag == 3) {
                                 req1.setType("Commercial");
+                            } else if (insurancetypeflag == 2) {
+                                req1.setType("Auto");
+                            } else if (insurancetypeflag == 3) {
+                                req1.setType("Both");
                             }
                             //choicebox
                             req1.setSeverity(binding.getSeverity());
@@ -3156,6 +3156,37 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setCurrentInsuranceCarrier1(binding3.getcipcarrier1());
                             req1.setCurrentInsuranceCarrier2(binding3.getcipcarrier2());
                             req1.setCurrentInsuranceCarrier3(binding3.getcipcarrier3());
+                            
+                            GregorianCalendar c1 = new GregorianCalendar();
+                            c1.setTime(datePicker.getSelectedDate());
+                            XMLGregorianCalendar date1 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c1);
+                            req1.setPastClaimDate1(date1);
+                            
+                            GregorianCalendar c2 = new GregorianCalendar();
+                            c2.setTime(datePicker1.getSelectedDate());
+                            XMLGregorianCalendar date2 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c2);
+                            req1.setPastClaimDate2(date2);
+                            
+                            GregorianCalendar c3 = new GregorianCalendar();
+                            c3.setTime(datePicker2.getSelectedDate());
+                            XMLGregorianCalendar date3 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c3);
+                            req1.setPastClaimDate3(date3);
+                            
+                            GregorianCalendar c4 = new GregorianCalendar();
+                            c4.setTime(datePicker3.getSelectedDate());
+                            XMLGregorianCalendar date4 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c4);
+                            req1.setCurrentInsuranceExpiry1(date4);
+                            
+                            GregorianCalendar c5 = new GregorianCalendar();
+                            c5.setTime(datePicker4.getSelectedDate());
+                            XMLGregorianCalendar date5 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c5);
+                            req1.setCurrentInsuranceExpiry2(date5);
+                            
+                            GregorianCalendar c6 = new GregorianCalendar();
+                            c6.setTime(datePicker5.getSelectedDate());
+                            XMLGregorianCalendar date6 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c6);
+                            req1.setCurrentInsuranceExpiry3(date6);
+                            
                             req1.setLineHolders1(binding3.getlienholder1());
                             req1.setLineHolders2(binding3.getlienholder2());
                             req1.setLienHolders3(binding3.getlienholder3());
@@ -3618,7 +3649,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             }
                             System.out.println("123");
                             StringTemplateGroup emailTemplateGroup = new StringTemplateGroup(
-                                    "welcomeloginemail group", "/Users/harsimransingh/Desktop");
+                                    "welcomeloginemail group", new File("bin").getAbsolutePath());
                             StringTemplate submitFormMail = emailTemplateGroup
                                     .getInstanceOf("pdfTemplate");
                             submitFormMail.setAttribute("date", new SimpleDateFormat("yyyy/mm/dd").format(Calendar.getInstance().getTime()));
@@ -3640,7 +3671,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             System.out.println("12345");
                             InsuranceFormSubmitResponse response = port.getInsuranceOperationsPort().formSubmission(req1);
                             if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
-                                successMessage("Form has been submitted. Your Form id is:" + response.getFormId());
+                                successMessage("Form has been submitted. Form id is:" + response.getFormId());
                                 
                             } else {
                                 errors(response.getErrorMessage());
@@ -3665,6 +3696,7 @@ public class NextScreenController implements Initializable, IScreenController {
         Platform.runLater(new Runnable() {
             public void run() {
                 Dialogs.showInformationDialog(null, message, "Success", "Success");
+                screenPage.setScreen("NextScreen");
                 animatedMovement(0, 0);
                 openingPane.setVisible(true);
                 newBusinessPane.setVisible(false);
