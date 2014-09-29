@@ -97,6 +97,7 @@ public class SceneController implements Initializable {
         ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setApplicationId(applicationid.getText());
         ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).animatedMovement(-1269, -715);
         ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setFormId(applicationid.getText());
+        ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setFormId(applicationid.getText());
         //((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).viewApplication(null,applicationid.getText());
         
         
@@ -105,8 +106,8 @@ public class SceneController implements Initializable {
     public void setAttributes( final GetInsuranceFormResponse response){
          Platform.runLater(new Runnable() {
             public void run() {
-
-                ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setApplicationId(applicationid.getText());
+        
+        ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setApplicationId(applicationid.getText());
         ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).animatedMovement(-1269, -715);
         ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setFormId(applicationid.getText());
         ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).viewApplication(response,applicationid.getText());

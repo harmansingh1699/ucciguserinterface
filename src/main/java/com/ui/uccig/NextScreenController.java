@@ -641,6 +641,15 @@ public class NextScreenController implements Initializable, IScreenController {
     private String producerid;
     private String formId;
     private String produceridfromform;
+    private String branchfromform;
+
+    public String getBranchfromform() {
+        return branchfromform;
+    }
+
+    public void setBranchfromform(String branchfromform) {
+        this.branchfromform = branchfromform;
+    }
 
     public String getProduceridfromform() {
         return produceridfromform;
@@ -1594,11 +1603,16 @@ public class NextScreenController implements Initializable, IScreenController {
         System.out.println("Inside worklist");
         System.out.println(producerid);
         ((EnterCodeUIController)screenPage.getControlledScreen("OtherScreen")).submitWorklist(producerid);
+        
     }
     
     @FXML
     public void searchArchive() throws Exception {
+        System.out.println("Inside SearchArchive");
         ((EnterCodeUIController)screenPage.getControlledScreen("OtherScreen")).searchArchive();
+        System.out.println("Inside SearchArchive1");
+        screenPage.setScreen("OtherScreen");
+        
     }
     
     @FXML
@@ -1665,7 +1679,7 @@ public class NextScreenController implements Initializable, IScreenController {
             System.out.println("4");
             InvokeAnimation.attentionSeekerWobble(mailingaddress);
             mailingaddress.setPromptText("Please enter Mailing address");
-        }else if (CommonValidations.isStringEmpty(binding.getSeverity())) {
+        }else if (CommonValidations.isStringEmpty(binding.getSeverity())||binding.getSeverity().equalsIgnoreCase("select")) {
             System.out.println("Severity");
             successMessage1("Select Severity level");
             
@@ -1817,26 +1831,26 @@ public class NextScreenController implements Initializable, IScreenController {
                 } else {
                     System.out.println("keycontact is null");
                 }
-                if (form.getSeverity().equals("High")) {
+                if ("High".equals(form.getSeverity())) {
                     severity.getSelectionModel().select("High");
                 } 
-                else if (form.getSeverity().equals("Medium")) {
+                else if ("Medium".equals(form.getSeverity())) {
                     severity.getSelectionModel().select("Medium");
-                } else {
+                } else if ("Low".equals(form.getSeverity())){
                     severity.getSelectionModel().select("Low");
                 }
                 
-                if (form.getEntityType().equals("Corporation")) {
+                if ("Corporation".equals(form.getEntityType())) {
                     entitytype.getSelectionModel().select("Corporation");
-                }else if (form.getEntityType().equals("Select")){
+                }else if ("Select".equals(form.getEntityType())){
                 entitytype.getSelectionModel().select("Select");
                 }
-                else if (form.getEntityType().equals("Sole Proprietor")) {
+                else if ("Sole Proprietor".equals(form.getEntityType())) {
                     entitytype.getSelectionModel().select("Sole Proprietor");
                 } else {
                     entitytype.getSelectionModel().select("Other");
                 }
-                System.out.println("Here");
+                
                 if ("January".equals(form.getFinancialYearEnd())) {
                     finYearEnd.getSelectionModel().select("January");
                 } else if ("February".equals(form.getFinancialYearEnd())) 
@@ -1852,17 +1866,17 @@ public class NextScreenController implements Initializable, IScreenController {
                     finYearEnd.getSelectionModel().select("May");
                 } else if ("June".equals(form.getFinancialYearEnd())) {
                     finYearEnd.getSelectionModel().select("June");
-                } else if (form.getFinancialYearEnd().equals("July")) {
+                } else if ("July".equals(form.getFinancialYearEnd())) {
                     finYearEnd.getSelectionModel().select("July");
-                } else if (form.getFinancialYearEnd().equals("August")) {
+                } else if ("August".equals(form.getFinancialYearEnd())) {
                     finYearEnd.getSelectionModel().select("August");
-                } else if (form.getFinancialYearEnd().equals("September")) {
+                } else if ("September".equals(form.getFinancialYearEnd())) {
                     finYearEnd.getSelectionModel().select("September");
-                } else if (form.getFinancialYearEnd().equals("October")) {
+                } else if ("October".equals(form.getFinancialYearEnd())) {
                     finYearEnd.getSelectionModel().select("October");
-                } else if (form.getFinancialYearEnd().equals("November")) {
+                } else if ("November".equals(form.getFinancialYearEnd())) {
                     finYearEnd.getSelectionModel().select("November");
-                } else if (form.getFinancialYearEnd().equals("December")) {
+                } else if ("December".equals(form.getFinancialYearEnd())) {
                     finYearEnd.getSelectionModel().select("December");
                 }
                 else{}
@@ -2037,8 +2051,7 @@ public class NextScreenController implements Initializable, IScreenController {
                     deadbolts.setSelected(true);
                 }
                 if("Select".equals(form.getBasement()))
-                {
-                    basement.getSelectionModel().select("Select");}
+                { basement.getSelectionModel().select("Select");}
                 else if("Yes".equals(form.getBasement()))
                 {basement.getSelectionModel().select("Yes");}
                 else if("No".equals(form.getBasement()))
@@ -2111,6 +2124,7 @@ public class NextScreenController implements Initializable, IScreenController {
                  req1.setSecurity(binding4.getSecurity());
                 */
                 produceridfromform=form.getProducer();
+                branchfromform=form.getBranch();
                 System.out.println("producer id from form"+produceridfromform);
                 keycontact.setText(form.getKeyContact());
                 keyphone.setText(form.getKeyContactPhone());
@@ -2305,20 +2319,24 @@ public class NextScreenController implements Initializable, IScreenController {
     
     @FXML
     public void submitFormAction() {
-            System.out.println("5");
+            System.out.println("InsideSubmitFormAction");
             Task task;
             task = new Task<Void>() {
                 @Override
                 public Void call() throws Exception {
-                    System.out.println("1213");
+                    System.out.println("Call");
                     try {
                         System.out.println("edit " + isEdit);
                         if (isEdit) {
-                            System.out.println("samta");
+                            
+                            System.out.println("View Application");
                             InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
                             EditFormSubmissionRequest req1 = new EditFormSubmissionRequest();
                             
                             req1.setProducer(produceridfromform);
+                            System.out.println(insurancetypeflag);
+                            req1.setBranch(branchfromform);
+                            
                             if (insurancetypeflag == 1) {
                                 req1.setType("Commercial");
                             } else if (insurancetypeflag == 2) {
@@ -2480,10 +2498,10 @@ public class NextScreenController implements Initializable, IScreenController {
                                 req1.setPastClaimAmount1(Double.parseDouble(binding3.getclaimamount1()));
                             }
                             if (!CommonValidations.isStringEmpty(binding3.getclaimamount2())) {
-                                req1.setPastClaimAmount1(Double.parseDouble(binding3.getclaimamount2()));
+                                req1.setPastClaimAmount2(Double.parseDouble(binding3.getclaimamount2()));
                             }
                             if (!CommonValidations.isStringEmpty(binding3.getclaimamount3())) {
-                                req1.setPastClaimAmount1(Double.parseDouble(binding3.getclaimamount3()));
+                                req1.setPastClaimAmount3(Double.parseDouble(binding3.getclaimamount3()));
                             }
                             
                             req1.setCurrentInsuranceType1(binding3.getciptype1());
@@ -3001,12 +3019,13 @@ public class NextScreenController implements Initializable, IScreenController {
                             InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
                             InsuranceFormSubmitRequest req1 = new InsuranceFormSubmitRequest();
                             req1.setProducer(producerid);
+                            req1.setBranch(branch);
                             if (insurancetypeflag == 1) {
-                                req1.setType("Auto");
-                            } else if (insurancetypeflag == 2) {
-                                req1.setType("Both");
-                            } else if (insurancetypeflag == 3) {
                                 req1.setType("Commercial");
+                            } else if (insurancetypeflag == 2) {
+                                req1.setType("Auto");
+                            } else if (insurancetypeflag == 3) {
+                                req1.setType("Both");
                             }
                             //choicebox
                             req1.setSeverity(binding.getSeverity());
@@ -3136,14 +3155,15 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setBusinessAsset(binding3.getbusinessapart());
                             req1.setAdvertising(binding3.getadvertising());
                             req1.setDurationIncaseOfSeriousClaims(binding3.getrecover());
+                            
                             if (!CommonValidations.isStringEmpty(binding3.getclaimamount1())) {
                                 req1.setPastClaimAmount1(Double.parseDouble(binding3.getclaimamount1()));
                             }
                             if (!CommonValidations.isStringEmpty(binding3.getclaimamount2())) {
-                                req1.setPastClaimAmount1(Double.parseDouble(binding3.getclaimamount2()));
+                                req1.setPastClaimAmount2(Double.parseDouble(binding3.getclaimamount2()));
                             }
                             if (!CommonValidations.isStringEmpty(binding3.getclaimamount3())) {
-                                req1.setPastClaimAmount1(Double.parseDouble(binding3.getclaimamount3()));
+                                req1.setPastClaimAmount3(Double.parseDouble(binding3.getclaimamount3()));
                             }
                             req1.setCurrentInsuranceType1(binding3.getciptype1());
                             req1.setCurrentInsuranceType2(binding3.getciptype2());
@@ -3151,6 +3171,41 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setCurrentInsuranceCarrier1(binding3.getcipcarrier1());
                             req1.setCurrentInsuranceCarrier2(binding3.getcipcarrier2());
                             req1.setCurrentInsuranceCarrier3(binding3.getcipcarrier3());
+                            
+                            req1.setPastClaimCause1(binding3.getclaimcause1());
+                            req1.setPastClaimCause2(binding3.getclaimcause2());
+                            req1.setPastClaimCause3(binding3.getclaimcause3());
+                            
+                            GregorianCalendar c1 = new GregorianCalendar();
+                            c1.setTime(datePicker.getSelectedDate());
+                            XMLGregorianCalendar date1 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c1);
+                            req1.setPastClaimDate1(date1);
+                            
+                            GregorianCalendar c2 = new GregorianCalendar();
+                            c2.setTime(datePicker1.getSelectedDate());
+                            XMLGregorianCalendar date2 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c2);
+                            req1.setPastClaimDate2(date2);
+                            
+                            GregorianCalendar c3 = new GregorianCalendar();
+                            c3.setTime(datePicker2.getSelectedDate());
+                            XMLGregorianCalendar date3 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c3);
+                            req1.setPastClaimDate3(date3);
+                            
+                            GregorianCalendar c4 = new GregorianCalendar();
+                            c4.setTime(datePicker3.getSelectedDate());
+                            XMLGregorianCalendar date4 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c4);
+                            req1.setCurrentInsuranceExpiry1(date4);
+                            
+                            GregorianCalendar c5 = new GregorianCalendar();
+                            c5.setTime(datePicker4.getSelectedDate());
+                            XMLGregorianCalendar date5 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c5);
+                            req1.setCurrentInsuranceExpiry2(date5);
+                            
+                            GregorianCalendar c6 = new GregorianCalendar();
+                            c6.setTime(datePicker5.getSelectedDate());
+                            XMLGregorianCalendar date6 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c6);
+                            req1.setCurrentInsuranceExpiry3(date6);
+                            
                             req1.setLineHolders1(binding3.getlienholder1());
                             req1.setLineHolders2(binding3.getlienholder2());
                             req1.setLienHolders3(binding3.getlienholder3());
@@ -3635,7 +3690,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             System.out.println("12345");
                             InsuranceFormSubmitResponse response = port.getInsuranceOperationsPort().formSubmission(req1);
                             if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
-                                successMessage("Form has been submitted. Your Form id is:" + response.getFormId());
+                                successMessage("Form has been submitted. Form id is:" + response.getFormId());
                                 
                             } else {
                                 errors(response.getErrorMessage());
@@ -3660,6 +3715,7 @@ public class NextScreenController implements Initializable, IScreenController {
         Platform.runLater(new Runnable() {
             public void run() {
                 Dialogs.showInformationDialog(null, message, "Success", "Success");
+                screenPage.setScreen("NextScreen");
                 animatedMovement(0, 0);
                 openingPane.setVisible(true);
                 newBusinessPane.setVisible(false);
