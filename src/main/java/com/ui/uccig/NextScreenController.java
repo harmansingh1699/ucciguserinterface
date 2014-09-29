@@ -2475,7 +2475,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setAdvertising(binding3.getadvertising());
                             req1.setDurationIncaseOfSeriousClaims(binding3.getrecover());
                             
-                            GregorianCalendar c1 = new GregorianCalendar();
+                            /*GregorianCalendar c1 = new GregorianCalendar();
                             c1.setTime(datePicker.getSelectedDate());
                             XMLGregorianCalendar date1 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c1);
                             req1.setPastClaimDate1(date1);
@@ -2489,6 +2489,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             c3.setTime(datePicker2.getSelectedDate());
                             XMLGregorianCalendar date3 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c3);
                             req1.setPastClaimDate3(date3);
+                            */
                             
                             req1.setPastClaimCause1(binding3.getclaimcause1());
                             req1.setPastClaimCause2(binding3.getclaimcause2());
@@ -2511,7 +2512,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setCurrentInsuranceCarrier2(binding3.getcipcarrier2());
                             req1.setCurrentInsuranceCarrier3(binding3.getcipcarrier3());
                             
-                            GregorianCalendar c4 = new GregorianCalendar();
+                            /*GregorianCalendar c4 = new GregorianCalendar();
                             c4.setTime(datePicker3.getSelectedDate());
                             XMLGregorianCalendar date4 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c4);
                             req1.setCurrentInsuranceExpiry1(date4);
@@ -2524,7 +2525,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             GregorianCalendar c6 = new GregorianCalendar();
                             c6.setTime(datePicker5.getSelectedDate());
                             XMLGregorianCalendar date6 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c6);
-                            req1.setCurrentInsuranceExpiry3(date6);
+                            req1.setCurrentInsuranceExpiry3(date6);*/
                             
                             req1.setLineHolders1(binding3.getlienholder1());
                             req1.setLineHolders2(binding3.getlienholder2());
@@ -3176,7 +3177,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setPastClaimCause2(binding3.getclaimcause2());
                             req1.setPastClaimCause3(binding3.getclaimcause3());
                             
-                            GregorianCalendar c1 = new GregorianCalendar();
+                            /*GregorianCalendar c1 = new GregorianCalendar();
                             c1.setTime(datePicker.getSelectedDate());
                             XMLGregorianCalendar date1 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c1);
                             req1.setPastClaimDate1(date1);
@@ -3204,7 +3205,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             GregorianCalendar c6 = new GregorianCalendar();
                             c6.setTime(datePicker5.getSelectedDate());
                             XMLGregorianCalendar date6 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c6);
-                            req1.setCurrentInsuranceExpiry3(date6);
+                            req1.setCurrentInsuranceExpiry3(date6); */
                             
                             req1.setLineHolders1(binding3.getlienholder1());
                             req1.setLineHolders2(binding3.getlienholder2());
