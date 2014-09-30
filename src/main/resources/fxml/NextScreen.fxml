@@ -182,44 +182,44 @@
             <Color blue="1.000" green="0.400" red="0.000" fx:id="x7" />
           </textFill>
         </Label>
-        <Label layoutX="73.0" layoutY="118.0" text="Producer:">
+        <Label layoutX="73.0" layoutY="118.0" text="Producer:" textFill="#1e751e">
           <font>
             <Font name="Times Bold" size="16.0" fx:id="x4" />
           </font>
         </Label>
-        <Label font="$x4" layoutX="377.0" layoutY="118.0" text="Branch:" />
-        <Label font="$x4" layoutX="646.0" layoutY="118.0" text="Date:" />
-        <Label font="$x4" layoutX="73.0" layoutY="170.0" text="*Key Contact:" textFill="#bb1818" />
-        <Label font="$x4" layoutX="421.0" layoutY="170.0" text="*Phone:" textFill="#bb1818" />
-        <Label font="$x4" layoutX="730.0" layoutY="170.0" text="Email:" />
-        <Label font="$x4" layoutX="73.0" layoutY="207.0" text="Secondary Contact:" />
+        <Label font="$x4" layoutX="377.0" layoutY="118.0" text="Branch:" textFill="#1e751e" />
+        <Label font="$x4" layoutX="646.0" layoutY="118.0" text="Date:" textFill="#1e751e" />
+        <Label font="$x4" layoutX="73.0" layoutY="169.0" text="*Key Contact:" textFill="#141414" />
+        <Label font="$x4" layoutX="414.0" layoutY="169.0" text="*Phone:" textFill="#141414" />
+        <Label font="$x4" layoutX="730.0" layoutY="169.0" text="Email:" />
+        <Label font="$x4" layoutX="78.0" layoutY="207.0" text="Sec. Contact:" />
         <Label font="$x4" layoutX="421.0" layoutY="207.0" text="Phone:" />
         <Label font="$x4" layoutX="730.0" layoutY="207.0" text="Email:" />
-        <Label font="$x4" layoutX="73.0" layoutY="255.0" text="*Business Name:" textFill="#bb1818" />
-        <Label font="$x4" layoutX="73.0" layoutY="295.0" text="*Mailing Address:" textFill="#bb1818" />
+        <Label font="$x4" layoutX="73.0" layoutY="255.0" text="*Business Name:" textFill="#141414" />
+        <Label font="$x4" layoutX="73.0" layoutY="295.0" text="*Mailing Address:" textFill="#141414" />
         <Label font="$x4" layoutX="148.0" layoutY="332.0" text="Fax #:" />
         <Label font="$x4" layoutX="468.0" layoutY="332.0" text="Website:" />
         <Label font="$x4" layoutX="90.0" layoutY="369.0" text="# of Locations:" />
-        <Label font="$x4" layoutX="306.0" layoutY="370.0" text="# of Owned Autos:" />
+        <Label font="$x4" layoutX="306.0" layoutY="369.0" text="# of Owned Autos:" />
         <Label font="$x4" layoutX="104.0" layoutY="411.0" text="Entity Type:" />
         <Label font="$x4" layoutX="369.0" layoutY="411.0" prefHeight="19.0" prefWidth="127.0" text="If other, specify:" />
         <Label font="$x4" layoutX="73.0" layoutY="474.0" text="Operations and Related Experience:" />
         <Label font="$x4" layoutX="73.0" layoutY="551.0" text="Owner(s) &amp; Key Personnel:" />
         <Label font="$x4" layoutX="90.0" layoutY="621.0" text="Board of Directors:" />
-        <Button cancelButton="false" defaultButton="true" layoutX="73.0" layoutY="687.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" text="Exit" textAlignment="LEFT" textFill="WHITE" wrapText="false" />
+        <Button cancelButton="false" defaultButton="true" layoutX="73.0" layoutY="687.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" text="Exit" textAlignment="LEFT" wrapText="false" />
         <Button defaultButton="true" layoutX="578.0" layoutY="687.0" mnemonicParsing="false" onAction="#submitSave" prefHeight="26.0" prefWidth="126.0" text="Save" />
         <Button defaultButton="true" layoutX="1066.0" layoutY="687.0" mnemonicParsing="false" onAction="#continue1" prefHeight="26.0" prefWidth="126.0" text="Continue" />
-        <Label fx:id="returnedname" font="$x4" layoutX="149.0" layoutY="118.0" text="Jerry Boutilier" />
-        <Label fx:id="returnedbranch" font="$x4" layoutX="438.0" layoutY="118.0" text="Kingston" />
+        <Label fx:id="returnedname" font="$x4" layoutX="149.0" layoutY="118.0" text="Jerry Boutilier" textFill="#1e751e" />
+        <Label fx:id="returnedbranch" font="$x4" layoutX="438.0" layoutY="118.0" text="Kingston" textFill="#1e751e" />
         <TextField fx:id="keycontact" layoutX="180.0" layoutY="165.0" prefHeight="26.0" prefWidth="167.0" text="" />
-        <TextField id="keyphone" fx:id="secondaryemail" layoutX="796.0" layoutY="204.0" prefHeight="26.0" prefWidth="219.0" />
-        <TextField id="keyemail" fx:id="secondarycontact" layoutX="215.0" layoutY="202.0" prefHeight="26.0" prefWidth="134.0" text="" />
-        <TextField id="secondarycontact" fx:id="keyphone" layoutX="489.0" layoutY="167.0" prefHeight="26.0" prefWidth="179.0" />
+        <TextField id="keyphone" fx:id="secondaryemail" layoutX="790.0" layoutY="204.0" prefHeight="26.0" prefWidth="219.0" />
+        <TextField id="keyemail" fx:id="secondarycontact" layoutX="182.0" layoutY="204.0" prefHeight="26.0" prefWidth="167.0" text="" />
+        <TextField id="secondarycontact" fx:id="keyphone" layoutX="489.0" layoutY="165.0" prefHeight="26.0" prefWidth="179.0" />
         <TextField fx:id="secondaryphone" layoutX="489.0" layoutY="204.0" prefHeight="26.0" prefWidth="176.0" />
-        <TextField id="secondaryemail" fx:id="keyemail" layoutX="797.0" layoutY="165.0" prefHeight="26.0" prefWidth="219.0" text="" />
+        <TextField id="secondaryemail" fx:id="keyemail" layoutX="790.0" layoutY="165.0" prefHeight="26.0" prefWidth="219.0" text="" />
         <TextField fx:id="businessname" layoutX="199.0" layoutY="250.0" prefHeight="26.0" prefWidth="379.0" />
         <TextField fx:id="mailingaddress" layoutX="199.0" layoutY="289.0" prefHeight="26.0" prefWidth="379.0" />
-        <TextField fx:id="fax" layoutX="199.0" layoutY="327.0" prefHeight="26.0" prefWidth="197.0" />
+        <TextField fx:id="fax" layoutX="198.0" layoutY="329.0" prefHeight="26.0" prefWidth="197.0" />
         <TextField fx:id="website" layoutX="545.0" layoutY="327.0" prefHeight="25.9998779296875" prefWidth="249.0" />
         <RadioButton fx:id="profit" layoutX="842.0" layoutY="411.0" mnemonicParsing="false" text="Profit">
           <font>
@@ -237,20 +237,20 @@
             </FXCollections>
           </items>
         </ChoiceBox>
-        <TextField fx:id="otherspecify" layoutX="502.0" layoutY="408.0" prefHeight="26.0" prefWidth="266.0" />
-        <TextField id="owner" fx:id="owner1" layoutX="306.0" layoutY="529.0" prefHeight="26.0" prefWidth="206.0" />
-        <TextField id="bod" fx:id="bod1" layoutX="305.0" layoutY="607.0" prefWidth="200.0" />
+        <TextField fx:id="otherspecify" layoutX="486.0" layoutY="408.0" prefHeight="26.0" prefWidth="266.0" />
+        <TextField id="owner" fx:id="owner1" layoutX="290.0" layoutY="529.0" prefHeight="26.0" prefWidth="206.0" />
+        <TextField id="bod" fx:id="bod1" layoutX="290.0" layoutY="607.0" prefHeight="26.0" prefWidth="206.0" />
         <TextField id="keycontact" fx:id="nooflocations" layoutX="199.0" layoutY="365.0" prefHeight="26.0" prefWidth="48.0" text="" />
-        <TextField id="keycontact" fx:id="noofownderautos" layoutX="444.0" layoutY="366.0" prefHeight="26.0" prefWidth="48.0" text="" />
-        <Label font="$x4" layoutX="919.0" layoutY="118.0" text="*Severity:" textFill="#bb1818" />
-        <TextField fx:id="relatedexperience" layoutX="327.0" layoutY="458.0" prefHeight="48.0" prefWidth="417.0" />
+        <TextField id="keycontact" fx:id="noofownderautos" layoutX="444.0" layoutY="365.0" prefHeight="26.0" prefWidth="48.0" text="" />
+        <Label font="$x4" layoutX="919.0" layoutY="118.0" text="*Severity:" textFill="#141414" />
+        <TextField fx:id="relatedexperience" layoutX="327.0" layoutY="460.0" prefHeight="48.0" prefWidth="420.0" />
         <TextField id="owner" fx:id="owner2" layoutX="572.0" layoutY="529.0" prefHeight="26.0" prefWidth="206.0" />
-        <TextField id="owner" fx:id="owner3" layoutX="306.0" layoutY="555.0" prefHeight="26.0" prefWidth="206.0" />
-        <TextField id="owner" fx:id="owner4" layoutX="572.0" layoutY="555.0" prefHeight="26.0" prefWidth="206.0" />
+        <TextField id="owner" fx:id="owner3" layoutX="290.0" layoutY="557.0" prefHeight="26.0" prefWidth="206.0" />
+        <TextField id="owner" fx:id="owner4" layoutX="572.0" layoutY="557.0" prefHeight="26.0" prefWidth="206.0" />
         <TextField id="bod" fx:id="bod2" layoutX="572.0" layoutY="607.0" prefWidth="200.0" />
-        <TextField id="bod" fx:id="bod3" layoutX="305.0" layoutY="630.0" prefWidth="200.0" />
-        <TextField id="bod" fx:id="bod4" layoutX="573.0" layoutY="630.0" prefWidth="200.0" />
-        <ChoiceBox fx:id="severity" layoutX="996.0" layoutY="116.0" prefHeight="26.0" prefWidth="88.0" value="Select">
+        <TextField id="bod" fx:id="bod3" layoutX="290.0" layoutY="636.0" prefHeight="26.0" prefWidth="206.0" />
+        <TextField id="bod" fx:id="bod4" layoutX="572.0" layoutY="636.0" prefWidth="200.0" />
+        <ChoiceBox fx:id="severity" layoutX="996.0" layoutY="116.0" prefHeight="19.0" prefWidth="88.0" value="Select">
           <items>
             <FXCollections fx:factory="observableArrayList">
               <String fx:value="Select" />
@@ -260,13 +260,13 @@
             </FXCollections>
           </items>
         </ChoiceBox>
-        <Label fx:id="returneddate" layoutX="693.0" layoutY="118.0" text="18/08/2014">
+        <Label fx:id="returneddate" layoutX="699.0" layoutY="120.0" prefHeight="19.0" prefWidth="91.0" text="18/08/2014" textFill="#1e751e">
           <font>
             <Font name="System Bold" size="14.0" />
           </font>
         </Label>
-        <Label font="$x4" layoutX="556.0" layoutY="370.0" text="Years in Business:" />
-        <TextField id="keycontact" fx:id="yearsinbusiness" layoutX="696.0" layoutY="365.0" prefHeight="26.0" prefWidth="48.0" text="" />
+        <Label font="$x4" layoutX="556.0" layoutY="369.0" text="Years in Business:" />
+        <TextField id="keycontact" fx:id="yearsinbusiness" layoutX="694.0" layoutY="365.0" prefHeight="26.0" prefWidth="48.0" text="" />
       </children>
     </AnchorPane>
     <ImageView fitHeight="729.0" fitWidth="1268.0001220703125" layoutX="2539.0" layoutY="0.0" pickOnBounds="true" preserveRatio="false">
@@ -286,7 +286,7 @@
         <Label font="$x4" layoutX="356.0" layoutY="112.0" text="# of Staff:" />
         <Label font="$x4" layoutX="553.0" layoutY="112.0" text="Payroll$:" />
         <Label font="$x4" layoutX="751.0" layoutY="112.0" text="Group Benefits:" />
-        <Label layoutX="518.0" layoutY="154.0" prefWidth="299.0" text="Description of Operations &amp; Revenues">
+        <Label layoutX="499.0" layoutY="154.0" maxWidth="328.0" prefHeight="22.0" prefWidth="328.0" text="Description of Operations &amp; Revenues">
           <font>
             <Font name="Times Bold" size="18.0" fx:id="x9" />
           </font>
@@ -341,11 +341,11 @@
         <CheckBox fx:id="accbenefits" font="$x4" layoutX="63.0" layoutY="374.0" mnemonicParsing="false" text="Accident Benefits BuyUp?" />
         <CheckBox fx:id="malexposure" font="$x4" layoutX="321.0" layoutY="374.0" mnemonicParsing="false" text="Malpractice Exposure?" />
         <CheckBox fx:id="abuseexposure" font="$x4" layoutX="551.0" layoutY="374.0" mnemonicParsing="false" text="Abuse Exposure?" />
-        <Label font="$x4" layoutX="63.0" layoutY="300.0" prefHeight="19.0" prefWidth="163.0" text="\% of sales on premises:" />
-        <Label font="$x4" layoutX="287.0" layoutY="300.0" prefHeight="19.0" prefWidth="164.0" text="\% of sales off premises:" />
-        <Label font="$x4" layoutX="517.0" layoutY="300.0" prefHeight="19.0" prefWidth="155.0" text="\% of sales residential:" />
-        <Label font="$x4" layoutX="727.0" layoutY="300.0" prefHeight="19.0" prefWidth="164.0" text="\% of sales commercial:" />
-        <Label font="$x4" layoutX="950.0" layoutY="300.0" text="\% of sales sub-contracted:" />
+        <Label font="$x4" layoutX="63.0" layoutY="300.0" maxWidth="163.0" prefHeight="19.0" prefWidth="163.0" text="\% of sales on premises:" />
+        <Label font="$x4" layoutX="287.0" layoutY="300.0" maxWidth="164.0" prefHeight="19.0" prefWidth="164.0" text="\% of sales off premises:" />
+        <Label font="$x4" layoutX="517.0" layoutY="300.0" maxWidth="155.0" prefHeight="19.0" prefWidth="155.0" text="\% of sales residential:" />
+        <Label font="$x4" layoutX="727.0" layoutY="300.0" maxWidth="164.0" prefHeight="19.0" prefWidth="164.0" text="\% of sales commercial:" />
+        <Label font="$x4" layoutX="950.0" layoutY="300.0" maxWidth="184.0" prefHeight="19.0" prefWidth="184.0" text="\% of sales sub-contracted:" />
         <TextField id="perof" fx:id="perofonpremises" layoutX="226.0" layoutY="297.0" prefHeight="19.0" prefWidth="38.0" text="" />
         <TextField id="perof" fx:id="perofoffpremises" layoutX="456.0" layoutY="297.0" prefHeight="19.0" prefWidth="38.0" />
         <TextField fx:id="perofresidential" layoutX="674.0" layoutY="297.0" prefHeight="19.0" prefWidth="38.0" />
@@ -437,20 +437,20 @@
         <Label font="$x6" layoutX="524.0" layoutY="51.0" prefWidth="183.0" text="Client Profile(3)" textFill="$x7" />
         <Label font="$x4" layoutX="82.0" layoutY="121.0" text="Future Opportunities or Plans for Growth:" />
         <Label font="$x4" layoutX="630.0" layoutY="121.0" prefWidth="266.9998779296875" text="Describe Competition:" />
-        <Label font="$x4" layoutX="82.0" layoutY="218.0" text="What Sets Your Business Apart?" />
+        <Label font="$x4" layoutX="87.0" layoutY="222.0" text="What Sets Your Business Apart?" />
         <Label font="$x4" layoutX="640.0" layoutY="222.0" text="Describe Any Advertising:" />
-        <Label font="$x4" layoutX="82.0" layoutY="339.0" text="How Long Would it Take to Recover From a Serious Claim?" />
+        <Label font="$x4" layoutX="82.0" layoutY="335.0" text="How Long Would it Take to Recover From a Serious Claim?" />
         <Button defaultButton="true" layoutX="76.0" layoutY="638.0" mnemonicParsing="false" onAction="#clientprofile3previous" prefHeight="26.0" prefWidth="126.0" text="Previous Page" />
         <Button defaultButton="true" layoutX="567.0" layoutY="638.0" mnemonicParsing="false" onAction="#submitSave" prefHeight="26.0" prefWidth="126.0" text="Save" />
         <Button defaultButton="true" layoutX="1016.0" layoutY="638.0" mnemonicParsing="false" onAction="#continue3" prefHeight="26.0" prefWidth="126.0" text="Continue" />
-        <CheckBox fx:id="biw" font="$x4" layoutX="648.0" layoutY="396.0" mnemonicParsing="false" text="Business Interruption Worksheet?" />
+        <CheckBox fx:id="biw" font="$x4" layoutX="650.0" layoutY="386.0" mnemonicParsing="false" text="Business Interruption Worksheet?" />
         <Label layoutX="14.0" layoutY="568.0" text="" />
         <TextArea fx:id="futureopportunity" layoutX="82.0" layoutY="146.0" prefHeight="61.0" prefWidth="523.0" wrapText="true" />
         <TextArea fx:id="describecompetition" layoutX="630.0" layoutY="146.0" prefHeight="61.0" prefWidth="523.0" wrapText="true" />
         <TextArea fx:id="businessapart" layoutX="82.0" layoutY="249.0" prefHeight="61.0" prefWidth="523.0" wrapText="true" />
         <TextArea fx:id="advertising" layoutX="630.0" layoutY="249.0" prefHeight="61.0" prefWidth="523.0" wrapText="true" />
-        <TextArea fx:id="recover" layoutX="82.0" layoutY="375.0" prefHeight="61.0" prefWidth="523.0" wrapText="true" />
-        <Label font="$x4" layoutX="478.0" layoutY="463.0" text="Details of Past or Potential Claim (&lt;5 Years)" />
+        <TextArea fx:id="recover" layoutX="82.0" layoutY="366.0" prefHeight="61.0" prefWidth="523.0" wrapText="true" />
+        <Label font="$x4" layoutX="478.0" layoutY="458.0" text="Details of Past or Potential Claim (&lt;5 Years)" />
         <Label font="$x4" layoutX="82.0" layoutY="498.0" text="Date:" />
         <Label font="$x4" layoutX="78.0" layoutY="541.0" prefWidth="60.0" text="Cause:" />
         <Label font="$x4" layoutX="77.0" layoutY="579.0" text="Amount:" />
@@ -471,7 +471,7 @@
         <TextField fx:id="claimcause2" layoutX="483.0" layoutY="534.0" prefHeight="26.0" prefWidth="200.0" />
         <TextField fx:id="claimamount2" layoutX="497.0" layoutY="570.0" prefHeight="26.0" prefWidth="102.0" />
         <Label font="$x4" layoutX="619.0" layoutY="577.0" text="CAD$" />
-            <GridPane fx:id="gridpane1" layoutX="125.0" layoutY="495.0" prefHeight="26.0" prefWidth="100.0">
+            <GridPane fx:id="gridpane1" layoutX="125.0" layoutY="495.0" prefHeight="31.0" prefWidth="100.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
@@ -479,7 +479,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
             </GridPane>
-            <GridPane fx:id="gridpane2" layoutX="461.0" layoutY="495.0" prefHeight="26.0" prefWidth="150.0">
+            <GridPane fx:id="gridpane2" layoutX="461.0" layoutY="495.0" prefHeight="31.0" prefWidth="150.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
@@ -487,7 +487,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
             </GridPane>
-            <GridPane fx:id="gridpane3" layoutX="837.0" layoutY="495.0" prefHeight="26.0" prefWidth="100.0">
+            <GridPane fx:id="gridpane3" layoutX="837.0" layoutY="495.0" prefHeight="31.0" prefWidth="100.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
@@ -511,7 +511,7 @@
         </ImageView>
         <Label font="$x6" layoutX="475.0" layoutY="53.0" prefWidth="182.0" text="Client Profile(4)" textFill="$x7" />
         <Label font="$x9" layoutX="425.0" layoutY="113.0" text="Schedule of Current Insurance Policies:" />
-        <Label font="$x4" layoutX="135.0" layoutY="348.0" text="Lienholders:" />
+        <Label font="$x4" layoutX="135.0" layoutY="351.0" text="Lienholders:" />
         <Label font="$x9" layoutX="489.0" layoutY="433.0" text="Address of Locations:" />
         <Button defaultButton="true" layoutX="97.0" layoutY="638.0" mnemonicParsing="false" onAction="#clientprofile4previous" prefHeight="26.0" prefWidth="126.0" text="Previous Page" />
         <Button defaultButton="true" layoutX="1012.0" layoutY="638.0" mnemonicParsing="false" onAction="#continue4" prefHeight="26.0" prefWidth="126.0" text="Continue" />
@@ -530,14 +530,14 @@
         <TextField fx:id="aoladdress1" layoutX="254.0" layoutY="461.0" prefHeight="25.0" prefWidth="267.0" promptText="Address" />
         <TextField fx:id="aoluse1" layoutX="586.0" layoutY="462.0" prefHeight="25.0" prefWidth="145.0" promptText="Use" />
         <TextField fx:id="ciptype2" layoutX="254.0" layoutY="207.0" prefHeight="25.0" prefWidth="167.0" />
-        <TextField fx:id="ciptype3" layoutX="254.0" layoutY="240.0" prefHeight="25.0" prefWidth="166.0" />
+        <TextField fx:id="ciptype3" layoutX="254.0" layoutY="240.0" prefHeight="25.0" prefWidth="167.0" />
         <TextField fx:id="cipcarrier2" layoutX="544.0" layoutY="207.0" prefHeight="25.0" prefWidth="160.0" />
         <TextField fx:id="cipcarrier3" layoutX="544.0" layoutY="240.0" prefHeight="25.0" prefWidth="160.0" />
-        <TextField fx:id="loc1" layoutX="762.0" layoutY="316.0" prefHeight="25.0" prefWidth="356.0" />
-        <TextField fx:id="loc2" layoutX="762.0" layoutY="347.0" prefHeight="25.0" prefWidth="356.0" />
+        <TextField fx:id="loc1" layoutX="762.0" layoutY="316.0" prefHeight="25.0" prefWidth="330.0" />
+        <TextField fx:id="loc2" layoutX="762.0" layoutY="347.0" prefHeight="25.0" prefWidth="330.0" />
         <TextField fx:id="lienholder3" layoutX="254.0" layoutY="375.0" prefHeight="24.9998779296875" prefWidth="387.0" />
         <Label font="$x4" layoutX="690.0" layoutY="380.0" text="LOC#:" />
-        <TextField fx:id="loc3" layoutX="762.0" layoutY="375.0" prefHeight="25.0" prefWidth="356.0" />
+        <TextField fx:id="loc3" layoutX="762.0" layoutY="375.0" prefHeight="25.0" prefWidth="330.0" />
         <RadioButton fx:id="aolownedy1" layoutX="878.0" layoutY="466.0" mnemonicParsing="false" text="Yes" />
         <RadioButton fx:id="aolownedn1" layoutX="936.0" layoutY="466.0" mnemonicParsing="false" text="No" />
         <TextField fx:id="aoladdress2" layoutX="254.0" layoutY="496.0" prefHeight="25.0" prefWidth="266.0" promptText="Address" />
@@ -820,62 +820,62 @@
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
           <children>
-            <TextField fx:id="contentsdeductible" prefWidth="200.0" />
+            <TextField fx:id="contentsdeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
           <children>
-            <TextField fx:id="stocklimit" prefWidth="200.0" text="" />
+            <TextField fx:id="stocklimit" alignment="CENTER" prefWidth="200.0" text="" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
           <children>
-            <TextField fx:id="stockdeductible" prefWidth="200.0" />
+            <TextField fx:id="stockdeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
           <children>
-            <TextField fx:id="officelimit" prefWidth="200.0" />
+            <TextField fx:id="officelimit" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
           <children>
-            <TextField fx:id="officedeductible" prefWidth="200.0" />
+            <TextField fx:id="officedeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
           <children>
-            <TextField fx:id="edplimit" prefWidth="200.0" />
+            <TextField fx:id="edplimit" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
           <children>
-            <TextField fx:id="edpdeductible" prefWidth="200.0" />
+            <TextField fx:id="edpdeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
           <children>
-            <TextField fx:id="equipmentlimit" prefWidth="200.0" />
+            <TextField fx:id="equipmentlimit" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
           <children>
-            <TextField fx:id="equipmentdeductible" prefWidth="200.0" />
+            <TextField fx:id="equipmentdeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
           <children>
-            <TextField fx:id="offpremiseslimit" prefWidth="200.0" />
+            <TextField fx:id="offpremiseslimit" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
           <children>
-            <TextField fx:id="offpremisesdeductible" prefWidth="200.0" />
+            <TextField fx:id="offpremisesdeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
           <children>
-            <TextField fx:id="transitlimit" prefWidth="200.0" />
+            <TextField fx:id="transitlimit" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="8">
@@ -885,14 +885,14 @@
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
           <children>
-            <TextField fx:id="miscpropertylimit" prefWidth="200.0" />
+            <TextField fx:id="miscpropertylimit" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="9">
           <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
               <children>
-                <TextField fx:id="miscpropertydeductible" prefWidth="200.0" />
+                <TextField fx:id="miscpropertydeductible" alignment="CENTER" prefWidth="200.0" />
               </children>
             </HBox>
           </children>
@@ -901,34 +901,34 @@
           <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
               <children>
-                <TextField fx:id="contractorsequipmentlimit" prefWidth="200.0" />
+                <TextField fx:id="contractorsequipmentlimit" alignment="CENTER" prefWidth="200.0" />
               </children>
             </HBox>
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="10">
           <children>
-            <TextField fx:id="contractorsequipmentdeductible" prefWidth="200.0" />
+            <TextField fx:id="contractorsequipmentdeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="11">
           <children>
-            <TextField fx:id="installationfloatorlimit" prefWidth="200.0" />
+            <TextField fx:id="installationfloatorlimit" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="11">
           <children>
-            <TextField fx:id="installationfloatordeductible" prefWidth="200.0" />
+            <TextField fx:id="installationfloatordeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="12">
           <children>
-            <TextField fx:id="toolfloatorlimit" prefWidth="200.0" />
+            <TextField fx:id="toolfloatorlimit" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="12">
           <children>
-            <TextField fx:id="toolfloatordeductible" prefWidth="200.0" />
+            <TextField fx:id="toolfloatordeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="13">
@@ -938,27 +938,27 @@
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="13">
           <children>
-            <TextField fx:id="signfloatordeductible" prefWidth="200.0" />
+            <TextField fx:id="signfloatordeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="14">
           <children>
-            <TextField fx:id="motortruckcargolimit" prefHeight="51.0" prefWidth="124.0" text="" />
+            <TextField fx:id="motortruckcargolimit" alignment="CENTER" prefHeight="51.0" prefWidth="124.0" text="" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="14">
           <children>
-            <TextField fx:id="motortruckcargodeductible" prefHeight="50.0" prefWidth="112.0" />
+            <TextField fx:id="motortruckcargodeductible" alignment="CENTER" prefHeight="50.0" prefWidth="112.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="16">
           <children>
-            <TextField fx:id="glasslimit" prefWidth="200.0" />
+            <TextField fx:id="glasslimit" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="16">
           <children>
-            <TextField fx:id="glassdeductible" prefWidth="200.0" />
+            <TextField fx:id="glassdeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="17">
@@ -972,7 +972,7 @@
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="17">
           <children>
-            <TextField id="sewerblackupdeductible" fx:id="sewerbackupdeductible" prefWidth="200.0" />
+            <TextField id="sewerblackupdeductible" fx:id="sewerbackupdeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="18">
@@ -982,7 +982,7 @@
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="18">
           <children>
-            <TextField fx:id="flooddeductible" prefWidth="200.0" />
+            <TextField fx:id="flooddeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="19">
@@ -992,7 +992,7 @@
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="19">
           <children>
-            <TextField fx:id="earthquakedeductible" prefWidth="200.0" />
+            <TextField fx:id="earthquakedeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="25.9998779296875" prefWidth="124.0" GridPane.columnIndex="1" GridPane.rowIndex="20">
@@ -1007,42 +1007,42 @@
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="21">
           <children>
-            <TextField fx:id="profitslimit" prefWidth="200.0" />
+            <TextField fx:id="profitslimit" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="21">
           <children>
-            <TextField fx:id="profitsdeductible" prefWidth="200.0" />
+            <TextField fx:id="profitsdeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="22">
           <children>
-            <TextField fx:id="grossearningslimit" prefHeight="52.0" prefWidth="124.0" />
+            <TextField fx:id="grossearningslimit" alignment="CENTER" prefHeight="52.0" prefWidth="124.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="22">
           <children>
-            <TextField fx:id="grossearningsdeductible" prefHeight="52.0" prefWidth="112.0" />
+            <TextField fx:id="grossearningsdeductible" alignment="CENTER" prefHeight="52.0" prefWidth="112.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="24">
           <children>
-            <TextField fx:id="rentalincomelimit" prefWidth="200.0" />
+            <TextField fx:id="rentalincomelimit" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="24">
           <children>
-            <TextField fx:id="rentalincomedeductible" prefWidth="200.0" />
+            <TextField fx:id="rentalincomedeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="25">
           <children>
-            <TextField fx:id="extraexpenselimit" prefWidth="200.0" />
+            <TextField fx:id="extraexpenselimit" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="25">
           <children>
-            <TextField fx:id="extraexpensedeductible" prefWidth="200.0" />
+            <TextField fx:id="extraexpensedeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="26">
@@ -1052,7 +1052,7 @@
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="26">
           <children>
-            <TextField fx:id="offpremisespowerdeductible" prefWidth="200.0" />
+            <TextField fx:id="offpremisespowerdeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
       </children>
@@ -1218,7 +1218,7 @@
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="22">
           <children>
-            <TextField fx:id="othercoverage1" prefWidth="200.0" />
+            <TextField fx:id="othercoverage1" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="15">
@@ -1237,7 +1237,7 @@
               <children>
                 <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <TextField fx:id="othercoverage2" prefWidth="179.0" />
+                    <TextField fx:id="othercoverage2" alignment="CENTER" prefWidth="179.0" />
                   </children>
                 </HBox>
               </children>
@@ -1251,27 +1251,27 @@
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
           <children>
-            <TextField fx:id="forgerydeductible" prefWidth="200.0" />
+            <TextField fx:id="forgerydeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
           <children>
-            <TextField fx:id="moneyorderslimit" prefWidth="200.0" text="" />
+            <TextField fx:id="moneyorderslimit" alignment="CENTER" prefWidth="200.0" text="" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
           <children>
-            <TextField fx:id="moneyordersdeductible" prefWidth="200.0" />
+            <TextField fx:id="moneyordersdeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
           <children>
-            <TextField fx:id="dishonestylimit" prefWidth="200.0" />
+            <TextField fx:id="dishonestylimit" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
           <children>
-            <TextField fx:id="dishonestydeductible" prefWidth="200.0" />
+            <TextField fx:id="dishonestydeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
@@ -1286,12 +1286,12 @@
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
           <children>
-            <TextField fx:id="cgllimit" prefWidth="200.0" />
+            <TextField fx:id="cgllimit" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
           <children>
-            <TextField fx:id="cgldeductible" prefWidth="200.0" />
+            <TextField fx:id="cgldeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
@@ -1301,29 +1301,29 @@
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="8">
           <children>
-            <TextField fx:id="tenantsdeductible" prefWidth="200.0" />
+            <TextField fx:id="tenantsdeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
           <children>
-            <TextField fx:id="nonownedlimit" prefWidth="200.0" />
+            <TextField fx:id="nonownedlimit" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="9">
           <children>
-            <TextField fx:id="nonowneddeductible" prefWidth="200.0" />
+            <TextField fx:id="nonowneddeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="10">
           <children>
-            <TextField fx:id="sef96limit" prefWidth="200.0" />
+            <TextField fx:id="sef96limit" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="10">
           <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
               <children>
-                <TextField fx:id="sef96deductible" prefWidth="200.0" />
+                <TextField fx:id="sef96deductible" alignment="CENTER" prefWidth="200.0" />
               </children>
             </HBox>
           </children>
@@ -1332,54 +1332,54 @@
           <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
               <children>
-                <TextField fx:id="sef94limit" prefWidth="200.0" />
+                <TextField fx:id="sef94limit" alignment="CENTER" prefWidth="200.0" />
               </children>
             </HBox>
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="11">
           <children>
-            <TextField fx:id="sef94deductible" prefWidth="112.00009999999747" />
+            <TextField fx:id="sef94deductible" alignment="CENTER" prefWidth="112.00009999999747" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="12">
           <children>
-            <TextField fx:id="dandlimit" prefWidth="200.0" />
+            <TextField fx:id="dandlimit" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="12">
           <children>
-            <TextField fx:id="danddeductible" prefWidth="200.0" />
+            <TextField fx:id="danddeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="13">
           <children>
-            <TextField fx:id="eandlimit" prefWidth="200.0" />
+            <TextField fx:id="eandlimit" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="13">
           <children>
-            <TextField fx:id="eanddeductible" prefWidth="200.0" />
+            <TextField fx:id="eanddeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="14">
           <children>
-            <TextField fx:id="employerslimit" prefWidth="200.0" />
+            <TextField fx:id="employerslimit" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="14">
           <children>
-            <TextField fx:id="employersdeductible" prefWidth="200.0" />
+            <TextField fx:id="employersdeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="15">
           <children>
-            <TextField fx:id="umbrellalimit" prefHeight="40.0" prefWidth="124.0" text="" />
+            <TextField fx:id="umbrellalimit" alignment="CENTER" prefHeight="40.0" prefWidth="124.0" text="" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="15">
           <children>
-            <TextField fx:id="umbrelladeductible" prefHeight="42.0" prefWidth="112.0" />
+            <TextField fx:id="umbrelladeductible" alignment="CENTER" prefHeight="42.0" prefWidth="112.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="17">
@@ -1394,32 +1394,32 @@
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="18">
           <children>
-            <TextField fx:id="stdlimit" prefWidth="200.0" />
+            <TextField fx:id="stdlimit" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="18">
           <children>
-            <TextField fx:id="stddeductible" prefWidth="200.0" />
+            <TextField fx:id="stddeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="19">
           <children>
-            <TextField fx:id="aclimit" prefWidth="200.0" />
+            <TextField fx:id="aclimit" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="19">
           <children>
-            <TextField fx:id="acdeductible" prefWidth="200.0" />
+            <TextField fx:id="acdeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="20">
           <children>
-            <TextField fx:id="productionmachinerylimit" prefWidth="200.0" />
+            <TextField fx:id="productionmachinerylimit" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="20">
           <children>
-            <TextField fx:id="productionmachinerydeductible" prefWidth="200.0" />
+            <TextField fx:id="productionmachinerydeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="21">
@@ -1434,22 +1434,22 @@
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="22">
           <children>
-            <TextField fx:id="othercoverage1limit" prefWidth="200.0" />
+            <TextField fx:id="othercoverage1limit" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="22">
           <children>
-            <TextField fx:id="othercoverage1deductible" prefWidth="200.0" />
+            <TextField fx:id="othercoverage1deductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="23">
           <children>
-            <TextField fx:id="othercoverage2limit" prefHeight="40.0" prefWidth="124.0" />
+            <TextField fx:id="othercoverage2limit" alignment="CENTER" prefHeight="40.0" prefWidth="124.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="23">
           <children>
-            <TextField fx:id="othercoverage2deductible" prefHeight="42.0" prefWidth="112.0" />
+            <TextField fx:id="othercoverage2deductible" alignment="CENTER" prefHeight="42.0" prefWidth="112.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
@@ -1459,12 +1459,12 @@
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
           <children>
-            <TextField fx:id="insideoutsidelimit" prefWidth="200.0" />
+            <TextField fx:id="insideoutsidelimit" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
           <children>
-            <TextField fx:id="insideoutsidedeductible" prefWidth="200.0" />
+            <TextField fx:id="insideoutsidedeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="16">
@@ -1474,12 +1474,12 @@
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="16">
           <children>
-            <TextField fx:id="wrapuplimit" prefWidth="200.0" />
+            <TextField fx:id="wrapuplimit" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="16">
           <children>
-            <TextField fx:id="wrapupdeductible" prefWidth="200.0" />
+            <TextField fx:id="wrapupdeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
       </children>
@@ -1590,12 +1590,12 @@
         </VBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
           <children>
-            <TextField fx:id="totsqfootage" prefHeight="22.0" prefWidth="80.0" />
+            <TextField fx:id="totsqfootage" alignment="CENTER" prefHeight="22.0" prefWidth="80.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="0">
           <children>
-            <TextField fx:id="insidesqfootage" prefWidth="76.0" />
+            <TextField fx:id="insidesqfootage" alignment="CENTER" prefWidth="76.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
@@ -1624,7 +1624,7 @@
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
           <children>
-            <TextField fx:id="noofstories" prefHeight="20.0" prefWidth="80.0" />
+            <TextField fx:id="noofstories" alignment="CENTER" prefHeight="20.0" prefWidth="80.0" />
           </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="30.0" prefWidth="81.99990000000253" GridPane.columnIndex="2" GridPane.rowIndex="1">
@@ -1737,7 +1737,7 @@
                     </HBox>
                     <HBox alignment="TOP_LEFT" prefHeight="100.0" prefWidth="200.0">
                       <children>
-                        <TextField fx:id="roofupdated" prefHeight="17.0" prefWidth="66.0" />
+                        <TextField fx:id="roofupdated" alignment="CENTER" maxHeight="17.0" prefHeight="17.0" prefWidth="66.0" />
                       </children>
                       <HBox.margin>
                         <Insets fx:id="x11" />
@@ -1811,7 +1811,7 @@
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <TextField fx:id="heatingupdated" prefHeight="21.0" prefWidth="76.0" />
+                    <TextField fx:id="heatingupdated" alignment="CENTER" prefHeight="21.0" prefWidth="76.0" />
                   </children>
                 </HBox>
               </children>
@@ -1864,7 +1864,7 @@
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <TextField fx:id="electricalupdated" prefHeight="21.0" prefWidth="76.0" />
+                    <TextField fx:id="electricalupdated" alignment="CENTER" prefHeight="21.0" prefWidth="76.0" />
                   </children>
                 </HBox>
               </children>
@@ -1902,7 +1902,7 @@
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <TextField fx:id="plumbingupdated" prefHeight="18.0" prefWidth="76.0" />
+                    <TextField fx:id="plumbingupdated" alignment="CENTER" prefHeight="18.0" prefWidth="76.0" />
                   </children>
                 </HBox>
               </children>
@@ -1969,7 +1969,7 @@
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
                   <children>
-                    <TextField fx:id="fireprotectiondistance" prefHeight="18.0001220703125" prefWidth="59.0" />
+                    <TextField fx:id="fireprotectiondistance" alignment="CENTER" prefHeight="18.0001220703125" prefWidth="59.0" />
                   </children>
                   <HBox.margin>
                     <Insets left="5.0" right="5.0" />

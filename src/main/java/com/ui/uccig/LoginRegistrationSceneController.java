@@ -149,10 +149,10 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
     public void submitAction() {
         if (CommonValidations.isStringEmpty(binding.getUsername())) {
             InvokeAnimation.attentionSeekerWobble(loginusername);
-            loginusername.setPromptText("Username does not exist");
+            loginusername.setPromptText("Enter username");
         } else if (CommonValidations.isStringEmpty(binding.getPassword())) {
             InvokeAnimation.attentionSeekerWobble(loginpassword);
-            loginpassword.setPromptText("Password is incorrect");
+            loginpassword.setPromptText("Enter password");
         } else {
             stage.show();
             Task task = new Task<Void>() {
@@ -208,7 +208,13 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
 
     @FXML
     public void submitAction1() {
-        if (CommonValidations.isStringEmpty(binding1.getUsername())) {
+        String username=binding1.getUsername();
+        boolean hasUppercase = !username.equals(username.toLowerCase());
+        if(hasUppercase){
+            InvokeAnimation.attentionSeekerWobble(pusername);
+            pusername.setText("");
+            pusername.setPromptText("Only lowercase letters");
+        }else if (CommonValidations.isStringEmpty(binding1.getUsername())) {
             InvokeAnimation.attentionSeekerWobble(pusername);
             pusername.setPromptText("Prefered username field cannot be empty");
         } else if (CommonValidations.isStringEmpty(binding1.getPassword())) {
@@ -216,10 +222,13 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
             password.setPromptText("Password field cannot be empty");
         } else if (CommonValidations.isStringEmpty(binding1.getRPassword())) {
             InvokeAnimation.attentionSeekerWobble(rpassword);
-            rpassword.setPromptText("Password field cannot be empty");
+            rpassword.setPromptText("Re-Password field cannot be empty");
         } else if (!binding1.getRPassword().equals(binding1.getPassword())) {
             InvokeAnimation.attentionSeekerWobble(rpassword);
-            rpassword.setPromptText("Password does not match");
+            password.setText("");
+            rpassword.setText("");
+            password.setPromptText("Password does not match");
+            rpassword.setPromptText("Password does not match");  
         } else if (!CommonValidations.isValidEmailAddress(binding1.getEmailAddress())) {
             InvokeAnimation.attentionSeekerWobble(email);
             email.setPromptText("Please enter valid email address");
@@ -236,7 +245,17 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
                     try {
                         CommonResponseAttributes response = port.getUserOperationsPort().registerUser(req1);
                         if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
-                            successMessage("You are successfully registered, Kindly login");
+                            successMessage("You are successfully registered. Kindly login");
+                            name.setText("");
+                            password.setText("");
+                            pusername.setText("");
+                            rpassword.setText("");
+                            email.setText("");
+                            loginusername.setText("");
+                            loginpassword.setText("");
+                            InvokeAnimation.attentionSeekerWobble(loginusername);
+                            InvokeAnimation.attentionSeekerWobble(loginpassword);
+                            
                         } else {
                             errors(response.getErrorMessage());
                         }

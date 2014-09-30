@@ -27,7 +27,7 @@ import com.rav.insurance.insuranceformoperations.webservice.contracts.SearchQuot
 import com.rav.insurance.insuranceformoperations.webservice.contracts.SearchQuotesResponse;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.SearchQuotesResponse2;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.UploadProposalBinderRequest;
-import com.rav.insurance.util.WriteByteArray;
+import com.ui.util.WriteByteArray;
 import com.ui.binding.FormEntry4Binding;
 import com.ui.binding.SearchArchivebinding;
 import java.io.File;

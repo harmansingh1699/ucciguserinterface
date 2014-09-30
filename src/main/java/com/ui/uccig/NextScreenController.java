@@ -13,7 +13,7 @@ import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuran
 import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuranceFormResponse;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.InsuranceFormSubmitRequest;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.InsuranceFormSubmitResponse;
-import com.rav.insurance.util.WriteByteArray;
+import com.ui.util.WriteByteArray;
 import com.ui.animation.InvokeAnimation;
 import com.ui.binding.FormEntry1Binding;
 import com.ui.binding.FormEntry2Binding;
@@ -1489,26 +1489,34 @@ public class NextScreenController implements Initializable, IScreenController {
         datePicker.setLayoutX(0.0);
         datePicker.setLayoutY(81.0);
         datePicker.setPrefWidth(200.0);
+        datePicker.setPrefHeight(26.0);
         
         datePicker1.setLayoutX(0.0);
         datePicker1.setLayoutY(81.0);
         datePicker1.setPrefWidth(200.0);
+        datePicker1.setPrefHeight(26.0);
         
         datePicker2.setLayoutX(0.0);
         datePicker2.setLayoutY(81.0);
         datePicker2.setPrefWidth(200.0);
+        datePicker2.setPrefHeight(26.0);
+        
         
         datePicker3.setLayoutX(0.0);
         datePicker3.setLayoutY(81.0);
         datePicker3.setPrefWidth(200.0);
+        datePicker3.setPrefHeight(26.0);
+       
         
         datePicker4.setLayoutX(0.0);
         datePicker4.setLayoutY(81.0);
         datePicker4.setPrefWidth(200.0);
+        datePicker4.setPrefHeight(26.0);
         
         datePicker5.setLayoutX(0.0);
         datePicker5.setLayoutY(81.0);
         datePicker5.setPrefWidth(200.0);
+        datePicker5.setPrefHeight(26.0);
         
         
         datePicker.selectedDateProperty().addListener(new InvalidationListener() {
@@ -1548,37 +1556,37 @@ public class NextScreenController implements Initializable, IScreenController {
         });
         
         
-        datePicker.setPromptText("Date of Claim");
+        datePicker.setPromptText("yyyy-mm-dd");
         datePicker.setLocale(Locale.ENGLISH);
         datePicker.getCalendarView().todayButtonTextProperty().set("TODAY");
         datePicker.getCalendarView().setShowWeeks(false);
         datePicker.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
         
-        datePicker1.setPromptText("Date of Claim");
+        datePicker.setPromptText("yyyy-mm-dd");
         datePicker1.setLocale(Locale.ENGLISH);
         datePicker1.getCalendarView().todayButtonTextProperty().set("TODAY");
         datePicker1.getCalendarView().setShowWeeks(false);
         datePicker1.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
         
-        datePicker2.setPromptText("Date of Claim");
+        datePicker.setPromptText("yyyy-mm-dd");
         datePicker2.setLocale(Locale.ENGLISH);
         datePicker2.getCalendarView().todayButtonTextProperty().set("TODAY");
         datePicker2.getCalendarView().setShowWeeks(false);
         datePicker2.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
         
-        datePicker3.setPromptText("Expiry");
+        datePicker.setPromptText("yyyy-mm-dd");
         datePicker3.setLocale(Locale.ENGLISH);
         datePicker3.getCalendarView().todayButtonTextProperty().set("TODAY");
         datePicker3.getCalendarView().setShowWeeks(false);
         datePicker3.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
         
-        datePicker4.setPromptText("Expiry");
+        datePicker.setPromptText("yyyy-mm-dd");
         datePicker4.setLocale(Locale.ENGLISH);
         datePicker4.getCalendarView().todayButtonTextProperty().set("TODAY");
         datePicker4.getCalendarView().setShowWeeks(false);
         datePicker4.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
         
-        datePicker5.setPromptText("Expiry");
+        datePicker.setPromptText("yyyy-mm-dd");
         datePicker5.setLocale(Locale.ENGLISH);
         datePicker5.getCalendarView().todayButtonTextProperty().set("TODAY");
         datePicker5.getCalendarView().setShowWeeks(false);
@@ -2475,21 +2483,24 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setAdvertising(binding3.getadvertising());
                             req1.setDurationIncaseOfSeriousClaims(binding3.getrecover());
                             
-                            /*GregorianCalendar c1 = new GregorianCalendar();
-                            c1.setTime(datePicker.getSelectedDate());
+                            GregorianCalendar c1 = new GregorianCalendar();
+                            if(datePicker.getSelectedDate()!=null)
+                            {c1.setTime(datePicker.getSelectedDate());
                             XMLGregorianCalendar date1 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c1);
-                            req1.setPastClaimDate1(date1);
+                            req1.setPastClaimDate1(date1);}
                             
                             GregorianCalendar c2 = new GregorianCalendar();
-                            c2.setTime(datePicker1.getSelectedDate());
+                            if(datePicker1.getSelectedDate()!=null)
+                            {c2.setTime(datePicker1.getSelectedDate());
                             XMLGregorianCalendar date2 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c2);
-                            req1.setPastClaimDate2(date2);
+                            req1.setPastClaimDate2(date2);}
                             
                             GregorianCalendar c3 = new GregorianCalendar();
-                            c3.setTime(datePicker2.getSelectedDate());
+                            if(datePicker2.getSelectedDate()!=null)
+                            {c3.setTime(datePicker2.getSelectedDate());
                             XMLGregorianCalendar date3 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c3);
-                            req1.setPastClaimDate3(date3);
-                            */
+                            req1.setPastClaimDate3(date3);}
+                            
                             
                             req1.setPastClaimCause1(binding3.getclaimcause1());
                             req1.setPastClaimCause2(binding3.getclaimcause2());
@@ -2512,20 +2523,23 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setCurrentInsuranceCarrier2(binding3.getcipcarrier2());
                             req1.setCurrentInsuranceCarrier3(binding3.getcipcarrier3());
                             
-                            /*GregorianCalendar c4 = new GregorianCalendar();
-                            c4.setTime(datePicker3.getSelectedDate());
+                            GregorianCalendar c4 = new GregorianCalendar();
+                            if(datePicker3.getSelectedDate()!=null)
+                            {c4.setTime(datePicker3.getSelectedDate());
                             XMLGregorianCalendar date4 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c4);
-                            req1.setCurrentInsuranceExpiry1(date4);
+                            req1.setCurrentInsuranceExpiry1(date4);}
                             
                             GregorianCalendar c5 = new GregorianCalendar();
-                            c5.setTime(datePicker4.getSelectedDate());
+                            if(datePicker4.getSelectedDate()!=null)
+                            {c5.setTime(datePicker4.getSelectedDate());
                             XMLGregorianCalendar date5 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c5);
-                            req1.setCurrentInsuranceExpiry2(date5);
+                            req1.setCurrentInsuranceExpiry2(date5);}
                             
                             GregorianCalendar c6 = new GregorianCalendar();
-                            c6.setTime(datePicker5.getSelectedDate());
+                            if(datePicker5.getSelectedDate()!=null)
+                            {c6.setTime(datePicker5.getSelectedDate());
                             XMLGregorianCalendar date6 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c6);
-                            req1.setCurrentInsuranceExpiry3(date6);*/
+                            req1.setCurrentInsuranceExpiry3(date6);}
                             
                             req1.setLineHolders1(binding3.getlienholder1());
                             req1.setLineHolders2(binding3.getlienholder2());
@@ -3177,35 +3191,41 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setPastClaimCause2(binding3.getclaimcause2());
                             req1.setPastClaimCause3(binding3.getclaimcause3());
                             
-                            /*GregorianCalendar c1 = new GregorianCalendar();
-                            c1.setTime(datePicker.getSelectedDate());
+                            GregorianCalendar c1 = new GregorianCalendar();
+                            if(datePicker.getSelectedDate()!=null)
+                            {c1.setTime(datePicker.getSelectedDate());
                             XMLGregorianCalendar date1 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c1);
-                            req1.setPastClaimDate1(date1);
+                            req1.setPastClaimDate1(date1);}
                             
                             GregorianCalendar c2 = new GregorianCalendar();
-                            c2.setTime(datePicker1.getSelectedDate());
+                            if(datePicker1.getSelectedDate()!=null)
+                            {c2.setTime(datePicker1.getSelectedDate());
                             XMLGregorianCalendar date2 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c2);
-                            req1.setPastClaimDate2(date2);
+                            req1.setPastClaimDate2(date2);}
                             
                             GregorianCalendar c3 = new GregorianCalendar();
-                            c3.setTime(datePicker2.getSelectedDate());
+                            if(datePicker2.getSelectedDate()!=null)
+                            {c3.setTime(datePicker2.getSelectedDate());
                             XMLGregorianCalendar date3 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c3);
-                            req1.setPastClaimDate3(date3);
+                            req1.setPastClaimDate3(date3);}
                             
                             GregorianCalendar c4 = new GregorianCalendar();
-                            c4.setTime(datePicker3.getSelectedDate());
+                            if(datePicker3.getSelectedDate()!=null)
+                            {c4.setTime(datePicker3.getSelectedDate());
                             XMLGregorianCalendar date4 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c4);
-                            req1.setCurrentInsuranceExpiry1(date4);
+                            req1.setCurrentInsuranceExpiry1(date4);}
                             
                             GregorianCalendar c5 = new GregorianCalendar();
-                            c5.setTime(datePicker4.getSelectedDate());
+                            if(datePicker4.getSelectedDate()!=null)
+                            {c5.setTime(datePicker4.getSelectedDate());
                             XMLGregorianCalendar date5 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c5);
-                            req1.setCurrentInsuranceExpiry2(date5);
+                            req1.setCurrentInsuranceExpiry2(date5);}
                             
                             GregorianCalendar c6 = new GregorianCalendar();
-                            c6.setTime(datePicker5.getSelectedDate());
+                            if(datePicker5.getSelectedDate()!=null)
+                            {c6.setTime(datePicker5.getSelectedDate());
                             XMLGregorianCalendar date6 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c6);
-                            req1.setCurrentInsuranceExpiry3(date6); */
+                            req1.setCurrentInsuranceExpiry3(date6); }
                             
                             req1.setLineHolders1(binding3.getlienholder1());
                             req1.setLineHolders2(binding3.getlienholder2());

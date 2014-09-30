@@ -14,7 +14,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="610.875" prefWidth="1269.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ui.uccig.LoginRegistrationSceneController">
   <children>
-    <ImageView fitHeight="713.8125" fitWidth="1269.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fx:id="bg" fitHeight="713.8125" fitWidth="1269.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@../images/bg.jpeg" />
       </image>
@@ -39,7 +39,7 @@
               <children>
                 <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="289.0" style="-fx-background-color: rgba(245,245,245, 0.8);" GridPane.columnIndex="1" GridPane.rowIndex="0">
                            <children>
-                              <PasswordField fx:id="loginpassword" prefHeight="30.0" prefWidth="228.0" promptText="password" />
+                              <PasswordField fx:id="loginpassword" prefHeight="30.0" prefWidth="228.0" promptText="password" style="-fx-font: 18px Times;" />
                            </children>
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="28.0" prefWidth="197.0" style="" GridPane.columnIndex="2" GridPane.rowIndex="0">
@@ -89,27 +89,27 @@
           <children>
             <HBox alignment="CENTER" opacity="0.67" prefHeight="60.0" prefWidth="200.0">
               <children>
-                <TextField fx:id="name" prefHeight="36.0" prefWidth="258.0" promptText="Full Name" style="-fx-font: 20px Times;&#10;-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);&#10;-fx-stroke: black;&#10;-fx-stroke-width: 1;&#10;-fx-prompt-text-fill:grey;" />
+                <TextField fx:id="name" prefHeight="36.0" prefWidth="258.0" promptText="Full Name" style="-fx-font: 18px Times; -fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%); -fx-stroke: black; -fx-stroke-width: 1; -fx-prompt-text-fill: grey;" />
               </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0">
               <children>
-                <TextField fx:id="email" prefHeight="36.0" prefWidth="258.0" promptText="Email Address" style="-fx-font: 20px Times;&#10;-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);&#10;-fx-stroke: black;&#10;-fx-stroke-width: 1;&#10;-fx-prompt-text-fill:grey;" />
+                <TextField fx:id="email" prefHeight="36.0" prefWidth="258.0" promptText="Email Address" style="-fx-font: 18px Times; -fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%); -fx-stroke: black; -fx-stroke-width: 1; -fx-prompt-text-fill: grey;" />
               </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0">
               <children>
-                <TextField fx:id="pusername" prefHeight="36.000099999997474" prefWidth="258.0" promptText="Preferred User Name" style="-fx-font: 20px Times;&#10;-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);&#10;-fx-stroke: black;&#10;-fx-stroke-width: 1;&#10;-fx-prompt-text-fill:grey;" />
+                <TextField fx:id="pusername" prefHeight="36.000099999997474" prefWidth="258.0" promptText="Preferred User Name" style="-fx-font: 18px Times; -fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%); -fx-stroke: black; -fx-stroke-width: 1; -fx-prompt-text-fill: grey;" />
               </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0">
               <children>
-                <PasswordField fx:id="password" prefHeight="36.0" prefWidth="258.0" promptText="Password" style="-fx-font: 20px Times;&#10;-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);&#10;-fx-stroke: black;&#10;-fx-stroke-width: 1;&#10;-fx-prompt-text-fill:grey;" />
+                <PasswordField fx:id="password" prefHeight="36.0" prefWidth="258.0" promptText="Password" style="-fx-font: 18px Times; -fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%); -fx-stroke: black; -fx-stroke-width: 1; -fx-prompt-text-fill: grey;" />
               </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0">
               <children>
-                <PasswordField fx:id="rpassword" prefHeight="36.0" prefWidth="256.0" promptText="Re Enter Password" style="-fx-font: 20px Times;&#10;-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);&#10;-fx-stroke: black;&#10;-fx-stroke-width: 1;&#10;-fx-prompt-text-fill:grey;" />
+                <PasswordField fx:id="rpassword" prefHeight="36.0" prefWidth="256.0" promptText="Re-Enter Password" style="-fx-font: 18px Times; -fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%); -fx-stroke: black; -fx-stroke-width: 1; -fx-prompt-text-fill: grey;" />
               </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0">
@@ -130,9 +130,9 @@
       <top>
         <HBox alignment="CENTER" prefHeight="61.0" prefWidth="351.0">
           <children>
-            <Label text="Create an Account" textAlignment="LEFT" textFill="BLACK" underline="true">
+            <Label text="Create an Account" textAlignment="LEFT" textFill="#152eea" underline="true">
               <font>
-                <Font size="22.0" fx:id="x2" />
+                <Font name="Times Bold" size="22.0" fx:id="x2" />
               </font>
             </Label>
           </children>
@@ -141,10 +141,10 @@
     </BorderPane>
     <ToolBar layoutX="0.0" layoutY="691.0" prefWidth="1269.0">
       <items>
-        <Label text="FameDen Inc © 2013" />
+        <Label text="UCCIG © 2013" />
         <HBox alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="1104.0">
           <children>
-            <Hyperlink text="About Us">
+            <Hyperlink text="About Developer">
               <font>
                 <Font name="System Bold" size="13.0" fx:id="x3" />
               </font>
@@ -196,17 +196,17 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
               <children>
-                <TextField fx:id="forgotPasswordPassCodeField" prefHeight="50.0" prefWidth="290.0" promptText="Enter Secret Code" style="-fx-font: 20px Times;&#10;-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);&#10;-fx-stroke: black;&#10;-fx-stroke-width: 1;&#10; -fx-prompt-text-fill:grey;" />
+                <TextField fx:id="forgotPasswordPassCodeField" prefHeight="50.0" prefWidth="290.0" promptText="Enter Secret Code" style="-fx-font: 18px Times; -fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%); -fx-stroke: black; -fx-stroke-width: 1; -fx-prompt-text-fill: grey;" />
               </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
               <children>
-                <PasswordField fx:id="forgotPasswordPasswordField" prefHeight="50.0" prefWidth="290.0" promptText="Password" style="-fx-font: 20px Times;&#10;-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);&#10;-fx-stroke: black;&#10;-fx-stroke-width: 1;&#10; -fx-prompt-text-fill:grey;" />
+                <PasswordField fx:id="forgotPasswordPasswordField" prefHeight="50.0" prefWidth="290.0" promptText="New Password" style="-fx-font: 18px Times; -fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%); -fx-stroke: black; -fx-stroke-width: 1; -fx-prompt-text-fill: grey;" />
               </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
               <children>
-                <PasswordField fx:id="forgotPasswordRePasswordField" prefHeight="50.0" prefWidth="290.0" promptText="Re-Enter Password" style="-fx-font: 20px Times;&#10;-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);&#10;-fx-stroke: black;&#10;-fx-stroke-width: 1;&#10; -fx-prompt-text-fill:grey;" />
+                <PasswordField fx:id="forgotPasswordRePasswordField" prefHeight="50.0" prefWidth="290.0" promptText="Re-Enter Password" style="-fx-font: 18px Times; -fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%); -fx-stroke: black; -fx-stroke-width: 1; -fx-prompt-text-fill: grey;" />
               </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
@@ -228,7 +228,7 @@
       <top>
         <HBox alignment="CENTER" prefHeight="61.0" prefWidth="351.0">
           <children>
-            <Label font="$x2" text="Reset Password" textAlignment="LEFT" textFill="BLACK" underline="true" />
+            <Label font="$x2" text="Reset Password" textAlignment="LEFT" textFill="#152eea" underline="true" />
           </children>
         </HBox>
       </top>

@@ -1,4 +1,4 @@
-package com.rav.insurance.util;
+package com.ui.util;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

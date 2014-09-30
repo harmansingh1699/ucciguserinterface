@@ -404,33 +404,47 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
     @FXML
     public void submitFormAction() throws DatatypeConfigurationException{
                             GregorianCalendar c1 = new GregorianCalendar();
-                            c1.setTime(datePicker11.getSelectedDate());
+                            if(datePicker11.getSelectedDate()!=null)
+                            {c1.setTime(datePicker11.getSelectedDate());
                             XMLGregorianCalendar date1 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c1);
-                            ((NextScreenController)screenPage.getControlledScreen("NextScreen")).setDate11(date1);
+                            ((NextScreenController)screenPage.getControlledScreen("NextScreen")).setDate11(date1);}
+                            
                             GregorianCalendar c2 = new GregorianCalendar();
-                            c2.setTime(datePicker12.getSelectedDate());
+                            if(datePicker12.getSelectedDate()!=null)
+                            { c2.setTime(datePicker12.getSelectedDate());
                             XMLGregorianCalendar date2 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c2);
-                            ((NextScreenController)screenPage.getControlledScreen("NextScreen")).setDate12(date2);
+                            ((NextScreenController)screenPage.getControlledScreen("NextScreen")).setDate12(date2);}
+                            
                             GregorianCalendar c3 = new GregorianCalendar();
-                            c3.setTime(datePicker13.getSelectedDate());
+                            if(datePicker13.getSelectedDate()!=null)
+                            {c3.setTime(datePicker13.getSelectedDate());
                             XMLGregorianCalendar date3 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c3);
-                            ((NextScreenController)screenPage.getControlledScreen("NextScreen")).setDate13(date3);
+                            ((NextScreenController)screenPage.getControlledScreen("NextScreen")).setDate13(date3);}
+                            
                             GregorianCalendar c4 = new GregorianCalendar();
-                            c4.setTime(datePicker14.getSelectedDate());
+                            if(datePicker14.getSelectedDate()!=null)
+                            {c4.setTime(datePicker14.getSelectedDate());
                             XMLGregorianCalendar date4 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c4);
-                            ((NextScreenController)screenPage.getControlledScreen("NextScreen")).setDate14(date4);
+                            ((NextScreenController)screenPage.getControlledScreen("NextScreen")).setDate14(date4);}
+                            
                             GregorianCalendar c5 = new GregorianCalendar();
-                            c5.setTime(datePicker15.getSelectedDate());
+                            if(datePicker15.getSelectedDate()!=null)
+                            {c5.setTime(datePicker15.getSelectedDate());
                             XMLGregorianCalendar date5 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c5);
-                            ((NextScreenController)screenPage.getControlledScreen("NextScreen")).setDate15(date5);
+                            ((NextScreenController)screenPage.getControlledScreen("NextScreen")).setDate15(date5);}
+                            
                             GregorianCalendar c6 = new GregorianCalendar();
-                            c6.setTime(datePicker16.getSelectedDate());
+                            if(datePicker16.getSelectedDate()!=null)
+                            {c6.setTime(datePicker16.getSelectedDate());
                             XMLGregorianCalendar date6 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c6);
-                            ((NextScreenController)screenPage.getControlledScreen("NextScreen")).setDate16(date6);                                     
+                            ((NextScreenController)screenPage.getControlledScreen("NextScreen")).setDate16(date6);}
+                            
                             GregorianCalendar c7 = new GregorianCalendar();
-                            c7.setTime(datePicker17.getSelectedDate());
+                            if(datePicker17.getSelectedDate()!=null)
+                            {c7.setTime(datePicker17.getSelectedDate());
                             XMLGregorianCalendar date7 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c7);
-                            ((NextScreenController)screenPage.getControlledScreen("NextScreen")).setDate17(date7);
+                            ((NextScreenController)screenPage.getControlledScreen("NextScreen")).setDate17(date7);}
+                            
                             ((NextScreenController)screenPage.getControlledScreen("NextScreen")).submitFormAction();
     }
     
