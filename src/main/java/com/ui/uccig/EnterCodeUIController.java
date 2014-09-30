@@ -637,14 +637,9 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     request.setMarketerUserId(getMarketerId());
                     request.setFormId(title.getText());
                     CommonResponseAttributes response = port.getInsuranceOperationsPort().assignMarketer(request);
-                    System.out.println("Assign1");
-                    System.out.println("Response is"+response.getStatus());
-                    if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
-                        System.out.println("Assign2");
-
-                        successMessage("Assigned " + getFormId() + " to " + getMarketerId());
-                        System.out.println("Assign3");
-                    }
+                  
+                   successMessage("Assigned " + getFormId() + " to " + getMarketerId());
+                    
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -728,7 +723,10 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     request.setFormId(getFormId());                    
                     SearchMailResponse2 response = port.getInsuranceOperationsPort().searchMail(request);
                     if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
-                        animatedMovement(-2538, -1430);
+                       // animatedMovement(-2538, -1430);
+                        System.out.println("response "+response.getMailList().size());
+                        System.out.println(response.getMailList().get(0).getMailBody());
+                        System.out.println(response.getStatus());
                         mailList = response.getMailList();
                         int i =0;
                         for(MailInfo a:mailList){
@@ -1035,6 +1033,10 @@ public class EnterCodeUIController implements Initializable, IScreenController {
             dynamicloading dl = new dynamicloading(screenPage);
             dl.getController().setProducer(abstractFormInfoList.get(i + offset).getProducerId());
             dl.getController().setApplicationId(abstractFormInfoList.get(i + offset).getFormId());
+            
+            dl.getController().setSeverity(abstractFormInfoList.get(i + offset).getSeverity()); 
+            dl.getController().setBusinessName(abstractFormInfoList.get(i + offset).getBusinessName());
+            //dl.getController().setDate(abstractFormInfoList.get(i + offset).getCreationDate().);
             //dl.getController().setBusinessName(abstractFormInfoList.get(i + offset).get);
             //dl.getController().setDate(abstractFormInfoList.get(i + offset).get);
             //dl.getController().setSeverity(abstractFormInfoList.get(i + offset).get);

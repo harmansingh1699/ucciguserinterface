@@ -106,7 +106,7 @@ public class SceneController implements Initializable {
     public void setAttributes( final GetInsuranceFormResponse response){
          Platform.runLater(new Runnable() {
             public void run() {
-        
+        //Setting values for dynamic fxml values
         ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setApplicationId(applicationid.getText());
         ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).animatedMovement(-1269, -715);
         ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setFormId(applicationid.getText());
