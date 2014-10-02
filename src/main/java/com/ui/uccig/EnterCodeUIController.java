@@ -351,9 +351,12 @@ public class EnterCodeUIController implements Initializable, IScreenController {
         try { 
             stage = new Stage();
             FlowPane root = new FlowPane();
-            FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/fxml/mailScene.fxml"));
+            FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/fxml/mailscene.fxml"));
             Parent loadScreen = (Parent) myLoader.load();
-            ((mailSceneController) myLoader.getController()).getWebView().getEngine().load(mailList.get(0).getMailBody());
+            System.out.println("Body is "+mailList.get(0).getMailBody());
+            ((mailSceneController) myLoader.getController()).getWebView().getEngine().loadContent(mailList.get(0).getMailBody());
+            
+            
           
         
         root.getChildren().addAll(loadScreen);
@@ -829,24 +832,9 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                         System.out.println("response "+response.getMailList().size());
                         System.out.println(response.getMailList().get(0).getMailBody());
                         System.out.println(response.getStatus());
-                        mailList = response.getMailList();
-                        int i =0;
-                        for(MailInfo a:mailList){
-                           switch(i){
-                               case 0: l201.setText(a.getSentdDate().toString());
-                               
-                                   break;
-                               case 1:
-                                   break;
-                               case 2:
-                                   break;
-                               case 3:
-                                   break;
-                           }
-                           i++;
-                           
-                        }
-                        successSearch();
+                        setMailList(response.getMailList());
+                       
+                        successSearch1();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -893,7 +881,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                            }
                            
                         }
-                        successSearch();
+                        successSearch1();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -921,7 +909,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     request.setFormId(formId);
                     CommonResponseAttributes response = port.getInsuranceOperationsPort().uploadProposalBinder(request);
                     if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
-                        successSearch();
+                        successSearch1();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -974,7 +962,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     request.setFormId(formId);
                     CommonResponseAttributes response = port.getInsuranceOperationsPort().uploadProposalBinder(request);
                     if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
-                        successSearch();
+                        successSearch1();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -993,15 +981,18 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     }
     @FXML
     public void searchHome() {
-        if(marketerId.trim().isEmpty())
+       try{ if(marketerId==null || marketerId.trim().isEmpty())
         {
                     screenPage.setScreen("NextScreen");
         }
-        else if(marketerId.trim() != null && !marketerId.trim().isEmpty())
+        else if( marketerId.trim() != null && !marketerId.trim().isEmpty())
         {
             System.out.println("Inside searchHomefunction"+marketerId);
             animatedMovement(0, 0);
         }
+       }catch(Exception e){
+           e.printStackTrace();
+       }
     }
 
     @FXML
@@ -1157,6 +1148,32 @@ public class EnterCodeUIController implements Initializable, IScreenController {
             gridpane.add(dl, i % 4, j);
         }
     }
+    
+    public void setMailList(final List mail){
+         Platform.runLater(new Runnable() {
+
+            public void run() {
+                 mailList = mail;
+                        int i =0;
+                        for(MailInfo a:mailList){
+                           switch(i){
+                               case 0: l201.setText(a.getSentdDate().toString());
+                               
+                                   break;
+                               case 1:
+                                   break;
+                               case 2:
+                                   break;
+                               case 3:
+                                   break;
+                           }
+                           i++;
+                           
+                        }
+            
+             }
+        });
+    }
 
     public void successSearch() {
         Platform.runLater(new Runnable() {
@@ -1187,7 +1204,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                 }
                 System.out.println("Inside3");
                 screenPage.setScreen("OtherScreen");
-                animatedMovement(-1269, 0);
+                
             }
         });
     }
