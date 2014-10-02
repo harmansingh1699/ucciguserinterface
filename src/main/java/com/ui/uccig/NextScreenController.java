@@ -103,6 +103,36 @@ public class NextScreenController implements Initializable, IScreenController {
     private XMLGregorianCalendar date16;
     private XMLGregorianCalendar date17;
     
+    private String fileName1;
+    private byte[] file1;
+    
+     private String fileName2;
+    private byte[] file2;
+    
+     private String fileName3;
+    private byte[] file3;
+    
+     private String fileName4;
+    private byte[] file4;
+    
+     private String fileName5;
+    private byte[] file5;
+    
+    private String fileName6;
+    private byte[] file6;
+    
+     private String fileName7;
+    private byte[] file7;
+    
+     private String fileName8;
+    private byte[] file8;
+    
+     private String fileName9;
+    private byte[] file9;
+    
+     private String fileName10;
+    private byte[] file10;
+    
     @FXML
     private Button upload;
     
@@ -1606,6 +1636,7 @@ public class NextScreenController implements Initializable, IScreenController {
         this.screenPage = screenPage;
     }
     
+    
     @FXML
     public void submitWorkList() throws Exception {
         System.out.println("Inside worklist");
@@ -1825,9 +1856,21 @@ public class NextScreenController implements Initializable, IScreenController {
         
     }
     
+    @FXML
+    public void downloadFiles(){
+        if(file1!=null)
+            WriteByteArray.writeByteArray(fileName1, file1);
+    }
+    
     public void assign(final GetInsuranceFormResponse form) {
         Platform.runLater(new Runnable() {
             public void run() {
+                
+                file1 = form.getFile1();
+                fileName1= form.getFile1Name();
+                
+                file2 = form.getFile2();
+                fileName2= form.getFile2Name();
                 
                 if (form != null) {
                     System.out.println("Form is not null");
