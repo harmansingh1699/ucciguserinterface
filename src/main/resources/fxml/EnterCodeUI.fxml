@@ -609,7 +609,7 @@
     <Label font="$x8" layoutX="3094.0" layoutY="21.0" text="Send Mail to Underwriter" textFill="BLACK" />
     <Label font="$x6" layoutX="2596.0" layoutY="91.0" text="Subject:" />
     <TextField layoutX="2676.0" layoutY="84.0" prefHeight="30.0" prefWidth="618.0" />
-    <TextArea layoutX="2676.0" layoutY="147.0" prefHeight="384.0" prefWidth="618.0" wrapText="true" />
+    <TextArea fx:id="emailbody" layoutX="2676.0" layoutY="147.0" prefHeight="384.0" prefWidth="618.0" wrapText="true" />
     <Label font="$x6" layoutX="2597.0" layoutY="325.0" text="Mail Body:" />
     <Label font="$x6" layoutX="2616.0" layoutY="549.0" text="Note:" />
     <Label font="$x6" layoutX="2676.0" layoutY="549.0" text="Files with same name as Application ID will be automatically attached in mail." />
@@ -841,7 +841,7 @@
     <Label font="$x8" layoutX="3039.0" layoutY="743.0" text="Send Delayed Mail to Underwriter" textFill="BLACK" />
     <Label font="$x6" layoutX="2615.0" layoutY="811.0" text="Subject:" />
     <TextField layoutX="2695.0" layoutY="808.0" prefHeight="30.0" prefWidth="618.0" />
-    <TextArea layoutX="2695.0" layoutY="867.0" prefHeight="355.0" prefWidth="618.0" wrapText="true" />
+    <TextArea fx:id="delayemailbody" layoutX="2695.0" layoutY="867.0" prefHeight="355.0" prefWidth="618.0" wrapText="true" />
     <Label font="$x6" layoutX="2615.0" layoutY="1039.0" text="Mail Body:" />
     <Label font="$x6" layoutX="2635.0" layoutY="1290.0" text="Note:" />
     <Label font="$x6" layoutX="2695.0" layoutY="1290.0" text="Files with same name as Application ID will be automatically attached in mail." />
@@ -1010,7 +1010,7 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <TextField prefWidth="189.0" promptText="Email ID" />
+                <TextField fx:id="delayedemail1" prefWidth="189.0" promptText="Email ID" />
               </children>
               <padding>
                 <Insets left="5.0" right="5.0" fx:id="x14" />
@@ -1018,7 +1018,7 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <TextField prefWidth="200.0" promptText="Email ID" />
+                <TextField fx:id="delayedemail2" prefWidth="200.0" promptText="Email ID" />
               </children>
               <padding>
                 <Insets left="5.0" right="5.0" fx:id="x14" />
@@ -1026,7 +1026,7 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <TextField prefWidth="200.0" promptText="Email ID" />
+                <TextField fx:id="delayedemail3" prefWidth="200.0" promptText="Email ID" />
               </children>
               <padding>
                 <Insets left="5.0" right="5.0" fx:id="x14" />
@@ -1034,7 +1034,7 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <TextField prefWidth="200.0" promptText="Email ID" />
+                <TextField fx:id="delayedemail4" prefWidth="200.0" promptText="Email ID" />
               </children>
               <padding>
                 <Insets left="5.0" right="5.0" fx:id="x14" />
@@ -1052,8 +1052,7 @@
     </GridPane>
     <Button defaultButton="true" font="$x6" layoutX="2903.0" layoutY="1334.0" mnemonicParsing="false" onAction="#submitSendDelayEmail" prefHeight="50.0" prefWidth="183.0" text="Send Email" />
     <Label font="$x6" layoutX="2635.0" layoutY="1248.0" text="Date:" />
-    <TextField layoutX="2693.0" layoutY="1239.0" prefHeight="30.0" prefWidth="200.0" promptText="*Select previous day" />
-    <Label font="$x6" layoutX="2903.0" layoutY="1246.0" text="*Mail will be sent at 23:59" />
+    <Label font="$x6" layoutX="2903.0" layoutY="1246.0" text="*Mail will be sent at 00:00" />
     <Button defaultButton="true" font="$x2" layoutX="2593.0" layoutY="19.0" mnemonicParsing="false" onAction="#backMail" prefHeight="34.0" prefWidth="124.0" text="Back" />
     <Button defaultButton="true" font="$x2" layoutX="2582.0" layoutY="737.0" mnemonicParsing="false" onAction="#backDelayMail" prefHeight="34.0" prefWidth="124.0" text="Back" />
     <BorderPane id="registrationPane" fx:id="closeapplicationpane" layoutX="1800.0" layoutY="950.0" prefHeight="355.0" prefWidth="356.0" style="-fx-background-color: rgba(245,245,245, 0.8);&#10;-fx-background-radius: 10;" visible="false">
@@ -1933,5 +1932,13 @@
             <Font name="Times New Roman" size="16.0" />
          </font>
       </Button>
+      <GridPane layoutX="2695.0" layoutY="1243.0" prefHeight="30.0" prefWidth="161.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
   </children>
 </AnchorPane>

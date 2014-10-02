@@ -6,6 +6,7 @@
 package com.ui.uccig;
 
 import antlr.CommonAST;
+import com.calendar.DatePicker;
 import com.rav.insurance.insuranceformoperations.webservice.InsuranceOperationsService_Service;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.AbstractFormInfo;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.AssignMarketerRequest;
@@ -19,6 +20,7 @@ import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuran
 import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuranceFormResponse;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.InsuranceFormSubmitRequest;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.MailInfo;
+import com.rav.insurance.insuranceformoperations.webservice.contracts.PostFormMailRequest;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.QuoteDetailsRequest;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.SearchMailRequest;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.SearchMailResponse;
@@ -27,20 +29,31 @@ import com.rav.insurance.insuranceformoperations.webservice.contracts.SearchQuot
 import com.rav.insurance.insuranceformoperations.webservice.contracts.SearchQuotesResponse;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.SearchQuotesResponse2;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.UploadProposalBinderRequest;
+import com.ui.animation.InvokeAnimation;
+import com.ui.binding.DelayMailSendingBinding;
 import com.ui.util.WriteByteArray;
 import com.ui.binding.FormEntry4Binding;
+import com.ui.binding.MailSendingBinding;
 import com.ui.binding.SearchArchivebinding;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.animation.TranslateTransition;
 import javafx.animation.TranslateTransitionBuilder;
 import javafx.application.Platform;
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
 import javafx.beans.binding.Bindings;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -56,6 +69,7 @@ import javafx.scene.control.Dialogs;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
@@ -63,6 +77,9 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 import ravrun.Rav;
 
 /**
@@ -269,12 +286,30 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     private TextField email3;
     @FXML
     private TextField email4;
+    @FXML
+    private TextArea emailbody;
+    @FXML
+    private TextArea delayemailbody;
+    
+    @FXML
+    private TextField delayedemail1;
+    @FXML
+    private TextField delayedemail2;
+    @FXML
+    private TextField delayedemail3;
+    @FXML
+    private TextField delayedemail4;
+    @FXML 
+    private GridPane gridpane1;
+    
     
 
     private SearchArchivebinding binding;
     private FormEntry4Binding binding1;
-
+    private MailSendingBinding binding2;
+    private DelayMailSendingBinding binding3;
     private int offset;
+    DatePicker datePicker = new DatePicker();
 
     private String marketerId;
     private String receivedname;
@@ -346,6 +381,23 @@ public class EnterCodeUIController implements Initializable, IScreenController {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        datePicker.localeProperty().set(Locale.ENGLISH);
+        datePicker.setLayoutX(0.0);
+        datePicker.setLayoutY(81.0);
+        datePicker.setPrefWidth(200.0);
+        datePicker.setPrefHeight(26.0);
+          datePicker.selectedDateProperty().addListener(new InvalidationListener() {
+            @Override
+            public void invalidated(Observable observable) {
+            }
+        });
+        datePicker.setPromptText("yyyy-mm-dd");
+        datePicker.setLocale(Locale.ENGLISH);
+        datePicker.getCalendarView().todayButtonTextProperty().set("TODAY");
+        datePicker.getCalendarView().setShowWeeks(false);
+        datePicker.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
+        
+        gridpane1.add(datePicker, 5,0);
         binding = new SearchArchivebinding();
         binding1=new FormEntry4Binding();
         Bindings.bindBidirectional(searchproducerid.textProperty(), binding.searchproduceridProperty());
@@ -391,6 +443,8 @@ public class EnterCodeUIController implements Initializable, IScreenController {
          Bindings.bindBidirectional(email2.textProperty(), binding1.email2Property());
          Bindings.bindBidirectional(email3.textProperty(), binding1.email3Property());
          Bindings.bindBidirectional(email4.textProperty(), binding1.email4Property());
+         Bindings.bindBidirectional(emailbody.textProperty(), binding2.mailbodyProperty());
+         Bindings.bindBidirectional(delayemailbody.textProperty(), binding3.mailbodyProperty());
          welcomeName.setText(receivedname);
    
          
@@ -539,6 +593,26 @@ public class EnterCodeUIController implements Initializable, IScreenController {
        FormMailToUnderWriterRequest req1 = new FormMailToUnderWriterRequest();
        req1.setFormId(formId);
        req1.setFrom(receivedemailaddress);
+       BufferedWriter b = null;
+        File f = new File("Mailbody.txt");
+        try {
+            b = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f)));
+            b.write(binding2.getmailbody());
+        } catch (Exception e) {
+
+        } finally {
+            if (b != null) {
+                try {
+                    b.close();
+                } catch (IOException e) {
+    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        }
+        byte[] bytes = WriteByteArray.getByteFromFile(f);
+           
+       req1.setMessage(bytes);
        String mail ="";
        if(binding1.getmail1()!=null && !binding1.getmail1().trim().equals("")){
            mail+=binding1.getmail1()+",";
@@ -559,9 +633,62 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     }
     
     @FXML
-    public void submitSendDelayEmail() {
-    }
+    public void submitSendDelayEmail() throws DatatypeConfigurationException {
+       if(datePicker.getSelectedDate() ==null || datePicker.getSelectedDate().equals(""))
+        {InvokeAnimation.attentionSeekerWobble(datePicker);
+            datePicker.setPromptText("Enter the date");
+        }
+       else{
+        InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
+        PostFormMailRequest req1 = new PostFormMailRequest() ;
+        req1.setFormId(formId);
+        req1.setFrom(receivedemailaddress);
+        GregorianCalendar c1 = new GregorianCalendar();
+           if (datePicker.getSelectedDate() != null) {
+               c1.setTime(datePicker.getSelectedDate());
+               XMLGregorianCalendar date = DatatypeFactory.newInstance().newXMLGregorianCalendar(c1);
+               req1.setSendDate(date);
+           }
 
+        BufferedWriter b = null;
+        File f = new File("Mailbodydelay.txt");
+        try {
+            b = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f)));
+            b.write(binding3.getmailbody());
+        } catch (Exception e) {
+
+        } finally {
+            if (b != null) {
+                try {
+                    b.close();
+                } catch (IOException e) {
+    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        }
+        byte[] bytes = WriteByteArray.getByteFromFile(f);
+           
+       req1.setMessage(bytes);
+       String mail ="";
+       if(binding1.getmail1()!=null && !binding1.getmail1().trim().equals("")){
+           mail+=binding1.getmail1()+",";
+       }
+       if(binding1.getemail1()!=null && !binding1.getmail1().trim().equals("")){
+           mail+=binding1.getemail1()+",";
+       }
+       if(binding1.getemail2()!=null && !binding1.getemail2().trim().equals("")){
+           mail+=binding1.getemail2()+",";
+       }
+       if(binding1.getemail3()!=null && !binding1.getemail3().trim().equals("")){
+           mail+=binding1.getemail3()+",";
+       }
+       if(binding1.getemail4()!=null && !binding1.getemail4().trim().equals("")){
+           mail+=binding1.getemail4()+",";
+       }
+       req1.setRecpients(mail.substring(0, mail.length()));
+    }
+    }
     
     @FXML
     public void searchArchive() {

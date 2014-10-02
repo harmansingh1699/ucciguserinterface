@@ -1594,7 +1594,7 @@ public class NextScreenController implements Initializable, IScreenController {
         
         
         //fullScreenPane.getChildren().add(datePicker,138,495);
-        gridpane1.add(datePicker, 0,0);
+        gridpane1.add(datePicker, 5,0);
         gridpane2.add(datePicker1, 5,0);
         gridpane3.add(datePicker2, 5,0);
         gridpane4.add(datePicker3, 5,0);
