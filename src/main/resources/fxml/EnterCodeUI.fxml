@@ -629,12 +629,12 @@
               <children>
                 <CheckBox fx:id="mail2" font="$x4" mnemonicParsing="false" text="quotes@amfredericks.com">
                   <HBox.margin>
-                    <Insets fx:id="x1a" />
+                    <Insets  />
                   </HBox.margin>
                 </CheckBox>
               </children>
               <padding>
-                <Insets fx:id="x1a" />
+                <Insets />
               </padding>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
@@ -1021,7 +1021,7 @@
                 <TextField fx:id="delayedemail2" prefWidth="200.0" promptText="Email ID" />
               </children>
               <padding>
-                <Insets left="5.0" right="5.0" fx:id="x14" />
+                <Insets left="5.0" right="5.0" />
               </padding>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
@@ -1029,7 +1029,7 @@
                 <TextField fx:id="delayedemail3" prefWidth="200.0" promptText="Email ID" />
               </children>
               <padding>
-                <Insets left="5.0" right="5.0" fx:id="x14" />
+                <Insets left="5.0" right="5.0"  />
               </padding>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
@@ -1037,7 +1037,7 @@
                 <TextField fx:id="delayedemail4" prefWidth="200.0" promptText="Email ID" />
               </children>
               <padding>
-                <Insets left="5.0" right="5.0" fx:id="x14" />
+                <Insets left="5.0" right="5.0"  />
               </padding>
             </HBox>
           </children>
@@ -1102,7 +1102,7 @@
                             <TextField fx:id="closecompany" prefHeight="33.9998779296875" prefWidth="177.0" promptText="Company" />
                           </children>
                           <VBox.margin>
-                            <Insets right="5.0" fx:id="x12" />
+                            <Insets right="5.0" />
                           </VBox.margin>
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
@@ -1160,7 +1160,7 @@
             <Label font="$x6" text="Quote" />
           </children>
           <padding>
-            <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" fx:id="x14" />
+            <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
           </padding>
         </HBox>
         <HBox alignment="CENTER" padding="$x14" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="1">

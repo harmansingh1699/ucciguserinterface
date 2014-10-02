@@ -446,8 +446,8 @@ public class EnterCodeUIController implements Initializable, IScreenController {
          Bindings.bindBidirectional(email2.textProperty(), binding1.email2Property());
          Bindings.bindBidirectional(email3.textProperty(), binding1.email3Property());
          Bindings.bindBidirectional(email4.textProperty(), binding1.email4Property());
-         Bindings.bindBidirectional(emailbody.textProperty(), binding2.mailbodyProperty());
-         Bindings.bindBidirectional(delayemailbody.textProperty(), binding3.mailbodyProperty());
+         //Bindings.bindBidirectional(emailbody.textProperty(), binding2.mailbodyProperty());
+         //Bindings.bindBidirectional(delayemailbody.textProperty(), binding3.mailbodyProperty());
          welcomeName.setText(receivedname);
    
          
@@ -592,15 +592,12 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
 @FXML
     public void submitSendEmail() {
-       InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
-       FormMailToUnderWriterRequest req1 = new FormMailToUnderWriterRequest();
-       req1.setFormId(formId);
-       req1.setFrom(receivedemailaddress);
-       BufferedWriter b = null;
-        File f = new File("Mailbody.txt");
+         BufferedWriter b = null;
+        final File f = new File("Mailbody.txt");
         try {
             b = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f)));
-            b.write(binding2.getmailbody());
+           // b.write(binding2.getMailbody());
+            b.write(emailbody.getText());
         } catch (Exception e) {
 
         } finally {
@@ -613,6 +610,15 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                 }
             }
         }
+        Task task = new Task<Void>() {
+            @Override
+            public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception {
+                try {
+                    InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
+       FormMailToUnderWriterRequest req1 = new FormMailToUnderWriterRequest();
+       req1.setFormId(formId);
+       req1.setFrom(receivedemailaddress);
+      
         byte[] bytes = WriteByteArray.getByteFromFile(f);
            
        req1.setMessage(bytes);
@@ -620,7 +626,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
        if(binding1.getmail1()!=null && !binding1.getmail1().trim().equals("")){
            mail+=binding1.getmail1()+",";
        }
-       if(binding1.getemail1()!=null && !binding1.getmail1().trim().equals("")){
+       if(binding1.getemail1()!=null && !binding1.getemail1().trim().equals("")){
            mail+=binding1.getemail1()+",";
        }
        if(binding1.getemail2()!=null && !binding1.getemail2().trim().equals("")){
@@ -633,6 +639,22 @@ public class EnterCodeUIController implements Initializable, IScreenController {
            mail+=binding1.getemail4()+",";
        }
        req1.setRecpients(mail.substring(0, mail.length()));
+      CommonResponseAttributes response =  port.getInsuranceOperationsPort().sendMailToUnderWriter(req1);
+      
+      if(response!=null && response.getStatus().equals("SUCCESS")){
+          successMessage("Mail Sent");
+      }
+                    
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                //   successMessage("You are successfully logged in");
+                return null;
+            }
+
+        };
+        new Thread(task).start();
+       
     }
     
     @FXML

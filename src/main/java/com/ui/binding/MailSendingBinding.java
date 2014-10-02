@@ -88,11 +88,11 @@ public class MailSendingBinding {
         return this.subject;
     }
     
-    public String getmailbody() {
+    public String getMailbody() {
         return (String) this.mailbody.get();
     }
 
-    public void setmailbody(String mailbody) {
+    public void setMailbody(String mailbody) {
         this.mailbody.set(mailbody);
     }
 
