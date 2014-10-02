@@ -26,7 +26,7 @@ import javafx.scene.control.Label;
 public class SceneController implements Initializable {
     
     @FXML
-    private Label date;
+    private Label marketer;
     @FXML
     private Label severity;
     @FXML
@@ -55,8 +55,8 @@ public class SceneController implements Initializable {
         this.businessname.setText(producer);
     }
     
-    public void setDate(String producer) {
-        this.date.setText(producer);
+    public void setmarketer(String producer) {
+        this.marketer.setText(producer);
     }
     
     public void setSeverity(String producer) {

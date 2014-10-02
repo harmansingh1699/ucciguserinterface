@@ -1595,11 +1595,11 @@ public class NextScreenController implements Initializable, IScreenController {
         
         //fullScreenPane.getChildren().add(datePicker,138,495);
         gridpane1.add(datePicker, 0,0);
-        gridpane2.add(datePicker1, 0,0);
-        gridpane3.add(datePicker2, 0,0);
-        gridpane4.add(datePicker3, 0,0);
-        gridpane5.add(datePicker4, 0,0);
-        gridpane6.add(datePicker5, 0,0);
+        gridpane2.add(datePicker1, 5,0);
+        gridpane3.add(datePicker2, 5,0);
+        gridpane4.add(datePicker3, 5,0);
+        gridpane5.add(datePicker4, 5,0);
+        gridpane6.add(datePicker5, 5,0);
     }
     
     public void setScreenParent(ScreenNavigator screenPage) {

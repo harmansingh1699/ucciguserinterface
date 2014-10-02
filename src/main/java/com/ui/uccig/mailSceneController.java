@@ -17,16 +17,13 @@ import javafx.scene.web.WebView;
  *
  * @author harsimransingh
  */
-public class mailSceneController implements Initializable {
+public class mailSceneController implements Initializable,IScreenController {
     
     @FXML
     private WebView mailwebview;
     
     private ScreenNavigator screenPage;
     
-    public void setScreenNavigator(ScreenNavigator screenPage) {
-        this.screenPage = screenPage;
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -35,5 +32,10 @@ public class mailSceneController implements Initializable {
     
     public WebView getWebView(){
         return mailwebview;
+    }
+
+    @Override
+    public void setScreenParent(ScreenNavigator screenPage) {
+        this.screenPage = screenPage;
     }
 }

@@ -116,7 +116,7 @@
         <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="87.0" vgrow="SOMETIMES" />
       </rowConstraints>
     </GridPane>
-    <Label font="$x5" layoutX="1834.0" layoutY="14.0" text="Search Result(s)" textFill="#1400ff" />
+    <Label font="$x5" layoutX="1834.0" layoutY="14.0" text="Search Result (s)" textFill="#1400ff" />
     <ImageView fitHeight="715.0" fitWidth="1269.0" layoutX="0.0" layoutY="715.0" pickOnBounds="true" preserveRatio="false">
       <image>
         <Image url="@../images/bg.jpeg" />
@@ -1149,16 +1149,7 @@
         <Image url="@../images/greywhite.jpg" />
       </image>
     </ImageView>
-    <HBox alignment="CENTER" layoutX="1882.0" layoutY="1430.0" prefHeight="100.0" prefWidth="200.0">
-      <children>
-        <Label text="Save Quotes" textFill="$x3">
-          <font>
-            <Font name="Times Bold" size="28.0" />
-          </font>
-        </Label>
-      </children>
-    </HBox>
-    <GridPane gridLinesVisible="true" layoutX="1652.0" layoutY="1556.0" prefHeight="566.0" prefWidth="560.0">
+    <GridPane gridLinesVisible="true" layoutX="1635.0" layoutY="1556.0" prefHeight="566.0" prefWidth="560.0">
       <children>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
           <children>
@@ -1348,7 +1339,7 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       </rowConstraints>
     </GridPane>
-    <Button defaultButton="true" layoutX="2234.0" layoutY="1771.0" mnemonicParsing="false" onAction="#submitSaveQuotes" prefHeight="60.0" prefWidth="147.0" text="Save Quotes">
+    <Button defaultButton="true" layoutX="1828.0" layoutY="1499.0" mnemonicParsing="false" onAction="#submitSaveQuotes" prefHeight="42.0" prefWidth="147.0" text="Submit">
          <font>
             <Font name="Times Bold" size="18.0" />
          </font></Button>
@@ -1840,17 +1831,17 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
-                  <Label fx:id="l202" text="Label" />
+                  <Label fx:id="l211" text="Label" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <children>
-                  <Label fx:id="l203" text="Label" />
+                  <Label fx:id="l221" text="Label" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <children>
-                  <Hyperlink fx:id="l203" text="Hyperlink" />
+                  <Hyperlink fx:id="l231" text="Hyperlink" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3" />
@@ -1926,11 +1917,21 @@
          </rowConstraints>
       </GridPane>
       <Button defaultButton="true" layoutX="1296.0" layoutY="1467.0" mnemonicParsing="false" onAction="#backSaveQuote" prefHeight="26.0" prefWidth="83.0" text="Back" />
-      <Label layoutX="3151.0" layoutY="1464.0" text="Conversations">
+      <Label layoutX="3115.0" layoutY="1464.0" text="Conversations">
          <font>
             <Font name="Times Bold" size="26.0" />
          </font>
       </Label>
       <Button defaultButton="true" layoutX="2605.0" layoutY="1467.0" mnemonicParsing="false" onAction="#backSaveQuote" prefHeight="26.0" prefWidth="77.0" text="Back" />
+  <Label layoutX="1828.0" layoutY="1464.0" text="Save Quotes" textFill="$x3">
+    <font>
+      <Font name="Times Bold" size="28.0" />
+    </font>
+  </Label>
+      <Button defaultButton="true" layoutX="1338.0" layoutY="5.0" mnemonicParsing="false" onAction="#searchHome" prefHeight="15.0" prefWidth="121.0" text="Home">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font>
+      </Button>
   </children>
 </AnchorPane>

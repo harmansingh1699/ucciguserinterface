@@ -341,11 +341,26 @@
         <CheckBox fx:id="accbenefits" font="$x4" layoutX="63.0" layoutY="374.0" mnemonicParsing="false" text="Accident Benefits BuyUp?" />
         <CheckBox fx:id="malexposure" font="$x4" layoutX="321.0" layoutY="374.0" mnemonicParsing="false" text="Malpractice Exposure?" />
         <CheckBox fx:id="abuseexposure" font="$x4" layoutX="551.0" layoutY="374.0" mnemonicParsing="false" text="Abuse Exposure?" />
-        <Label font="$x4" layoutX="63.0" layoutY="300.0" maxWidth="163.0" prefHeight="19.0" prefWidth="163.0" text="\% of sales on premises:" />
-        <Label font="$x4" layoutX="287.0" layoutY="300.0" maxWidth="164.0" prefHeight="19.0" prefWidth="164.0" text="\% of sales off premises:" />
-        <Label font="$x4" layoutX="517.0" layoutY="300.0" maxWidth="155.0" prefHeight="19.0" prefWidth="155.0" text="\% of sales residential:" />
-        <Label font="$x4" layoutX="727.0" layoutY="300.0" maxWidth="164.0" prefHeight="19.0" prefWidth="164.0" text="\% of sales commercial:" />
-        <Label font="$x4" layoutX="950.0" layoutY="300.0" maxWidth="184.0" prefHeight="19.0" prefWidth="184.0" text="\% of sales sub-contracted:" />
+        <Label layoutX="63.0" layoutY="300.0" maxWidth="163.0" prefHeight="19.0" prefWidth="163.0" text="\% of sales on premises:">
+               <font>
+                  <Font name="Times Bold" size="14.0" />
+               </font></Label>
+        <Label layoutX="287.0" layoutY="300.0" maxWidth="164.0" prefHeight="19.0" prefWidth="164.0" text="\% of sales off premises:">
+               <font>
+                  <Font name="Times Bold" size="14.0" />
+               </font></Label>
+        <Label layoutX="517.0" layoutY="300.0" maxWidth="155.0" prefHeight="19.0" prefWidth="155.0" text="\% of sales residential:">
+               <font>
+                  <Font name="Times Bold" size="14.0" />
+               </font></Label>
+        <Label layoutX="727.0" layoutY="300.0" maxWidth="164.0" prefHeight="19.0" prefWidth="164.0" text="\% of sales commercial:">
+               <font>
+                  <Font name="Times Bold" size="14.0" />
+               </font></Label>
+        <Label layoutX="950.0" layoutY="300.0" maxWidth="184.0" prefHeight="19.0" prefWidth="164.0" text="\% of sales sub-contracted:">
+               <font>
+                  <Font name="Times Bold" size="14.0" />
+               </font></Label>
         <TextField id="perof" fx:id="perofonpremises" layoutX="226.0" layoutY="297.0" prefHeight="19.0" prefWidth="38.0" text="" />
         <TextField id="perof" fx:id="perofoffpremises" layoutX="456.0" layoutY="297.0" prefHeight="19.0" prefWidth="38.0" />
         <TextField fx:id="perofresidential" layoutX="674.0" layoutY="297.0" prefHeight="19.0" prefWidth="38.0" />
@@ -1738,6 +1753,7 @@
                     <HBox alignment="TOP_LEFT" prefHeight="100.0" prefWidth="200.0">
                       <children>
                         <TextField fx:id="roofupdated" alignment="CENTER" maxHeight="17.0" prefHeight="17.0" prefWidth="66.0" />
+                       
                       </children>
                       <HBox.margin>
                         <Insets fx:id="x11" />
@@ -2019,10 +2035,10 @@
       </rowConstraints>
     </GridPane>
     <TextArea fx:id="additionalcoverage" layoutX="8086.0" layoutY="561.0" prefHeight="74.0" prefWidth="415.0" promptText="Additional Coverage" wrapText="true" />
-    <Button defaultButton="true" layoutX="7671.0" layoutY="665.0" mnemonicParsing="false" onAction="#commercialprevious" prefHeight="26.0" prefWidth="126.0" text="PreviousPage" />
+    <Button defaultButton="true" layoutX="7671.0" layoutY="665.0" mnemonicParsing="false" onAction="#commercialprevious" prefHeight="26.0" prefWidth="126.0" text="Previous Page" />
     <Button fx:id="CommercialSubmit" defaultButton="true" layoutX="8718.0" layoutY="665.0" mnemonicParsing="false" onAction="#submitFormAction" prefHeight="26.0" prefWidth="126.0" text="Submit" />
     <Label font="$x6" layoutX="8100.0" layoutY="28.0" prefWidth="239.0" text="Commercial Property" textFill="$x7" />
-    <Button fx:id="autoinsurancebutton" defaultButton="true" disable="false" layoutX="8183.0" layoutY="665.0" mnemonicParsing="false" onAction="#autobutton" prefHeight="25.9998779296875" prefWidth="126.0" text="Auto Insurance" visible="true" />
+    <Button fx:id="autoinsurancebutton" defaultButton="true" disable="false" layoutX="8183.0" layoutY="665.0" mnemonicParsing="false" onAction="#autobutton" prefHeight="26.0" prefWidth="126.0" text="Auto Insurance" visible="true" />
     <Button defaultButton="true" layoutX="8649.0" layoutY="31.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="162.0" text="Add another location" />
       <Hyperlink layoutX="7671.0" layoutY="30.0" text="Contractors Equipment Schedule" textFill="#20bf20">
          <font>

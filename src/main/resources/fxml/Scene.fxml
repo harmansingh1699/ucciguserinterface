@@ -17,21 +17,45 @@
     </ImageView>
     <Label layoutX="152.0" layoutY="38.0" text="ID:">
       <font>
-        <Font name="Times Bold" size="15.0" fx:id="x1" />
+        <Font name="Times Roman" size="14.0" fx:id="x1" />
       </font>
     </Label>
     <Label font="$x1" layoutX="13.0" layoutY="64.0" text="Business Name:" />
-    <Label font="$x1" layoutX="14.0" layoutY="38.0" text="Producer:" />
-    <Label font="$x1" layoutX="159.0" layoutY="11.0" text="Severity:" />
-    <Label font="$x1" layoutX="13.0" layoutY="11.0" text="Date:" />
-    <Label fx:id="date" layoutX="57.0" layoutY="10.0" prefWidth="82.9998779296875" text="13/08/2014" />
-    <Label fx:id="severity" layoutX="227.0" layoutY="10.0" text="High" />
-    <Label fx:id="producer" layoutX="82.0" layoutY="37.0" text="ehansgh" />
-    <Label fx:id="businessname" layoutX="123.0" layoutY="63.0" text="UCCIG Pvt. Ltd." />
-    <Hyperlink fx:id="applicationid" layoutX="175.0" layoutY="34.0" onAction="#openForm" text="UCCIG123456" textFill="#0029ff">
+    <Label layoutX="14.0" layoutY="38.0" text="Marketer:">
+         <font>
+            <Font name="Times Roman" size="15.0" />
+         </font></Label>
+    <Label layoutX="159.0" layoutY="11.0" text="Severity:">
+         <font>
+            <Font name="Times Roman" size="15.0" />
+         </font></Label>
+    <Label font="$x1" layoutX="13.0" layoutY="11.0" />
+    <Label fx:id="severity" layoutX="219.0" layoutY="11.0" text="High">
+         <font>
+            <Font name="Times Bold" size="15.0" />
+         </font></Label>
+    <Label fx:id="producer" layoutX="79.0" layoutY="11.0" text="ehansgh">
+         <font>
+            <Font name="Times Bold" size="15.0" />
+         </font></Label>
+    <Label fx:id="businessname" layoutX="110.0" layoutY="64.0" text="UCCIG Pvt. Ltd.">
+         <font>
+            <Font name="Times Bold" size="14.0" />
+         </font></Label>
+    <Hyperlink fx:id="applicationid" layoutX="176.0" layoutY="35.0" onAction="#openForm" text="UCCIG123456" textFill="#0029ff">
       <font>
         <Font name="Times Bold" size="14.0" />
       </font>
     </Hyperlink>
+      <Label layoutX="14.0" layoutY="11.0" text="Producer:">
+         <font>
+            <Font name="Times Roman" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="marketer" layoutX="79.0" layoutY="38.0" text="ehansgh">
+         <font>
+            <Font name="Times Bold" size="15.0" />
+         </font>
+      </Label>
   </children>
 </AnchorPane>
