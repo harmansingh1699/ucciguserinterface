@@ -2282,6 +2282,8 @@ public class NextScreenController implements Initializable, IScreenController {
                  rentalincomedeductible.setText(Double.toString(form.getRentalIncomeDeductible()));
                  extraexpenselimit.setText(Double.toString(form.getExtraExpenseLimit()));
                  extraexpensedeductible.setText(Double.toString(form.getExtraExpenseDeductible()));
+                 System.out.println(form.getExtraExpenseDeductible());
+                 System.out.println(form.getExtraExpenseLimit());
                  offpremisesdeductible.setText(Double.toString(form.getOffPremisesDeductible()));
                  offpremiseslimit.setText(Double.toString(form.getOffPremisesLimit()));
                  insideoutsidelimit.setText(Double.toString(form.getInsideOutsideLimit()));
@@ -2603,7 +2605,7 @@ public class NextScreenController implements Initializable, IScreenController {
                                 req1.setBuildingLimit(Double.parseDouble(binding4.getbuildinglimit()));
                             }
                             if (!CommonValidations.isStringEmpty(binding4.getbuildingdeductible())) {
-                                req1.setBuildingLimit(Double.parseDouble(binding4.getbuildingdeductible()));
+                                req1.setBuildingDeductible(Double.parseDouble(binding4.getbuildingdeductible()));
                             }
                             if (!CommonValidations.isStringEmpty(binding4.getcontentslimit())) {
                                 req1.setContentsLimit(Double.parseDouble(binding4.getcontentslimit()));
