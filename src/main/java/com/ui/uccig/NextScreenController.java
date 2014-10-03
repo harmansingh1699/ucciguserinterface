@@ -644,12 +644,6 @@ public class NextScreenController implements Initializable, IScreenController {
     private Button CommercialSubmit;
     @FXML
     private Label labelproducername;
-    @FXML
-    private Label datelabel1;
-    @FXML
-    private Label datelabel2;
-    @FXML
-    private Label datelabel3;
     
     @FXML
     private Pane openingPane;
@@ -1535,34 +1529,34 @@ public class NextScreenController implements Initializable, IScreenController {
         datePicker.setLayoutX(0.0);
         datePicker.setLayoutY(81.0);
         datePicker.setPrefWidth(200.0);
-        datePicker.setPrefHeight(26.0);
+        datePicker.setPrefHeight(36.0);
         
         datePicker1.setLayoutX(0.0);
         datePicker1.setLayoutY(81.0);
         datePicker1.setPrefWidth(200.0);
-        datePicker1.setPrefHeight(26.0);
+        datePicker1.setPrefHeight(36.0);
         
         datePicker2.setLayoutX(0.0);
         datePicker2.setLayoutY(81.0);
         datePicker2.setPrefWidth(200.0);
-        datePicker2.setPrefHeight(26.0);
+        datePicker2.setPrefHeight(36.0);
         
         
         datePicker3.setLayoutX(0.0);
         datePicker3.setLayoutY(81.0);
         datePicker3.setPrefWidth(200.0);
-        datePicker3.setPrefHeight(26.0);
+        datePicker3.setPrefHeight(36.0);
        
         
         datePicker4.setLayoutX(0.0);
         datePicker4.setLayoutY(81.0);
         datePicker4.setPrefWidth(200.0);
-        datePicker4.setPrefHeight(26.0);
+        datePicker4.setPrefHeight(36.0);
         
         datePicker5.setLayoutX(0.0);
         datePicker5.setLayoutY(81.0);
         datePicker5.setPrefWidth(200.0);
-        datePicker5.setPrefHeight(26.0);
+        datePicker5.setPrefHeight(36.0);
         
         
         datePicker.selectedDateProperty().addListener(new InvalidationListener() {
@@ -1681,8 +1675,11 @@ public class NextScreenController implements Initializable, IScreenController {
     public void submitActionCommercial() {
         insurancetypeflag = 1;
         animatedMovement(-1269, 0);
-        returnedname.setText(getReceivedname());
-        returnedbranch.setText(getBranch());
+        if(isEdit)
+        {}
+        else 
+        {returnedname.setText(getReceivedname());
+        returnedbranch.setText(getBranch());}
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
         Date date = new Date();
         returneddate.setText(dateFormat.format(date));
@@ -2150,6 +2147,7 @@ public class NextScreenController implements Initializable, IScreenController {
                 produceridfromform=form.getProducer();
                 branchfromform=form.getBranch();
                 System.out.println("producer id from form "+produceridfromform);
+                System.out.println("Branch from form "+branchfromform);
                 returnedname.setText(produceridfromform);
                 returnedbranch.setText(branchfromform);
                 keycontact.setText(form.getKeyContact());

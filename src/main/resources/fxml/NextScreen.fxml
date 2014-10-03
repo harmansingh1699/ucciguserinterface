@@ -261,7 +261,7 @@
         <TextField id="bod" fx:id="bod2" layoutX="572.0" layoutY="607.0" prefWidth="200.0" />
         <TextField id="bod" fx:id="bod3" layoutX="290.0" layoutY="636.0" prefHeight="26.0" prefWidth="206.0" />
         <TextField id="bod" fx:id="bod4" layoutX="572.0" layoutY="636.0" prefWidth="200.0" />
-        <ChoiceBox fx:id="severity" layoutX="996.0" layoutY="116.0" prefHeight="19.0" prefWidth="88.0" value="Select">
+        <ChoiceBox fx:id="severity" layoutX="996.0" layoutY="116.0" prefHeight="26.0" prefWidth="88.0" value="Select">
           <items>
             <FXCollections fx:factory="observableArrayList">
               <String fx:value="Select" />
@@ -497,50 +497,29 @@
         <TextField fx:id="claimcause2" layoutX="483.0" layoutY="534.0" prefHeight="26.0" prefWidth="200.0" />
         <TextField fx:id="claimamount2" layoutX="497.0" layoutY="570.0" prefHeight="26.0" prefWidth="102.0" />
         <Label font="$x4" layoutX="619.0" layoutY="577.0" text="CAD$" />
-            <GridPane fx:id="gridpane1" layoutX="125.0" layoutY="495.0" prefHeight="27.0" prefWidth="100.0">
+            <GridPane fx:id="gridpane1" layoutX="125.0" layoutY="495.0" prefHeight="30.0" prefWidth="138.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
-               <children>
-                  <Label fx:id="datelabel1" alignment="CENTER" prefHeight="16.0" prefWidth="96.0" text="Label">
-                     <font>
-                        <Font name="Times Bold" size="16.0" />
-                     </font>
-                  </Label>
-               </children>
             </GridPane>
-            <GridPane fx:id="gridpane2" layoutX="461.0" layoutY="495.0" prefHeight="27.0" prefWidth="150.0">
+            <GridPane fx:id="gridpane2" layoutX="461.0" layoutY="495.0" prefHeight="30.0" prefWidth="150.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
-               <children>
-                  <Label fx:id="datelabel2" alignment="CENTER" prefHeight="13.0" prefWidth="96.0" text="Label">
-                     <font>
-                        <Font name="Times Bold" size="16.0" />
-                     </font>
-                  </Label>
-               </children>
             </GridPane>
-            <GridPane fx:id="gridpane3" layoutX="837.0" layoutY="495.0" prefHeight="27.0" prefWidth="96.0">
+            <GridPane fx:id="gridpane3" layoutX="837.0" layoutY="495.0" prefHeight="30.0" prefWidth="140.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
-               <children>
-                  <Label fx:id="datelabel3" alignment="CENTER" prefHeight="19.0" prefWidth="128.0" text="Label">
-                     <font>
-                        <Font name="Times Bold" size="16.0" />
-                     </font>
-                  </Label>
-               </children>
             </GridPane>
       </children>
     </AnchorPane>
