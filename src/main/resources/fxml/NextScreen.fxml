@@ -65,7 +65,7 @@
           <children>
             <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
               <children>
-                <Button fx:id="worklist" defaultButton="true" mnemonicParsing="false" onAction="#submitWorkList" prefHeight="50.0" prefWidth="283.0" text="Worklist">
+                <Button fx:id="worklist" defaultButton="true" mnemonicParsing="false" onAction="#submitWorkList" prefHeight="50.0" prefWidth="283.0" style="-: 22;" text="Worklist">
                   <font>
                     <Font name="Times New Roman Bold" size="16.0" fx:id="x1" />
                   </font>
@@ -101,11 +101,16 @@
       <top>
         <HBox alignment="CENTER" prefHeight="61.0" prefWidth="351.0">
           <children>
-            <Label text="" textAlignment="LEFT" textFill="BLACK" underline="true">
+            <Label text="Welcome " textFill="#0029ff">
               <font>
-                <Font size="22.0" fx:id="x2" />
+                <Font name="Arial" size="20.0" fx:id="x2" />
               </font>
             </Label>
+                  <Label fx:id="labelproducername" text="Label" textFill="#0029ff">
+                     <font>
+                        <Font name="Arial Bold" size="20.0" />
+                     </font>
+                  </Label>
           </children>
         </HBox>
       </top>
@@ -152,7 +157,10 @@
                 </VBox>
               </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button cancelButton="true" defaultButton="true" mnemonicParsing="false" onAction="#backnewbusiness" prefHeight="30.0" prefWidth="89.0" text="Back" />
+                     </children></HBox>
           </children>
         </VBox>
       </center>
@@ -162,7 +170,10 @@
       <top>
         <HBox alignment="CENTER" prefHeight="61.0" prefWidth="351.0">
           <children>
-            <Label font="$x2" text="New Business" textAlignment="LEFT" textFill="BLACK" underline="true" />
+            <Label text="New Business" textAlignment="LEFT" textFill="#0029ff">
+                     <font>
+                        <Font name="Times Bold" size="20.0" />
+                     </font></Label>
           </children>
         </HBox>
       </top>
@@ -357,15 +368,15 @@
                <font>
                   <Font name="Times Bold" size="14.0" />
                </font></Label>
-        <Label layoutX="950.0" layoutY="300.0" maxWidth="184.0" prefHeight="19.0" prefWidth="164.0" text="\% of sales sub-contracted:">
+        <Label layoutX="939.0" layoutY="301.0" maxWidth="176.0" prefHeight="19.0" prefWidth="176.0" text="\% of sales sub-contracted:">
                <font>
-                  <Font name="Times Bold" size="14.0" />
+                  <Font name="Times Bold" size="13.0" />
                </font></Label>
-        <TextField id="perof" fx:id="perofonpremises" layoutX="226.0" layoutY="297.0" prefHeight="19.0" prefWidth="38.0" text="" />
-        <TextField id="perof" fx:id="perofoffpremises" layoutX="456.0" layoutY="297.0" prefHeight="19.0" prefWidth="38.0" />
-        <TextField fx:id="perofresidential" layoutX="674.0" layoutY="297.0" prefHeight="19.0" prefWidth="38.0" />
-        <TextField fx:id="perofcommercial" layoutX="894.0" layoutY="297.0" prefHeight="19.0" prefWidth="38.0" text="" />
-        <TextField fx:id="perofsubcontracted" layoutX="1137.0" layoutY="297.0" prefHeight="19.0" prefWidth="38.0" text="" />
+        <TextField id="perof" fx:id="perofonpremises" layoutX="207.0" layoutY="297.0" prefHeight="19.0" prefWidth="38.0" text="" />
+        <TextField id="perof" fx:id="perofoffpremises" layoutX="432.0" layoutY="297.0" prefHeight="19.0" prefWidth="38.0" />
+        <TextField fx:id="perofresidential" layoutX="655.0" layoutY="297.0" prefHeight="19.0" prefWidth="38.0" />
+        <TextField fx:id="perofcommercial" layoutX="872.0" layoutY="297.0" prefHeight="19.0" prefWidth="38.0" text="" />
+        <TextField fx:id="perofsubcontracted" layoutX="1110.0" layoutY="297.0" prefHeight="19.0" prefWidth="38.0" text="" />
         <CheckBox fx:id="bondopportunity" font="$x4" layoutX="820.0" layoutY="374.0" mnemonicParsing="false" text="Bonding Opportunity?" />
         <TextField id="totalsaleUS" fx:id="totalsaleus" layoutX="336.0" layoutY="255.0" prefHeight="26.0" prefWidth="97.0" />
         <Label layoutX="272.0" layoutY="261.0" prefWidth="51.0" text="CAD$">

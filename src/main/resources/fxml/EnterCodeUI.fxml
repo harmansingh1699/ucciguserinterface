@@ -67,13 +67,16 @@
           <children>
             <Label text="Welcome ">
               <font>
-                <Font name="Times Bold" size="20.0" fx:id="x5" />
+                <Font name="Times Roman" size="20.0" fx:id="x5" />
               </font>
               <textFill>
                 <Color blue="1.000" green="0.160" red="0.000" fx:id="x3" />
               </textFill>
             </Label>
-            <Label fx:id="welcomeName" font="$x5" text="Name" textFill="#0029ff" />
+            <Label fx:id="welcomeName" text="Name" textFill="#0029ff">
+                     <font>
+                        <Font name="Times Bold" size="20.0" />
+                     </font></Label>
           </children>
         </HBox>
       </top>
@@ -188,7 +191,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="356.0001220703125">
               <children>
-                <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" onAction="#nextArchive" prefHeight="50.0" prefWidth="181.0" text="Next" />
+                <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" onAction="#nextArchive" prefHeight="40.0" prefWidth="150.0" text="Next" />
               </children>
             </HBox>
           </children>
@@ -205,8 +208,11 @@
                 <Font size="22.0" fx:id="x7" />
               </font>
             </Label>
-            <Label font="$x5" prefWidth="140.0" text="Search Archives" textFill="$x3" />
-                  <Button mnemonicParsing="false" onAction="#searcharchiveback1" prefHeight="26.0" prefWidth="0.0" text="&lt;" />
+            <Label alignment="CENTER" prefHeight="26.0" prefWidth="195.0" text="Search Archives" textAlignment="CENTER" textFill="$x3">
+                     <font>
+                        <Font name="Arial Bold" size="22.0" />
+                     </font></Label>
+                  <Button mnemonicParsing="false" onAction="#searcharchiveback1" prefHeight="26.0" prefWidth="15.0" text="&lt;" />
           </children>
         </HBox>
       </top>
@@ -234,14 +240,17 @@
                           <children>
                             <RadioButton id="searchwithus" fx:id="searchwithusyes" graphicTextGap="4.0" mnemonicParsing="false" text="Yes" textAlignment="LEFT">
                               <font>
-                                <Font name="Times Bold" size="14.0" fx:id="x4" />
+                                <Font name="Times Bold" size="15.0" fx:id="x4" />
                               </font>
                             </RadioButton>
                           </children>
                         </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                           <children>
-                            <RadioButton fx:id="searchwithusno" font="$x4" mnemonicParsing="false" text="No" />
+                            <RadioButton fx:id="searchwithusno" mnemonicParsing="false" text="No">
+                                             <font>
+                                                <Font name="Times Bold" size="15.0" />
+                                             </font></RadioButton>
                           </children>
                         </HBox>
                       </children>
@@ -263,22 +272,34 @@
                       <children>
                         <HBox prefHeight="100.0" prefWidth="200.0">
                           <children>
-                            <CheckBox id="searchdate" fx:id="searchdate1" mnemonicParsing="false" text="0-3 months" />
+                            <CheckBox id="searchdate" fx:id="searchdate1" mnemonicParsing="false" text="0-3 months">
+                                             <font>
+                                                <Font name="Times Roman" size="16.0" />
+                                             </font></CheckBox>
                           </children>
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="200.0">
                           <children>
-                            <CheckBox fx:id="searchdate2" mnemonicParsing="false" text="3-9 months" />
+                            <CheckBox fx:id="searchdate2" mnemonicParsing="false" text="0-6 months">
+                                             <font>
+                                                <Font name="Times Roman" size="16.0" />
+                                             </font></CheckBox>
                           </children>
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="200.0">
                           <children>
-                            <CheckBox fx:id="searchdate3" mnemonicParsing="false" text="9-12 months" />
+                            <CheckBox fx:id="searchdate3" mnemonicParsing="false" text="0-12 months">
+                                             <font>
+                                                <Font name="Times Roman" size="16.0" />
+                                             </font></CheckBox>
                           </children>
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="200.0">
                           <children>
-                            <CheckBox fx:id="searchdate4" mnemonicParsing="false" text="&gt;12 months" />
+                            <CheckBox fx:id="searchdate4" mnemonicParsing="false" text="&gt;12 months">
+                                             <font>
+                                                <Font name="Times Roman" size="16.0" />
+                                             </font></CheckBox>
                           </children>
                         </HBox>
                       </children>
@@ -309,7 +330,10 @@
         <HBox alignment="CENTER" prefHeight="61.0" prefWidth="351.0">
           <children>
             <Label font="$x7" text="" textAlignment="LEFT" textFill="BLACK" underline="true" />
-            <Label font="$x5" text="Search Archive(s)" textFill="$x3" />
+            <Label alignment="CENTER" prefHeight="26.0" prefWidth="195.0" text="Search Archives" textAlignment="CENTER" textFill="$x3">
+                     <font>
+                        <Font name="Arial Bold" size="22.0" />
+                     </font></Label>
                   <Button mnemonicParsing="false" onAction="#searcharchiveback2" prefHeight="26.0" prefWidth="3.0" text="&lt;" />
           </children>
         </HBox>
@@ -629,7 +653,7 @@
               <children>
                 <CheckBox fx:id="mail2" font="$x4" mnemonicParsing="false" text="quotes@amfredericks.com">
                   <HBox.margin>
-                    <Insets  />
+                    <Insets />
                   </HBox.margin>
                 </CheckBox>
               </children>
@@ -1029,7 +1053,7 @@
                 <TextField fx:id="delayedemail3" prefWidth="200.0" promptText="Email ID" />
               </children>
               <padding>
-                <Insets left="5.0" right="5.0"  />
+                <Insets left="5.0" right="5.0" />
               </padding>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
@@ -1037,7 +1061,7 @@
                 <TextField fx:id="delayedemail4" prefWidth="200.0" promptText="Email ID" />
               </children>
               <padding>
-                <Insets left="5.0" right="5.0"  />
+                <Insets left="5.0" right="5.0" />
               </padding>
             </HBox>
           </children>

@@ -135,6 +135,8 @@ public class NextScreenController implements Initializable, IScreenController {
     
     @FXML
     private Button upload;
+    @FXML
+    private Button worklist;
     
     private List<File> fileList;
     
@@ -635,6 +637,8 @@ public class NextScreenController implements Initializable, IScreenController {
     private Button autoinsurancebutton;
     @FXML
     private Button CommercialSubmit;
+    @FXML
+    private Label labelproducername;
     
     @FXML
     private Pane openingPane;
@@ -735,7 +739,7 @@ public class NextScreenController implements Initializable, IScreenController {
     }
     
     public void setReceivedname(String receivedname) {
-        this.receivedname = receivedname;
+        labelproducername.setText(receivedname);
     }
     
     public String getReceivedemailaddress() {
@@ -754,6 +758,7 @@ public class NextScreenController implements Initializable, IScreenController {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        //worklist.setStyle("-fx-font: 22 arial; -fx-base: #b6e7c9;");
         listAddInfo = new ArrayList();
         binding = new FormEntry1Binding();
         binding2 = new FormEntry2Binding();
@@ -1697,6 +1702,11 @@ public class NextScreenController implements Initializable, IScreenController {
     @FXML
     public void openProposal() {
         new Rav("/Users/harsimransingh/Desktop/Contractors Equipment.docx").execute();
+    }
+     @FXML
+    public void backnewbusiness() {
+        newBusinessPane.setVisible(false);
+        openingPane.setVisible(true);
     }
     
     @FXML

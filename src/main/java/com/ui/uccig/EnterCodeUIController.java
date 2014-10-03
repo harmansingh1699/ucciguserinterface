@@ -384,6 +384,18 @@ public class EnterCodeUIController implements Initializable, IScreenController {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        ChangeListener<Boolean> listener01 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (searchdate1.isSelected()) {
+                    
+                    binding.setsearchdate1("selected");
+                }
+            }
+        };
+        searchdate1.selectedProperty().addListener(listener01);
+        
         datePicker.localeProperty().set(Locale.ENGLISH);
         datePicker.setLayoutX(0.0);
         datePicker.setLayoutY(81.0);
@@ -549,8 +561,11 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
                         abstractFormInfoList = response.getFormList();
                         System.out.println("Inside2");
-                        successSearch1();
+                        successSearch2();
                     }
+                    else if(response.getStatus()==null || response.getStatus().trim().isEmpty())
+                {successMessage("There are currently no active applications");
+                }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -1077,7 +1092,11 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     }
      @FXML
     public void searcharchiveback1() {
-         animatedMovement(0, 0);
+        if(marketerId == null || marketerId.trim().isEmpty())
+        {
+            screenPage.setScreen("NextScreen");
+        }
+        else {animatedMovement(0, 0);}
     }
     
     @FXML
@@ -1226,6 +1245,25 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                 }
                 System.out.println("Inside3");
                 screenPage.setScreen("OtherScreen");
+                
+            }
+        });
+    }
+     public void successSearch2() {
+        Platform.runLater(new Runnable() {
+
+            public void run() {
+                offset = 0;
+                try {
+                    gridpane.getChildren().removeAll(gridpane.getChildren());
+                    showAbstractInfo();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+                System.out.println("SuccessSearch2");
+                screenPage.setScreen("OtherScreen");
+                animatedMovement(-1269, 0);
+                
                 
             }
         });
