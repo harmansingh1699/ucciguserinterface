@@ -497,29 +497,50 @@
         <TextField fx:id="claimcause2" layoutX="483.0" layoutY="534.0" prefHeight="26.0" prefWidth="200.0" />
         <TextField fx:id="claimamount2" layoutX="497.0" layoutY="570.0" prefHeight="26.0" prefWidth="102.0" />
         <Label font="$x4" layoutX="619.0" layoutY="577.0" text="CAD$" />
-            <GridPane fx:id="gridpane1" layoutX="125.0" layoutY="495.0" prefHeight="31.0" prefWidth="100.0">
+            <GridPane fx:id="gridpane1" layoutX="125.0" layoutY="495.0" prefHeight="27.0" prefWidth="100.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
+               <children>
+                  <Label fx:id="datelabel1" alignment="CENTER" prefHeight="16.0" prefWidth="96.0" text="Label">
+                     <font>
+                        <Font name="Times Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
             </GridPane>
-            <GridPane fx:id="gridpane2" layoutX="461.0" layoutY="495.0" prefHeight="31.0" prefWidth="150.0">
+            <GridPane fx:id="gridpane2" layoutX="461.0" layoutY="495.0" prefHeight="27.0" prefWidth="150.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
+               <children>
+                  <Label fx:id="datelabel2" alignment="CENTER" prefHeight="13.0" prefWidth="96.0" text="Label">
+                     <font>
+                        <Font name="Times Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
             </GridPane>
-            <GridPane fx:id="gridpane3" layoutX="837.0" layoutY="495.0" prefHeight="31.0" prefWidth="100.0">
+            <GridPane fx:id="gridpane3" layoutX="837.0" layoutY="495.0" prefHeight="27.0" prefWidth="96.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
+               <children>
+                  <Label fx:id="datelabel3" alignment="CENTER" prefHeight="19.0" prefWidth="128.0" text="Label">
+                     <font>
+                        <Font name="Times Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
             </GridPane>
       </children>
     </AnchorPane>
@@ -906,7 +927,7 @@
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="8">
           <children>
-            <TextField fx:id="transitdeductible" prefWidth="200.0" />
+            <TextField fx:id="transitdeductible" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
@@ -959,7 +980,7 @@
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="13">
           <children>
-            <TextField fx:id="signfloatorlimit" prefWidth="200.0" />
+            <TextField fx:id="signfloatorlimit" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="13">
@@ -1073,7 +1094,7 @@
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="26">
           <children>
-            <TextField fx:id="offpremisespowerlimit" prefWidth="200.0" />
+            <TextField fx:id="offpremisespowerlimit" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="26">
@@ -1322,7 +1343,7 @@
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
           <children>
-            <TextField fx:id="tenantslimit" prefWidth="200.0" />
+            <TextField fx:id="tenantslimit" alignment="CENTER" prefWidth="200.0" />
           </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="8">
@@ -2047,7 +2068,10 @@
     </GridPane>
     <TextArea fx:id="additionalcoverage" layoutX="8086.0" layoutY="561.0" prefHeight="74.0" prefWidth="415.0" promptText="Additional Coverage" wrapText="true" />
     <Button defaultButton="true" layoutX="7671.0" layoutY="665.0" mnemonicParsing="false" onAction="#commercialprevious" prefHeight="26.0" prefWidth="126.0" text="Previous Page" />
-    <Button fx:id="CommercialSubmit" defaultButton="true" layoutX="8718.0" layoutY="665.0" mnemonicParsing="false" onAction="#submitFormAction" prefHeight="26.0" prefWidth="126.0" text="Submit" />
+    <Button fx:id="CommercialSubmit" defaultButton="true" layoutX="8718.0" layoutY="665.0" mnemonicParsing="false" onAction="#submitFormAction" prefHeight="26.0" prefWidth="126.0" text="Submit">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
     <Label font="$x6" layoutX="8100.0" layoutY="28.0" prefWidth="239.0" text="Commercial Property" textFill="$x7" />
     <Button fx:id="autoinsurancebutton" defaultButton="true" disable="false" layoutX="8183.0" layoutY="665.0" mnemonicParsing="false" onAction="#autobutton" prefHeight="26.0" prefWidth="126.0" text="Auto Insurance" visible="true" />
     <Button defaultButton="true" layoutX="8649.0" layoutY="31.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="162.0" text="Add another location" />

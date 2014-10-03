@@ -37,6 +37,10 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.animation.TranslateTransition;
 import javafx.animation.TranslateTransitionBuilder;
 import javafx.application.Platform;
@@ -63,6 +67,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.util.Duration;
+import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 import org.antlr.stringtemplate.StringTemplate;
@@ -639,6 +644,12 @@ public class NextScreenController implements Initializable, IScreenController {
     private Button CommercialSubmit;
     @FXML
     private Label labelproducername;
+    @FXML
+    private Label datelabel1;
+    @FXML
+    private Label datelabel2;
+    @FXML
+    private Label datelabel3;
     
     @FXML
     private Pane openingPane;
@@ -1083,8 +1094,8 @@ public class NextScreenController implements Initializable, IScreenController {
         tg3.selectedToggleProperty().addListener(listener12);
         
         ToggleGroup tg4 = new ToggleGroup();
-        aolownedy3.setToggleGroup(tg4);
-        aolownedn3.setToggleGroup(tg4);
+        aolownedy4.setToggleGroup(tg4);
+        aolownedn4.setToggleGroup(tg4);
         ChangeListener<Toggle> listener13 = new ChangeListener<Toggle>() {
             @Override
             public void changed(ObservableValue<? extends Toggle> prop, Toggle old, Toggle val) {
@@ -1715,7 +1726,6 @@ public class NextScreenController implements Initializable, IScreenController {
             System.out.println("1");
             InvokeAnimation.attentionSeekerWobble(businessname);
             businessname.setPromptText("Business Name can not be empty");
-            
         } else if (CommonValidations.isStringEmpty(binding.getKeyContact())) {
             System.out.println("2");
             InvokeAnimation.attentionSeekerWobble(keycontact);
@@ -1731,7 +1741,6 @@ public class NextScreenController implements Initializable, IScreenController {
         }else if (CommonValidations.isStringEmpty(binding.getSeverity())||binding.getSeverity().equalsIgnoreCase("select")) {
             System.out.println("Severity");
             successMessage1("Select Severity level");
-            
         }
         else {
             animatedMovement(-2538, 0);
@@ -1887,11 +1896,6 @@ public class NextScreenController implements Initializable, IScreenController {
                 } else {
                     System.out.println("Form is null");
                 }
-                if (keycontact != null) {
-                    System.out.println("keycontact is not null");
-                } else {
-                    System.out.println("keycontact is null");
-                }
                 if ("High".equals(form.getSeverity())) {
                     severity.getSelectionModel().select("High");
                 } 
@@ -2025,7 +2029,6 @@ public class NextScreenController implements Initializable, IScreenController {
                     ge50.setSelected(true);
                 }
                 
-                
                 if ("selected".equals(form.getWallsframe())) {
                     wallsframe.setSelected(true);
                 }
@@ -2125,68 +2128,30 @@ public class NextScreenController implements Initializable, IScreenController {
                 }
                 if ("Yes".equals(form.getAddressOfLocationOwnedyes1())){
                     aolownedy1.setSelected(true);
-                }else if ("NO".equals(form.getAddressOfLocationOwnedyes1()))
+                }else if ("No".equals(form.getAddressOfLocationOwnedyes1()))
                 {aolownedn1.setSelected(true);
                 }
                 if ("Yes".equals(form.getAddressOfLocationOwnedyes2())){
                     aolownedy2.setSelected(true);
-                }else if ("NO".equals(form.getAddressOfLocationOwnedyes2()))
+                }else if ("No".equals(form.getAddressOfLocationOwnedyes2()))
                 {aolownedn2.setSelected(true);
                 }
                 if ("Yes".equals(form.getAddressOfLocationOwnedyes3())){
                     aolownedy3.setSelected(true);
-                }else if ("NO".equals(form.getAddressOfLocationOwnedyes3()))
+                }else if ("No".equals(form.getAddressOfLocationOwnedyes3()))
                 {aolownedn3.setSelected(true);
                 }
-                if ("Yes".equals(form.getAddressOfLocationOwnedno1())){
+                if ("Yes".equals(form.getAddressOfLocationOwnedno3())){
                     aolownedy4.setSelected(true);
-                }else if ("NO".equals(form.getAddressOfLocationOwnedno1()))
+                }else if ("No".equals(form.getAddressOfLocationOwnedno3()))
                 {aolownedn4.setSelected(true);
                 }
                 
-                  /*
-                 req1.setEcommerce(binding2.geteCommerce());
-                 req1.setProfessionalLiability(binding2.getprofLiability());
-                 req1.setCyberLiability(binding2.getcyberLiability());
-                 req1.setPollutionexposure(binding2.getpollExposure());
-                 req1.setAccidentalBenefits(binding2.getaccBenefits());
-                 req1.setMalpracticeExposure(binding2.getmalExposure());
-                 req1.setAbuseExposure(binding2.getabuseExposure());
-                 req1.setBondingOpportunities(binding2.getbondOpportunity());
-                 req1.setBusinessInterruptionSheet(binding3.getbiw());
-                 req1.setProfit(binding.getProfit());
-                 req1.setAddressOfLocationOwnedyes1(binding3.getaolownedy1());
-                 req1.setAddressOfLocationOwnedyes2(binding3.getaolownedy2());
-                 req1.setAddressOfLocationOwnedyes3(binding3.getaolownedy3());
-                 req1.setAddressOfLocationOwnedno1(binding3.getaolownedy4());
-                 req1.setOwner(binding4.getmotortruckcargoowner());
-                 req1.setTruckMan(binding4.getmotortruckcargotruckman());
-                 req1.setGrossEarningCheckBox(binding4.getgecheckbox());
-                 req1.setWallsframe(binding4.getwallsframe());
-                 req1.setWallshcb(binding4.getwallshcb());
-                 req1.setWallssteel(binding4.getwallssteel());
-                 req1.setWallsbrick(binding4.getwallsbrick());
-                 req1.setRoofwood(binding4.getwoodjoist());
-                 req1.setRoofsteel(binding4.getsteeldeck());
-                 req1.setRoofconcrete(binding4.getroofconcrete());
-                 req1.setFloorsconcrete(binding4.getfloorsconcrete());
-                 req1.setFloorswood(binding4.getfloorswood());
-                 req1.setHeatinggas(binding4.getfagas());
-                 req1.setHeatingoil(binding4.getfaoil());
-                 req1.setHeatingelectric(binding4.getheatingelectric());
-                 req1.setHeatingother(binding4.getheatingother());
-                 req1.setElectricalbreakers(binding4.getelectricalbreakers());
-                 req1.setElectricalfuses(binding4.getelectricalfuses());
-                 req1.setElectricalamps(binding4.getnoofamps());
-                 req1.setPlumbingcopper(binding4.getcopper());
-                 req1.setPlumbingpvc(binding4.getpvc());
-                 req1.setPlumbingother(binding4.getplumbingother());
-                 req1.setFireProtection(binding4.getFireProtection());
-                 req1.setSecurity(binding4.getSecurity());
-                */
                 produceridfromform=form.getProducer();
                 branchfromform=form.getBranch();
-                System.out.println("producer id from form"+produceridfromform);
+                System.out.println("producer id from form "+produceridfromform);
+                returnedname.setText(produceridfromform);
+                returnedbranch.setText(branchfromform);
                 keycontact.setText(form.getKeyContact());
                 keyphone.setText(form.getKeyContactPhone());
                 keyemail.setText(form.getKeyContactEmailAddress());
@@ -2197,7 +2162,7 @@ public class NextScreenController implements Initializable, IScreenController {
                 mailingaddress.setText(form.getMailingAddress());
                 fax.setText(form.getFax());
                 website.setText(form.getWebSiteURL());
-                // otherspecify.setText(form.getotherSpecify);
+                otherspecify.setText(form.getOtherSpecify());
                 relatedexperience.setText(form.getRelatedExperience());
                 owner1.setText(form.getOwner1());
                 owner2.setText(form.getOwner2());
@@ -2209,6 +2174,7 @@ public class NextScreenController implements Initializable, IScreenController {
                 bod4.setText(form.getBoardOfDirector4());
                 nooflocations.setText(Integer.toString(form.getNumberOfLocations()));
                 noofownderautos.setText(Integer.toString(form.getNumberOfOwnedAutos()));
+                yearsinbusiness.setText(Integer.toString(form.getYearInBusiness()));
                 noofstaff.setText(Integer.toString(form.getNoOfStaff()));
                 payroll.setText(Double.toString(form.getPayRoll()));
                 descriptionOfOpAndRev1.setText(form.getDescriptionOfOperationsAndRevenue1());
@@ -2239,6 +2205,12 @@ public class NextScreenController implements Initializable, IScreenController {
                 businessapart.setText(form.getBusinessAsset());
                 advertising.setText(form.getAdvertising());
                 recover.setText(form.getDurationIncaseOfSeriousClaims());
+                datePicker.setSelectedDate((form.getPastClaimDate1().toGregorianCalendar().getTime()));
+                datePicker1.setSelectedDate((form.getPastClaimDate2().toGregorianCalendar().getTime()));
+                datePicker2.setSelectedDate((form.getPastClaimDate3().toGregorianCalendar().getTime()));
+                datePicker3.setSelectedDate((form.getCurrentInsuranceExpiry1().toGregorianCalendar().getTime()));
+                datePicker4.setSelectedDate((form.getCurrentInsuranceExpiry2().toGregorianCalendar().getTime()));
+                datePicker5.setSelectedDate((form.getCurrentInsuranceExpiry3().toGregorianCalendar().getTime()));
                 claimcause1.setText(form.getPastClaimCause1());
                 claimcause2.setText(form.getPastClaimCause2());
                 claimcause3.setText(form.getPastClaimCause3());
@@ -2271,7 +2243,7 @@ public class NextScreenController implements Initializable, IScreenController {
                 lrtooccupancy4.setText(form.getLocationRentedToOthers4());
                 producercomments.setText(form.getProducercomments());
                 marketercomments.setText(form.getMarketercomments());
-                /*buildinglimit.setText(Double.toString(form.getBuildingLimit()));
+                 buildinglimit.setText(Double.toString(form.getBuildingLimit()));
                  buildingdeductible.setText(Double.toString(form.getBuildingDeductible()));
                  contentslimit.setText(Double.toString(form.getContentsLimit()));
                  contentsdeductible.setText(Double.toString(form.getContentsDeductible()));
@@ -2356,12 +2328,16 @@ public class NextScreenController implements Initializable, IScreenController {
                  othercoverage2limit.setText(Double.toString(form.getOtherCoverageLimit2()));
                  othercoverage1deductible.setText(Double.toString(form.getOtherCoverageDeductible1()));
                  othercoverage2deductible.setText(Double.toString(form.getOtherCoverageDeductible2()));
+                 additionalcoverage.setText(form.getAdditionalcoverage());
                  locationaddress.setText(form.getAddress());
                  locationage.setText(Integer.toString(form.getAge()));
                  totsqfootage.setText(Double.toString(form.getTotalSqFootage()));
                  insidesqfootage.setText(Double.toString(form.getInsdSqFootage()));
-                 noofstories.setText(Integer.toString(form.getNoOfStories()));*/
-                screenPage.setScreen("NextScreen");
+                 noofstories.setText(Integer.toString(form.getNoOfStories()));
+                 
+                 if((form.getType().equals("Both"))||(form.getType().equals("Auto")))
+                 {}
+                 screenPage.setScreen("NextScreen");
                 
                 switch (form.getType()) {
                     case "Auto":
@@ -2430,7 +2406,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setAddressOfLocationOwnedyes1(binding3.getaolownedy1());
                             req1.setAddressOfLocationOwnedyes2(binding3.getaolownedy2());
                             req1.setAddressOfLocationOwnedyes3(binding3.getaolownedy3());
-                            req1.setAddressOfLocationOwnedno1(binding3.getaolownedy4());
+                            req1.setAddressOfLocationOwnedno3(binding3.getaolownedy4());
                             req1.setOwner(binding4.getmotortruckcargoowner());
                             req1.setTruckMan(binding4.getmotortruckcargotruckman());
                             req1.setGrossEarningCheckbox(binding4.getgecheckbox());
@@ -2468,6 +2444,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setMailingAddress(binding.getMailingAddress());
                             req1.setFax(binding.getFax());
                             req1.setWebSiteURL(binding.getWebsite());
+                            req1.setOtherSpecify(binding.getOtherSpecify());
                             req1.setRelatedExperience(binding.getRelatedExperience());
                             req1.setOwner1(binding.getOwner1());
                             req1.setOwner2(binding.getOwner2());
@@ -2478,6 +2455,15 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setBoardOfDirector3(binding.getBod3());
                             req1.setBoardOfDirector4(binding.getBod4());
                             
+                            if (!CommonValidations.isStringEmpty(binding.getNoOfLocations())) {
+                                req1.setNumberOfLocations(Integer.parseInt(binding.getNoOfLocations()));
+                            }
+                             if (!CommonValidations.isStringEmpty(binding.getNoOfOwnedAutos())) {
+                                req1.setNumberOfOwnedAutos(Integer.parseInt(binding.getNoOfOwnedAutos()));
+                            }
+                             if (!CommonValidations.isStringEmpty(binding.getYears())) {
+                                req1.setYearInBusiness(Integer.parseInt(binding.getYears()));
+                            }
                             if (!CommonValidations.isStringEmpty(binding2.getNoofStaff())) {
                                 req1.setNoOfStaff(Integer.parseInt(binding2.getNoofStaff()));
                             }
@@ -2596,7 +2582,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             
                             req1.setLineHolders1(binding3.getlienholder1());
                             req1.setLineHolders2(binding3.getlienholder2());
-                            req1.setLienHolders3(binding3.getlienholder3());
+                            req1.setLineHolders3(binding3.getlienholder3());
                             req1.setLineHoldersLoc1(binding3.getloc1());
                             req1.setLineHoldersLoc2(binding3.getloc2());
                             req1.setLineHoldersLoc3(binding3.getloc3());
@@ -2909,11 +2895,12 @@ public class NextScreenController implements Initializable, IScreenController {
                                 req1.setProductionMachineryDeductible(Double.parseDouble(binding4.getproductionmachinerydeductible()));
                             }
 
-                            //req1.setOtherCoverageLimit(Double.parseDouble(binding4.getothercoverage1()));
-                            //req1.setOtherCoverage1(Double.parseDouble(binding4.getothercoverage1()));
-                            //req1.setOtherCoverage2(Double.parseDouble(binding4.getothercoverage2()));
-                            //req1.setOtherCoverageLimit(Double.parseDouble(binding4.getothercoverage1limit()));
-                            // req1.setOtherCoverageDeductible(Double.parseDouble(binding4.getothercoverage1deductible()));*/
+                            req1.setOthercoverage1(binding4.getothercoverage1());
+                            req1.setOthercoverage2(binding4.getothercoverage2());
+                            req1.setOtherCoverageLimit1(Double.parseDouble(binding4.getothercoverage1limit()));
+                            req1.setOtherCoverageDeductible1(Double.parseDouble(binding4.getothercoverage1deductible()));
+                            req1.setOtherCoverageLimit2(Double.parseDouble(binding4.getothercoverage2limit()));
+                            req1.setOtherCoverageDeductible2(Double.parseDouble(binding4.getothercoverage2deductible()));
                             req1.setAdditionalcoverage(binding4.getadditionalcoverage());
                             req1.setRoofupdated(binding4.getroofupdated());
                             req1.setHeatingupdated(binding4.getheatingupdated());
@@ -3785,17 +3772,54 @@ public class NextScreenController implements Initializable, IScreenController {
         
     }
     
+    public boolean isAlphaNumeric(String s){
+    String pattern= "^([0-9\\(\\)\\/\\+ \\-]*)$";
+        System.out.println(s);
+        if(s.matches(pattern)){
+            System.out.println("True");
+            return true;
+        }
+        else{
+        return false;  }
+}
+    
     public void successMessage(final String message) {
         Platform.runLater(new Runnable() {
             public void run() {
                 Dialogs.showInformationDialog(null, message, "Success", "Success");
+                if(producerid.trim() == null && producerid.trim().isEmpty())
+                {screenPage.setScreen("OtherScreen");
+                animatedMovement(-1269, -1269);
+                }
+                else
+                {
                 screenPage.setScreen("NextScreen");
                 animatedMovement(0, 0);
+                }
                 openingPane.setVisible(true);
                 newBusinessPane.setVisible(false);
             }
         });
     }
+    
+     public boolean isValidphonenumber(String s) {
+
+        //String phoneNumber = "1-(80..2)-321-0361";
+        System.out.println(s);
+        String regex = "^\\+?[0-9. ()-]{10,25}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(s);
+         System.out.println(matcher);
+         System.out.println(regex);
+        if (matcher.matches()) 
+        {
+           System.out.println("Yes it matches");
+            return true;
+        } else {
+            return  false;
+        }
+    }
+
         public void successMessage1(final String message) {
         Platform.runLater(new Runnable() {
             public void run() {
@@ -3812,6 +3836,18 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         });
     }
+    
+     public static XMLGregorianCalendar toXMLGregorianCalendar(Date date){
+        GregorianCalendar gCalendar = new GregorianCalendar();
+        gCalendar.setTime(date);
+        XMLGregorianCalendar xmlCalendar = null;
+        try {
+            xmlCalendar = DatatypeFactory.newInstance().newXMLGregorianCalendar(gCalendar);
+        } catch (DatatypeConfigurationException ex) {
+        }
+        return xmlCalendar;
+    }
+
     
     public void animatedMovement(int x, int y) {
         TranslateTransition animatedMove = TranslateTransitionBuilder.
