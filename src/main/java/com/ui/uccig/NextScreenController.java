@@ -1005,6 +1005,15 @@ public class NextScreenController implements Initializable, IScreenController {
                 
             }
         });
+        
+         basement.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) {
+                
+                binding4.setbasement(newSelection);
+                
+            }
+        });
         currency1.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> selected, String oldSelection, String newSelection) {
@@ -2221,9 +2230,9 @@ public class NextScreenController implements Initializable, IScreenController {
                 cipcarrier1.setText(form.getCurrentInsuranceCarrier1());
                 cipcarrier2.setText(form.getCurrentInsuranceCarrier2());
                 cipcarrier3.setText(form.getCurrentInsuranceCarrier3());
-                lienholder1.setText(form.getLienHolders1());
-                lienholder2.setText(form.getLienHolders2());
-                lienholder3.setText(form.getLienHolders3());
+                lienholder1.setText(form.getLineHolders1());
+                lienholder2.setText(form.getLineHolders2());
+                lienholder3.setText(form.getLineHolders3());
                 loc1.setText(form.getLineHoldersLoc1());
                 loc2.setText(form.getLineHoldersLoc2());
                 loc3.setText(form.getLineHoldersLoc3());
@@ -2282,8 +2291,8 @@ public class NextScreenController implements Initializable, IScreenController {
                  rentalincomedeductible.setText(Double.toString(form.getRentalIncomeDeductible()));
                  extraexpenselimit.setText(Double.toString(form.getExtraExpenseLimit()));
                  extraexpensedeductible.setText(Double.toString(form.getExtraExpenseDeductible()));
-                 offpremisesdeductible.setText(Double.toString(form.getOffPremisesDeductible()));
-                 offpremiseslimit.setText(Double.toString(form.getOffPremisesLimit()));
+                 offpremisespowerdeductible.setText(Double.toString(form.getOffPremisesDeductible()));
+                 offpremisespowerlimit.setText(Double.toString(form.getOffPremisesLimit()));
                  insideoutsidelimit.setText(Double.toString(form.getInsideOutsideLimit()));
                  insideoutsidedeductible.setText(Double.toString(form.getInsideOutsideDeductible()));
                  bfmoneylimit.setText(Double.toString(form.getBfMoneyLimit()));
@@ -2332,7 +2341,10 @@ public class NextScreenController implements Initializable, IScreenController {
                  totsqfootage.setText(Double.toString(form.getTotalSqFootage()));
                  insidesqfootage.setText(Double.toString(form.getInsdSqFootage()));
                  noofstories.setText(Integer.toString(form.getNoOfStories()));
-                 
+                 roofupdated.setText(form.getRoofupdated());
+                 heatingupdated.setText(form.getHeatingupdated());
+                 electricalupdated.setText(form.getElectricalupdated());
+                 fireprotectiondistance.setText(form.getFireProtectiondistance());
                  if((form.getType().equals("Both"))||(form.getType().equals("Auto")))
                  {}
                  screenPage.setScreen("NextScreen");
@@ -2387,6 +2399,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setFinancialYearEnd(binding2.getfinYearEnd());
                             req1.setGroupBenefits(binding2.getgroupBenefits());
                             req1.setPensionPlan(binding2.getpensionPlan());
+                            req1.setBasement(binding4.getbasement());
                             req1.setCurrency1(binding2.getcurrency1());
                             req1.setCurrency2(binding2.getcurrency2());
                             req1.setCurrency3(binding2.getcurrency3());
@@ -3086,6 +3099,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setFinancialYearEnd(binding2.getfinYearEnd());
                             req1.setGroupBenefits(binding2.getgroupBenefits());
                             req1.setPensionPlan(binding2.getpensionPlan());
+                            req1.setBasement(binding4.getbasement());
                             req1.setCurrency1(binding2.getcurrency1());
                             req1.setCurrency2(binding2.getcurrency2());
                             req1.setCurrency3(binding2.getcurrency3());
@@ -3290,7 +3304,7 @@ public class NextScreenController implements Initializable, IScreenController {
                                 req1.setBuildingLimit(Double.parseDouble(binding4.getbuildinglimit()));
                             }
                             if (!CommonValidations.isStringEmpty(binding4.getbuildingdeductible())) {
-                                req1.setBuildingLimit(Double.parseDouble(binding4.getbuildingdeductible()));
+                                req1.setBuildingDeductible(Double.parseDouble(binding4.getbuildingdeductible()));
                             }
                             if (!CommonValidations.isStringEmpty(binding4.getcontentslimit())) {
                                 req1.setContentsLimit(Double.parseDouble(binding4.getcontentslimit()));
@@ -3504,7 +3518,7 @@ public class NextScreenController implements Initializable, IScreenController {
                                 req1.setSef96Limit(Double.parseDouble(binding4.getsef96limit()));
                             }
                             
-                            if (!CommonValidations.isStringEmpty(binding4.getsef94deductible())) {
+                            if (!CommonValidations.isStringEmpty(binding4.getsef96deductible())) {
                                 req1.setSef96Deductible(Double.parseDouble(binding4.getsef96deductible()));
                             }
                             
