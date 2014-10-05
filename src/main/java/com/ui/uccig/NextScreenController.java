@@ -2616,7 +2616,7 @@ public class NextScreenController implements Initializable, IScreenController {
                                 req1.setBuildingLimit(Double.parseDouble(binding4.getbuildinglimit()));
                             }
                             if (!CommonValidations.isStringEmpty(binding4.getbuildingdeductible())) {
-                                req1.setBuildingLimit(Double.parseDouble(binding4.getbuildingdeductible()));
+                                req1.setBuildingDeductible(Double.parseDouble(binding4.getbuildingdeductible()));
                             }
                             if (!CommonValidations.isStringEmpty(binding4.getcontentslimit())) {
                                 req1.setContentsLimit(Double.parseDouble(binding4.getcontentslimit()));
