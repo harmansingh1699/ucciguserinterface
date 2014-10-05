@@ -2488,10 +2488,10 @@ public class NextScreenController implements Initializable, IScreenController {
                                 req1.setTotalSale(Double.parseDouble(binding2.gettotalSale()));
                             }
                             if (!CommonValidations.isStringEmpty(binding2.getperOfUsSales())) {
-                                req1.setTotalSale(Double.parseDouble(binding2.getperOfUsSales()));
+                                req1.setPercentageOfUSSales(Double.parseDouble(binding2.getperOfUsSales()));
                             }
                             if (!CommonValidations.isStringEmpty(binding2.getperOfOnPremises())) {
-                                req1.setTotalSale(Double.parseDouble(binding2.getperOfOnPremises()));
+                                req1.setOnpremises(Integer.parseInt(binding2.getperOfOnPremises()));
                             }
                             
                             if (!CommonValidations.isStringEmpty(binding2.getperOfOffPremises())) {
