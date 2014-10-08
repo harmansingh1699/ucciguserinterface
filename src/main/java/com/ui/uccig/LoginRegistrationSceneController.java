@@ -193,6 +193,7 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
                             }
                             System.out.println(response.getUserFullName());
                         } else {
+                            stopLoading();
                             errors(response.getErrorMessage());
                         }
                     } catch (Exception ex) {
@@ -233,6 +234,7 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
             InvokeAnimation.attentionSeekerWobble(email);
             email.setPromptText("Please enter valid email address");
         } else {
+            stage.show();
             Task task = new Task<Void>() {
                 @Override
                 public Void call() {
@@ -245,6 +247,7 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
                     try {
                         CommonResponseAttributes response = port.getUserOperationsPort().registerUser(req1);
                         if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
+                            stopLoading();
                             successMessage("You are successfully registered. Kindly login");
                             name.setText("");
                             password.setText("");
@@ -257,6 +260,7 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
                             InvokeAnimation.attentionSeekerWobble(loginpassword);
                             
                         } else {
+                            stopLoading();
                             errors(response.getErrorMessage());
                         }
                     } catch (com.rav.insurance.useroperations.webservice.Exception ex) {

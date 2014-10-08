@@ -14,6 +14,7 @@ import com.rav.insurance.insuranceformoperations.webservice.contracts.CloseFormR
 import com.rav.insurance.insuranceformoperations.webservice.contracts.CloseFormResponse;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.CommonResponseAttributes;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.FormMailToUnderWriterRequest;
+import com.rav.insurance.insuranceformoperations.webservice.contracts.GetCloseFormNQuoteDetailsResponse;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.GetCloseFormNQuoteDetailsResponse2;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuranceFormListRequest;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuranceFormListResponse;
@@ -272,6 +273,24 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     @FXML
     private Label title;
+    @FXML
+    private Label pname;
+    @FXML
+    private Label mname;
+    @FXML
+    private Label type;
+    @FXML
+    private Label category;
+    @FXML
+    private Label submissiondate;
+    @FXML
+    private Label severity;
+    @FXML
+    private Label branch;
+    @FXML
+    private Label withus;
+    
+    
     
     @FXML
     private TextField closecompany;
@@ -334,8 +353,35 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     private String formId;
 
-    public void setApplicationId(String applicationId) {
-        title.setText(applicationId);
+    public void setApplicationId(String applicationId, String BusinessName) {
+        title.setText(applicationId+", "+BusinessName);
+    }
+    
+    public void setSeverity(String severity) {
+        this.severity.setText(severity);
+    }
+    
+    public void setProducerid(String producerid) {
+        pname.setText(producerid);
+    }
+    
+    public void setMarketerid(String marketerid) {
+        mname.setText(marketerid);
+    }
+    public void setInsuranceType(String insuranceType) {
+        type.setText(insuranceType);
+    }
+    public void setCategory(String insurancecategory) {
+           category.setText(insurancecategory);
+    }
+    public void setCreationDate(String date) {
+           submissiondate.setText(date);
+    }
+    public void setBranch(String insurancebranch) {
+           branch.setText(insurancebranch);
+    }
+    public void setWithUs(String withUs) {
+           withus.setText(withUs);
     }
 
     public String getFormId() {
@@ -625,7 +671,10 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                 }
             }
         }
-        Task task = new Task<Void>() {
+        if(binding1.getemail1().trim().equals(null)||binding1.getemail1().trim().equals(""))
+        { successMessage("Please enter email address");}
+        else
+        {Task task = new Task<Void>() {
             @Override
             public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception {
                 try {
@@ -668,8 +717,9 @@ public class EnterCodeUIController implements Initializable, IScreenController {
             }
 
         };
+        
         new Thread(task).start();
-       
+        }
     }
     
     @FXML
@@ -834,12 +884,12 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     
     @FXML
     public void openProposal(){
-        new Rav("/Users/harsimransingh/Desktop/RevisedProposal.docx").execute();
+        new Rav(new File("bin\\proposal.docx").getAbsolutePath());
     }
     
     @FXML
     public void openBinder(){
-        new Rav("/Users/harsimransingh/Desktop/RevisedProposal.docx").execute();
+        new Rav(new File("bin\\binder.docx").getAbsolutePath());
     }
 
     public void errors(final String message) {
@@ -1067,17 +1117,98 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     @FXML
     public void submitSaveQuotes() {
-        
+         Task task = new Task<Void>() {
+            @Override
+            public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception, Exception {
+                try {
+
+                    InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
+                    QuoteDetailsRequest request = new QuoteDetailsRequest();
+                    request.setQuote(Double.parseDouble(binding1.getQuote1()));
+                    request.setQuote1(Double.parseDouble(binding1.getQuote2()));
+                    request.setQuote2(Double.parseDouble(binding1.getQuote3()));
+                    request.setQuote3(Double.parseDouble(binding1.getQuote4()));
+                    request.setQuote4(Double.parseDouble(binding1.getQuote5()));
+                    request.setQuote5(Double.parseDouble(binding1.getQuote6()));
+                    request.setQuote6(Double.parseDouble(binding1.getQuote7()));
+                    request.setQuote7(Double.parseDouble(binding1.getQuote8()));
+                    request.setQuote8(Double.parseDouble(binding1.getQuote9()));
+                    request.setQuote9(Double.parseDouble(binding1.getQuote10()));
+                    request.setComment1(binding1.getComment1());
+                    request.setComment2(binding1.getComment2());
+                    request.setComment3(binding1.getComment3());
+                    request.setComment4(binding1.getComment4());
+                    request.setComment5(binding1.getComment5());
+                    request.setComment6(binding1.getComment6());
+                    request.setComment7(binding1.getComment7());
+                    request.setComment8(binding1.getComment8());
+                    request.setComment9(binding1.getComment9());
+                    request.setComment10(binding1.getComment10());
+                    request.setCompanyname1(binding1.getCompanyName1());
+                    request.setCompanyname2(binding1.getCompanyName2());
+                    request.setCompanyname3(binding1.getCompanyName3());
+                    request.setCompanyname4(binding1.getCompanyName4());
+                    request.setCompanyname5(binding1.getCompanyName5());
+                    request.setCompanyname6(binding1.getCompanyName6());
+                    request.setCompanyname7(binding1.getCompanyName7());
+                    request.setCompanyname8(binding1.getCompanyName8());
+                    request.setCompanyname9(binding1.getCompanyName9());
+                    request.setCompanyname10(binding1.getCompanyName10());
+                    request.setFormId(formId);
+                    CommonResponseAttributes response = port.getInsuranceOperationsPort().quoteDetails(request);
+                    if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
+                        successMessage("Quotes successfully saved");
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                //   successMessage("You are successfully logged in");
+                return null;
+            }
+
+        };
+        new Thread(task).start();
     }
 
     @FXML
     public void homebutton() {
-        animatedMovement(0, 0);
+        try{ 
+            if(marketerId==null || marketerId.trim().isEmpty())
+        {
+                    screenPage.setScreen("NextScreen");
+        }
+        else if( marketerId.trim() != null && !marketerId.trim().isEmpty())
+        {
+            animatedMovement(0, 0);
+        }
+       }catch(Exception e)
+       {    e.printStackTrace();}
     }
 
     @FXML
     public void saveQuotes() {
-        animatedMovement(-1269, -1430);
+        Task task = new Task<Void>() {
+            @Override
+            public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception, Exception {
+                try {
+                    InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
+                    SearchMailRequest req = new SearchMailRequest() ;
+                    req.setFormId(getFormId());
+                    GetCloseFormNQuoteDetailsResponse2 response = port.getInsuranceOperationsPort().getCloseFormNQuoteDetails(req);
+                    if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
+                        setQuote(response);
+                } 
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+                //   successMessage("You are successfully logged in");
+                return null;
+            }
+          
+
+        };
+        new Thread(task).start();
+       
     }
     
     @FXML
@@ -1183,12 +1314,75 @@ public class EnterCodeUIController implements Initializable, IScreenController {
             dl.getController().setmarketer(abstractFormInfoList.get(i + offset).getMarketerId());
             dl.getController().setSeverity(abstractFormInfoList.get(i + offset).getSeverity()); 
             dl.getController().setBusinessName(abstractFormInfoList.get(i + offset).getBusinessName());
+            dl.getController().setWithUs(abstractFormInfoList.get(i + offset).getWithUs());
+            dl.getController().setInsurancecategory(abstractFormInfoList.get(i + offset).getStatus());
+            dl.getController().setInsurancetype(abstractFormInfoList.get(i + offset).getInsuranceType());
+            //yahape
             if (i % 4 == 0 && i > 0) {
                 j++;
             }
             gridpane.add(dl, i % 4, j);
         }
     }
+    
+    public void setQuote(final GetCloseFormNQuoteDetailsResponse2 response){
+         Platform.runLater(new Runnable() {
+
+            public void run() {
+                 if(response.getQuote()>0){
+                           companyname1.setText(response.getCompanyname1());
+                           quote1.setText(""+response.getQuote());
+                               comment1.setText(response.getComment1());
+                  }
+                 if(response.getQuote1()>0){
+                           companyname2.setText(response.getCompanyname2());
+                           quote2.setText(""+response.getQuote2());
+                               comment2.setText(response.getComment2());
+                  }
+                 if(response.getQuote2()>0){
+                           companyname3.setText(response.getCompanyname3());
+                           quote3.setText(""+response.getQuote3());
+                               comment3.setText(response.getComment3());
+                  }
+                 if(response.getQuote3()>0){
+                           companyname4.setText(response.getCompanyname4());
+                           quote4.setText(""+response.getQuote4());
+                               comment4.setText(response.getComment4());
+                  }
+                  if(response.getQuote4()>0){
+                           companyname5.setText(response.getCompanyname5());
+                           quote5.setText(""+response.getQuote5());
+                               comment5.setText(response.getComment5());
+                  }
+                   if(response.getQuote5()>0){
+                           companyname6.setText(response.getCompanyname6());
+                           quote6.setText(""+response.getQuote6());
+                               comment6.setText(response.getComment6());
+                  }
+                   if(response.getQuote6()>0){
+                           companyname7.setText(response.getCompanyname7());
+                           quote7.setText(""+response.getQuote7());
+                               comment7.setText(response.getComment7());
+                  }
+                   if(response.getQuote7()>0){
+                           companyname8.setText(response.getCompanyname8());
+                           quote8.setText(""+response.getQuote8());
+                               comment8.setText(response.getComment8());
+                  }
+                   if(response.getQuote8()>0){
+                           companyname9.setText(response.getCompanyname9());
+                           quote9.setText(""+response.getQuote9());
+                               comment9.setText(response.getComment9());
+                  }
+                   if(response.getQuote9()>0){
+                           companyname10.setText(response.getCompanyname10());
+                           quote10.setText(""+response.getQuote10());
+                               comment10.setText(response.getComment10());
+                  }
+                  animatedMovement(-1269, -1430);
+            }
+         });
+    }    
     
     public void setMailList(final List mail){
          Platform.runLater(new Runnable() {

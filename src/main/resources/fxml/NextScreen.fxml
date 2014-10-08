@@ -117,16 +117,7 @@
     </BorderPane>
     <ToolBar layoutX="0.0" layoutY="691.0" prefWidth="1269.0">
       <items>
-        <Label text="UCCIG © 2014" />
-        <HBox alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="1104.0">
-          <children>
-            <Hyperlink text="About Us">
-              <font>
-                <Font name="System Bold" size="13.0" fx:id="x3" />
-              </font>
-            </Hyperlink>
-          </children>
-        </HBox>
+        <HBox alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="1104.0" />
       </items>
     </ToolBar>
     <ImageView fitHeight="729.0" fitWidth="1268.0001220703125" layoutX="1270.0" layoutY="0.0" pickOnBounds="true" preserveRatio="false">
@@ -159,7 +150,10 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Button cancelButton="true" defaultButton="true" mnemonicParsing="false" onAction="#backnewbusiness" prefHeight="30.0" prefWidth="89.0" text="Back" />
+                        <Button cancelButton="true" defaultButton="true" mnemonicParsing="false" onAction="#backnewbusiness" prefHeight="30.0" prefWidth="89.0" text="Back">
+                           <font>
+                              <Font name="Times Bold" size="14.0" />
+                           </font></Button>
                      </children></HBox>
           </children>
         </VBox>
@@ -217,21 +211,21 @@
         <Label font="$x4" layoutX="73.0" layoutY="474.0" text="Operations and Related Experience:" />
         <Label font="$x4" layoutX="73.0" layoutY="551.0" text="Owner(s) &amp; Key Personnel:" />
         <Label font="$x4" layoutX="90.0" layoutY="621.0" text="Board of Directors:" />
-        <Button cancelButton="false" defaultButton="true" layoutX="73.0" layoutY="687.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" text="Exit" textAlignment="LEFT" wrapText="false" />
+        <Button cancelButton="false" defaultButton="true" layoutX="73.0" layoutY="687.0" mnemonicParsing="false" onAction="#exit" prefHeight="26.0" prefWidth="126.0" text="Exit" textAlignment="LEFT" wrapText="false" />
         <Button defaultButton="true" layoutX="578.0" layoutY="687.0" mnemonicParsing="false" onAction="#submitSave" prefHeight="26.0" prefWidth="126.0" text="Save" />
         <Button defaultButton="true" layoutX="1066.0" layoutY="687.0" mnemonicParsing="false" onAction="#continue1" prefHeight="26.0" prefWidth="126.0" text="Continue" />
         <Label fx:id="returnedname" font="$x4" layoutX="149.0" layoutY="118.0" text="Jerry Boutilier" textFill="#1e751e" />
         <Label fx:id="returnedbranch" font="$x4" layoutX="438.0" layoutY="118.0" text="Kingston" textFill="#1e751e" />
         <TextField fx:id="keycontact" layoutX="180.0" layoutY="165.0" prefHeight="26.0" prefWidth="167.0" text="" />
         <TextField id="keyphone" fx:id="secondaryemail" layoutX="790.0" layoutY="204.0" prefHeight="26.0" prefWidth="219.0" />
-        <TextField id="keyemail" fx:id="secondarycontact" layoutX="182.0" layoutY="204.0" prefHeight="26.0" prefWidth="167.0" text="" />
+        <TextField id="keyemail" fx:id="secondarycontact" layoutX="180.0" layoutY="204.0" prefHeight="26.0" prefWidth="167.0" text="" />
         <TextField id="secondarycontact" fx:id="keyphone" layoutX="489.0" layoutY="165.0" prefHeight="26.0" prefWidth="179.0" />
         <TextField fx:id="secondaryphone" layoutX="489.0" layoutY="204.0" prefHeight="26.0" prefWidth="176.0" />
         <TextField id="secondaryemail" fx:id="keyemail" layoutX="790.0" layoutY="165.0" prefHeight="26.0" prefWidth="219.0" text="" />
         <TextField fx:id="businessname" layoutX="199.0" layoutY="250.0" prefHeight="26.0" prefWidth="379.0" />
         <TextField fx:id="mailingaddress" layoutX="199.0" layoutY="289.0" prefHeight="26.0" prefWidth="379.0" />
         <TextField fx:id="fax" layoutX="198.0" layoutY="329.0" prefHeight="26.0" prefWidth="197.0" />
-        <TextField fx:id="website" layoutX="545.0" layoutY="327.0" prefHeight="25.9998779296875" prefWidth="249.0" />
+        <TextField fx:id="website" layoutX="540.0" layoutY="327.0" prefHeight="25.9998779296875" prefWidth="249.0" />
         <RadioButton fx:id="profit" layoutX="842.0" layoutY="411.0" mnemonicParsing="false" text="Profit">
           <font>
             <Font name="Times Bold" size="15.0" fx:id="x5" />
@@ -271,9 +265,9 @@
             </FXCollections>
           </items>
         </ChoiceBox>
-        <Label fx:id="returneddate" layoutX="699.0" layoutY="120.0" prefHeight="19.0" prefWidth="91.0" text="18/08/2014" textFill="#1e751e">
+        <Label fx:id="returneddate" layoutX="695.0" layoutY="118.0" prefHeight="19.0" prefWidth="91.0" text="18/08/2014" textFill="#1e751e">
           <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="Times Bold" size="16.0" />
           </font>
         </Label>
         <Label font="$x4" layoutX="556.0" layoutY="369.0" text="Years in Business:" />
@@ -306,7 +300,7 @@
         <Label font="$x4" layoutX="68.0" layoutY="260.0" text="Total Sales:" />
         <Label font="$x4" layoutX="59.0" layoutY="496.0" text="Largest Customers or Projects:" />
         <Label font="$x4" layoutX="674.0" layoutY="492.0" text="Largest Suppliers:" />
-        <Button defaultButton="true" layoutX="567.0" layoutY="638.0" minHeight="18.0" mnemonicParsing="false" onAction="#submitSave" prefHeight="26.0" prefWidth="126.0" text="Save" />
+        <Button defaultButton="true" layoutX="567.0" layoutY="638.0" minHeight="18.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" text="Save" />
         <Button defaultButton="true" layoutX="1011.0" layoutY="638.0" mnemonicParsing="false" onAction="#continue2" prefHeight="25.9998779296875" prefWidth="126.0" text="Continue" />
         <ChoiceBox id="FYE" fx:id="finYearEnd" layoutX="212.0" layoutY="109.0" prefHeight="26.0" prefWidth="94.0" value="Select">
           <items>
@@ -372,11 +366,11 @@
                <font>
                   <Font name="Times Bold" size="13.0" />
                </font></Label>
-        <TextField id="perof" fx:id="perofonpremises" layoutX="207.0" layoutY="297.0" prefHeight="19.0" prefWidth="38.0" text="" />
-        <TextField id="perof" fx:id="perofoffpremises" layoutX="432.0" layoutY="297.0" prefHeight="19.0" prefWidth="38.0" />
-        <TextField fx:id="perofresidential" layoutX="655.0" layoutY="297.0" prefHeight="19.0" prefWidth="38.0" />
-        <TextField fx:id="perofcommercial" layoutX="872.0" layoutY="297.0" prefHeight="19.0" prefWidth="38.0" text="" />
-        <TextField fx:id="perofsubcontracted" layoutX="1110.0" layoutY="297.0" prefHeight="19.0" prefWidth="38.0" text="" />
+        <TextField id="perof" fx:id="perofonpremises" layoutX="215.0" layoutY="297.0" prefHeight="19.0" prefWidth="38.0" text="" />
+        <TextField id="perof" fx:id="perofoffpremises" layoutX="440.0" layoutY="297.0" prefHeight="19.0" prefWidth="38.0" />
+        <TextField fx:id="perofresidential" layoutX="665.0" layoutY="297.0" prefHeight="19.0" prefWidth="38.0" />
+        <TextField fx:id="perofcommercial" layoutX="880.0" layoutY="297.0" prefHeight="19.0" prefWidth="38.0" text="" />
+        <TextField fx:id="perofsubcontracted" layoutX="1105.0" layoutY="297.0" prefHeight="19.0" prefWidth="38.0" text="" />
         <CheckBox fx:id="bondopportunity" font="$x4" layoutX="820.0" layoutY="374.0" mnemonicParsing="false" text="Bonding Opportunity?" />
         <TextField id="totalsaleUS" fx:id="totalsaleus" layoutX="336.0" layoutY="255.0" prefHeight="26.0" prefWidth="97.0" />
         <Label layoutX="272.0" layoutY="261.0" prefWidth="51.0" text="CAD$">
@@ -467,7 +461,7 @@
         <Label font="$x4" layoutX="640.0" layoutY="222.0" text="Describe Any Advertising:" />
         <Label font="$x4" layoutX="82.0" layoutY="335.0" text="How Long Would it Take to Recover From a Serious Claim?" />
         <Button defaultButton="true" layoutX="76.0" layoutY="638.0" mnemonicParsing="false" onAction="#clientprofile3previous" prefHeight="26.0" prefWidth="126.0" text="Previous Page" />
-        <Button defaultButton="true" layoutX="567.0" layoutY="638.0" mnemonicParsing="false" onAction="#submitSave" prefHeight="26.0" prefWidth="126.0" text="Save" />
+        <Button defaultButton="true" layoutX="567.0" layoutY="638.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" text="Save" />
         <Button defaultButton="true" layoutX="1016.0" layoutY="638.0" mnemonicParsing="false" onAction="#continue3" prefHeight="26.0" prefWidth="126.0" text="Continue" />
         <CheckBox fx:id="biw" font="$x4" layoutX="650.0" layoutY="386.0" mnemonicParsing="false" text="Business Interruption Worksheet?" />
         <Label layoutX="14.0" layoutY="568.0" text="" />
@@ -532,7 +526,7 @@
       <children>
         <ImageView id="aolownedy2" fitHeight="734.0" fitWidth="1267.9998779296875" layoutX="-8.0" layoutY="0.0" pickOnBounds="true" preserveRatio="false">
           <image>
-            <Image url="@../../../../../../Desktop/greywhite.jpg" />
+            <Image url="@../images/greywhite.jpg" />
           </image>
         </ImageView>
         <Label font="$x6" layoutX="475.0" layoutY="53.0" prefWidth="182.0" text="Client Profile(4)" textFill="$x7" />
@@ -541,7 +535,7 @@
         <Label font="$x9" layoutX="489.0" layoutY="433.0" text="Address of Locations:" />
         <Button defaultButton="true" layoutX="97.0" layoutY="638.0" mnemonicParsing="false" onAction="#clientprofile4previous" prefHeight="26.0" prefWidth="126.0" text="Previous Page" />
         <Button defaultButton="true" layoutX="1012.0" layoutY="638.0" mnemonicParsing="false" onAction="#continue4" prefHeight="26.0" prefWidth="126.0" text="Continue" />
-        <Button defaultButton="true" layoutX="544.0" layoutY="638.0" mnemonicParsing="false" onAction="#submitSave" prefHeight="25.9998779296875" prefWidth="126.0" text="Save" />
+        <Button defaultButton="true" layoutX="544.0" layoutY="638.0" mnemonicParsing="false" prefHeight="25.9998779296875" prefWidth="126.0" text="Save" />
         <Label layoutX="14.0" layoutY="568.0" text="" />
         <Label font="$x4" layoutX="690.0" layoutY="317.0" text="LOC#:" />
         <Label font="$x4" layoutX="690.0" layoutY="351.0" text="LOC#:" />
@@ -596,7 +590,7 @@
             <Label font="$x6" layoutX="538.0" layoutY="53.0" prefWidth="181.0" text="Client Profile(5)" textFill="$x7" />
             <Label font="$x4" layoutX="123.0" layoutY="93.0" text="Locations Rented to Others" />
             <Button defaultButton="true" layoutX="48.0" layoutY="638.0" mnemonicParsing="false" onAction="#clientprofile5previous" prefHeight="26.0" prefWidth="126.0" text="Previous Page" />
-            <Button defaultButton="true" layoutX="566.0" layoutY="638.0" mnemonicParsing="false" onAction="#submitSave" prefHeight="26.0" prefWidth="126.0" text="Save" />
+            <Button defaultButton="true" layoutX="566.0" layoutY="638.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" text="Save" />
             <Button defaultButton="true" layoutX="1044.0" layoutY="638.0" mnemonicParsing="false" onAction="#continue5" prefHeight="26.0" prefWidth="126.0" text="Continue" />
             <Label layoutX="14.0" layoutY="568.0" text="" />
             <Label font="$x4" layoutX="123.0" layoutY="153.0" text="Occupancy:" />
@@ -619,6 +613,7 @@
                         <Font name="Times Bold" size="16.0" />
                      </font>
                   </Label>
+                  <Button defaultButton="true" layoutX="366.0" layoutY="508.0" mnemonicParsing="false" onAction="#downloadFiles" prefHeight="26.0" prefWidth="109.0" text="Download" />
           </children>
         </AnchorPane>
             <GridPane fx:id="gridpane4" layoutX="814.0" layoutY="173.0" prefHeight="26.0" prefWidth="116.0">
@@ -2053,11 +2048,12 @@
          </font></Button>
     <Label font="$x6" layoutX="8100.0" layoutY="28.0" prefWidth="239.0" text="Commercial Property" textFill="$x7" />
     <Button fx:id="autoinsurancebutton" defaultButton="true" disable="false" layoutX="8183.0" layoutY="665.0" mnemonicParsing="false" onAction="#autobutton" prefHeight="26.0" prefWidth="126.0" text="Auto Insurance" visible="true" />
-    <Button defaultButton="true" layoutX="8649.0" layoutY="31.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="162.0" text="Add another location" />
-      <Hyperlink layoutX="7671.0" layoutY="30.0" text="Contractors Equipment Schedule" textFill="#20bf20">
+    <Button defaultButton="true" layoutX="8649.0" layoutY="31.0" mnemonicParsing="false" onAction="#addAdditionPrev" prefHeight="26.0" prefWidth="78.0" text="Back" />
+      <Hyperlink layoutX="7671.0" layoutY="30.0" onAction="#openContractor" text="Contractors Equipment Schedule" textFill="#20bf20">
          <font>
             <Font name="Times Roman" size="16.0" />
          </font>
       </Hyperlink>
+      <Button defaultButton="true" layoutX="8752.0" layoutY="31.0" mnemonicParsing="false" onAction="#addAdditionNext" prefHeight="26.0" prefWidth="78.0" text="Next" />
   </children>
 </AnchorPane>

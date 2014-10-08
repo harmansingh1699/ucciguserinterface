@@ -52,7 +52,6 @@ public class AddAnotherInfo {
     private double profitLimit1;
     private double profitDeductible1;
     private String grossEarning801;
-    private String grossEarning501;
     private double grossEarningLimit1;
     private double grossEarningDeductible1;
     private double rentalIncomeLimit1;
@@ -103,6 +102,7 @@ public class AddAnotherInfo {
     private double otherCoverageDeductible11;
     private double otherCoverageLimit21;
     private double otherCoverageDeductible21;
+    private String additionalCoverage1;
 
     private String address1;
     private int age1;
@@ -110,20 +110,241 @@ public class AddAnotherInfo {
     private double insdSqFootage1;
     private int noOfStories1;
     private String basement1;
-    private String walls1;
-    private String roof1;
-    private String roofupdated1;
-    private String floors1;
-    private String heating1;
-    private String heatingupdated1;
-    private String electrical1;
-    private String electricalupdated1;
-    private String plumbing1;
-    private String plumbingupdated1;
-    private String fireProtection1;
-    private String fireProtectiondistance1;
-    private String security1;
-    private String notes1;
+
+    public String getWallsframe1() {
+        return wallsframe1;
+    }
+
+    public void setWallsframe1(String wallsframe1) {
+        this.wallsframe1 = wallsframe1;
+    }
+
+    public String getWallshcb1() {
+        return wallshcb1;
+    }
+
+    public void setWallshcb1(String wallshcb1) {
+        this.wallshcb1 = wallshcb1;
+    }
+
+    public String getWallssteel1() {
+        return wallssteel1;
+    }
+
+    public void setWallssteel1(String wallssteel1) {
+        this.wallssteel1 = wallssteel1;
+    }
+
+    public String getWallsbrick1() {
+        return wallsbrick1;
+    }
+
+    public void setWallsbrick1(String wallsbrick1) {
+        this.wallsbrick1 = wallsbrick1;
+    }
+
+    public String getRoofwood1() {
+        return roofwood1;
+    }
+
+    public void setRoofwood1(String roofwood1) {
+        this.roofwood1 = roofwood1;
+    }
+
+    public String getRoofsteel1() {
+        return roofsteel1;
+    }
+
+    public void setRoofsteel1(String roofsteel1) {
+        this.roofsteel1 = roofsteel1;
+    }
+
+    public String getRoofconcrete1() {
+        return roofconcrete1;
+    }
+
+    public void setRoofconcrete1(String roofconcrete1) {
+        this.roofconcrete1 = roofconcrete1;
+    }
+
+    public String getRoofupdated1() {
+        return roofupdated1;
+    }
+
+    public void setRoofupdated1(String roofupdated1) {
+        this.roofupdated1 = roofupdated1;
+    }
+
+    public String getFloorsconcrete1() {
+        return floorsconcrete1;
+    }
+
+    public void setFloorsconcrete1(String floorsconcrete1) {
+        this.floorsconcrete1 = floorsconcrete1;
+    }
+
+    public String getFloorswood1() {
+        return floorswood1;
+    }
+
+    public void setFloorswood1(String floorswood1) {
+        this.floorswood1 = floorswood1;
+    }
+
+    public String getHeatinggas1() {
+        return heatinggas1;
+    }
+
+    public void setHeatinggas1(String heatinggas1) {
+        this.heatinggas1 = heatinggas1;
+    }
+
+    public String getHeatingoil1() {
+        return heatingoil1;
+    }
+
+    public void setHeatingoil1(String heatingoil1) {
+        this.heatingoil1 = heatingoil1;
+    }
+
+    public String getHeatingelectric1() {
+        return heatingelectric1;
+    }
+
+    public void setHeatingelectric1(String heatingelectric1) {
+        this.heatingelectric1 = heatingelectric1;
+    }
+
+    public String getHeatingother1() {
+        return heatingother1;
+    }
+
+    public void setHeatingother1(String heatingother1) {
+        this.heatingother1 = heatingother1;
+    }
+
+    public String getHeatingupdated1() {
+        return heatingupdated1;
+    }
+
+    public void setHeatingupdated1(String heatingupdated1) {
+        this.heatingupdated1 = heatingupdated1;
+    }
+
+    public String getElectricalbreakers1() {
+        return electricalbreakers1;
+    }
+
+    public void setElectricalbreakers1(String electricalbreakers1) {
+        this.electricalbreakers1 = electricalbreakers1;
+    }
+
+    public String getElectricalfuses1() {
+        return electricalfuses1;
+    }
+
+    public void setElectricalfuses1(String electricalfuses1) {
+        this.electricalfuses1 = electricalfuses1;
+    }
+
+    public String getElectricalamps1() {
+        return electricalamps1;
+    }
+
+    public void setElectricalamps1(String electricalamps1) {
+        this.electricalamps1 = electricalamps1;
+    }
+
+    public String getElectricalupdated1() {
+        return electricalupdated1;
+    }
+
+    public void setElectricalupdated1(String electricalupdated1) {
+        this.electricalupdated1 = electricalupdated1;
+    }
+
+    public String getPlumbingcopper1() {
+        return plumbingcopper1;
+    }
+
+    public void setPlumbingcopper1(String plumbingcopper1) {
+        this.plumbingcopper1 = plumbingcopper1;
+    }
+
+    public String getPlumbingpvc1() {
+        return plumbingpvc1;
+    }
+
+    public void setPlumbingpvc1(String plumbingpvc1) {
+        this.plumbingpvc1 = plumbingpvc1;
+    }
+
+    public String getPlumbingother1() {
+        return plumbingother1;
+    }
+
+    public void setPlumbingother1(String plumbingother1) {
+        this.plumbingother1 = plumbingother1;
+    }
+
+    public String getPlumbingupdated1() {
+        return plumbingupdated1;
+    }
+
+    public void setPlumbingupdated1(String plumbingupdated1) {
+        this.plumbingupdated1 = plumbingupdated1;
+    }
+
+    public String getFireProtection1() {
+        return fireProtection1;
+    }
+
+    public void setFireProtection1(String fireProtection1) {
+        this.fireProtection1 = fireProtection1;
+    }
+
+    public String getFireProtectiondistance1() {
+        return fireProtectiondistance1;
+    }
+
+    public void setFireProtectiondistance1(String fireProtectiondistance1) {
+        this.fireProtectiondistance1 = fireProtectiondistance1;
+    }
+
+    public String getSecurity1() {
+        return security1;
+    }
+
+    public void setSecurity1(String security1) {
+        this.security1 = security1;
+    }
+   private String wallsframe1;
+	private String wallshcb1;
+	private String wallssteel1;
+	private String wallsbrick1;
+	private String roofwood1;
+	private String roofsteel1;
+	private String roofconcrete1;
+	private String roofupdated1;
+	private String floorsconcrete1;
+	private String floorswood1;
+	private String heatinggas1;
+	private String heatingoil1;
+	private String heatingelectric1;
+	private String heatingother1;
+	private String heatingupdated1;	
+	private String electricalbreakers1;
+	private String electricalfuses1;
+	private String electricalamps1;
+	private String electricalupdated1;
+	private String plumbingcopper1;
+	private String plumbingpvc1;
+	private String plumbingother1;
+	private String plumbingupdated1;
+	private String fireProtection1;
+	private String fireProtectiondistance1;
+	private String security1;
+	
 
     public double getBuildingLimit1() {
         return buildingLimit1;
@@ -451,14 +672,6 @@ public class AddAnotherInfo {
 
     public void setGrossEarning801(String grossEarning801) {
         this.grossEarning801 = grossEarning801;
-    }
-
-    public String getGrossEarning501() {
-        return grossEarning501;
-    }
-
-    public void setGrossEarning501(String grossEarning501) {
-        this.grossEarning501 = grossEarning501;
     }
 
     public double getGrossEarningLimit1() {
@@ -860,6 +1073,14 @@ public class AddAnotherInfo {
     public void setOtherCoverageDeductible21(double otherCoverageDeductible21) {
         this.otherCoverageDeductible21 = otherCoverageDeductible21;
     }
+    
+    public String getAdditionalCoverage1() {
+        return additionalCoverage1;
+    }
+
+    public void setAdditionalCoverage1(String additionalCoverage1) {
+        this.additionalCoverage1 = additionalCoverage1;
+    }
 
     public String getAddress1() {
         return address1;
@@ -907,118 +1128,6 @@ public class AddAnotherInfo {
 
     public void setBasement1(String basement1) {
         this.basement1 = basement1;
-    }
-
-    public String getWalls1() {
-        return walls1;
-    }
-
-    public void setWalls1(String walls1) {
-        this.walls1 = walls1;
-    }
-
-    public String getRoof1() {
-        return roof1;
-    }
-
-    public void setRoof1(String roof1) {
-        this.roof1 = roof1;
-    }
-
-    public String getRoofupdated1() {
-        return roofupdated1;
-    }
-
-    public void setRoofupdated1(String roofupdated1) {
-        this.roofupdated1 = roofupdated1;
-    }
-
-    public String getFloors1() {
-        return floors1;
-    }
-
-    public void setFloors1(String floors1) {
-        this.floors1 = floors1;
-    }
-
-    public String getHeating1() {
-        return heating1;
-    }
-
-    public void setHeating1(String heating1) {
-        this.heating1 = heating1;
-    }
-
-    public String getHeatingupdated1() {
-        return heatingupdated1;
-    }
-
-    public void setHeatingupdated1(String heatingupdated1) {
-        this.heatingupdated1 = heatingupdated1;
-    }
-
-    public String getElectrical1() {
-        return electrical1;
-    }
-
-    public void setElectrical1(String electrical1) {
-        this.electrical1 = electrical1;
-    }
-
-    public String getElectricalupdated1() {
-        return electricalupdated1;
-    }
-
-    public void setElectricalupdated1(String electricalupdated1) {
-        this.electricalupdated1 = electricalupdated1;
-    }
-
-    public String getPlumbing1() {
-        return plumbing1;
-    }
-
-    public void setPlumbing1(String plumbing1) {
-        this.plumbing1 = plumbing1;
-    }
-
-    public String getPlumbingupdated1() {
-        return plumbingupdated1;
-    }
-
-    public void setPlumbingupdated1(String plumbingupdated1) {
-        this.plumbingupdated1 = plumbingupdated1;
-    }
-
-    public String getFireProtection1() {
-        return fireProtection1;
-    }
-
-    public void setFireProtection1(String fireProtection1) {
-        this.fireProtection1 = fireProtection1;
-    }
-
-    public String getFireProtectiondistance1() {
-        return fireProtectiondistance1;
-    }
-
-    public void setFireProtectiondistance1(String fireProtectiondistance1) {
-        this.fireProtectiondistance1 = fireProtectiondistance1;
-    }
-
-    public String getSecurity1() {
-        return security1;
-    }
-
-    public void setSecurity1(String security1) {
-        this.security1 = security1;
-    }
-
-    public String getNotes1() {
-        return notes1;
-    }
-
-    public void setNotes1(String notes1) {
-        this.notes1 = notes1;
     }
 
 }

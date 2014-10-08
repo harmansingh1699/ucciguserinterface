@@ -14,6 +14,7 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import static java.util.Collections.list;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Locale;
@@ -49,7 +50,7 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
     private ScreenNavigator screenPage;
     
     @FXML
-    TextField autocurrentinsurer;
+    private TextField autocurrentinsurer;
 
     
 
@@ -194,7 +195,6 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
     public void initialize(URL url, ResourceBundle rb) {
         binding4=new FormEntry4Binding();
         Bindings.bindBidirectional(autocurrentinsurer.textProperty(), binding4.autocurrentinsurerProperty());
-        
         Bindings.bindBidirectional(autopremiumtarget.textProperty(), binding4.autopremiumtargetProperty());
         Bindings.bindBidirectional(lessholder1.textProperty(), binding4.lessholder1Property());
         Bindings.bindBidirectional(lessholder2.textProperty(), binding4.lessholder2Property());
@@ -233,7 +233,6 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
         Bindings.bindBidirectional(typeofnonowned.textProperty(), binding4.typeofnonownedProperty());
         Bindings.bindBidirectional(anytime.textProperty(), binding4.anytimeProperty());
         Bindings.bindBidirectional(avgvalue.textProperty(), binding4.avgvalueProperty());
-        Bindings.bindBidirectional(namerequired1.textProperty(), binding4.namerequired1Property());
         Bindings.bindBidirectional(maxannually.textProperty(), binding4.maxannuallyProperty());
         Bindings.bindBidirectional(mostexpensive.textProperty(), binding4.mostexpensiveProperty());
         Bindings.bindBidirectional(autosubmissioncomments.textProperty(), binding4.autosubmissioncommentsProperty());
@@ -446,6 +445,29 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
                             ((NextScreenController)screenPage.getControlledScreen("NextScreen")).setDate17(date7);}
                             
                             ((NextScreenController)screenPage.getControlledScreen("NextScreen")).submitFormAction();
+    }
+    public void autoviewmethod(String a, String b, String c)
+    {
+                if("Select".equals(a))
+                { hauling.getSelectionModel().select("Select");}
+                else if("Yes".equals(a))
+                {hauling.getSelectionModel().select("Yes");}
+                else if("No".equals(a))
+                {hauling.getSelectionModel().select("No");}     
+                
+                if("Select".equals(b))
+                { nonownedliability.getSelectionModel().select("Select");}
+                else if("Yes".equals(b))
+                {nonownedliability.getSelectionModel().select("Yes");}
+                else if("No".equals(b))
+                {nonownedliability.getSelectionModel().select("No");}   
+                
+                if("Select".equals(c))
+                { nonownedcontract.getSelectionModel().select("Select");}
+                else if("Yes".equals(c))
+                {nonownedcontract.getSelectionModel().select("Yes");}
+                else if("No".equals(c))
+                {nonownedcontract.getSelectionModel().select("No");}   
     }
     
     @FXML

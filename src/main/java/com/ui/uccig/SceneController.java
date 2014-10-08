@@ -35,6 +35,62 @@ public class SceneController implements Initializable {
     private Hyperlink applicationid;
     @FXML
     private Label businessname;
+    private String withUs;
+    private String status;
+    private String creationDate;
+    private String branch;
+    private String insurancetype;
+    private String insurancecategory;
+
+    public String getInsurancetype() {
+        return insurancetype;
+    }
+
+    public void setInsurancetype(String insurancetype) {
+        this.insurancetype = insurancetype;
+    }
+
+    public String getInsurancecategory() {
+        return insurancecategory;
+    }
+
+    public void setInsurancecategory(String insurancecategory) {
+        this.insurancecategory = insurancecategory;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(String creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    public String getBranch() {
+        return branch;
+    }
+
+    public void setBranch(String branch) {
+        this.branch = branch;
+    }
+
+    public String getWithUs() {
+        return withUs;
+    }
+
+    public void setWithUs(String withUs) {
+        this.withUs = withUs;
+    }
+    
+    
     
     private ScreenNavigator screenPage;
     
@@ -94,16 +150,25 @@ public class SceneController implements Initializable {
 
         };
         new Thread(task).start();*/
-        ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setApplicationId(applicationid.getText());
+        ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setApplicationId(applicationid.getText(), businessname.getText());
+        ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setFormId(applicationid.getText());
+        
+        ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setProducerid(this.producer.getText());
+        ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setMarketerId(marketer.getText());
+        ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setInsuranceType(getInsurancetype());
+        ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setSeverity(severity.getText());
+        ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setCategory(getInsurancecategory());
+        ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setCreationDate(getCreationDate());
+        ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setBranch(getBranch());
+        ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setWithUs(getWithUs());
         ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).animatedMovement(-1269, -715);
-        ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setFormId(applicationid.getText());
-        ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setFormId(applicationid.getText());
+        
         //((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).viewApplication(null,applicationid.getText());
         
         
     }
     
-    public void setAttributes( final GetInsuranceFormResponse response){
+    /*public void setAttributes( final GetInsuranceFormResponse response){
          Platform.runLater(new Runnable() {
             public void run() {
         //Setting values for dynamic fxml values
@@ -113,6 +178,6 @@ public class SceneController implements Initializable {
         ((NextScreenController) (screenPage.getControlledScreen("NextScreen"))).viewApplication(response,applicationid.getText());
             }
         });
-    }
+    }*/
     
 }

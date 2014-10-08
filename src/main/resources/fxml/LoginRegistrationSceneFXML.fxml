@@ -55,7 +55,7 @@
                   <children>
                     <Hyperlink minHeight="14.0" onAction="#submitAction2" prefHeight="26.0" text="Forgot Password?" textFill="#0002ff">
                       <font>
-                        <Font name="Times Roman" size="13.0" />
+                        <Font name="Arial" size="13.0" />
                       </font>
                     </Hyperlink>
                   </children>
@@ -141,12 +141,12 @@
     </BorderPane>
     <ToolBar layoutX="0.0" layoutY="691.0" prefWidth="1269.0">
       <items>
-        <Label text="UCCIG © 2013" />
+        <Label text="UCCIG © 2014" />
         <HBox alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="1104.0">
           <children>
-            <Hyperlink text="About Developer">
+            <Hyperlink alignment="CENTER_RIGHT" text="About Developer">
               <font>
-                <Font name="System Bold" size="13.0" fx:id="x3" />
+                <Font name="Times New Roman Bold" size="16.0" fx:id="x3" />
               </font>
             </Hyperlink>
           </children>
