@@ -675,7 +675,7 @@ public class NextScreenController implements Initializable, IScreenController {
 
     int insurancetypeflag = 0;
 
-    private static int offset;
+    private static int offset=1;
     private List<AddAnotherInfo> listAddInfo;
 
     private FormEntry1Binding binding;
@@ -1812,6 +1812,7 @@ public class NextScreenController implements Initializable, IScreenController {
             autoinsurancebutton.setVisible(false);
         } else if (insurancetypeflag == 2) {
             screenPage.setScreen("AutoSubmission");
+            animatedMovement(0,0);
         } else if (insurancetypeflag == 3) {
             animatedMovement(-7614, 0);
             CommercialSubmit.setVisible(false);
@@ -1827,7 +1828,7 @@ public class NextScreenController implements Initializable, IScreenController {
         new Rav(new File("bin\\Contractors.doc").getAbsolutePath());
     }
 
-    @FXML
+    /*@FXML
     public void addAdditionNext() {
         if (binding4.getlocationaddress() != null || binding4.getlocationaddress().trim().equals("")) {
             System.out.println("Inside addAdditionNext");
@@ -2337,7 +2338,107 @@ public class NextScreenController implements Initializable, IScreenController {
             System.out.println("Inside else of addAdditionPrev");
         }
     }
+*/
+    
+    @FXML
+   public void addAdditionNext() {
+        System.out.println("Next clicked");
+       if(offset<11 && offset>0){
+           try{
+               System.out.println("Offset1 "+offset);
+               if(listAddInfo.get(offset)!=null){
+                   System.out.println("Offset2 "+offset);
+                   listAddInfo.get(offset).setAddress1(binding4.getlocationaddress());
+                   System.out.println("1"+binding4.getlocationaddress());
+                   System.out.println("2"+listAddInfo.get(offset).getAddress1());
+               }else{
+                   System.out.println("Offset3 "+offset);
+                   AddAnotherInfo obj = new AddAnotherInfo();
+                   obj.setAddress1(binding4.getlocationaddress());
+                   System.out.println("3"+obj.getAddress1());
+                   listAddInfo.set(offset,obj);
+               }
+           }catch(Exception e){
+               System.out.println("Offset4 "+offset);
+               AddAnotherInfo obj = new AddAnotherInfo();
+               obj.setAddress1(binding4.getlocationaddress());
+               System.out.println("4"+binding4.getlocationaddress());
+                   //System.out.println("5"+listAddInfo.get(offset).getAddress1());
+               System.out.println("Next Address"+ binding4.getlocationaddress());
+               listAddInfo.add(obj);
+           }
 
+           offset++;
+           
+           if(offset>10)
+               offset =10;
+           System.out.println("Offset5 "+offset);
+           try{
+              if(listAddInfo.get(offset)!=null){
+                  System.out.println("Offset6 "+offset);
+                  binding4.setlocationaddress(listAddInfo.get(offset).getAddress1());
+                  System.out.println(binding4.getlocationaddress());
+               }else{
+                  System.out.println("Offset7 "+offset);
+                  binding4.setlocationaddress("");
+                  System.out.println(binding4.getlocationaddress());
+              } 
+           }catch(Exception e){
+               System.out.println("Offset8 "+offset);
+                binding4.setlocationaddress("");
+                System.out.println(binding4.getlocationaddress());
+           }
+       }
+       for (AddAnotherInfo e:listAddInfo)
+       {System.out.println(e.getAddress1());}
+       
+   }
+
+   @FXML
+   public void addAdditionPrev() {
+       System.out.println("Previous Clicked");
+       System.out.println(binding4.getlocationaddress());
+       System.out.println("10"+listAddInfo.get(offset).getAddress1());
+       if (offset > 1 && offset < 11) {
+          try{
+              System.out.println("Offset9 "+offset);
+              if(listAddInfo.get(offset)!=null){
+                  System.out.println("Offset10 "+offset);
+                 listAddInfo.get(offset).setAddress1(binding4.getlocationaddress());
+              }else{
+                  System.out.println("Offset11 "+offset);
+                  AddAnotherInfo obj = new AddAnotherInfo();
+               obj.setAddress1(binding4.getlocationaddress());
+               listAddInfo.add(obj);
+              }
+          }catch(Exception e){
+              System.out.println("Offset12 "+offset);
+              AddAnotherInfo obj = new AddAnotherInfo();
+               obj.setAddress1(binding4.getlocationaddress());
+               listAddInfo.add(obj);
+          }
+          offset--;
+          if(offset<=0)
+              offset = 1;
+          System.out.println("Offset13 "+offset);
+          try{
+              
+              System.out.println(listAddInfo.get(offset).getAddress1());
+              if(listAddInfo.get(offset)!=null){
+                  System.out.println("Offset14 "+offset);
+                  binding4.setlocationaddress(listAddInfo.get(offset).getAddress1());
+              }else{
+                  System.out.println("Offset15 "+offset);
+                  binding4.setlocationaddress("");
+              }
+          }catch(Exception e){
+              System.out.println("Offset16 "+offset);
+              binding4.setlocationaddress("");
+          }
+       }
+       for (AddAnotherInfo e:listAddInfo)
+       {System.out.println(e.getAddress1());}
+   }
     @FXML
     public void clientprofile2previous() {
         animatedMovement(-1269, 0);
@@ -2369,9 +2470,25 @@ public class NextScreenController implements Initializable, IScreenController {
     }
 
     @FXML
-    public void submitSave(LocalFormResponse response) {
+    public void submitSave() {
+        if (producerid != null) {
+            LocalFormResponse r = new LocalFormResponse();
+            //yahape
+            r.setKeyContact(binding.getKeyContact());
+            System.out.println("submitsave:"+r.getKeyContact());
+            submitSavenon(r);
+        } else {
+            errors("Application can only be saved if it has not been submitted");
+        }
+    }
+    
+    public void submitSavenon(LocalFormResponse response) {
         System.out.println("Inside submitSave");
+        System.err.println("keyContact"+response.getKeyContact());
         savinglocally.toFile(response, "Harman");
+        animatedMovement(0, 0);
+        successMessage1("Form is successfully saved.");
+        
     }
 
     @FXML
@@ -2381,7 +2498,10 @@ public class NextScreenController implements Initializable, IScreenController {
         GetInsuranceFormResponse r = new GetInsuranceFormResponse();
         DozerBeanMapper mapper = new DozerBeanMapper();
         mapper.map(response, r);
-        viewApplication(r, "");
+        System.out.println(r.getKeyContact());
+        assign(r);
+        animatedMovement(-1269, 0);
+        //addmovement
     }
 
     public void viewApplication(final GetInsuranceFormResponse form, final String formId) {
@@ -4017,7 +4137,8 @@ public class NextScreenController implements Initializable, IScreenController {
                         req1.setFilingName1(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getnamerequired1());
                         req1.setFilingName2(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getnamerequired2());
                         req1.setFilingName3(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getnamerequired3());
-
+                        req1.setTypeOfNonOwned(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeofnonowned()); 
+                        
                         if (!CommonValidations.isStringEmpty(binding4.getanytime())) {
                             req1.setAvgNoOfVehicles(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getanytime()));
                         }
@@ -4291,7 +4412,9 @@ public class NextScreenController implements Initializable, IScreenController {
                         }
                     }
                 } catch (Exception ex) {
-                    successMessage1(ex.toString());
+                    stopLoading();
+                    System.out.println("Exception SUbmit");
+                    successMessage1(ex.getMessage());
                 }
                 return null;
             }
@@ -4356,14 +4479,6 @@ public class NextScreenController implements Initializable, IScreenController {
         });
     }
 
-    public void errors(final String message) {
-        Platform.runLater(new Runnable() {
-            public void run() {
-
-                Dialogs.showErrorDialog(null, message, "Oops!!", "Error");
-            }
-        });
-    }
 
     public static XMLGregorianCalendar toXMLGregorianCalendar(Date date) {
         GregorianCalendar gCalendar = new GregorianCalendar();
@@ -4404,6 +4519,7 @@ public class NextScreenController implements Initializable, IScreenController {
                 files = files + file.getName() + ",";
             }
             this.fileList = list;
+            System.out.println(new File(applicationid+"\\"+"").getAbsolutePath());
             //list.add(new File(applicationid+"\\"+"").getAbsoluteFile());
             //list.add(new File(applicationid+"\\"+"").getAbsoluteFile());
             uploadlabel.setText(files.substring(0, files.length() - 1));
@@ -4466,6 +4582,15 @@ public class NextScreenController implements Initializable, IScreenController {
 
     public void setDate11(XMLGregorianCalendar date11) {
         this.date11 = date11;
+    }
+    
+    public void errors(final String message) {
+        Platform.runLater(new Runnable() {
+            public void run() {
+                Dialogs.showErrorDialog(null, message, "Oops!!", "Error");
+                stopLoading();
+            }
+        });
     }
 
     public void stopLoading() {

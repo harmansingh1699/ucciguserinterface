@@ -84,7 +84,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
               <children>
-                <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" prefHeight="50.0" prefWidth="283.0" text="Last Saved Application" />
+                <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" onAction="#openSave" prefHeight="50.0" prefWidth="283.0" text="Last Saved Application" />
               </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="356.0001220703125">

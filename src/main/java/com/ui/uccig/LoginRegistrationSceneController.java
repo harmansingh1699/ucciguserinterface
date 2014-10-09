@@ -147,10 +147,10 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
 
     @FXML
     public void submitAction() {
-        if (CommonValidations.isStringEmpty(binding.getUsername())) {
+        if (CommonValidations.isStringEmpty(binding.getUsername().trim())) {
             InvokeAnimation.attentionSeekerWobble(loginusername);
             loginusername.setPromptText("Enter username");
-        } else if (CommonValidations.isStringEmpty(binding.getPassword())) {
+        } else if (CommonValidations.isStringEmpty(binding.getPassword().trim())) {
             InvokeAnimation.attentionSeekerWobble(loginpassword);
             loginpassword.setPromptText("Enter password");
         } else {
@@ -160,8 +160,8 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
                 public Void call() {
                     UserOperationsService_Service port = new UserOperationsService_Service();
                     InsuranceLoginRequest req = new InsuranceLoginRequest();
-                    req.setUserId(binding.getUsername());
-                    req.setPassword(binding.getPassword());
+                    req.setUserId(binding.getUsername().trim());
+                    req.setPassword(binding.getPassword().trim());
                     try {
                         InsuranceLoginResponse response = port.getUserOperationsPort().loginUser(req);
                         if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
@@ -240,10 +240,10 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
                 public Void call() {
                     UserOperationsService_Service port = new UserOperationsService_Service();
                     InsuranceRegistrationRequest req1 = new InsuranceRegistrationRequest();
-                    req1.setUserId(binding1.getUsername());
-                    req1.setPassword(binding1.getPassword());
-                    req1.setEmailAddress(binding1.getEmailAddress());
-                    req1.setFullName(binding1.getname());
+                    req1.setUserId(binding1.getUsername().trim());
+                    req1.setPassword(binding1.getPassword().trim());
+                    req1.setEmailAddress(binding1.getEmailAddress().trim());
+                    req1.setFullName(binding1.getname().trim());
                     try {
                         CommonResponseAttributes response = port.getUserOperationsPort().registerUser(req1);
                         if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {

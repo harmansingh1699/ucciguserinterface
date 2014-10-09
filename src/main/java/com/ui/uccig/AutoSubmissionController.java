@@ -193,6 +193,9 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        hauling.getSelectionModel().selectFirst();
+        nonownedliability.getSelectionModel().selectFirst();
+        nonownedcontract.getSelectionModel().selectFirst();
         binding4=new FormEntry4Binding();
         Bindings.bindBidirectional(autocurrentinsurer.textProperty(), binding4.autocurrentinsurerProperty());
         Bindings.bindBidirectional(autopremiumtarget.textProperty(), binding4.autopremiumtargetProperty());
