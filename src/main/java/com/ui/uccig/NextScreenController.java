@@ -675,7 +675,7 @@ public class NextScreenController implements Initializable, IScreenController {
 
     int insurancetypeflag = 0;
 
-    private static int offset=1;
+    private static int offset = 0;
     private List<AddAnotherInfo> listAddInfo;
 
     private FormEntry1Binding binding;
@@ -1679,26 +1679,22 @@ public class NextScreenController implements Initializable, IScreenController {
 
     }
 
-    
     @FXML
     public void exit() {
         System.out.println("Exit Called");
-       try{
-           if(producerid==null || producerid.trim().isEmpty())
-        {
-                    screenPage.setScreen("OtherScreen");
-                    animatedMovement(-1269, -1269);
+        try {
+            if (producerid == null || producerid.trim().isEmpty()) {
+                screenPage.setScreen("OtherScreen");
+                animatedMovement(-1269, -1269);
+            } else {
+                screenPage.setScreen("NextScreen");
+                animatedMovement(0, 0);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        else {
-           screenPage.setScreen("NextScreen");
-               animatedMovement(0, 0);
-        }
-       }catch(Exception e){
-           e.printStackTrace();
-       }
     }
-    
-    
+
     @FXML
     public void searchArchive() throws Exception {
         System.out.println("Inside SearchArchive");
@@ -1812,7 +1808,7 @@ public class NextScreenController implements Initializable, IScreenController {
             autoinsurancebutton.setVisible(false);
         } else if (insurancetypeflag == 2) {
             screenPage.setScreen("AutoSubmission");
-            animatedMovement(0,0);
+            animatedMovement(0, 0);
         } else if (insurancetypeflag == 3) {
             animatedMovement(-7614, 0);
             CommercialSubmit.setVisible(false);
@@ -1829,616 +1825,621 @@ public class NextScreenController implements Initializable, IScreenController {
     }
 
     /*@FXML
+     public void addAdditionNext() {
+     if (binding4.getlocationaddress() != null || binding4.getlocationaddress().trim().equals("")) {
+     System.out.println("Inside addAdditionNext");
+     if (offset < 10) {
+     System.out.println("Inside loop with offset value " + offset);
+     try {
+     //yahape
+     if (binding4.getlocationaddress() != null && binding4.getlocationaddress().trim().length() > 0) {
+     System.out.println("1. Inside next if " + binding4.getlocationaddress());
+     if (listAddInfo.size() == offset || listAddInfo.get(offset) == null) {
+     System.out.println("2. Inside next if " + binding4.getlocationaddress());
+     listAddInfo.add(new AddAnotherInfo());
+     }
+     //yahape
+     listAddInfo.get(offset).setAddress1(binding4.getlocationaddress());
+     if (!CommonValidations.isStringEmpty(binding4.getbuildinglimit())) {
+     listAddInfo.get(offset).setBuildingLimit1(Double.parseDouble(binding4.getbuildinglimit()));
+     }
+     if (!CommonValidations.isStringEmpty(binding4.getbuildingdeductible())) {
+     listAddInfo.get(offset).setBuildingDeductible1(Double.parseDouble(binding4.getbuildingdeductible()));
+     }
+     if (!CommonValidations.isStringEmpty(binding4.getcontentslimit())) {
+     listAddInfo.get(offset).setContentsLimit1(Double.parseDouble(binding4.getcontentslimit()));
+     }
+     if (!CommonValidations.isStringEmpty(binding4.getcontentsdeductible())) {
+     listAddInfo.get(offset).setContentsDeductible1(Double.parseDouble(binding4.getcontentsdeductible()));
+     }
+     if (!CommonValidations.isStringEmpty(binding4.getstocklimit())) {
+     listAddInfo.get(offset).setStockLimit1(Double.parseDouble(binding4.getstocklimit()));
+     }
+     if (!CommonValidations.isStringEmpty(binding4.getstockdeductible())) {
+     listAddInfo.get(offset).setStockDeductible1(Double.parseDouble(binding4.getstockdeductible()));
+     }
+     if (!CommonValidations.isStringEmpty(binding4.getofficelimit())) {
+     listAddInfo.get(offset).setOfficeContentLimit1(Double.parseDouble(binding4.getofficelimit()));
+     }
+     if (!CommonValidations.isStringEmpty(binding4.getofficedeductible())) {
+     listAddInfo.get(offset).setOfficeContentDeductible1(Double.parseDouble(binding4.getofficedeductible()));
+     }
+     if (!CommonValidations.isStringEmpty(binding4.getedplimit())) {
+     listAddInfo.get(offset).setEdpLimit1(Double.parseDouble(binding4.getedplimit()));
+     }
+     if (!CommonValidations.isStringEmpty(binding4.getedpdeductible())) {
+     listAddInfo.get(offset).setEdpDeductible1(Double.parseDouble(binding4.getedpdeductible()));
+     }
+     if (!CommonValidations.isStringEmpty(binding4.getequipmentlimit())) {
+     listAddInfo.get(offset).setEquipmentLimit1(Double.parseDouble(binding4.getequipmentlimit()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getequipmentdeductible())) {
+     listAddInfo.get(offset).setEquipmentDeductible1(Double.parseDouble(binding4.getequipmentdeductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getoffpremiseslimit())) {
+     listAddInfo.get(offset).setOffPremisesLimit1(Double.parseDouble(binding4.getoffpremiseslimit()));
+     }
+     if (!CommonValidations.isStringEmpty(binding4.getoffpremisesdeductible())) {
+     listAddInfo.get(offset).setOffPremisesDeductible1(Double.parseDouble(binding4.getoffpremisesdeductible()));
+     }
+     if (!CommonValidations.isStringEmpty(binding4.gettransitlimit())) {
+     listAddInfo.get(offset).setTransitLimit1(Double.parseDouble(binding4.gettransitlimit()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.gettransitdeductible())) {
+     listAddInfo.get(offset).setTransitDeductible1(Double.parseDouble(binding4.gettransitdeductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getmiscpropertylimit())) {
+     listAddInfo.get(offset).setMiscPropertyLimit1(Double.parseDouble(binding4.getmiscpropertylimit()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getmiscpropertydeductible())) {
+     listAddInfo.get(offset).setMiscPropertyDeductible1(Double.parseDouble(binding4.getmiscpropertydeductible()));
+     }
+     if (!CommonValidations.isStringEmpty(binding4.getcontractorsequipmentlimit())) {
+     listAddInfo.get(offset).setContractorEquipmentLimit1(Double.parseDouble(binding4.getcontractorsequipmentlimit()));
+     }
+     if (!CommonValidations.isStringEmpty(binding4.getcontractorsequipmentdeductible())) {
+     listAddInfo.get(offset).setContractorEquipmentDeductible1(Double.parseDouble(binding4.getcontractorsequipmentdeductible()));
+     }
+     if (!CommonValidations.isStringEmpty(binding4.getinstallationfloatorlimit())) {
+     listAddInfo.get(offset).setInstallationFloaterLimit1(Double.parseDouble(binding4.getinstallationfloatorlimit()));
+     }
+     if (!CommonValidations.isStringEmpty(binding4.getinstallationfloatordeductible())) {
+     listAddInfo.get(offset).setInstallationFloaterDeductible1(Double.parseDouble(binding4.getinstallationfloatordeductible()));
+     }
+     if (!CommonValidations.isStringEmpty(binding4.gettoolfloatorlimit())) {
+     listAddInfo.get(offset).setToolFloaterLimit1(Double.parseDouble(binding4.gettoolfloatorlimit()));
+     }
+     if (!CommonValidations.isStringEmpty(binding4.gettoolfloatordeductible())) {
+     listAddInfo.get(offset).setToolFloaterDeductible1(Double.parseDouble(binding4.gettoolfloatordeductible()));
+     }
+     if (!CommonValidations.isStringEmpty(binding4.getsignfloatorlimit())) {
+     listAddInfo.get(offset).setSignFloaterLimit1(Double.parseDouble(binding4.getsignfloatorlimit()));
+     }
+     if (!CommonValidations.isStringEmpty(binding4.getsignfloatordeductible())) {
+     listAddInfo.get(offset).setSignFloaterDeductible1(Double.parseDouble(binding4.getsignfloatordeductible()));
+     }
+     if (!CommonValidations.isStringEmpty(binding4.getmotortruckcargolimit())) {
+     listAddInfo.get(offset).setMotorTruckLimit1(Double.parseDouble(binding4.getmotortruckcargolimit()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getmotortruckcargodeductible())) {
+     listAddInfo.get(offset).setMotorTruckDeductible1(Double.parseDouble(binding4.getmotortruckcargodeductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getglasslimit())) {
+     listAddInfo.get(offset).setGlassLimit1(Double.parseDouble(binding4.getglasslimit()));
+     }
+     if (!CommonValidations.isStringEmpty(binding4.getglassdeductible())) {
+     listAddInfo.get(offset).setGlassDeductible1(Double.parseDouble(binding4.getglassdeductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getsewerblackupdeductible())) {
+     listAddInfo.get(offset).setSewerBackupDeductible1(Double.parseDouble(binding4.getsewerblackupdeductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getflooddeductible())) {
+     listAddInfo.get(offset).setFloodDeductible1(Double.parseDouble(binding4.getflooddeductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getearthquakedeductible())) {
+     listAddInfo.get(offset).setEarthquakeDeductible1(Double.parseDouble(binding4.getearthquakedeductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getprofitslimit())) {
+     listAddInfo.get(offset).setProfitLimit1(Double.parseDouble(binding4.getprofitslimit()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getprofitsdeductible())) {
+     listAddInfo.get(offset).setProfitDeductible1(Double.parseDouble(binding4.getprofitsdeductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getgrossearningslimit())) {
+     listAddInfo.get(offset).setGrossEarningLimit1(Double.parseDouble(binding4.getgrossearningslimit()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getgrossearningsdeductible())) {
+     listAddInfo.get(offset).setGrossEarningDeductible1(Double.parseDouble(binding4.getgrossearningsdeductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getrentalincomelimit())) {
+     listAddInfo.get(offset).setRentalIncomeLimit1(Double.parseDouble(binding4.getrentalincomelimit()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getrentalincomedeductible())) {
+     listAddInfo.get(offset).setRentalIncomeDeductible1(Double.parseDouble(binding4.getrentalincomedeductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getextraexpenselimit())) {
+     listAddInfo.get(offset).setExtraExpenseLimit1(Double.parseDouble(binding4.getextraexpenselimit()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getextraexpensedeductible())) {
+     listAddInfo.get(offset).setExtraExpenseDeductible1(Double.parseDouble(binding4.getextraexpensedeductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getoffpremiseslimit())) {
+     listAddInfo.get(offset).setOffPremisesPowerLimit1(Double.parseDouble(binding4.getoffpremiseslimit()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getoffpremisesdeductible())) {
+     listAddInfo.get(offset).setOffPremisesPowerDeductible1(Double.parseDouble(binding4.getoffpremisesdeductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getinsideoutsidelimit())) {
+     listAddInfo.get(offset).setInsideOutsideLimit1(Double.parseDouble(binding4.getinsideoutsidelimit()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getinsideoutsidedeductible())) {
+     listAddInfo.get(offset).setInsideOutsideDeductible1(Double.parseDouble(binding4.getinsideoutsidedeductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getbfmoneylimit())) {
+     listAddInfo.get(offset).setBfMoneyLimit1(Double.parseDouble(binding4.getbfmoneylimit()));
+     }
+     if (!CommonValidations.isStringEmpty(binding4.getbfmoneydeductible())) {
+     listAddInfo.get(offset).setBfMoneyDeductible1(Double.parseDouble(binding4.getbfmoneydeductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getforgerylimit())) {
+     listAddInfo.get(offset).setDeopistorForgeryLimit1(Double.parseDouble(binding4.getforgerylimit()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getforgerydeductible())) {
+     listAddInfo.get(offset).setDeopistorForgeryDeductible1(Double.parseDouble(binding4.getforgerydeductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getmoneyorderslimit())) {
+     listAddInfo.get(offset).setMoneyOrdersLimit1(Double.parseDouble(binding4.getmoneyorderslimit()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getmoneyordersdeductible())) {
+     listAddInfo.get(offset).setMoneyOrdersDeductible1(Double.parseDouble(binding4.getmoneyordersdeductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getdishonestylimit())) {
+     listAddInfo.get(offset).setEmployDishonestyLimit1(Double.parseDouble(binding4.getdishonestylimit()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getdishonestydeductible())) {
+     listAddInfo.get(offset).setEmployDishonestyDeductible1(Double.parseDouble(binding4.getdishonestydeductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getcgllimit())) {
+     listAddInfo.get(offset).setCglLimit1(Double.parseDouble(binding4.getcgllimit()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getcgldeductible())) {
+     listAddInfo.get(offset).setCglDeductible1(Double.parseDouble(binding4.getcgldeductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.gettenantslimit())) {
+     listAddInfo.get(offset).setTenantsLegalLimit1(Double.parseDouble(binding4.gettenantslimit()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.gettenantsdeductible())) {
+     listAddInfo.get(offset).setTenantsLegalDeductible1(Double.parseDouble(binding4.gettenantsdeductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getnonownedlimit())) {
+     listAddInfo.get(offset).setNonOwnedAutoLimit1(Double.parseDouble(binding4.getnonownedlimit()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getnonowneddeductible())) {
+     listAddInfo.get(offset).setNonOwnedAutoDeductible1(Double.parseDouble(binding4.getnonowneddeductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getsef96limit())) {
+     listAddInfo.get(offset).setSef96Limit1(Double.parseDouble(binding4.getsef96limit()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getsef94deductible())) {
+     listAddInfo.get(offset).setSef96Deductible1(Double.parseDouble(binding4.getsef96deductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getsef94limit())) {
+     listAddInfo.get(offset).setSef94Limit1(Double.parseDouble(binding4.getsef94limit()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getsef94deductible())) {
+     listAddInfo.get(offset).setSef94Deductible1(Double.parseDouble(binding4.getsef94deductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getdandlimit())) {
+     listAddInfo.get(offset).setDoLimit1(Double.parseDouble(binding4.getdandlimit()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getdanddeductible())) {
+     listAddInfo.get(offset).setDoDeductible1(Double.parseDouble(binding4.getdanddeductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.geteandlimit())) {
+     listAddInfo.get(offset).setEoLimit1(Double.parseDouble(binding4.geteandlimit()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.geteanddeductible())) {
+     listAddInfo.get(offset).setEoDeductible1(Double.parseDouble(binding4.geteanddeductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getemployerslimit())) {
+     listAddInfo.get(offset).setEmployerLimit1(Double.parseDouble(binding4.getemployerslimit()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getemployersdeductible())) {
+     listAddInfo.get(offset).setEmployerDeductible1(Double.parseDouble(binding4.getemployersdeductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getumbrellalimit())) {
+     listAddInfo.get(offset).setUmbrellaLimit1(Double.parseDouble(binding4.getumbrellalimit()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getumbrelladeductible())) {
+     listAddInfo.get(offset).setUmbrellaDeductible1(Double.parseDouble(binding4.getumbrelladeductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getwrapuplimit())) {
+     listAddInfo.get(offset).setWrapUpLimit1(Double.parseDouble(binding4.getwrapuplimit()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getwrapupdeductible())) {
+     listAddInfo.get(offset).setWrapUpDeductible1(Double.parseDouble(binding4.getwrapupdeductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getstdlimit())) {
+     listAddInfo.get(offset).setStdComprehensiveLimit1(Double.parseDouble(binding4.getstdlimit()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getstddeductible())) {
+     listAddInfo.get(offset).setStdComprehensiveDeductible1(Double.parseDouble(binding4.getstddeductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getaclimit())) {
+     listAddInfo.get(offset).setAirConditioningLimit1(Double.parseDouble(binding4.getaclimit()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getacdeductible())) {
+     listAddInfo.get(offset).setAirConditioningDeductible1(Double.parseDouble(binding4.getacdeductible()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getproductionmachinerylimit())) {
+     listAddInfo.get(offset).setProductionMachineryLimit1(Double.parseDouble(binding4.getproductionmachinerylimit()));
+     }
+
+     if (!CommonValidations.isStringEmpty(binding4.getproductionmachinerydeductible())) {
+     listAddInfo.get(offset).setProductionMachineryDeductible1(Double.parseDouble(binding4.getproductionmachinerydeductible()));
+     }
+
+     listAddInfo.get(offset).setOthercoverage11(binding4.getothercoverage1());
+     listAddInfo.get(offset).setOthercoverage21(binding4.getothercoverage2());
+     if (binding4.getothercoverage1limit() != null && !(binding4.getothercoverage1limit().trim().equals(""))) {
+     listAddInfo.get(offset).setOtherCoverageLimit11(Double.parseDouble(binding4.getothercoverage1limit()));
+     }
+     if (binding4.getothercoverage1deductible() != null && !(binding4.getothercoverage1deductible().trim().equals(""))) {
+     listAddInfo.get(offset).setOtherCoverageDeductible11(Double.parseDouble(binding4.getothercoverage1deductible()));
+     }
+     if (binding4.getothercoverage2limit() != null && !(binding4.getothercoverage2limit().trim().equals(""))) {
+     listAddInfo.get(offset).setOtherCoverageLimit21(Double.parseDouble(binding4.getothercoverage2limit()));
+     }
+     if (binding4.getothercoverage2deductible() != null && !(binding4.getothercoverage2deductible().trim().equals(""))) {
+     listAddInfo.get(offset).setOtherCoverageDeductible21(Double.parseDouble(binding4.getothercoverage2deductible()));
+     }
+     listAddInfo.get(offset).setAdditionalCoverage1(binding4.getadditionalcoverage());
+     listAddInfo.get(offset).setRoofupdated1(binding4.getroofupdated());
+     listAddInfo.get(offset).setHeatingupdated1(binding4.getheatingupdated());
+     listAddInfo.get(offset).setElectricalupdated1(binding4.getelectricalupdated());
+     listAddInfo.get(offset).setFireProtectiondistance1(binding4.getdistance());
+     listAddInfo.get(offset).setAddress1(binding4.getlocationaddress());
+     listAddInfo.get(offset).setBasement1(binding4.getbasement());
+     listAddInfo.get(offset).setOwner11(binding4.getmotortruckcargoowner());
+     listAddInfo.get(offset).setTruckMan1(binding4.getmotortruckcargotruckman());
+     listAddInfo.get(offset).setGrossEarning801(binding4.getgecheckbox());
+     listAddInfo.get(offset).setWallsframe1(binding4.getwallsframe());
+     listAddInfo.get(offset).setWallshcb1(binding4.getwallshcb());
+     listAddInfo.get(offset).setWallssteel1(binding4.getwallssteel());
+     listAddInfo.get(offset).setWallsbrick1(binding4.getwallsbrick());
+     listAddInfo.get(offset).setRoofwood1(binding4.getwoodjoist());
+     listAddInfo.get(offset).setRoofsteel1(binding4.getsteeldeck());
+     listAddInfo.get(offset).setRoofconcrete1(binding4.getroofconcrete());
+     listAddInfo.get(offset).setFloorsconcrete1(binding4.getfloorsconcrete());
+     listAddInfo.get(offset).setFloorswood1(binding4.getfloorswood());
+     listAddInfo.get(offset).setHeatinggas1(binding4.getfagas());
+     listAddInfo.get(offset).setHeatingoil1(binding4.getfaoil());
+     listAddInfo.get(offset).setHeatingelectric1(binding4.getheatingelectric());
+     listAddInfo.get(offset).setHeatingother1(binding4.getheatingother());
+     listAddInfo.get(offset).setElectricalbreakers1(binding4.getelectricalbreakers());
+     listAddInfo.get(offset).setElectricalfuses1(binding4.getelectricalfuses());
+     listAddInfo.get(offset).setElectricalamps1(binding4.getnoofamps());
+     listAddInfo.get(offset).setPlumbingcopper1(binding4.getcopper());
+     listAddInfo.get(offset).setPlumbingpvc1(binding4.getpvc());
+     listAddInfo.get(offset).setPlumbingother1(binding4.getplumbingother());
+     listAddInfo.get(offset).setFireProtection1(binding4.getFireProtection());
+     listAddInfo.get(offset).setSecurity1(binding4.getSecurity());
+
+     if (!CommonValidations.isStringEmpty(binding4.getlocationage())) {
+     listAddInfo.get(offset).setAge1(Integer.parseInt(binding4.getlocationage()));
+     }
+     if (!CommonValidations.isStringEmpty(binding4.gettotsqfootage())) {
+     listAddInfo.get(offset).setTotalSqFootage1(Double.parseDouble(binding4.gettotsqfootage()));
+     }
+     if (!CommonValidations.isStringEmpty(binding4.getinsidesqfootage())) {
+     listAddInfo.get(offset).setInsdSqFootage1(Double.parseDouble(binding4.getinsidesqfootage()));
+     }
+     if (!CommonValidations.isStringEmpty(binding4.getnoofstories())) {
+     listAddInfo.get(offset).setNoOfStories1(Integer.parseInt(binding4.getnoofstories()));
+     }
+
+     System.out.println("End");
+     }
+     System.out.println("End of End");
+     offset += 1;
+     System.out.println(" offset value" + offset);
+     try {
+     if (listAddInfo.get(offset) != null && listAddInfo.get(offset).getAddress1() != null) {
+     //yahape
+     System.out.println("Inside setting value");
+     binding4.setlocationaddress(listAddInfo.get(offset).getAddress1());
+     } else {
+     System.out.println("Inside setting null");
+     binding4.setlocationaddress("");
+     binding4.setlocationage("");
+     binding4.settotsqfootage("");
+     binding4.setinsidesqfootage("");
+     binding4.setnoofstories("");
+     basement.getSelectionModel().selectFirst();
+     wallsframe.setSelected(false);
+     wallsbrick.setSelected(false);
+     wallshcb.setSelected(false);
+     wallssteel.setSelected(false);
+     woodjoist.setSelected(false);
+     steeldeck.setSelected(false);
+     roofconcrete.setSelected(false);
+     binding4.setroofupdated("");
+     floorsconcrete.setSelected(false);
+     floorswood.setSelected(false);
+     fagas.setSelected(false);
+     faoil.setSelected(false);
+     heatingelectric.setSelected(false);
+     heatingother.setSelected(false);
+     binding4.setheatingupdated("");
+     electricalbreakers.setSelected(false);
+     electricalfuses.setSelected(false);
+     binding4.setelectricalupdated("");
+     copper.setSelected(false);
+     copper.setSelected(false);
+     pvc.setSelected(false);
+     plumbingother.setSelected(false);
+     binding4.setplumbingupdated("");
+     sprinklers.setSelected(false);
+     svccontract.setSelected(false);
+     hydrant.setSelected(false);
+     firehall.setSelected(false);
+     unprotected.setSelected(false);
+     binding4.setFireProtection("");
+     alarmsystem.setSelected(false);
+     centralmonitored.setSelected(false);
+     windowbars.setSelected(false);
+     deadbolts.setSelected(false);
+     }
+     } catch (Exception e) {
+     e.printStackTrace();
+     System.out.println("inside catch");
+     binding4.setlocationaddress("");
+     binding4.setlocationage("");
+     binding4.settotsqfootage("");
+     binding4.setinsidesqfootage("");
+     binding4.setnoofstories("");
+     basement.getSelectionModel().selectFirst();
+     wallsframe.setSelected(false);
+     wallsbrick.setSelected(false);
+     wallshcb.setSelected(false);
+     wallssteel.setSelected(false);
+     woodjoist.setSelected(false);
+     steeldeck.setSelected(false);
+     roofconcrete.setSelected(false);
+     binding4.setroofupdated("");
+     floorsconcrete.setSelected(false);
+     floorswood.setSelected(false);
+     fagas.setSelected(false);
+     faoil.setSelected(false);
+     heatingelectric.setSelected(false);
+     heatingother.setSelected(false);
+     binding4.setheatingupdated("");
+     electricalbreakers.setSelected(false);
+     electricalfuses.setSelected(false);
+     binding4.setelectricalupdated("");
+     copper.setSelected(false);
+     copper.setSelected(false);
+     pvc.setSelected(false);
+     plumbingother.setSelected(false);
+     binding4.setplumbingupdated("");
+     sprinklers.setSelected(false);
+     svccontract.setSelected(false);
+     hydrant.setSelected(false);
+     firehall.setSelected(false);
+     unprotected.setSelected(false);
+     binding4.setFireProtection("");
+     alarmsystem.setSelected(false);
+     centralmonitored.setSelected(false);
+     windowbars.setSelected(false);
+     deadbolts.setSelected(false);
+     }
+     } catch (Exception e) {
+     e.printStackTrace();
+     }
+     } else {
+     System.out.println("else loop for next");
+     InvokeAnimation.attentionSeekerWobble(locationaddress);
+     locationaddress.setPromptText("Enter address");
+     }
+     }
+     }
+
+     @FXML
+     public void addAdditionPrev() {
+     System.out.println("Clicked back");
+     if (binding4.getlocationaddress() != null || binding4.getlocationaddress().trim().equals("")) {
+     System.out.println("Inside first if");
+     System.out.println("offset value" + offset);
+     if (offset > 0) {
+     System.out.println("Inside addadditionprev");
+     try {
+     offset -= 1;
+     System.out.println("Inside try");
+     if (binding4.getlocationaddress() != null && binding4.getlocationaddress().trim().length() > 0) {
+     System.out.println("X. Inside if addadditionprev");
+     if (listAddInfo.get(offset) == null) {
+     System.out.println("Y. Inside if addadditionprev");
+     listAddInfo.set(offset, new AddAnotherInfo());
+     }
+     listAddInfo.get(offset).setAddress1(binding4.getlocationaddress());
+     }
+     offset -= 1;
+     if (offset >= 0) {
+     if (listAddInfo.get(offset).getAddress1() != null) {
+
+     binding4.setlocationaddress(listAddInfo.get(offset).getAddress1());
+     }
+     } else if (offset == -1) {
+     offset = 0;
+     }
+     } catch (Exception e) {
+     e.printStackTrace();
+     }
+     }
+     } else {
+     System.out.println("Inside else of addAdditionPrev");
+     }
+     }
+     */
+    @FXML
     public void addAdditionNext() {
-        if (binding4.getlocationaddress() != null || binding4.getlocationaddress().trim().equals("")) {
-            System.out.println("Inside addAdditionNext");
-            if (offset < 10) {
-                System.out.println("Inside loop with offset value " + offset);
-                try {
-                    //yahape
-                    if (binding4.getlocationaddress() != null && binding4.getlocationaddress().trim().length() > 0) {
-                        System.out.println("1. Inside next if " + binding4.getlocationaddress());
-                        if (listAddInfo.size() == offset || listAddInfo.get(offset) == null) {
-                            System.out.println("2. Inside next if " + binding4.getlocationaddress());
-                            listAddInfo.add(new AddAnotherInfo());
-                        }
-                        //yahape
-                        listAddInfo.get(offset).setAddress1(binding4.getlocationaddress());
-                        if (!CommonValidations.isStringEmpty(binding4.getbuildinglimit())) {
-                            listAddInfo.get(offset).setBuildingLimit1(Double.parseDouble(binding4.getbuildinglimit()));
-                        }
-                        if (!CommonValidations.isStringEmpty(binding4.getbuildingdeductible())) {
-                            listAddInfo.get(offset).setBuildingDeductible1(Double.parseDouble(binding4.getbuildingdeductible()));
-                        }
-                        if (!CommonValidations.isStringEmpty(binding4.getcontentslimit())) {
-                            listAddInfo.get(offset).setContentsLimit1(Double.parseDouble(binding4.getcontentslimit()));
-                        }
-                        if (!CommonValidations.isStringEmpty(binding4.getcontentsdeductible())) {
-                            listAddInfo.get(offset).setContentsDeductible1(Double.parseDouble(binding4.getcontentsdeductible()));
-                        }
-                        if (!CommonValidations.isStringEmpty(binding4.getstocklimit())) {
-                            listAddInfo.get(offset).setStockLimit1(Double.parseDouble(binding4.getstocklimit()));
-                        }
-                        if (!CommonValidations.isStringEmpty(binding4.getstockdeductible())) {
-                            listAddInfo.get(offset).setStockDeductible1(Double.parseDouble(binding4.getstockdeductible()));
-                        }
-                        if (!CommonValidations.isStringEmpty(binding4.getofficelimit())) {
-                            listAddInfo.get(offset).setOfficeContentLimit1(Double.parseDouble(binding4.getofficelimit()));
-                        }
-                        if (!CommonValidations.isStringEmpty(binding4.getofficedeductible())) {
-                            listAddInfo.get(offset).setOfficeContentDeductible1(Double.parseDouble(binding4.getofficedeductible()));
-                        }
-                        if (!CommonValidations.isStringEmpty(binding4.getedplimit())) {
-                            listAddInfo.get(offset).setEdpLimit1(Double.parseDouble(binding4.getedplimit()));
-                        }
-                        if (!CommonValidations.isStringEmpty(binding4.getedpdeductible())) {
-                            listAddInfo.get(offset).setEdpDeductible1(Double.parseDouble(binding4.getedpdeductible()));
-                        }
-                        if (!CommonValidations.isStringEmpty(binding4.getequipmentlimit())) {
-                            listAddInfo.get(offset).setEquipmentLimit1(Double.parseDouble(binding4.getequipmentlimit()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getequipmentdeductible())) {
-                            listAddInfo.get(offset).setEquipmentDeductible1(Double.parseDouble(binding4.getequipmentdeductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getoffpremiseslimit())) {
-                            listAddInfo.get(offset).setOffPremisesLimit1(Double.parseDouble(binding4.getoffpremiseslimit()));
-                        }
-                        if (!CommonValidations.isStringEmpty(binding4.getoffpremisesdeductible())) {
-                            listAddInfo.get(offset).setOffPremisesDeductible1(Double.parseDouble(binding4.getoffpremisesdeductible()));
-                        }
-                        if (!CommonValidations.isStringEmpty(binding4.gettransitlimit())) {
-                            listAddInfo.get(offset).setTransitLimit1(Double.parseDouble(binding4.gettransitlimit()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.gettransitdeductible())) {
-                            listAddInfo.get(offset).setTransitDeductible1(Double.parseDouble(binding4.gettransitdeductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getmiscpropertylimit())) {
-                            listAddInfo.get(offset).setMiscPropertyLimit1(Double.parseDouble(binding4.getmiscpropertylimit()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getmiscpropertydeductible())) {
-                            listAddInfo.get(offset).setMiscPropertyDeductible1(Double.parseDouble(binding4.getmiscpropertydeductible()));
-                        }
-                        if (!CommonValidations.isStringEmpty(binding4.getcontractorsequipmentlimit())) {
-                            listAddInfo.get(offset).setContractorEquipmentLimit1(Double.parseDouble(binding4.getcontractorsequipmentlimit()));
-                        }
-                        if (!CommonValidations.isStringEmpty(binding4.getcontractorsequipmentdeductible())) {
-                            listAddInfo.get(offset).setContractorEquipmentDeductible1(Double.parseDouble(binding4.getcontractorsequipmentdeductible()));
-                        }
-                        if (!CommonValidations.isStringEmpty(binding4.getinstallationfloatorlimit())) {
-                            listAddInfo.get(offset).setInstallationFloaterLimit1(Double.parseDouble(binding4.getinstallationfloatorlimit()));
-                        }
-                        if (!CommonValidations.isStringEmpty(binding4.getinstallationfloatordeductible())) {
-                            listAddInfo.get(offset).setInstallationFloaterDeductible1(Double.parseDouble(binding4.getinstallationfloatordeductible()));
-                        }
-                        if (!CommonValidations.isStringEmpty(binding4.gettoolfloatorlimit())) {
-                            listAddInfo.get(offset).setToolFloaterLimit1(Double.parseDouble(binding4.gettoolfloatorlimit()));
-                        }
-                        if (!CommonValidations.isStringEmpty(binding4.gettoolfloatordeductible())) {
-                            listAddInfo.get(offset).setToolFloaterDeductible1(Double.parseDouble(binding4.gettoolfloatordeductible()));
-                        }
-                        if (!CommonValidations.isStringEmpty(binding4.getsignfloatorlimit())) {
-                            listAddInfo.get(offset).setSignFloaterLimit1(Double.parseDouble(binding4.getsignfloatorlimit()));
-                        }
-                        if (!CommonValidations.isStringEmpty(binding4.getsignfloatordeductible())) {
-                            listAddInfo.get(offset).setSignFloaterDeductible1(Double.parseDouble(binding4.getsignfloatordeductible()));
-                        }
-                        if (!CommonValidations.isStringEmpty(binding4.getmotortruckcargolimit())) {
-                            listAddInfo.get(offset).setMotorTruckLimit1(Double.parseDouble(binding4.getmotortruckcargolimit()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getmotortruckcargodeductible())) {
-                            listAddInfo.get(offset).setMotorTruckDeductible1(Double.parseDouble(binding4.getmotortruckcargodeductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getglasslimit())) {
-                            listAddInfo.get(offset).setGlassLimit1(Double.parseDouble(binding4.getglasslimit()));
-                        }
-                        if (!CommonValidations.isStringEmpty(binding4.getglassdeductible())) {
-                            listAddInfo.get(offset).setGlassDeductible1(Double.parseDouble(binding4.getglassdeductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getsewerblackupdeductible())) {
-                            listAddInfo.get(offset).setSewerBackupDeductible1(Double.parseDouble(binding4.getsewerblackupdeductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getflooddeductible())) {
-                            listAddInfo.get(offset).setFloodDeductible1(Double.parseDouble(binding4.getflooddeductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getearthquakedeductible())) {
-                            listAddInfo.get(offset).setEarthquakeDeductible1(Double.parseDouble(binding4.getearthquakedeductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getprofitslimit())) {
-                            listAddInfo.get(offset).setProfitLimit1(Double.parseDouble(binding4.getprofitslimit()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getprofitsdeductible())) {
-                            listAddInfo.get(offset).setProfitDeductible1(Double.parseDouble(binding4.getprofitsdeductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getgrossearningslimit())) {
-                            listAddInfo.get(offset).setGrossEarningLimit1(Double.parseDouble(binding4.getgrossearningslimit()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getgrossearningsdeductible())) {
-                            listAddInfo.get(offset).setGrossEarningDeductible1(Double.parseDouble(binding4.getgrossearningsdeductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getrentalincomelimit())) {
-                            listAddInfo.get(offset).setRentalIncomeLimit1(Double.parseDouble(binding4.getrentalincomelimit()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getrentalincomedeductible())) {
-                            listAddInfo.get(offset).setRentalIncomeDeductible1(Double.parseDouble(binding4.getrentalincomedeductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getextraexpenselimit())) {
-                            listAddInfo.get(offset).setExtraExpenseLimit1(Double.parseDouble(binding4.getextraexpenselimit()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getextraexpensedeductible())) {
-                            listAddInfo.get(offset).setExtraExpenseDeductible1(Double.parseDouble(binding4.getextraexpensedeductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getoffpremiseslimit())) {
-                            listAddInfo.get(offset).setOffPremisesPowerLimit1(Double.parseDouble(binding4.getoffpremiseslimit()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getoffpremisesdeductible())) {
-                            listAddInfo.get(offset).setOffPremisesPowerDeductible1(Double.parseDouble(binding4.getoffpremisesdeductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getinsideoutsidelimit())) {
-                            listAddInfo.get(offset).setInsideOutsideLimit1(Double.parseDouble(binding4.getinsideoutsidelimit()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getinsideoutsidedeductible())) {
-                            listAddInfo.get(offset).setInsideOutsideDeductible1(Double.parseDouble(binding4.getinsideoutsidedeductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getbfmoneylimit())) {
-                            listAddInfo.get(offset).setBfMoneyLimit1(Double.parseDouble(binding4.getbfmoneylimit()));
-                        }
-                        if (!CommonValidations.isStringEmpty(binding4.getbfmoneydeductible())) {
-                            listAddInfo.get(offset).setBfMoneyDeductible1(Double.parseDouble(binding4.getbfmoneydeductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getforgerylimit())) {
-                            listAddInfo.get(offset).setDeopistorForgeryLimit1(Double.parseDouble(binding4.getforgerylimit()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getforgerydeductible())) {
-                            listAddInfo.get(offset).setDeopistorForgeryDeductible1(Double.parseDouble(binding4.getforgerydeductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getmoneyorderslimit())) {
-                            listAddInfo.get(offset).setMoneyOrdersLimit1(Double.parseDouble(binding4.getmoneyorderslimit()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getmoneyordersdeductible())) {
-                            listAddInfo.get(offset).setMoneyOrdersDeductible1(Double.parseDouble(binding4.getmoneyordersdeductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getdishonestylimit())) {
-                            listAddInfo.get(offset).setEmployDishonestyLimit1(Double.parseDouble(binding4.getdishonestylimit()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getdishonestydeductible())) {
-                            listAddInfo.get(offset).setEmployDishonestyDeductible1(Double.parseDouble(binding4.getdishonestydeductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getcgllimit())) {
-                            listAddInfo.get(offset).setCglLimit1(Double.parseDouble(binding4.getcgllimit()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getcgldeductible())) {
-                            listAddInfo.get(offset).setCglDeductible1(Double.parseDouble(binding4.getcgldeductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.gettenantslimit())) {
-                            listAddInfo.get(offset).setTenantsLegalLimit1(Double.parseDouble(binding4.gettenantslimit()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.gettenantsdeductible())) {
-                            listAddInfo.get(offset).setTenantsLegalDeductible1(Double.parseDouble(binding4.gettenantsdeductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getnonownedlimit())) {
-                            listAddInfo.get(offset).setNonOwnedAutoLimit1(Double.parseDouble(binding4.getnonownedlimit()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getnonowneddeductible())) {
-                            listAddInfo.get(offset).setNonOwnedAutoDeductible1(Double.parseDouble(binding4.getnonowneddeductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getsef96limit())) {
-                            listAddInfo.get(offset).setSef96Limit1(Double.parseDouble(binding4.getsef96limit()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getsef94deductible())) {
-                            listAddInfo.get(offset).setSef96Deductible1(Double.parseDouble(binding4.getsef96deductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getsef94limit())) {
-                            listAddInfo.get(offset).setSef94Limit1(Double.parseDouble(binding4.getsef94limit()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getsef94deductible())) {
-                            listAddInfo.get(offset).setSef94Deductible1(Double.parseDouble(binding4.getsef94deductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getdandlimit())) {
-                            listAddInfo.get(offset).setDoLimit1(Double.parseDouble(binding4.getdandlimit()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getdanddeductible())) {
-                            listAddInfo.get(offset).setDoDeductible1(Double.parseDouble(binding4.getdanddeductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.geteandlimit())) {
-                            listAddInfo.get(offset).setEoLimit1(Double.parseDouble(binding4.geteandlimit()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.geteanddeductible())) {
-                            listAddInfo.get(offset).setEoDeductible1(Double.parseDouble(binding4.geteanddeductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getemployerslimit())) {
-                            listAddInfo.get(offset).setEmployerLimit1(Double.parseDouble(binding4.getemployerslimit()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getemployersdeductible())) {
-                            listAddInfo.get(offset).setEmployerDeductible1(Double.parseDouble(binding4.getemployersdeductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getumbrellalimit())) {
-                            listAddInfo.get(offset).setUmbrellaLimit1(Double.parseDouble(binding4.getumbrellalimit()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getumbrelladeductible())) {
-                            listAddInfo.get(offset).setUmbrellaDeductible1(Double.parseDouble(binding4.getumbrelladeductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getwrapuplimit())) {
-                            listAddInfo.get(offset).setWrapUpLimit1(Double.parseDouble(binding4.getwrapuplimit()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getwrapupdeductible())) {
-                            listAddInfo.get(offset).setWrapUpDeductible1(Double.parseDouble(binding4.getwrapupdeductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getstdlimit())) {
-                            listAddInfo.get(offset).setStdComprehensiveLimit1(Double.parseDouble(binding4.getstdlimit()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getstddeductible())) {
-                            listAddInfo.get(offset).setStdComprehensiveDeductible1(Double.parseDouble(binding4.getstddeductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getaclimit())) {
-                            listAddInfo.get(offset).setAirConditioningLimit1(Double.parseDouble(binding4.getaclimit()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getacdeductible())) {
-                            listAddInfo.get(offset).setAirConditioningDeductible1(Double.parseDouble(binding4.getacdeductible()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getproductionmachinerylimit())) {
-                            listAddInfo.get(offset).setProductionMachineryLimit1(Double.parseDouble(binding4.getproductionmachinerylimit()));
-                        }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getproductionmachinerydeductible())) {
-                            listAddInfo.get(offset).setProductionMachineryDeductible1(Double.parseDouble(binding4.getproductionmachinerydeductible()));
-                        }
-
-                        listAddInfo.get(offset).setOthercoverage11(binding4.getothercoverage1());
-                        listAddInfo.get(offset).setOthercoverage21(binding4.getothercoverage2());
-                        if (binding4.getothercoverage1limit() != null && !(binding4.getothercoverage1limit().trim().equals(""))) {
-                            listAddInfo.get(offset).setOtherCoverageLimit11(Double.parseDouble(binding4.getothercoverage1limit()));
-                        }
-                        if (binding4.getothercoverage1deductible() != null && !(binding4.getothercoverage1deductible().trim().equals(""))) {
-                            listAddInfo.get(offset).setOtherCoverageDeductible11(Double.parseDouble(binding4.getothercoverage1deductible()));
-                        }
-                        if (binding4.getothercoverage2limit() != null && !(binding4.getothercoverage2limit().trim().equals(""))) {
-                            listAddInfo.get(offset).setOtherCoverageLimit21(Double.parseDouble(binding4.getothercoverage2limit()));
-                        }
-                        if (binding4.getothercoverage2deductible() != null && !(binding4.getothercoverage2deductible().trim().equals(""))) {
-                            listAddInfo.get(offset).setOtherCoverageDeductible21(Double.parseDouble(binding4.getothercoverage2deductible()));
-                        }
-                        listAddInfo.get(offset).setAdditionalCoverage1(binding4.getadditionalcoverage());
-                        listAddInfo.get(offset).setRoofupdated1(binding4.getroofupdated());
-                        listAddInfo.get(offset).setHeatingupdated1(binding4.getheatingupdated());
-                        listAddInfo.get(offset).setElectricalupdated1(binding4.getelectricalupdated());
-                        listAddInfo.get(offset).setFireProtectiondistance1(binding4.getdistance());
-                        listAddInfo.get(offset).setAddress1(binding4.getlocationaddress());
-                        listAddInfo.get(offset).setBasement1(binding4.getbasement());
-                        listAddInfo.get(offset).setOwner11(binding4.getmotortruckcargoowner());
-                        listAddInfo.get(offset).setTruckMan1(binding4.getmotortruckcargotruckman());
-                        listAddInfo.get(offset).setGrossEarning801(binding4.getgecheckbox());
-                        listAddInfo.get(offset).setWallsframe1(binding4.getwallsframe());
-                        listAddInfo.get(offset).setWallshcb1(binding4.getwallshcb());
-                        listAddInfo.get(offset).setWallssteel1(binding4.getwallssteel());
-                        listAddInfo.get(offset).setWallsbrick1(binding4.getwallsbrick());
-                        listAddInfo.get(offset).setRoofwood1(binding4.getwoodjoist());
-                        listAddInfo.get(offset).setRoofsteel1(binding4.getsteeldeck());
-                        listAddInfo.get(offset).setRoofconcrete1(binding4.getroofconcrete());
-                        listAddInfo.get(offset).setFloorsconcrete1(binding4.getfloorsconcrete());
-                        listAddInfo.get(offset).setFloorswood1(binding4.getfloorswood());
-                        listAddInfo.get(offset).setHeatinggas1(binding4.getfagas());
-                        listAddInfo.get(offset).setHeatingoil1(binding4.getfaoil());
-                        listAddInfo.get(offset).setHeatingelectric1(binding4.getheatingelectric());
-                        listAddInfo.get(offset).setHeatingother1(binding4.getheatingother());
-                        listAddInfo.get(offset).setElectricalbreakers1(binding4.getelectricalbreakers());
-                        listAddInfo.get(offset).setElectricalfuses1(binding4.getelectricalfuses());
-                        listAddInfo.get(offset).setElectricalamps1(binding4.getnoofamps());
-                        listAddInfo.get(offset).setPlumbingcopper1(binding4.getcopper());
-                        listAddInfo.get(offset).setPlumbingpvc1(binding4.getpvc());
-                        listAddInfo.get(offset).setPlumbingother1(binding4.getplumbingother());
-                        listAddInfo.get(offset).setFireProtection1(binding4.getFireProtection());
-                        listAddInfo.get(offset).setSecurity1(binding4.getSecurity());
-
-                        if (!CommonValidations.isStringEmpty(binding4.getlocationage())) {
-                            listAddInfo.get(offset).setAge1(Integer.parseInt(binding4.getlocationage()));
-                        }
-                        if (!CommonValidations.isStringEmpty(binding4.gettotsqfootage())) {
-                            listAddInfo.get(offset).setTotalSqFootage1(Double.parseDouble(binding4.gettotsqfootage()));
-                        }
-                        if (!CommonValidations.isStringEmpty(binding4.getinsidesqfootage())) {
-                            listAddInfo.get(offset).setInsdSqFootage1(Double.parseDouble(binding4.getinsidesqfootage()));
-                        }
-                        if (!CommonValidations.isStringEmpty(binding4.getnoofstories())) {
-                            listAddInfo.get(offset).setNoOfStories1(Integer.parseInt(binding4.getnoofstories()));
-                        }
-
-                        System.out.println("End");
-                    }
-                    System.out.println("End of End");
-                    offset += 1;
-                    System.out.println(" offset value" + offset);
-                    try {
-                        if (listAddInfo.get(offset) != null && listAddInfo.get(offset).getAddress1() != null) {
-                            //yahape
-                            System.out.println("Inside setting value");
-                            binding4.setlocationaddress(listAddInfo.get(offset).getAddress1());
-                        } else {
-                            System.out.println("Inside setting null");
-                            binding4.setlocationaddress("");
-                            binding4.setlocationage("");
-                            binding4.settotsqfootage("");
-                            binding4.setinsidesqfootage("");
-                            binding4.setnoofstories("");
-                            basement.getSelectionModel().selectFirst();
-                            wallsframe.setSelected(false);
-                            wallsbrick.setSelected(false);
-                            wallshcb.setSelected(false);
-                            wallssteel.setSelected(false);
-                            woodjoist.setSelected(false);
-                            steeldeck.setSelected(false);
-                            roofconcrete.setSelected(false);
-                            binding4.setroofupdated("");
-                            floorsconcrete.setSelected(false);
-                            floorswood.setSelected(false);
-                            fagas.setSelected(false);
-                            faoil.setSelected(false);
-                            heatingelectric.setSelected(false);
-                            heatingother.setSelected(false);
-                            binding4.setheatingupdated("");
-                            electricalbreakers.setSelected(false);
-                            electricalfuses.setSelected(false);
-                            binding4.setelectricalupdated("");
-                            copper.setSelected(false);
-                            copper.setSelected(false);
-                            pvc.setSelected(false);
-                            plumbingother.setSelected(false);
-                            binding4.setplumbingupdated("");
-                            sprinklers.setSelected(false);
-                            svccontract.setSelected(false);
-                            hydrant.setSelected(false);
-                            firehall.setSelected(false);
-                            unprotected.setSelected(false);
-                            binding4.setFireProtection("");
-                            alarmsystem.setSelected(false);
-                            centralmonitored.setSelected(false);
-                            windowbars.setSelected(false);
-                            deadbolts.setSelected(false);
-                        }
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                        System.out.println("inside catch");
-                        binding4.setlocationaddress("");
-                        binding4.setlocationage("");
-                        binding4.settotsqfootage("");
-                        binding4.setinsidesqfootage("");
-                        binding4.setnoofstories("");
-                        basement.getSelectionModel().selectFirst();
-                        wallsframe.setSelected(false);
-                        wallsbrick.setSelected(false);
-                        wallshcb.setSelected(false);
-                        wallssteel.setSelected(false);
-                        woodjoist.setSelected(false);
-                        steeldeck.setSelected(false);
-                        roofconcrete.setSelected(false);
-                        binding4.setroofupdated("");
-                        floorsconcrete.setSelected(false);
-                        floorswood.setSelected(false);
-                        fagas.setSelected(false);
-                        faoil.setSelected(false);
-                        heatingelectric.setSelected(false);
-                        heatingother.setSelected(false);
-                        binding4.setheatingupdated("");
-                        electricalbreakers.setSelected(false);
-                        electricalfuses.setSelected(false);
-                        binding4.setelectricalupdated("");
-                        copper.setSelected(false);
-                        copper.setSelected(false);
-                        pvc.setSelected(false);
-                        plumbingother.setSelected(false);
-                        binding4.setplumbingupdated("");
-                        sprinklers.setSelected(false);
-                        svccontract.setSelected(false);
-                        hydrant.setSelected(false);
-                        firehall.setSelected(false);
-                        unprotected.setSelected(false);
-                        binding4.setFireProtection("");
-                        alarmsystem.setSelected(false);
-                        centralmonitored.setSelected(false);
-                        windowbars.setSelected(false);
-                        deadbolts.setSelected(false);
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
+        System.out.println("Next clicked");
+        if (offset < 10 && offset >= 0) {
+            try {
+                System.out.println("Offset1 " + offset);
+                if (listAddInfo.get(offset) != null) {
+                    System.out.println("Offset2 " + offset);
+                    listAddInfo.get(offset).setAddress1(binding4.getlocationaddress());
+                    System.out.println("1" + binding4.getlocationaddress());
+                    System.out.println("2" + listAddInfo.get(offset).getAddress1());
+                } else {
+                    System.out.println("Offset3 " + offset);
+                    AddAnotherInfo obj = new AddAnotherInfo();
+                    obj.setAddress1(binding4.getlocationaddress());
+                    System.out.println("3" + obj.getAddress1());
+                    listAddInfo.set(offset, obj);
                 }
-            } else {
-                System.out.println("else loop for next");
-                InvokeAnimation.attentionSeekerWobble(locationaddress);
-                locationaddress.setPromptText("Enter address");
+            } catch (Exception e) {
+                System.out.println("Offset4 " + offset);
+                AddAnotherInfo obj = new AddAnotherInfo();
+                obj.setAddress1(binding4.getlocationaddress());
+                System.out.println("4" + binding4.getlocationaddress());
+                //System.out.println("5"+listAddInfo.get(offset).getAddress1());
+                System.out.println("Next Address" + binding4.getlocationaddress());
+                listAddInfo.add(obj);
+            }
+
+            offset++;
+
+            if (offset > 9) {
+                offset = 9;
+            }
+            System.out.println("Offset5 " + offset);
+            try {
+                if (listAddInfo.get(offset) != null) {
+                    System.out.println("Offset6 " + offset);
+                    binding4.setlocationaddress(listAddInfo.get(offset).getAddress1());
+                    System.out.println(binding4.getlocationaddress());
+                } else {
+                    System.out.println("Offset7 " + offset);
+                    binding4.setlocationaddress("");
+                    System.out.println(binding4.getlocationaddress());
+                }
+            } catch (Exception e) {
+                System.out.println("Offset8 " + offset);
+                binding4.setlocationaddress("");
+                System.out.println(binding4.getlocationaddress());
             }
         }
+        for (AddAnotherInfo e : listAddInfo) {
+            System.out.println("next list "+e.getAddress1());
+        }
+
     }
 
     @FXML
     public void addAdditionPrev() {
-        System.out.println("Clicked back");
-        if (binding4.getlocationaddress() != null || binding4.getlocationaddress().trim().equals("")) {
-            System.out.println("Inside first if");
-            System.out.println("offset value" + offset);
-            if (offset > 0) {
-                System.out.println("Inside addadditionprev");
-                try {
-                    offset -= 1;
-                    System.out.println("Inside try");
-                    if (binding4.getlocationaddress() != null && binding4.getlocationaddress().trim().length() > 0) {
-                        System.out.println("X. Inside if addadditionprev");
-                        if (listAddInfo.get(offset) == null) {
-                            System.out.println("Y. Inside if addadditionprev");
-                            listAddInfo.set(offset, new AddAnotherInfo());
-                        }
-                        listAddInfo.get(offset).setAddress1(binding4.getlocationaddress());
-                    }
-                    offset -= 1;
-                    if (offset >= 0) {
-                        if (listAddInfo.get(offset).getAddress1() != null) {
-
-                            binding4.setlocationaddress(listAddInfo.get(offset).getAddress1());
-                        }
-                    } else if (offset == -1) {
-                        offset = 0;
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
+        System.out.println("Previous Clicked");
+        System.out.println(binding4.getlocationaddress());
+        //System.out.println("10" + listAddInfo.get(offset).getAddress1());
+        if (offset >= 1 && offset < 10) {
+            try {
+                System.out.println("Offset9 " + offset);
+                if (listAddInfo.get(offset) != null) {
+                    System.out.println("Offset10 " + offset);
+                    listAddInfo.get(offset).setAddress1(binding4.getlocationaddress());
+                } else {
+                    System.out.println("Offset11 " + offset);
+                    AddAnotherInfo obj = new AddAnotherInfo();
+                    obj.setAddress1(binding4.getlocationaddress());
+                    listAddInfo.add(obj);
                 }
+            } catch (Exception e) {
+                System.out.println("Offset12 " + offset);
+                AddAnotherInfo obj = new AddAnotherInfo();
+                obj.setAddress1(binding4.getlocationaddress());
+                listAddInfo.add(obj);
             }
-        } else {
-            System.out.println("Inside else of addAdditionPrev");
+            offset--;
+            if (offset <= 0) {
+                offset = 0;
+            }
+            System.out.println("Offset13 " + offset);
+            try {
+
+                System.out.println(listAddInfo.get(offset).getAddress1());
+                if (listAddInfo.get(offset) != null) {
+                    System.out.println("Offset14 " + offset);
+                    binding4.setlocationaddress(listAddInfo.get(offset).getAddress1());
+                } else {
+                    System.out.println("Offset15 " + offset);
+                    binding4.setlocationaddress("");
+                }
+            } catch (Exception e) {
+                System.out.println("Offset16 " + offset);
+                binding4.setlocationaddress("");
+            }
+        }
+        for (AddAnotherInfo e : listAddInfo) {
+            System.out.println("prev list"+e.getAddress1());
+            
         }
     }
-*/
-    
-    @FXML
-   public void addAdditionNext() {
-        System.out.println("Next clicked");
-       if(offset<11 && offset>0){
-           try{
-               System.out.println("Offset1 "+offset);
-               if(listAddInfo.get(offset)!=null){
-                   System.out.println("Offset2 "+offset);
-                   listAddInfo.get(offset).setAddress1(binding4.getlocationaddress());
-                   System.out.println("1"+binding4.getlocationaddress());
-                   System.out.println("2"+listAddInfo.get(offset).getAddress1());
-               }else{
-                   System.out.println("Offset3 "+offset);
-                   AddAnotherInfo obj = new AddAnotherInfo();
-                   obj.setAddress1(binding4.getlocationaddress());
-                   System.out.println("3"+obj.getAddress1());
-                   listAddInfo.set(offset,obj);
-               }
-           }catch(Exception e){
-               System.out.println("Offset4 "+offset);
-               AddAnotherInfo obj = new AddAnotherInfo();
-               obj.setAddress1(binding4.getlocationaddress());
-               System.out.println("4"+binding4.getlocationaddress());
-                   //System.out.println("5"+listAddInfo.get(offset).getAddress1());
-               System.out.println("Next Address"+ binding4.getlocationaddress());
-               listAddInfo.add(obj);
-           }
 
-           offset++;
-           
-           if(offset>10)
-               offset =10;
-           System.out.println("Offset5 "+offset);
-           try{
-              if(listAddInfo.get(offset)!=null){
-                  System.out.println("Offset6 "+offset);
-                  binding4.setlocationaddress(listAddInfo.get(offset).getAddress1());
-                  System.out.println(binding4.getlocationaddress());
-               }else{
-                  System.out.println("Offset7 "+offset);
-                  binding4.setlocationaddress("");
-                  System.out.println(binding4.getlocationaddress());
-              } 
-           }catch(Exception e){
-               System.out.println("Offset8 "+offset);
-                binding4.setlocationaddress("");
-                System.out.println(binding4.getlocationaddress());
-           }
-       }
-       for (AddAnotherInfo e:listAddInfo)
-       {System.out.println(e.getAddress1());}
-       
-   }
-
-   @FXML
-   public void addAdditionPrev() {
-       System.out.println("Previous Clicked");
-       System.out.println(binding4.getlocationaddress());
-       System.out.println("10"+listAddInfo.get(offset).getAddress1());
-       if (offset > 1 && offset < 11) {
-          try{
-              System.out.println("Offset9 "+offset);
-              if(listAddInfo.get(offset)!=null){
-                  System.out.println("Offset10 "+offset);
-                 listAddInfo.get(offset).setAddress1(binding4.getlocationaddress());
-              }else{
-                  System.out.println("Offset11 "+offset);
-                  AddAnotherInfo obj = new AddAnotherInfo();
-               obj.setAddress1(binding4.getlocationaddress());
-               listAddInfo.add(obj);
-              }
-          }catch(Exception e){
-              System.out.println("Offset12 "+offset);
-              AddAnotherInfo obj = new AddAnotherInfo();
-               obj.setAddress1(binding4.getlocationaddress());
-               listAddInfo.add(obj);
-          }
-          offset--;
-          if(offset<=0)
-              offset = 1;
-          System.out.println("Offset13 "+offset);
-          try{
-              
-              System.out.println(listAddInfo.get(offset).getAddress1());
-              if(listAddInfo.get(offset)!=null){
-                  System.out.println("Offset14 "+offset);
-                  binding4.setlocationaddress(listAddInfo.get(offset).getAddress1());
-              }else{
-                  System.out.println("Offset15 "+offset);
-                  binding4.setlocationaddress("");
-              }
-          }catch(Exception e){
-              System.out.println("Offset16 "+offset);
-              binding4.setlocationaddress("");
-          }
-       }
-       for (AddAnotherInfo e:listAddInfo)
-       {System.out.println(e.getAddress1());}
-   }
     @FXML
     public void clientprofile2previous() {
         animatedMovement(-1269, 0);
@@ -2470,25 +2471,160 @@ public class NextScreenController implements Initializable, IScreenController {
     }
 
     @FXML
-    public void submitSave() {
+    public void submitSave() throws DatatypeConfigurationException {
         if (producerid != null) {
             LocalFormResponse r = new LocalFormResponse();
-            //yahape
+            r.setProducer(producerid);
+            r.setBranch(branch);
+            GregorianCalendar c = new GregorianCalendar();
+            c.setTime(Calendar.getInstance().getTime());
+            r.setCreationDate(date);
             r.setKeyContact(binding.getKeyContact());
-            System.out.println("submitsave:"+r.getKeyContact());
+            r.setKeyContactEmailAddress(binding.getKeyEmail());
+            r.setKeyContactPhone(binding.getKeyPhone());
+            r.setSecondayContact(binding.getSecondaryContact());
+            r.setSecondayContactEmailAddress(binding.getSecondaryEmail());
+            r.setSecondayContactPhone(binding.getSecondaryPhone());
+            r.setBusinessName(binding.getBusinessName());
+            r.setMailingAddress(binding.getMailingAddress());
+            r.setFax(binding.getFax());
+            r.setWebSiteURL(binding.getWebsite());
+            r.setOtherSpecify(binding.getOtherSpecify());
+            r.setRelatedExperience(binding.getRelatedExperience());
+            r.setOwner1(binding.getOwner1());
+            r.setOwner2(binding.getOwner2());
+            r.setOwner3(binding.getOwner3());
+            r.setOwner4(binding.getOwner4());
+            r.setBoardOfDirector1(binding.getBod1());
+            r.setBoardOfDirector2(binding.getBod2());
+            r.setBoardOfDirector3(binding.getBod3());
+            r.setBoardOfDirector4(binding.getBod4());
+
+            if (!CommonValidations.isStringEmpty(binding.getNoOfLocations())) {
+                r.setNumberOfLocations(Integer.parseInt(binding.getNoOfLocations()));
+            }
+            if (!CommonValidations.isStringEmpty(binding.getNoOfOwnedAutos())) {
+                r.setNumberOfOwnedAutos(Integer.parseInt(binding.getNoOfOwnedAutos()));
+            }
+            if (!CommonValidations.isStringEmpty(binding.getYears())) {
+                r.setYearInBusiness(Integer.parseInt(binding.getYears()));
+            }
+            if (!CommonValidations.isStringEmpty(binding2.getNoofStaff())) {
+                r.setNoOfStaff(Integer.parseInt(binding2.getNoofStaff()));
+            }
+            if (!CommonValidations.isStringEmpty(binding2.getpayroll())) {
+                r.setPayRoll(Double.parseDouble(binding2.getpayroll()));
+            }
+            if (!CommonValidations.isStringEmpty(binding2.getamount1())) {
+                r.setAmount1(Double.parseDouble(binding2.getamount1()));
+            }
+            if (!CommonValidations.isStringEmpty(binding2.getamount2())) {
+                r.setAmount2(Double.parseDouble(binding2.getamount2()));
+            }
+            if (!CommonValidations.isStringEmpty(binding2.getamount3())) {
+                r.setAmount3(Double.parseDouble(binding2.getamount3()));
+            }
+            if (!CommonValidations.isStringEmpty(binding2.getamount4())) {
+                r.setAmount4(Double.parseDouble(binding2.getamount4()));
+            }
+            r.setDescriptionOfOperationsAndRevenue1(binding2.getdescriptionOfOpAndRev1());
+            r.setDescriptionOfOperationsAndRevenue2(binding2.getdescriptionOfOpAndRev2());
+            r.setDescriptionOfOperationsAndRevenue3(binding2.getdescriptionOfOpAndRev3());
+            r.setDescriptionOfOperationsAndRevenue4(binding2.getdescriptionOfOpAndRev4());
+            if (!CommonValidations.isStringEmpty(binding2.gettotalSale())) {
+                r.setTotalSale(Double.parseDouble(binding2.gettotalSale()));
+            }
+            if (!CommonValidations.isStringEmpty(binding2.getperOfUsSales())) {
+                r.setPercentageOfUSSales(Double.parseDouble(binding2.getperOfUsSales()));
+            }
+            if (!CommonValidations.isStringEmpty(binding2.getperOfOnPremises())) {
+                r.setOnpremises(Integer.parseInt(binding2.getperOfOnPremises()));
+            }
+
+            if (!CommonValidations.isStringEmpty(binding2.getperOfOffPremises())) {
+                r.setOffpremises(Integer.parseInt(binding2.getperOfOffPremises()));
+            }
+            if (!CommonValidations.isStringEmpty(binding2.getperOfResidential())) {
+                r.setResidential(Integer.parseInt(binding2.getperOfResidential()));
+            }
+            if (!CommonValidations.isStringEmpty(binding2.getperOfCommercial())) {
+                r.setCommercial(Integer.parseInt(binding2.getperOfCommercial()));
+            }
+            if (!CommonValidations.isStringEmpty(binding2.getperOfSubContracted())) {
+                r.setSubcontracted(Integer.parseInt(binding2.getperOfSubContracted()));
+            }
+            r.setLargestCustomerOrProject1(binding2.getlargestCustomerOrProject1());
+            r.setLargestCustomerOrProject2(binding2.getlargestCustomerOrProject2());
+            r.setLargestCustomerOrProject3(binding2.getlargestCustomerOrProject3());
+            r.setLargestCustomerOrProject4(binding2.getlargestCustomerOrProject4());
+            r.setLargestSuppliers1(binding2.getlargestSuppliers1());
+            r.setLargestSuppliers2(binding2.getlargestSuppliers2());
+            r.setLargestSuppliers3(binding2.getlargestSuppliers3());
+            r.setLargestSuppliers4(binding2.getlargestSuppliers4());
+            r.setFutureOpportunitiesOrPlanOfGrowth(binding3.getfutureopportunity());
+            r.setDescribeCompetition(binding3.getdescribecompetition());
+            r.setBusinessAsset(binding3.getbusinessapart());
+            r.setAdvertising(binding3.getadvertising());
+            r.setDurationIncaseOfSeriousClaims(binding3.getrecover());
+
+           
+            r.setPastClaimCause1(binding3.getclaimcause1());
+            r.setPastClaimCause2(binding3.getclaimcause2());
+            r.setPastClaimCause3(binding3.getclaimcause3());
+
+            if (!CommonValidations.isStringEmpty(binding3.getclaimamount1())) {
+                r.setPastClaimAmount1(Double.parseDouble(binding3.getclaimamount1()));
+            }
+            if (!CommonValidations.isStringEmpty(binding3.getclaimamount2())) {
+                r.setPastClaimAmount2(Double.parseDouble(binding3.getclaimamount2()));
+            }
+            if (!CommonValidations.isStringEmpty(binding3.getclaimamount3())) {
+                r.setPastClaimAmount3(Double.parseDouble(binding3.getclaimamount3()));
+            }
+
+            r.setCurrentInsuranceType1(binding3.getciptype1());
+            r.setCurrentInsuranceType2(binding3.getciptype2());
+            r.setCurrentInsuranceType3(binding3.getciptype3());
+            r.setCurrentInsuranceCarrier1(binding3.getcipcarrier1());
+            r.setCurrentInsuranceCarrier2(binding3.getcipcarrier2());
+            r.setCurrentInsuranceCarrier3(binding3.getcipcarrier3());
+
+            
+
+            r.setLineHolders1(binding3.getlienholder1());
+            r.setLineHolders2(binding3.getlienholder2());
+            r.setLineHolders3(binding3.getlienholder3());
+            r.setLineHoldersLoc1(binding3.getloc1());
+            r.setLineHoldersLoc2(binding3.getloc2());
+            r.setLineHoldersLoc3(binding3.getloc3());
+            r.setAddressOfLocation1(binding3.getaoladdress1());
+            r.setAddressOfLocation2(binding3.getaoladdress2());
+            r.setAddressOfLocation3(binding3.getaoladdress3());
+            r.setAddressOfLocation4(binding3.getaoladdress4());
+            r.setAddressOfLocationUse1(binding3.getaoluse1());
+            r.setAddressOfLocationUse2(binding3.getaoluse2());
+            r.setAddressOfLocationUse3(binding3.getaoluse3());
+            r.setAddressOfLocationUse4(binding3.getaoluse4());
+            r.setLocationRentedToOthers1(binding3.getlrtooccupancy1());
+            r.setLocationRentedToOthers3(binding3.getlrtooccupancy3());
+            r.setLocationRentedToOthers2(binding3.getlrtooccupancy2());
+            r.setLocationRentedToOthers4(binding3.getlrtooccupancy4());
+            r.setProducercomments(binding3.getproducercomments());
+            r.setMarketercomments(binding3.getmarketercomments());
+            System.out.println("submitsave:" + r.getKeyContact());
             submitSavenon(r);
         } else {
             errors("Application can only be saved if it has not been submitted");
         }
     }
-    
+
     public void submitSavenon(LocalFormResponse response) {
         System.out.println("Inside submitSave");
-        System.err.println("keyContact"+response.getKeyContact());
+        System.err.println("keyContact" + response.getKeyContact());
         savinglocally.toFile(response, "Harman");
         animatedMovement(0, 0);
         successMessage1("Form is successfully saved.");
-        
+
     }
 
     @FXML
@@ -2522,6 +2658,7 @@ public class NextScreenController implements Initializable, IScreenController {
                     if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
                         System.out.println("formid is " + formId);
                         setFormId(formId);
+                        
                         assign(response);
                     }
                 } catch (Exception e) {
@@ -2539,7 +2676,10 @@ public class NextScreenController implements Initializable, IScreenController {
     @FXML
     public void downloadFiles() {
         System.out.println("InsideDownload");
-        System.out.println(fileName1);
+        System.out.println("Name"+fileName1);
+        System.out.println("Name1"+fileName2);
+        System.out.println("Name2"+fileName3);
+        System.out.println(fileName4);
         stage.show();
         if (file1 != null) {
             File f1 = new File(applicationid);
@@ -2585,6 +2725,7 @@ public class NextScreenController implements Initializable, IScreenController {
 
                 file1 = form.getFile1();
                 fileName1 = form.getFile1Name();
+                
                 file2 = form.getFile2();
                 fileName2 = form.getFile2Name();
                 file3 = form.getFile3();
@@ -2603,6 +2744,7 @@ public class NextScreenController implements Initializable, IScreenController {
                 fileName9 = form.getFile9Name();
                 file10 = form.getFile10();
                 fileName10 = form.getFile10Name();
+                System.out.println("FIlenames"+fileName1+fileName2+fileName3+fileName4);
 
                 if (form != null) {
                     System.out.println("Form is not null");
@@ -3063,7 +3205,7 @@ public class NextScreenController implements Initializable, IScreenController {
                 fireprotectiondistance.setText(form.getFireProtectiondistance());
                 if ((form.getType().equals("Both")) || (form.getType().equals("Auto"))) {
                     if (form.getPremiumTarget() > 0) {
-                        ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.setautopremiumtarget(String.valueOf(form.getPremiumTarget()));
+                        ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.setautopremiumtarget(Double.toString(form.getPremiumTarget()));
                     }
                     ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.setautocurrentinsurer(form.getCurrentInsurer());
                     if (form.getCurrentExpDate().equals(null)) {
@@ -3796,6 +3938,7 @@ public class NextScreenController implements Initializable, IScreenController {
 
                         int i = 0;
                         if (fileList != null) {
+                            System.out.println("View file"+fileList.size());
                             for (File file : fileList) {
                                 if (file != null) {
                                     byte[] bytes = WriteByteArray.getByteFromFile(file);
@@ -4137,8 +4280,8 @@ public class NextScreenController implements Initializable, IScreenController {
                         req1.setFilingName1(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getnamerequired1());
                         req1.setFilingName2(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getnamerequired2());
                         req1.setFilingName3(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getnamerequired3());
-                        req1.setTypeOfNonOwned(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeofnonowned()); 
-                        
+                        req1.setTypeOfNonOwned(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeofnonowned());
+
                         if (!CommonValidations.isStringEmpty(binding4.getanytime())) {
                             req1.setAvgNoOfVehicles(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getanytime()));
                         }
@@ -4470,7 +4613,6 @@ public class NextScreenController implements Initializable, IScreenController {
         }
     }
 
-    
     public void successMessage1(final String message) {
         Platform.runLater(new Runnable() {
             public void run() {
@@ -4478,7 +4620,6 @@ public class NextScreenController implements Initializable, IScreenController {
             }
         });
     }
-
 
     public static XMLGregorianCalendar toXMLGregorianCalendar(Date date) {
         GregorianCalendar gCalendar = new GregorianCalendar();
@@ -4519,8 +4660,11 @@ public class NextScreenController implements Initializable, IScreenController {
                 files = files + file.getName() + ",";
             }
             this.fileList = list;
-            System.out.println(new File(applicationid+"\\"+"").getAbsolutePath());
-            //list.add(new File(applicationid+"\\"+"").getAbsoluteFile());
+            System.out.println(new File(applicationid + "\\" + "").getAbsolutePath());
+            if(!isEdit)
+            {list.add(new File("PassportCopy.jpg"));}
+            else 
+            {}
             //list.add(new File(applicationid+"\\"+"").getAbsoluteFile());
             uploadlabel.setText(files.substring(0, files.length() - 1));
 
@@ -4583,7 +4727,7 @@ public class NextScreenController implements Initializable, IScreenController {
     public void setDate11(XMLGregorianCalendar date11) {
         this.date11 = date11;
     }
-    
+
     public void errors(final String message) {
         Platform.runLater(new Runnable() {
             public void run() {

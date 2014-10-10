@@ -1071,6 +1071,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
        try{ if(marketerId==null || marketerId.trim().isEmpty())
         {
                     screenPage.setScreen("NextScreen");
+                    animatedMovement(0, 0);
         }
         else if( marketerId.trim() != null && !marketerId.trim().isEmpty())
         {
@@ -1176,8 +1177,9 @@ public class EnterCodeUIController implements Initializable, IScreenController {
             if(marketerId==null || marketerId.trim().isEmpty())
         {
                     screenPage.setScreen("NextScreen");
+                    animatedMovement(0, 0);
         }
-        else if( marketerId.trim() != null && !marketerId.trim().isEmpty())
+        else if( marketerId.trim() != null && !(marketerId.trim().isEmpty()))
         {
             animatedMovement(0, 0);
         }
