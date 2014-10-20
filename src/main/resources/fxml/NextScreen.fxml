@@ -217,9 +217,9 @@
         <Label fx:id="returnedname" font="$x4" layoutX="149.0" layoutY="118.0" text="Jerry Boutilier" textFill="#1e751e" />
         <Label fx:id="returnedbranch" font="$x4" layoutX="438.0" layoutY="118.0" text="Kingston" textFill="#1e751e" />
         <TextField fx:id="keycontact" layoutX="180.0" layoutY="165.0" prefHeight="26.0" prefWidth="167.0" text="" />
+        <TextField id="secondarycontact" fx:id="keyphone" layoutX="489.0" layoutY="165.0" prefHeight="26.0" prefWidth="179.0" />
         <TextField id="keyphone" fx:id="secondaryemail" layoutX="790.0" layoutY="204.0" prefHeight="26.0" prefWidth="219.0" />
         <TextField id="keyemail" fx:id="secondarycontact" layoutX="180.0" layoutY="204.0" prefHeight="26.0" prefWidth="167.0" text="" />
-        <TextField id="secondarycontact" fx:id="keyphone" layoutX="489.0" layoutY="165.0" prefHeight="26.0" prefWidth="179.0" />
         <TextField fx:id="secondaryphone" layoutX="489.0" layoutY="204.0" prefHeight="26.0" prefWidth="176.0" />
         <TextField id="secondaryemail" fx:id="keyemail" layoutX="790.0" layoutY="165.0" prefHeight="26.0" prefWidth="219.0" text="" />
         <TextField fx:id="businessname" layoutX="199.0" layoutY="250.0" prefHeight="26.0" prefWidth="379.0" />
@@ -603,17 +603,17 @@
             <Label font="$x4" layoutX="123.0" layoutY="358.0" text="Marketer Comments:" />
             <TextArea fx:id="marketercomments" layoutX="123.0" layoutY="383.0" prefHeight="113.0" prefWidth="993.0" wrapText="true" />
             <Label font="$x4" layoutX="123.0" layoutY="511.0" text="Attach file(s):" />
-            <Label fx:id="uploadlabel" layoutX="231.0" layoutY="551.0" prefHeight="22.0" prefWidth="341.0" text="   " textFill="#275cc4">
+            <Label fx:id="uploadlabel" layoutX="231.0" layoutY="551.0" prefHeight="22.0" prefWidth="886.0" text="   " textFill="#275cc4">
                      <font>
                         <Font name="Times Roman" size="16.0" />
                      </font></Label>
-            <Button defaultButton="true" layoutX="231.0" layoutY="508.0" mnemonicParsing="false" onAction="#uploadfiles" prefHeight="26.0" prefWidth="109.0" text="Upload" />
+            <Button defaultButton="true" layoutX="231.0" layoutY="508.0" mnemonicParsing="false" onAction="#uploadfiles" prefHeight="26.0" prefWidth="169.0" text="Upload New Files" />
                   <Label layoutX="123.0" layoutY="552.0" text="Files attached:">
                      <font>
                         <Font name="Times Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Button defaultButton="true" layoutX="366.0" layoutY="508.0" mnemonicParsing="false" onAction="#downloadFiles" prefHeight="26.0" prefWidth="109.0" text="Download" />
+                  <Button defaultButton="true" layoutX="947.0" layoutY="508.0" mnemonicParsing="false" onAction="#downloadFiles" prefHeight="26.0" prefWidth="169.0" text="Download Attached Files" />
           </children>
         </AnchorPane>
             <GridPane fx:id="gridpane4" layoutX="814.0" layoutY="173.0" prefHeight="26.0" prefWidth="116.0">

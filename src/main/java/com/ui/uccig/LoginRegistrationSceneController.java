@@ -18,6 +18,7 @@ import com.ui.binding.ForgotPasswordBinding;
 import com.ui.binding.LoginSceneBinding;
 import com.ui.binding.RegistrationPageBinding;
 import com.ui.util.CommonValidations;
+import harrun.AlertDialog;
 import java.net.URL;
 import java.util.Calendar;
 import java.util.ResourceBundle;
@@ -30,7 +31,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.Dialogs;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -169,8 +169,8 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
                             stopLoading();
                             System.out.println("1");
                             if (response.getRole().equals("MARKETER") || response.getRole().equals("MANAGER")) {
-                                  
-                                ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setMarketerId(binding.getUsername());
+                                  System.out.println(binding.getUsername());
+                                ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setLoggedinMarketerId(binding.getUsername());
                                 ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setReceivedname(response.getUserFullName());
                                 ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setReceivedemailaddress(response.getUserEmailAddress());
                                    System.out.println("Hello");
@@ -264,7 +264,7 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
                             errors(response.getErrorMessage());
                         }
                     } catch (com.rav.insurance.useroperations.webservice.Exception ex) {
-                        Logger.getLogger(RegistrationPageController.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(LoginRegistrationSceneController.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     return null;
                 }
@@ -372,8 +372,8 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
     public void successMessage(final String message) {
         Platform.runLater(new Runnable() {
             public void run() {
-                Dialogs.showInformationDialog(null, message, "Success", "Success");
-
+               // Dialogs.showInformationDialog(null, message, "Success", "Success");
+new AlertDialog((Stage) loginusername.getParent().getScene().getWindow(), message, AlertDialog.ICON_INFO).showAndWait();
             }
         });
     }
@@ -381,7 +381,8 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
     public void errors(final String message) {
         Platform.runLater(new Runnable() {
             public void run() {
-                Dialogs.showErrorDialog(null, message, "Oops!!", "Error");
+new AlertDialog((Stage) loginusername.getParent().getScene().getWindow(), message, AlertDialog.ICON_INFO).showAndWait();               
+// Dialogs.showErrorDialog(null, message, "Oops!!", "Error");
                 stopLoading();
             }
         });

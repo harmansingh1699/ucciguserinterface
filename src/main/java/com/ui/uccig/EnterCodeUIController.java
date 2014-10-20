@@ -36,6 +36,7 @@ import com.ui.util.WriteByteArray;
 import com.ui.binding.FormEntry4Binding;
 import com.ui.binding.MailSendingBinding;
 import com.ui.binding.SearchArchivebinding;
+import harrun.AlertDialog;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -66,12 +67,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.Dialogs;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Toggle;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
@@ -81,7 +83,7 @@ import javafx.util.Duration;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
-import ravrun.Rav;
+import ravrun.Rav1;
 
 /**
  * FXML Controller class
@@ -144,16 +146,16 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     private CheckBox mail2;
     
     @FXML
-    private CheckBox searchdate1;
+    private RadioButton searchdate1;
 
     @FXML
-    private CheckBox searchdate2;
+    private RadioButton searchdate2;
 
     @FXML
-    private CheckBox searchdate3;
+    private RadioButton searchdate3;
 
     @FXML
-    private CheckBox searchdate4;
+    private RadioButton searchdate4;
     
     @FXML
     private TextField companyname1;
@@ -230,12 +232,26 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     @FXML
     private Label welcomeName;
     
+    
+    
+    @FXML
+    private Label l1;
+    @FXML
+    private Label l2;
+    @FXML
+    private Label l3;
+    @FXML
+    private Label l5;
+    @FXML
+    private Label l6;
+    @FXML
+    private Label l7;
+    @FXML
+    private Label l9;
     @FXML
     private Label l10;
     @FXML
     private Label l11;
-    @FXML
-    private Label l12;
     @FXML
     private Label l13;
     @FXML
@@ -243,33 +259,104 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     @FXML
     private Label l15;
     @FXML
-    private Label l16;
-    @FXML
     private Label l17;
-    
     @FXML
-    private Label l101;
+    private Label l18;
     @FXML
-    private Label l111;
+    private Label l19;
     @FXML
-    private Label l121;
-    
+    private Label l21;
     @FXML
-    private Label l201;
+    private Label l22;
     @FXML
-    private Label l211;
+    private Label l23;
     @FXML
-    private Label l221;
-    
+    private Label l25;
+    @FXML
+    private Label l26;
+    @FXML
+    private Label l27;
+    @FXML
+    private Label l29;
+    @FXML
+    private Label l30;
+    @FXML
+    private Label l31;
+    @FXML
+    private Label l33;
+    @FXML
+    private Label l34;
+    @FXML
+    private Label l35;
+    @FXML
+    private Label l37;
+    @FXML
+    private Label l38;
+    @FXML
+    private Label l39;
+    @FXML
+    private Label l41;
+    @FXML
+    private Label l42;
+    @FXML
+    private Label l43;
+    @FXML
+    private Label l45;
+    @FXML
+    private Label l46;
+    @FXML
+    private Label l47;
+    @FXML
+    private Label l49;
+    @FXML
+    private Label l50;
+    @FXML
+    private Label l51;
+    @FXML
+    private Label l53;
+    @FXML
+    private Label l54;
+    @FXML
+    private Label l55; 
+    @FXML
+    private Label l57;
+    @FXML
+    private Label l58;
+    @FXML
+    private Label l59;
+    @FXML
+    private Label l61;
+    @FXML
+    private Label l62;
+    @FXML
+    private Label l63;
+    @FXML
+    private Label l65;
+    @FXML
+    private Label l66;
+    @FXML
+    private Label l67;
+    @FXML
+    private Label l69;
+    @FXML
+    private Label l70;
+    @FXML
+    private Label l71;
+    @FXML
+    private Label l73;
+    @FXML
+    private Label l74;
+    @FXML
+    private Label l75;
+    @FXML
+    private Label l77;
+    @FXML
+    private Label l79;
+    @FXML
+    private Label l78;
     
     
     private List<MailInfo> mailList;
-    
-    @FXML
-    private Hyperlink l131;
-    @FXML
-    private Hyperlink l231;
-    
 
     @FXML
     private Label title;
@@ -365,7 +452,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
         pname.setText(producerid);
     }
     
-    public void setMarketerid(String marketerid) {
+    public void setMarketeridfromform(String marketerid) {
         mname.setText(marketerid);
     }
     public void setInsuranceType(String insuranceType) {
@@ -393,36 +480,508 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     }
     
     @FXML
-    public void hyderlinkAction1(){
-        try { 
+    public void hyderlinkAction1() {
+        try {
             stage = new Stage();
             FlowPane root = new FlowPane();
             FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/fxml/mailscene.fxml"));
             Parent loadScreen = (Parent) myLoader.load();
-            System.out.println("Body is "+mailList.get(0).getMailBody());
+            System.out.println("Body is " + mailList.get(0).getMailBody());
             ((mailSceneController) myLoader.getController()).getWebView().getEngine().loadContent(mailList.get(0).getMailBody());
-            
-            
-          
-        
-        root.getChildren().addAll(loadScreen);
-        
-        
-        root.autosize();
-        Scene scene = new Scene(root);
-
-        //stage.initStyle(StageStyle.UNDECORATED);
-        stage.sizeToScene();
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.centerOnScreen();
-        stage.setTitle("UCCIG");
-        stage.show();
+            root.getChildren().addAll(loadScreen);
+            root.autosize();
+            Scene scene = new Scene(root);
+            //stage.initStyle(StageStyle.UNDECORATED);
+            stage.sizeToScene();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.setTitle("UCCIG");
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(EnterCodeUIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @FXML
+    public void hyderlinkAction2() {
+        try {
+            stage = new Stage();
+            FlowPane root = new FlowPane();
+            FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/fxml/mailscene.fxml"));
+            Parent loadScreen = (Parent) myLoader.load();
+            System.out.println("Body is " + mailList.get(1).getMailBody());
+            ((mailSceneController) myLoader.getController()).getWebView().getEngine().loadContent(mailList.get(1).getMailBody());
+            root.getChildren().addAll(loadScreen);
+            root.autosize();
+            Scene scene = new Scene(root);
+            //stage.initStyle(StageStyle.UNDECORATED);
+            stage.sizeToScene();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.setTitle("UCCIG");
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(EnterCodeUIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @FXML
+    public void hyderlinkAction3() {
+        try {
+            stage = new Stage();
+            FlowPane root = new FlowPane();
+            FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/fxml/mailscene.fxml"));
+            Parent loadScreen = (Parent) myLoader.load();
+            System.out.println("Body is " + mailList.get(2).getMailBody());
+            ((mailSceneController) myLoader.getController()).getWebView().getEngine().loadContent(mailList.get(2).getMailBody());
+            root.getChildren().addAll(loadScreen);
+            root.autosize();
+            Scene scene = new Scene(root);
+            //stage.initStyle(StageStyle.UNDECORATED);
+            stage.sizeToScene();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.setTitle("UCCIG");
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(EnterCodeUIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @FXML
+    public void hyderlinkAction4() {
+        try {
+            stage = new Stage();
+            FlowPane root = new FlowPane();
+            FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/fxml/mailscene.fxml"));
+            Parent loadScreen = (Parent) myLoader.load();
+            System.out.println("Body is " + mailList.get(3).getMailBody());
+            ((mailSceneController) myLoader.getController()).getWebView().getEngine().loadContent(mailList.get(3).getMailBody());
+            root.getChildren().addAll(loadScreen);
+            root.autosize();
+            Scene scene = new Scene(root);
+            //stage.initStyle(StageStyle.UNDECORATED);
+            stage.sizeToScene();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.setTitle("UCCIG");
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(EnterCodeUIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @FXML
+    public void hyderlinkAction5() {
+        try {
+            stage = new Stage();
+            FlowPane root = new FlowPane();
+            FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/fxml/mailscene.fxml"));
+            Parent loadScreen = (Parent) myLoader.load();
+            System.out.println("Body is " + mailList.get(4).getMailBody());
+            ((mailSceneController) myLoader.getController()).getWebView().getEngine().loadContent(mailList.get(4).getMailBody());
+            root.getChildren().addAll(loadScreen);
+            root.autosize();
+            Scene scene = new Scene(root);
+            //stage.initStyle(StageStyle.UNDECORATED);
+            stage.sizeToScene();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.setTitle("UCCIG");
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(EnterCodeUIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @FXML
+    public void hyderlinkAction6() {
+        try {
+            stage = new Stage();
+            FlowPane root = new FlowPane();
+            FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/fxml/mailscene.fxml"));
+            Parent loadScreen = (Parent) myLoader.load();
+            System.out.println("Body is " + mailList.get(5).getMailBody());
+            ((mailSceneController) myLoader.getController()).getWebView().getEngine().loadContent(mailList.get(5).getMailBody());
+            root.getChildren().addAll(loadScreen);
+            root.autosize();
+            Scene scene = new Scene(root);
+            //stage.initStyle(StageStyle.UNDECORATED);
+            stage.sizeToScene();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.setTitle("UCCIG");
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(EnterCodeUIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @FXML
+    public void hyderlinkAction7() {
+        try {
+            stage = new Stage();
+            FlowPane root = new FlowPane();
+            FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/fxml/mailscene.fxml"));
+            Parent loadScreen = (Parent) myLoader.load();
+            System.out.println("Body is " + mailList.get(6).getMailBody());
+            ((mailSceneController) myLoader.getController()).getWebView().getEngine().loadContent(mailList.get(6).getMailBody());
+            root.getChildren().addAll(loadScreen);
+            root.autosize();
+            Scene scene = new Scene(root);
+            //stage.initStyle(StageStyle.UNDECORATED);
+            stage.sizeToScene();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.setTitle("UCCIG");
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(EnterCodeUIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @FXML
+    public void hyderlinkAction8() {
+        try {
+            stage = new Stage();
+            FlowPane root = new FlowPane();
+            FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/fxml/mailscene.fxml"));
+            Parent loadScreen = (Parent) myLoader.load();
+            System.out.println("Body is " + mailList.get(4).getMailBody());
+            ((mailSceneController) myLoader.getController()).getWebView().getEngine().loadContent(mailList.get(7).getMailBody());
+            root.getChildren().addAll(loadScreen);
+            root.autosize();
+            Scene scene = new Scene(root);
+            //stage.initStyle(StageStyle.UNDECORATED);
+            stage.sizeToScene();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.setTitle("UCCIG");
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(EnterCodeUIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @FXML
+    public void hyderlinkAction9() {
+        try {
+            stage = new Stage();
+            FlowPane root = new FlowPane();
+            FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/fxml/mailscene.fxml"));
+            Parent loadScreen = (Parent) myLoader.load();
+            System.out.println("Body is " + mailList.get(8).getMailBody());
+            ((mailSceneController) myLoader.getController()).getWebView().getEngine().loadContent(mailList.get(8).getMailBody());
+            root.getChildren().addAll(loadScreen);
+            root.autosize();
+            Scene scene = new Scene(root);
+            //stage.initStyle(StageStyle.UNDECORATED);
+            stage.sizeToScene();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.setTitle("UCCIG");
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(EnterCodeUIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @FXML
+    public void hyderlinkAction10() {
+        try {
+            stage = new Stage();
+            FlowPane root = new FlowPane();
+            FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/fxml/mailscene.fxml"));
+            Parent loadScreen = (Parent) myLoader.load();
+            System.out.println("Body is " + mailList.get(9).getMailBody());
+            ((mailSceneController) myLoader.getController()).getWebView().getEngine().loadContent(mailList.get(9).getMailBody());
+            root.getChildren().addAll(loadScreen);
+            root.autosize();
+            Scene scene = new Scene(root);
+            //stage.initStyle(StageStyle.UNDECORATED);
+            stage.sizeToScene();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.setTitle("UCCIG");
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(EnterCodeUIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @FXML
+    public void hyderlinkAction11() {
+        try {
+            stage = new Stage();
+            FlowPane root = new FlowPane();
+            FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/fxml/mailscene.fxml"));
+            Parent loadScreen = (Parent) myLoader.load();
+            System.out.println("Body is " + mailList.get(10).getMailBody());
+            ((mailSceneController) myLoader.getController()).getWebView().getEngine().loadContent(mailList.get(10).getMailBody());
+            root.getChildren().addAll(loadScreen);
+            root.autosize();
+            Scene scene = new Scene(root);
+            //stage.initStyle(StageStyle.UNDECORATED);
+            stage.sizeToScene();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.setTitle("UCCIG");
+            stage.show();
         } catch (IOException ex) {
             Logger.getLogger(EnterCodeUIController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
+    @FXML
+    public void hyderlinkAction12() {
+        try {
+            stage = new Stage();
+            FlowPane root = new FlowPane();
+            FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/fxml/mailscene.fxml"));
+            Parent loadScreen = (Parent) myLoader.load();
+            System.out.println("Body is " + mailList.get(11).getMailBody());
+            ((mailSceneController) myLoader.getController()).getWebView().getEngine().loadContent(mailList.get(11).getMailBody());
+            root.getChildren().addAll(loadScreen);
+            root.autosize();
+            Scene scene = new Scene(root);
+            //stage.initStyle(StageStyle.UNDECORATED);
+            stage.sizeToScene();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.setTitle("UCCIG");
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(EnterCodeUIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @FXML
+    public void hyderlinkAction13() {
+        try {
+            stage = new Stage();
+            FlowPane root = new FlowPane();
+            FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/fxml/mailscene.fxml"));
+            Parent loadScreen = (Parent) myLoader.load();
+            System.out.println("Body is " + mailList.get(12).getMailBody());
+            ((mailSceneController) myLoader.getController()).getWebView().getEngine().loadContent(mailList.get(12).getMailBody());
+            root.getChildren().addAll(loadScreen);
+            root.autosize();
+            Scene scene = new Scene(root);
+            //stage.initStyle(StageStyle.UNDECORATED);
+            stage.sizeToScene();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.setTitle("UCCIG");
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(EnterCodeUIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @FXML
+    public void hyderlinkAction14() {
+        try {
+            stage = new Stage();
+            FlowPane root = new FlowPane();
+            FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/fxml/mailscene.fxml"));
+            Parent loadScreen = (Parent) myLoader.load();
+            System.out.println("Body is " + mailList.get(13).getMailBody());
+            ((mailSceneController) myLoader.getController()).getWebView().getEngine().loadContent(mailList.get(13).getMailBody());
+            root.getChildren().addAll(loadScreen);
+            root.autosize();
+            Scene scene = new Scene(root);
+            //stage.initStyle(StageStyle.UNDECORATED);
+            stage.sizeToScene();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.setTitle("UCCIG");
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(EnterCodeUIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @FXML
+    public void hyderlinkAction15() {
+        try {
+            stage = new Stage();
+            FlowPane root = new FlowPane();
+            FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/fxml/mailscene.fxml"));
+            Parent loadScreen = (Parent) myLoader.load();
+            System.out.println("Body is " + mailList.get(14).getMailBody());
+            ((mailSceneController) myLoader.getController()).getWebView().getEngine().loadContent(mailList.get(14).getMailBody());
+            root.getChildren().addAll(loadScreen);
+            root.autosize();
+            Scene scene = new Scene(root);
+            //stage.initStyle(StageStyle.UNDECORATED);
+            stage.sizeToScene();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.setTitle("UCCIG");
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(EnterCodeUIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @FXML
+    public void hyderlinkAction16() {
+        try {
+            stage = new Stage();
+            FlowPane root = new FlowPane();
+            FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/fxml/mailscene.fxml"));
+            Parent loadScreen = (Parent) myLoader.load();
+            System.out.println("Body is " + mailList.get(15).getMailBody());
+            ((mailSceneController) myLoader.getController()).getWebView().getEngine().loadContent(mailList.get(15).getMailBody());
+            root.getChildren().addAll(loadScreen);
+            root.autosize();
+            Scene scene = new Scene(root);
+            //stage.initStyle(StageStyle.UNDECORATED);
+            stage.sizeToScene();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.setTitle("UCCIG");
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(EnterCodeUIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @FXML
+    public void hyderlinkAction17() {
+        try {
+            stage = new Stage();
+            FlowPane root = new FlowPane();
+            FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/fxml/mailscene.fxml"));
+            Parent loadScreen = (Parent) myLoader.load();
+            System.out.println("Body is " + mailList.get(16).getMailBody());
+            ((mailSceneController) myLoader.getController()).getWebView().getEngine().loadContent(mailList.get(16).getMailBody());
+            root.getChildren().addAll(loadScreen);
+            root.autosize();
+            Scene scene = new Scene(root);
+            //stage.initStyle(StageStyle.UNDECORATED);
+            stage.sizeToScene();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.setTitle("UCCIG");
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(EnterCodeUIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @FXML
+    public void hyderlinkAction18() {
+        try {
+            stage = new Stage();
+            FlowPane root = new FlowPane();
+            FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/fxml/mailscene.fxml"));
+            Parent loadScreen = (Parent) myLoader.load();
+            System.out.println("Body is " + mailList.get(17).getMailBody());
+            ((mailSceneController) myLoader.getController()).getWebView().getEngine().loadContent(mailList.get(17).getMailBody());
+            root.getChildren().addAll(loadScreen);
+            root.autosize();
+            Scene scene = new Scene(root);
+            //stage.initStyle(StageStyle.UNDECORATED);
+            stage.sizeToScene();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.setTitle("UCCIG");
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(EnterCodeUIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @FXML
+    public void hyderlinkAction19() {
+        try {
+            stage = new Stage();
+            FlowPane root = new FlowPane();
+            FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/fxml/mailscene.fxml"));
+            Parent loadScreen = (Parent) myLoader.load();
+            System.out.println("Body is " + mailList.get(18).getMailBody());
+            ((mailSceneController) myLoader.getController()).getWebView().getEngine().loadContent(mailList.get(18).getMailBody());
+            root.getChildren().addAll(loadScreen);
+            root.autosize();
+            Scene scene = new Scene(root);
+            //stage.initStyle(StageStyle.UNDECORATED);
+            stage.sizeToScene();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.setTitle("UCCIG");
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(EnterCodeUIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @FXML
+    public void hyderlinkAction20() {
+        try {
+            stage = new Stage();
+            FlowPane root = new FlowPane();
+            FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/fxml/mailscene.fxml"));
+            Parent loadScreen = (Parent) myLoader.load();
+            System.out.println("Body is " + mailList.get(19).getMailBody());
+            ((mailSceneController) myLoader.getController()).getWebView().getEngine().loadContent(mailList.get(19).getMailBody());
+            root.getChildren().addAll(loadScreen);
+            root.autosize();
+            Scene scene = new Scene(root);
+            //stage.initStyle(StageStyle.UNDECORATED);
+            stage.sizeToScene();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.setTitle("UCCIG");
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(EnterCodeUIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @FXML
+    public void hyderlinkAction21() {
+        try {
+            stage = new Stage();
+            FlowPane root = new FlowPane();
+            FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/fxml/mailscene.fxml"));
+            Parent loadScreen = (Parent) myLoader.load();
+            System.out.println("Body is " + mailList.get(20).getMailBody());
+            ((mailSceneController) myLoader.getController()).getWebView().getEngine().loadContent(mailList.get(20).getMailBody());
+            root.getChildren().addAll(loadScreen);
+            root.autosize();
+            Scene scene = new Scene(root);
+            //stage.initStyle(StageStyle.UNDECORATED);
+            stage.sizeToScene();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.setTitle("UCCIG");
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(EnterCodeUIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     /**
      * Initializes the controller class.
      *
@@ -431,16 +990,33 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        ChangeListener<Boolean> listener01 = new ChangeListener<Boolean>() {
+        ToggleGroup tg = new ToggleGroup();
+         searchdate1.setToggleGroup(tg);
+         searchdate2.setToggleGroup(tg);
+         searchdate3.setToggleGroup(tg);
+         searchdate4.setToggleGroup(tg);
+        ChangeListener<Toggle> ls = new ChangeListener<Toggle>() {
             @Override
-            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
-                if (searchdate1.isSelected()) {
-                    
-                    binding.setsearchdate1("selected");
-                }
+            public void changed(ObservableValue<? extends Toggle> prop, Toggle old, Toggle val) {
+                RadioButton t = (RadioButton) val.getToggleGroup().getSelectedToggle();
+                binding.setsearchdate1(t.getText());
             }
         };
-        searchdate1.selectedProperty().addListener(listener01);
+        tg.selectedToggleProperty().addListener(ls);
+        
+        
+        ToggleGroup tg1 = new ToggleGroup();
+         searchwithusyes.setToggleGroup(tg1);
+         searchwithusno.setToggleGroup(tg1);
+        
+        ChangeListener<Toggle> ls1 = new ChangeListener<Toggle>() {
+            @Override
+            public void changed(ObservableValue<? extends Toggle> prop, Toggle old, Toggle val) {
+                RadioButton t = (RadioButton) val.getToggleGroup().getSelectedToggle();
+                binding.setsearchwithusyes(t.getText());
+            }
+        };
+        tg1.selectedToggleProperty().addListener(ls1);
         
         datePicker.localeProperty().set(Locale.ENGLISH);
         datePicker.setLayoutX(0.0);
@@ -456,7 +1032,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
         datePicker.setLocale(Locale.ENGLISH);
         datePicker.getCalendarView().todayButtonTextProperty().set("TODAY");
         datePicker.getCalendarView().setShowWeeks(false);
-        datePicker.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
+        datePicker.setDateFormat(new SimpleDateFormat("YYYY-MM-DD"));
         
         gridpane1.add(datePicker, 5,0);
         binding = new SearchArchivebinding();
@@ -549,11 +1125,13 @@ public class EnterCodeUIController implements Initializable, IScreenController {
         this.screenPage = screenPage;
     }
 
-    public void setMarketerId(String marketerId) {
+    public void setLoggedinMarketerId(String marketerId) {
+        System.out.println("Marketer iD"+marketerId);
         this.marketerId = marketerId;
+        
     }
 
-    public String getMarketerId() {
+    public String getLoggedinMarketerId() {
         return marketerId;
     }
 
@@ -825,12 +1403,12 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
 
                     AssignMarketerRequest request = new AssignMarketerRequest();
-
-                    request.setMarketerUserId(getMarketerId());
+                    System.out.println(getLoggedinMarketerId());
+                    request.setMarketerUserId(getLoggedinMarketerId());
                     request.setFormId(title.getText());
                     CommonResponseAttributes response = port.getInsuranceOperationsPort().assignMarketer(request);
                   
-                   successMessage("Assigned " + getFormId() + " to " + getMarketerId());
+                   successMessage("Assigned " + getFormId() + " to " + getLoggedinMarketerId());
                     
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -868,7 +1446,8 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     public void successMessage(final String message) {
         Platform.runLater(new Runnable() {
             public void run() {
-                Dialogs.showInformationDialog(null, message, "Success", "Success");
+                new AlertDialog((Stage) searchproducerid.getParent().getScene().getWindow(), message, AlertDialog.ICON_INFO).showAndWait();
+                //Dialogs.showInformationDialog(null, message, "Success", "Success");
             }
         });
     }
@@ -884,18 +1463,19 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     
     @FXML
     public void openProposal(){
-        new Rav(new File("bin\\proposal.docx").getAbsolutePath());
+        new Rav1(new File("bin\\proposal.docx").getAbsolutePath()).execute();
     }
     
     @FXML
     public void openBinder(){
-        new Rav(new File("bin\\binder.docx").getAbsolutePath());
+        new Rav1(new File("bin\\binder.docx").getAbsolutePath()).execute();
     }
 
     public void errors(final String message) {
         Platform.runLater(new Runnable() {
             public void run() {
-                Dialogs.showErrorDialog(null, message, "Oops!!", "Error");
+               new AlertDialog((Stage) searchproducerid.getParent().getScene().getWindow(), message, AlertDialog.ICON_INFO).showAndWait();
+                //Dialogs.showErrorDialog(null, message, "Oops!!", "Error");
             }
         });
     }
@@ -1012,7 +1592,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     @FXML
     public void searchPrevious() {
         if (offset > 0) {
-            offset -= 1;
+            offset -= 24;
             gridpane.getChildren().removeAll(gridpane.getChildren());
             try {
                 gridpane.getChildren().removeAll(gridpane.getChildren());
@@ -1025,7 +1605,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     @FXML
     public void searchNext() {
-        offset += 1;
+        offset += 24;
         gridpane.getChildren().removeAll(gridpane.getChildren());
         try {
             gridpane.getChildren().removeAll(gridpane.getChildren());
@@ -1246,7 +1826,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     @FXML
     public void submitCloseApplication() {
-      
+      closeapplicationpane.setVisible(false);
         Task task = new Task<Void>() {
             @Override
             public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception, Exception {
@@ -1274,18 +1854,65 @@ public class EnterCodeUIController implements Initializable, IScreenController {
         new Thread(task).start();
 
     }
-
+    int foo;
     @FXML
     public void searchSubmit() {
-        Task task = new Task<Void>() {
+        Task task;
+        task = new Task<Void>() {
             @Override
             public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception, Exception {
                 try {
                     InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
                     GetInsuranceFormListRequest req = new GetInsuranceFormListRequest();
+                    
                     req.setProducerId(binding.getsearchproducerid());
+                    
                     req.setMarketerId(binding.getsearchmarketerid());
+                    
                     req.setBusinessName(binding.getsearchbusinessname());
+                    String searchformid="";
+                    
+                    if(binding.getsearchapplicationid().trim().equals(""))
+                    {}
+                    else
+                    {
+                     if(binding.getsearchapplicationid().contains("UCCIG"))
+                    {searchformid=binding.getsearchapplicationid().replace("UCCIG", "").trim();}
+                    else 
+                    {searchformid=binding.getsearchapplicationid().trim();}
+                        System.out.println(searchformid);
+                     foo=Integer.parseInt(searchformid.trim());
+                        System.out.println(foo);
+                    }
+                    req.setFormId(foo);
+                    System.out.println(binding.getsearchdate1());
+                    System.out.println(binding.getsearchwithusyes());
+                    switch (binding.getsearchdate1()) {
+                        case "0-3 months":
+                            req.setMonth(3);
+                            break;
+                        case "0-6 months":
+                            req.setMonth(6);
+                            break;
+                        case "0-12 months":
+                            req.setMonth(9);
+                            break;
+                        case ">12 months":
+                            break;
+                        case "":
+                            break;
+                    }
+                     switch (binding.getsearchwithusyes()) {
+                        case "Yes":
+                            req.setWithUs("Yes");
+                            break;
+                        case "No":
+                            req.setWithUs("No");
+                            break;
+                        case "":
+                            break;
+                    }
+                    
                     
                     //req.setFormId(Integer.parseInt(binding.getsearchapplicationid()));
                     GetInsuranceFormListResponse response = port.getInsuranceOperationsPort().getFormList(req);
@@ -1307,24 +1934,32 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     public void showAbstractInfo() throws Exception {
         int j = 0;
-        for (int i = 0; i < abstractFormInfoList.size() % 24 + offset; i++) {
-
-            // gridpane.getChildren().add(new dynamicloading());
+        System.out.println("Size is "+abstractFormInfoList.size());
+        //for (int i = 0; i < abstractFormInfoList.size() % 15; i++) {
+            System.out.println("Value of offset "+offset);
+            for(int k=offset;k<offset+24;k++){
+                System.out.println("Value of k "+k);
+                // gridpane.getChildren().add(new dynamicloading());
             dynamicloading dl = new dynamicloading(screenPage);
-            dl.getController().setProducer(abstractFormInfoList.get(i + offset).getProducerId());
-            dl.getController().setApplicationId(abstractFormInfoList.get(i + offset).getFormId());
-            dl.getController().setmarketer(abstractFormInfoList.get(i + offset).getMarketerId());
-            dl.getController().setSeverity(abstractFormInfoList.get(i + offset).getSeverity()); 
-            dl.getController().setBusinessName(abstractFormInfoList.get(i + offset).getBusinessName());
-            dl.getController().setWithUs(abstractFormInfoList.get(i + offset).getWithUs());
-            dl.getController().setInsurancecategory(abstractFormInfoList.get(i + offset).getStatus());
-            dl.getController().setInsurancetype(abstractFormInfoList.get(i + offset).getInsuranceType());
+            dl.getController().setProducer(abstractFormInfoList.get(k).getProducerId());
+            dl.getController().setApplicationId(abstractFormInfoList.get(k).getFormId());
+            dl.getController().setmarketer(abstractFormInfoList.get(k).getMarketerId());
+            dl.getController().setSeverity(abstractFormInfoList.get(k).getSeverity()); 
+            dl.getController().setBusinessName(abstractFormInfoList.get(k).getBusinessName());
+            dl.getController().setWithUs(abstractFormInfoList.get(k).getWithUs());
+            dl.getController().setInsurancecategory(abstractFormInfoList.get(k).getStatus());
+            dl.getController().setInsurancetype(abstractFormInfoList.get(k).getInsuranceType());
+           // dl.getController().setCreationDate(abstractFormInfoList.get(i + offset).getCreationDate().toString());
+            dl.getController().setBranch(abstractFormInfoList.get(k).getBranch());
             //yahape
-            if (i % 4 == 0 && i > 0) {
+            if (k % 4 == 0 && k > 0) {
                 j++;
             }
-            gridpane.add(dl, i % 4, j);
-        }
+            System.out.println("Value of j "+j);
+            gridpane.add(dl, k % 4, j);
+            }
+            
+        //}
     }
     
     public void setQuote(final GetCloseFormNQuoteDetailsResponse2 response){
@@ -1394,15 +2029,106 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                         int i =0;
                         for(MailInfo a:mailList){
                            switch(i){
-                               case 0: l201.setText(a.getSentdDate().toString());
-                               
+                               case 0: 
+                                   l1.setText(a.getSentdDate().toString());
+                                   l2.setText(a.getFrom());
+                                   l3.setText(a.getSubject());
                                    break;
                                case 1:
+                                   l5.setText(a.getSentdDate().toString());
+                                   l6.setText(a.getFrom());
+                                   l7.setText(a.getSubject());
                                    break;
                                case 2:
+                                   l9.setText(a.getSentdDate().toString());
+                                   l10.setText(a.getFrom());
+                                   l11.setText(a.getSubject());
                                    break;
                                case 3:
+                                   l13.setText(a.getSentdDate().toString());
+                                   l14.setText(a.getFrom());
+                                   l15.setText(a.getSubject());
                                    break;
+                               case 4:
+                                   l17.setText(a.getSentdDate().toString());
+                                   l18.setText(a.getFrom());
+                                   l19.setText(a.getSubject());
+                                   break;
+                               case 5:
+                                   l21.setText(a.getSentdDate().toString());
+                                   l22.setText(a.getFrom());
+                                   l23.setText(a.getSubject());
+                                   break;
+                               case 6:
+                                   l25.setText(a.getSentdDate().toString());
+                                   l26.setText(a.getFrom());
+                                   l27.setText(a.getSubject());
+                                   break;
+                               case 7:
+                                   l29.setText(a.getSentdDate().toString());
+                                   l30.setText(a.getFrom());
+                                   l31.setText(a.getSubject());
+                                   break;
+                               case 8:
+                                   l33.setText(a.getSentdDate().toString());
+                                   l34.setText(a.getFrom());
+                                   l35.setText(a.getSubject());
+                                   break;
+                               case 9:
+                                   l37.setText(a.getSentdDate().toString());
+                                   l38.setText(a.getFrom());
+                                   l39.setText(a.getSubject());
+                                   break;   
+                               case 10:
+                                   l41.setText(a.getSentdDate().toString());
+                                   l42.setText(a.getFrom());
+                                   l43.setText(a.getSubject());
+                                   break; 
+                               case 11:
+                                   l45.setText(a.getSentdDate().toString());
+                                   l46.setText(a.getFrom());
+                                   l47.setText(a.getSubject());
+                                   break;      
+                               case 12:
+                                   l49.setText(a.getSentdDate().toString());
+                                   l50.setText(a.getFrom());
+                                   l51.setText(a.getSubject());
+                                   break;   
+                               case 13:
+                                   l53.setText(a.getSentdDate().toString());
+                                   l54.setText(a.getFrom());
+                                   l55.setText(a.getSubject());
+                                   break;       
+                               case 14:
+                                   l57.setText(a.getSentdDate().toString());
+                                   l58.setText(a.getFrom());
+                                   l59.setText(a.getSubject());
+                                   break;
+                               case 15:
+                                   l61.setText(a.getSentdDate().toString());
+                                   l62.setText(a.getFrom());
+                                   l63.setText(a.getSubject());
+                                   break;    
+                               case 16:
+                                   l65.setText(a.getSentdDate().toString());
+                                   l66.setText(a.getFrom());
+                                   l67.setText(a.getSubject());
+                                   break;   
+                               case 17:
+                                   l69.setText(a.getSentdDate().toString());
+                                   l70.setText(a.getFrom());
+                                   l71.setText(a.getSubject());
+                                   break;
+                               case 18:
+                                   l73.setText(a.getSentdDate().toString());
+                                   l74.setText(a.getFrom());
+                                   l75.setText(a.getSubject());
+                                   break;
+                               case 19:
+                                   l77.setText(a.getSentdDate().toString());
+                                   l78.setText(a.getFrom());
+                                   l79.setText(a.getSubject());
+                                   break;   
                            }
                            i++;
                            

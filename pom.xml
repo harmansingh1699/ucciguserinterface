@@ -35,11 +35,7 @@
     </repositories>
     
     <dependencies>
-        <dependency>
-            <groupId>JavaFxDialogs</groupId>
-            <artifactId>JavaFxDialogs-API</artifactId>
-            <version>1</version>
-        </dependency>
+        
         
         <dependency>
             <groupId>org.antlr</groupId>
@@ -64,11 +60,7 @@
             <version>5.5.2</version>
         </dependency>
     
-        <dependency>
-            <groupId>Autorun</groupId>
-            <artifactId>Autorun-API</artifactId>
-            <version>1</version>
-        </dependency>
+        
     </dependencies>
     <build>
         <plugins>
@@ -147,7 +139,7 @@
                         </goals>
                         <configuration>
                             <wsdlUrls>
-                                <wsdlUrl>http://192.168.105.17:9090/InsuranceWebService/UserOperationsService?wsdl</wsdlUrl>
+                                <wsdlUrl>http://10.208.240.119:8080/InsuranceWebService/UserOperationsService?wsdl</wsdlUrl>
                             </wsdlUrls>
                             <xnocompile>false</xnocompile>
                         </configuration>
@@ -164,7 +156,7 @@
                                 </arg>
                             </args>
                             <wsdlUrls>
-                                <wsdlUrl>http://192.168.105.17:9090/InsuranceWebService/InsuranceOperationsService?wsdl</wsdlUrl>
+                                <wsdlUrl>http://10.208.240.119:8080/InsuranceWebService/InsuranceOperationsService?wsdl</wsdlUrl>
                             </wsdlUrls>
                             <xnocompile>false</xnocompile>
                         </configuration>

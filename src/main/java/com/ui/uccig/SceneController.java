@@ -15,7 +15,7 @@ import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Dialogs;
+
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 
@@ -154,7 +154,7 @@ public class SceneController implements Initializable {
         ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setFormId(applicationid.getText());
         
         ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setProducerid(this.producer.getText());
-        ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setMarketerId(marketer.getText());
+        ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setMarketeridfromform(marketer.getText());
         ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setInsuranceType(getInsurancetype());
         ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setSeverity(severity.getText());
         ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setCategory(getInsurancecategory());

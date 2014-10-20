@@ -26,6 +26,7 @@ import javafx.beans.Observable;
 import javafx.beans.binding.Bindings;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
@@ -38,7 +39,7 @@ import javafx.util.Duration;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
-import ravrun.Rav;
+import ravrun.Rav1;
 
 /**
  * FXML Controller class
@@ -487,7 +488,9 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
     
     @FXML
     public void openVehicleDetails(){
-        new Rav("/Users/harsimransingh/Desktop/RevisedProposal.docx").execute();
+        new Rav1("/Users/harsimransingh/Desktop/RevisedProposal.docx").execute();
+        
+                
     }
     
     

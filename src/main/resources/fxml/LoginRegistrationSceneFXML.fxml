@@ -37,6 +37,11 @@
           <children>
             <GridPane prefHeight="64.0" prefWidth="602.0">
               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="28.0" prefWidth="262.0" style="" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                           <children>
+                              <TextField fx:id="loginusername" prefHeight="30.0" prefWidth="229.0" promptText="username" style="-fx-font: 18px Times;" />
+                           </children>
+                </HBox>
                 <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="289.0" style="-fx-background-color: rgba(245,245,245, 0.8);" GridPane.columnIndex="1" GridPane.rowIndex="0">
                            <children>
                               <PasswordField fx:id="loginpassword" prefHeight="30.0" prefWidth="228.0" promptText="password" style="-fx-font: 18px Times;" />
@@ -60,11 +65,7 @@
                     </Hyperlink>
                   </children>
                 </HBox>
-                <HBox alignment="CENTER_LEFT" prefHeight="28.0" prefWidth="262.0" style="" GridPane.columnIndex="0" GridPane.rowIndex="0">
-                           <children>
-                              <TextField fx:id="loginusername" prefHeight="30.0" prefWidth="229.0" promptText="username" style="-fx-font: 18px Times;" />
-                           </children>
-                </HBox>
+                
               </children>
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="328.0" minWidth="10.0" prefWidth="258.0" />
