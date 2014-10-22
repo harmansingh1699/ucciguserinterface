@@ -36,6 +36,7 @@ import com.ui.util.WriteByteArray;
 import com.ui.binding.FormEntry4Binding;
 import com.ui.binding.MailSendingBinding;
 import com.ui.binding.SearchArchivebinding;
+import com.ui.util.CommonValidations;
 import harrun.AlertDialog;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -156,6 +157,11 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     @FXML
     private RadioButton searchdate4;
+    
+    @FXML
+    private RadioButton closeboundedno;
+    @FXML
+    private RadioButton closeboundedyes;
     
     @FXML
     private TextField companyname1;
@@ -409,7 +415,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     private GridPane gridpane1;
     
     
-
+    private static String os1=null;
     private SearchArchivebinding binding;
     private FormEntry4Binding binding1;
     private MailSendingBinding binding2;
@@ -989,8 +995,9 @@ public class EnterCodeUIController implements Initializable, IScreenController {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        os1=System.getProperty("os.name");
         ToggleGroup tg = new ToggleGroup();
+        
          searchdate1.setToggleGroup(tg);
          searchdate2.setToggleGroup(tg);
          searchdate3.setToggleGroup(tg);
@@ -1017,6 +1024,19 @@ public class EnterCodeUIController implements Initializable, IScreenController {
             }
         };
         tg1.selectedToggleProperty().addListener(ls1);
+        
+        ToggleGroup tg2 = new ToggleGroup();
+        closeboundedyes.setToggleGroup(tg2);
+        closeboundedno.setToggleGroup(tg2);
+        ChangeListener<Toggle> ls2 = new ChangeListener<Toggle>() {
+            @Override
+            public void changed(ObservableValue<? extends Toggle> prop, Toggle old, Toggle val) {
+                RadioButton t = (RadioButton) val.getToggleGroup().getSelectedToggle();
+                binding1.setCloseBounded(t.getText());
+            }
+        };
+        tg2.selectedToggleProperty().addListener(ls2);
+        
         
         datePicker.localeProperty().set(Locale.ENGLISH);
         datePicker.setLayoutX(0.0);
@@ -1405,7 +1425,8 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     AssignMarketerRequest request = new AssignMarketerRequest();
                     System.out.println(getLoggedinMarketerId());
                     request.setMarketerUserId(getLoggedinMarketerId());
-                    request.setFormId(title.getText());
+                    System.out.println("Form ID in assign"+formId);
+                    request.setFormId(formId);
                     CommonResponseAttributes response = port.getInsuranceOperationsPort().assignMarketer(request);
                   
                    successMessage("Assigned " + getFormId() + " to " + getLoggedinMarketerId());
@@ -1463,12 +1484,24 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     
     @FXML
     public void openProposal(){
-        new Rav1(new File("bin\\proposal.docx").getAbsolutePath()).execute();
+        System.out.println(os1);
+        System.out.println("OpenProposal");
+        
+        if(os1.contains("Windows"))
+        { new Rav1(new File("bin\\proposal.doc").getAbsolutePath()).execute();}
+        else if (os1.contains("Mac"))
+        {    new Rav1(new File("bin/proposal.doc").getAbsolutePath()).execute();}
     }
     
     @FXML
     public void openBinder(){
-        new Rav1(new File("bin\\binder.docx").getAbsolutePath()).execute();
+        System.out.println(os1);
+        System.out.println("Open Binder");
+        
+        if(os1.contains("Windows"))
+        { new Rav1(new File("bin\\binder.doc").getAbsolutePath()).execute();}
+        else if (os1.contains("Mac"))
+        {    new Rav1(new File("bin/binder.doc").getAbsolutePath()).execute();}
     }
 
     public void errors(final String message) {
@@ -1698,23 +1731,48 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     @FXML
     public void submitSaveQuotes() {
+        System.out.println("savequotes");
          Task task = new Task<Void>() {
+             
             @Override
             public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception, Exception {
                 try {
-
+                    System.out.println("savequotes2");
                     InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
                     QuoteDetailsRequest request = new QuoteDetailsRequest();
-                    request.setQuote(Double.parseDouble(binding1.getQuote1()));
-                    request.setQuote1(Double.parseDouble(binding1.getQuote2()));
-                    request.setQuote2(Double.parseDouble(binding1.getQuote3()));
-                    request.setQuote3(Double.parseDouble(binding1.getQuote4()));
-                    request.setQuote4(Double.parseDouble(binding1.getQuote5()));
-                    request.setQuote5(Double.parseDouble(binding1.getQuote6()));
-                    request.setQuote6(Double.parseDouble(binding1.getQuote7()));
-                    request.setQuote7(Double.parseDouble(binding1.getQuote8()));
-                    request.setQuote8(Double.parseDouble(binding1.getQuote9()));
-                    request.setQuote9(Double.parseDouble(binding1.getQuote10()));
+                    System.out.println(binding1.getQuote1());
+                    System.out.println(binding1.getComment1());
+                    System.out.println(binding1.getCompanyName1());
+                    if (!CommonValidations.isStringEmpty(binding1.getQuote1())) {
+                    request.setQuote1(Double.parseDouble(binding1.getQuote1()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding1.getQuote2())) {
+                    request.setQuote2(Double.parseDouble(binding1.getQuote2()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding1.getQuote3())) {
+                    request.setQuote3(Double.parseDouble(binding1.getQuote3()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding1.getQuote4())) {
+                    request.setQuote4(Double.parseDouble(binding1.getQuote4()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding1.getQuote5())) {
+                    request.setQuote5(Double.parseDouble(binding1.getQuote5()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding1.getQuote6())) {
+                    request.setQuote6(Double.parseDouble(binding1.getQuote6()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding1.getQuote7())) {
+                    request.setQuote7(Double.parseDouble(binding1.getQuote7()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding1.getQuote8())) {
+                    request.setQuote8(Double.parseDouble(binding1.getQuote8()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding1.getQuote9())) {
+                    request.setQuote9(Double.parseDouble(binding1.getQuote9()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding1.getQuote10())) {
+                    request.setQuote10(Double.parseDouble(binding1.getQuote10()));
+                    }
                     request.setComment1(binding1.getComment1());
                     request.setComment2(binding1.getComment2());
                     request.setComment3(binding1.getComment3());
@@ -1735,12 +1793,20 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     request.setCompanyname8(binding1.getCompanyName8());
                     request.setCompanyname9(binding1.getCompanyName9());
                     request.setCompanyname10(binding1.getCompanyName10());
+                    System.out.println("savequotesformid"+formId);
                     request.setFormId(formId);
+                    
                     CommonResponseAttributes response = port.getInsuranceOperationsPort().quoteDetails(request);
                     if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
+                        System.out.println("QuotesSaved");
                         successMessage("Quotes successfully saved");
+                        animatedMovement(-1269,-715);
                     }
+                    else
+                 {System.out.println(response);
+                     System.out.println(response.getErrorMessage());}
                 } catch (Exception e) {
+                    System.out.println("Catchinsavequote");
                     e.printStackTrace();
                 }
                 //   successMessage("You are successfully logged in");
@@ -1778,10 +1844,15 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     req.setFormId(getFormId());
                     GetCloseFormNQuoteDetailsResponse2 response = port.getInsuranceOperationsPort().getCloseFormNQuoteDetails(req);
                     if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
+                        System.out.println("Insideif");
                         setQuote(response);
+                        animatedMovement(-1269, -1430);
                 } 
+                else{System.out.println("else loop of saveQuotes");
+                        System.out.println(response.getErrorMessage());}
                 }catch (Exception e) {
                     e.printStackTrace();
+                    animatedMovement(-1269, -1430);
                 }
                 //   successMessage("You are successfully logged in");
                 return null;
@@ -1826,8 +1897,9 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     @FXML
     public void submitCloseApplication() {
-      closeapplicationpane.setVisible(false);
-        Task task = new Task<Void>() {
+        System.out.println(binding1.getCloseBounded());
+        Task task;
+        task = new Task<Void>() {
             @Override
             public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception, Exception {
                 try {
@@ -1835,24 +1907,25 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     CloseFormRequest req = new CloseFormRequest();
                     req.setFormId(getFormId());
                     req.setCompany(binding1.getCloseCompany());
-                    req.setQuote(Double.parseDouble(binding1.getCloseQuote()));
-                    //req.setFormId(Integer.parseInt(binding.getsearchapplicationid()));
+                    req.setBusinessWithUs(binding1.getCloseBounded());
+                    if (!CommonValidations.isStringEmpty(binding1.getCloseQuote())) {
+                        req.setQuote(Double.parseDouble(binding1.getCloseQuote()));}
                     CommonResponseAttributes response = port.getInsuranceOperationsPort().closeForm(req);
                     if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
                         closeapplicationpane.setVisible(false);
                         successMessage("Status of the form has been updated as Closed");
-
-                  }
+                        closeapplicationpane.setVisible(false);
+                    }
+                    else{System.out.println(response.getErrorMessage());
+                    successMessage(response.getErrorMessage());}
                 } catch (Exception e) {
                     e.printStackTrace();
+                    successMessage(e.getMessage());
                 }
-                //   successMessage("You are successfully logged in");
                 return null;
             }
-
         };
         new Thread(task).start();
-
     }
     int foo;
     @FXML
@@ -1964,54 +2037,61 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     
     public void setQuote(final GetCloseFormNQuoteDetailsResponse2 response){
          Platform.runLater(new Runnable() {
+                
+             @Override
+             protected Object clone() throws CloneNotSupportedException {
+                 return super.clone(); //To change body of generated methods, choose Tools | Templates.
+             }
 
             public void run() {
-                 if(response.getQuote()>0){
+                System.out.println("Inside SetQuote");
+                 if(response.getQuote1()>0){
                            companyname1.setText(response.getCompanyname1());
                            quote1.setText(""+response.getQuote());
                                comment1.setText(response.getComment1());
                   }
-                 if(response.getQuote1()>0){
+                 System.out.println("Inside SetQuote1");
+                 if(response.getQuote2()>0){
                            companyname2.setText(response.getCompanyname2());
                            quote2.setText(""+response.getQuote2());
                                comment2.setText(response.getComment2());
                   }
-                 if(response.getQuote2()>0){
+                 if(response.getQuote3()>0){
                            companyname3.setText(response.getCompanyname3());
                            quote3.setText(""+response.getQuote3());
                                comment3.setText(response.getComment3());
                   }
-                 if(response.getQuote3()>0){
+                 if(response.getQuote4()>0){
                            companyname4.setText(response.getCompanyname4());
                            quote4.setText(""+response.getQuote4());
                                comment4.setText(response.getComment4());
                   }
-                  if(response.getQuote4()>0){
+                  if(response.getQuote5()>0){
                            companyname5.setText(response.getCompanyname5());
                            quote5.setText(""+response.getQuote5());
                                comment5.setText(response.getComment5());
                   }
-                   if(response.getQuote5()>0){
+                   if(response.getQuote6()>0){
                            companyname6.setText(response.getCompanyname6());
                            quote6.setText(""+response.getQuote6());
                                comment6.setText(response.getComment6());
                   }
-                   if(response.getQuote6()>0){
+                   if(response.getQuote7()>0){
                            companyname7.setText(response.getCompanyname7());
                            quote7.setText(""+response.getQuote7());
                                comment7.setText(response.getComment7());
                   }
-                   if(response.getQuote7()>0){
+                   if(response.getQuote8()>0){
                            companyname8.setText(response.getCompanyname8());
                            quote8.setText(""+response.getQuote8());
                                comment8.setText(response.getComment8());
                   }
-                   if(response.getQuote8()>0){
+                   if(response.getQuote9()>0){
                            companyname9.setText(response.getCompanyname9());
                            quote9.setText(""+response.getQuote9());
                                comment9.setText(response.getComment9());
                   }
-                   if(response.getQuote9()>0){
+                   if(response.getQuote10()>0){
                            companyname10.setText(response.getCompanyname10());
                            quote10.setText(""+response.getQuote10());
                                comment10.setText(response.getComment10());

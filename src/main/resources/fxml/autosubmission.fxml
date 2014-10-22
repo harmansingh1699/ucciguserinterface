@@ -16,7 +16,7 @@
  <children>
    <ImageView fitHeight="1430.0" fitWidth="3807.0" pickOnBounds="true" preserveRatio="false">
      <image>
-       <Image url="@../images/light_sky_blue_shade.jpg" />
+       <Image url="@../images/greywhite.jpg" />
      </image>
    </ImageView>
    <Label layoutX="502.0" layoutY="22.0" prefWidth="265.0" text="Commercial Auto Submission">
@@ -125,7 +125,7 @@
             <Font name="Times Bold" size="16.0" />
          </font>
       </Label>
-      <Hyperlink layoutX="1486.0" layoutY="532.0" onAction="#openVehicleDetails" text="Fill out details">
+      <Hyperlink layoutX="1486.0" layoutY="532.0" onAction="#openVehicleSchedule" text="Vehicle Schedule">
          <font>
             <Font name="Times Bold" size="16.0" />
          </font>
@@ -282,5 +282,10 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
       </GridPane>
+      <Hyperlink layoutX="1624.0" layoutY="532.0" onAction="#openDriverSchedule" text="Driver Schedule">
+         <font>
+            <Font name="Times Bold" size="16.0" />
+         </font>
+      </Hyperlink>
  </children>
 </AnchorPane>

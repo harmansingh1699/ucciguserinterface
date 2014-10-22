@@ -10,6 +10,7 @@ import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuran
 import com.ui.binding.FormEntry4Binding;
 import com.ui.util.SavingFile;
 import com.ui.util.savinglocally;
+import java.io.File;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -487,10 +488,12 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
     }
     
     @FXML
-    public void openVehicleDetails(){
-        new Rav1("/Users/harsimransingh/Desktop/RevisedProposal.docx").execute();
-        
-                
+    public void openVehicleSchedule(){
+        new Rav1(new File("bin\\VehicleSchedule.xls").getAbsolutePath()).execute();
+    }
+    @FXML
+    public void openDriverSchedule(){
+        new Rav1(new File("bin\\DriverSchedule.xls").getAbsolutePath()).execute();
     }
     
     

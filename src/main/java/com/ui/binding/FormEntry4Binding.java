@@ -220,6 +220,7 @@ public class FormEntry4Binding {
     private StringProperty logsmarketerid;
     private StringProperty closecompany;
     private StringProperty closequote;
+    private StringProperty closebounded;
     
     //send email-checkbox
     private StringProperty mail1;
@@ -467,6 +468,7 @@ public class FormEntry4Binding {
         logscompanyname=new SimpleStringProperty();
         closecompany=new SimpleStringProperty();
         closequote=new SimpleStringProperty();
+        closebounded=new SimpleStringProperty();
         
         mail1=new SimpleStringProperty();
         mail2=new SimpleStringProperty();
@@ -647,6 +649,18 @@ public class FormEntry4Binding {
 
     public StringProperty closeQuoteProperty() {
         return this.closequote;
+    }
+    
+     public String getCloseBounded() {
+        return (String) this.closebounded.get();
+    }
+
+    public void setCloseBounded(String closebounded) {
+        this.closebounded.set(closebounded);
+    }
+
+    public StringProperty closeBoundedProperty() {
+        return this.closebounded;
     }
     
     public String getLogsCompanyName() {
