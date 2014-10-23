@@ -664,7 +664,7 @@
     </Button>
     <Label font="$x8" layoutX="3094.0" layoutY="21.0" text="Send Mail to Underwriter" textFill="BLACK" />
     <Label font="$x6" layoutX="2596.0" layoutY="91.0" text="Subject:" />
-    <TextField layoutX="2676.0" layoutY="84.0" prefHeight="30.0" prefWidth="618.0" />
+    <TextField fx:id="sendmailsubject" layoutX="2676.0" layoutY="84.0" prefHeight="30.0" prefWidth="618.0" />
     <TextArea fx:id="emailbody" layoutX="2676.0" layoutY="147.0" prefHeight="384.0" prefWidth="618.0" wrapText="true" />
     <Label font="$x6" layoutX="2597.0" layoutY="325.0" text="Mail Body:" />
     <Label font="$x6" layoutX="2616.0" layoutY="549.0" text="Note:" />
@@ -896,7 +896,7 @@
     <Button defaultButton="true" font="$x6" layoutX="2884.0" layoutY="610.0" mnemonicParsing="false" onAction="#submitSendEmail" prefHeight="50.0" prefWidth="183.0" text="Send Email" />
     <Label font="$x8" layoutX="3039.0" layoutY="743.0" text="Send Delayed Mail to Underwriter" textFill="BLACK" />
     <Label font="$x6" layoutX="2615.0" layoutY="811.0" text="Subject:" />
-    <TextField layoutX="2695.0" layoutY="808.0" prefHeight="30.0" prefWidth="618.0" />
+    <TextField fx:id="senddelayedmailsubject" layoutX="2695.0" layoutY="808.0" prefHeight="30.0" prefWidth="618.0" />
     <TextArea fx:id="delayemailbody" layoutX="2695.0" layoutY="867.0" prefHeight="355.0" prefWidth="618.0" wrapText="true" />
     <Label font="$x6" layoutX="2615.0" layoutY="1039.0" text="Mail Body:" />
     <Label font="$x6" layoutX="2635.0" layoutY="1290.0" text="Note:" />
@@ -1111,7 +1111,7 @@
     <Label font="$x6" layoutX="2903.0" layoutY="1246.0" text="*Mail will be sent at 00:00" />
     <Button defaultButton="true" font="$x2" layoutX="2593.0" layoutY="19.0" mnemonicParsing="false" onAction="#backMail" prefHeight="34.0" prefWidth="124.0" text="Back" />
     <Button defaultButton="true" font="$x2" layoutX="2582.0" layoutY="737.0" mnemonicParsing="false" onAction="#backDelayMail" prefHeight="34.0" prefWidth="124.0" text="Back" />
-    <BorderPane id="registrationPane" fx:id="closeapplicationpane" layoutX="1800.0" layoutY="950.0" prefHeight="355.0" prefWidth="356.0" style="-fx-background-color: rgba(245,245,245, 0.8);&#10;-fx-background-radius: 10;">
+    <BorderPane id="registrationPane" fx:id="closeapplicationpane" layoutX="1800.0" layoutY="950.0" prefHeight="355.0" prefWidth="356.0" style="-fx-background-color: rgba(245,245,245, 0.8);&#10;-fx-background-radius: 10;" visible="false">
       <center>
         <VBox prefHeight="288.0" prefWidth="356.0">
           <children>

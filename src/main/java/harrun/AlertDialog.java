@@ -43,7 +43,7 @@ public class AlertDialog extends Stage {
        });
 
        BorderPane borderPane = new BorderPane();
-       //borderPane.getStylesheets().add(getClass().getResource("alert.css").toExternalForm());        
+       borderPane.getStylesheets().add(getClass().getResource("/styles/alert.css").toExternalForm());        
        borderPane.setTop(label);
 
        HBox hbox2 = new HBox();

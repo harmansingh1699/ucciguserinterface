@@ -105,7 +105,7 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        Group root = new Group();
+            Group root = new Group();
             ImageView imageView = new ImageView(new Image("http://www.justjeweller.com/images/animation.gif"));
             root.getChildren().add(imageView);
             root.autosize();
@@ -197,6 +197,8 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
                             errors(response.getErrorMessage());
                         }
                     } catch (Exception ex) {
+                        stopLoading();
+                            errors(ex.getMessage());
                         Logger.getLogger(LoginRegistrationSceneController.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     return null;
@@ -264,6 +266,8 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
                             errors(response.getErrorMessage());
                         }
                     } catch (com.rav.insurance.useroperations.webservice.Exception ex) {
+                        stopLoading();
+                        errors(ex.getMessage());
                         Logger.getLogger(LoginRegistrationSceneController.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     return null;
@@ -285,7 +289,7 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
             InvokeAnimation.attentionSeekerWobble(forgotPasswordEmailAddressField);
             forgotPasswordEmailAddressField.setPromptText("Please enter Email Address");
         } else {
-
+            
             Task task = new Task<Void>() {
                 @Override
                 public Void call() {
@@ -304,7 +308,10 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
                             forgotPasswordPane.setVisible(false);
                             registrationPane.setVisible(false);
                         }
+                        else{ errors(response.getErrorMessage());
+                        }
                     } catch (Exception ex) {
+                        errors(ex.getMessage());
                         Logger.getLogger(LoginRegistrationSceneController.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     return null;
@@ -329,7 +336,7 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
             InvokeAnimation.attentionSeekerWobble(forgotPasswordRePasswordField);
             forgotPasswordRePasswordField.setPromptText("Password does not match");
         } else {
-
+            stage.show();
             Task task = new Task<Void>() {
                 @Override
                 public Void call() {
@@ -348,17 +355,20 @@ public class LoginRegistrationSceneController implements Initializable, IScreenC
                         CommonResponseAttributes response = port.getUserOperationsPort().updatePassword(req);
 
                         if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
-
+                            stopLoading();
                             successMessage("Password has been updated. Please login with the new password");
                             InvokeAnimation.attentionSeekerWobble(loginusername);
                             resetPasswordPane.setVisible(false);
                             forgotPasswordPane.setVisible(false);
                             registrationPane.setVisible(true);
                         } else {
-                            System.out.println(response.getErrorMessage());
+                            stopLoading();
+                            errors(response.getErrorMessage());
                         }
 
                     } catch (Exception ex) {
+                        stopLoading();
+                        errors(ex.getMessage());
                         Logger.getLogger(LoginRegistrationSceneController.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     return null;
@@ -381,7 +391,7 @@ new AlertDialog((Stage) loginusername.getParent().getScene().getWindow(), messag
     public void errors(final String message) {
         Platform.runLater(new Runnable() {
             public void run() {
-new AlertDialog((Stage) loginusername.getParent().getScene().getWindow(), message, AlertDialog.ICON_INFO).showAndWait();               
+new AlertDialog((Stage) loginusername.getParent().getScene().getWindow(), message, AlertDialog.ICON_ERROR).showAndWait();               
 // Dialogs.showErrorDialog(null, message, "Oops!!", "Error");
                 stopLoading();
             }

@@ -15,6 +15,7 @@ import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuran
 import com.rav.insurance.insuranceformoperations.webservice.contracts.InsuranceFormSubmitRequest;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.InsuranceFormSubmitResponse;
 import com.sun.javafx.geom.AreaOp;
+import com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl;
 import com.ui.util.WriteByteArray;
 import com.ui.animation.InvokeAnimation;
 import com.ui.binding.FormEntry1Binding;
@@ -31,6 +32,8 @@ import harrun.AlertDialog;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -41,6 +44,7 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
+import java.util.TimeZone;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
@@ -80,6 +84,7 @@ import javafx.util.Duration;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
+import javax.xml.namespace.QName;
 import org.antlr.stringtemplate.StringTemplate;
 import org.antlr.stringtemplate.StringTemplateGroup;
 import org.dozer.DozerBeanMapper;
@@ -113,6 +118,7 @@ public class NextScreenController implements Initializable, IScreenController {
     @FXML
     private GridPane gridpane6;
 
+    private XMLGregorianCalendar datefromform;
     private XMLGregorianCalendar date11;
     private XMLGregorianCalendar date12;
     private XMLGregorianCalendar date13;
@@ -1632,31 +1638,31 @@ public class NextScreenController implements Initializable, IScreenController {
         datePicker1.setLocale(Locale.ENGLISH);
         datePicker1.getCalendarView().todayButtonTextProperty().set("TODAY");
         datePicker1.getCalendarView().setShowWeeks(false);
-        datePicker1.setDateFormat(new SimpleDateFormat("YYYY-MM-DD"));
+        datePicker1.setDateFormat(new SimpleDateFormat("YYYY-MM-dd"));
 
         datePicker.setPromptText("yyyy-mm-dd");
         datePicker2.setLocale(Locale.ENGLISH);
         datePicker2.getCalendarView().todayButtonTextProperty().set("TODAY");
         datePicker2.getCalendarView().setShowWeeks(false);
-        datePicker2.setDateFormat(new SimpleDateFormat("YYYY-MM-DD"));
+        datePicker2.setDateFormat(new SimpleDateFormat("YYYY-MM-dd"));
 
         datePicker.setPromptText("yyyy-mm-dd");
         datePicker3.setLocale(Locale.ENGLISH);
         datePicker3.getCalendarView().todayButtonTextProperty().set("TODAY");
         datePicker3.getCalendarView().setShowWeeks(false);
-        datePicker3.setDateFormat(new SimpleDateFormat("YYYY-MM-DD"));
+        datePicker3.setDateFormat(new SimpleDateFormat("YYYY-MM-dd"));
 
         datePicker.setPromptText("yyyy-mm-dd");
         datePicker4.setLocale(Locale.ENGLISH);
         datePicker4.getCalendarView().todayButtonTextProperty().set("TODAY");
         datePicker4.getCalendarView().setShowWeeks(false);
-        datePicker4.setDateFormat(new SimpleDateFormat("YYYY-MM-DD"));
+        datePicker4.setDateFormat(new SimpleDateFormat("YYYY-MM-dd"));
 
         datePicker.setPromptText("yyyy-mm-dd");
         datePicker5.setLocale(Locale.ENGLISH);
         datePicker5.getCalendarView().todayButtonTextProperty().set("TODAY");
         datePicker5.getCalendarView().setShowWeeks(false);
-        datePicker5.setDateFormat(new SimpleDateFormat("YYYY-MM-DD"));
+        datePicker5.setDateFormat(new SimpleDateFormat("YYYY-MM-dd"));
 
         //fullScreenPane.getChildren().add(datePicker,138,495);
         gridpane1.add(datePicker, 5, 0);
@@ -1727,32 +1733,42 @@ public class NextScreenController implements Initializable, IScreenController {
             System.out.println(getReceivedname());
             returnedname.setText(getReceivedname());
             returnedbranch.setText(getBranch());
+            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+            Date date = new Date();
+            returneddate.setText(dateFormat.format(date));
         }
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-        Date date = new Date();
-        returneddate.setText(dateFormat.format(date));
     }
 
     @FXML
     public void submitActionAuto() {
         insurancetypeflag = 2;
         animatedMovement(-1269, 0);
-        returnedname.setText(getReceivedname());
-        returnedbranch.setText(getBranch());
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-        Date date = new Date();
-        returneddate.setText(dateFormat.format(date));
+        if (isEdit) {
+        } else {
+            System.out.println(getReceivedname());
+            returnedname.setText(getReceivedname());
+            returnedbranch.setText(getBranch());
+            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+            Date date = new Date();
+            returneddate.setText(dateFormat.format(date));
+        }
+        
     }
 
     @FXML
     public void submitActionBoth() {
         insurancetypeflag = 3;
         animatedMovement(-1269, 0);
-        returnedname.setText(getReceivedname());
-        returnedbranch.setText(getBranch());
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-        Date date = new Date();
-        returneddate.setText(dateFormat.format(date));
+        if (isEdit) {
+        } else {
+            System.out.println(getReceivedname());
+            returnedname.setText(getReceivedname());
+            returnedbranch.setText(getBranch());
+            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+            Date date = new Date();
+            returneddate.setText(dateFormat.format(date));
+        }
+        
     }
 
     @FXML
@@ -1764,23 +1780,18 @@ public class NextScreenController implements Initializable, IScreenController {
     @FXML
     public void continue1() {
         if (CommonValidations.isStringEmpty(binding.getBusinessName())) {
-            System.out.println("1");
             InvokeAnimation.attentionSeekerWobble(businessname);
             businessname.setPromptText("Business Name can not be empty");
         } else if (CommonValidations.isStringEmpty(binding.getKeyContact())) {
-            System.out.println("2");
             InvokeAnimation.attentionSeekerWobble(keycontact);
             keycontact.setPromptText("Key Contact cannot be empty");
         } else if (CommonValidations.isStringEmpty(binding.getKeyPhone())) {
-            System.out.println("3");
             InvokeAnimation.attentionSeekerWobble(keyphone);
             keyphone.setPromptText("Key phone cannot be empty");
         } else if (CommonValidations.isStringEmpty(binding.getMailingAddress())) {
-            System.out.println("4");
             InvokeAnimation.attentionSeekerWobble(mailingaddress);
             mailingaddress.setPromptText("Please enter Mailing address");
         } else if (CommonValidations.isStringEmpty(binding.getSeverity()) || binding.getSeverity().equalsIgnoreCase("select")) {
-            System.out.println("Severity");
             successMessage1("Select Severity level");
         } else {
             animatedMovement(-2538, 0);
@@ -2583,8 +2594,17 @@ public class NextScreenController implements Initializable, IScreenController {
                     {
                     binding4.settotsqfootage(String.valueOf(listAddInfo.get(offset).getTotalSqFootage1()));
                     }
+                    if(listAddInfo.get(offset).getInsdSqFootage1()>0)
+                    {
+                    binding4.setinsidesqfootage(String.valueOf(listAddInfo.get(offset).getInsdSqFootage1()));
+                    }
+                    if(listAddInfo.get(offset).getNoOfStories1()>0)
+                    {
+                    binding4.setnoofstories(String.valueOf(listAddInfo.get(offset).getNoOfStories1()));
+                    }
                     
-                    System.out.println(binding4.getlocationaddress());
+                    
+                    
                 } else {
                     System.out.println("Offset7 " + offset);
                     binding4.setlocationaddress("");
@@ -3776,6 +3796,358 @@ public class NextScreenController implements Initializable, IScreenController {
                 if (listAddInfo.get(offset) != null) {
                     System.out.println("Offset14 " + offset);
                     binding4.setlocationaddress(listAddInfo.get(offset).getAddress1());
+                    if(listAddInfo.get(offset).getAge1()>0)
+                    {
+                    binding4.setlocationage(Integer.toString(listAddInfo.get(offset).getAge1()));
+                    }
+                    if(listAddInfo.get(offset).getTotalSqFootage1()>0)
+                    {
+                    binding4.settotsqfootage(String.valueOf(listAddInfo.get(offset).getTotalSqFootage1()));
+                    }
+                    if(listAddInfo.get(offset).getInsdSqFootage1()>0)
+                    {
+                    binding4.setinsidesqfootage(String.valueOf(listAddInfo.get(offset).getInsdSqFootage1()));
+                    }
+                    if(listAddInfo.get(offset).getNoOfStories1()>0)
+                    {
+                    binding4.setnoofstories(String.valueOf(listAddInfo.get(offset).getNoOfStories1()));
+                    }
+                    if(listAddInfo.get(offset).getBuildingLimit1()>0)
+                    {
+                    binding4.setbuildinglimit(String.valueOf(listAddInfo.get(offset).getBuildingLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getBuildingDeductible1()>0)
+                    {
+                    binding4.setbuildingdeductible(String.valueOf(listAddInfo.get(offset).getBuildingDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getContentsLimit1()>0)
+                    {
+                    binding4.setcontentslimit(String.valueOf(listAddInfo.get(offset).getContentsLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getContentsDeductible1()>0)
+                    {
+                    binding4.setcontentsdeductible(String.valueOf(listAddInfo.get(offset).getContentsDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getContentsLimit1()>0)
+                    {
+                    binding4.setstocklimit(String.valueOf(listAddInfo.get(offset).getStockLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getStockDeductible1()>0)
+                    {
+                    binding4.setstockdeductible(String.valueOf(listAddInfo.get(offset).getStockDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getOfficeContentLimit1()>0)
+                    {
+                    binding4.setofficelimit(String.valueOf(listAddInfo.get(offset).getOfficeContentLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getOfficeContentDeductible1()>0)
+                    {
+                    binding4.setofficedeductible(String.valueOf(listAddInfo.get(offset).getOfficeContentDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getEdpLimit1()>0)
+                    {
+                    binding4.setedplimit(String.valueOf(listAddInfo.get(offset).getEdpLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getEdpDeductible1()>0)
+                    {
+                    binding4.setedpdeductible(String.valueOf(listAddInfo.get(offset).getEdpDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getEquipmentLimit1()>0)
+                    {
+                    binding4.setequipmentlimit(String.valueOf(listAddInfo.get(offset).getEquipmentLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getEquipmentDeductible1()>0)
+                    {
+                    binding4.setequipmentdeductible(String.valueOf(listAddInfo.get(offset).getEquipmentDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getOffPremisesLimit1()>0)
+                    {
+                    binding4.setoffpremiseslimit(String.valueOf(listAddInfo.get(offset).getOffPremisesLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getOffPremisesDeductible1()>0)
+                    {
+                    binding4.setoffpremisesdeductible(String.valueOf(listAddInfo.get(offset).getOffPremisesDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getTransitLimit1()>0)
+                    {
+                    binding4.settransitlimit(String.valueOf(listAddInfo.get(offset).getTransitLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getTransitDeductible1()>0)
+                    {
+                    binding4.settransitdeductible(String.valueOf(listAddInfo.get(offset).getTransitDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getMiscPropertyLimit1()>0)
+                    {
+                    binding4.setmiscpropertylimit(String.valueOf(listAddInfo.get(offset).getMiscPropertyLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getMiscPropertyDeductible1()>0)
+                    {
+                    binding4.setmiscpropertydeductible(String.valueOf(listAddInfo.get(offset).getMiscPropertyDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getContractorEquipmentLimit1()>0)
+                    {
+                    binding4.setcontractorsequipmentlimit(String.valueOf(listAddInfo.get(offset).getContractorEquipmentLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getContractorEquipmentDeductible1()>0)
+                    {
+                    binding4.setcontractorsequipmentdeductible(String.valueOf(listAddInfo.get(offset).getContractorEquipmentDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getInstallationFloaterLimit1()>0)
+                    {
+                    binding4.setcontentslimit(String.valueOf(listAddInfo.get(offset).getInstallationFloaterLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getInstallationFloaterDeductible1()>0)
+                    {
+                    binding4.setinstallationfloatordeductible(String.valueOf(listAddInfo.get(offset).getInstallationFloaterDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getToolFloaterLimit1()>0)
+                    {
+                    binding4.settoolfloatorlimit(String.valueOf(listAddInfo.get(offset).getToolFloaterLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getToolFloaterDeductible1()>0)
+                    {
+                    binding4.settoolfloatordeductible(String.valueOf(listAddInfo.get(offset).getToolFloaterDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getSignFloaterLimit1()>0)
+                    {
+                    binding4.setsignfloatorlimit(String.valueOf(listAddInfo.get(offset).getSignFloaterLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getSignFloaterDeductible1()>0)
+                    {
+                    binding4.setsignfloatordeductible(String.valueOf(listAddInfo.get(offset).getSignFloaterDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getMotorTruckLimit1()>0)
+                    {
+                    binding4.setmotortruckcargolimit(String.valueOf(listAddInfo.get(offset).getMotorTruckLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getMotorTruckDeductible1()>0)
+                    {
+                    binding4.setmotortruckcargodeductible(String.valueOf(listAddInfo.get(offset).getMotorTruckDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getGlassLimit1()>0)
+                    {
+                    binding4.setglasslimit(String.valueOf(listAddInfo.get(offset).getGlassLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getGlassDeductible1()>0)
+                    {
+                    binding4.setglassdeductible(String.valueOf(listAddInfo.get(offset).getGlassDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getSewerBackupDeductible1()>0)
+                    {
+                    binding4.setsewerblackupdeductible(String.valueOf(listAddInfo.get(offset).getSewerBackupDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getFloodDeductible1()>0)
+                    {
+                    binding4.setflooddeductible(String.valueOf(listAddInfo.get(offset).getFloodDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getEarthquakeDeductible1()>0)
+                    {
+                    binding4.setearthquakedeductible(String.valueOf(listAddInfo.get(offset).getEarthquakeDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getProfitLimit1()>0)
+                    {
+                    binding4.setprofitslimit(String.valueOf(listAddInfo.get(offset).getProfitLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getProfitDeductible1()>0)
+                    {
+                    binding4.setprofitsdeductible(String.valueOf(listAddInfo.get(offset).getProfitDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getGrossEarningLimit1()>0)
+                    {
+                    binding4.setgrossearningslimit(String.valueOf(listAddInfo.get(offset).getGrossEarningLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getToolFloaterDeductible1()>0)
+                    {
+                    binding4.setgrossearningsdeductible(String.valueOf(listAddInfo.get(offset).getGrossEarningDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getRentalIncomeLimit1()>0)
+                    {
+                    binding4.setrentalincomelimit(String.valueOf(listAddInfo.get(offset).getRentalIncomeLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getRentalIncomeDeductible1()>0)
+                    {
+                    binding4.setrentalincomedeductible(String.valueOf(listAddInfo.get(offset).getRentalIncomeDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getExtraExpenseLimit1()>0)
+                    {
+                    binding4.setextraexpenselimit(String.valueOf(listAddInfo.get(offset).getExtraExpenseLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getExtraExpenseDeductible1()>0)
+                    {
+                    binding4.setextraexpensedeductible(String.valueOf(listAddInfo.get(offset).getExtraExpenseDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getOffPremisesLimit1()>0)
+                    {
+                    binding4.setoffpremiseslimit(String.valueOf(listAddInfo.get(offset).getOffPremisesLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getOffPremisesDeductible1()>0)
+                    {
+                    binding4.setoffpremisesdeductible(String.valueOf(listAddInfo.get(offset).getOffPremisesDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getInsideOutsideLimit1()>0)
+                    {
+                    binding4.setinsideoutsidelimit(String.valueOf(listAddInfo.get(offset).getInsideOutsideLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getInsideOutsideDeductible1()>0)
+                    {
+                    binding4.setinsideoutsidedeductible(String.valueOf(listAddInfo.get(offset).getInsideOutsideDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getBfMoneyLimit1()>0)
+                    {
+                    binding4.setbfmoneylimit(String.valueOf(listAddInfo.get(offset).getBfMoneyLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getBfMoneyDeductible1()>0)
+                    {
+                    binding4.setbfmoneydeductible(String.valueOf(listAddInfo.get(offset).getBfMoneyDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getDeopistorForgeryLimit1()>0)
+                    {
+                    binding4.setforgerylimit(String.valueOf(listAddInfo.get(offset).getDeopistorForgeryLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getDeopistorForgeryDeductible1()>0)
+                    {
+                    binding4.setforgerydeductible(String.valueOf(listAddInfo.get(offset).getDeopistorForgeryDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getMoneyOrdersLimit1()>0)
+                    {
+                    binding4.setmoneyorderslimit(String.valueOf(listAddInfo.get(offset).getMoneyOrdersLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getMoneyOrdersDeductible1()>0)
+                    {
+                    binding4.setmoneyordersdeductible(String.valueOf(listAddInfo.get(offset).getMoneyOrdersDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getEmployDishonestyLimit1()>0)
+                    {
+                    binding4.setdishonestylimit(String.valueOf(listAddInfo.get(offset).getEmployDishonestyLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getEmployDishonestyDeductible1()>0)
+                    {
+                    binding4.setdishonestydeductible(String.valueOf(listAddInfo.get(offset).getEmployDishonestyDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getCglLimit1()>0)
+                    {
+                    binding4.setcgllimit(String.valueOf(listAddInfo.get(offset).getCglLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getCglDeductible1()>0)
+                    {
+                    binding4.setcgldeductible(String.valueOf(listAddInfo.get(offset).getCglDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getTenantsLegalLimit1()>0)
+                    {
+                    binding4.settenantslimit(String.valueOf(listAddInfo.get(offset).getTenantsLegalLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getTenantsLegalDeductible1()>0)
+                    {
+                    binding4.settenantsdeductible(String.valueOf(listAddInfo.get(offset).getTenantsLegalDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getNonOwnedAutoLimit1()>0)
+                    {
+                    binding4.setnonownedlimit(String.valueOf(listAddInfo.get(offset).getNonOwnedAutoLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getNonOwnedAutoDeductible1()>0)
+                    {
+                    binding4.setnonowneddeductible(String.valueOf(listAddInfo.get(offset).getNonOwnedAutoDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getSef94Limit1()>0)
+                    {
+                    binding4.setsef94limit(String.valueOf(listAddInfo.get(offset).getSef94Limit1()));
+                    }
+                    if(listAddInfo.get(offset).getSef96Limit1()>0)
+                    {
+                    binding4.setsef96limit(String.valueOf(listAddInfo.get(offset).getSef96Limit1()));
+                    }
+                    if(listAddInfo.get(offset).getSef94Deductible1()>0)
+                    {
+                    binding4.setsef94deductible(String.valueOf(listAddInfo.get(offset).getSef94Deductible1()));
+                    }
+                    if(listAddInfo.get(offset).getSef96Deductible1()>0)
+                    {
+                    binding4.setsef96deductible(String.valueOf(listAddInfo.get(offset).getSef96Deductible1()));
+                    }
+                    if(listAddInfo.get(offset).getDoLimit1()>0)
+                    {
+                    binding4.setdandlimit(String.valueOf(listAddInfo.get(offset).getDoLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getDoDeductible1()>0)
+                    {
+                    binding4.setdanddeductible(String.valueOf(listAddInfo.get(offset).getDoDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getEoLimit1()>0)
+                    {
+                    binding4.seteandlimit(String.valueOf(listAddInfo.get(offset).getEoLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getEoDeductible1()>0)
+                    {
+                    binding4.seteanddeductible(String.valueOf(listAddInfo.get(offset).getEoDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getEmployerLimit1()>0)
+                    {
+                    binding4.setemployerslimit(String.valueOf(listAddInfo.get(offset).getEmployerLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getEmployerDeductible1()>0)
+                    {
+                    binding4.setemployersdeductible(String.valueOf(listAddInfo.get(offset).getEmployerDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getUmbrellaLimit1()>0)
+                    {
+                    binding4.setumbrellalimit(String.valueOf(listAddInfo.get(offset).getUmbrellaLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getUmbrellaDeductible1()>0)
+                    {
+                    binding4.setumbrelladeductible(String.valueOf(listAddInfo.get(offset).getUmbrellaDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getWrapUpLimit1()>0)
+                    {
+                    binding4.setwrapuplimit(String.valueOf(listAddInfo.get(offset).getWrapUpLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getWrapUpDeductible1()>0)
+                    {
+                    binding4.setwrapupdeductible(String.valueOf(listAddInfo.get(offset).getWrapUpDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getStdComprehensiveLimit1()>0)
+                    {
+                    binding4.setstdlimit(String.valueOf(listAddInfo.get(offset).getStdComprehensiveLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getStdComprehensiveDeductible1()>0)
+                    {
+                    binding4.setstddeductible(String.valueOf(listAddInfo.get(offset).getStdComprehensiveDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getAirConditioningLimit1()>0)
+                    {
+                    binding4.setaclimit(String.valueOf(listAddInfo.get(offset).getAirConditioningLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getAirConditioningDeductible1()>0)
+                    {
+                    binding4.setacdeductible(String.valueOf(listAddInfo.get(offset).getAirConditioningDeductible1()));
+                    }
+                    if(listAddInfo.get(offset).getProductionMachineryLimit1()>0)
+                    {
+                    binding4.setproductionmachinerylimit(String.valueOf(listAddInfo.get(offset).getProductionMachineryLimit1()));
+                    }
+                    if(listAddInfo.get(offset).getProductionMachineryDeductible1()>0)
+                    {
+                    binding4.setproductionmachinerydeductible(String.valueOf(listAddInfo.get(offset).getProductionMachineryDeductible1()));
+                    }
+                    binding4.setothercoverage1(listAddInfo.get(offset).getOthercoverage11()); 
+                    binding4.setothercoverage2(listAddInfo.get(offset).getOthercoverage21()); 
+                    if(listAddInfo.get(offset).getOtherCoverageLimit11()>0)
+                    {
+                    binding4.setothercoverage1limit(String.valueOf(listAddInfo.get(offset).getOtherCoverageLimit11()));
+                    }
+                    if(listAddInfo.get(offset).getOtherCoverageDeductible11()>0)
+                    {
+                    binding4.setothercoverage1deductible(String.valueOf(listAddInfo.get(offset).getOtherCoverageDeductible11()));
+                    }
+                    if(listAddInfo.get(offset).getOtherCoverageLimit21()>0)
+                    {
+                    binding4.setothercoverage2limit(String.valueOf(listAddInfo.get(offset).getOtherCoverageLimit21()));
+                    }
+                    if(listAddInfo.get(offset).getOtherCoverageDeductible21()>0)
+                    {
+                    binding4.setothercoverage2deductible(String.valueOf(listAddInfo.get(offset).getOtherCoverageDeductible21()));
+                    }
+                    binding4.setadditionalcoverage(listAddInfo.get(offset).getAdditionalCoverage1());
+                    
                 } else {
                     System.out.println("Offset15 " + offset);
                     binding4.setlocationaddress("");
@@ -4109,6 +4481,7 @@ public class NextScreenController implements Initializable, IScreenController {
     }
 
     public void viewApplication(final GetInsuranceFormResponse form, final String formId) {
+        stage.show();
         isEdit = true;
         Task task = new Task<Void>() {
             @Override
@@ -4117,22 +4490,22 @@ public class NextScreenController implements Initializable, IScreenController {
                     InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
                     GetInsuranceFormRequest req = new GetInsuranceFormRequest();
                     req.setFormId(formId);
-                    // req.setProducerId(binding.getsearchproducerid());
-                    //req.setStatus("NEW");
-                    //req.setFormId(Integer.parseInt(binding.getsearchapplicationid()));
-
                     GetInsuranceFormResponse response = port.getInsuranceOperationsPort().getForm(req);
-
                     if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
+                        stopLoading();
                         System.out.println("formid is " + formId);
                         setFormId(formId);
-
                         assign(response);
                     }
+                    else
+                { stopLoading();
+                    errors(response.getErrorMessage());
+                }
                 } catch (Exception e) {
+                    stopLoading();
+                    errors(e.getMessage());
                     e.printStackTrace();
                 }
-                //   successMessage("You are successfully logged in");
                 return null;
             }
 
@@ -4143,10 +4516,6 @@ public class NextScreenController implements Initializable, IScreenController {
 
     @FXML
     public void downloadFiles() {
-        System.out.println("InsideDownload");
-        System.out.println("Name" + fileName1);
-        System.out.println("Name1" + fileName2);
-        System.out.println("Name2" + fileName3);
         
         stage.show();
         if (file1 != null) {
@@ -4183,17 +4552,17 @@ public class NextScreenController implements Initializable, IScreenController {
         if (file10 != null) {
             WriteByteArray.writeByteArray(applicationid + "\\" + fileName10, file10);
         }
-        stopLoading();
+        stopLoading();        
+        successMessage1("Files successfully downloaded in C: drive.");
     }
-
+    
+    
     public void assign(final GetInsuranceFormResponse form) {
         Platform.runLater(new Runnable() {
             public void run() {
                 applicationid = form.getFormId();
-
                 file1 = form.getFile1();
                 fileName1 = form.getFile1Name();
-
                 file2 = form.getFile2();
                 fileName2 = form.getFile2Name();
                 file3 = form.getFile3();
@@ -4212,7 +4581,7 @@ public class NextScreenController implements Initializable, IScreenController {
                 fileName9 = form.getFile9Name();
                 file10 = form.getFile10();
                 fileName10 = form.getFile10Name();
-                System.out.println("FIlenames" + fileName1 + fileName2 + fileName3 + fileName4);
+                System.out.println("Filenames" + fileName1 + fileName2 + fileName3 + fileName4);
 
                 if (form != null) {
                     System.out.println("Form is not null");
@@ -4265,8 +4634,6 @@ public class NextScreenController implements Initializable, IScreenController {
                     finYearEnd.getSelectionModel().select("December");
                 } else {
                 }
-                System.out.println("There");
-
                 if ("Select".equals(form.getGroupBenefits())) {
                     groupbenefits.getSelectionModel().select("Select");
                 } else if ("Yes".equals(form.getGroupBenefits())) {
@@ -4466,10 +4833,15 @@ public class NextScreenController implements Initializable, IScreenController {
 
                 produceridfromform = form.getProducer();
                 branchfromform = form.getBranch();
-                System.out.println("producer id from form " + produceridfromform);
-                System.out.println("Branch from form " + branchfromform);
-                returnedname.setText(produceridfromform);
-                returnedbranch.setText(branchfromform);
+                returnedname.setText(form.getProducer());
+                returnedbranch.setText(form.getBranch());
+                datefromform=form.getCreationDate();
+                System.out.println(datefromform);
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+                GregorianCalendar gc = datefromform.toGregorianCalendar();
+                String formatted_date = sdf.format(gc.getTime());
+                System.out.println(formatted_date);
+                returneddate.setText(formatted_date);
                 keycontact.setText(form.getKeyContact());
                 keyphone.setText(form.getKeyContactPhone());
                 keyemail.setText(form.getKeyContactEmailAddress());
@@ -4766,7 +5138,7 @@ public class NextScreenController implements Initializable, IScreenController {
         task = new Task<Void>() {
             @Override
             public Void call() throws Exception {
-                System.out.println("Call");
+                
                 try {
                     System.out.println("edit " + isEdit);
                     if (isEdit) {
@@ -4777,7 +5149,8 @@ public class NextScreenController implements Initializable, IScreenController {
                         req1.setProducer(produceridfromform);
                         System.out.println(insurancetypeflag);
                         req1.setBranch(branchfromform);
-
+                        
+                        req1.setCreationDate(datefromform);
                         if (insurancetypeflag == 1) {
                             req1.setType("Commercial");
                         } else if (insurancetypeflag == 2) {
@@ -4786,7 +5159,6 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setType("Both");
                         }
                         //choicebox
-                        System.out.println("Form Id of the " + getFormId());
                         req1.setFormId(getFormId());
                         req1.setSeverity(binding.getSeverity());
                         req1.setEntityType(binding.getEntityType());
@@ -4836,9 +5208,6 @@ public class NextScreenController implements Initializable, IScreenController {
                         req1.setPlumbingother(binding4.getplumbingother());
                         req1.setFireProtection(binding4.getFireProtection());
                         req1.setSecurity(binding4.getSecurity());
-                        GregorianCalendar c = new GregorianCalendar();
-                        c.setTime(Calendar.getInstance().getTime());
-                        req1.setCreationDate(DatatypeFactory.newInstance().newXMLGregorianCalendar(c));
                         req1.setKeyContact(binding.getKeyContact());
                         req1.setKeyContactEmailAddress(binding.getKeyEmail());
                         req1.setKeyContactPhone(binding.getKeyPhone());
@@ -5011,6 +5380,7 @@ public class NextScreenController implements Initializable, IScreenController {
                         req1.setProducercomments(binding3.getproducercomments());
                         req1.setMarketercomments(binding3.getmarketercomments());
 
+                        // View Application Commercial Property
                         if (!CommonValidations.isStringEmpty(binding4.getbuildinglimit())) {
                             req1.setBuildingLimit(Double.parseDouble(binding4.getbuildinglimit()));
                         }
@@ -5229,7 +5599,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setSef96Limit(Double.parseDouble(binding4.getsef96limit()));
                         }
 
-                        if (!CommonValidations.isStringEmpty(binding4.getsef94deductible())) {
+                        if (!CommonValidations.isStringEmpty(binding4.getsef96deductible())) {
                             req1.setSef96Deductible(Double.parseDouble(binding4.getsef96deductible()));
                         }
 
@@ -5455,7 +5825,6 @@ public class NextScreenController implements Initializable, IScreenController {
                                 i++;
                             }
                         }
-                        System.out.println("123");
                         StringTemplateGroup emailTemplateGroup = new StringTemplateGroup(
                                 "welcomeloginemail group", new File("bin").getAbsolutePath());
                         StringTemplate submitFormMail = emailTemplateGroup
@@ -5480,7 +5849,8 @@ public class NextScreenController implements Initializable, IScreenController {
                         CommonResponseAttributes response = port.getInsuranceOperationsPort().editFormSubmission(req1);
                         if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
                             stopLoading();
-                            successMessage("Form has been updated");
+                            successMessage("Form has been successfully updated");
+                            System.out.println("Updated form producer id"+producerid);
                             if (producerid.equals("") || producerid.equals(null)) {
                                 screenPage.setScreen("OtherScreen");
                                 animatedMovement(-1269, -1269);
@@ -6021,13 +6391,13 @@ public class NextScreenController implements Initializable, IScreenController {
                             successMessage("Form has been submitted. Form id is:" + response.getFormId());
 
                         } else {
+                            stopLoading();
                             successMessage(response.getErrorMessage());
                             errors(response.getErrorMessage());
                         }
                     }
                 } catch (Exception ex) {
                     stopLoading();
-                    System.out.println("Exception SUbmit");
                     successMessage1(ex.getMessage());
                 }
                 return null;
@@ -6204,6 +6574,15 @@ public class NextScreenController implements Initializable, IScreenController {
         this.date17 = date17;
     }
 
+    
+    public XMLGregorianCalendar getDateFromForm() {
+        return datefromform;
+    }
+
+    public void setDateFromForm(XMLGregorianCalendar datefromform) {
+        this.datefromform = datefromform;
+    }
+    
     public XMLGregorianCalendar getDate11() {
         return date11;
     }
@@ -6216,7 +6595,7 @@ public class NextScreenController implements Initializable, IScreenController {
         Platform.runLater(new Runnable() {
             public void run() {
 //                Dialogs.showErrorDialog(null, message, "Oops!!", "Error");
-  new AlertDialog((Stage) keycontact.getParent().getScene().getWindow(), message, AlertDialog.ICON_INFO).showAndWait();
+  new AlertDialog((Stage) keycontact.getParent().getScene().getWindow(), message, AlertDialog.ICON_ERROR).showAndWait();
                 stopLoading();
             }
         });

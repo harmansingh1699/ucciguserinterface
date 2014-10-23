@@ -1477,7 +1477,7 @@
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="22">
                <children>
-                  <TextField fx:id="othercoverage1deductible" />
+                  <TextField fx:id="othercoverage1deductible" alignment="CENTER" />
                </children>
             </HBox>
              <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="23">

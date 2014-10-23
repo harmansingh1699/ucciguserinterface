@@ -222,6 +222,10 @@ public class FormEntry4Binding {
     private StringProperty closequote;
     private StringProperty closebounded;
     
+    //subject
+    private StringProperty sendmailsubject;
+    private StringProperty senddelayedmailsubject;
+    
     //send email-checkbox
     private StringProperty mail1;
     private StringProperty mail2;
@@ -470,6 +474,8 @@ public class FormEntry4Binding {
         closequote=new SimpleStringProperty();
         closebounded=new SimpleStringProperty();
         
+        sendmailsubject=new SimpleStringProperty();
+        senddelayedmailsubject=new SimpleStringProperty();
         mail1=new SimpleStringProperty();
         mail2=new SimpleStringProperty();
         mail3=new SimpleStringProperty();
@@ -505,6 +511,31 @@ public class FormEntry4Binding {
         email3=new SimpleStringProperty();
         
     }
+    
+     public String getSendMailSubject() {
+        return (String) this.sendmailsubject.get();
+    }
+
+    public void setSendMailSubject(String sendmailsubject ) {
+        this.sendmailsubject.set(sendmailsubject);
+    }
+
+    public StringProperty sendMailSubjectProperty() {
+        return this.sendmailsubject;
+    }
+    
+    public String getSendDelayedMailSubject() {
+        return (String) this.senddelayedmailsubject.get();
+    }
+
+    public void setSendDelayedMailSubject(String senddelayedmailsubject ) {
+        this.senddelayedmailsubject.set(senddelayedmailsubject);
+    }
+
+    public StringProperty sendDelayedMailSubjectProperty() {
+        return this.senddelayedmailsubject;
+    }
+    
     
     public String gethauling() {
         return (String) this.hauling.get();
@@ -640,7 +671,7 @@ public class FormEntry4Binding {
     }
     
     public String getCloseQuote() {
-        return (String) this.closecompany.get();
+        return (String) this.closequote.get();
     }
 
     public void setCloseQuote(String closequote) {
