@@ -1240,7 +1240,8 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                         successSearch2();
                     }
                     else if(response.getStatus()==null || response.getStatus().trim().isEmpty())
-                    {   stopLoading1();
+                    {   System.out.println("Response"+response.getStatus());
+                        stopLoading1();
                         successMessage("There are currently no active applications");
                 }
                 } catch (Exception e) {
@@ -1248,7 +1249,6 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     errors(e.getMessage());
                     e.printStackTrace();
                 }
-                //   successMessage("You are successfully logged in");
                 return null;
             }
 

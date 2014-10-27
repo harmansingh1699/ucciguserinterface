@@ -6,28 +6,24 @@
 package com.ui.uccig;
 
 import com.calendar.DatePicker;
-import com.rav.insurance.insuranceformoperations.webservice.contracts.GetInsuranceFormResponse;
 import com.ui.binding.FormEntry4Binding;
 import com.ui.util.SavingFile;
 import com.ui.util.savinglocally;
+import harrun.AlertDialog;
 import java.io.File;
 import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import static java.util.Collections.list;
 import java.util.GregorianCalendar;
-import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 import javafx.animation.TranslateTransition;
 import javafx.animation.TranslateTransitionBuilder;
+import javafx.application.Platform;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 import javafx.beans.binding.Bindings;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
@@ -36,6 +32,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
@@ -398,8 +395,9 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
     }
     @FXML
     public void backAuto() {
+        System.out.println("back auto clicked");
         screenPage.setScreen("NextScreen");
-        animatedMovement(-6345, 0);
+        //animatedMovement(-6345, 0);
     }
     @FXML
     public void back1() {
@@ -452,6 +450,32 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
                             
                             ((NextScreenController)screenPage.getControlledScreen("NextScreen")).submitFormAction();
     }
+    
+    public void autosuccessMessage(final String message, final String producerid) {
+        Platform.runLater(new Runnable() {
+            public void run() {
+//                Dialogs.showInformationDialog(null, message, "Success", "Success");
+                new AlertDialog((Stage) docket1.getParent().getScene().getWindow(), message, AlertDialog.ICON_INFO).showAndWait();
+                if (producerid.trim() == null && producerid.trim().isEmpty()) {
+                    screenPage.setScreen("OtherScreen");
+                    animatedMovement(-1269, -715);
+                } else {
+                    screenPage.setScreen("NextScreen");
+                    animatedMovement(0, 0);
+                }
+                
+            }
+        });
+    }
+    public void autoerrorMessage(final String message) {
+        Platform.runLater(new Runnable() {
+            public void run() {
+//                Dialogs.showInformationDialog(null, message, "Success", "Success");
+                new AlertDialog((Stage) docket1.getParent().getScene().getWindow(), message, AlertDialog.ICON_ERROR).showAndWait();
+            }
+        });
+    }
+    
     public void autoviewmethod(String a, String b, String c)
     {
                 if("Select".equals(a))

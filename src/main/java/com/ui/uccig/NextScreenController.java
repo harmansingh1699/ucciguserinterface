@@ -685,8 +685,8 @@ public class NextScreenController implements Initializable, IScreenController {
     DatePicker datePicker6 = new DatePicker();
 
     int insurancetypeflag = 0;
-    
-    private static String os=null;
+
+    private static String os = null;
     private static int offset = 0;
     private List<AddAnotherInfo> listAddInfo;
 
@@ -787,7 +787,7 @@ public class NextScreenController implements Initializable, IScreenController {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //worklist.setStyle("-fx-font: 22 arial; -fx-base: #b6e7c9;");
-        os=System.getProperty("os.name");
+        os = System.getProperty("os.name");
         listAddInfo = new ArrayList();
         binding = new FormEntry1Binding();
         binding2 = new FormEntry2Binding();
@@ -817,7 +817,7 @@ public class NextScreenController implements Initializable, IScreenController {
         groupbenefits.getSelectionModel().selectFirst();
         pensionplan.getSelectionModel().selectFirst();
         basement.getSelectionModel().selectFirst();
-        
+
         System.out.println(os);
         Bindings.bindBidirectional(keycontact.textProperty(), binding.keyContactProperty());
         Bindings.bindBidirectional(keyphone.textProperty(), binding.keyPhoneProperty());
@@ -1427,7 +1427,6 @@ public class NextScreenController implements Initializable, IScreenController {
         };
         electricalfuses.selectedProperty().addListener(listener38);
 
-
         ChangeListener<Boolean> listener40 = new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
@@ -1688,13 +1687,13 @@ public class NextScreenController implements Initializable, IScreenController {
     @FXML
     public void exit() {
         System.out.println("Exit Called");
-       /* for (Node node : client1.getChildren()) {
-        System.out.println("Id: " + node.getId());
-        if (node instanceof TextField) {
-        // clear
-        ((TextField)node).setText("");
-    }
-}*/
+        /* for (Node node : client1.getChildren()) {
+         System.out.println("Id: " + node.getId());
+         if (node instanceof TextField) {
+         // clear
+         ((TextField)node).setText("");
+         }
+         }*/
         try {
             if (producerid == null || producerid.trim().isEmpty()) {
                 screenPage.setScreen("OtherScreen");
@@ -1752,7 +1751,7 @@ public class NextScreenController implements Initializable, IScreenController {
             Date date = new Date();
             returneddate.setText(dateFormat.format(date));
         }
-        
+
     }
 
     @FXML
@@ -1768,7 +1767,7 @@ public class NextScreenController implements Initializable, IScreenController {
             Date date = new Date();
             returneddate.setText(dateFormat.format(date));
         }
-        
+
     }
 
     @FXML
@@ -1829,17 +1828,19 @@ public class NextScreenController implements Initializable, IScreenController {
         }
 
     }
-  boolean contractorflag=true;
+    boolean contractorflag = true;
+
     @FXML
     public void openContractor() {
-        
+
         System.out.println(os);
         System.out.println("OpenContractor");
-        contractorflag=true;
-        if(os.contains("Windows"))
-        { new Rav1(new File("bin\\Contractors.doc").getAbsolutePath()).execute();}
-        else if (os.contains("Mac"))
-        {    new Rav1(new File("bin/Contractors.doc").getAbsolutePath()).execute();}
+        contractorflag = true;
+        if (os.contains("Windows")) {
+            new Rav1(new File("bin\\Contractors.doc").getAbsolutePath()).execute();
+        } else if (os.contains("Mac")) {
+            new Rav1(new File("bin/Contractors.doc").getAbsolutePath()).execute();
+        }
     }
 
     @FXML
@@ -1852,7 +1853,7 @@ public class NextScreenController implements Initializable, IScreenController {
                     System.out.println("Offset2 " + offset);
 
                     listAddInfo.get(offset).setAddress1(binding4.getlocationaddress());
-                    
+
                     if (!CommonValidations.isStringEmpty(binding4.getbuildinglimit())) {
                         listAddInfo.get(offset).setBuildingLimit1(Double.parseDouble(binding4.getbuildinglimit()));
                     }
@@ -2148,7 +2149,7 @@ public class NextScreenController implements Initializable, IScreenController {
 
                     listAddInfo.get(offset).setOthercoverage11(binding4.getothercoverage1());
                     listAddInfo.get(offset).setOthercoverage21(binding4.getothercoverage2());
-                    
+
                     if (binding4.getothercoverage1limit() != null && !(binding4.getothercoverage1limit().trim().equals(""))) {
                         listAddInfo.get(offset).setOtherCoverageLimit11(Double.parseDouble(binding4.getothercoverage1limit()));
                     }
@@ -2586,25 +2587,374 @@ public class NextScreenController implements Initializable, IScreenController {
                 if (listAddInfo.get(offset) != null) {
                     System.out.println("Offset6 " + offset);
                     binding4.setlocationaddress(listAddInfo.get(offset).getAddress1());
-                    if(listAddInfo.get(offset).getAge1()>0)
-                    {
-                    binding4.setlocationage(Integer.toString(listAddInfo.get(offset).getAge1()));
+
+                    if (listAddInfo.get(offset).getAge1() > 0) {
+                        binding4.setlocationage(Integer.toString(listAddInfo.get(offset).getAge1()));
                     }
-                    if(listAddInfo.get(offset).getTotalSqFootage1()>0)
-                    {
-                    binding4.settotsqfootage(String.valueOf(listAddInfo.get(offset).getTotalSqFootage1()));
+                    if (listAddInfo.get(offset).getTotalSqFootage1() > 0) {
+                        binding4.settotsqfootage(String.valueOf(listAddInfo.get(offset).getTotalSqFootage1()));
                     }
-                    if(listAddInfo.get(offset).getInsdSqFootage1()>0)
-                    {
-                    binding4.setinsidesqfootage(String.valueOf(listAddInfo.get(offset).getInsdSqFootage1()));
+                    if (listAddInfo.get(offset).getInsdSqFootage1() > 0) {
+                        binding4.setinsidesqfootage(String.valueOf(listAddInfo.get(offset).getInsdSqFootage1()));
                     }
-                    if(listAddInfo.get(offset).getNoOfStories1()>0)
-                    {
-                    binding4.setnoofstories(String.valueOf(listAddInfo.get(offset).getNoOfStories1()));
+                    if (listAddInfo.get(offset).getNoOfStories1() > 0) {
+                        binding4.setnoofstories(String.valueOf(listAddInfo.get(offset).getNoOfStories1()));
                     }
-                    
-                    
-                    
+                    if ("selected".equals(listAddInfo.get(offset).getTruckMan1())) {
+                        mtctruckman.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getOwner11())) {
+                        mtcowner.setSelected(true);
+                    }
+                    if ("selected80".equals(listAddInfo.get(offset).getGrossEarning801())) {
+                        ge80.setSelected(true);
+                    }
+                    if ("selected50".equals(listAddInfo.get(offset).getGrossEarning801())) {
+                        ge50.setSelected(true);
+                    }
+
+                    if ("selected".equals(listAddInfo.get(offset).getWallsframe1())) {
+                        wallsframe.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getWallshcb1())) {
+                        wallshcb.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getWallssteel1())) {
+                        wallssteel.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getWallsbrick1())) {
+                        wallsbrick.setSelected(true);
+                    }
+
+                    if ("selected".equals(listAddInfo.get(offset).getRoofwood1())) {
+                        woodjoist.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getRoofsteel1())) {
+                        steeldeck.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getRoofconcrete1())) {
+                        roofconcrete.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getFloorsconcrete1())) {
+                        floorsconcrete.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getFloorswood1())) {
+                        floorswood.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getHeatinggas1())) {
+                        fagas.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getHeatingoil1())) {
+                        faoil.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getHeatingelectric1())) {
+                        heatingelectric.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getHeatingother1())) {
+                        heatingother.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getElectricalbreakers1())) {
+                        electricalbreakers.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getElectricalfuses1())) {
+                        electricalfuses.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getPlumbingcopper1())) {
+                        copper.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getPlumbingpvc1())) {
+                        pvc.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getPlumbingother1())) {
+                        plumbingother.setSelected(true);
+                    }
+                    if ("Sprinklers".equals(listAddInfo.get(offset).getFireProtection1())) {
+                        sprinklers.setSelected(true);
+                    }
+                    if ("SVC".equals(listAddInfo.get(offset).getFireProtection1())) {
+                        svccontract.setSelected(true);
+                    }
+                    if ("Hydrant".equals(listAddInfo.get(offset).getFireProtection1())) {
+                        hydrant.setSelected(true);
+                    }
+                    if ("Firehall".equals(listAddInfo.get(offset).getFireProtection1())) {
+                        firehall.setSelected(true);
+                    }
+                    if ("Unprotected".equals(listAddInfo.get(offset).getFireProtection1())) {
+                        unprotected.setSelected(true);
+                    }
+                    if ("Alarm System".equals(listAddInfo.get(offset).getSecurity1())) {
+                        alarmsystem.setSelected(true);
+                    }
+                    if ("Central Monitored".equals(listAddInfo.get(offset).getSecurity1())) {
+                        centralmonitored.setSelected(true);
+                    }
+                    if ("Window Bars".equals(listAddInfo.get(offset).getSecurity1())) {
+                        windowbars.setSelected(true);
+                    }
+                    if ("Dead Bolts".equals(listAddInfo.get(offset).getSecurity1())) {
+                        deadbolts.setSelected(true);
+                    }
+                    if ("Select".equals(listAddInfo.get(offset).getBasement1())) {
+                        basement.getSelectionModel().select("Select");
+                    } else if ("Yes".equals(listAddInfo.get(offset).getBasement1())) {
+                        basement.getSelectionModel().select("Yes");
+                    } else if ("No".equals(listAddInfo.get(offset).getBasement1())) {
+                        basement.getSelectionModel().select("No");
+                    }
+                    if (listAddInfo.get(offset).getBuildingLimit1() > 0) {
+                        binding4.setbuildinglimit(String.valueOf(listAddInfo.get(offset).getBuildingLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getBuildingDeductible1() > 0) {
+                        binding4.setbuildingdeductible(String.valueOf(listAddInfo.get(offset).getBuildingDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getContentsLimit1() > 0) {
+                        binding4.setcontentslimit(String.valueOf(listAddInfo.get(offset).getContentsLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getContentsDeductible1() > 0) {
+                        binding4.setcontentsdeductible(String.valueOf(listAddInfo.get(offset).getContentsDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getContentsLimit1() > 0) {
+                        binding4.setstocklimit(String.valueOf(listAddInfo.get(offset).getStockLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getStockDeductible1() > 0) {
+                        binding4.setstockdeductible(String.valueOf(listAddInfo.get(offset).getStockDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getOfficeContentLimit1() > 0) {
+                        binding4.setofficelimit(String.valueOf(listAddInfo.get(offset).getOfficeContentLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getOfficeContentDeductible1() > 0) {
+                        binding4.setofficedeductible(String.valueOf(listAddInfo.get(offset).getOfficeContentDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getEdpLimit1() > 0) {
+                        binding4.setedplimit(String.valueOf(listAddInfo.get(offset).getEdpLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getEdpDeductible1() > 0) {
+                        binding4.setedpdeductible(String.valueOf(listAddInfo.get(offset).getEdpDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getEquipmentLimit1() > 0) {
+                        binding4.setequipmentlimit(String.valueOf(listAddInfo.get(offset).getEquipmentLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getEquipmentDeductible1() > 0) {
+                        binding4.setequipmentdeductible(String.valueOf(listAddInfo.get(offset).getEquipmentDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getOffPremisesLimit1() > 0) {
+                        binding4.setoffpremiseslimit(String.valueOf(listAddInfo.get(offset).getOffPremisesLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getOffPremisesDeductible1() > 0) {
+                        binding4.setoffpremisesdeductible(String.valueOf(listAddInfo.get(offset).getOffPremisesDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getTransitLimit1() > 0) {
+                        binding4.settransitlimit(String.valueOf(listAddInfo.get(offset).getTransitLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getTransitDeductible1() > 0) {
+                        binding4.settransitdeductible(String.valueOf(listAddInfo.get(offset).getTransitDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getMiscPropertyLimit1() > 0) {
+                        binding4.setmiscpropertylimit(String.valueOf(listAddInfo.get(offset).getMiscPropertyLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getMiscPropertyDeductible1() > 0) {
+                        binding4.setmiscpropertydeductible(String.valueOf(listAddInfo.get(offset).getMiscPropertyDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getContractorEquipmentLimit1() > 0) {
+                        binding4.setcontractorsequipmentlimit(String.valueOf(listAddInfo.get(offset).getContractorEquipmentLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getContractorEquipmentDeductible1() > 0) {
+                        binding4.setcontractorsequipmentdeductible(String.valueOf(listAddInfo.get(offset).getContractorEquipmentDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getInstallationFloaterLimit1() > 0) {
+                        binding4.setcontentslimit(String.valueOf(listAddInfo.get(offset).getInstallationFloaterLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getInstallationFloaterDeductible1() > 0) {
+                        binding4.setinstallationfloatordeductible(String.valueOf(listAddInfo.get(offset).getInstallationFloaterDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getToolFloaterLimit1() > 0) {
+                        binding4.settoolfloatorlimit(String.valueOf(listAddInfo.get(offset).getToolFloaterLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getToolFloaterDeductible1() > 0) {
+                        binding4.settoolfloatordeductible(String.valueOf(listAddInfo.get(offset).getToolFloaterDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getSignFloaterLimit1() > 0) {
+                        binding4.setsignfloatorlimit(String.valueOf(listAddInfo.get(offset).getSignFloaterLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getSignFloaterDeductible1() > 0) {
+                        binding4.setsignfloatordeductible(String.valueOf(listAddInfo.get(offset).getSignFloaterDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getMotorTruckLimit1() > 0) {
+                        binding4.setmotortruckcargolimit(String.valueOf(listAddInfo.get(offset).getMotorTruckLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getMotorTruckDeductible1() > 0) {
+                        binding4.setmotortruckcargodeductible(String.valueOf(listAddInfo.get(offset).getMotorTruckDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getGlassLimit1() > 0) {
+                        binding4.setglasslimit(String.valueOf(listAddInfo.get(offset).getGlassLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getGlassDeductible1() > 0) {
+                        binding4.setglassdeductible(String.valueOf(listAddInfo.get(offset).getGlassDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getSewerBackupDeductible1() > 0) {
+                        binding4.setsewerblackupdeductible(String.valueOf(listAddInfo.get(offset).getSewerBackupDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getFloodDeductible1() > 0) {
+                        binding4.setflooddeductible(String.valueOf(listAddInfo.get(offset).getFloodDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getEarthquakeDeductible1() > 0) {
+                        binding4.setearthquakedeductible(String.valueOf(listAddInfo.get(offset).getEarthquakeDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getProfitLimit1() > 0) {
+                        binding4.setprofitslimit(String.valueOf(listAddInfo.get(offset).getProfitLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getProfitDeductible1() > 0) {
+                        binding4.setprofitsdeductible(String.valueOf(listAddInfo.get(offset).getProfitDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getGrossEarningLimit1() > 0) {
+                        binding4.setgrossearningslimit(String.valueOf(listAddInfo.get(offset).getGrossEarningLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getToolFloaterDeductible1() > 0) {
+                        binding4.setgrossearningsdeductible(String.valueOf(listAddInfo.get(offset).getGrossEarningDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getRentalIncomeLimit1() > 0) {
+                        binding4.setrentalincomelimit(String.valueOf(listAddInfo.get(offset).getRentalIncomeLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getRentalIncomeDeductible1() > 0) {
+                        binding4.setrentalincomedeductible(String.valueOf(listAddInfo.get(offset).getRentalIncomeDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getExtraExpenseLimit1() > 0) {
+                        binding4.setextraexpenselimit(String.valueOf(listAddInfo.get(offset).getExtraExpenseLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getExtraExpenseDeductible1() > 0) {
+                        binding4.setextraexpensedeductible(String.valueOf(listAddInfo.get(offset).getExtraExpenseDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getOffPremisesLimit1() > 0) {
+                        binding4.setoffpremiseslimit(String.valueOf(listAddInfo.get(offset).getOffPremisesLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getOffPremisesDeductible1() > 0) {
+                        binding4.setoffpremisesdeductible(String.valueOf(listAddInfo.get(offset).getOffPremisesDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getInsideOutsideLimit1() > 0) {
+                        binding4.setinsideoutsidelimit(String.valueOf(listAddInfo.get(offset).getInsideOutsideLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getInsideOutsideDeductible1() > 0) {
+                        binding4.setinsideoutsidedeductible(String.valueOf(listAddInfo.get(offset).getInsideOutsideDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getBfMoneyLimit1() > 0) {
+                        binding4.setbfmoneylimit(String.valueOf(listAddInfo.get(offset).getBfMoneyLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getBfMoneyDeductible1() > 0) {
+                        binding4.setbfmoneydeductible(String.valueOf(listAddInfo.get(offset).getBfMoneyDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getDeopistorForgeryLimit1() > 0) {
+                        binding4.setforgerylimit(String.valueOf(listAddInfo.get(offset).getDeopistorForgeryLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getDeopistorForgeryDeductible1() > 0) {
+                        binding4.setforgerydeductible(String.valueOf(listAddInfo.get(offset).getDeopistorForgeryDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getMoneyOrdersLimit1() > 0) {
+                        binding4.setmoneyorderslimit(String.valueOf(listAddInfo.get(offset).getMoneyOrdersLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getMoneyOrdersDeductible1() > 0) {
+                        binding4.setmoneyordersdeductible(String.valueOf(listAddInfo.get(offset).getMoneyOrdersDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getEmployDishonestyLimit1() > 0) {
+                        binding4.setdishonestylimit(String.valueOf(listAddInfo.get(offset).getEmployDishonestyLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getEmployDishonestyDeductible1() > 0) {
+                        binding4.setdishonestydeductible(String.valueOf(listAddInfo.get(offset).getEmployDishonestyDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getCglLimit1() > 0) {
+                        binding4.setcgllimit(String.valueOf(listAddInfo.get(offset).getCglLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getCglDeductible1() > 0) {
+                        binding4.setcgldeductible(String.valueOf(listAddInfo.get(offset).getCglDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getTenantsLegalLimit1() > 0) {
+                        binding4.settenantslimit(String.valueOf(listAddInfo.get(offset).getTenantsLegalLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getTenantsLegalDeductible1() > 0) {
+                        binding4.settenantsdeductible(String.valueOf(listAddInfo.get(offset).getTenantsLegalDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getNonOwnedAutoLimit1() > 0) {
+                        binding4.setnonownedlimit(String.valueOf(listAddInfo.get(offset).getNonOwnedAutoLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getNonOwnedAutoDeductible1() > 0) {
+                        binding4.setnonowneddeductible(String.valueOf(listAddInfo.get(offset).getNonOwnedAutoDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getSef94Limit1() > 0) {
+                        binding4.setsef94limit(String.valueOf(listAddInfo.get(offset).getSef94Limit1()));
+                    }
+                    if (listAddInfo.get(offset).getSef96Limit1() > 0) {
+                        binding4.setsef96limit(String.valueOf(listAddInfo.get(offset).getSef96Limit1()));
+                    }
+                    if (listAddInfo.get(offset).getSef94Deductible1() > 0) {
+                        binding4.setsef94deductible(String.valueOf(listAddInfo.get(offset).getSef94Deductible1()));
+                    }
+                    if (listAddInfo.get(offset).getSef96Deductible1() > 0) {
+                        binding4.setsef96deductible(String.valueOf(listAddInfo.get(offset).getSef96Deductible1()));
+                    }
+                    if (listAddInfo.get(offset).getDoLimit1() > 0) {
+                        binding4.setdandlimit(String.valueOf(listAddInfo.get(offset).getDoLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getDoDeductible1() > 0) {
+                        binding4.setdanddeductible(String.valueOf(listAddInfo.get(offset).getDoDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getEoLimit1() > 0) {
+                        binding4.seteandlimit(String.valueOf(listAddInfo.get(offset).getEoLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getEoDeductible1() > 0) {
+                        binding4.seteanddeductible(String.valueOf(listAddInfo.get(offset).getEoDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getEmployerLimit1() > 0) {
+                        binding4.setemployerslimit(String.valueOf(listAddInfo.get(offset).getEmployerLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getEmployerDeductible1() > 0) {
+                        binding4.setemployersdeductible(String.valueOf(listAddInfo.get(offset).getEmployerDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getUmbrellaLimit1() > 0) {
+                        binding4.setumbrellalimit(String.valueOf(listAddInfo.get(offset).getUmbrellaLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getUmbrellaDeductible1() > 0) {
+                        binding4.setumbrelladeductible(String.valueOf(listAddInfo.get(offset).getUmbrellaDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getWrapUpLimit1() > 0) {
+                        binding4.setwrapuplimit(String.valueOf(listAddInfo.get(offset).getWrapUpLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getWrapUpDeductible1() > 0) {
+                        binding4.setwrapupdeductible(String.valueOf(listAddInfo.get(offset).getWrapUpDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getStdComprehensiveLimit1() > 0) {
+                        binding4.setstdlimit(String.valueOf(listAddInfo.get(offset).getStdComprehensiveLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getStdComprehensiveDeductible1() > 0) {
+                        binding4.setstddeductible(String.valueOf(listAddInfo.get(offset).getStdComprehensiveDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getAirConditioningLimit1() > 0) {
+                        binding4.setaclimit(String.valueOf(listAddInfo.get(offset).getAirConditioningLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getAirConditioningDeductible1() > 0) {
+                        binding4.setacdeductible(String.valueOf(listAddInfo.get(offset).getAirConditioningDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getProductionMachineryLimit1() > 0) {
+                        binding4.setproductionmachinerylimit(String.valueOf(listAddInfo.get(offset).getProductionMachineryLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getProductionMachineryDeductible1() > 0) {
+                        binding4.setproductionmachinerydeductible(String.valueOf(listAddInfo.get(offset).getProductionMachineryDeductible1()));
+                    }
+                    binding4.setothercoverage1(listAddInfo.get(offset).getOthercoverage11());
+                    binding4.setothercoverage2(listAddInfo.get(offset).getOthercoverage21());
+                    if (listAddInfo.get(offset).getOtherCoverageLimit11() > 0) {
+                        binding4.setothercoverage1limit(String.valueOf(listAddInfo.get(offset).getOtherCoverageLimit11()));
+                    }
+                    if (listAddInfo.get(offset).getOtherCoverageDeductible11() > 0) {
+                        binding4.setothercoverage1deductible(String.valueOf(listAddInfo.get(offset).getOtherCoverageDeductible11()));
+                    }
+                    if (listAddInfo.get(offset).getOtherCoverageLimit21() > 0) {
+                        binding4.setothercoverage2limit(String.valueOf(listAddInfo.get(offset).getOtherCoverageLimit21()));
+                    }
+                    if (listAddInfo.get(offset).getOtherCoverageDeductible21() > 0) {
+                        binding4.setothercoverage2deductible(String.valueOf(listAddInfo.get(offset).getOtherCoverageDeductible21()));
+                    }
+                    binding4.setadditionalcoverage(listAddInfo.get(offset).getAdditionalCoverage1());
+
                 } else {
                     System.out.println("Offset7 " + offset);
                     binding4.setlocationaddress("");
@@ -3428,7 +3778,7 @@ public class NextScreenController implements Initializable, IScreenController {
             } catch (Exception e) {
                 System.out.println("Offset12 " + offset);
                 AddAnotherInfo obj = new AddAnotherInfo();
-                
+
                 obj.setAddress1(binding4.getlocationaddress());
 
                 if (!CommonValidations.isStringEmpty(binding4.getbuildinglimit())) {
@@ -3795,359 +4145,376 @@ public class NextScreenController implements Initializable, IScreenController {
                 System.out.println(listAddInfo.get(offset).getAddress1());
                 if (listAddInfo.get(offset) != null) {
                     System.out.println("Offset14 " + offset);
+                    // Previous
                     binding4.setlocationaddress(listAddInfo.get(offset).getAddress1());
-                    if(listAddInfo.get(offset).getAge1()>0)
-                    {
-                    binding4.setlocationage(Integer.toString(listAddInfo.get(offset).getAge1()));
-                    }
-                    if(listAddInfo.get(offset).getTotalSqFootage1()>0)
-                    {
-                    binding4.settotsqfootage(String.valueOf(listAddInfo.get(offset).getTotalSqFootage1()));
-                    }
-                    if(listAddInfo.get(offset).getInsdSqFootage1()>0)
-                    {
-                    binding4.setinsidesqfootage(String.valueOf(listAddInfo.get(offset).getInsdSqFootage1()));
-                    }
-                    if(listAddInfo.get(offset).getNoOfStories1()>0)
-                    {
-                    binding4.setnoofstories(String.valueOf(listAddInfo.get(offset).getNoOfStories1()));
-                    }
-                    if(listAddInfo.get(offset).getBuildingLimit1()>0)
-                    {
-                    binding4.setbuildinglimit(String.valueOf(listAddInfo.get(offset).getBuildingLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getBuildingDeductible1()>0)
-                    {
-                    binding4.setbuildingdeductible(String.valueOf(listAddInfo.get(offset).getBuildingDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getContentsLimit1()>0)
-                    {
-                    binding4.setcontentslimit(String.valueOf(listAddInfo.get(offset).getContentsLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getContentsDeductible1()>0)
-                    {
-                    binding4.setcontentsdeductible(String.valueOf(listAddInfo.get(offset).getContentsDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getContentsLimit1()>0)
-                    {
-                    binding4.setstocklimit(String.valueOf(listAddInfo.get(offset).getStockLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getStockDeductible1()>0)
-                    {
-                    binding4.setstockdeductible(String.valueOf(listAddInfo.get(offset).getStockDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getOfficeContentLimit1()>0)
-                    {
-                    binding4.setofficelimit(String.valueOf(listAddInfo.get(offset).getOfficeContentLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getOfficeContentDeductible1()>0)
-                    {
-                    binding4.setofficedeductible(String.valueOf(listAddInfo.get(offset).getOfficeContentDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getEdpLimit1()>0)
-                    {
-                    binding4.setedplimit(String.valueOf(listAddInfo.get(offset).getEdpLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getEdpDeductible1()>0)
-                    {
-                    binding4.setedpdeductible(String.valueOf(listAddInfo.get(offset).getEdpDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getEquipmentLimit1()>0)
-                    {
-                    binding4.setequipmentlimit(String.valueOf(listAddInfo.get(offset).getEquipmentLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getEquipmentDeductible1()>0)
-                    {
-                    binding4.setequipmentdeductible(String.valueOf(listAddInfo.get(offset).getEquipmentDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getOffPremisesLimit1()>0)
-                    {
-                    binding4.setoffpremiseslimit(String.valueOf(listAddInfo.get(offset).getOffPremisesLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getOffPremisesDeductible1()>0)
-                    {
-                    binding4.setoffpremisesdeductible(String.valueOf(listAddInfo.get(offset).getOffPremisesDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getTransitLimit1()>0)
-                    {
-                    binding4.settransitlimit(String.valueOf(listAddInfo.get(offset).getTransitLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getTransitDeductible1()>0)
-                    {
-                    binding4.settransitdeductible(String.valueOf(listAddInfo.get(offset).getTransitDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getMiscPropertyLimit1()>0)
-                    {
-                    binding4.setmiscpropertylimit(String.valueOf(listAddInfo.get(offset).getMiscPropertyLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getMiscPropertyDeductible1()>0)
-                    {
-                    binding4.setmiscpropertydeductible(String.valueOf(listAddInfo.get(offset).getMiscPropertyDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getContractorEquipmentLimit1()>0)
-                    {
-                    binding4.setcontractorsequipmentlimit(String.valueOf(listAddInfo.get(offset).getContractorEquipmentLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getContractorEquipmentDeductible1()>0)
-                    {
-                    binding4.setcontractorsequipmentdeductible(String.valueOf(listAddInfo.get(offset).getContractorEquipmentDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getInstallationFloaterLimit1()>0)
-                    {
-                    binding4.setcontentslimit(String.valueOf(listAddInfo.get(offset).getInstallationFloaterLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getInstallationFloaterDeductible1()>0)
-                    {
-                    binding4.setinstallationfloatordeductible(String.valueOf(listAddInfo.get(offset).getInstallationFloaterDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getToolFloaterLimit1()>0)
-                    {
-                    binding4.settoolfloatorlimit(String.valueOf(listAddInfo.get(offset).getToolFloaterLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getToolFloaterDeductible1()>0)
-                    {
-                    binding4.settoolfloatordeductible(String.valueOf(listAddInfo.get(offset).getToolFloaterDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getSignFloaterLimit1()>0)
-                    {
-                    binding4.setsignfloatorlimit(String.valueOf(listAddInfo.get(offset).getSignFloaterLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getSignFloaterDeductible1()>0)
-                    {
-                    binding4.setsignfloatordeductible(String.valueOf(listAddInfo.get(offset).getSignFloaterDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getMotorTruckLimit1()>0)
-                    {
-                    binding4.setmotortruckcargolimit(String.valueOf(listAddInfo.get(offset).getMotorTruckLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getMotorTruckDeductible1()>0)
-                    {
-                    binding4.setmotortruckcargodeductible(String.valueOf(listAddInfo.get(offset).getMotorTruckDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getGlassLimit1()>0)
-                    {
-                    binding4.setglasslimit(String.valueOf(listAddInfo.get(offset).getGlassLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getGlassDeductible1()>0)
-                    {
-                    binding4.setglassdeductible(String.valueOf(listAddInfo.get(offset).getGlassDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getSewerBackupDeductible1()>0)
-                    {
-                    binding4.setsewerblackupdeductible(String.valueOf(listAddInfo.get(offset).getSewerBackupDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getFloodDeductible1()>0)
-                    {
-                    binding4.setflooddeductible(String.valueOf(listAddInfo.get(offset).getFloodDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getEarthquakeDeductible1()>0)
-                    {
-                    binding4.setearthquakedeductible(String.valueOf(listAddInfo.get(offset).getEarthquakeDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getProfitLimit1()>0)
-                    {
-                    binding4.setprofitslimit(String.valueOf(listAddInfo.get(offset).getProfitLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getProfitDeductible1()>0)
-                    {
-                    binding4.setprofitsdeductible(String.valueOf(listAddInfo.get(offset).getProfitDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getGrossEarningLimit1()>0)
-                    {
-                    binding4.setgrossearningslimit(String.valueOf(listAddInfo.get(offset).getGrossEarningLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getToolFloaterDeductible1()>0)
-                    {
-                    binding4.setgrossearningsdeductible(String.valueOf(listAddInfo.get(offset).getGrossEarningDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getRentalIncomeLimit1()>0)
-                    {
-                    binding4.setrentalincomelimit(String.valueOf(listAddInfo.get(offset).getRentalIncomeLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getRentalIncomeDeductible1()>0)
-                    {
-                    binding4.setrentalincomedeductible(String.valueOf(listAddInfo.get(offset).getRentalIncomeDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getExtraExpenseLimit1()>0)
-                    {
-                    binding4.setextraexpenselimit(String.valueOf(listAddInfo.get(offset).getExtraExpenseLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getExtraExpenseDeductible1()>0)
-                    {
-                    binding4.setextraexpensedeductible(String.valueOf(listAddInfo.get(offset).getExtraExpenseDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getOffPremisesLimit1()>0)
-                    {
-                    binding4.setoffpremiseslimit(String.valueOf(listAddInfo.get(offset).getOffPremisesLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getOffPremisesDeductible1()>0)
-                    {
-                    binding4.setoffpremisesdeductible(String.valueOf(listAddInfo.get(offset).getOffPremisesDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getInsideOutsideLimit1()>0)
-                    {
-                    binding4.setinsideoutsidelimit(String.valueOf(listAddInfo.get(offset).getInsideOutsideLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getInsideOutsideDeductible1()>0)
-                    {
-                    binding4.setinsideoutsidedeductible(String.valueOf(listAddInfo.get(offset).getInsideOutsideDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getBfMoneyLimit1()>0)
-                    {
-                    binding4.setbfmoneylimit(String.valueOf(listAddInfo.get(offset).getBfMoneyLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getBfMoneyDeductible1()>0)
-                    {
-                    binding4.setbfmoneydeductible(String.valueOf(listAddInfo.get(offset).getBfMoneyDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getDeopistorForgeryLimit1()>0)
-                    {
-                    binding4.setforgerylimit(String.valueOf(listAddInfo.get(offset).getDeopistorForgeryLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getDeopistorForgeryDeductible1()>0)
-                    {
-                    binding4.setforgerydeductible(String.valueOf(listAddInfo.get(offset).getDeopistorForgeryDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getMoneyOrdersLimit1()>0)
-                    {
-                    binding4.setmoneyorderslimit(String.valueOf(listAddInfo.get(offset).getMoneyOrdersLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getMoneyOrdersDeductible1()>0)
-                    {
-                    binding4.setmoneyordersdeductible(String.valueOf(listAddInfo.get(offset).getMoneyOrdersDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getEmployDishonestyLimit1()>0)
-                    {
-                    binding4.setdishonestylimit(String.valueOf(listAddInfo.get(offset).getEmployDishonestyLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getEmployDishonestyDeductible1()>0)
-                    {
-                    binding4.setdishonestydeductible(String.valueOf(listAddInfo.get(offset).getEmployDishonestyDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getCglLimit1()>0)
-                    {
-                    binding4.setcgllimit(String.valueOf(listAddInfo.get(offset).getCglLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getCglDeductible1()>0)
-                    {
-                    binding4.setcgldeductible(String.valueOf(listAddInfo.get(offset).getCglDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getTenantsLegalLimit1()>0)
-                    {
-                    binding4.settenantslimit(String.valueOf(listAddInfo.get(offset).getTenantsLegalLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getTenantsLegalDeductible1()>0)
-                    {
-                    binding4.settenantsdeductible(String.valueOf(listAddInfo.get(offset).getTenantsLegalDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getNonOwnedAutoLimit1()>0)
-                    {
-                    binding4.setnonownedlimit(String.valueOf(listAddInfo.get(offset).getNonOwnedAutoLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getNonOwnedAutoDeductible1()>0)
-                    {
-                    binding4.setnonowneddeductible(String.valueOf(listAddInfo.get(offset).getNonOwnedAutoDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getSef94Limit1()>0)
-                    {
-                    binding4.setsef94limit(String.valueOf(listAddInfo.get(offset).getSef94Limit1()));
-                    }
-                    if(listAddInfo.get(offset).getSef96Limit1()>0)
-                    {
-                    binding4.setsef96limit(String.valueOf(listAddInfo.get(offset).getSef96Limit1()));
-                    }
-                    if(listAddInfo.get(offset).getSef94Deductible1()>0)
-                    {
-                    binding4.setsef94deductible(String.valueOf(listAddInfo.get(offset).getSef94Deductible1()));
-                    }
-                    if(listAddInfo.get(offset).getSef96Deductible1()>0)
-                    {
-                    binding4.setsef96deductible(String.valueOf(listAddInfo.get(offset).getSef96Deductible1()));
-                    }
-                    if(listAddInfo.get(offset).getDoLimit1()>0)
-                    {
-                    binding4.setdandlimit(String.valueOf(listAddInfo.get(offset).getDoLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getDoDeductible1()>0)
-                    {
-                    binding4.setdanddeductible(String.valueOf(listAddInfo.get(offset).getDoDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getEoLimit1()>0)
-                    {
-                    binding4.seteandlimit(String.valueOf(listAddInfo.get(offset).getEoLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getEoDeductible1()>0)
-                    {
-                    binding4.seteanddeductible(String.valueOf(listAddInfo.get(offset).getEoDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getEmployerLimit1()>0)
-                    {
-                    binding4.setemployerslimit(String.valueOf(listAddInfo.get(offset).getEmployerLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getEmployerDeductible1()>0)
-                    {
-                    binding4.setemployersdeductible(String.valueOf(listAddInfo.get(offset).getEmployerDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getUmbrellaLimit1()>0)
-                    {
-                    binding4.setumbrellalimit(String.valueOf(listAddInfo.get(offset).getUmbrellaLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getUmbrellaDeductible1()>0)
-                    {
-                    binding4.setumbrelladeductible(String.valueOf(listAddInfo.get(offset).getUmbrellaDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getWrapUpLimit1()>0)
-                    {
-                    binding4.setwrapuplimit(String.valueOf(listAddInfo.get(offset).getWrapUpLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getWrapUpDeductible1()>0)
-                    {
-                    binding4.setwrapupdeductible(String.valueOf(listAddInfo.get(offset).getWrapUpDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getStdComprehensiveLimit1()>0)
-                    {
-                    binding4.setstdlimit(String.valueOf(listAddInfo.get(offset).getStdComprehensiveLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getStdComprehensiveDeductible1()>0)
-                    {
-                    binding4.setstddeductible(String.valueOf(listAddInfo.get(offset).getStdComprehensiveDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getAirConditioningLimit1()>0)
-                    {
-                    binding4.setaclimit(String.valueOf(listAddInfo.get(offset).getAirConditioningLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getAirConditioningDeductible1()>0)
-                    {
-                    binding4.setacdeductible(String.valueOf(listAddInfo.get(offset).getAirConditioningDeductible1()));
-                    }
-                    if(listAddInfo.get(offset).getProductionMachineryLimit1()>0)
-                    {
-                    binding4.setproductionmachinerylimit(String.valueOf(listAddInfo.get(offset).getProductionMachineryLimit1()));
-                    }
-                    if(listAddInfo.get(offset).getProductionMachineryDeductible1()>0)
-                    {
-                    binding4.setproductionmachinerydeductible(String.valueOf(listAddInfo.get(offset).getProductionMachineryDeductible1()));
-                    }
-                    binding4.setothercoverage1(listAddInfo.get(offset).getOthercoverage11()); 
-                    binding4.setothercoverage2(listAddInfo.get(offset).getOthercoverage21()); 
-                    if(listAddInfo.get(offset).getOtherCoverageLimit11()>0)
-                    {
-                    binding4.setothercoverage1limit(String.valueOf(listAddInfo.get(offset).getOtherCoverageLimit11()));
-                    }
-                    if(listAddInfo.get(offset).getOtherCoverageDeductible11()>0)
-                    {
-                    binding4.setothercoverage1deductible(String.valueOf(listAddInfo.get(offset).getOtherCoverageDeductible11()));
-                    }
-                    if(listAddInfo.get(offset).getOtherCoverageLimit21()>0)
-                    {
-                    binding4.setothercoverage2limit(String.valueOf(listAddInfo.get(offset).getOtherCoverageLimit21()));
-                    }
-                    if(listAddInfo.get(offset).getOtherCoverageDeductible21()>0)
-                    {
-                    binding4.setothercoverage2deductible(String.valueOf(listAddInfo.get(offset).getOtherCoverageDeductible21()));
+
+                    if (listAddInfo.get(offset).getAge1() > 0) {
+                        binding4.setlocationage(Integer.toString(listAddInfo.get(offset).getAge1()));
+                    }
+                    if (listAddInfo.get(offset).getTotalSqFootage1() > 0) {
+                        binding4.settotsqfootage(String.valueOf(listAddInfo.get(offset).getTotalSqFootage1()));
+                    }
+                    if (listAddInfo.get(offset).getInsdSqFootage1() > 0) {
+                        binding4.setinsidesqfootage(String.valueOf(listAddInfo.get(offset).getInsdSqFootage1()));
+                    }
+                    if (listAddInfo.get(offset).getNoOfStories1() > 0) {
+                        binding4.setnoofstories(String.valueOf(listAddInfo.get(offset).getNoOfStories1()));
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getTruckMan1())) {
+                        mtctruckman.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getOwner11())) {
+                        mtcowner.setSelected(true);
+                    }
+                    if ("selected80".equals(listAddInfo.get(offset).getGrossEarning801())) {
+                        ge80.setSelected(true);
+                    }
+                    if ("selected50".equals(listAddInfo.get(offset).getGrossEarning801())) {
+                        ge50.setSelected(true);
+                    }
+
+                    if ("selected".equals(listAddInfo.get(offset).getWallsframe1())) {
+                        wallsframe.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getWallshcb1())) {
+                        wallshcb.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getWallssteel1())) {
+                        wallssteel.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getWallsbrick1())) {
+                        wallsbrick.setSelected(true);
+                    }
+
+                    if ("selected".equals(listAddInfo.get(offset).getRoofwood1())) {
+                        woodjoist.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getRoofsteel1())) {
+                        steeldeck.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getRoofconcrete1())) {
+                        roofconcrete.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getFloorsconcrete1())) {
+                        floorsconcrete.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getFloorswood1())) {
+                        floorswood.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getHeatinggas1())) {
+                        fagas.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getHeatingoil1())) {
+                        faoil.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getHeatingelectric1())) {
+                        heatingelectric.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getHeatingother1())) {
+                        heatingother.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getElectricalbreakers1())) {
+                        electricalbreakers.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getElectricalfuses1())) {
+                        electricalfuses.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getPlumbingcopper1())) {
+                        copper.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getPlumbingpvc1())) {
+                        pvc.setSelected(true);
+                    }
+                    if ("selected".equals(listAddInfo.get(offset).getPlumbingother1())) {
+                        plumbingother.setSelected(true);
+                    }
+                    if ("Sprinklers".equals(listAddInfo.get(offset).getFireProtection1())) {
+                        sprinklers.setSelected(true);
+                    }
+                    if ("SVC".equals(listAddInfo.get(offset).getFireProtection1())) {
+                        svccontract.setSelected(true);
+                    }
+                    if ("Hydrant".equals(listAddInfo.get(offset).getFireProtection1())) {
+                        hydrant.setSelected(true);
+                    }
+                    if ("Firehall".equals(listAddInfo.get(offset).getFireProtection1())) {
+                        firehall.setSelected(true);
+                    }
+                    if ("Unprotected".equals(listAddInfo.get(offset).getFireProtection1())) {
+                        unprotected.setSelected(true);
+                    }
+                    if ("Alarm System".equals(listAddInfo.get(offset).getSecurity1())) {
+                        alarmsystem.setSelected(true);
+                    }
+                    if ("Central Monitored".equals(listAddInfo.get(offset).getSecurity1())) {
+                        centralmonitored.setSelected(true);
+                    }
+                    if ("Window Bars".equals(listAddInfo.get(offset).getSecurity1())) {
+                        windowbars.setSelected(true);
+                    }
+                    if ("Dead Bolts".equals(listAddInfo.get(offset).getSecurity1())) {
+                        deadbolts.setSelected(true);
+                    }
+                    if ("Select".equals(listAddInfo.get(offset).getBasement1())) {
+                        basement.getSelectionModel().select("Select");
+                    } else if ("Yes".equals(listAddInfo.get(offset).getBasement1())) {
+                        basement.getSelectionModel().select("Yes");
+                    } else if ("No".equals(listAddInfo.get(offset).getBasement1())) {
+                        basement.getSelectionModel().select("No");
+                    }
+                    if (listAddInfo.get(offset).getBuildingLimit1() > 0) {
+                        binding4.setbuildinglimit(String.valueOf(listAddInfo.get(offset).getBuildingLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getBuildingDeductible1() > 0) {
+                        binding4.setbuildingdeductible(String.valueOf(listAddInfo.get(offset).getBuildingDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getContentsLimit1() > 0) {
+                        binding4.setcontentslimit(String.valueOf(listAddInfo.get(offset).getContentsLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getContentsDeductible1() > 0) {
+                        binding4.setcontentsdeductible(String.valueOf(listAddInfo.get(offset).getContentsDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getContentsLimit1() > 0) {
+                        binding4.setstocklimit(String.valueOf(listAddInfo.get(offset).getStockLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getStockDeductible1() > 0) {
+                        binding4.setstockdeductible(String.valueOf(listAddInfo.get(offset).getStockDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getOfficeContentLimit1() > 0) {
+                        binding4.setofficelimit(String.valueOf(listAddInfo.get(offset).getOfficeContentLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getOfficeContentDeductible1() > 0) {
+                        binding4.setofficedeductible(String.valueOf(listAddInfo.get(offset).getOfficeContentDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getEdpLimit1() > 0) {
+                        binding4.setedplimit(String.valueOf(listAddInfo.get(offset).getEdpLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getEdpDeductible1() > 0) {
+                        binding4.setedpdeductible(String.valueOf(listAddInfo.get(offset).getEdpDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getEquipmentLimit1() > 0) {
+                        binding4.setequipmentlimit(String.valueOf(listAddInfo.get(offset).getEquipmentLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getEquipmentDeductible1() > 0) {
+                        binding4.setequipmentdeductible(String.valueOf(listAddInfo.get(offset).getEquipmentDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getOffPremisesLimit1() > 0) {
+                        binding4.setoffpremiseslimit(String.valueOf(listAddInfo.get(offset).getOffPremisesLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getOffPremisesDeductible1() > 0) {
+                        binding4.setoffpremisesdeductible(String.valueOf(listAddInfo.get(offset).getOffPremisesDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getTransitLimit1() > 0) {
+                        binding4.settransitlimit(String.valueOf(listAddInfo.get(offset).getTransitLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getTransitDeductible1() > 0) {
+                        binding4.settransitdeductible(String.valueOf(listAddInfo.get(offset).getTransitDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getMiscPropertyLimit1() > 0) {
+                        binding4.setmiscpropertylimit(String.valueOf(listAddInfo.get(offset).getMiscPropertyLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getMiscPropertyDeductible1() > 0) {
+                        binding4.setmiscpropertydeductible(String.valueOf(listAddInfo.get(offset).getMiscPropertyDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getContractorEquipmentLimit1() > 0) {
+                        binding4.setcontractorsequipmentlimit(String.valueOf(listAddInfo.get(offset).getContractorEquipmentLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getContractorEquipmentDeductible1() > 0) {
+                        binding4.setcontractorsequipmentdeductible(String.valueOf(listAddInfo.get(offset).getContractorEquipmentDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getInstallationFloaterLimit1() > 0) {
+                        binding4.setcontentslimit(String.valueOf(listAddInfo.get(offset).getInstallationFloaterLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getInstallationFloaterDeductible1() > 0) {
+                        binding4.setinstallationfloatordeductible(String.valueOf(listAddInfo.get(offset).getInstallationFloaterDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getToolFloaterLimit1() > 0) {
+                        binding4.settoolfloatorlimit(String.valueOf(listAddInfo.get(offset).getToolFloaterLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getToolFloaterDeductible1() > 0) {
+                        binding4.settoolfloatordeductible(String.valueOf(listAddInfo.get(offset).getToolFloaterDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getSignFloaterLimit1() > 0) {
+                        binding4.setsignfloatorlimit(String.valueOf(listAddInfo.get(offset).getSignFloaterLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getSignFloaterDeductible1() > 0) {
+                        binding4.setsignfloatordeductible(String.valueOf(listAddInfo.get(offset).getSignFloaterDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getMotorTruckLimit1() > 0) {
+                        binding4.setmotortruckcargolimit(String.valueOf(listAddInfo.get(offset).getMotorTruckLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getMotorTruckDeductible1() > 0) {
+                        binding4.setmotortruckcargodeductible(String.valueOf(listAddInfo.get(offset).getMotorTruckDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getGlassLimit1() > 0) {
+                        binding4.setglasslimit(String.valueOf(listAddInfo.get(offset).getGlassLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getGlassDeductible1() > 0) {
+                        binding4.setglassdeductible(String.valueOf(listAddInfo.get(offset).getGlassDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getSewerBackupDeductible1() > 0) {
+                        binding4.setsewerblackupdeductible(String.valueOf(listAddInfo.get(offset).getSewerBackupDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getFloodDeductible1() > 0) {
+                        binding4.setflooddeductible(String.valueOf(listAddInfo.get(offset).getFloodDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getEarthquakeDeductible1() > 0) {
+                        binding4.setearthquakedeductible(String.valueOf(listAddInfo.get(offset).getEarthquakeDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getProfitLimit1() > 0) {
+                        binding4.setprofitslimit(String.valueOf(listAddInfo.get(offset).getProfitLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getProfitDeductible1() > 0) {
+                        binding4.setprofitsdeductible(String.valueOf(listAddInfo.get(offset).getProfitDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getGrossEarningLimit1() > 0) {
+                        binding4.setgrossearningslimit(String.valueOf(listAddInfo.get(offset).getGrossEarningLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getToolFloaterDeductible1() > 0) {
+                        binding4.setgrossearningsdeductible(String.valueOf(listAddInfo.get(offset).getGrossEarningDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getRentalIncomeLimit1() > 0) {
+                        binding4.setrentalincomelimit(String.valueOf(listAddInfo.get(offset).getRentalIncomeLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getRentalIncomeDeductible1() > 0) {
+                        binding4.setrentalincomedeductible(String.valueOf(listAddInfo.get(offset).getRentalIncomeDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getExtraExpenseLimit1() > 0) {
+                        binding4.setextraexpenselimit(String.valueOf(listAddInfo.get(offset).getExtraExpenseLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getExtraExpenseDeductible1() > 0) {
+                        binding4.setextraexpensedeductible(String.valueOf(listAddInfo.get(offset).getExtraExpenseDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getOffPremisesLimit1() > 0) {
+                        binding4.setoffpremiseslimit(String.valueOf(listAddInfo.get(offset).getOffPremisesLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getOffPremisesDeductible1() > 0) {
+                        binding4.setoffpremisesdeductible(String.valueOf(listAddInfo.get(offset).getOffPremisesDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getInsideOutsideLimit1() > 0) {
+                        binding4.setinsideoutsidelimit(String.valueOf(listAddInfo.get(offset).getInsideOutsideLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getInsideOutsideDeductible1() > 0) {
+                        binding4.setinsideoutsidedeductible(String.valueOf(listAddInfo.get(offset).getInsideOutsideDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getBfMoneyLimit1() > 0) {
+                        binding4.setbfmoneylimit(String.valueOf(listAddInfo.get(offset).getBfMoneyLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getBfMoneyDeductible1() > 0) {
+                        binding4.setbfmoneydeductible(String.valueOf(listAddInfo.get(offset).getBfMoneyDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getDeopistorForgeryLimit1() > 0) {
+                        binding4.setforgerylimit(String.valueOf(listAddInfo.get(offset).getDeopistorForgeryLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getDeopistorForgeryDeductible1() > 0) {
+                        binding4.setforgerydeductible(String.valueOf(listAddInfo.get(offset).getDeopistorForgeryDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getMoneyOrdersLimit1() > 0) {
+                        binding4.setmoneyorderslimit(String.valueOf(listAddInfo.get(offset).getMoneyOrdersLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getMoneyOrdersDeductible1() > 0) {
+                        binding4.setmoneyordersdeductible(String.valueOf(listAddInfo.get(offset).getMoneyOrdersDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getEmployDishonestyLimit1() > 0) {
+                        binding4.setdishonestylimit(String.valueOf(listAddInfo.get(offset).getEmployDishonestyLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getEmployDishonestyDeductible1() > 0) {
+                        binding4.setdishonestydeductible(String.valueOf(listAddInfo.get(offset).getEmployDishonestyDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getCglLimit1() > 0) {
+                        binding4.setcgllimit(String.valueOf(listAddInfo.get(offset).getCglLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getCglDeductible1() > 0) {
+                        binding4.setcgldeductible(String.valueOf(listAddInfo.get(offset).getCglDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getTenantsLegalLimit1() > 0) {
+                        binding4.settenantslimit(String.valueOf(listAddInfo.get(offset).getTenantsLegalLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getTenantsLegalDeductible1() > 0) {
+                        binding4.settenantsdeductible(String.valueOf(listAddInfo.get(offset).getTenantsLegalDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getNonOwnedAutoLimit1() > 0) {
+                        binding4.setnonownedlimit(String.valueOf(listAddInfo.get(offset).getNonOwnedAutoLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getNonOwnedAutoDeductible1() > 0) {
+                        binding4.setnonowneddeductible(String.valueOf(listAddInfo.get(offset).getNonOwnedAutoDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getSef94Limit1() > 0) {
+                        binding4.setsef94limit(String.valueOf(listAddInfo.get(offset).getSef94Limit1()));
+                    }
+                    if (listAddInfo.get(offset).getSef96Limit1() > 0) {
+                        binding4.setsef96limit(String.valueOf(listAddInfo.get(offset).getSef96Limit1()));
+                    }
+                    if (listAddInfo.get(offset).getSef94Deductible1() > 0) {
+                        binding4.setsef94deductible(String.valueOf(listAddInfo.get(offset).getSef94Deductible1()));
+                    }
+                    if (listAddInfo.get(offset).getSef96Deductible1() > 0) {
+                        binding4.setsef96deductible(String.valueOf(listAddInfo.get(offset).getSef96Deductible1()));
+                    }
+                    if (listAddInfo.get(offset).getDoLimit1() > 0) {
+                        binding4.setdandlimit(String.valueOf(listAddInfo.get(offset).getDoLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getDoDeductible1() > 0) {
+                        binding4.setdanddeductible(String.valueOf(listAddInfo.get(offset).getDoDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getEoLimit1() > 0) {
+                        binding4.seteandlimit(String.valueOf(listAddInfo.get(offset).getEoLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getEoDeductible1() > 0) {
+                        binding4.seteanddeductible(String.valueOf(listAddInfo.get(offset).getEoDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getEmployerLimit1() > 0) {
+                        binding4.setemployerslimit(String.valueOf(listAddInfo.get(offset).getEmployerLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getEmployerDeductible1() > 0) {
+                        binding4.setemployersdeductible(String.valueOf(listAddInfo.get(offset).getEmployerDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getUmbrellaLimit1() > 0) {
+                        binding4.setumbrellalimit(String.valueOf(listAddInfo.get(offset).getUmbrellaLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getUmbrellaDeductible1() > 0) {
+                        binding4.setumbrelladeductible(String.valueOf(listAddInfo.get(offset).getUmbrellaDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getWrapUpLimit1() > 0) {
+                        binding4.setwrapuplimit(String.valueOf(listAddInfo.get(offset).getWrapUpLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getWrapUpDeductible1() > 0) {
+                        binding4.setwrapupdeductible(String.valueOf(listAddInfo.get(offset).getWrapUpDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getStdComprehensiveLimit1() > 0) {
+                        binding4.setstdlimit(String.valueOf(listAddInfo.get(offset).getStdComprehensiveLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getStdComprehensiveDeductible1() > 0) {
+                        binding4.setstddeductible(String.valueOf(listAddInfo.get(offset).getStdComprehensiveDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getAirConditioningLimit1() > 0) {
+                        binding4.setaclimit(String.valueOf(listAddInfo.get(offset).getAirConditioningLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getAirConditioningDeductible1() > 0) {
+                        binding4.setacdeductible(String.valueOf(listAddInfo.get(offset).getAirConditioningDeductible1()));
+                    }
+                    if (listAddInfo.get(offset).getProductionMachineryLimit1() > 0) {
+                        binding4.setproductionmachinerylimit(String.valueOf(listAddInfo.get(offset).getProductionMachineryLimit1()));
+                    }
+                    if (listAddInfo.get(offset).getProductionMachineryDeductible1() > 0) {
+                        binding4.setproductionmachinerydeductible(String.valueOf(listAddInfo.get(offset).getProductionMachineryDeductible1()));
+                    }
+                    binding4.setothercoverage1(listAddInfo.get(offset).getOthercoverage11());
+                    binding4.setothercoverage2(listAddInfo.get(offset).getOthercoverage21());
+                    if (listAddInfo.get(offset).getOtherCoverageLimit11() > 0) {
+                        binding4.setothercoverage1limit(String.valueOf(listAddInfo.get(offset).getOtherCoverageLimit11()));
+                    }
+                    if (listAddInfo.get(offset).getOtherCoverageDeductible11() > 0) {
+                        binding4.setothercoverage1deductible(String.valueOf(listAddInfo.get(offset).getOtherCoverageDeductible11()));
+                    }
+                    if (listAddInfo.get(offset).getOtherCoverageLimit21() > 0) {
+                        binding4.setothercoverage2limit(String.valueOf(listAddInfo.get(offset).getOtherCoverageLimit21()));
+                    }
+                    if (listAddInfo.get(offset).getOtherCoverageDeductible21() > 0) {
+                        binding4.setothercoverage2deductible(String.valueOf(listAddInfo.get(offset).getOtherCoverageDeductible21()));
                     }
                     binding4.setadditionalcoverage(listAddInfo.get(offset).getAdditionalCoverage1());
-                    
+
                 } else {
                     System.out.println("Offset15 " + offset);
                     binding4.setlocationaddress("");
@@ -4190,50 +4557,50 @@ public class NextScreenController implements Initializable, IScreenController {
                     centralmonitored.setSelected(false);
                     windowbars.setSelected(false);
                     deadbolts.setSelected(false);
-                    
+
                 }
             } catch (Exception e) {
                 System.out.println("Offset16 " + offset);
                 binding4.setlocationaddress("");
-                    binding4.setlocationage("");
-                    binding4.settotsqfootage("");
-                    binding4.setinsidesqfootage("");
-                    binding4.setnoofstories("");
-                    basement.getSelectionModel().selectFirst();
-                    wallsframe.setSelected(false);
-                    wallsbrick.setSelected(false);
-                    wallshcb.setSelected(false);
-                    wallssteel.setSelected(false);
-                    woodjoist.setSelected(false);
-                    steeldeck.setSelected(false);
-                    roofconcrete.setSelected(false);
-                    binding4.setroofupdated("");
-                    floorsconcrete.setSelected(false);
-                    floorswood.setSelected(false);
-                    fagas.setSelected(false);
-                    faoil.setSelected(false);
-                    heatingelectric.setSelected(false);
-                    heatingother.setSelected(false);
-                    binding4.setheatingupdated("");
-                    electricalbreakers.setSelected(false);
-                    electricalfuses.setSelected(false);
-                    binding4.setelectricalupdated("");
-                    binding4.setnoofamps("");
-                    copper.setSelected(false);
-                    copper.setSelected(false);
-                    pvc.setSelected(false);
-                    plumbingother.setSelected(false);
-                    binding4.setplumbingupdated("");
-                    sprinklers.setSelected(false);
-                    svccontract.setSelected(false);
-                    hydrant.setSelected(false);
-                    firehall.setSelected(false);
-                    unprotected.setSelected(false);
-                    binding4.setFireProtection("");
-                    alarmsystem.setSelected(false);
-                    centralmonitored.setSelected(false);
-                    windowbars.setSelected(false);
-                    deadbolts.setSelected(false);
+                binding4.setlocationage("");
+                binding4.settotsqfootage("");
+                binding4.setinsidesqfootage("");
+                binding4.setnoofstories("");
+                basement.getSelectionModel().selectFirst();
+                wallsframe.setSelected(false);
+                wallsbrick.setSelected(false);
+                wallshcb.setSelected(false);
+                wallssteel.setSelected(false);
+                woodjoist.setSelected(false);
+                steeldeck.setSelected(false);
+                roofconcrete.setSelected(false);
+                binding4.setroofupdated("");
+                floorsconcrete.setSelected(false);
+                floorswood.setSelected(false);
+                fagas.setSelected(false);
+                faoil.setSelected(false);
+                heatingelectric.setSelected(false);
+                heatingother.setSelected(false);
+                binding4.setheatingupdated("");
+                electricalbreakers.setSelected(false);
+                electricalfuses.setSelected(false);
+                binding4.setelectricalupdated("");
+                binding4.setnoofamps("");
+                copper.setSelected(false);
+                copper.setSelected(false);
+                pvc.setSelected(false);
+                plumbingother.setSelected(false);
+                binding4.setplumbingupdated("");
+                sprinklers.setSelected(false);
+                svccontract.setSelected(false);
+                hydrant.setSelected(false);
+                firehall.setSelected(false);
+                unprotected.setSelected(false);
+                binding4.setFireProtection("");
+                alarmsystem.setSelected(false);
+                centralmonitored.setSelected(false);
+                windowbars.setSelected(false);
+                deadbolts.setSelected(false);
             }
         }
         for (AddAnotherInfo e : listAddInfo) {
@@ -4241,48 +4608,55 @@ public class NextScreenController implements Initializable, IScreenController {
 
         }
     }
-   
+
     @FXML
     public void cadsales() {
-         int cad=0;
-    int us=0;
+        int cad = 0;
+        int us = 0;
         if ("US$".equals(currency1.getSelectionModel().getSelectedItem())) {
-            if(!CommonValidations.isStringEmpty(binding2.getamount1()))
-                    us+=Integer.parseInt(binding2.getamount1());
-                }  
+            if (!CommonValidations.isStringEmpty(binding2.getamount1())) {
+                us += Integer.parseInt(binding2.getamount1());
+            }
+        }
         if ("US$".equals(currency2.getSelectionModel().getSelectedItem())) {
-            if(!CommonValidations.isStringEmpty(binding2.getamount2()))
-                    us+=Integer.parseInt(binding2.getamount2());
+            if (!CommonValidations.isStringEmpty(binding2.getamount2())) {
+                us += Integer.parseInt(binding2.getamount2());
+            }
         }
         if ("US$".equals(currency3.getSelectionModel().getSelectedItem())) {
-            if(!CommonValidations.isStringEmpty(binding2.getamount3()))
-                    us+=Integer.parseInt(binding2.getamount3());
+            if (!CommonValidations.isStringEmpty(binding2.getamount3())) {
+                us += Integer.parseInt(binding2.getamount3());
+            }
         }
-         if ("US$".equals(currency4.getSelectionModel().getSelectedItem())) {
-            if(!CommonValidations.isStringEmpty(binding2.getamount4()))
-                    us+=Integer.parseInt(binding2.getamount4());
-         }   
-         if ("CAN$".equals(currency1.getSelectionModel().getSelectedItem())) {
-            if(!CommonValidations.isStringEmpty(binding2.getamount1()))
-                    cad+=Integer.parseInt(binding2.getamount1());
-                }  
+        if ("US$".equals(currency4.getSelectionModel().getSelectedItem())) {
+            if (!CommonValidations.isStringEmpty(binding2.getamount4())) {
+                us += Integer.parseInt(binding2.getamount4());
+            }
+        }
+        if ("CAN$".equals(currency1.getSelectionModel().getSelectedItem())) {
+            if (!CommonValidations.isStringEmpty(binding2.getamount1())) {
+                cad += Integer.parseInt(binding2.getamount1());
+            }
+        }
         if ("CAN$".equals(currency2.getSelectionModel().getSelectedItem())) {
-            if(!CommonValidations.isStringEmpty(binding2.getamount2()))
-                    cad+=Integer.parseInt(binding2.getamount2());
+            if (!CommonValidations.isStringEmpty(binding2.getamount2())) {
+                cad += Integer.parseInt(binding2.getamount2());
+            }
         }
         if ("CAN$".equals(currency3.getSelectionModel().getSelectedItem())) {
-            if(!CommonValidations.isStringEmpty(binding2.getamount3()))
-                    cad+=Integer.parseInt(binding2.getamount3());
+            if (!CommonValidations.isStringEmpty(binding2.getamount3())) {
+                cad += Integer.parseInt(binding2.getamount3());
+            }
         }
-         if ("CAN$".equals(currency4.getSelectionModel().getSelectedItem())) {
-            if(!CommonValidations.isStringEmpty(binding2.getamount4()))
-                    cad+=Integer.parseInt(binding2.getamount4());   
-         }
-       totalsale.setText(Integer.toString(cad));
-       totalsaleus.setText(Integer.toString(us));      
+        if ("CAN$".equals(currency4.getSelectionModel().getSelectedItem())) {
+            if (!CommonValidations.isStringEmpty(binding2.getamount4())) {
+                cad += Integer.parseInt(binding2.getamount4());
+            }
+        }
+        totalsale.setText(Integer.toString(cad));
+        totalsaleus.setText(Integer.toString(us));
     }
 
-    
     @FXML
     public void clientprofile2previous() {
         animatedMovement(-1269, 0);
@@ -4496,11 +4870,10 @@ public class NextScreenController implements Initializable, IScreenController {
                         System.out.println("formid is " + formId);
                         setFormId(formId);
                         assign(response);
+                    } else {
+                        stopLoading();
+                        errors(response.getErrorMessage());
                     }
-                    else
-                { stopLoading();
-                    errors(response.getErrorMessage());
-                }
                 } catch (Exception e) {
                     stopLoading();
                     errors(e.getMessage());
@@ -4516,7 +4889,7 @@ public class NextScreenController implements Initializable, IScreenController {
 
     @FXML
     public void downloadFiles() {
-        
+
         stage.show();
         if (file1 != null) {
             File f1 = new File(applicationid);
@@ -4552,11 +4925,10 @@ public class NextScreenController implements Initializable, IScreenController {
         if (file10 != null) {
             WriteByteArray.writeByteArray(applicationid + "\\" + fileName10, file10);
         }
-        stopLoading();        
+        stopLoading();
         successMessage1("Files successfully downloaded in C: drive.");
     }
-    
-    
+
     public void assign(final GetInsuranceFormResponse form) {
         Platform.runLater(new Runnable() {
             public void run() {
@@ -4705,7 +5077,7 @@ public class NextScreenController implements Initializable, IScreenController {
                 if ("selected".equals(form.getTruckMan())) {
                     mtctruckman.setSelected(true);
                 }
-                if ("selected".equals(form.getOwner())) {
+                if ("selected".equals(form.getOwnercb())) {
                     mtcowner.setSelected(true);
                 }
                 if ("selected80".equals(form.getGrossEarningCheckbox())) {
@@ -4835,12 +5207,12 @@ public class NextScreenController implements Initializable, IScreenController {
                 branchfromform = form.getBranch();
                 returnedname.setText(form.getProducer());
                 returnedbranch.setText(form.getBranch());
-                datefromform=form.getCreationDate();
-                System.out.println(datefromform);
+                datefromform = form.getCreationDate();
+                
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
                 GregorianCalendar gc = datefromform.toGregorianCalendar();
                 String formatted_date = sdf.format(gc.getTime());
-                System.out.println(formatted_date);
+                
                 returneddate.setText(formatted_date);
                 keycontact.setText(form.getKeyContact());
                 keyphone.setText(form.getKeyContactPhone());
@@ -4945,6 +5317,1015 @@ public class NextScreenController implements Initializable, IScreenController {
                 lrtooccupancy4.setText(form.getLocationRentedToOthers4());
                 producercomments.setText(form.getProducercomments());
                 marketercomments.setText(form.getMarketercomments());
+                //commercial property
+                offset=0;
+                for(int i=0; i<10;i++)
+                {
+                    { switch (i)
+                        {case 0:
+                        if (!CommonValidations.isStringEmpty(form.getAddress())) {
+                        listAddInfo.get(i).setBuildingLimit1(form.getBuildingLimit());
+                        listAddInfo.get(i).setBuildingDeductible1(form.getBuildingDeductible());
+                        listAddInfo.get(i).setContentsLimit1(form.getContentsLimit());
+                        listAddInfo.get(i).setContentsDeductible1(form.getContentsDeductible());
+                        listAddInfo.get(i).setStockLimit1(form.getStockLimit());
+                        listAddInfo.get(i).setStockDeductible1(form.getStockDeductible());
+                        listAddInfo.get(i).setOfficeContentLimit1(form.getOfficeContentLimit());
+                        listAddInfo.get(i).setOfficeContentDeductible1(form.getOfficeContentDeductible());
+                        listAddInfo.get(i).setEdpLimit1(form.getEdpLimit());
+                        listAddInfo.get(i).setEdpDeductible1(form.getEdpDeductible());
+                        listAddInfo.get(i).setEquipmentLimit1(form.getEquipmentLimit());
+                        listAddInfo.get(i).setEquipmentDeductible1(form.getEquipmentDeductible());
+                        listAddInfo.get(i).setOffPremisesLimit1(form.getOffPremisesLimit());
+                        listAddInfo.get(i).setOffPremisesDeductible1(form.getOffPremisesDeductible());
+                        listAddInfo.get(i).setTransitLimit1(form.getTransitLimit());
+                        listAddInfo.get(i).setTransitDeductible1(form.getTransitDeductible());
+                        listAddInfo.get(i).setMiscPropertyLimit1(form.getMiscPropertyLimit());
+                        listAddInfo.get(i).setMiscPropertyDeductible1(form.getMiscPropertyDeductible());
+                        listAddInfo.get(i).setContractorEquipmentLimit1(form.getContractorEquipmentLimit());
+                        listAddInfo.get(i).setContractorEquipmentDeductible1(form.getContractorEquipmentDeductible());
+                        listAddInfo.get(i).setInstallationFloaterLimit1(form.getInstallationFloaterLimit());
+                        listAddInfo.get(i).setInstallationFloaterDeductible1(form.getInstallationFloaterDeductible());
+                        listAddInfo.get(i).setToolFloaterLimit1(form.getToolFloaterLimit());                    
+                        listAddInfo.get(i).setToolFloaterDeductible1(form.getToolFloaterDeductible());
+                        listAddInfo.get(i).setSignFloaterLimit1(form.getSignFloaterLimit());
+                        listAddInfo.get(i).setSignFloaterDeductible1(form.getSignFloaterDeductible());
+                        listAddInfo.get(i).setMotorTruckLimit1(form.getMotorTruckLimit());
+                        listAddInfo.get(i).setMotorTruckDeductible1(form.getMotorTruckDeductible());
+                        listAddInfo.get(i).setGlassLimit1(form.getGlassLimit());
+                        listAddInfo.get(i).setGlassDeductible1(form.getGlassDeductible());
+                        listAddInfo.get(i).setSewerBackupDeductible1(form.getSewerBackupDeductible());
+                        listAddInfo.get(i).setFloodDeductible1(form.getFloodDeductible());
+                        listAddInfo.get(i).setEarthquakeDeductible1(form.getEarthquakeDeductible());
+                        listAddInfo.get(i).setProfitLimit1(form.getProfitLimit());
+                        listAddInfo.get(i).setProfitDeductible1(form.getProfitDeductible());
+                        listAddInfo.get(i).setGrossEarningLimit1(form.getGrossEarningLimit());
+                        listAddInfo.get(i).setGrossEarningDeductible1(form.getGrossEarningDeductible());
+                        listAddInfo.get(i).setRentalIncomeLimit1(form.getRentalIncomeLimit());
+                        listAddInfo.get(i).setRentalIncomeDeductible1(form.getRentalIncomeDeductible());
+                        listAddInfo.get(i).setExtraExpenseLimit1(form.getExtraExpenseLimit());
+                        listAddInfo.get(i).setExtraExpenseDeductible1(form.getExtraExpenseDeductible());
+                        listAddInfo.get(i).setOffPremisesPowerLimit1(form.getOffPremisesLimit());
+                        listAddInfo.get(i).setOffPremisesPowerDeductible1(form.getOffPremisesDeductible());
+                        listAddInfo.get(i).setInsideOutsideLimit1(form.getInsideOutsideLimit()); 
+                        listAddInfo.get(i).setInsideOutsideDeductible1(form.getInsideOutsideDeductible());
+                        listAddInfo.get(i).setBfMoneyLimit1(form.getBfMoneyLimit());
+                        listAddInfo.get(i).setBfMoneyDeductible1(form.getBfMoneyDeductible());
+                        listAddInfo.get(i).setDeopistorForgeryLimit1(form.getDeopistorForgeryLimit());
+                        listAddInfo.get(i).setDeopistorForgeryDeductible1(form.getDeopistorForgeryDeductible());
+                        listAddInfo.get(i).setMoneyOrdersLimit1(form.getMoneyOrdersLimit());
+                        listAddInfo.get(i).setMoneyOrdersDeductible1(form.getMoneyOrdersDeductible());
+                        listAddInfo.get(i).setEmployDishonestyLimit1(form.getEmployDishonestyLimit());                    
+                        listAddInfo.get(i).setEmployDishonestyDeductible1(form.getEmployDishonestyDeductible());
+                        listAddInfo.get(i).setCglLimit1(form.getCglLimit());
+                        listAddInfo.get(i).setCglDeductible1(form.getCglDeductible());
+                        listAddInfo.get(i).setTenantsLegalLimit1(form.getTenantsLegalLimit());
+                        listAddInfo.get(i).setTenantsLegalDeductible1(form.getTenantsLegalDeductible());
+                        listAddInfo.get(i).setNonOwnedAutoLimit1(form.getNonOwnedAutoLimit());
+                        listAddInfo.get(i).setNonOwnedAutoDeductible1(form.getNonOwnedAutoDeductible());
+                        listAddInfo.get(i).setSef96Limit1(form.getSef96Limit());
+                        listAddInfo.get(i).setSef96Deductible1(form.getSef96Deductible());
+                        listAddInfo.get(i).setSef94Limit1(form.getSef94Limit());
+                        listAddInfo.get(i).setSef94Deductible1(form.getSef94Deductible());
+                        listAddInfo.get(i).setDoLimit1(form.getDoLimit());
+                        listAddInfo.get(i).setDoDeductible1(form.getDoDeductible());
+                        listAddInfo.get(i).setEoLimit1(form.getEoLimit());
+                        listAddInfo.get(i).setEoDeductible1(form.getEoDeductible());
+                        listAddInfo.get(i).setEmployerLimit1(form.getEmployerLimit());
+                        listAddInfo.get(i).setEmployerDeductible1(form.getEmployerDeductible()); 
+                        listAddInfo.get(i).setUmbrellaLimit1(form.getUmbrellaLimit());
+                        listAddInfo.get(i).setUmbrellaDeductible1(form.getUmbrellaDeductible());
+                        listAddInfo.get(i).setWrapUpLimit1(form.getWrapUpLimit());
+                        listAddInfo.get(i).setWrapUpDeductible1(form.getWrapUpDeductible());
+                        listAddInfo.get(i).setStdComprehensiveLimit1(form.getStdComprehensiveLimit());
+                        listAddInfo.get(i).setStdComprehensiveDeductible1(form.getStdComprehensiveDeductible());
+                        listAddInfo.get(i).setAirConditioningLimit1(form.getAirConditioningLimit());
+                        listAddInfo.get(i).setAirConditioningDeductible1(form.getAirConditioningDeductible());
+                        listAddInfo.get(i).setProductionMachineryLimit1(form.getProductionMachineryLimit());
+                        listAddInfo.get(i).setProductionMachineryDeductible1(form.getProductionMachineryDeductible());
+                    	listAddInfo.get(i).setOthercoverage11(form.getOthercoverage1());
+	                listAddInfo.get(i).setOthercoverage21(form.getOthercoverage2());
+                        listAddInfo.get(i).setOtherCoverageLimit11(form.getOtherCoverageLimit1());
+                        listAddInfo.get(i).setOtherCoverageDeductible11(form.getOtherCoverageDeductible1());
+                        listAddInfo.get(i).setOtherCoverageLimit21(form.getOtherCoverageLimit2());
+                        listAddInfo.get(i).setOtherCoverageDeductible21(form.getOtherCoverageDeductible2());
+    	                listAddInfo.get(i).setAdditionalCoverage1(form.getAdditionalcoverage());
+        	        listAddInfo.get(i).setRoofupdated1(form.getRoofupdated());
+            	        listAddInfo.get(i).setHeatingupdated1(form.getHeatingupdated());
+                	listAddInfo.get(i).setElectricalupdated1(form.getElectricalupdated());
+                    	listAddInfo.get(i).setElectricalamps1(form.getElectricalamps());
+	                listAddInfo.get(i).setFireProtectiondistance1(form.getFireProtectiondistance());
+    	                listAddInfo.get(i).setAddress1(form.getAddress());
+        	        listAddInfo.get(i).setBasement1(form.getBasement());
+            	        listAddInfo.get(i).setOwner11(form.getOwnercb());
+                	listAddInfo.get(i).setTruckMan1(form.getTruckMan());
+                    	listAddInfo.get(i).setGrossEarning801(form.getGrossEarningCheckbox());
+	                listAddInfo.get(i).setWallsframe1(form.getWallsframe());
+    	                listAddInfo.get(i).setWallshcb1(form.getWallshcb());
+	                listAddInfo.get(i).setWallssteel1(form.getWallssteel());
+    	                listAddInfo.get(i).setWallsbrick1(form.getWallsbrick());
+        	        listAddInfo.get(i).setRoofwood1(form.getRoofwood());
+            	        listAddInfo.get(i).setRoofsteel1(form.getRoofsteel());
+                	listAddInfo.get(i).setRoofconcrete1(form.getRoofconcrete());
+                    	listAddInfo.get(i).setFloorsconcrete1(form.getFloorsconcrete());
+	                listAddInfo.get(i).setFloorswood1(form.getFloorswood());
+    	                listAddInfo.get(i).setHeatinggas1(form.getHeatinggas());
+        	        listAddInfo.get(i).setHeatingoil1(form.getHeatingoil());
+            	        listAddInfo.get(i).setHeatingelectric1(form.getHeatingelectric());
+                	listAddInfo.get(i).setHeatingother1(form.getHeatingother());
+                    	listAddInfo.get(i).setElectricalbreakers1(form.getElectricalbreakers());
+	                listAddInfo.get(i).setElectricalfuses1(form.getElectricalfuses());
+        	        listAddInfo.get(i).setPlumbingcopper1(form.getPlumbingcopper());
+            	        listAddInfo.get(i).setPlumbingpvc1(form.getPlumbingpvc());
+                	listAddInfo.get(i).setPlumbingother1(form.getPlumbingother());
+                    	listAddInfo.get(i).setFireProtection1(form.getFireProtection());
+	                listAddInfo.get(i).setSecurity1(form.getSecurity());
+                        listAddInfo.get(i).setAge1(form.getAge());
+                        listAddInfo.get(i).setTotalSqFootage1(form.getTotalSqFootage());
+                        listAddInfo.get(i).setInsdSqFootage1(form.getInsdSqFootage());
+                        listAddInfo.get(i).setNoOfStories1(form.getNoOfStories());
+                        }
+                        break;
+                        case 1:
+                        if(CommonValidations.isStringEmpty(form.getAddress1()))
+                        {
+                        listAddInfo.get(i).setBuildingLimit1(form.getBuildingLimit1());
+                        listAddInfo.get(i).setBuildingDeductible1(form.getBuildingDeductible1());
+                        listAddInfo.get(i).setContentsLimit1(form.getContentsLimit1());
+                        listAddInfo.get(i).setContentsDeductible1(form.getContentsDeductible1());
+                        listAddInfo.get(i).setStockLimit1(form.getStockLimit1());
+                        listAddInfo.get(i).setStockDeductible1(form.getStockDeductible1());
+                        listAddInfo.get(i).setOfficeContentLimit1(form.getOfficeContentLimit1());
+                        listAddInfo.get(i).setOfficeContentDeductible1(form.getOfficeContentDeductible1());
+                        listAddInfo.get(i).setEdpLimit1(form.getEdpLimit1());
+                        listAddInfo.get(i).setEdpDeductible1(form.getEdpDeductible1());
+                        listAddInfo.get(i).setEquipmentLimit1(form.getEquipmentLimit1());
+                        listAddInfo.get(i).setEquipmentDeductible1(form.getEquipmentDeductible1());
+                        listAddInfo.get(i).setOffPremisesLimit1(form.getOffPremisesLimit1());
+                        listAddInfo.get(i).setOffPremisesDeductible1(form.getOffPremisesDeductible1());
+                        listAddInfo.get(i).setTransitLimit1(form.getTransitLimit1());
+                        listAddInfo.get(i).setTransitDeductible1(form.getTransitDeductible1());
+                        listAddInfo.get(i).setMiscPropertyLimit1(form.getMiscPropertyLimit1());
+                        listAddInfo.get(i).setMiscPropertyDeductible1(form.getMiscPropertyDeductible1());
+                        listAddInfo.get(i).setContractorEquipmentLimit1(form.getContractorEquipmentLimit1());
+                        listAddInfo.get(i).setContractorEquipmentDeductible1(form.getContractorEquipmentDeductible1());
+                        listAddInfo.get(i).setInstallationFloaterLimit1(form.getInstallationFloaterLimit1());
+                        listAddInfo.get(i).setInstallationFloaterDeductible1(form.getInstallationFloaterDeductible1());
+                        listAddInfo.get(i).setToolFloaterLimit1(form.getToolFloaterLimit1());                    
+                        listAddInfo.get(i).setToolFloaterDeductible1(form.getToolFloaterDeductible1());
+                        listAddInfo.get(i).setSignFloaterLimit1(form.getSignFloaterLimit1());
+                        listAddInfo.get(i).setSignFloaterDeductible1(form.getSignFloaterDeductible1());
+                        listAddInfo.get(i).setMotorTruckLimit1(form.getMotorTruckLimit1());
+                        listAddInfo.get(i).setMotorTruckDeductible1(form.getMotorTruckDeductible1());
+                        listAddInfo.get(i).setGlassLimit1(form.getGlassLimit1());
+                        listAddInfo.get(i).setGlassDeductible1(form.getGlassDeductible1());
+                        listAddInfo.get(i).setSewerBackupDeductible1(form.getSewerBackupDeductible1());
+                        listAddInfo.get(i).setFloodDeductible1(form.getFloodDeductible1());
+                        listAddInfo.get(i).setEarthquakeDeductible1(form.getEarthquakeDeductible1());
+                        listAddInfo.get(i).setProfitLimit1(form.getProfitLimit1());
+                        listAddInfo.get(i).setProfitDeductible1(form.getProfitDeductible1());
+                        listAddInfo.get(i).setGrossEarningLimit1(form.getGrossEarningLimit1());
+                        listAddInfo.get(i).setGrossEarningDeductible1(form.getGrossEarningDeductible1());
+                        listAddInfo.get(i).setRentalIncomeLimit1(form.getRentalIncomeLimit1());
+                        listAddInfo.get(i).setRentalIncomeDeductible1(form.getRentalIncomeDeductible1());
+                        listAddInfo.get(i).setExtraExpenseLimit1(form.getExtraExpenseLimit1());
+                        listAddInfo.get(i).setExtraExpenseDeductible1(form.getExtraExpenseDeductible1());
+                        listAddInfo.get(i).setOffPremisesPowerLimit1(form.getOffPremisesLimit1());
+                        listAddInfo.get(i).setOffPremisesPowerDeductible1(form.getOffPremisesDeductible1());
+                        listAddInfo.get(i).setInsideOutsideLimit1(form.getInsideOutsideLimit1()); 
+                        listAddInfo.get(i).setInsideOutsideDeductible1(form.getInsideOutsideDeductible1());
+                        listAddInfo.get(i).setBfMoneyLimit1(form.getBfMoneyLimit1());
+                        listAddInfo.get(i).setBfMoneyDeductible1(form.getBfMoneyDeductible1());
+                        listAddInfo.get(i).setDeopistorForgeryLimit1(form.getDeopistorForgeryLimit1());
+                        listAddInfo.get(i).setDeopistorForgeryDeductible1(form.getDeopistorForgeryDeductible1());
+                        listAddInfo.get(i).setMoneyOrdersLimit1(form.getMoneyOrdersLimit1());
+                        listAddInfo.get(i).setMoneyOrdersDeductible1(form.getMoneyOrdersDeductible1());
+                        listAddInfo.get(i).setEmployDishonestyLimit1(form.getEmployDishonestyLimit1());                    
+                        listAddInfo.get(i).setEmployDishonestyDeductible1(form.getEmployDishonestyDeductible1());
+                        listAddInfo.get(i).setCglLimit1(form.getCglLimit1());
+                        listAddInfo.get(i).setCglDeductible1(form.getCglDeductible1());
+                        listAddInfo.get(i).setTenantsLegalLimit1(form.getTenantsLegalLimit1());
+                        listAddInfo.get(i).setTenantsLegalDeductible1(form.getTenantsLegalDeductible1());
+                        listAddInfo.get(i).setNonOwnedAutoLimit1(form.getNonOwnedAutoLimit1());
+                        listAddInfo.get(i).setNonOwnedAutoDeductible1(form.getNonOwnedAutoDeductible1());
+                        listAddInfo.get(i).setSef96Limit1(form.getSef96Limit1());
+                        listAddInfo.get(i).setSef96Deductible1(form.getSef96Deductible1());
+                        listAddInfo.get(i).setSef94Limit1(form.getSef94Limit1());
+                        listAddInfo.get(i).setSef94Deductible1(form.getSef94Deductible1());
+                        listAddInfo.get(i).setDoLimit1(form.getDoLimit1());
+                        listAddInfo.get(i).setDoDeductible1(form.getDoDeductible1());
+                        listAddInfo.get(i).setEoLimit1(form.getEoLimit1());
+                        listAddInfo.get(i).setEoDeductible1(form.getEoDeductible1());
+                        listAddInfo.get(i).setEmployerLimit1(form.getEmployerLimit1());
+                        listAddInfo.get(i).setEmployerDeductible1(form.getEmployerDeductible1()); 
+                        listAddInfo.get(i).setUmbrellaLimit1(form.getUmbrellaLimit1());
+                        listAddInfo.get(i).setUmbrellaDeductible1(form.getUmbrellaDeductible1());
+                        listAddInfo.get(i).setWrapUpLimit1(form.getWrapUpLimit1());
+                        listAddInfo.get(i).setWrapUpDeductible1(form.getWrapUpDeductible1());
+                        listAddInfo.get(i).setStdComprehensiveLimit1(form.getStdComprehensiveLimit1());
+                        listAddInfo.get(i).setStdComprehensiveDeductible1(form.getStdComprehensiveDeductible1());
+                        listAddInfo.get(i).setAirConditioningLimit1(form.getAirConditioningLimit1());
+                        listAddInfo.get(i).setAirConditioningDeductible1(form.getAirConditioningDeductible1());
+                        listAddInfo.get(i).setProductionMachineryLimit1(form.getProductionMachineryLimit1());
+                        listAddInfo.get(i).setProductionMachineryDeductible1(form.getProductionMachineryDeductible1());
+                    	listAddInfo.get(i).setOthercoverage11(form.getOthercoverage11());
+	                listAddInfo.get(i).setOthercoverage21(form.getOthercoverage21());
+                        listAddInfo.get(i).setOtherCoverageLimit11(form.getOtherCoverageLimit11());
+                        listAddInfo.get(i).setOtherCoverageDeductible11(form.getOtherCoverageDeductible11());
+                        listAddInfo.get(i).setOtherCoverageLimit21(form.getOtherCoverageLimit21());
+                        listAddInfo.get(i).setOtherCoverageDeductible21(form.getOtherCoverageDeductible21());
+    	                listAddInfo.get(i).setAdditionalCoverage1(form.getAdditionalcoverage1());
+        	        listAddInfo.get(i).setRoofupdated1(form.getRoofupdated1());
+            	        listAddInfo.get(i).setHeatingupdated1(form.getHeatingupdated1());
+                	listAddInfo.get(i).setElectricalupdated1(form.getElectricalupdated1());
+                    	listAddInfo.get(i).setElectricalamps1(form.getElectricalamps1());
+	                listAddInfo.get(i).setFireProtectiondistance1(form.getFireProtectiondistance1());
+    	                listAddInfo.get(i).setAddress1(form.getAddress1());
+        	        listAddInfo.get(i).setBasement1(form.getBasement1());
+            	        listAddInfo.get(i).setOwner11(form.getOwnercb1());
+                	listAddInfo.get(i).setTruckMan1(form.getTruckMan1());
+                    	listAddInfo.get(i).setGrossEarning801(form.getGrossEarningCheckbox1());
+	                listAddInfo.get(i).setWallsframe1(form.getWallsframe1());
+    	                listAddInfo.get(i).setWallshcb1(form.getWallshcb1());
+	                listAddInfo.get(i).setWallssteel1(form.getWallssteel1());
+    	                listAddInfo.get(i).setWallsbrick1(form.getWallsbrick1());
+        	        listAddInfo.get(i).setRoofwood1(form.getRoofwood1());
+            	        listAddInfo.get(i).setRoofsteel1(form.getRoofsteel1());
+                	listAddInfo.get(i).setRoofconcrete1(form.getRoofconcrete1());
+                    	listAddInfo.get(i).setFloorsconcrete1(form.getFloorsconcrete1());
+	                listAddInfo.get(i).setFloorswood1(form.getFloorswood1());
+    	                listAddInfo.get(i).setHeatinggas1(form.getHeatinggas1());
+        	        listAddInfo.get(i).setHeatingoil1(form.getHeatingoil1());
+            	        listAddInfo.get(i).setHeatingelectric1(form.getHeatingelectric1());
+                	listAddInfo.get(i).setHeatingother1(form.getHeatingother1());
+                    	listAddInfo.get(i).setElectricalbreakers1(form.getElectricalbreakers1());
+	                listAddInfo.get(i).setElectricalfuses1(form.getElectricalfuses1());
+        	        listAddInfo.get(i).setPlumbingcopper1(form.getPlumbingcopper1());
+            	        listAddInfo.get(i).setPlumbingpvc1(form.getPlumbingpvc1());
+                	listAddInfo.get(i).setPlumbingother1(form.getPlumbingother1());
+                    	listAddInfo.get(i).setFireProtection1(form.getFireProtection1());
+	                listAddInfo.get(i).setSecurity1(form.getSecurity1());
+                        listAddInfo.get(i).setAge1(form.getAge1());
+                        listAddInfo.get(i).setTotalSqFootage1(form.getTotalSqFootage1());
+                        listAddInfo.get(i).setInsdSqFootage1(form.getInsdSqFootage1());
+                        listAddInfo.get(i).setNoOfStories1(form.getNoOfStories1());
+                }
+                        break;
+                case 2:
+                if (CommonValidations.isStringEmpty(form.getAddress2()))
+                {
+                        listAddInfo.get(i).setBuildingLimit1(form.getBuildingLimit2());
+                        listAddInfo.get(i).setBuildingDeductible1(form.getBuildingDeductible2());
+                        listAddInfo.get(i).setContentsLimit1(form.getContentsLimit2());
+                        listAddInfo.get(i).setContentsDeductible1(form.getContentsDeductible2());
+                        listAddInfo.get(i).setStockLimit1(form.getStockLimit2());
+                        listAddInfo.get(i).setStockDeductible1(form.getStockDeductible2());
+                        listAddInfo.get(i).setOfficeContentLimit1(form.getOfficeContentLimit2());
+                        listAddInfo.get(i).setOfficeContentDeductible1(form.getOfficeContentDeductible2());
+                        listAddInfo.get(i).setEdpLimit1(form.getEdpLimit2());
+                        listAddInfo.get(i).setEdpDeductible1(form.getEdpDeductible2());
+                        listAddInfo.get(i).setEquipmentLimit1(form.getEquipmentLimit2());
+                        listAddInfo.get(i).setEquipmentDeductible1(form.getEquipmentDeductible2());
+                        listAddInfo.get(i).setOffPremisesLimit1(form.getOffPremisesLimit2());
+                        listAddInfo.get(i).setOffPremisesDeductible1(form.getOffPremisesDeductible2());
+                        listAddInfo.get(i).setTransitLimit1(form.getTransitLimit2());
+                        listAddInfo.get(i).setTransitDeductible1(form.getTransitDeductible2());
+                        listAddInfo.get(i).setMiscPropertyLimit1(form.getMiscPropertyLimit2());
+                        listAddInfo.get(i).setMiscPropertyDeductible1(form.getMiscPropertyDeductible2());
+                        listAddInfo.get(i).setContractorEquipmentLimit1(form.getContractorEquipmentLimit2());
+                        listAddInfo.get(i).setContractorEquipmentDeductible1(form.getContractorEquipmentDeductible2());
+                        listAddInfo.get(i).setInstallationFloaterLimit1(form.getInstallationFloaterLimit2());
+                        listAddInfo.get(i).setInstallationFloaterDeductible1(form.getInstallationFloaterDeductible2());
+                        listAddInfo.get(i).setToolFloaterLimit1(form.getToolFloaterLimit2());                    
+                        listAddInfo.get(i).setToolFloaterDeductible1(form.getToolFloaterDeductible2());
+                        listAddInfo.get(i).setSignFloaterLimit1(form.getSignFloaterLimit2());
+                        listAddInfo.get(i).setSignFloaterDeductible1(form.getSignFloaterDeductible2());
+                        listAddInfo.get(i).setMotorTruckLimit1(form.getMotorTruckLimit2());
+                        listAddInfo.get(i).setMotorTruckDeductible1(form.getMotorTruckDeductible2());
+                        listAddInfo.get(i).setGlassLimit1(form.getGlassLimit2());
+                        listAddInfo.get(i).setGlassDeductible1(form.getGlassDeductible2());
+                        listAddInfo.get(i).setSewerBackupDeductible1(form.getSewerBackupDeductible2());
+                        listAddInfo.get(i).setFloodDeductible1(form.getFloodDeductible2());
+                        listAddInfo.get(i).setEarthquakeDeductible1(form.getEarthquakeDeductible2());
+                        listAddInfo.get(i).setProfitLimit1(form.getProfitLimit2());
+                        listAddInfo.get(i).setProfitDeductible1(form.getProfitDeductible2());
+                        listAddInfo.get(i).setGrossEarningLimit1(form.getGrossEarningLimit2());
+                        listAddInfo.get(i).setGrossEarningDeductible1(form.getGrossEarningDeductible2());
+                        listAddInfo.get(i).setRentalIncomeLimit1(form.getRentalIncomeLimit2());
+                        listAddInfo.get(i).setRentalIncomeDeductible1(form.getRentalIncomeDeductible2());
+                        listAddInfo.get(i).setExtraExpenseLimit1(form.getExtraExpenseLimit2());
+                        listAddInfo.get(i).setExtraExpenseDeductible1(form.getExtraExpenseDeductible2());
+                        listAddInfo.get(i).setOffPremisesPowerLimit1(form.getOffPremisesLimit2());
+                        listAddInfo.get(i).setOffPremisesPowerDeductible1(form.getOffPremisesDeductible2());
+                        listAddInfo.get(i).setInsideOutsideLimit1(form.getInsideOutsideLimit2()); 
+                        listAddInfo.get(i).setInsideOutsideDeductible1(form.getInsideOutsideDeductible2());
+                        listAddInfo.get(i).setBfMoneyLimit1(form.getBfMoneyLimit2());
+                        listAddInfo.get(i).setBfMoneyDeductible1(form.getBfMoneyDeductible2());
+                        listAddInfo.get(i).setDeopistorForgeryLimit1(form.getDeopistorForgeryLimit2());
+                        listAddInfo.get(i).setDeopistorForgeryDeductible1(form.getDeopistorForgeryDeductible2());
+                        listAddInfo.get(i).setMoneyOrdersLimit1(form.getMoneyOrdersLimit2());
+                        listAddInfo.get(i).setMoneyOrdersDeductible1(form.getMoneyOrdersDeductible2());
+                        listAddInfo.get(i).setEmployDishonestyLimit1(form.getEmployDishonestyLimit2());                    
+                        listAddInfo.get(i).setEmployDishonestyDeductible1(form.getEmployDishonestyDeductible2());
+                        listAddInfo.get(i).setCglLimit1(form.getCglLimit2());
+                        listAddInfo.get(i).setCglDeductible1(form.getCglDeductible2());
+                        listAddInfo.get(i).setTenantsLegalLimit1(form.getTenantsLegalLimit2());
+                        listAddInfo.get(i).setTenantsLegalDeductible1(form.getTenantsLegalDeductible2());
+                        listAddInfo.get(i).setNonOwnedAutoLimit1(form.getNonOwnedAutoLimit2());
+                        listAddInfo.get(i).setNonOwnedAutoDeductible1(form.getNonOwnedAutoDeductible2());
+                        listAddInfo.get(i).setSef96Limit1(form.getSef96Limit2());
+                        listAddInfo.get(i).setSef96Deductible1(form.getSef96Deductible2());
+                        listAddInfo.get(i).setSef94Limit1(form.getSef94Limit2());
+                        listAddInfo.get(i).setSef94Deductible1(form.getSef94Deductible2());
+                        listAddInfo.get(i).setDoLimit1(form.getDoLimit2());
+                        listAddInfo.get(i).setDoDeductible1(form.getDoDeductible2());
+                        listAddInfo.get(i).setEoLimit1(form.getEoLimit2());
+                        listAddInfo.get(i).setEoDeductible1(form.getEoDeductible2());
+                        listAddInfo.get(i).setEmployerLimit1(form.getEmployerLimit2());
+                        listAddInfo.get(i).setEmployerDeductible1(form.getEmployerDeductible2()); 
+                        listAddInfo.get(i).setUmbrellaLimit1(form.getUmbrellaLimit2());
+                        listAddInfo.get(i).setUmbrellaDeductible1(form.getUmbrellaDeductible2());
+                        listAddInfo.get(i).setWrapUpLimit1(form.getWrapUpLimit2());
+                        listAddInfo.get(i).setWrapUpDeductible1(form.getWrapUpDeductible2());
+                        listAddInfo.get(i).setStdComprehensiveLimit1(form.getStdComprehensiveLimit2());
+                        listAddInfo.get(i).setStdComprehensiveDeductible1(form.getStdComprehensiveDeductible2());
+                        listAddInfo.get(i).setAirConditioningLimit1(form.getAirConditioningLimit2());
+                        listAddInfo.get(i).setAirConditioningDeductible1(form.getAirConditioningDeductible2());
+                        listAddInfo.get(i).setProductionMachineryLimit1(form.getProductionMachineryLimit2());
+                        listAddInfo.get(i).setProductionMachineryDeductible1(form.getProductionMachineryDeductible2());
+                    	listAddInfo.get(i).setOthercoverage11(form.getOthercoverage12());
+	                listAddInfo.get(i).setOthercoverage21(form.getOthercoverage22());
+                        listAddInfo.get(i).setOtherCoverageLimit11(form.getOtherCoverageLimit12());
+                        listAddInfo.get(i).setOtherCoverageDeductible11(form.getOtherCoverageDeductible12());
+                        listAddInfo.get(i).setOtherCoverageLimit21(form.getOtherCoverageLimit22());
+                        listAddInfo.get(i).setOtherCoverageDeductible21(form.getOtherCoverageDeductible22());
+    	                listAddInfo.get(i).setAdditionalCoverage1(form.getAdditionalcoverage2());
+        	        listAddInfo.get(i).setRoofupdated1(form.getRoofupdated2());
+            	        listAddInfo.get(i).setHeatingupdated1(form.getHeatingupdated2());
+                	listAddInfo.get(i).setElectricalupdated1(form.getElectricalupdated2());
+                    	listAddInfo.get(i).setElectricalamps1(form.getElectricalamps2());
+	                listAddInfo.get(i).setFireProtectiondistance1(form.getFireProtectiondistance2());
+    	                listAddInfo.get(i).setAddress1(form.getAddress2());
+        	        listAddInfo.get(i).setBasement1(form.getBasement2());
+            	        listAddInfo.get(i).setOwner11(form.getOwnercb2());
+                	listAddInfo.get(i).setTruckMan1(form.getTruckMan2());
+                    	listAddInfo.get(i).setGrossEarning801(form.getGrossEarningCheckbox2());
+	                listAddInfo.get(i).setWallsframe1(form.getWallsframe2());
+    	                listAddInfo.get(i).setWallshcb1(form.getWallshcb2());
+	                listAddInfo.get(i).setWallssteel1(form.getWallssteel2());
+    	                listAddInfo.get(i).setWallsbrick1(form.getWallsbrick2());
+        	        listAddInfo.get(i).setRoofwood1(form.getRoofwood2());
+            	        listAddInfo.get(i).setRoofsteel1(form.getRoofsteel2());
+                	listAddInfo.get(i).setRoofconcrete1(form.getRoofconcrete2());
+                    	listAddInfo.get(i).setFloorsconcrete1(form.getFloorsconcrete2());
+	                listAddInfo.get(i).setFloorswood1(form.getFloorswood2());
+    	                listAddInfo.get(i).setHeatinggas1(form.getHeatinggas2());
+        	        listAddInfo.get(i).setHeatingoil1(form.getHeatingoil2());
+            	        listAddInfo.get(i).setHeatingelectric1(form.getHeatingelectric2());
+                	listAddInfo.get(i).setHeatingother1(form.getHeatingother2());
+                    	listAddInfo.get(i).setElectricalbreakers1(form.getElectricalbreakers2());
+	                listAddInfo.get(i).setElectricalfuses1(form.getElectricalfuses2());
+        	        listAddInfo.get(i).setPlumbingcopper1(form.getPlumbingcopper2());
+            	        listAddInfo.get(i).setPlumbingpvc1(form.getPlumbingpvc2());
+                	listAddInfo.get(i).setPlumbingother1(form.getPlumbingother2());
+                    	listAddInfo.get(i).setFireProtection1(form.getFireProtection2());
+	                listAddInfo.get(i).setSecurity1(form.getSecurity2());
+                        listAddInfo.get(i).setAge1(form.getAge2());
+                        listAddInfo.get(i).setTotalSqFootage1(form.getTotalSqFootage2());
+                        listAddInfo.get(i).setInsdSqFootage1(form.getInsdSqFootage2());
+                        listAddInfo.get(i).setNoOfStories1(form.getNoOfStories2());
+                }
+                break;
+                case 3:
+                if (CommonValidations.isStringEmpty(form.getAddress3()))
+                {
+                        listAddInfo.get(i).setBuildingLimit1(form.getBuildingLimit3());
+                        listAddInfo.get(i).setBuildingDeductible1(form.getBuildingDeductible3());
+                        listAddInfo.get(i).setContentsLimit1(form.getContentsLimit3());
+                        listAddInfo.get(i).setContentsDeductible1(form.getContentsDeductible3());
+                        listAddInfo.get(i).setStockLimit1(form.getStockLimit3());
+                        listAddInfo.get(i).setStockDeductible1(form.getStockDeductible3());
+                        listAddInfo.get(i).setOfficeContentLimit1(form.getOfficeContentLimit3());
+                        listAddInfo.get(i).setOfficeContentDeductible1(form.getOfficeContentDeductible3());
+                        listAddInfo.get(i).setEdpLimit1(form.getEdpLimit3());
+                        listAddInfo.get(i).setEdpDeductible1(form.getEdpDeductible3());
+                        listAddInfo.get(i).setEquipmentLimit1(form.getEquipmentLimit3());
+                        listAddInfo.get(i).setEquipmentDeductible1(form.getEquipmentDeductible3());
+                        listAddInfo.get(i).setOffPremisesLimit1(form.getOffPremisesLimit3());
+                        listAddInfo.get(i).setOffPremisesDeductible1(form.getOffPremisesDeductible3());
+                        listAddInfo.get(i).setTransitLimit1(form.getTransitLimit3());
+                        listAddInfo.get(i).setTransitDeductible1(form.getTransitDeductible3());
+                        listAddInfo.get(i).setMiscPropertyLimit1(form.getMiscPropertyLimit3());
+                        listAddInfo.get(i).setMiscPropertyDeductible1(form.getMiscPropertyDeductible3());
+                        listAddInfo.get(i).setContractorEquipmentLimit1(form.getContractorEquipmentLimit3());
+                        listAddInfo.get(i).setContractorEquipmentDeductible1(form.getContractorEquipmentDeductible3());
+                        listAddInfo.get(i).setInstallationFloaterLimit1(form.getInstallationFloaterLimit3());
+                        listAddInfo.get(i).setInstallationFloaterDeductible1(form.getInstallationFloaterDeductible3());
+                        listAddInfo.get(i).setToolFloaterLimit1(form.getToolFloaterLimit3());                    
+                        listAddInfo.get(i).setToolFloaterDeductible1(form.getToolFloaterDeductible3());
+                        listAddInfo.get(i).setSignFloaterLimit1(form.getSignFloaterLimit3());
+                        listAddInfo.get(i).setSignFloaterDeductible1(form.getSignFloaterDeductible3());
+                        listAddInfo.get(i).setMotorTruckLimit1(form.getMotorTruckLimit3());
+                        listAddInfo.get(i).setMotorTruckDeductible1(form.getMotorTruckDeductible3());
+                        listAddInfo.get(i).setGlassLimit1(form.getGlassLimit3());
+                        listAddInfo.get(i).setGlassDeductible1(form.getGlassDeductible3());
+                        listAddInfo.get(i).setSewerBackupDeductible1(form.getSewerBackupDeductible3());
+                        listAddInfo.get(i).setFloodDeductible1(form.getFloodDeductible3());
+                        listAddInfo.get(i).setEarthquakeDeductible1(form.getEarthquakeDeductible3());
+                        listAddInfo.get(i).setProfitLimit1(form.getProfitLimit3());
+                        listAddInfo.get(i).setProfitDeductible1(form.getProfitDeductible3());
+                        listAddInfo.get(i).setGrossEarningLimit1(form.getGrossEarningLimit3());
+                        listAddInfo.get(i).setGrossEarningDeductible1(form.getGrossEarningDeductible3());
+                        listAddInfo.get(i).setRentalIncomeLimit1(form.getRentalIncomeLimit3());
+                        listAddInfo.get(i).setRentalIncomeDeductible1(form.getRentalIncomeDeductible3());
+                        listAddInfo.get(i).setExtraExpenseLimit1(form.getExtraExpenseLimit3());
+                        listAddInfo.get(i).setExtraExpenseDeductible1(form.getExtraExpenseDeductible3());
+                        listAddInfo.get(i).setOffPremisesPowerLimit1(form.getOffPremisesLimit3());
+                        listAddInfo.get(i).setOffPremisesPowerDeductible1(form.getOffPremisesDeductible3());
+                        listAddInfo.get(i).setInsideOutsideLimit1(form.getInsideOutsideLimit3()); 
+                        listAddInfo.get(i).setInsideOutsideDeductible1(form.getInsideOutsideDeductible3());
+                        listAddInfo.get(i).setBfMoneyLimit1(form.getBfMoneyLimit3());
+                        listAddInfo.get(i).setBfMoneyDeductible1(form.getBfMoneyDeductible3());
+                        listAddInfo.get(i).setDeopistorForgeryLimit1(form.getDeopistorForgeryLimit3());
+                        listAddInfo.get(i).setDeopistorForgeryDeductible1(form.getDeopistorForgeryDeductible3());
+                        listAddInfo.get(i).setMoneyOrdersLimit1(form.getMoneyOrdersLimit3());
+                        listAddInfo.get(i).setMoneyOrdersDeductible1(form.getMoneyOrdersDeductible3());
+                        listAddInfo.get(i).setEmployDishonestyLimit1(form.getEmployDishonestyLimit3());                    
+                        listAddInfo.get(i).setEmployDishonestyDeductible1(form.getEmployDishonestyDeductible3());
+                        listAddInfo.get(i).setCglLimit1(form.getCglLimit3());
+                        listAddInfo.get(i).setCglDeductible1(form.getCglDeductible3());
+                        listAddInfo.get(i).setTenantsLegalLimit1(form.getTenantsLegalLimit3());
+                        listAddInfo.get(i).setTenantsLegalDeductible1(form.getTenantsLegalDeductible3());
+                        listAddInfo.get(i).setNonOwnedAutoLimit1(form.getNonOwnedAutoLimit3());
+                        listAddInfo.get(i).setNonOwnedAutoDeductible1(form.getNonOwnedAutoDeductible3());
+                        listAddInfo.get(i).setSef96Limit1(form.getSef96Limit3());
+                        listAddInfo.get(i).setSef96Deductible1(form.getSef96Deductible3());
+                        listAddInfo.get(i).setSef94Limit1(form.getSef94Limit3());
+                        listAddInfo.get(i).setSef94Deductible1(form.getSef94Deductible3());
+                        listAddInfo.get(i).setDoLimit1(form.getDoLimit3());
+                        listAddInfo.get(i).setDoDeductible1(form.getDoDeductible3());
+                        listAddInfo.get(i).setEoLimit1(form.getEoLimit3());
+                        listAddInfo.get(i).setEoDeductible1(form.getEoDeductible3());
+                        listAddInfo.get(i).setEmployerLimit1(form.getEmployerLimit3());
+                        listAddInfo.get(i).setEmployerDeductible1(form.getEmployerDeductible3()); 
+                        listAddInfo.get(i).setUmbrellaLimit1(form.getUmbrellaLimit3());
+                        listAddInfo.get(i).setUmbrellaDeductible1(form.getUmbrellaDeductible3());
+                        listAddInfo.get(i).setWrapUpLimit1(form.getWrapUpLimit3());
+                        listAddInfo.get(i).setWrapUpDeductible1(form.getWrapUpDeductible3());
+                        listAddInfo.get(i).setStdComprehensiveLimit1(form.getStdComprehensiveLimit3());
+                        listAddInfo.get(i).setStdComprehensiveDeductible1(form.getStdComprehensiveDeductible3());
+                        listAddInfo.get(i).setAirConditioningLimit1(form.getAirConditioningLimit3());
+                        listAddInfo.get(i).setAirConditioningDeductible1(form.getAirConditioningDeductible3());
+                        listAddInfo.get(i).setProductionMachineryLimit1(form.getProductionMachineryLimit3());
+                        listAddInfo.get(i).setProductionMachineryDeductible1(form.getProductionMachineryDeductible3());
+                    	listAddInfo.get(i).setOthercoverage11(form.getOthercoverage13());
+	                listAddInfo.get(i).setOthercoverage21(form.getOthercoverage23());
+                        listAddInfo.get(i).setOtherCoverageLimit11(form.getOtherCoverageLimit13());
+                        listAddInfo.get(i).setOtherCoverageDeductible11(form.getOtherCoverageDeductible13());
+                        listAddInfo.get(i).setOtherCoverageLimit21(form.getOtherCoverageLimit23());
+                        listAddInfo.get(i).setOtherCoverageDeductible21(form.getOtherCoverageDeductible23());
+    	                listAddInfo.get(i).setAdditionalCoverage1(form.getAdditionalcoverage3());
+        	        listAddInfo.get(i).setRoofupdated1(form.getRoofupdated3());
+            	        listAddInfo.get(i).setHeatingupdated1(form.getHeatingupdated3());
+                	listAddInfo.get(i).setElectricalupdated1(form.getElectricalupdated3());
+                    	listAddInfo.get(i).setElectricalamps1(form.getElectricalamps3());
+	                listAddInfo.get(i).setFireProtectiondistance1(form.getFireProtectiondistance3());
+    	                listAddInfo.get(i).setAddress1(form.getAddress3());
+        	        listAddInfo.get(i).setBasement1(form.getBasement3());
+            	        listAddInfo.get(i).setOwner11(form.getOwnercb3());
+                	listAddInfo.get(i).setTruckMan1(form.getTruckMan3());
+                    	listAddInfo.get(i).setGrossEarning801(form.getGrossEarningCheckbox3());
+	                listAddInfo.get(i).setWallsframe1(form.getWallsframe3());
+    	                listAddInfo.get(i).setWallshcb1(form.getWallshcb3());
+	                listAddInfo.get(i).setWallssteel1(form.getWallssteel3());
+    	                listAddInfo.get(i).setWallsbrick1(form.getWallsbrick3());
+        	        listAddInfo.get(i).setRoofwood1(form.getRoofwood3());
+            	        listAddInfo.get(i).setRoofsteel1(form.getRoofsteel3());
+                	listAddInfo.get(i).setRoofconcrete1(form.getRoofconcrete3());
+                    	listAddInfo.get(i).setFloorsconcrete1(form.getFloorsconcrete3());
+	                listAddInfo.get(i).setFloorswood1(form.getFloorswood3());
+    	                listAddInfo.get(i).setHeatinggas1(form.getHeatinggas3());
+        	        listAddInfo.get(i).setHeatingoil1(form.getHeatingoil3());
+            	        listAddInfo.get(i).setHeatingelectric1(form.getHeatingelectric3());
+                	listAddInfo.get(i).setHeatingother1(form.getHeatingother3());
+                    	listAddInfo.get(i).setElectricalbreakers1(form.getElectricalbreakers3());
+	                listAddInfo.get(i).setElectricalfuses1(form.getElectricalfuses3());
+        	        listAddInfo.get(i).setPlumbingcopper1(form.getPlumbingcopper3());
+            	        listAddInfo.get(i).setPlumbingpvc1(form.getPlumbingpvc3());
+                	listAddInfo.get(i).setPlumbingother1(form.getPlumbingother3());
+                    	listAddInfo.get(i).setFireProtection1(form.getFireProtection3());
+	                listAddInfo.get(i).setSecurity1(form.getSecurity3());
+                        listAddInfo.get(i).setAge1(form.getAge3());
+                        listAddInfo.get(i).setTotalSqFootage1(form.getTotalSqFootage3());
+                        listAddInfo.get(i).setInsdSqFootage1(form.getInsdSqFootage3());
+                        listAddInfo.get(i).setNoOfStories1(form.getNoOfStories3());
+                }
+                break;
+                case 4:
+                if (CommonValidations.isStringEmpty(form.getAddress4()))
+                {
+                       listAddInfo.get(i).setBuildingLimit1(form.getBuildingLimit4());
+                        listAddInfo.get(i).setBuildingDeductible1(form.getBuildingDeductible4());
+                        listAddInfo.get(i).setContentsLimit1(form.getContentsLimit4());
+                        listAddInfo.get(i).setContentsDeductible1(form.getContentsDeductible4());
+                        listAddInfo.get(i).setStockLimit1(form.getStockLimit4());
+                        listAddInfo.get(i).setStockDeductible1(form.getStockDeductible4());
+                        listAddInfo.get(i).setOfficeContentLimit1(form.getOfficeContentLimit4());
+                        listAddInfo.get(i).setOfficeContentDeductible1(form.getOfficeContentDeductible4());
+                        listAddInfo.get(i).setEdpLimit1(form.getEdpLimit4());
+                        listAddInfo.get(i).setEdpDeductible1(form.getEdpDeductible4());
+                        listAddInfo.get(i).setEquipmentLimit1(form.getEquipmentLimit4());
+                        listAddInfo.get(i).setEquipmentDeductible1(form.getEquipmentDeductible4());
+                        listAddInfo.get(i).setOffPremisesLimit1(form.getOffPremisesLimit4());
+                        listAddInfo.get(i).setOffPremisesDeductible1(form.getOffPremisesDeductible4());
+                        listAddInfo.get(i).setTransitLimit1(form.getTransitLimit4());
+                        listAddInfo.get(i).setTransitDeductible1(form.getTransitDeductible4());
+                        listAddInfo.get(i).setMiscPropertyLimit1(form.getMiscPropertyLimit4());
+                        listAddInfo.get(i).setMiscPropertyDeductible1(form.getMiscPropertyDeductible4());
+                        listAddInfo.get(i).setContractorEquipmentLimit1(form.getContractorEquipmentLimit4());
+                        listAddInfo.get(i).setContractorEquipmentDeductible1(form.getContractorEquipmentDeductible4());
+                        listAddInfo.get(i).setInstallationFloaterLimit1(form.getInstallationFloaterLimit4());
+                        listAddInfo.get(i).setInstallationFloaterDeductible1(form.getInstallationFloaterDeductible4());
+                        listAddInfo.get(i).setToolFloaterLimit1(form.getToolFloaterLimit4());                    
+                        listAddInfo.get(i).setToolFloaterDeductible1(form.getToolFloaterDeductible4());
+                        listAddInfo.get(i).setSignFloaterLimit1(form.getSignFloaterLimit4());
+                        listAddInfo.get(i).setSignFloaterDeductible1(form.getSignFloaterDeductible4());
+                        listAddInfo.get(i).setMotorTruckLimit1(form.getMotorTruckLimit4());
+                        listAddInfo.get(i).setMotorTruckDeductible1(form.getMotorTruckDeductible4());
+                        listAddInfo.get(i).setGlassLimit1(form.getGlassLimit4());
+                        listAddInfo.get(i).setGlassDeductible1(form.getGlassDeductible4());
+                        listAddInfo.get(i).setSewerBackupDeductible1(form.getSewerBackupDeductible4());
+                        listAddInfo.get(i).setFloodDeductible1(form.getFloodDeductible4());
+                        listAddInfo.get(i).setEarthquakeDeductible1(form.getEarthquakeDeductible4());
+                        listAddInfo.get(i).setProfitLimit1(form.getProfitLimit4());
+                        listAddInfo.get(i).setProfitDeductible1(form.getProfitDeductible4());
+                        listAddInfo.get(i).setGrossEarningLimit1(form.getGrossEarningLimit4());
+                        listAddInfo.get(i).setGrossEarningDeductible1(form.getGrossEarningDeductible4());
+                        listAddInfo.get(i).setRentalIncomeLimit1(form.getRentalIncomeLimit4());
+                        listAddInfo.get(i).setRentalIncomeDeductible1(form.getRentalIncomeDeductible4());
+                        listAddInfo.get(i).setExtraExpenseLimit1(form.getExtraExpenseLimit4());
+                        listAddInfo.get(i).setExtraExpenseDeductible1(form.getExtraExpenseDeductible4());
+                        listAddInfo.get(i).setOffPremisesPowerLimit1(form.getOffPremisesLimit4());
+                        listAddInfo.get(i).setOffPremisesPowerDeductible1(form.getOffPremisesDeductible4());
+                        listAddInfo.get(i).setInsideOutsideLimit1(form.getInsideOutsideLimit4()); 
+                        listAddInfo.get(i).setInsideOutsideDeductible1(form.getInsideOutsideDeductible4());
+                        listAddInfo.get(i).setBfMoneyLimit1(form.getBfMoneyLimit4());
+                        listAddInfo.get(i).setBfMoneyDeductible1(form.getBfMoneyDeductible4());
+                        listAddInfo.get(i).setDeopistorForgeryLimit1(form.getDeopistorForgeryLimit4());
+                        listAddInfo.get(i).setDeopistorForgeryDeductible1(form.getDeopistorForgeryDeductible4());
+                        listAddInfo.get(i).setMoneyOrdersLimit1(form.getMoneyOrdersLimit4());
+                        listAddInfo.get(i).setMoneyOrdersDeductible1(form.getMoneyOrdersDeductible4());
+                        listAddInfo.get(i).setEmployDishonestyLimit1(form.getEmployDishonestyLimit4());                    
+                        listAddInfo.get(i).setEmployDishonestyDeductible1(form.getEmployDishonestyDeductible4());
+                        listAddInfo.get(i).setCglLimit1(form.getCglLimit4());
+                        listAddInfo.get(i).setCglDeductible1(form.getCglDeductible4());
+                        listAddInfo.get(i).setTenantsLegalLimit1(form.getTenantsLegalLimit4());
+                        listAddInfo.get(i).setTenantsLegalDeductible1(form.getTenantsLegalDeductible4());
+                        listAddInfo.get(i).setNonOwnedAutoLimit1(form.getNonOwnedAutoLimit4());
+                        listAddInfo.get(i).setNonOwnedAutoDeductible1(form.getNonOwnedAutoDeductible4());
+                        listAddInfo.get(i).setSef96Limit1(form.getSef96Limit4());
+                        listAddInfo.get(i).setSef96Deductible1(form.getSef96Deductible4());
+                        listAddInfo.get(i).setSef94Limit1(form.getSef94Limit4());
+                        listAddInfo.get(i).setSef94Deductible1(form.getSef94Deductible4());
+                        listAddInfo.get(i).setDoLimit1(form.getDoLimit4());
+                        listAddInfo.get(i).setDoDeductible1(form.getDoDeductible4());
+                        listAddInfo.get(i).setEoLimit1(form.getEoLimit4());
+                        listAddInfo.get(i).setEoDeductible1(form.getEoDeductible4());
+                        listAddInfo.get(i).setEmployerLimit1(form.getEmployerLimit4());
+                        listAddInfo.get(i).setEmployerDeductible1(form.getEmployerDeductible4()); 
+                        listAddInfo.get(i).setUmbrellaLimit1(form.getUmbrellaLimit4());
+                        listAddInfo.get(i).setUmbrellaDeductible1(form.getUmbrellaDeductible4());
+                        listAddInfo.get(i).setWrapUpLimit1(form.getWrapUpLimit4());
+                        listAddInfo.get(i).setWrapUpDeductible1(form.getWrapUpDeductible4());
+                        listAddInfo.get(i).setStdComprehensiveLimit1(form.getStdComprehensiveLimit4());
+                        listAddInfo.get(i).setStdComprehensiveDeductible1(form.getStdComprehensiveDeductible4());
+                        listAddInfo.get(i).setAirConditioningLimit1(form.getAirConditioningLimit4());
+                        listAddInfo.get(i).setAirConditioningDeductible1(form.getAirConditioningDeductible4());
+                        listAddInfo.get(i).setProductionMachineryLimit1(form.getProductionMachineryLimit4());
+                        listAddInfo.get(i).setProductionMachineryDeductible1(form.getProductionMachineryDeductible4());
+                    	listAddInfo.get(i).setOthercoverage11(form.getOthercoverage14());
+	                listAddInfo.get(i).setOthercoverage21(form.getOthercoverage24());
+                        listAddInfo.get(i).setOtherCoverageLimit11(form.getOtherCoverageLimit14());
+                        listAddInfo.get(i).setOtherCoverageDeductible11(form.getOtherCoverageDeductible14());
+                        listAddInfo.get(i).setOtherCoverageLimit21(form.getOtherCoverageLimit24());
+                        listAddInfo.get(i).setOtherCoverageDeductible21(form.getOtherCoverageDeductible24());
+    	                listAddInfo.get(i).setAdditionalCoverage1(form.getAdditionalcoverage4());
+        	        listAddInfo.get(i).setRoofupdated1(form.getRoofupdated4());
+            	        listAddInfo.get(i).setHeatingupdated1(form.getHeatingupdated4());
+                	listAddInfo.get(i).setElectricalupdated1(form.getElectricalupdated4());
+                    	listAddInfo.get(i).setElectricalamps1(form.getElectricalamps4());
+	                listAddInfo.get(i).setFireProtectiondistance1(form.getFireProtectiondistance4());
+    	                listAddInfo.get(i).setAddress1(form.getAddress4());
+        	        listAddInfo.get(i).setBasement1(form.getBasement4());
+            	        listAddInfo.get(i).setOwner11(form.getOwnercb4());
+                	listAddInfo.get(i).setTruckMan1(form.getTruckMan4());
+                    	listAddInfo.get(i).setGrossEarning801(form.getGrossEarningCheckbox4());
+	                listAddInfo.get(i).setWallsframe1(form.getWallsframe4());
+    	                listAddInfo.get(i).setWallshcb1(form.getWallshcb4());
+	                listAddInfo.get(i).setWallssteel1(form.getWallssteel4());
+    	                listAddInfo.get(i).setWallsbrick1(form.getWallsbrick4());
+        	        listAddInfo.get(i).setRoofwood1(form.getRoofwood4());
+            	        listAddInfo.get(i).setRoofsteel1(form.getRoofsteel4());
+                	listAddInfo.get(i).setRoofconcrete1(form.getRoofconcrete4());
+                    	listAddInfo.get(i).setFloorsconcrete1(form.getFloorsconcrete4());
+	                listAddInfo.get(i).setFloorswood1(form.getFloorswood4());
+    	                listAddInfo.get(i).setHeatinggas1(form.getHeatinggas4());
+        	        listAddInfo.get(i).setHeatingoil1(form.getHeatingoil4());
+            	        listAddInfo.get(i).setHeatingelectric1(form.getHeatingelectric4());
+                	listAddInfo.get(i).setHeatingother1(form.getHeatingother4());
+                    	listAddInfo.get(i).setElectricalbreakers1(form.getElectricalbreakers4());
+	                listAddInfo.get(i).setElectricalfuses1(form.getElectricalfuses4());
+        	        listAddInfo.get(i).setPlumbingcopper1(form.getPlumbingcopper4());
+            	        listAddInfo.get(i).setPlumbingpvc1(form.getPlumbingpvc4());
+                	listAddInfo.get(i).setPlumbingother1(form.getPlumbingother4());
+                    	listAddInfo.get(i).setFireProtection1(form.getFireProtection4());
+	                listAddInfo.get(i).setSecurity1(form.getSecurity4());
+                        listAddInfo.get(i).setAge1(form.getAge4());
+                        listAddInfo.get(i).setTotalSqFootage1(form.getTotalSqFootage4());
+                        listAddInfo.get(i).setInsdSqFootage1(form.getInsdSqFootage4());
+                        listAddInfo.get(i).setNoOfStories1(form.getNoOfStories4());  
+                }
+                break;
+                case 5:
+                if (CommonValidations.isStringEmpty(form.getAddress5()))
+                {
+                        listAddInfo.get(i).setBuildingLimit1(form.getBuildingLimit5());
+                        listAddInfo.get(i).setBuildingDeductible1(form.getBuildingDeductible5());
+                        listAddInfo.get(i).setContentsLimit1(form.getContentsLimit5());
+                        listAddInfo.get(i).setContentsDeductible1(form.getContentsDeductible5());
+                        listAddInfo.get(i).setStockLimit1(form.getStockLimit5());
+                        listAddInfo.get(i).setStockDeductible1(form.getStockDeductible5());
+                        listAddInfo.get(i).setOfficeContentLimit1(form.getOfficeContentLimit5());
+                        listAddInfo.get(i).setOfficeContentDeductible1(form.getOfficeContentDeductible5());
+                        listAddInfo.get(i).setEdpLimit1(form.getEdpLimit5());
+                        listAddInfo.get(i).setEdpDeductible1(form.getEdpDeductible5());
+                        listAddInfo.get(i).setEquipmentLimit1(form.getEquipmentLimit5());
+                        listAddInfo.get(i).setEquipmentDeductible1(form.getEquipmentDeductible5());
+                        listAddInfo.get(i).setOffPremisesLimit1(form.getOffPremisesLimit5());
+                        listAddInfo.get(i).setOffPremisesDeductible1(form.getOffPremisesDeductible5());
+                        listAddInfo.get(i).setTransitLimit1(form.getTransitLimit5());
+                        listAddInfo.get(i).setTransitDeductible1(form.getTransitDeductible5());
+                        listAddInfo.get(i).setMiscPropertyLimit1(form.getMiscPropertyLimit5());
+                        listAddInfo.get(i).setMiscPropertyDeductible1(form.getMiscPropertyDeductible5());
+                        listAddInfo.get(i).setContractorEquipmentLimit1(form.getContractorEquipmentLimit5());
+                        listAddInfo.get(i).setContractorEquipmentDeductible1(form.getContractorEquipmentDeductible5());
+                        listAddInfo.get(i).setInstallationFloaterLimit1(form.getInstallationFloaterLimit5());
+                        listAddInfo.get(i).setInstallationFloaterDeductible1(form.getInstallationFloaterDeductible5());
+                        listAddInfo.get(i).setToolFloaterLimit1(form.getToolFloaterLimit5());                    
+                        listAddInfo.get(i).setToolFloaterDeductible1(form.getToolFloaterDeductible5());
+                        listAddInfo.get(i).setSignFloaterLimit1(form.getSignFloaterLimit5());
+                        listAddInfo.get(i).setSignFloaterDeductible1(form.getSignFloaterDeductible5());
+                        listAddInfo.get(i).setMotorTruckLimit1(form.getMotorTruckLimit5());
+                        listAddInfo.get(i).setMotorTruckDeductible1(form.getMotorTruckDeductible5());
+                        listAddInfo.get(i).setGlassLimit1(form.getGlassLimit5());
+                        listAddInfo.get(i).setGlassDeductible1(form.getGlassDeductible5());
+                        listAddInfo.get(i).setSewerBackupDeductible1(form.getSewerBackupDeductible5());
+                        listAddInfo.get(i).setFloodDeductible1(form.getFloodDeductible5());
+                        listAddInfo.get(i).setEarthquakeDeductible1(form.getEarthquakeDeductible5());
+                        listAddInfo.get(i).setProfitLimit1(form.getProfitLimit5());
+                        listAddInfo.get(i).setProfitDeductible1(form.getProfitDeductible5());
+                        listAddInfo.get(i).setGrossEarningLimit1(form.getGrossEarningLimit5());
+                        listAddInfo.get(i).setGrossEarningDeductible1(form.getGrossEarningDeductible5());
+                        listAddInfo.get(i).setRentalIncomeLimit1(form.getRentalIncomeLimit5());
+                        listAddInfo.get(i).setRentalIncomeDeductible1(form.getRentalIncomeDeductible5());
+                        listAddInfo.get(i).setExtraExpenseLimit1(form.getExtraExpenseLimit5());
+                        listAddInfo.get(i).setExtraExpenseDeductible1(form.getExtraExpenseDeductible5());
+                        listAddInfo.get(i).setOffPremisesPowerLimit1(form.getOffPremisesLimit5());
+                        listAddInfo.get(i).setOffPremisesPowerDeductible1(form.getOffPremisesDeductible5());
+                        listAddInfo.get(i).setInsideOutsideLimit1(form.getInsideOutsideLimit5()); 
+                        listAddInfo.get(i).setInsideOutsideDeductible1(form.getInsideOutsideDeductible5());
+                        listAddInfo.get(i).setBfMoneyLimit1(form.getBfMoneyLimit5());
+                        listAddInfo.get(i).setBfMoneyDeductible1(form.getBfMoneyDeductible5());
+                        listAddInfo.get(i).setDeopistorForgeryLimit1(form.getDeopistorForgeryLimit5());
+                        listAddInfo.get(i).setDeopistorForgeryDeductible1(form.getDeopistorForgeryDeductible5());
+                        listAddInfo.get(i).setMoneyOrdersLimit1(form.getMoneyOrdersLimit5());
+                        listAddInfo.get(i).setMoneyOrdersDeductible1(form.getMoneyOrdersDeductible5());
+                        listAddInfo.get(i).setEmployDishonestyLimit1(form.getEmployDishonestyLimit5());                    
+                        listAddInfo.get(i).setEmployDishonestyDeductible1(form.getEmployDishonestyDeductible5());
+                        listAddInfo.get(i).setCglLimit1(form.getCglLimit5());
+                        listAddInfo.get(i).setCglDeductible1(form.getCglDeductible5());
+                        listAddInfo.get(i).setTenantsLegalLimit1(form.getTenantsLegalLimit5());
+                        listAddInfo.get(i).setTenantsLegalDeductible1(form.getTenantsLegalDeductible5());
+                        listAddInfo.get(i).setNonOwnedAutoLimit1(form.getNonOwnedAutoLimit5());
+                        listAddInfo.get(i).setNonOwnedAutoDeductible1(form.getNonOwnedAutoDeductible5());
+                        listAddInfo.get(i).setSef96Limit1(form.getSef96Limit5());
+                        listAddInfo.get(i).setSef96Deductible1(form.getSef96Deductible5());
+                        listAddInfo.get(i).setSef94Limit1(form.getSef94Limit5());
+                        listAddInfo.get(i).setSef94Deductible1(form.getSef94Deductible5());
+                        listAddInfo.get(i).setDoLimit1(form.getDoLimit5());
+                        listAddInfo.get(i).setDoDeductible1(form.getDoDeductible5());
+                        listAddInfo.get(i).setEoLimit1(form.getEoLimit5());
+                        listAddInfo.get(i).setEoDeductible1(form.getEoDeductible5());
+                        listAddInfo.get(i).setEmployerLimit1(form.getEmployerLimit5());
+                        listAddInfo.get(i).setEmployerDeductible1(form.getEmployerDeductible5()); 
+                        listAddInfo.get(i).setUmbrellaLimit1(form.getUmbrellaLimit5());
+                        listAddInfo.get(i).setUmbrellaDeductible1(form.getUmbrellaDeductible5());
+                        listAddInfo.get(i).setWrapUpLimit1(form.getWrapUpLimit5());
+                        listAddInfo.get(i).setWrapUpDeductible1(form.getWrapUpDeductible5());
+                        listAddInfo.get(i).setStdComprehensiveLimit1(form.getStdComprehensiveLimit5());
+                        listAddInfo.get(i).setStdComprehensiveDeductible1(form.getStdComprehensiveDeductible5());
+                        listAddInfo.get(i).setAirConditioningLimit1(form.getAirConditioningLimit5());
+                        listAddInfo.get(i).setAirConditioningDeductible1(form.getAirConditioningDeductible5());
+                        listAddInfo.get(i).setProductionMachineryLimit1(form.getProductionMachineryLimit5());
+                        listAddInfo.get(i).setProductionMachineryDeductible1(form.getProductionMachineryDeductible5());
+                    	listAddInfo.get(i).setOthercoverage11(form.getOthercoverage15());
+	                listAddInfo.get(i).setOthercoverage21(form.getOthercoverage25());
+                        listAddInfo.get(i).setOtherCoverageLimit11(form.getOtherCoverageLimit15());
+                        listAddInfo.get(i).setOtherCoverageDeductible11(form.getOtherCoverageDeductible15());
+                        listAddInfo.get(i).setOtherCoverageLimit21(form.getOtherCoverageLimit25());
+                        listAddInfo.get(i).setOtherCoverageDeductible21(form.getOtherCoverageDeductible25());
+    	                listAddInfo.get(i).setAdditionalCoverage1(form.getAdditionalcoverage5());
+        	        listAddInfo.get(i).setRoofupdated1(form.getRoofupdated5());
+            	        listAddInfo.get(i).setHeatingupdated1(form.getHeatingupdated5());
+                	listAddInfo.get(i).setElectricalupdated1(form.getElectricalupdated5());
+                    	listAddInfo.get(i).setElectricalamps1(form.getElectricalamps5());
+	                listAddInfo.get(i).setFireProtectiondistance1(form.getFireProtectiondistance5());
+    	                listAddInfo.get(i).setAddress1(form.getAddress5());
+        	        listAddInfo.get(i).setBasement1(form.getBasement5());
+            	        listAddInfo.get(i).setOwner11(form.getOwnercb5());
+                	listAddInfo.get(i).setTruckMan1(form.getTruckMan5());
+                    	listAddInfo.get(i).setGrossEarning801(form.getGrossEarningCheckbox5());
+	                listAddInfo.get(i).setWallsframe1(form.getWallsframe5());
+    	                listAddInfo.get(i).setWallshcb1(form.getWallshcb5());
+	                listAddInfo.get(i).setWallssteel1(form.getWallssteel5());
+    	                listAddInfo.get(i).setWallsbrick1(form.getWallsbrick5());
+        	        listAddInfo.get(i).setRoofwood1(form.getRoofwood5());
+            	        listAddInfo.get(i).setRoofsteel1(form.getRoofsteel5());
+                	listAddInfo.get(i).setRoofconcrete1(form.getRoofconcrete5());
+                    	listAddInfo.get(i).setFloorsconcrete1(form.getFloorsconcrete5());
+	                listAddInfo.get(i).setFloorswood1(form.getFloorswood5());
+    	                listAddInfo.get(i).setHeatinggas1(form.getHeatinggas5());
+        	        listAddInfo.get(i).setHeatingoil1(form.getHeatingoil5());
+            	        listAddInfo.get(i).setHeatingelectric1(form.getHeatingelectric5());
+                	listAddInfo.get(i).setHeatingother1(form.getHeatingother5());
+                    	listAddInfo.get(i).setElectricalbreakers1(form.getElectricalbreakers5());
+	                listAddInfo.get(i).setElectricalfuses1(form.getElectricalfuses5());
+        	        listAddInfo.get(i).setPlumbingcopper1(form.getPlumbingcopper5());
+            	        listAddInfo.get(i).setPlumbingpvc1(form.getPlumbingpvc5());
+                	listAddInfo.get(i).setPlumbingother1(form.getPlumbingother5());
+                    	listAddInfo.get(i).setFireProtection1(form.getFireProtection5());
+	                listAddInfo.get(i).setSecurity1(form.getSecurity5());
+                        listAddInfo.get(i).setAge1(form.getAge5());
+                        listAddInfo.get(i).setTotalSqFootage1(form.getTotalSqFootage5());
+                        listAddInfo.get(i).setInsdSqFootage1(form.getInsdSqFootage5());
+                        listAddInfo.get(i).setNoOfStories1(form.getNoOfStories5());   
+                }
+                break;
+                case 6:
+                if (CommonValidations.isStringEmpty(form.getAddress6()))
+                {
+                       listAddInfo.get(i).setBuildingLimit1(form.getBuildingLimit6());
+                        listAddInfo.get(i).setBuildingDeductible1(form.getBuildingDeductible6());
+                        listAddInfo.get(i).setContentsLimit1(form.getContentsLimit6());
+                        listAddInfo.get(i).setContentsDeductible1(form.getContentsDeductible6());
+                        listAddInfo.get(i).setStockLimit1(form.getStockLimit6());
+                        listAddInfo.get(i).setStockDeductible1(form.getStockDeductible6());
+                        listAddInfo.get(i).setOfficeContentLimit1(form.getOfficeContentLimit6());
+                        listAddInfo.get(i).setOfficeContentDeductible1(form.getOfficeContentDeductible6());
+                        listAddInfo.get(i).setEdpLimit1(form.getEdpLimit6());
+                        listAddInfo.get(i).setEdpDeductible1(form.getEdpDeductible6());
+                        listAddInfo.get(i).setEquipmentLimit1(form.getEquipmentLimit6());
+                        listAddInfo.get(i).setEquipmentDeductible1(form.getEquipmentDeductible6());
+                        listAddInfo.get(i).setOffPremisesLimit1(form.getOffPremisesLimit6());
+                        listAddInfo.get(i).setOffPremisesDeductible1(form.getOffPremisesDeductible6());
+                        listAddInfo.get(i).setTransitLimit1(form.getTransitLimit6());
+                        listAddInfo.get(i).setTransitDeductible1(form.getTransitDeductible6());
+                        listAddInfo.get(i).setMiscPropertyLimit1(form.getMiscPropertyLimit6());
+                        listAddInfo.get(i).setMiscPropertyDeductible1(form.getMiscPropertyDeductible6());
+                        listAddInfo.get(i).setContractorEquipmentLimit1(form.getContractorEquipmentLimit6());
+                        listAddInfo.get(i).setContractorEquipmentDeductible1(form.getContractorEquipmentDeductible6());
+                        listAddInfo.get(i).setInstallationFloaterLimit1(form.getInstallationFloaterLimit6());
+                        listAddInfo.get(i).setInstallationFloaterDeductible1(form.getInstallationFloaterDeductible6());
+                        listAddInfo.get(i).setToolFloaterLimit1(form.getToolFloaterLimit6());                    
+                        listAddInfo.get(i).setToolFloaterDeductible1(form.getToolFloaterDeductible6());
+                        listAddInfo.get(i).setSignFloaterLimit1(form.getSignFloaterLimit6());
+                        listAddInfo.get(i).setSignFloaterDeductible1(form.getSignFloaterDeductible6());
+                        listAddInfo.get(i).setMotorTruckLimit1(form.getMotorTruckLimit6());
+                        listAddInfo.get(i).setMotorTruckDeductible1(form.getMotorTruckDeductible6());
+                        listAddInfo.get(i).setGlassLimit1(form.getGlassLimit6());
+                        listAddInfo.get(i).setGlassDeductible1(form.getGlassDeductible6());
+                        listAddInfo.get(i).setSewerBackupDeductible1(form.getSewerBackupDeductible6());
+                        listAddInfo.get(i).setFloodDeductible1(form.getFloodDeductible6());
+                        listAddInfo.get(i).setEarthquakeDeductible1(form.getEarthquakeDeductible6());
+                        listAddInfo.get(i).setProfitLimit1(form.getProfitLimit6());
+                        listAddInfo.get(i).setProfitDeductible1(form.getProfitDeductible6());
+                        listAddInfo.get(i).setGrossEarningLimit1(form.getGrossEarningLimit6());
+                        listAddInfo.get(i).setGrossEarningDeductible1(form.getGrossEarningDeductible6());
+                        listAddInfo.get(i).setRentalIncomeLimit1(form.getRentalIncomeLimit6());
+                        listAddInfo.get(i).setRentalIncomeDeductible1(form.getRentalIncomeDeductible6());
+                        listAddInfo.get(i).setExtraExpenseLimit1(form.getExtraExpenseLimit6());
+                        listAddInfo.get(i).setExtraExpenseDeductible1(form.getExtraExpenseDeductible6());
+                        listAddInfo.get(i).setOffPremisesPowerLimit1(form.getOffPremisesLimit6());
+                        listAddInfo.get(i).setOffPremisesPowerDeductible1(form.getOffPremisesDeductible6());
+                        listAddInfo.get(i).setInsideOutsideLimit1(form.getInsideOutsideLimit6()); 
+                        listAddInfo.get(i).setInsideOutsideDeductible1(form.getInsideOutsideDeductible6());
+                        listAddInfo.get(i).setBfMoneyLimit1(form.getBfMoneyLimit6());
+                        listAddInfo.get(i).setBfMoneyDeductible1(form.getBfMoneyDeductible6());
+                        listAddInfo.get(i).setDeopistorForgeryLimit1(form.getDeopistorForgeryLimit6());
+                        listAddInfo.get(i).setDeopistorForgeryDeductible1(form.getDeopistorForgeryDeductible6());
+                        listAddInfo.get(i).setMoneyOrdersLimit1(form.getMoneyOrdersLimit6());
+                        listAddInfo.get(i).setMoneyOrdersDeductible1(form.getMoneyOrdersDeductible6());
+                        listAddInfo.get(i).setEmployDishonestyLimit1(form.getEmployDishonestyLimit6());                    
+                        listAddInfo.get(i).setEmployDishonestyDeductible1(form.getEmployDishonestyDeductible6());
+                        listAddInfo.get(i).setCglLimit1(form.getCglLimit6());
+                        listAddInfo.get(i).setCglDeductible1(form.getCglDeductible6());
+                        listAddInfo.get(i).setTenantsLegalLimit1(form.getTenantsLegalLimit6());
+                        listAddInfo.get(i).setTenantsLegalDeductible1(form.getTenantsLegalDeductible6());
+                        listAddInfo.get(i).setNonOwnedAutoLimit1(form.getNonOwnedAutoLimit6());
+                        listAddInfo.get(i).setNonOwnedAutoDeductible1(form.getNonOwnedAutoDeductible6());
+                        listAddInfo.get(i).setSef96Limit1(form.getSef96Limit6());
+                        listAddInfo.get(i).setSef96Deductible1(form.getSef96Deductible6());
+                        listAddInfo.get(i).setSef94Limit1(form.getSef94Limit6());
+                        listAddInfo.get(i).setSef94Deductible1(form.getSef94Deductible6());
+                        listAddInfo.get(i).setDoLimit1(form.getDoLimit6());
+                        listAddInfo.get(i).setDoDeductible1(form.getDoDeductible6());
+                        listAddInfo.get(i).setEoLimit1(form.getEoLimit6());
+                        listAddInfo.get(i).setEoDeductible1(form.getEoDeductible6());
+                        listAddInfo.get(i).setEmployerLimit1(form.getEmployerLimit6());
+                        listAddInfo.get(i).setEmployerDeductible1(form.getEmployerDeductible6()); 
+                        listAddInfo.get(i).setUmbrellaLimit1(form.getUmbrellaLimit6());
+                        listAddInfo.get(i).setUmbrellaDeductible1(form.getUmbrellaDeductible6());
+                        listAddInfo.get(i).setWrapUpLimit1(form.getWrapUpLimit6());
+                        listAddInfo.get(i).setWrapUpDeductible1(form.getWrapUpDeductible6());
+                        listAddInfo.get(i).setStdComprehensiveLimit1(form.getStdComprehensiveLimit6());
+                        listAddInfo.get(i).setStdComprehensiveDeductible1(form.getStdComprehensiveDeductible6());
+                        listAddInfo.get(i).setAirConditioningLimit1(form.getAirConditioningLimit6());
+                        listAddInfo.get(i).setAirConditioningDeductible1(form.getAirConditioningDeductible6());
+                        listAddInfo.get(i).setProductionMachineryLimit1(form.getProductionMachineryLimit6());
+                        listAddInfo.get(i).setProductionMachineryDeductible1(form.getProductionMachineryDeductible6());
+                    	listAddInfo.get(i).setOthercoverage11(form.getOthercoverage16());
+	                listAddInfo.get(i).setOthercoverage21(form.getOthercoverage26());
+                        listAddInfo.get(i).setOtherCoverageLimit11(form.getOtherCoverageLimit16());
+                        listAddInfo.get(i).setOtherCoverageDeductible11(form.getOtherCoverageDeductible16());
+                        listAddInfo.get(i).setOtherCoverageLimit21(form.getOtherCoverageLimit26());
+                        listAddInfo.get(i).setOtherCoverageDeductible21(form.getOtherCoverageDeductible26());
+    	                listAddInfo.get(i).setAdditionalCoverage1(form.getAdditionalcoverage6());
+        	        listAddInfo.get(i).setRoofupdated1(form.getRoofupdated6());
+            	        listAddInfo.get(i).setHeatingupdated1(form.getHeatingupdated6());
+                	listAddInfo.get(i).setElectricalupdated1(form.getElectricalupdated6());
+                    	listAddInfo.get(i).setElectricalamps1(form.getElectricalamps6());
+	                listAddInfo.get(i).setFireProtectiondistance1(form.getFireProtectiondistance6());
+    	                listAddInfo.get(i).setAddress1(form.getAddress6());
+        	        listAddInfo.get(i).setBasement1(form.getBasement6());
+            	        listAddInfo.get(i).setOwner11(form.getOwnercb6());
+                	listAddInfo.get(i).setTruckMan1(form.getTruckMan6());
+                    	listAddInfo.get(i).setGrossEarning801(form.getGrossEarningCheckbox6());
+	                listAddInfo.get(i).setWallsframe1(form.getWallsframe6());
+    	                listAddInfo.get(i).setWallshcb1(form.getWallshcb6());
+	                listAddInfo.get(i).setWallssteel1(form.getWallssteel6());
+    	                listAddInfo.get(i).setWallsbrick1(form.getWallsbrick6());
+        	        listAddInfo.get(i).setRoofwood1(form.getRoofwood6());
+            	        listAddInfo.get(i).setRoofsteel1(form.getRoofsteel6());
+                	listAddInfo.get(i).setRoofconcrete1(form.getRoofconcrete6());
+                    	listAddInfo.get(i).setFloorsconcrete1(form.getFloorsconcrete6());
+	                listAddInfo.get(i).setFloorswood1(form.getFloorswood6());
+    	                listAddInfo.get(i).setHeatinggas1(form.getHeatinggas6());
+        	        listAddInfo.get(i).setHeatingoil1(form.getHeatingoil6());
+            	        listAddInfo.get(i).setHeatingelectric1(form.getHeatingelectric6());
+                	listAddInfo.get(i).setHeatingother1(form.getHeatingother6());
+                    	listAddInfo.get(i).setElectricalbreakers1(form.getElectricalbreakers6());
+	                listAddInfo.get(i).setElectricalfuses1(form.getElectricalfuses6());
+        	        listAddInfo.get(i).setPlumbingcopper1(form.getPlumbingcopper6());
+            	        listAddInfo.get(i).setPlumbingpvc1(form.getPlumbingpvc6());
+                	listAddInfo.get(i).setPlumbingother1(form.getPlumbingother6());
+                    	listAddInfo.get(i).setFireProtection1(form.getFireProtection6());
+	                listAddInfo.get(i).setSecurity1(form.getSecurity6());
+                        listAddInfo.get(i).setAge1(form.getAge6());
+                        listAddInfo.get(i).setTotalSqFootage1(form.getTotalSqFootage6());
+                        listAddInfo.get(i).setInsdSqFootage1(form.getInsdSqFootage6());
+                        listAddInfo.get(i).setNoOfStories1(form.getNoOfStories6());   
+                }
+                break;
+                case 7:
+                if (CommonValidations.isStringEmpty(form.getAddress7()))
+                {
+                        listAddInfo.get(i).setBuildingLimit1(form.getBuildingLimit7());
+                        listAddInfo.get(i).setBuildingDeductible1(form.getBuildingDeductible7());
+                        listAddInfo.get(i).setContentsLimit1(form.getContentsLimit7());
+                        listAddInfo.get(i).setContentsDeductible1(form.getContentsDeductible7());
+                        listAddInfo.get(i).setStockLimit1(form.getStockLimit7());
+                        listAddInfo.get(i).setStockDeductible1(form.getStockDeductible7());
+                        listAddInfo.get(i).setOfficeContentLimit1(form.getOfficeContentLimit7());
+                        listAddInfo.get(i).setOfficeContentDeductible1(form.getOfficeContentDeductible7());
+                        listAddInfo.get(i).setEdpLimit1(form.getEdpLimit7());
+                        listAddInfo.get(i).setEdpDeductible1(form.getEdpDeductible7());
+                        listAddInfo.get(i).setEquipmentLimit1(form.getEquipmentLimit7());
+                        listAddInfo.get(i).setEquipmentDeductible1(form.getEquipmentDeductible7());
+                        listAddInfo.get(i).setOffPremisesLimit1(form.getOffPremisesLimit7());
+                        listAddInfo.get(i).setOffPremisesDeductible1(form.getOffPremisesDeductible7());
+                        listAddInfo.get(i).setTransitLimit1(form.getTransitLimit7());
+                        listAddInfo.get(i).setTransitDeductible1(form.getTransitDeductible7());
+                        listAddInfo.get(i).setMiscPropertyLimit1(form.getMiscPropertyLimit7());
+                        listAddInfo.get(i).setMiscPropertyDeductible1(form.getMiscPropertyDeductible7());
+                        listAddInfo.get(i).setContractorEquipmentLimit1(form.getContractorEquipmentLimit7());
+                        listAddInfo.get(i).setContractorEquipmentDeductible1(form.getContractorEquipmentDeductible7());
+                        listAddInfo.get(i).setInstallationFloaterLimit1(form.getInstallationFloaterLimit7());
+                        listAddInfo.get(i).setInstallationFloaterDeductible1(form.getInstallationFloaterDeductible7());
+                        listAddInfo.get(i).setToolFloaterLimit1(form.getToolFloaterLimit7());                    
+                        listAddInfo.get(i).setToolFloaterDeductible1(form.getToolFloaterDeductible7());
+                        listAddInfo.get(i).setSignFloaterLimit1(form.getSignFloaterLimit7());
+                        listAddInfo.get(i).setSignFloaterDeductible1(form.getSignFloaterDeductible7());
+                        listAddInfo.get(i).setMotorTruckLimit1(form.getMotorTruckLimit7());
+                        listAddInfo.get(i).setMotorTruckDeductible1(form.getMotorTruckDeductible7());
+                        listAddInfo.get(i).setGlassLimit1(form.getGlassLimit7());
+                        listAddInfo.get(i).setGlassDeductible1(form.getGlassDeductible7());
+                        listAddInfo.get(i).setSewerBackupDeductible1(form.getSewerBackupDeductible7());
+                        listAddInfo.get(i).setFloodDeductible1(form.getFloodDeductible7());
+                        listAddInfo.get(i).setEarthquakeDeductible1(form.getEarthquakeDeductible7());
+                        listAddInfo.get(i).setProfitLimit1(form.getProfitLimit7());
+                        listAddInfo.get(i).setProfitDeductible1(form.getProfitDeductible7());
+                        listAddInfo.get(i).setGrossEarningLimit1(form.getGrossEarningLimit7());
+                        listAddInfo.get(i).setGrossEarningDeductible1(form.getGrossEarningDeductible7());
+                        listAddInfo.get(i).setRentalIncomeLimit1(form.getRentalIncomeLimit7());
+                        listAddInfo.get(i).setRentalIncomeDeductible1(form.getRentalIncomeDeductible7());
+                        listAddInfo.get(i).setExtraExpenseLimit1(form.getExtraExpenseLimit7());
+                        listAddInfo.get(i).setExtraExpenseDeductible1(form.getExtraExpenseDeductible7());
+                        listAddInfo.get(i).setOffPremisesPowerLimit1(form.getOffPremisesLimit7());
+                        listAddInfo.get(i).setOffPremisesPowerDeductible1(form.getOffPremisesDeductible7());
+                        listAddInfo.get(i).setInsideOutsideLimit1(form.getInsideOutsideLimit7()); 
+                        listAddInfo.get(i).setInsideOutsideDeductible1(form.getInsideOutsideDeductible7());
+                        listAddInfo.get(i).setBfMoneyLimit1(form.getBfMoneyLimit7());
+                        listAddInfo.get(i).setBfMoneyDeductible1(form.getBfMoneyDeductible7());
+                        listAddInfo.get(i).setDeopistorForgeryLimit1(form.getDeopistorForgeryLimit7());
+                        listAddInfo.get(i).setDeopistorForgeryDeductible1(form.getDeopistorForgeryDeductible7());
+                        listAddInfo.get(i).setMoneyOrdersLimit1(form.getMoneyOrdersLimit7());
+                        listAddInfo.get(i).setMoneyOrdersDeductible1(form.getMoneyOrdersDeductible7());
+                        listAddInfo.get(i).setEmployDishonestyLimit1(form.getEmployDishonestyLimit7());                    
+                        listAddInfo.get(i).setEmployDishonestyDeductible1(form.getEmployDishonestyDeductible7());
+                        listAddInfo.get(i).setCglLimit1(form.getCglLimit7());
+                        listAddInfo.get(i).setCglDeductible1(form.getCglDeductible7());
+                        listAddInfo.get(i).setTenantsLegalLimit1(form.getTenantsLegalLimit7());
+                        listAddInfo.get(i).setTenantsLegalDeductible1(form.getTenantsLegalDeductible7());
+                        listAddInfo.get(i).setNonOwnedAutoLimit1(form.getNonOwnedAutoLimit7());
+                        listAddInfo.get(i).setNonOwnedAutoDeductible1(form.getNonOwnedAutoDeductible7());
+                        listAddInfo.get(i).setSef96Limit1(form.getSef96Limit7());
+                        listAddInfo.get(i).setSef96Deductible1(form.getSef96Deductible7());
+                        listAddInfo.get(i).setSef94Limit1(form.getSef94Limit7());
+                        listAddInfo.get(i).setSef94Deductible1(form.getSef94Deductible7());
+                        listAddInfo.get(i).setDoLimit1(form.getDoLimit7());
+                        listAddInfo.get(i).setDoDeductible1(form.getDoDeductible7());
+                        listAddInfo.get(i).setEoLimit1(form.getEoLimit7());
+                        listAddInfo.get(i).setEoDeductible1(form.getEoDeductible7());
+                        listAddInfo.get(i).setEmployerLimit1(form.getEmployerLimit7());
+                        listAddInfo.get(i).setEmployerDeductible1(form.getEmployerDeductible7()); 
+                        listAddInfo.get(i).setUmbrellaLimit1(form.getUmbrellaLimit7());
+                        listAddInfo.get(i).setUmbrellaDeductible1(form.getUmbrellaDeductible7());
+                        listAddInfo.get(i).setWrapUpLimit1(form.getWrapUpLimit7());
+                        listAddInfo.get(i).setWrapUpDeductible1(form.getWrapUpDeductible7());
+                        listAddInfo.get(i).setStdComprehensiveLimit1(form.getStdComprehensiveLimit7());
+                        listAddInfo.get(i).setStdComprehensiveDeductible1(form.getStdComprehensiveDeductible7());
+                        listAddInfo.get(i).setAirConditioningLimit1(form.getAirConditioningLimit7());
+                        listAddInfo.get(i).setAirConditioningDeductible1(form.getAirConditioningDeductible7());
+                        listAddInfo.get(i).setProductionMachineryLimit1(form.getProductionMachineryLimit7());
+                        listAddInfo.get(i).setProductionMachineryDeductible1(form.getProductionMachineryDeductible7());
+                    	listAddInfo.get(i).setOthercoverage11(form.getOthercoverage17());
+	                listAddInfo.get(i).setOthercoverage21(form.getOthercoverage27());
+                        listAddInfo.get(i).setOtherCoverageLimit11(form.getOtherCoverageLimit17());
+                        listAddInfo.get(i).setOtherCoverageDeductible11(form.getOtherCoverageDeductible17());
+                        listAddInfo.get(i).setOtherCoverageLimit21(form.getOtherCoverageLimit27());
+                        listAddInfo.get(i).setOtherCoverageDeductible21(form.getOtherCoverageDeductible27());
+    	                listAddInfo.get(i).setAdditionalCoverage1(form.getAdditionalcoverage7());
+        	        listAddInfo.get(i).setRoofupdated1(form.getRoofupdated7());
+            	        listAddInfo.get(i).setHeatingupdated1(form.getHeatingupdated7());
+                	listAddInfo.get(i).setElectricalupdated1(form.getElectricalupdated7());
+                    	listAddInfo.get(i).setElectricalamps1(form.getElectricalamps7());
+	                listAddInfo.get(i).setFireProtectiondistance1(form.getFireProtectiondistance7());
+    	                listAddInfo.get(i).setAddress1(form.getAddress7());
+        	        listAddInfo.get(i).setBasement1(form.getBasement7());
+            	        listAddInfo.get(i).setOwner11(form.getOwnercb7());
+                	listAddInfo.get(i).setTruckMan1(form.getTruckMan7());
+                    	listAddInfo.get(i).setGrossEarning801(form.getGrossEarningCheckbox7());
+	                listAddInfo.get(i).setWallsframe1(form.getWallsframe7());
+    	                listAddInfo.get(i).setWallshcb1(form.getWallshcb7());
+	                listAddInfo.get(i).setWallssteel1(form.getWallssteel7());
+    	                listAddInfo.get(i).setWallsbrick1(form.getWallsbrick7());
+        	        listAddInfo.get(i).setRoofwood1(form.getRoofwood7());
+            	        listAddInfo.get(i).setRoofsteel1(form.getRoofsteel7());
+                	listAddInfo.get(i).setRoofconcrete1(form.getRoofconcrete7());
+                    	listAddInfo.get(i).setFloorsconcrete1(form.getFloorsconcrete7());
+	                listAddInfo.get(i).setFloorswood1(form.getFloorswood7());
+    	                listAddInfo.get(i).setHeatinggas1(form.getHeatinggas7());
+        	        listAddInfo.get(i).setHeatingoil1(form.getHeatingoil7());
+            	        listAddInfo.get(i).setHeatingelectric1(form.getHeatingelectric7());
+                	listAddInfo.get(i).setHeatingother1(form.getHeatingother7());
+                    	listAddInfo.get(i).setElectricalbreakers1(form.getElectricalbreakers7());
+	                listAddInfo.get(i).setElectricalfuses1(form.getElectricalfuses7());
+        	        listAddInfo.get(i).setPlumbingcopper1(form.getPlumbingcopper7());
+            	        listAddInfo.get(i).setPlumbingpvc1(form.getPlumbingpvc7());
+                	listAddInfo.get(i).setPlumbingother1(form.getPlumbingother7());
+                    	listAddInfo.get(i).setFireProtection1(form.getFireProtection7());
+	                listAddInfo.get(i).setSecurity1(form.getSecurity7());
+                        listAddInfo.get(i).setAge1(form.getAge7());
+                        listAddInfo.get(i).setTotalSqFootage1(form.getTotalSqFootage7());
+                        listAddInfo.get(i).setInsdSqFootage1(form.getInsdSqFootage7());
+                        listAddInfo.get(i).setNoOfStories1(form.getNoOfStories7());
+                }
+                break;
+                }  
+                i++;
+                }
+                }
+                
                 buildinglimit.setText(Double.toString(form.getBuildingLimit()));
                 buildingdeductible.setText(Double.toString(form.getBuildingDeductible()));
                 contentslimit.setText(Double.toString(form.getContentsLimit()));
@@ -5046,7 +6427,7 @@ public class NextScreenController implements Initializable, IScreenController {
                         ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.setautopremiumtarget(Double.toString(form.getPremiumTarget()));
                     }
                     ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.setautocurrentinsurer(form.getCurrentInsurer());
-                    if (form.getCurrentExpDate()==null) {
+                    if (form.getCurrentExpDate() == null) {
                     } else {
                         ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).datePicker11.setSelectedDate(form.getCurrentExpDate().toGregorianCalendar().getTime());
                     }
@@ -5056,27 +6437,27 @@ public class NextScreenController implements Initializable, IScreenController {
                     ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.setautovehicle1(form.getLienHoldersVehicle1());
                     ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.setautovehicle2(form.getLienHoldersVehicle2());
                     ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.setautovehicle3(form.getLienHoldersVehicle3());
-                    if (form.getClaimDate1()==null) {
+                    if (form.getClaimDate1() == null) {
                     } else {
                         ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).datePicker12.setSelectedDate(form.getClaimDate1().toGregorianCalendar().getTime());
                     }
-                    if (form.getClaimDate2()==null) {
+                    if (form.getClaimDate2() == null) {
                     } else {
                         ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).datePicker13.setSelectedDate(form.getClaimDate2().toGregorianCalendar().getTime());
                     }
-                    if (form.getClaimDate3()==null) {
+                    if (form.getClaimDate3() == null) {
                     } else {
                         ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).datePicker14.setSelectedDate(form.getClaimDate3().toGregorianCalendar().getTime());
                     }
-                    if (form.getClaimDate4()==null) {
+                    if (form.getClaimDate4() == null) {
                     } else {
                         ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).datePicker15.setSelectedDate(form.getClaimDate4().toGregorianCalendar().getTime());
                     }
-                    if (form.getClaimDate5()==null) {
+                    if (form.getClaimDate5() == null) {
                     } else {
                         ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).datePicker16.setSelectedDate(form.getClaimDate5().toGregorianCalendar().getTime());
                     }
-                    if (form.getClaimDate6()==null) {
+                    if (form.getClaimDate6() == null) {
                     } else {
                         ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).datePicker17.setSelectedDate(form.getClaimDate6().toGregorianCalendar().getTime());
                     }
@@ -5128,9 +6509,10 @@ public class NextScreenController implements Initializable, IScreenController {
                 }
             }
         });
-    }
+                }
 
     @FXML
+
     public void submitFormAction() {
         System.out.println("InsideSubmitFormAction");
         stage.show();
@@ -5138,7 +6520,7 @@ public class NextScreenController implements Initializable, IScreenController {
         task = new Task<Void>() {
             @Override
             public Void call() throws Exception {
-                
+
                 try {
                     System.out.println("edit " + isEdit);
                     if (isEdit) {
@@ -5149,7 +6531,7 @@ public class NextScreenController implements Initializable, IScreenController {
                         req1.setProducer(produceridfromform);
                         System.out.println(insurancetypeflag);
                         req1.setBranch(branchfromform);
-                        
+
                         req1.setCreationDate(datefromform);
                         if (insurancetypeflag == 1) {
                             req1.setType("Commercial");
@@ -5184,7 +6566,7 @@ public class NextScreenController implements Initializable, IScreenController {
                         req1.setAddressOfLocationOwnedyes2(binding3.getaolownedy2());
                         req1.setAddressOfLocationOwnedyes3(binding3.getaolownedy3());
                         req1.setAddressOfLocationOwnedno3(binding3.getaolownedy4());
-                        req1.setOwner(binding4.getmotortruckcargoowner());
+                        req1.setOwnercb(binding4.getmotortruckcargoowner());
                         req1.setTruckMan(binding4.getmotortruckcargotruckman());
                         req1.setGrossEarningCheckbox(binding4.getgecheckbox());
                         req1.setWallsframe(binding4.getwallsframe());
@@ -5837,8 +7219,9 @@ public class NextScreenController implements Initializable, IScreenController {
                             b.append(message);
 
                         } catch (Exception e) {
+                            stopLoading();
                             e.printStackTrace();
-                            successMessage1(e.getMessage());
+                            errors(e.getMessage());
                         } finally {
                             if (b != null) {
                                 b.close();
@@ -5849,17 +7232,19 @@ public class NextScreenController implements Initializable, IScreenController {
                         CommonResponseAttributes response = port.getInsuranceOperationsPort().editFormSubmission(req1);
                         if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
                             stopLoading();
-                            successMessage("Form has been successfully updated");
-                            System.out.println("Updated form producer id"+producerid);
-                            if (producerid.equals("") || producerid.equals(null)) {
-                                screenPage.setScreen("OtherScreen");
-                                animatedMovement(-1269, -1269);
+                            if (insurancetypeflag == 2 || insurancetypeflag == 3) {
+                                String str = "Application has been successfully updated.";
+                                ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).autosuccessMessage(str, producerid);
                             } else {
-                                animatedMovement(0, 0);
+                                successMessage("Application has been successfully updated.");
                             }
                         } else {
+                            if (insurancetypeflag == 2 || insurancetypeflag == 3) {
+                                String str = response.getErrorMessage();
+                                ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).autoerrorMessage(str);
+                            }
+
                             errors(response.getErrorMessage());
-                            successMessage(response.getErrorMessage());
                         }
                     } else {
                         InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
@@ -5902,6 +7287,7 @@ public class NextScreenController implements Initializable, IScreenController {
                         GregorianCalendar c = new GregorianCalendar();
                         c.setTime(Calendar.getInstance().getTime());
                         req1.setCreationDate(DatatypeFactory.newInstance().newXMLGregorianCalendar(c));
+
                         req1.setKeyContact(binding.getKeyContact());
                         req1.setKeyContactEmailAddress(binding.getKeyEmail());
                         req1.setKeyContactPhone(binding.getKeyPhone());
@@ -6149,7 +7535,7 @@ public class NextScreenController implements Initializable, IScreenController {
                                 case 0:
                                     req1.setAddress(a.getAddress1());
                                     req1.setBasement(a.getBasement1());
-                                    req1.setOwner(a.getOwner11());
+                                    req1.setOwnercb(a.getOwner11());
                                     req1.setTruckMan(a.getTruckMan1());
                                     req1.setGrossEarningCheckBox(a.getGrossEarning801());
                                     req1.setWallsframe(a.getWallsframe1());
@@ -6173,9 +7559,7 @@ public class NextScreenController implements Initializable, IScreenController {
                                     req1.setPlumbingother(a.getPlumbingother1());
                                     req1.setFireProtection(a.getFireProtection1());
                                     req1.setSecurity(a.getSecurity1());
-                                    if (a.getBuildingLimit1() > 0) {
-                                        req1.setBuildingLimit(a.getBuildingLimit1());
-                                    }
+                                    req1.setBuildingLimit(a.getBuildingLimit1());
                                     if (a.getBuildingDeductible1() > 0) {
                                         req1.setBuildingDeductible(a.getBuildingDeductible1());
                                     }
@@ -6307,6 +7691,404 @@ public class NextScreenController implements Initializable, IScreenController {
                                     break;
                                 case 1:
                                     req1.setAddress1(a.getAddress1());
+                                    req1.setBasement1(a.getBasement1());
+                                    req1.setOwner1(a.getOwner11());
+                                    req1.setTruckMan1(a.getTruckMan1());
+                                    req1.setGrossEarningCheckbox1(a.getGrossEarning801());
+                                    req1.setWallsframe1(a.getWallsframe1());
+                                    req1.setWallshcb1(a.getWallshcb1());
+                                    req1.setWallssteel1(a.getWallssteel1());
+                                    req1.setWallsbrick1(a.getWallsbrick1());
+                                    req1.setRoofwood1(a.getRoofwood1());
+                                    req1.setRoofsteel1(a.getRoofsteel1());
+                                    req1.setRoofconcrete1(a.getRoofconcrete1());
+                                    req1.setFloorsconcrete1(a.getFloorsconcrete1());
+                                    req1.setFloorswood1(a.getFloorswood1());
+                                    req1.setHeatinggas1(a.getHeatinggas1());
+                                    req1.setHeatingoil1(a.getHeatingoil1());
+                                    req1.setHeatingelectric1(a.getHeatingelectric1());
+                                    req1.setHeatingother1(a.getHeatingother1());
+                                    req1.setElectricalbreakers1(a.getElectricalbreakers1());
+                                    req1.setElectricalfuses1(a.getElectricalfuses1());
+                                    req1.setElectricalamps1(a.getElectricalamps1());
+                                    req1.setPlumbingcopper1(a.getPlumbingcopper1());
+                                    req1.setPlumbingpvc1(a.getPlumbingpvc1());
+                                    req1.setPlumbingother1(a.getPlumbingother1());
+                                    req1.setFireProtection1(a.getFireProtection1());
+                                    req1.setSecurity1(a.getSecurity1());
+                                    req1.setBuildingLimit1(a.getBuildingLimit1());
+                                    req1.setBuildingDeductible1(a.getBuildingDeductible1());
+                                    req1.setContentsLimit1(a.getContentsLimit1());
+
+                                    req1.setContentsDeductible1(a.getContentsDeductible1());
+
+                                    req1.setStockLimit1(a.getStockLimit1());
+
+                                    req1.setStockDeductible1(a.getStockDeductible1());
+
+                                    req1.setOfficeContentLimit1(a.getOfficeContentLimit1());
+
+                                    req1.setOfficeContentDeductible1(a.getOfficeContentDeductible1());
+
+                                    req1.setEdpLimit1(a.getEdpLimit1());
+
+                                    req1.setEdpDeductible1(a.getEdpDeductible1());
+
+                                    req1.setEquipmentLimit1(a.getEquipmentLimit1());
+
+                                    req1.setEquipmentDeductible1(a.getEquipmentDeductible1());
+
+                                    req1.setOffPremisesLimit1(a.getOffPremisesLimit1());
+
+                                    req1.setOffPremisesDeductible1(a.getOffPremisesDeductible1());
+
+                                    req1.setTransitLimit1(a.getTransitLimit1());
+
+                                    req1.setTransitDeductible1(a.getTransitDeductible1());
+
+                                    req1.setMiscPropertyLimit1(a.getMiscPropertyLimit1());
+                                    req1.setMiscPropertyDeductible1(a.getMiscPropertyDeductible1());
+                                    req1.setContractorEquipmentLimit1(a.getContractorEquipmentLimit1());
+                                    req1.setContractorEquipmentDeductible1(a.getContractorEquipmentDeductible1());
+                                    req1.setInstallationFloaterLimit1(a.getInstallationFloaterLimit1());
+                                    req1.setInstallationFloaterDeductible1(a.getInstallationFloaterDeductible1());
+                                    req1.setToolFloaterLimit1(a.getToolFloaterLimit1());
+                                    req1.setToolFloaterDeductible1(a.getToolFloaterDeductible1());
+                                    req1.setSignFloaterLimit1(a.getSignFloaterLimit1());
+                                    req1.setSignFloaterDeductible1(a.getSignFloaterDeductible1());
+                                    req1.setMotorTruckLimit1(a.getMotorTruckLimit1());
+                                    req1.setMotorTruckDeductible1(a.getMotorTruckDeductible1());
+                                    req1.setGlassLimit1(a.getGlassLimit1());
+                                    req1.setGlassDeductible1(a.getGlassDeductible1());
+                                    req1.setSewerBackupDeductible1(a.getSewerBackupDeductible1());
+                                    req1.setFloodDeductible1(a.getFloodDeductible1());
+                                    req1.setEarthquakeDeductible1(a.getEarthquakeDeductible1());
+                                    req1.setProfitLimit1(a.getProfitLimit1());
+                                    req1.setProfitDeductible1(a.getProfitDeductible1());
+                                    req1.setGrossEarningLimit1(a.getGrossEarningLimit1());
+                                    req1.setGrossEarningDeductible1(a.getGrossEarningDeductible1());
+                                    req1.setRentalIncomeLimit1(a.getRentalIncomeLimit1());
+                                    req1.setRentalIncomeDeductible1(a.getRentalIncomeDeductible1());
+                                    req1.setExtraExpenseLimit1(a.getExtraExpenseLimit1());
+                                    req1.setExtraExpenseDeductible1(a.getExtraExpenseDeductible1());
+                                    req1.setOffPremisesPowerLimit1(a.getOffPremisesLimit1());
+                                    req1.setOffPremisesPowerDeductible1(a.getOffPremisesDeductible1());
+                                    req1.setInsideOutsideLimit1(a.getInsideOutsideLimit1());
+                                    req1.setInsideOutsideDeductible1(a.getInsideOutsideDeductible1());
+                                    req1.setBfMoneyLimit1(a.getBfMoneyLimit1());
+                                    req1.setBfMoneyDeductible1(a.getBfMoneyDeductible1());
+                                    req1.setDeopistorForgeryLimit1(a.getDeopistorForgeryLimit1());
+                                    req1.setDeopistorForgeryDeductible1(a.getDeopistorForgeryDeductible1());
+                                    req1.setMoneyOrdersLimit1(a.getMoneyOrdersLimit1());
+                                    req1.setMoneyOrdersDeductible1(a.getMoneyOrdersDeductible1());
+                                    req1.setEmployDishonestyLimit1(a.getEmployDishonestyLimit1());
+                                    req1.setEmployDishonestyDeductible1(a.getEmployDishonestyDeductible1());
+                                    req1.setCglLimit1(a.getCglLimit1());
+                                    req1.setCglDeductible1(a.getCglDeductible1());
+                                    req1.setTenantsLegalLimit1(a.getTenantsLegalLimit1());
+                                    req1.setTenantsLegalDeductible1(a.getTenantsLegalDeductible1());
+                                    req1.setNonOwnedAutoLimit1(a.getNonOwnedAutoLimit1());
+                                    req1.setNonOwnedAutoDeductible1(a.getNonOwnedAutoDeductible1());
+                                    req1.setSef96Limit1(a.getSef96Limit1());
+                                    req1.setSef96Deductible1(a.getSef96Deductible1());
+                                    req1.setSef94Limit1(a.getSef94Limit1());
+                                    req1.setSef94Deductible1(a.getSef94Deductible1());
+                                    req1.setDoLimit1(a.getDoLimit1());
+                                    req1.setDoDeductible1(a.getDoDeductible1());
+                                    req1.setEoLimit1(a.getEoLimit1());
+                                    req1.setEoDeductible1(a.getEoDeductible1());
+                                    req1.setEmployerLimit1(a.getEmployerLimit1());
+                                    req1.setEmployerDeductible1(a.getEmployerDeductible1());
+                                    req1.setUmbrellaLimit1(a.getUmbrellaLimit1());
+                                    req1.setUmbrellaDeductible1(a.getUmbrellaDeductible1());
+                                    req1.setWrapUpLimit1(a.getWrapUpLimit1());
+                                    req1.setWrapUpDeductible1(a.getWrapUpDeductible1());
+                                    req1.setStdComprehensiveLimit1(a.getStdComprehensiveLimit1());
+                                    req1.setStdComprehensiveDeductible1(a.getStockDeductible1());
+                                    req1.setAirConditioningLimit1(a.getAirConditioningLimit1());
+                                    req1.setAirConditioningDeductible1(a.getAirConditioningDeductible1());
+                                    req1.setProductionMachineryLimit1(a.getProductionMachineryLimit1());
+                                    req1.setProductionMachineryDeductible1(a.getProductionMachineryDeductible1());
+                                    req1.setOthercoverage11(a.getOthercoverage11());
+                                    req1.setOthercoverage21(a.getOthercoverage21());
+                                    req1.setOtherCoverageLimit11(a.getOtherCoverageLimit11());
+                                    req1.setOtherCoverageDeductible11(a.getOtherCoverageDeductible11());
+                                    req1.setOtherCoverageLimit21(a.getOtherCoverageLimit21());
+                                    req1.setOtherCoverageDeductible21(a.getOtherCoverageDeductible21());
+                                    req1.setAdditionalcoverage1(a.getAdditionalCoverage1());
+                                    req1.setRoofupdated1(a.getRoofupdated1());
+                                    req1.setHeatingupdated1(a.getHeatingupdated1());
+                                    req1.setElectricalupdated1(a.getElectricalupdated1());
+                                    req1.setElectricalamps1(a.getElectricalamps1());
+                                    req1.setFireProtectiondistance1(a.getFireProtectiondistance1());
+                                    req1.setAge1(a.getAge1());
+                                    req1.setTotalSqFootage1(a.getTotalSqFootage1());
+                                    req1.setInsdSqFootage1(a.getInsdSqFootage1());
+                                    req1.setNoOfStories1(a.getNoOfStories1());
+                                    break;
+                                case 2:
+                                    req1.setAddress2(a.getAddress1());
+                                    req1.setBasement2(a.getBasement1());
+                                    req1.setOwner2(a.getOwner11());
+                                    req1.setTruckMan2(a.getTruckMan1());
+                                    req1.setGrossEarningCheckbox2(a.getGrossEarning801());
+                                    req1.setWallsframe2(a.getWallsframe1());
+                                    req1.setWallshcb2(a.getWallshcb1());
+                                    req1.setWallssteel2(a.getWallssteel1());
+                                    req1.setWallsbrick2(a.getWallsbrick1());
+                                    req1.setRoofwood2(a.getRoofwood1());
+                                    req1.setRoofsteel2(a.getRoofsteel1());
+                                    req1.setRoofconcrete2(a.getRoofconcrete1());
+                                    req1.setFloorsconcrete2(a.getFloorsconcrete1());
+                                    req1.setFloorswood2(a.getFloorswood1());
+                                    req1.setHeatinggas2(a.getHeatinggas1());
+                                    req1.setHeatingoil2(a.getHeatingoil1());
+                                    req1.setHeatingelectric2(a.getHeatingelectric1());
+                                    req1.setHeatingother2(a.getHeatingother1());
+                                    req1.setElectricalbreakers2(a.getElectricalbreakers1());
+                                    req1.setElectricalfuses2(a.getElectricalfuses1());
+                                    req1.setElectricalamps2(a.getElectricalamps1());
+                                    req1.setPlumbingcopper2(a.getPlumbingcopper1());
+                                    req1.setPlumbingpvc2(a.getPlumbingpvc1());
+                                    req1.setPlumbingother2(a.getPlumbingother1());
+                                    req1.setFireProtection2(a.getFireProtection1());
+                                    req1.setSecurity2(a.getSecurity1());
+                                    req1.setBuildingLimit2(a.getBuildingLimit1());
+                                    req1.setBuildingDeductible2(a.getBuildingDeductible1());
+                                    req1.setContentsLimit2(a.getContentsLimit1());
+
+                                    req1.setContentsDeductible2(a.getContentsDeductible1());
+
+                                    req1.setStockLimit2(a.getStockLimit1());
+
+                                    req1.setStockDeductible2(a.getStockDeductible1());
+
+                                    req1.setOfficeContentLimit2(a.getOfficeContentLimit1());
+
+                                    req1.setOfficeContentDeductible2(a.getOfficeContentDeductible1());
+
+                                    req1.setEdpLimit2(a.getEdpLimit1());
+
+                                    req1.setEdpDeductible2(a.getEdpDeductible1());
+
+                                    req1.setEquipmentLimit2(a.getEquipmentLimit1());
+
+                                    req1.setEquipmentDeductible2(a.getEquipmentDeductible1());
+
+                                    req1.setOffPremisesLimit2(a.getOffPremisesLimit1());
+
+                                    req1.setOffPremisesDeductible2(a.getOffPremisesDeductible1());
+
+                                    req1.setTransitLimit2(a.getTransitLimit1());
+
+                                    req1.setTransitDeductible2(a.getTransitDeductible1());
+
+                                    req1.setMiscPropertyLimit2(a.getMiscPropertyLimit1());
+                                    req1.setMiscPropertyDeductible2(a.getMiscPropertyDeductible1());
+                                    req1.setContractorEquipmentLimit2(a.getContractorEquipmentLimit1());
+                                    req1.setContractorEquipmentDeductible2(a.getContractorEquipmentDeductible1());
+                                    req1.setInstallationFloaterLimit2(a.getInstallationFloaterLimit1());
+                                    req1.setInstallationFloaterDeductible2(a.getInstallationFloaterDeductible1());
+                                    req1.setToolFloaterLimit2(a.getToolFloaterLimit1());
+                                    req1.setToolFloaterDeductible2(a.getToolFloaterDeductible1());
+                                    req1.setSignFloaterLimit2(a.getSignFloaterLimit1());
+                                    req1.setSignFloaterDeductible2(a.getSignFloaterDeductible1());
+                                    req1.setMotorTruckLimit2(a.getMotorTruckLimit1());
+                                    req1.setMotorTruckDeductible2(a.getMotorTruckDeductible1());
+                                    req1.setGlassLimit2(a.getGlassLimit1());
+                                    req1.setGlassDeductible2(a.getGlassDeductible1());
+                                    req1.setSewerBackupDeductible2(a.getSewerBackupDeductible1());
+                                    req1.setFloodDeductible2(a.getFloodDeductible1());
+                                    req1.setEarthquakeDeductible2(a.getEarthquakeDeductible1());
+                                    req1.setProfitLimit2(a.getProfitLimit1());
+                                    req1.setProfitDeductible2(a.getProfitDeductible1());
+                                    req1.setGrossEarningLimit2(a.getGrossEarningLimit1());
+                                    req1.setGrossEarningDeductible2(a.getGrossEarningDeductible1());
+                                    req1.setRentalIncomeLimit2(a.getRentalIncomeLimit1());
+                                    req1.setRentalIncomeDeductible2(a.getRentalIncomeDeductible1());
+                                    req1.setExtraExpenseLimit2(a.getExtraExpenseLimit1());
+                                    req1.setExtraExpenseDeductible2(a.getExtraExpenseDeductible1());
+                                    req1.setOffPremisesPowerLimit2(a.getOffPremisesLimit1());
+                                    req1.setOffPremisesPowerDeductible2(a.getOffPremisesDeductible1());
+                                    req1.setInsideOutsideLimit2(a.getInsideOutsideLimit1());
+                                    req1.setInsideOutsideDeductible2(a.getInsideOutsideDeductible1());
+                                    req1.setBfMoneyLimit2(a.getBfMoneyLimit1());
+                                    req1.setBfMoneyDeductible2(a.getBfMoneyDeductible1());
+                                    req1.setDeopistorForgeryLimit2(a.getDeopistorForgeryLimit1());
+                                    req1.setDeopistorForgeryDeductible2(a.getDeopistorForgeryDeductible1());
+                                    req1.setMoneyOrdersLimit2(a.getMoneyOrdersLimit1());
+                                    req1.setMoneyOrdersDeductible2(a.getMoneyOrdersDeductible1());
+                                    req1.setEmployDishonestyLimit2(a.getEmployDishonestyLimit1());
+                                    req1.setEmployDishonestyDeductible2(a.getEmployDishonestyDeductible1());
+                                    req1.setCglLimit2(a.getCglLimit1());
+                                    req1.setCglDeductible2(a.getCglDeductible1());
+                                    req1.setTenantsLegalLimit2(a.getTenantsLegalLimit1());
+                                    req1.setTenantsLegalDeductible2(a.getTenantsLegalDeductible1());
+                                    req1.setNonOwnedAutoLimit2(a.getNonOwnedAutoLimit1());
+                                    req1.setNonOwnedAutoDeductible2(a.getNonOwnedAutoDeductible1());
+                                    req1.setSef96Limit2(a.getSef96Limit1());
+                                    req1.setSef96Deductible2(a.getSef96Deductible1());
+                                    req1.setSef94Limit2(a.getSef94Limit1());
+                                    req1.setSef94Deductible2(a.getSef94Deductible1());
+                                    req1.setDoLimit2(a.getDoLimit1());
+                                    req1.setDoDeductible2(a.getDoDeductible1());
+                                    req1.setEoLimit2(a.getEoLimit1());
+                                    req1.setEoDeductible2(a.getEoDeductible1());
+                                    req1.setEmployerLimit2(a.getEmployerLimit1());
+                                    req1.setEmployerDeductible2(a.getEmployerDeductible1());
+                                    req1.setUmbrellaLimit2(a.getUmbrellaLimit1());
+                                    req1.setUmbrellaDeductible2(a.getUmbrellaDeductible1());
+                                    req1.setWrapUpLimit2(a.getWrapUpLimit1());
+                                    req1.setWrapUpDeductible2(a.getWrapUpDeductible1());
+                                    req1.setStdComprehensiveLimit2(a.getStdComprehensiveLimit1());
+                                    req1.setStdComprehensiveDeductible2(a.getStockDeductible1());
+                                    req1.setAirConditioningLimit2(a.getAirConditioningLimit1());
+                                    req1.setAirConditioningDeductible2(a.getAirConditioningDeductible1());
+                                    req1.setProductionMachineryLimit2(a.getProductionMachineryLimit1());
+                                    req1.setProductionMachineryDeductible2(a.getProductionMachineryDeductible1());
+                                    req1.setOthercoverage12(a.getOthercoverage11());
+                                    req1.setOthercoverage22(a.getOthercoverage21());
+                                    req1.setOtherCoverageLimit12(a.getOtherCoverageLimit11());
+                                    req1.setOtherCoverageDeductible12(a.getOtherCoverageDeductible11());
+                                    req1.setOtherCoverageLimit22(a.getOtherCoverageLimit21());
+                                    req1.setOtherCoverageDeductible22(a.getOtherCoverageDeductible21());
+                                    req1.setAdditionalcoverage2(a.getAdditionalCoverage1());
+                                    req1.setRoofupdated2(a.getRoofupdated1());
+                                    req1.setHeatingupdated2(a.getHeatingupdated1());
+                                    req1.setElectricalupdated2(a.getElectricalupdated1());
+                                    req1.setElectricalamps2(a.getElectricalamps1());
+                                    req1.setFireProtectiondistance2(a.getFireProtectiondistance1());
+                                    req1.setAge2(a.getAge1());
+                                    req1.setTotalSqFootage2(a.getTotalSqFootage1());
+                                    req1.setInsdSqFootage2(a.getInsdSqFootage1());
+                                    req1.setNoOfStories2(a.getNoOfStories1());
+                                    break;
+                                case 3:
+                                    req1.setAddress3(a.getAddress1());
+                                    req1.setBasement3(a.getBasement1());
+                                    req1.setOwner3(a.getOwner11());
+                                    req1.setTruckMan3(a.getTruckMan1());
+                                    req1.setGrossEarningCheckbox3(a.getGrossEarning801());
+                                    req1.setWallsframe3(a.getWallsframe1());
+                                    req1.setWallshcb3(a.getWallshcb1());
+                                    req1.setWallssteel3(a.getWallssteel1());
+                                    req1.setWallsbrick3(a.getWallsbrick1());
+                                    req1.setRoofwood3(a.getRoofwood1());
+                                    req1.setRoofsteel3(a.getRoofsteel1());
+                                    req1.setRoofconcrete3(a.getRoofconcrete1());
+                                    req1.setFloorsconcrete3(a.getFloorsconcrete1());
+                                    req1.setFloorswood3(a.getFloorswood1());
+                                    req1.setHeatinggas3(a.getHeatinggas1());
+                                    req1.setHeatingoil3(a.getHeatingoil1());
+                                    req1.setHeatingelectric3(a.getHeatingelectric1());
+                                    req1.setHeatingother3(a.getHeatingother1());
+                                    req1.setElectricalbreakers3(a.getElectricalbreakers1());
+                                    req1.setElectricalfuses3(a.getElectricalfuses1());
+                                    req1.setElectricalamps3(a.getElectricalamps1());
+                                    req1.setPlumbingcopper3(a.getPlumbingcopper1());
+                                    req1.setPlumbingpvc3(a.getPlumbingpvc1());
+                                    req1.setPlumbingother3(a.getPlumbingother1());
+                                    req1.setFireProtection3(a.getFireProtection1());
+                                    req1.setSecurity3(a.getSecurity1());
+                                    req1.setBuildingLimit3(a.getBuildingLimit1());
+                                    req1.setBuildingDeductible3(a.getBuildingDeductible1());
+                                    req1.setContentsLimit3(a.getContentsLimit1());
+                                    req1.setContentsDeductible3(a.getContentsDeductible1());
+                                    req1.setStockLimit3(a.getStockLimit1());
+                                    req1.setStockDeductible3(a.getStockDeductible1());
+                                    req1.setOfficeContentLimit3(a.getOfficeContentLimit1());
+                                    req1.setOfficeContentDeductible3(a.getOfficeContentDeductible1());
+                                    req1.setEdpLimit3(a.getEdpLimit1());
+                                    req1.setEdpDeductible3(a.getEdpDeductible1());
+                                    req1.setEquipmentLimit3(a.getEquipmentLimit1());
+                                    req1.setEquipmentDeductible3(a.getEquipmentDeductible1());
+                                    req1.setOffPremisesLimit3(a.getOffPremisesLimit1());
+
+                                    req1.setOffPremisesDeductible3(a.getOffPremisesDeductible1());
+
+                                    req1.setTransitLimit3(a.getTransitLimit1());
+
+                                    req1.setTransitDeductible3(a.getTransitDeductible1());
+
+                                    req1.setMiscPropertyLimit3(a.getMiscPropertyLimit1());
+                                    req1.setMiscPropertyDeductible3(a.getMiscPropertyDeductible1());
+                                    req1.setContractorEquipmentLimit3(a.getContractorEquipmentLimit1());
+                                    req1.setContractorEquipmentDeductible3(a.getContractorEquipmentDeductible1());
+                                    req1.setInstallationFloaterLimit3(a.getInstallationFloaterLimit1());
+                                    req1.setInstallationFloaterDeductible3(a.getInstallationFloaterDeductible1());
+                                    req1.setToolFloaterLimit3(a.getToolFloaterLimit1());
+                                    req1.setToolFloaterDeductible3(a.getToolFloaterDeductible1());
+                                    req1.setSignFloaterLimit3(a.getSignFloaterLimit1());
+                                    req1.setSignFloaterDeductible3(a.getSignFloaterDeductible1());
+                                    req1.setMotorTruckLimit3(a.getMotorTruckLimit1());
+                                    req1.setMotorTruckDeductible3(a.getMotorTruckDeductible1());
+                                    req1.setGlassLimit3(a.getGlassLimit1());
+                                    req1.setGlassDeductible3(a.getGlassDeductible1());
+                                    req1.setSewerBackupDeductible3(a.getSewerBackupDeductible1());
+                                    req1.setFloodDeductible3(a.getFloodDeductible1());
+                                    req1.setEarthquakeDeductible3(a.getEarthquakeDeductible1());
+                                    req1.setProfitLimit3(a.getProfitLimit1());
+                                    req1.setProfitDeductible3(a.getProfitDeductible1());
+                                    req1.setGrossEarningLimit3(a.getGrossEarningLimit1());
+                                    req1.setGrossEarningDeductible3(a.getGrossEarningDeductible1());
+                                    req1.setRentalIncomeLimit3(a.getRentalIncomeLimit1());
+                                    req1.setRentalIncomeDeductible3(a.getRentalIncomeDeductible1());
+                                    req1.setExtraExpenseLimit3(a.getExtraExpenseLimit1());
+                                    req1.setExtraExpenseDeductible3(a.getExtraExpenseDeductible1());
+                                    req1.setOffPremisesPowerLimit3(a.getOffPremisesLimit1());
+                                    req1.setOffPremisesPowerDeductible3(a.getOffPremisesDeductible1());
+                                    req1.setInsideOutsideLimit3(a.getInsideOutsideLimit1());
+                                    req1.setInsideOutsideDeductible3(a.getInsideOutsideDeductible1());
+                                    req1.setBfMoneyLimit3(a.getBfMoneyLimit1());
+                                    req1.setBfMoneyDeductible3(a.getBfMoneyDeductible1());
+                                    req1.setDeopistorForgeryLimit3(a.getDeopistorForgeryLimit1());
+                                    req1.setDeopistorForgeryDeductible3(a.getDeopistorForgeryDeductible1());
+                                    req1.setMoneyOrdersLimit3(a.getMoneyOrdersLimit1());
+                                    req1.setMoneyOrdersDeductible3(a.getMoneyOrdersDeductible1());
+                                    req1.setEmployDishonestyLimit3(a.getEmployDishonestyLimit1());
+                                    req1.setEmployDishonestyDeductible3(a.getEmployDishonestyDeductible1());
+                                    req1.setCglLimit3(a.getCglLimit1());
+                                    req1.setCglDeductible3(a.getCglDeductible1());
+                                    req1.setTenantsLegalLimit3(a.getTenantsLegalLimit1());
+                                    req1.setTenantsLegalDeductible3(a.getTenantsLegalDeductible1());
+                                    req1.setNonOwnedAutoLimit3(a.getNonOwnedAutoLimit1());
+                                    req1.setNonOwnedAutoDeductible3(a.getNonOwnedAutoDeductible1());
+                                    req1.setSef96Limit3(a.getSef96Limit1());
+                                    req1.setSef96Deductible3(a.getSef96Deductible1());
+                                    req1.setSef94Limit3(a.getSef94Limit1());
+                                    req1.setSef94Deductible3(a.getSef94Deductible1());
+                                    req1.setDoLimit3(a.getDoLimit1());
+                                    req1.setDoDeductible3(a.getDoDeductible1());
+                                    req1.setEoLimit3(a.getEoLimit1());
+                                    req1.setEoDeductible3(a.getEoDeductible1());
+                                    req1.setEmployerLimit3(a.getEmployerLimit1());
+                                    req1.setEmployerDeductible3(a.getEmployerDeductible1());
+                                    req1.setUmbrellaLimit3(a.getUmbrellaLimit1());
+                                    req1.setUmbrellaDeductible3(a.getUmbrellaDeductible1());
+                                    req1.setWrapUpLimit3(a.getWrapUpLimit1());
+                                    req1.setWrapUpDeductible3(a.getWrapUpDeductible1());
+                                    req1.setStdComprehensiveLimit3(a.getStdComprehensiveLimit1());
+                                    req1.setStdComprehensiveDeductible3(a.getStockDeductible1());
+                                    req1.setAirConditioningLimit3(a.getAirConditioningLimit1());
+                                    req1.setAirConditioningDeductible3(a.getAirConditioningDeductible1());
+                                    req1.setProductionMachineryLimit3(a.getProductionMachineryLimit1());
+                                    req1.setProductionMachineryDeductible3(a.getProductionMachineryDeductible1());
+                                    req1.setOthercoverage13(a.getOthercoverage11());
+                                    req1.setOthercoverage23(a.getOthercoverage21());
+                                    req1.setOtherCoverageLimit13(a.getOtherCoverageLimit11());
+                                    req1.setOtherCoverageDeductible13(a.getOtherCoverageDeductible11());
+                                    req1.setOtherCoverageLimit23(a.getOtherCoverageLimit21());
+                                    req1.setOtherCoverageDeductible23(a.getOtherCoverageDeductible21());
+                                    req1.setAdditionalcoverage3(a.getAdditionalCoverage1());
+                                    req1.setRoofupdated3(a.getRoofupdated1());
+                                    req1.setHeatingupdated3(a.getHeatingupdated1());
+                                    req1.setElectricalupdated3(a.getElectricalupdated1());
+                                    req1.setElectricalamps3(a.getElectricalamps1());
+                                    req1.setFireProtectiondistance3(a.getFireProtectiondistance1());
+                                    req1.setAge3(a.getAge1());
+                                    req1.setTotalSqFootage3(a.getTotalSqFootage1());
+                                    req1.setInsdSqFootage3(a.getInsdSqFootage1());
+                                    req1.setNoOfStories3(a.getNoOfStories1());
                                     break;
                             }
                             i++;
@@ -6388,17 +8170,32 @@ public class NextScreenController implements Initializable, IScreenController {
                         InsuranceFormSubmitResponse response = port.getInsuranceOperationsPort().formSubmission(req1);
                         if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
                             stopLoading();
-                            successMessage("Form has been submitted. Form id is:" + response.getFormId());
+                            if (insurancetypeflag == 2 || insurancetypeflag == 3) {
+                                String str = "Your new application has been submitted. Form ID is: " + response.getFormId();
+                                ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).autosuccessMessage(str, producerid);
+
+                            } else {
+                                successMessage("Your new application has been submitted. Form ID is: " + response.getFormId());
+                            }
 
                         } else {
                             stopLoading();
-                            successMessage(response.getErrorMessage());
-                            errors(response.getErrorMessage());
+                            if (insurancetypeflag == 2 || insurancetypeflag == 3) {
+                                String str = response.getErrorMessage();
+                                ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).autoerrorMessage(str);
+                            } else {
+                                errors(response.getErrorMessage());
+                            }
                         }
                     }
                 } catch (Exception ex) {
                     stopLoading();
-                    successMessage1(ex.getMessage());
+                    if (insurancetypeflag == 2 || insurancetypeflag == 3) {
+                        String str = ex.getMessage();
+                        ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).autoerrorMessage(str);
+                    } else {
+                        errors(ex.getMessage());
+                    }
                 }
                 return null;
             }
@@ -6424,10 +8221,10 @@ public class NextScreenController implements Initializable, IScreenController {
         Platform.runLater(new Runnable() {
             public void run() {
 //                Dialogs.showInformationDialog(null, message, "Success", "Success");
-  new AlertDialog((Stage) keycontact.getParent().getScene().getWindow(), message, AlertDialog.ICON_INFO).showAndWait();
+                new AlertDialog((Stage) keycontact.getParent().getScene().getWindow(), message, AlertDialog.ICON_INFO).showAndWait();
                 if (producerid.trim() == null && producerid.trim().isEmpty()) {
                     screenPage.setScreen("OtherScreen");
-                    animatedMovement(-1269, -1269);
+                    animatedMovement(-1269, -715);
                 } else {
                     screenPage.setScreen("NextScreen");
                     animatedMovement(0, 0);
@@ -6459,7 +8256,16 @@ public class NextScreenController implements Initializable, IScreenController {
         Platform.runLater(new Runnable() {
             public void run() {
 //                Dialogs.showInformationDialog(null, message, "Success", "Success");
-  new AlertDialog((Stage) keycontact.getParent().getScene().getWindow(), message, AlertDialog.ICON_INFO).showAndWait();
+                new AlertDialog((Stage) keycontact.getParent().getScene().getWindow(), message, AlertDialog.ICON_INFO).showAndWait();
+            }
+        });
+    }
+
+    public void successMessage2(final String message) {
+        Platform.runLater(new Runnable() {
+            public void run() {
+//                Dialogs.showInformationDialog(null, message, "Success", "Success");
+                new AlertDialog((Stage) keycontact.getParent().getScene().getWindow(), message, AlertDialog.ICON_INFO).showAndWait();
             }
         });
     }
@@ -6495,7 +8301,7 @@ public class NextScreenController implements Initializable, IScreenController {
         //fileChooser.getExtensionFilters().add(extFilter);
         List<File> list1
                 = fileChooser.showOpenMultipleDialog(null);
-        
+
         List<File> list = new ArrayList<File>();
         if (list1 != null) {
             System.out.println("Inside1");
@@ -6506,21 +8312,28 @@ public class NextScreenController implements Initializable, IScreenController {
                 files = files + file.getName() + ",";
             }
             this.fileList = list;
-            
+
             if (!isEdit) {
                 System.out.println("upload new");
-                if(contractorflag==true)
-                {if(os.contains("Windows"))
-                { System.out.println("contractor flag");
-                    list.add(new File("C:\\bin\\Contractors.doc"));
-                    for (File file : list) {
-                    System.out.println(file.getPath());}
-                }
-                else if(os.contains("Mac"))
-                {list.add(new File("/bin/Contactors.doc"));}
+                if (contractorflag == true) {
+                    if (os.contains("Windows")) {
+                        System.out.println("contractor flag");
+                        if (insurancetypeflag == 1 || insurancetypeflag == 2) {
+                            list.add(new File("C:\\bin\\Contractors.doc"));
+                        }
+                        if (insurancetypeflag == 2 || insurancetypeflag == 3) {
+                            list.add(new File("C:\\bin\\VehicleSchedule.xls"));
+                            list.add(new File("DriverSchedule.xls"));
+                        }
+                        for (File file : list) {
+                            System.out.println(file.getPath());
+                        }
+                    } else if (os.contains("Mac")) {
+                        list.add(new File("/bin/Contactors.doc"));
+                    }
                 }
                 //list.add(new File("PassportCopy.jpg"));
-            } 
+            }
             //list.add(new File(applicationid+"\\"+"").getAbsoluteFile());
             uploadlabel.setText(files.substring(0, files.length() - 1));
         }
@@ -6574,7 +8387,6 @@ public class NextScreenController implements Initializable, IScreenController {
         this.date17 = date17;
     }
 
-    
     public XMLGregorianCalendar getDateFromForm() {
         return datefromform;
     }
@@ -6582,7 +8394,7 @@ public class NextScreenController implements Initializable, IScreenController {
     public void setDateFromForm(XMLGregorianCalendar datefromform) {
         this.datefromform = datefromform;
     }
-    
+
     public XMLGregorianCalendar getDate11() {
         return date11;
     }
@@ -6595,7 +8407,7 @@ public class NextScreenController implements Initializable, IScreenController {
         Platform.runLater(new Runnable() {
             public void run() {
 //                Dialogs.showErrorDialog(null, message, "Oops!!", "Error");
-  new AlertDialog((Stage) keycontact.getParent().getScene().getWindow(), message, AlertDialog.ICON_ERROR).showAndWait();
+                new AlertDialog((Stage) keycontact.getParent().getScene().getWindow(), message, AlertDialog.ICON_ERROR).showAndWait();
                 stopLoading();
             }
         });
