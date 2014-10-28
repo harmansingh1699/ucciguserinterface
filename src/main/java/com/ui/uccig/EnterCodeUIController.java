@@ -1073,7 +1073,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
         datePicker.setLocale(Locale.ENGLISH);
         datePicker.getCalendarView().todayButtonTextProperty().set("TODAY");
         datePicker.getCalendarView().setShowWeeks(false);
-        datePicker.setDateFormat(new SimpleDateFormat("YYYY-MM-DD"));
+        datePicker.setDateFormat(new SimpleDateFormat("YYYY-MM-dd"));
         
         gridpane1.add(datePicker, 5,0);
         binding = new SearchArchivebinding();
@@ -1449,11 +1449,18 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     @FXML
     public void sendMailNow() {
+        sendmailsubject.setText(formId+": Application for New Business");
+        emailbody.setText("");
+        mail1.setSelected(false);
+        System.out.println("Received email address is"+receivedemailaddress);
+        email1.setText(receivedemailaddress);
         animatedMovement(-2538, 0);
     }
 
     @FXML
     public void sendMailLater() {
+        sendmailsubject.setText(formId+": Application for New Business");
+        emailbody.setText("");
         animatedMovement(-2538, -715);
     }
 

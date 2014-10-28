@@ -396,7 +396,8 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
     @FXML
     public void backAuto() {
         System.out.println("back auto clicked");
-        screenPage.setScreen("NextScreen");
+        ((NextScreenController) screenPage.getControlledScreen("NextScreen")).autoback();
+        //screenPage.setScreen("NextScreen");
         //animatedMovement(-6345, 0);
     }
     @FXML
@@ -454,17 +455,31 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
     public void autosuccessMessage(final String message, final String producerid) {
         Platform.runLater(new Runnable() {
             public void run() {
+                System.out.println("Inside run");
 //                Dialogs.showInformationDialog(null, message, "Success", "Success");
                 new AlertDialog((Stage) docket1.getParent().getScene().getWindow(), message, AlertDialog.ICON_INFO).showAndWait();
                 if (producerid.trim() == null && producerid.trim().isEmpty()) {
+                    System.out.println("autosucessmessage inside if");
                     screenPage.setScreen("OtherScreen");
                     animatedMovement(-1269, -715);
                 } else {
+                    System.out.println("autosucessmessage inside else");
                     screenPage.setScreen("NextScreen");
                     animatedMovement(0, 0);
                 }
                 
             }
+        });
+    }
+    public void autosuccessMessage(final String message) {
+        Platform.runLater(new Runnable() {
+            public void run() {
+                System.out.println("Inside run");
+//                Dialogs.showInformationDialog(null, message, "Success", "Success");
+                new AlertDialog((Stage) docket1.getParent().getScene().getWindow(), message, AlertDialog.ICON_INFO).showAndWait();
+                    screenPage.setScreen("OtherScreen");
+                    animatedMovement(-1269, -715);
+            }    
         });
     }
     public void autoerrorMessage(final String message) {
