@@ -158,6 +158,7 @@ public class SceneController implements Initializable {
         ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setInsuranceType(getInsurancetype());
         ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setSeverity(severity.getText());
         ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setCategory(getInsurancecategory());
+        System.out.println("CreationDate"+getCreationDate());
         ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setCreationDate(getCreationDate());
         ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setBranch(getBranch());
         ((EnterCodeUIController) (screenPage.getControlledScreen("OtherScreen"))).setWithUs(getWithUs());

@@ -1108,7 +1108,7 @@
     </GridPane>
     <Button defaultButton="true" font="$x6" layoutX="2903.0" layoutY="1334.0" mnemonicParsing="false" onAction="#submitSendDelayEmail" prefHeight="50.0" prefWidth="183.0" text="Send Email" />
     <Label font="$x6" layoutX="2635.0" layoutY="1248.0" text="Date:" />
-    <Label font="$x6" layoutX="2903.0" layoutY="1246.0" text="*Mail will be sent at 00:00" />
+    <Label font="$x6" layoutX="2903.0" layoutY="1246.0" text="*Mail will be sent at 00:01" />
     <Button defaultButton="true" font="$x2" layoutX="2593.0" layoutY="19.0" mnemonicParsing="false" onAction="#backMail" prefHeight="34.0" prefWidth="124.0" text="Back" />
     <Button defaultButton="true" font="$x2" layoutX="2582.0" layoutY="737.0" mnemonicParsing="false" onAction="#backDelayMail" prefHeight="34.0" prefWidth="124.0" text="Back" />
     <BorderPane id="registrationPane" fx:id="closeapplicationpane" layoutX="1800.0" layoutY="950.0" prefHeight="355.0" prefWidth="356.0" style="-fx-background-color: rgba(245,245,245, 0.8);&#10;-fx-background-radius: 10;" visible="false">

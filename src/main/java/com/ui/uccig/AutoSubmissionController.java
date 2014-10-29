@@ -185,6 +185,8 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
     DatePicker datePicker15 = new DatePicker();
     DatePicker datePicker16 = new DatePicker();
     DatePicker datePicker17 = new DatePicker();
+    boolean vehicleflag=false;
+    boolean driverflag=false;
 
      /**
      * Initializes the controller class.
@@ -192,6 +194,7 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
         hauling.getSelectionModel().selectFirst();
         nonownedliability.getSelectionModel().selectFirst();
         nonownedcontract.getSelectionModel().selectFirst();
@@ -407,6 +410,10 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
     }
     @FXML
     public void submitFormAction() throws DatatypeConfigurationException{
+        
+                            ((NextScreenController)screenPage.getControlledScreen("NextScreen")).setVehicleflag(vehicleflag);
+                            ((NextScreenController)screenPage.getControlledScreen("NextScreen")).setDriverflag(driverflag);
+        
                             GregorianCalendar c1 = new GregorianCalendar();
                             if(datePicker11.getSelectedDate()!=null)
                             {c1.setTime(datePicker11.getSelectedDate());
@@ -528,10 +535,12 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
     
     @FXML
     public void openVehicleSchedule(){
+        vehicleflag=true;
         new Rav1(new File("bin\\VehicleSchedule.xls").getAbsolutePath()).execute();
     }
     @FXML
     public void openDriverSchedule(){
+        driverflag=true;
         new Rav1(new File("bin\\DriverSchedule.xls").getAbsolutePath()).execute();
     }
     

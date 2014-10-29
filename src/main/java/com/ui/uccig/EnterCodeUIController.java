@@ -1297,6 +1297,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
             b = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f)));
            // b.write(binding2.getMailbody());
             b.write(emailbody.getText());
+            System.out.println("b out"+ b);
         } catch (Exception e) {
 
         } finally {
@@ -1309,7 +1310,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                 }
             }
         }
-        if(binding1.getemail1().trim().equals(null)||binding1.getemail1().trim().equals(""))
+        if(binding1.getemail1()== null)
         { successMessage("Please enter atleast 1 email address");}
         else
         {   stage1.show();
@@ -1320,6 +1321,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
        FormMailToUnderWriterRequest req1 = new FormMailToUnderWriterRequest();
        req1.setFormId(formId);
+       System.out.println("subject"+binding1.getSendMailSubject());
        req1.setSubject(binding1.getSendMailSubject());
        System.out.println("received emailaddress"+receivedemailaddress);
        req1.setFrom(receivedemailaddress);
@@ -1452,15 +1454,15 @@ public class EnterCodeUIController implements Initializable, IScreenController {
         sendmailsubject.setText(formId+": Application for New Business");
         emailbody.setText("");
         mail1.setSelected(false);
-        System.out.println("Received email address is"+receivedemailaddress);
+        
         email1.setText(receivedemailaddress);
         animatedMovement(-2538, 0);
     }
 
     @FXML
     public void sendMailLater() {
-        sendmailsubject.setText(formId+": Application for New Business");
-        emailbody.setText("");
+        senddelayedmailsubject.setText(formId+": Application for New Business");
+        delayemailbody.setText("");
         animatedMovement(-2538, -715);
     }
 
@@ -2065,7 +2067,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
             dl.getController().setWithUs(abstractFormInfoList.get(k).getWithUs());
             dl.getController().setInsurancecategory(abstractFormInfoList.get(k).getStatus());
             dl.getController().setInsurancetype(abstractFormInfoList.get(k).getInsuranceType());
-           // dl.getController().setCreationDate(abstractFormInfoList.get(i + offset).getCreationDate().toString());
+            dl.getController().setCreationDate(abstractFormInfoList.get(k).getCreationDate().toXMLFormat());
             dl.getController().setBranch(abstractFormInfoList.get(k).getBranch());
             //yahape
             if (k % 4 == 0 && k > 0) {

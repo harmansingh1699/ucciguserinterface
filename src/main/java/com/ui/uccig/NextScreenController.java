@@ -103,6 +103,8 @@ public class NextScreenController implements Initializable, IScreenController {
 
     @FXML
     private Label uploadlabel;
+    @FXML
+    private Label downloadlabel;
 
     @FXML
     private GridPane gridpane1;
@@ -127,6 +129,24 @@ public class NextScreenController implements Initializable, IScreenController {
     private XMLGregorianCalendar date16;
     private XMLGregorianCalendar date17;
 
+    public boolean isVehicleflag() {
+        return vehicleflag;
+    }
+
+    public void setVehicleflag(boolean vehicleflag) {
+        this.vehicleflag = vehicleflag;
+    }
+
+    public boolean isDriverflag() {
+        return driverflag;
+    }
+
+    public void setDriverflag(boolean driverflag) {
+        this.driverflag = driverflag;
+    }
+    
+    boolean vehicleflag;
+    boolean driverflag;
     private String applicationid;
     private String fileName1;
     private byte[] file1;
@@ -1828,7 +1848,7 @@ public class NextScreenController implements Initializable, IScreenController {
         }
 
     }
-    boolean contractorflag = true;
+    boolean contractorflag = false;
 
     @FXML
     public void openContractor() {
@@ -4932,27 +4952,61 @@ public class NextScreenController implements Initializable, IScreenController {
     public void assign(final GetInsuranceFormResponse form) {
         Platform.runLater(new Runnable() {
             public void run() {
+                String downloadfiles="";
                 applicationid = form.getFormId();
                 file1 = form.getFile1();
                 fileName1 = form.getFile1Name();
+                System.out.println(fileName1);
+
+                if(file1 != null)
+                    downloadfiles +=fileName1;
+                System.out.println(downloadfiles);
                 file2 = form.getFile2();
                 fileName2 = form.getFile2Name();
+                System.out.println(fileName2);
+                 if(file2 != null)
+                    downloadfiles +=", "+fileName2;
+                 System.out.println(downloadfiles);
                 file3 = form.getFile3();
                 fileName3 = form.getFile3Name();
+                System.out.println(fileName3);
+                 if(file3 != null)
+                    downloadfiles +=", "+fileName3;
+                 System.out.println(downloadfiles);
+                 
                 file4 = form.getFile4();
                 fileName4 = form.getFile4Name();
+                 if(file4 != null)
+                    downloadfiles +=", "+fileName4;
                 file5 = form.getFile5();
                 fileName5 = form.getFile5Name();
+                 if(file5 != null)
+                    downloadfiles +=", "+fileName5;
                 file6 = form.getFile6();
                 fileName6 = form.getFile6Name();
+                 if(file6 != null)
+                    downloadfiles +=", "+fileName6;
                 file7 = form.getFile7();
                 fileName7 = form.getFile7Name();
+                 if(file7 != null)
+                    downloadfiles +=", "+fileName7;
                 file8 = form.getFile8();
                 fileName8 = form.getFile8Name();
+                 if(file8 != null)
+                    downloadfiles +=", "+fileName8;
                 file9 = form.getFile9();
                 fileName9 = form.getFile9Name();
+                 if(file9 != null)
+                    downloadfiles +=", "+fileName9;
                 file10 = form.getFile10();
                 fileName10 = form.getFile10Name();
+                 if(file10 != null)
+                    downloadfiles +=", "+fileName10;
+                 
+                 System.out.println("Final String"+downloadfiles);
+                if(!downloadfiles.trim().equals(""))
+                 downloadlabel.setText(downloadfiles);
+                 
                 System.out.println("Filenames" + fileName1 + fileName2 + fileName3 + fileName4);
 
                 if (form != null) {
@@ -7702,7 +7756,7 @@ public class NextScreenController implements Initializable, IScreenController {
                                 case 1:
                                     req1.setAddress1(a.getAddress1());
                                     req1.setBasement1(a.getBasement1());
-                                    req1.setOwner1(a.getOwner11());
+                                    req1.setOwnercb1(a.getOwner11());
                                     req1.setTruckMan1(a.getTruckMan1());
                                     req1.setGrossEarningCheckbox1(a.getGrossEarning801());
                                     req1.setWallsframe1(a.getWallsframe1());
@@ -7839,7 +7893,7 @@ public class NextScreenController implements Initializable, IScreenController {
                                 case 2:
                                     req1.setAddress2(a.getAddress1());
                                     req1.setBasement2(a.getBasement1());
-                                    req1.setOwner2(a.getOwner11());
+                                    req1.setOwnercb2(a.getOwner11());
                                     req1.setTruckMan2(a.getTruckMan1());
                                     req1.setGrossEarningCheckbox2(a.getGrossEarning801());
                                     req1.setWallsframe2(a.getWallsframe1());
@@ -7866,33 +7920,19 @@ public class NextScreenController implements Initializable, IScreenController {
                                     req1.setBuildingLimit2(a.getBuildingLimit1());
                                     req1.setBuildingDeductible2(a.getBuildingDeductible1());
                                     req1.setContentsLimit2(a.getContentsLimit1());
-
                                     req1.setContentsDeductible2(a.getContentsDeductible1());
-
                                     req1.setStockLimit2(a.getStockLimit1());
-
                                     req1.setStockDeductible2(a.getStockDeductible1());
-
                                     req1.setOfficeContentLimit2(a.getOfficeContentLimit1());
-
                                     req1.setOfficeContentDeductible2(a.getOfficeContentDeductible1());
-
                                     req1.setEdpLimit2(a.getEdpLimit1());
-
                                     req1.setEdpDeductible2(a.getEdpDeductible1());
-
                                     req1.setEquipmentLimit2(a.getEquipmentLimit1());
-
                                     req1.setEquipmentDeductible2(a.getEquipmentDeductible1());
-
                                     req1.setOffPremisesLimit2(a.getOffPremisesLimit1());
-
                                     req1.setOffPremisesDeductible2(a.getOffPremisesDeductible1());
-
                                     req1.setTransitLimit2(a.getTransitLimit1());
-
                                     req1.setTransitDeductible2(a.getTransitDeductible1());
-
                                     req1.setMiscPropertyLimit2(a.getMiscPropertyLimit1());
                                     req1.setMiscPropertyDeductible2(a.getMiscPropertyDeductible1());
                                     req1.setContractorEquipmentLimit2(a.getContractorEquipmentLimit1());
@@ -7976,7 +8016,7 @@ public class NextScreenController implements Initializable, IScreenController {
                                 case 3:
                                     req1.setAddress3(a.getAddress1());
                                     req1.setBasement3(a.getBasement1());
-                                    req1.setOwner3(a.getOwner11());
+                                    req1.setOwnercb3(a.getOwner11());
                                     req1.setTruckMan3(a.getTruckMan1());
                                     req1.setGrossEarningCheckbox3(a.getGrossEarning801());
                                     req1.setWallsframe3(a.getWallsframe1());
@@ -8013,13 +8053,9 @@ public class NextScreenController implements Initializable, IScreenController {
                                     req1.setEquipmentLimit3(a.getEquipmentLimit1());
                                     req1.setEquipmentDeductible3(a.getEquipmentDeductible1());
                                     req1.setOffPremisesLimit3(a.getOffPremisesLimit1());
-
                                     req1.setOffPremisesDeductible3(a.getOffPremisesDeductible1());
-
                                     req1.setTransitLimit3(a.getTransitLimit1());
-
                                     req1.setTransitDeductible3(a.getTransitDeductible1());
-
                                     req1.setMiscPropertyLimit3(a.getMiscPropertyLimit1());
                                     req1.setMiscPropertyDeductible3(a.getMiscPropertyDeductible1());
                                     req1.setContractorEquipmentLimit3(a.getContractorEquipmentLimit1());
@@ -8100,6 +8136,498 @@ public class NextScreenController implements Initializable, IScreenController {
                                     req1.setInsdSqFootage3(a.getInsdSqFootage1());
                                     req1.setNoOfStories3(a.getNoOfStories1());
                                     break;
+                                    case 4:
+                                    req1.setAddress4(a.getAddress1());
+                                    req1.setBasement4(a.getBasement1());
+                                    req1.setOwnercb4(a.getOwner11());
+                                    req1.setTruckMan4(a.getTruckMan1());
+                                    req1.setGrossEarningCheckbox4(a.getGrossEarning801());
+                                    req1.setWallsframe4(a.getWallsframe1());
+                                    req1.setWallshcb4(a.getWallshcb1());
+                                    req1.setWallssteel4(a.getWallssteel1());
+                                    req1.setWallsbrick4(a.getWallsbrick1());
+                                    req1.setRoofwood4(a.getRoofwood1());
+                                    req1.setRoofsteel4(a.getRoofsteel1());
+                                    req1.setRoofconcrete4(a.getRoofconcrete1());
+                                    req1.setFloorsconcrete4(a.getFloorsconcrete1());
+                                    req1.setFloorswood4(a.getFloorswood1());
+                                    req1.setHeatinggas4(a.getHeatinggas1());
+                                    req1.setHeatingoil4(a.getHeatingoil1());
+                                    req1.setHeatingelectric4(a.getHeatingelectric1());
+                                    req1.setHeatingother4(a.getHeatingother1());
+                                    req1.setElectricalbreakers4(a.getElectricalbreakers1());
+                                    req1.setElectricalfuses4(a.getElectricalfuses1());
+                                    req1.setElectricalamps4(a.getElectricalamps1());
+                                    req1.setPlumbingcopper4(a.getPlumbingcopper1());
+                                    req1.setPlumbingpvc4(a.getPlumbingpvc1());
+                                    req1.setPlumbingother4(a.getPlumbingother1());
+                                    req1.setFireProtection4(a.getFireProtection1());
+                                    req1.setSecurity4(a.getSecurity1());
+                                    req1.setBuildingLimit4(a.getBuildingLimit1());
+                                    req1.setBuildingDeductible4(a.getBuildingDeductible1());
+                                    req1.setContentsLimit4(a.getContentsLimit1());
+                                    req1.setContentsDeductible4(a.getContentsDeductible1());
+                                    req1.setStockLimit4(a.getStockLimit1());
+                                    req1.setStockDeductible4(a.getStockDeductible1());
+                                    req1.setOfficeContentLimit4(a.getOfficeContentLimit1());
+                                    req1.setOfficeContentDeductible4(a.getOfficeContentDeductible1());
+                                    req1.setEdpLimit4(a.getEdpLimit1());
+                                    req1.setEdpDeductible4(a.getEdpDeductible1());
+                                    req1.setEquipmentLimit4(a.getEquipmentLimit1());
+                                    req1.setEquipmentDeductible4(a.getEquipmentDeductible1());
+                                    req1.setOffPremisesLimit4(a.getOffPremisesLimit1());
+                                    req1.setOffPremisesDeductible4(a.getOffPremisesDeductible1());
+                                    req1.setTransitLimit4(a.getTransitLimit1());
+                                    req1.setTransitDeductible4(a.getTransitDeductible1());
+                                    req1.setMiscPropertyLimit4(a.getMiscPropertyLimit1());
+                                    req1.setMiscPropertyDeductible4(a.getMiscPropertyDeductible1());
+                                    req1.setContractorEquipmentLimit4(a.getContractorEquipmentLimit1());
+                                    req1.setContractorEquipmentDeductible4(a.getContractorEquipmentDeductible1());
+                                    req1.setInstallationFloaterLimit4(a.getInstallationFloaterLimit1());
+                                    req1.setInstallationFloaterDeductible4(a.getInstallationFloaterDeductible1());
+                                    req1.setToolFloaterLimit4(a.getToolFloaterLimit1());
+                                    req1.setToolFloaterDeductible4(a.getToolFloaterDeductible1());
+                                    req1.setSignFloaterLimit4(a.getSignFloaterLimit1());
+                                    req1.setSignFloaterDeductible4(a.getSignFloaterDeductible1());
+                                    req1.setMotorTruckLimit4(a.getMotorTruckLimit1());
+                                    req1.setMotorTruckDeductible4(a.getMotorTruckDeductible1());
+                                    req1.setGlassLimit4(a.getGlassLimit1());
+                                    req1.setGlassDeductible4(a.getGlassDeductible1());
+                                    req1.setSewerBackupDeductible4(a.getSewerBackupDeductible1());
+                                    req1.setFloodDeductible4(a.getFloodDeductible1());
+                                    req1.setEarthquakeDeductible4(a.getEarthquakeDeductible1());
+                                    req1.setProfitLimit4(a.getProfitLimit1());
+                                    req1.setProfitDeductible4(a.getProfitDeductible1());
+                                    req1.setGrossEarningLimit4(a.getGrossEarningLimit1());
+                                    req1.setGrossEarningDeductible4(a.getGrossEarningDeductible1());
+                                    req1.setRentalIncomeLimit4(a.getRentalIncomeLimit1());
+                                    req1.setRentalIncomeDeductible4(a.getRentalIncomeDeductible1());
+                                    req1.setExtraExpenseLimit4(a.getExtraExpenseLimit1());
+                                    req1.setExtraExpenseDeductible4(a.getExtraExpenseDeductible1());
+                                    req1.setOffPremisesPowerLimit4(a.getOffPremisesLimit1());
+                                    req1.setOffPremisesPowerDeductible4(a.getOffPremisesDeductible1());
+                                    req1.setInsideOutsideLimit4(a.getInsideOutsideLimit1());
+                                    req1.setInsideOutsideDeductible4(a.getInsideOutsideDeductible1());
+                                    req1.setBfMoneyLimit4(a.getBfMoneyLimit1());
+                                    req1.setBfMoneyDeductible4(a.getBfMoneyDeductible1());
+                                    req1.setDeopistorForgeryLimit4(a.getDeopistorForgeryLimit1());
+                                    req1.setDeopistorForgeryDeductible4(a.getDeopistorForgeryDeductible1());
+                                    req1.setMoneyOrdersLimit4(a.getMoneyOrdersLimit1());
+                                    req1.setMoneyOrdersDeductible4(a.getMoneyOrdersDeductible1());
+                                    req1.setEmployDishonestyLimit4(a.getEmployDishonestyLimit1());
+                                    req1.setEmployDishonestyDeductible4(a.getEmployDishonestyDeductible1());
+                                    req1.setCglLimit4(a.getCglLimit1());
+                                    req1.setCglDeductible4(a.getCglDeductible1());
+                                    req1.setTenantsLegalLimit4(a.getTenantsLegalLimit1());
+                                    req1.setTenantsLegalDeductible4(a.getTenantsLegalDeductible1());
+                                    req1.setNonOwnedAutoLimit4(a.getNonOwnedAutoLimit1());
+                                    req1.setNonOwnedAutoDeductible4(a.getNonOwnedAutoDeductible1());
+                                    req1.setSef96Limit4(a.getSef96Limit1());
+                                    req1.setSef96Deductible4(a.getSef96Deductible1());
+                                    req1.setSef94Limit4(a.getSef94Limit1());
+                                    req1.setSef94Deductible4(a.getSef94Deductible1());
+                                    req1.setDoLimit4(a.getDoLimit1());
+                                    req1.setDoDeductible4(a.getDoDeductible1());
+                                    req1.setEoLimit4(a.getEoLimit1());
+                                    req1.setEoDeductible4(a.getEoDeductible1());
+                                    req1.setEmployerLimit4(a.getEmployerLimit1());
+                                    req1.setEmployerDeductible4(a.getEmployerDeductible1());
+                                    req1.setUmbrellaLimit4(a.getUmbrellaLimit1());
+                                    req1.setUmbrellaDeductible4(a.getUmbrellaDeductible1());
+                                    req1.setWrapUpLimit4(a.getWrapUpLimit1());
+                                    req1.setWrapUpDeductible4(a.getWrapUpDeductible1());
+                                    req1.setStdComprehensiveLimit4(a.getStdComprehensiveLimit1());
+                                    req1.setStdComprehensiveDeductible4(a.getStockDeductible1());
+                                    req1.setAirConditioningLimit4(a.getAirConditioningLimit1());
+                                    req1.setAirConditioningDeductible4(a.getAirConditioningDeductible1());
+                                    req1.setProductionMachineryLimit4(a.getProductionMachineryLimit1());
+                                    req1.setProductionMachineryDeductible4(a.getProductionMachineryDeductible1());
+                                    req1.setOthercoverage14(a.getOthercoverage11());
+                                    req1.setOthercoverage24(a.getOthercoverage21());
+                                    req1.setOtherCoverageLimit14(a.getOtherCoverageLimit11());
+                                    req1.setOtherCoverageDeductible14(a.getOtherCoverageDeductible11());
+                                    req1.setOtherCoverageLimit24(a.getOtherCoverageLimit21());
+                                    req1.setOtherCoverageDeductible24(a.getOtherCoverageDeductible21());
+                                    req1.setAdditionalcoverage4(a.getAdditionalCoverage1());
+                                    req1.setRoofupdated4(a.getRoofupdated1());
+                                    req1.setHeatingupdated4(a.getHeatingupdated1());
+                                    req1.setElectricalupdated4(a.getElectricalupdated1());
+                                    req1.setElectricalamps4(a.getElectricalamps1());
+                                    req1.setFireProtectiondistance4(a.getFireProtectiondistance1());
+                                    req1.setAge4(a.getAge1());
+                                    req1.setTotalSqFootage4(a.getTotalSqFootage1());
+                                    req1.setInsdSqFootage4(a.getInsdSqFootage1());
+                                    req1.setNoOfStories4(a.getNoOfStories1());
+                                    break;
+                                    case 5:
+                                        req1.setAddress5(a.getAddress1());
+                                    req1.setBasement5(a.getBasement1());
+                                    req1.setOwnercb5(a.getOwner11());
+                                    req1.setTruckMan5(a.getTruckMan1());
+                                    req1.setGrossEarningCheckbox5(a.getGrossEarning801());
+                                    req1.setWallsframe5(a.getWallsframe1());
+                                    req1.setWallshcb5(a.getWallshcb1());
+                                    req1.setWallssteel5(a.getWallssteel1());
+                                    req1.setWallsbrick5(a.getWallsbrick1());
+                                    req1.setRoofwood5(a.getRoofwood1());
+                                    req1.setRoofsteel5(a.getRoofsteel1());
+                                    req1.setRoofconcrete5(a.getRoofconcrete1());
+                                    req1.setFloorsconcrete5(a.getFloorsconcrete1());
+                                    req1.setFloorswood5(a.getFloorswood1());
+                                    req1.setHeatinggas5(a.getHeatinggas1());
+                                    req1.setHeatingoil5(a.getHeatingoil1());
+                                    req1.setHeatingelectric5(a.getHeatingelectric1());
+                                    req1.setHeatingother5(a.getHeatingother1());
+                                    req1.setElectricalbreakers5(a.getElectricalbreakers1());
+                                    req1.setElectricalfuses5(a.getElectricalfuses1());
+                                    req1.setElectricalamps5(a.getElectricalamps1());
+                                    req1.setPlumbingcopper5(a.getPlumbingcopper1());
+                                    req1.setPlumbingpvc5(a.getPlumbingpvc1());
+                                    req1.setPlumbingother5(a.getPlumbingother1());
+                                    req1.setFireProtection5(a.getFireProtection1());
+                                    req1.setSecurity5(a.getSecurity1());
+                                    req1.setBuildingLimit5(a.getBuildingLimit1());
+                                    req1.setBuildingDeductible5(a.getBuildingDeductible1());
+                                    req1.setContentsLimit5(a.getContentsLimit1());
+                                    req1.setContentsDeductible5(a.getContentsDeductible1());
+                                    req1.setStockLimit5(a.getStockLimit1());
+                                    req1.setStockDeductible5(a.getStockDeductible1());
+                                    req1.setOfficeContentLimit5(a.getOfficeContentLimit1());
+                                    req1.setOfficeContentDeductible5(a.getOfficeContentDeductible1());
+                                    req1.setEdpLimit5(a.getEdpLimit1());
+                                    req1.setEdpDeductible5(a.getEdpDeductible1());
+                                    req1.setEquipmentLimit5(a.getEquipmentLimit1());
+                                    req1.setEquipmentDeductible5(a.getEquipmentDeductible1());
+                                    req1.setOffPremisesLimit5(a.getOffPremisesLimit1());
+                                    req1.setOffPremisesDeductible5(a.getOffPremisesDeductible1());
+                                    req1.setTransitLimit5(a.getTransitLimit1());
+                                    req1.setTransitDeductible5(a.getTransitDeductible1());
+                                    req1.setMiscPropertyLimit5(a.getMiscPropertyLimit1());
+                                    req1.setMiscPropertyDeductible5(a.getMiscPropertyDeductible1());
+                                    req1.setContractorEquipmentLimit5(a.getContractorEquipmentLimit1());
+                                    req1.setContractorEquipmentDeductible5(a.getContractorEquipmentDeductible1());
+                                    req1.setInstallationFloaterLimit5(a.getInstallationFloaterLimit1());
+                                    req1.setInstallationFloaterDeductible5(a.getInstallationFloaterDeductible1());
+                                    req1.setToolFloaterLimit5(a.getToolFloaterLimit1());
+                                    req1.setToolFloaterDeductible5(a.getToolFloaterDeductible1());
+                                    req1.setSignFloaterLimit5(a.getSignFloaterLimit1());
+                                    req1.setSignFloaterDeductible5(a.getSignFloaterDeductible1());
+                                    req1.setMotorTruckLimit5(a.getMotorTruckLimit1());
+                                    req1.setMotorTruckDeductible5(a.getMotorTruckDeductible1());
+                                    req1.setGlassLimit5(a.getGlassLimit1());
+                                    req1.setGlassDeductible5(a.getGlassDeductible1());
+                                    req1.setSewerBackupDeductible5(a.getSewerBackupDeductible1());
+                                    req1.setFloodDeductible5(a.getFloodDeductible1());
+                                    req1.setEarthquakeDeductible5(a.getEarthquakeDeductible1());
+                                    req1.setProfitLimit5(a.getProfitLimit1());
+                                    req1.setProfitDeductible5(a.getProfitDeductible1());
+                                    req1.setGrossEarningLimit5(a.getGrossEarningLimit1());
+                                    req1.setGrossEarningDeductible5(a.getGrossEarningDeductible1());
+                                    req1.setRentalIncomeLimit5(a.getRentalIncomeLimit1());
+                                    req1.setRentalIncomeDeductible5(a.getRentalIncomeDeductible1());
+                                    req1.setExtraExpenseLimit5(a.getExtraExpenseLimit1());
+                                    req1.setExtraExpenseDeductible5(a.getExtraExpenseDeductible1());
+                                    req1.setOffPremisesPowerLimit5(a.getOffPremisesLimit1());
+                                    req1.setOffPremisesPowerDeductible5(a.getOffPremisesDeductible1());
+                                    req1.setInsideOutsideLimit5(a.getInsideOutsideLimit1());
+                                    req1.setInsideOutsideDeductible5(a.getInsideOutsideDeductible1());
+                                    req1.setBfMoneyLimit5(a.getBfMoneyLimit1());
+                                    req1.setBfMoneyDeductible5(a.getBfMoneyDeductible1());
+                                    req1.setDeopistorForgeryLimit5(a.getDeopistorForgeryLimit1());
+                                    req1.setDeopistorForgeryDeductible5(a.getDeopistorForgeryDeductible1());
+                                    req1.setMoneyOrdersLimit5(a.getMoneyOrdersLimit1());
+                                    req1.setMoneyOrdersDeductible5(a.getMoneyOrdersDeductible1());
+                                    req1.setEmployDishonestyLimit5(a.getEmployDishonestyLimit1());
+                                    req1.setEmployDishonestyDeductible5(a.getEmployDishonestyDeductible1());
+                                    req1.setCglLimit5(a.getCglLimit1());
+                                    req1.setCglDeductible5(a.getCglDeductible1());
+                                    req1.setTenantsLegalLimit5(a.getTenantsLegalLimit1());
+                                    req1.setTenantsLegalDeductible5(a.getTenantsLegalDeductible1());
+                                    req1.setNonOwnedAutoLimit5(a.getNonOwnedAutoLimit1());
+                                    req1.setNonOwnedAutoDeductible5(a.getNonOwnedAutoDeductible1());
+                                    req1.setSef96Limit5(a.getSef96Limit1());
+                                    req1.setSef96Deductible5(a.getSef96Deductible1());
+                                    req1.setSef94Limit5(a.getSef94Limit1());
+                                    req1.setSef94Deductible5(a.getSef94Deductible1());
+                                    req1.setDoLimit5(a.getDoLimit1());
+                                    req1.setDoDeductible5(a.getDoDeductible1());
+                                    req1.setEoLimit5(a.getEoLimit1());
+                                    req1.setEoDeductible5(a.getEoDeductible1());
+                                    req1.setEmployerLimit5(a.getEmployerLimit1());
+                                    req1.setEmployerDeductible5(a.getEmployerDeductible1());
+                                    req1.setUmbrellaLimit5(a.getUmbrellaLimit1());
+                                    req1.setUmbrellaDeductible5(a.getUmbrellaDeductible1());
+                                    req1.setWrapUpLimit5(a.getWrapUpLimit1());
+                                    req1.setWrapUpDeductible5(a.getWrapUpDeductible1());
+                                    req1.setStdComprehensiveLimit5(a.getStdComprehensiveLimit1());
+                                    req1.setStdComprehensiveDeductible5(a.getStockDeductible1());
+                                    req1.setAirConditioningLimit5(a.getAirConditioningLimit1());
+                                    req1.setAirConditioningDeductible5(a.getAirConditioningDeductible1());
+                                    req1.setProductionMachineryLimit5(a.getProductionMachineryLimit1());
+                                    req1.setProductionMachineryDeductible5(a.getProductionMachineryDeductible1());
+                                    req1.setOthercoverage15(a.getOthercoverage11());
+                                    req1.setOthercoverage25(a.getOthercoverage21());
+                                    req1.setOtherCoverageLimit15(a.getOtherCoverageLimit11());
+                                    req1.setOtherCoverageDeductible15(a.getOtherCoverageDeductible11());
+                                    req1.setOtherCoverageLimit25(a.getOtherCoverageLimit21());
+                                    req1.setOtherCoverageDeductible25(a.getOtherCoverageDeductible21());
+                                    req1.setAdditionalcoverage5(a.getAdditionalCoverage1());
+                                    req1.setRoofupdated5(a.getRoofupdated1());
+                                    req1.setHeatingupdated5(a.getHeatingupdated1());
+                                    req1.setElectricalupdated5(a.getElectricalupdated1());
+                                    req1.setElectricalamps5(a.getElectricalamps1());
+                                    req1.setFireProtectiondistance5(a.getFireProtectiondistance1());
+                                    req1.setAge5(a.getAge1());
+                                    req1.setTotalSqFootage5(a.getTotalSqFootage1());
+                                    req1.setInsdSqFootage5(a.getInsdSqFootage1());
+                                    req1.setNoOfStories5(a.getNoOfStories1());
+                                        break;
+                                    case 6: 
+                                        req1.setAddress6(a.getAddress1());
+                                    req1.setBasement6(a.getBasement1());
+                                    req1.setOwnercb6(a.getOwner11());
+                                    req1.setTruckMan6(a.getTruckMan1());
+                                    req1.setGrossEarningCheckbox6(a.getGrossEarning801());
+                                    req1.setWallsframe6(a.getWallsframe1());
+                                    req1.setWallshcb6(a.getWallshcb1());
+                                    req1.setWallssteel6(a.getWallssteel1());
+                                    req1.setWallsbrick6(a.getWallsbrick1());
+                                    req1.setRoofwood6(a.getRoofwood1());
+                                    req1.setRoofsteel6(a.getRoofsteel1());
+                                    req1.setRoofconcrete6(a.getRoofconcrete1());
+                                    req1.setFloorsconcrete6(a.getFloorsconcrete1());
+                                    req1.setFloorswood6(a.getFloorswood1());
+                                    req1.setHeatinggas6(a.getHeatinggas1());
+                                    req1.setHeatingoil6(a.getHeatingoil1());
+                                    req1.setHeatingelectric6(a.getHeatingelectric1());
+                                    req1.setHeatingother6(a.getHeatingother1());
+                                    req1.setElectricalbreakers6(a.getElectricalbreakers1());
+                                    req1.setElectricalfuses6(a.getElectricalfuses1());
+                                    req1.setElectricalamps6(a.getElectricalamps1());
+                                    req1.setPlumbingcopper6(a.getPlumbingcopper1());
+                                    req1.setPlumbingpvc6(a.getPlumbingpvc1());
+                                    req1.setPlumbingother6(a.getPlumbingother1());
+                                    req1.setFireProtection6(a.getFireProtection1());
+                                    req1.setSecurity6(a.getSecurity1());
+                                    req1.setBuildingLimit6(a.getBuildingLimit1());
+                                    req1.setBuildingDeductible6(a.getBuildingDeductible1());
+                                    req1.setContentsLimit6(a.getContentsLimit1());
+                                    req1.setContentsDeductible6(a.getContentsDeductible1());
+                                    req1.setStockLimit6(a.getStockLimit1());
+                                    req1.setStockDeductible6(a.getStockDeductible1());
+                                    req1.setOfficeContentLimit6(a.getOfficeContentLimit1());
+                                    req1.setOfficeContentDeductible6(a.getOfficeContentDeductible1());
+                                    req1.setEdpLimit6(a.getEdpLimit1());
+                                    req1.setEdpDeductible6(a.getEdpDeductible1());
+                                    req1.setEquipmentLimit6(a.getEquipmentLimit1());
+                                    req1.setEquipmentDeductible6(a.getEquipmentDeductible1());
+                                    req1.setOffPremisesLimit6(a.getOffPremisesLimit1());
+                                    req1.setOffPremisesDeductible6(a.getOffPremisesDeductible1());
+                                    req1.setTransitLimit6(a.getTransitLimit1());
+                                    req1.setTransitDeductible6(a.getTransitDeductible1());
+                                    req1.setMiscPropertyLimit6(a.getMiscPropertyLimit1());
+                                    req1.setMiscPropertyDeductible6(a.getMiscPropertyDeductible1());
+                                    req1.setContractorEquipmentLimit6(a.getContractorEquipmentLimit1());
+                                    req1.setContractorEquipmentDeductible6(a.getContractorEquipmentDeductible1());
+                                    req1.setInstallationFloaterLimit6(a.getInstallationFloaterLimit1());
+                                    req1.setInstallationFloaterDeductible6(a.getInstallationFloaterDeductible1());
+                                    req1.setToolFloaterLimit6(a.getToolFloaterLimit1());
+                                    req1.setToolFloaterDeductible6(a.getToolFloaterDeductible1());
+                                    req1.setSignFloaterLimit6(a.getSignFloaterLimit1());
+                                    req1.setSignFloaterDeductible6(a.getSignFloaterDeductible1());
+                                    req1.setMotorTruckLimit6(a.getMotorTruckLimit1());
+                                    req1.setMotorTruckDeductible6(a.getMotorTruckDeductible1());
+                                    req1.setGlassLimit6(a.getGlassLimit1());
+                                    req1.setGlassDeductible6(a.getGlassDeductible1());
+                                    req1.setSewerBackupDeductible6(a.getSewerBackupDeductible1());
+                                    req1.setFloodDeductible6(a.getFloodDeductible1());
+                                    req1.setEarthquakeDeductible6(a.getEarthquakeDeductible1());
+                                    req1.setProfitLimit6(a.getProfitLimit1());
+                                    req1.setProfitDeductible6(a.getProfitDeductible1());
+                                    req1.setGrossEarningLimit6(a.getGrossEarningLimit1());
+                                    req1.setGrossEarningDeductible6(a.getGrossEarningDeductible1());
+                                    req1.setRentalIncomeLimit6(a.getRentalIncomeLimit1());
+                                    req1.setRentalIncomeDeductible6(a.getRentalIncomeDeductible1());
+                                    req1.setExtraExpenseLimit6(a.getExtraExpenseLimit1());
+                                    req1.setExtraExpenseDeductible6(a.getExtraExpenseDeductible1());
+                                    req1.setOffPremisesPowerLimit6(a.getOffPremisesLimit1());
+                                    req1.setOffPremisesPowerDeductible6(a.getOffPremisesDeductible1());
+                                    req1.setInsideOutsideLimit6(a.getInsideOutsideLimit1());
+                                    req1.setInsideOutsideDeductible6(a.getInsideOutsideDeductible1());
+                                    req1.setBfMoneyLimit6(a.getBfMoneyLimit1());
+                                    req1.setBfMoneyDeductible6(a.getBfMoneyDeductible1());
+                                    req1.setDeopistorForgeryLimit6(a.getDeopistorForgeryLimit1());
+                                    req1.setDeopistorForgeryDeductible6(a.getDeopistorForgeryDeductible1());
+                                    req1.setMoneyOrdersLimit6(a.getMoneyOrdersLimit1());
+                                    req1.setMoneyOrdersDeductible6(a.getMoneyOrdersDeductible1());
+                                    req1.setEmployDishonestyLimit6(a.getEmployDishonestyLimit1());
+                                    req1.setEmployDishonestyDeductible6(a.getEmployDishonestyDeductible1());
+                                    req1.setCglLimit6(a.getCglLimit1());
+                                    req1.setCglDeductible6(a.getCglDeductible1());
+                                    req1.setTenantsLegalLimit6(a.getTenantsLegalLimit1());
+                                    req1.setTenantsLegalDeductible6(a.getTenantsLegalDeductible1());
+                                    req1.setNonOwnedAutoLimit6(a.getNonOwnedAutoLimit1());
+                                    req1.setNonOwnedAutoDeductible6(a.getNonOwnedAutoDeductible1());
+                                    req1.setSef96Limit6(a.getSef96Limit1());
+                                    req1.setSef96Deductible6(a.getSef96Deductible1());
+                                    req1.setSef94Limit6(a.getSef94Limit1());
+                                    req1.setSef94Deductible6(a.getSef94Deductible1());
+                                    req1.setDoLimit6(a.getDoLimit1());
+                                    req1.setDoDeductible6(a.getDoDeductible1());
+                                    req1.setEoLimit6(a.getEoLimit1());
+                                    req1.setEoDeductible6(a.getEoDeductible1());
+                                    req1.setEmployerLimit6(a.getEmployerLimit1());
+                                    req1.setEmployerDeductible6(a.getEmployerDeductible1());
+                                    req1.setUmbrellaLimit6(a.getUmbrellaLimit1());
+                                    req1.setUmbrellaDeductible6(a.getUmbrellaDeductible1());
+                                    req1.setWrapUpLimit6(a.getWrapUpLimit1());
+                                    req1.setWrapUpDeductible6(a.getWrapUpDeductible1());
+                                    req1.setStdComprehensiveLimit6(a.getStdComprehensiveLimit1());
+                                    req1.setStdComprehensiveDeductible6(a.getStockDeductible1());
+                                    req1.setAirConditioningLimit6(a.getAirConditioningLimit1());
+                                    req1.setAirConditioningDeductible6(a.getAirConditioningDeductible1());
+                                    req1.setProductionMachineryLimit6(a.getProductionMachineryLimit1());
+                                    req1.setProductionMachineryDeductible6(a.getProductionMachineryDeductible1());
+                                    req1.setOthercoverage16(a.getOthercoverage11());
+                                    req1.setOthercoverage26(a.getOthercoverage21());
+                                    req1.setOtherCoverageLimit16(a.getOtherCoverageLimit11());
+                                    req1.setOtherCoverageDeductible16(a.getOtherCoverageDeductible11());
+                                    req1.setOtherCoverageLimit26(a.getOtherCoverageLimit21());
+                                    req1.setOtherCoverageDeductible26(a.getOtherCoverageDeductible21());
+                                    req1.setAdditionalcoverage6(a.getAdditionalCoverage1());
+                                    req1.setRoofupdated6(a.getRoofupdated1());
+                                    req1.setHeatingupdated6(a.getHeatingupdated1());
+                                    req1.setElectricalupdated6(a.getElectricalupdated1());
+                                    req1.setElectricalamps6(a.getElectricalamps1());
+                                    req1.setFireProtectiondistance6(a.getFireProtectiondistance1());
+                                    req1.setAge6(a.getAge1());
+                                    req1.setTotalSqFootage6(a.getTotalSqFootage1());
+                                    req1.setInsdSqFootage6(a.getInsdSqFootage1());
+                                    req1.setNoOfStories6(a.getNoOfStories1());
+                                        break;
+                                    case 7: 
+                                        req1.setAddress7(a.getAddress1());
+                                    req1.setBasement7(a.getBasement1());
+                                    req1.setOwnercb7(a.getOwner11());
+                                    req1.setTruckMan7(a.getTruckMan1());
+                                    req1.setGrossEarningCheckbox7(a.getGrossEarning801());
+                                    req1.setWallsframe7(a.getWallsframe1());
+                                    req1.setWallshcb7(a.getWallshcb1());
+                                    req1.setWallssteel7(a.getWallssteel1());
+                                    req1.setWallsbrick7(a.getWallsbrick1());
+                                    req1.setRoofwood7(a.getRoofwood1());
+                                    req1.setRoofsteel7(a.getRoofsteel1());
+                                    req1.setRoofconcrete7(a.getRoofconcrete1());
+                                    req1.setFloorsconcrete7(a.getFloorsconcrete1());
+                                    req1.setFloorswood7(a.getFloorswood1());
+                                    req1.setHeatinggas7(a.getHeatinggas1());
+                                    req1.setHeatingoil7(a.getHeatingoil1());
+                                    req1.setHeatingelectric7(a.getHeatingelectric1());
+                                    req1.setHeatingother7(a.getHeatingother1());
+                                    req1.setElectricalbreakers7(a.getElectricalbreakers1());
+                                    req1.setElectricalfuses7(a.getElectricalfuses1());
+                                    req1.setElectricalamps7(a.getElectricalamps1());
+                                    req1.setPlumbingcopper7(a.getPlumbingcopper1());
+                                    req1.setPlumbingpvc7(a.getPlumbingpvc1());
+                                    req1.setPlumbingother7(a.getPlumbingother1());
+                                    req1.setFireProtection7(a.getFireProtection1());
+                                    req1.setSecurity7(a.getSecurity1());
+                                    req1.setBuildingLimit7(a.getBuildingLimit1());
+                                    req1.setBuildingDeductible7(a.getBuildingDeductible1());
+                                    req1.setContentsLimit7(a.getContentsLimit1());
+                                    req1.setContentsDeductible7(a.getContentsDeductible1());
+                                    req1.setStockLimit7(a.getStockLimit1());
+                                    req1.setStockDeductible7(a.getStockDeductible1());
+                                    req1.setOfficeContentLimit7(a.getOfficeContentLimit1());
+                                    req1.setOfficeContentDeductible7(a.getOfficeContentDeductible1());
+                                    req1.setEdpLimit7(a.getEdpLimit1());
+                                    req1.setEdpDeductible7(a.getEdpDeductible1());
+                                    req1.setEquipmentLimit7(a.getEquipmentLimit1());
+                                    req1.setEquipmentDeductible7(a.getEquipmentDeductible1());
+                                    req1.setOffPremisesLimit7(a.getOffPremisesLimit1());
+                                    req1.setOffPremisesDeductible7(a.getOffPremisesDeductible1());
+                                    req1.setTransitLimit7(a.getTransitLimit1());
+                                    req1.setTransitDeductible7(a.getTransitDeductible1());
+                                    req1.setMiscPropertyLimit7(a.getMiscPropertyLimit1());
+                                    req1.setMiscPropertyDeductible7(a.getMiscPropertyDeductible1());
+                                    req1.setContractorEquipmentLimit7(a.getContractorEquipmentLimit1());
+                                    req1.setContractorEquipmentDeductible7(a.getContractorEquipmentDeductible1());
+                                    req1.setInstallationFloaterLimit7(a.getInstallationFloaterLimit1());
+                                    req1.setInstallationFloaterDeductible7(a.getInstallationFloaterDeductible1());
+                                    req1.setToolFloaterLimit7(a.getToolFloaterLimit1());
+                                    req1.setToolFloaterDeductible7(a.getToolFloaterDeductible1());
+                                    req1.setSignFloaterLimit7(a.getSignFloaterLimit1());
+                                    req1.setSignFloaterDeductible7(a.getSignFloaterDeductible1());
+                                    req1.setMotorTruckLimit7(a.getMotorTruckLimit1());
+                                    req1.setMotorTruckDeductible7(a.getMotorTruckDeductible1());
+                                    req1.setGlassLimit7(a.getGlassLimit1());
+                                    req1.setGlassDeductible7(a.getGlassDeductible1());
+                                    req1.setSewerBackupDeductible7(a.getSewerBackupDeductible1());
+                                    req1.setFloodDeductible7(a.getFloodDeductible1());
+                                    req1.setEarthquakeDeductible7(a.getEarthquakeDeductible1());
+                                    req1.setProfitLimit7(a.getProfitLimit1());
+                                    req1.setProfitDeductible7(a.getProfitDeductible1());
+                                    req1.setGrossEarningLimit7(a.getGrossEarningLimit1());
+                                    req1.setGrossEarningDeductible7(a.getGrossEarningDeductible1());
+                                    req1.setRentalIncomeLimit7(a.getRentalIncomeLimit1());
+                                    req1.setRentalIncomeDeductible7(a.getRentalIncomeDeductible1());
+                                    req1.setExtraExpenseLimit7(a.getExtraExpenseLimit1());
+                                    req1.setExtraExpenseDeductible7(a.getExtraExpenseDeductible1());
+                                    req1.setOffPremisesPowerLimit7(a.getOffPremisesLimit1());
+                                    req1.setOffPremisesPowerDeductible7(a.getOffPremisesDeductible1());
+                                    req1.setInsideOutsideLimit7(a.getInsideOutsideLimit1());
+                                    req1.setInsideOutsideDeductible7(a.getInsideOutsideDeductible1());
+                                    req1.setBfMoneyLimit7(a.getBfMoneyLimit1());
+                                    req1.setBfMoneyDeductible7(a.getBfMoneyDeductible1());
+                                    req1.setDeopistorForgeryLimit7(a.getDeopistorForgeryLimit1());
+                                    req1.setDeopistorForgeryDeductible7(a.getDeopistorForgeryDeductible1());
+                                    req1.setMoneyOrdersLimit7(a.getMoneyOrdersLimit1());
+                                    req1.setMoneyOrdersDeductible7(a.getMoneyOrdersDeductible1());
+                                    req1.setEmployDishonestyLimit7(a.getEmployDishonestyLimit1());
+                                    req1.setEmployDishonestyDeductible7(a.getEmployDishonestyDeductible1());
+                                    req1.setCglLimit7(a.getCglLimit1());
+                                    req1.setCglDeductible7(a.getCglDeductible1());
+                                    req1.setTenantsLegalLimit7(a.getTenantsLegalLimit1());
+                                    req1.setTenantsLegalDeductible7(a.getTenantsLegalDeductible1());
+                                    req1.setNonOwnedAutoLimit7(a.getNonOwnedAutoLimit1());
+                                    req1.setNonOwnedAutoDeductible7(a.getNonOwnedAutoDeductible1());
+                                    req1.setSef96Limit7(a.getSef96Limit1());
+                                    req1.setSef96Deductible7(a.getSef96Deductible1());
+                                    req1.setSef94Limit7(a.getSef94Limit1());
+                                    req1.setSef94Deductible7(a.getSef94Deductible1());
+                                    req1.setDoLimit7(a.getDoLimit1());
+                                    req1.setDoDeductible7(a.getDoDeductible1());
+                                    req1.setEoLimit7(a.getEoLimit1());
+                                    req1.setEoDeductible7(a.getEoDeductible1());
+                                    req1.setEmployerLimit7(a.getEmployerLimit1());
+                                    req1.setEmployerDeductible7(a.getEmployerDeductible1());
+                                    req1.setUmbrellaLimit7(a.getUmbrellaLimit1());
+                                    req1.setUmbrellaDeductible7(a.getUmbrellaDeductible1());
+                                    req1.setWrapUpLimit7(a.getWrapUpLimit1());
+                                    req1.setWrapUpDeductible7(a.getWrapUpDeductible1());
+                                    req1.setStdComprehensiveLimit7(a.getStdComprehensiveLimit1());
+                                    req1.setStdComprehensiveDeductible7(a.getStockDeductible1());
+                                    req1.setAirConditioningLimit7(a.getAirConditioningLimit1());
+                                    req1.setAirConditioningDeductible7(a.getAirConditioningDeductible1());
+                                    req1.setProductionMachineryLimit7(a.getProductionMachineryLimit1());
+                                    req1.setProductionMachineryDeductible7(a.getProductionMachineryDeductible1());
+                                    req1.setOthercoverage17(a.getOthercoverage11());
+                                    req1.setOthercoverage27(a.getOthercoverage21());
+                                    req1.setOtherCoverageLimit17(a.getOtherCoverageLimit11());
+                                    req1.setOtherCoverageDeductible17(a.getOtherCoverageDeductible11());
+                                    req1.setOtherCoverageLimit27(a.getOtherCoverageLimit21());
+                                    req1.setOtherCoverageDeductible27(a.getOtherCoverageDeductible21());
+                                    req1.setAdditionalcoverage7(a.getAdditionalCoverage1());
+                                    req1.setRoofupdated7(a.getRoofupdated1());
+                                    req1.setHeatingupdated7(a.getHeatingupdated1());
+                                    req1.setElectricalupdated7(a.getElectricalupdated1());
+                                    req1.setElectricalamps7(a.getElectricalamps1());
+                                    req1.setFireProtectiondistance7(a.getFireProtectiondistance1());
+                                    req1.setAge7(a.getAge1());
+                                    req1.setTotalSqFootage7(a.getTotalSqFootage1());
+                                    req1.setInsdSqFootage7(a.getInsdSqFootage1());
+                                    req1.setNoOfStories7(a.getNoOfStories1());
+                                        break;
                             }
                             i++;
                         }
@@ -8138,23 +8666,54 @@ public class NextScreenController implements Initializable, IScreenController {
                                             req1.setFile7(bytes);
                                             req1.setFile7Name(file.getName());
                                             break;
-                                        case 7:
-                                            req1.setFile8(bytes);
-                                            req1.setFile8Name(file.getName());
-                                            break;
-                                        case 8:
-                                            req1.setFile9(bytes);
-                                            req1.setFile9Name(file.getName());
-                                            break;
-                                        case 9:
-                                            req1.setFile10(bytes);
-                                            req1.setFile10Name(file.getName());
-                                            break;
                                     }
                                 }
                                 i++;
                             }
                         }
+                        
+                                            if(contractorflag)
+                                            {
+                                                System.out.println("Contractor Yes");
+                                                if(os.contains("Windows"))
+                                                {byte[] bytes = WriteByteArray.getByteFromFile(new File("C:\\bin\\Contractors.doc"));
+                                                req1.setFile8(bytes);
+                                                req1.setFile8Name("Contractors.doc");
+                                                
+                                                }
+                                                else
+                                                {byte[] bytes = WriteByteArray.getByteFromFile(new File("/Users/harsimransingh/Desktop/bin/Contractors.doc"));
+                                                req1.setFile8(bytes);
+                                                req1.setFile8Name("Contractors.doc");}
+                                            }
+                                            
+                                           if(driverflag)
+                                           {    
+                                                System.out.println("Driver Yes");
+                                                if(os.contains("Windows"))
+                                                {byte[] bytes = WriteByteArray.getByteFromFile(new File("C:\\bin\\DriverSchedule.xls"));
+                                                req1.setFile9(bytes);
+                                                req1.setFile9Name("DriverSchedule.doc");}
+                                                else {
+                                                byte[] bytes = WriteByteArray.getByteFromFile(new File("/Users/harsimransingh/Desktop/bin/DriverSchedule.xls"));
+                                                req1.setFile9(bytes);
+                                                req1.setFile9Name("DriverSchedule.doc");}
+                                           }
+                                           if(vehicleflag)
+                                           {
+                                               System.out.println("Vehicle Yes");
+                                               if(os.contains("Windows"))
+                                               {byte[] bytes = WriteByteArray.getByteFromFile(new File("C:\\bin\\VehicleSchedule.xls"));
+                                                req1.setFile10(bytes);
+                                                req1.setFile10Name("VehicleSchedule.doc");}
+                                               else 
+                                               {
+                                                   byte[] bytes = WriteByteArray.getByteFromFile(new File("/Users/harsimransingh/Desktop/bin/VehicleSchedule.xls"));
+                                                req1.setFile10(bytes);
+                                                req1.setFile10Name("VehicleSchedule.doc");
+                                               }
+                                           }
+                        
                         System.out.println("123");
                         StringTemplateGroup emailTemplateGroup = new StringTemplateGroup(
                                 "welcomeloginemail group", new File("bin").getAbsolutePath());
@@ -8309,7 +8868,6 @@ public class NextScreenController implements Initializable, IScreenController {
     }
     
     public void autoback() {
-        System.out.println("I am here");
        if(insurancetypeflag==2)
        {screenPage.setScreen("NextScreen");
         animatedMovement(-6345, 0);
@@ -8340,29 +8898,6 @@ public class NextScreenController implements Initializable, IScreenController {
                 files = files + file.getName() + ",";
             }
             this.fileList = list;
-
-            if (!isEdit) {
-                System.out.println("upload new");
-                if (contractorflag == true) {
-                    if (os.contains("Windows")) {
-                        System.out.println("contractor flag");
-                        if (insurancetypeflag == 1 || insurancetypeflag == 2) {
-                            list.add(new File("C:\\bin\\Contractors.doc"));
-                        }
-                        if (insurancetypeflag == 2 || insurancetypeflag == 3) {
-                            list.add(new File("C:\\bin\\VehicleSchedule.xls"));
-                            list.add(new File("DriverSchedule.xls"));
-                        }
-                        for (File file : list) {
-                            System.out.println(file.getPath());
-                        }
-                    } else if (os.contains("Mac")) {
-                        list.add(new File("/bin/Contactors.doc"));
-                    }
-                }
-                //list.add(new File("PassportCopy.jpg"));
-            }
-            //list.add(new File(applicationid+"\\"+"").getAbsoluteFile());
             uploadlabel.setText(files.substring(0, files.length() - 1));
         }
     }
