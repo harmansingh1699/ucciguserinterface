@@ -2077,12 +2077,12 @@
       </rowConstraints>
     </GridPane>
     <Button defaultButton="true" layoutX="7671.0" layoutY="665.0" mnemonicParsing="false" onAction="#commercialprevious" prefHeight="26.0" prefWidth="126.0" text="Previous Page" />
-    <Button fx:id="CommercialSubmit" defaultButton="true" layoutX="8718.0" layoutY="665.0" mnemonicParsing="false" onAction="#submitFormAction" prefHeight="26.0" prefWidth="126.0" text="Submit">
+    <Button fx:id="CommercialSubmit" defaultButton="true" layoutX="8718.0" layoutY="665.0" mnemonicParsing="false" onAction="#submitFormAction" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #3fea5e;" text="Submit">
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Button>
     <Label font="$x6" layoutX="8100.0" layoutY="28.0" prefWidth="239.0" text="Commercial Property" textFill="$x7" />
-    <Button fx:id="autoinsurancebutton" defaultButton="true" disable="false" layoutX="8183.0" layoutY="665.0" mnemonicParsing="false" onAction="#autobutton" prefHeight="26.0" prefWidth="126.0" text="Auto Insurance" visible="true" />
+    <Button fx:id="autoinsurancebutton" defaultButton="true" disable="false" layoutX="8586.0" layoutY="665.0" mnemonicParsing="false" onAction="#autobutton" prefHeight="26.0" prefWidth="126.0" text="Auto Insurance" visible="true" />
     <Button defaultButton="true" layoutX="8649.0" layoutY="31.0" mnemonicParsing="false" onAction="#addAdditionPrev" prefHeight="26.0" prefWidth="78.0" text="Back" />
       <Hyperlink layoutX="7671.0" layoutY="30.0" onAction="#openContractor" text="Contractors Equipment Schedule" textFill="#20bf20">
          <font>
@@ -2090,5 +2090,10 @@
          </font>
       </Hyperlink>
       <Button defaultButton="true" layoutX="8752.0" layoutY="31.0" mnemonicParsing="false" onAction="#addAdditionNext" prefHeight="26.0" prefWidth="78.0" text="Next" />
+      <Button defaultButton="true" layoutX="8173.0" layoutY="665.0" mnemonicParsing="false" onAction="#exit" prefHeight="26.0" prefWidth="145.0" style="-fx-background-color: #f46060;" text="Exit without saving">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
   </children>
 </AnchorPane>

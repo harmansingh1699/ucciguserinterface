@@ -522,6 +522,12 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
                 {nonownedcontract.getSelectionModel().select("No");}   
     }
     
+    
+    @FXML
+    public void exit() {
+        ((NextScreenController)screenPage.getControlledScreen("NextScreen")).exit();}
+    
+    
     @FXML
     public void submitSave() {
         SavingFile sf = new SavingFile();

@@ -110,7 +110,10 @@
    <Label font="$x1" layoutX="1366.0" layoutY="470.0" text="Instructions/Notes/Comments:" />
    <TextArea fx:id="autosubmissioncomments" layoutX="1594.0" layoutY="445.0" prefHeight="70.0" prefWidth="774.0" wrapText="true" />
    <Button defaultButton="true" layoutX="1371.0" layoutY="602.0" mnemonicParsing="false" onAction="#back1" prefHeight="34.0" prefWidth="113.0" text="Back" />
-   <Button defaultButton="true" layoutX="2350.0" layoutY="602.0" mnemonicParsing="false" onAction="#submitFormAction" prefHeight="34.0" prefWidth="112.99990000000253" text="Submit" />
+   <Button defaultButton="true" layoutX="2350.0" layoutY="602.0" mnemonicParsing="false" onAction="#submitFormAction" prefHeight="34.0" prefWidth="139.0" style="-fx-background-color: #3fea5e;" text="Submit">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
       <ChoiceBox fx:id="hauling" layoutX="1523.0" layoutY="95.0" prefHeight="26.0" prefWidth="87.0">
           <items>
        <FXCollections fx:factory="observableArrayList">
@@ -287,5 +290,6 @@
             <Font name="Times Bold" size="16.0" />
          </font>
       </Hyperlink>
+      <Button defaultButton="true" layoutX="1863.0" layoutY="602.0" mnemonicParsing="false" onAction="#exit" prefHeight="34.0" prefWidth="139.0" style="-fx-background-color: #f43c3c;" text="Exit Without Saving" />
  </children>
 </AnchorPane>
