@@ -13,6 +13,9 @@ import com.rav.insurance.insuranceformoperations.webservice.contracts.AssignMark
 import com.rav.insurance.insuranceformoperations.webservice.contracts.CloseFormRequest;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.CloseFormResponse;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.CommonResponseAttributes;
+import com.rav.insurance.insuranceformoperations.webservice.contracts.DownloadProposalBinderRequest;
+import com.rav.insurance.insuranceformoperations.webservice.contracts.DownloadProposalBinderResponse;
+import com.rav.insurance.insuranceformoperations.webservice.contracts.DownloadProposalBinderResponse2;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.FormMailToUnderWriterRequest;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.GetCloseFormNQuoteDetailsResponse;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.GetCloseFormNQuoteDetailsResponse2;
@@ -424,7 +427,8 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     @FXML 
     private GridPane gridpane1;
     
-    
+    private byte [] proposal;
+    private byte [] binder;
     private static String os1=null;
     private SearchArchivebinding binding;
     private FormEntry4Binding binding1;
@@ -1521,7 +1525,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
         if(os1.contains("Windows"))
         { new Rav1(new File("bin\\proposal.doc").getAbsolutePath()).execute();}
         else if (os1.contains("Mac"))
-        {    new Rav1(new File("bin/proposal.doc").getAbsolutePath()).execute();}
+        {    new Rav1(new File("bin/proposal.docx").getAbsolutePath()).execute();}
     }
     
     @FXML
@@ -1636,16 +1640,99 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                 try {
                     InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
                     UploadProposalBinderRequest request = new UploadProposalBinderRequest();
-                    request.setProposal(WriteByteArray.getByteFromFile(new File("/Users/harsimransingh/Desktop/RevisedProposal.docx")));
+                    if(os1.contains("Windows"))
+                    {request.setProposal(WriteByteArray.getByteFromFile(new File("C:\\bin\\proposal.doc")));}
+                    else{
+                        System.out.println("Inside uploadproposal");
+                        System.out.println("byte "+WriteByteArray.getByteFromFile(new File("/users/harsimransingh/desktop/bin/proposal.docx")));
+                        request.setProposal(WriteByteArray.getByteFromFile(new File("/users/harsimransingh/desktop/bin/proposal.docx")));}
+                    System.out.println("formID "+formId);
                     request.setFormId(formId);
                     CommonResponseAttributes response = port.getInsuranceOperationsPort().uploadProposalBinder(request);
                     if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
-                        successSearch1();
+                        successMessage("Proposal succesfully uploaded.");
+                    }
+                    else
+                    { errors(response.getErrorCode());
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
                 //   successMessage("You are successfully logged in");
+                return null;
+            }
+
+        };
+        new Thread(task).start();
+    }
+    
+     @FXML
+    public void downloadProposal() {
+        //yaha
+        Task task = new Task<Void>() {
+            @Override
+            public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception, Exception {
+                try {
+                    InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
+                    DownloadProposalBinderRequest request = new DownloadProposalBinderRequest();
+                    request.setProposal(true);
+                    request.setBinder(false);
+                    request.setFormId(formId);
+                    DownloadProposalBinderResponse2 response = port.getInsuranceOperationsPort().downloadProposalBinder(request);
+                    if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
+                        System.out.println("Inside downloadproposal");
+                        System.out.println("response  "+response.getProposal());
+                        proposal=response.getProposal();
+                        File f1 = new File(formId);
+                        if (!f1.exists()) {
+                        f1.mkdir();
+                        }
+                        String proposalname="Proposal.docx";
+                        WriteByteArray.writeByteArray(formId + "\\" + proposalname,proposal);
+                        successMessage("Proposal successfully downloaded in C: drive");
+                    }
+                    else{System.out.println(response.getErrorMessage()); 
+                        errors("No Proposal exists. Create a new one.");
+                    }
+                } catch (Exception e) {
+                    errors(e.getMessage());
+                    e.printStackTrace();
+                }
+                //   successMessage("You are successfully logged in");
+                return null;
+            }
+
+        };
+        new Thread(task).start();
+    }
+    @FXML
+    public void downloadBinder() {
+        //yaha
+        Task task = new Task<Void>() {
+            @Override
+            public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception, Exception {
+                try {
+                    InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
+                    DownloadProposalBinderRequest request = new DownloadProposalBinderRequest();
+                    request.setBinder(true);
+                    request.setFormId(formId);
+                    DownloadProposalBinderResponse2 response = port.getInsuranceOperationsPort().downloadProposalBinder(request);
+                    if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
+                        binder=response.getBinder();
+                        File f1 = new File(formId);
+                        if (!f1.exists()) {
+                        f1.mkdir();
+                        }
+                        String bindername="Binder.doc";
+                        WriteByteArray.writeByteArray(formId + "\\" + bindername, binder);
+                        successMessage("Binder successfully downloaded in C: drive");
+                    }
+                else{ errors("No Binder exists. Create a new one.");
+                    }
+                } catch (Exception e) {
+                    errors(e.getMessage());
+                    e.printStackTrace();
+                }
                 return null;
             }
 

@@ -2090,7 +2090,7 @@
          </font>
       </Hyperlink>
       <Button defaultButton="true" layoutX="8752.0" layoutY="31.0" mnemonicParsing="false" onAction="#addAdditionNext" prefHeight="26.0" prefWidth="78.0" text="Next" />
-      <Button defaultButton="true" layoutX="8173.0" layoutY="665.0" mnemonicParsing="false" onAction="#exit" prefHeight="26.0" prefWidth="145.0" style="-fx-background-color: #f46060;" text="Exit without saving">
+      <Button defaultButton="true" layoutX="8173.0" layoutY="665.0" mnemonicParsing="false" onAction="#exit" prefHeight="26.0" prefWidth="145.0" style="-fx-background-color: #f43c3c;" text="Exit without saving">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
