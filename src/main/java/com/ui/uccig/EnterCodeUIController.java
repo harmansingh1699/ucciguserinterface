@@ -1645,7 +1645,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     else{
                         System.out.println("Inside uploadproposal");
                         System.out.println("byte "+WriteByteArray.getByteFromFile(new File("/users/harsimransingh/desktop/bin/proposal.docx")));
-                        request.setProposal(WriteByteArray.getByteFromFile(new File("/users/harsimransingh/desktop/bin/proposal.docx")));}
+                        request.setProposal(WriteByteArray.getByteFromFile(new File("bin/proposal.docx")));}
                     System.out.println("formID "+formId);
                     request.setFormId(formId);
                     CommonResponseAttributes response = port.getInsuranceOperationsPort().uploadProposalBinder(request);
@@ -1654,6 +1654,37 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     }
                     else
                     { errors(response.getErrorCode());
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                //   successMessage("You are successfully logged in");
+                return null;
+            }
+
+        };
+        new Thread(task).start();
+    }
+    @FXML
+    public void uploadBinder() {
+        //yaha
+        Task task = new Task<Void>() {
+            @Override
+            public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception, Exception {
+                try {
+
+                    InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
+                    UploadProposalBinderRequest request = new UploadProposalBinderRequest();
+                    if(os1.contains("Windows"))
+                    {request.setBinder(WriteByteArray.getByteFromFile(new File("C:\\bin\\proposal.doc")));}
+                    else{
+                        System.out.println("Inside upload Binder");
+                        request.setBinder(WriteByteArray.getByteFromFile(new File("bin/bin.docx")));}
+                    request.setProposal(WriteByteArray.getByteFromFile(new File("/Users/harsimransingh/Desktop/RevisedProposal.docx")));
+                    request.setFormId(formId);
+                    CommonResponseAttributes response = port.getInsuranceOperationsPort().uploadProposalBinder(request);
+                    if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
+                        successSearch1();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -1766,32 +1797,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
         }
     }
 
-    @FXML
-    public void uploadBinder() {
-        //yaha
-        Task task = new Task<Void>() {
-            @Override
-            public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception, Exception {
-                try {
-
-                    InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
-                    UploadProposalBinderRequest request = new UploadProposalBinderRequest();
-                    request.setProposal(WriteByteArray.getByteFromFile(new File("/Users/harsimransingh/Desktop/RevisedProposal.docx")));
-                    request.setFormId(formId);
-                    CommonResponseAttributes response = port.getInsuranceOperationsPort().uploadProposalBinder(request);
-                    if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
-                        successSearch1();
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                //   successMessage("You are successfully logged in");
-                return null;
-            }
-
-        };
-        new Thread(task).start();
-    }
+    
 
     @FXML
     public void submitSendtoUnderwriter() {
