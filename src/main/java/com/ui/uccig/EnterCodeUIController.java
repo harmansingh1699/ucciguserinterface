@@ -1523,7 +1523,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
         System.out.println("OpenProposal");
         
         if(os1.contains("Windows"))
-        { new Rav1(new File("bin\\proposal.doc").getAbsolutePath()).execute();}
+        { new Rav1(new File("bin\\proposal.docx").getAbsolutePath()).execute();}
         else if (os1.contains("Mac"))
         {    new Rav1(new File("bin/proposal.docx").getAbsolutePath()).execute();}
     }
@@ -1641,10 +1641,8 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
                     UploadProposalBinderRequest request = new UploadProposalBinderRequest();
                     if(os1.contains("Windows"))
-                    {request.setProposal(WriteByteArray.getByteFromFile(new File("C:\\bin\\proposal.doc")));}
+                    {request.setProposal(WriteByteArray.getByteFromFile(new File("C:\\bin\\proposal.docx")));}
                     else{
-                        System.out.println("Inside uploadproposal");
-                        System.out.println("byte "+WriteByteArray.getByteFromFile(new File("/users/harsimransingh/desktop/bin/proposal.docx")));
                         request.setProposal(WriteByteArray.getByteFromFile(new File("bin/proposal.docx")));}
                     System.out.println("formID "+formId);
                     request.setFormId(formId);
@@ -1678,13 +1676,13 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     if(os1.contains("Windows"))
                     {request.setBinder(WriteByteArray.getByteFromFile(new File("C:\\bin\\proposal.doc")));}
                     else{
-                        System.out.println("Inside upload Binder");
+                       
                         request.setBinder(WriteByteArray.getByteFromFile(new File("bin/bin.docx")));}
                     request.setProposal(WriteByteArray.getByteFromFile(new File("/Users/harsimransingh/Desktop/RevisedProposal.docx")));
                     request.setFormId(formId);
                     CommonResponseAttributes response = port.getInsuranceOperationsPort().uploadProposalBinder(request);
                     if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
-                        successSearch1();
+                        successMessage("Binder succesfully uploaded.");
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -1723,7 +1721,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                         successMessage("Proposal successfully downloaded in C: drive");
                     }
                     else{System.out.println(response.getErrorMessage()); 
-                        errors("No Proposal exists. Create a new one.");
+                        errors("No Proposal exist. Create a new one.");
                     }
                 } catch (Exception e) {
                     errors(e.getMessage());
@@ -1758,7 +1756,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                         WriteByteArray.writeByteArray(formId + "\\" + bindername, binder);
                         successMessage("Binder successfully downloaded in C: drive");
                     }
-                else{ errors("No Binder exists. Create a new one.");
+                else{ errors("No Binder exist. Create a new one.");
                     }
                 } catch (Exception e) {
                     errors(e.getMessage());

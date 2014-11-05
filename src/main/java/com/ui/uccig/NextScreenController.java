@@ -1707,13 +1707,27 @@ public class NextScreenController implements Initializable, IScreenController {
     @FXML
     public void exit() {
         System.out.println("Exit Called");
-        /* for (Node node : client1.getChildren()) {
-         System.out.println("Id: " + node.getId());
-         if (node instanceof TextField) {
-         // clear
-         ((TextField)node).setText("");
-         }
-         }*/
+        for (Node node : client1.getParent().getChildrenUnmodifiable()) {
+            System.out.println("Id: " + node.getId());
+            if (node instanceof TextField) {
+                // clear
+                ((TextField) node).setText("");
+            } else if (node instanceof Pane) {
+                for (Node node1 : ((Pane) node).getChildren()) {
+                    if (node1 instanceof TextField) {
+                        // clear
+                        ((TextField) node1).setText("");
+                    } else if (node1 instanceof Pane) {
+                        for (Node node2 : ((Pane) node1).getChildren()) {
+                            if (node2 instanceof TextField) {
+                                // clear
+                                ((TextField) node2).setText("");
+                            }
+                        }
+                    }
+                }
+            }
+        }
         try {
             if (producerid == null || producerid.trim().isEmpty()) {
                 screenPage.setScreen("OtherScreen");
@@ -2212,6 +2226,7 @@ public class NextScreenController implements Initializable, IScreenController {
                     listAddInfo.get(offset).setPlumbingcopper1(binding4.getcopper());
                     listAddInfo.get(offset).setPlumbingpvc1(binding4.getpvc());
                     listAddInfo.get(offset).setPlumbingother1(binding4.getplumbingother());
+                    listAddInfo.get(offset).setPlumbingupdated1(binding4.getplumbingupdated());
                     listAddInfo.get(offset).setFireProtection1(binding4.getFireProtection());
                     listAddInfo.get(offset).setSecurity1(binding4.getSecurity());
 
@@ -2576,6 +2591,7 @@ public class NextScreenController implements Initializable, IScreenController {
                 obj.setPlumbingcopper1(binding4.getcopper());
                 obj.setPlumbingpvc1(binding4.getpvc());
                 obj.setPlumbingother1(binding4.getplumbingother());
+                obj.setPlumbingupdated1(binding4.getplumbingupdated());
                 obj.setFireProtection1(binding4.getFireProtection());
                 obj.setSecurity1(binding4.getSecurity());
 
@@ -3003,6 +3019,50 @@ public class NextScreenController implements Initializable, IScreenController {
                     binding4.setelectricalupdated("");
                     binding4.setnoofamps("");
                     copper.setSelected(false);
+                    pvc.setSelected(false);
+                    plumbingother.setSelected(false);
+                    binding4.setplumbingupdated("");
+                    sprinklers.setSelected(false);
+                    svccontract.setSelected(false);
+                    hydrant.setSelected(false);
+                    firehall.setSelected(false);
+                    unprotected.setSelected(false);
+                    binding4.setFireProtection("");
+                    alarmsystem.setSelected(false);
+                    centralmonitored.setSelected(false);
+                    windowbars.setSelected(false);
+                    deadbolts.setSelected(false);
+                    fireprotectiondistance.setText("");
+                    System.out.println(binding4.getlocationaddress());
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.out.println("Offset8 " + offset);
+                binding4.setlocationaddress("");
+                    binding4.setlocationage("");
+                    binding4.settotsqfootage("");
+                    binding4.setinsidesqfootage("");
+                    binding4.setnoofstories("");
+                    basement.getSelectionModel().selectFirst();
+                    wallsframe.setSelected(false);
+                    wallsbrick.setSelected(false);
+                    wallshcb.setSelected(false);
+                    wallssteel.setSelected(false);
+                    woodjoist.setSelected(false);
+                    steeldeck.setSelected(false);
+                    roofconcrete.setSelected(false);
+                    binding4.setroofupdated("");
+                    floorsconcrete.setSelected(false);
+                    floorswood.setSelected(false);
+                    fagas.setSelected(false);
+                    faoil.setSelected(false);
+                    heatingelectric.setSelected(false);
+                    heatingother.setSelected(false);
+                    binding4.setheatingupdated("");
+                    electricalbreakers.setSelected(false);
+                    electricalfuses.setSelected(false);
+                    binding4.setelectricalupdated("");
+                    binding4.setnoofamps("");
                     copper.setSelected(false);
                     pvc.setSelected(false);
                     plumbingother.setSelected(false);
@@ -3017,52 +3077,7 @@ public class NextScreenController implements Initializable, IScreenController {
                     centralmonitored.setSelected(false);
                     windowbars.setSelected(false);
                     deadbolts.setSelected(false);
-                    System.out.println(binding4.getlocationaddress());
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-                System.out.println("Offset8 " + offset);
-                binding4.setlocationaddress("");
-                binding4.setlocationaddress("");
-                binding4.setlocationage("");
-                binding4.settotsqfootage("");
-                binding4.setinsidesqfootage("");
-                binding4.setnoofstories("");
-                basement.getSelectionModel().selectFirst();
-                wallsframe.setSelected(false);
-                wallsbrick.setSelected(false);
-                wallshcb.setSelected(false);
-                wallssteel.setSelected(false);
-                woodjoist.setSelected(false);
-                steeldeck.setSelected(false);
-                roofconcrete.setSelected(false);
-                binding4.setroofupdated("");
-                floorsconcrete.setSelected(false);
-                floorswood.setSelected(false);
-                fagas.setSelected(false);
-                faoil.setSelected(false);
-                heatingelectric.setSelected(false);
-                heatingother.setSelected(false);
-                binding4.setheatingupdated("");
-                electricalbreakers.setSelected(false);
-                electricalfuses.setSelected(false);
-                binding4.setelectricalupdated("");
-                binding4.setnoofamps("");
-                copper.setSelected(false);
-                copper.setSelected(false);
-                pvc.setSelected(false);
-                plumbingother.setSelected(false);
-                binding4.setplumbingupdated("");
-                sprinklers.setSelected(false);
-                svccontract.setSelected(false);
-                hydrant.setSelected(false);
-                firehall.setSelected(false);
-                unprotected.setSelected(false);
-                binding4.setFireProtection("");
-                alarmsystem.setSelected(false);
-                centralmonitored.setSelected(false);
-                windowbars.setSelected(false);
-                deadbolts.setSelected(false);
+                    fireprotectiondistance.setText("");
                 System.out.println(binding4.getlocationaddress());
             }
         }
@@ -3420,6 +3435,7 @@ public class NextScreenController implements Initializable, IScreenController {
                     listAddInfo.get(offset).setPlumbingcopper1(binding4.getcopper());
                     listAddInfo.get(offset).setPlumbingpvc1(binding4.getpvc());
                     listAddInfo.get(offset).setPlumbingother1(binding4.getplumbingother());
+                    listAddInfo.get(offset).setPlumbingupdated1(binding4.getplumbingupdated());
                     listAddInfo.get(offset).setFireProtection1(binding4.getFireProtection());
                     listAddInfo.get(offset).setSecurity1(binding4.getSecurity());
 
@@ -3778,6 +3794,7 @@ public class NextScreenController implements Initializable, IScreenController {
                     obj.setPlumbingcopper1(binding4.getcopper());
                     obj.setPlumbingpvc1(binding4.getpvc());
                     obj.setPlumbingother1(binding4.getplumbingother());
+                    obj.setPlumbingupdated1(binding4.getplumbingupdated());
                     obj.setFireProtection1(binding4.getFireProtection());
                     obj.setSecurity1(binding4.getSecurity());
 
@@ -3797,7 +3814,8 @@ public class NextScreenController implements Initializable, IScreenController {
                 }
             } catch (Exception e) {
                 System.out.println("Offset12 " + offset);
-                AddAnotherInfo obj = new AddAnotherInfo();
+               if(binding4.getlocationaddress()!=null&& binding4.getlocationaddress().trim().length()>0) 
+               {AddAnotherInfo obj = new AddAnotherInfo();
 
                 obj.setAddress1(binding4.getlocationaddress());
 
@@ -4138,6 +4156,7 @@ public class NextScreenController implements Initializable, IScreenController {
                 obj.setPlumbingcopper1(binding4.getcopper());
                 obj.setPlumbingpvc1(binding4.getpvc());
                 obj.setPlumbingother1(binding4.getplumbingother());
+                obj.setPlumbingupdated1(binding4.getplumbingupdated());
                 obj.setFireProtection1(binding4.getFireProtection());
                 obj.setSecurity1(binding4.getSecurity());
 
@@ -4154,7 +4173,9 @@ public class NextScreenController implements Initializable, IScreenController {
                     obj.setNoOfStories1(Integer.parseInt(binding4.getnoofstories()));
                 }
                 listAddInfo.add(obj);
+               }
             }
+            System.out.println("Size of list in previous"+listAddInfo.size());
             offset--;
             if (offset <= 0) {
                 offset = 0;
@@ -4563,6 +4584,49 @@ public class NextScreenController implements Initializable, IScreenController {
                     binding4.setelectricalupdated("");
                     binding4.setnoofamps("");
                     copper.setSelected(false);
+                    pvc.setSelected(false);
+                    plumbingother.setSelected(false);
+                    binding4.setplumbingupdated("");
+                    sprinklers.setSelected(false);
+                    svccontract.setSelected(false);
+                    hydrant.setSelected(false);
+                    firehall.setSelected(false);
+                    unprotected.setSelected(false);
+                    binding4.setFireProtection("");
+                    alarmsystem.setSelected(false);
+                    centralmonitored.setSelected(false);
+                    windowbars.setSelected(false);
+                    deadbolts.setSelected(false);
+                    fireprotectiondistance.setText("");
+
+                }
+            } catch (Exception e) {
+                System.out.println("Offset16 " + offset);
+                binding4.setlocationaddress("");
+                    binding4.setlocationage("");
+                    binding4.settotsqfootage("");
+                    binding4.setinsidesqfootage("");
+                    binding4.setnoofstories("");
+                    basement.getSelectionModel().selectFirst();
+                    wallsframe.setSelected(false);
+                    wallsbrick.setSelected(false);
+                    wallshcb.setSelected(false);
+                    wallssteel.setSelected(false);
+                    woodjoist.setSelected(false);
+                    steeldeck.setSelected(false);
+                    roofconcrete.setSelected(false);
+                    binding4.setroofupdated("");
+                    floorsconcrete.setSelected(false);
+                    floorswood.setSelected(false);
+                    fagas.setSelected(false);
+                    faoil.setSelected(false);
+                    heatingelectric.setSelected(false);
+                    heatingother.setSelected(false);
+                    binding4.setheatingupdated("");
+                    electricalbreakers.setSelected(false);
+                    electricalfuses.setSelected(false);
+                    binding4.setelectricalupdated("");
+                    binding4.setnoofamps("");
                     copper.setSelected(false);
                     pvc.setSelected(false);
                     plumbingother.setSelected(false);
@@ -4577,50 +4641,7 @@ public class NextScreenController implements Initializable, IScreenController {
                     centralmonitored.setSelected(false);
                     windowbars.setSelected(false);
                     deadbolts.setSelected(false);
-
-                }
-            } catch (Exception e) {
-                System.out.println("Offset16 " + offset);
-                binding4.setlocationaddress("");
-                binding4.setlocationage("");
-                binding4.settotsqfootage("");
-                binding4.setinsidesqfootage("");
-                binding4.setnoofstories("");
-                basement.getSelectionModel().selectFirst();
-                wallsframe.setSelected(false);
-                wallsbrick.setSelected(false);
-                wallshcb.setSelected(false);
-                wallssteel.setSelected(false);
-                woodjoist.setSelected(false);
-                steeldeck.setSelected(false);
-                roofconcrete.setSelected(false);
-                binding4.setroofupdated("");
-                floorsconcrete.setSelected(false);
-                floorswood.setSelected(false);
-                fagas.setSelected(false);
-                faoil.setSelected(false);
-                heatingelectric.setSelected(false);
-                heatingother.setSelected(false);
-                binding4.setheatingupdated("");
-                electricalbreakers.setSelected(false);
-                electricalfuses.setSelected(false);
-                binding4.setelectricalupdated("");
-                binding4.setnoofamps("");
-                copper.setSelected(false);
-                copper.setSelected(false);
-                pvc.setSelected(false);
-                plumbingother.setSelected(false);
-                binding4.setplumbingupdated("");
-                sprinklers.setSelected(false);
-                svccontract.setSelected(false);
-                hydrant.setSelected(false);
-                firehall.setSelected(false);
-                unprotected.setSelected(false);
-                binding4.setFireProtection("");
-                alarmsystem.setSelected(false);
-                centralmonitored.setSelected(false);
-                windowbars.setSelected(false);
-                deadbolts.setSelected(false);
+                    fireprotectiondistance.setText("");
             }
         }
         for (AddAnotherInfo e : listAddInfo) {
@@ -5495,12 +5516,14 @@ public class NextScreenController implements Initializable, IScreenController {
         	        a.setPlumbingcopper1(form.getPlumbingcopper());
             	        a.setPlumbingpvc1(form.getPlumbingpvc());
                 	a.setPlumbingother1(form.getPlumbingother());
+                        a.setPlumbingupdated1(form.getPlumbingupdated());
                     	a.setFireProtection1(form.getFireProtection());
 	                a.setSecurity1(form.getSecurity());
                         a.setAge1(form.getAge());
                         a.setTotalSqFootage1(form.getTotalSqFootage());
                         a.setInsdSqFootage1(form.getInsdSqFootage());
                         a.setNoOfStories1(form.getNoOfStories());
+                        listAddInfo.add(a);
                         }
                         break;
                         case 1:
@@ -5622,12 +5645,14 @@ public class NextScreenController implements Initializable, IScreenController {
         	        a.setPlumbingcopper1(form.getPlumbingcopper1());
             	        a.setPlumbingpvc1(form.getPlumbingpvc1());
                 	a.setPlumbingother1(form.getPlumbingother1());
+                        a.setPlumbingupdated1(form.getPlumbingupdated1());
                     	a.setFireProtection1(form.getFireProtection1());
 	                a.setSecurity1(form.getSecurity1());
                         a.setAge1(form.getAge1());
                         a.setTotalSqFootage1(form.getTotalSqFootage1());
                         a.setInsdSqFootage1(form.getInsdSqFootage1());
                         a.setNoOfStories1(form.getNoOfStories1());
+                        listAddInfo.add(a);
                 }
                         break;
                 case 2:
@@ -5747,12 +5772,14 @@ public class NextScreenController implements Initializable, IScreenController {
         	        a.setPlumbingcopper1(form.getPlumbingcopper2());
             	        a.setPlumbingpvc1(form.getPlumbingpvc2());
                 	a.setPlumbingother1(form.getPlumbingother2());
+                        a.setPlumbingupdated1(form.getPlumbingupdated2());
                     	a.setFireProtection1(form.getFireProtection2());
 	                a.setSecurity1(form.getSecurity2());
                         a.setAge1(form.getAge2());
                         a.setTotalSqFootage1(form.getTotalSqFootage2());
                         a.setInsdSqFootage1(form.getInsdSqFootage2());
                         a.setNoOfStories1(form.getNoOfStories2());
+                        listAddInfo.add(a);
                 }
                 break;
                 case 3:
@@ -5872,12 +5899,14 @@ public class NextScreenController implements Initializable, IScreenController {
         	        a.setPlumbingcopper1(form.getPlumbingcopper3());
             	        a.setPlumbingpvc1(form.getPlumbingpvc3());
                 	a.setPlumbingother1(form.getPlumbingother3());
+                        a.setPlumbingupdated1(form.getPlumbingupdated3());
                     	a.setFireProtection1(form.getFireProtection3());
 	                a.setSecurity1(form.getSecurity3());
                         a.setAge1(form.getAge3());
                         a.setTotalSqFootage1(form.getTotalSqFootage3());
                         a.setInsdSqFootage1(form.getInsdSqFootage3());
                         a.setNoOfStories1(form.getNoOfStories3());
+                        listAddInfo.add(a);
                 }
                 break;
                 case 4:
@@ -5997,12 +6026,14 @@ public class NextScreenController implements Initializable, IScreenController {
         	        a.setPlumbingcopper1(form.getPlumbingcopper4());
             	        a.setPlumbingpvc1(form.getPlumbingpvc4());
                 	a.setPlumbingother1(form.getPlumbingother4());
+                        a.setPlumbingupdated1(form.getPlumbingupdated4());
                     	a.setFireProtection1(form.getFireProtection4());
 	                a.setSecurity1(form.getSecurity4());
                         a.setAge1(form.getAge4());
                         a.setTotalSqFootage1(form.getTotalSqFootage4());
                         a.setInsdSqFootage1(form.getInsdSqFootage4());
-                        a.setNoOfStories1(form.getNoOfStories4());  
+                        a.setNoOfStories1(form.getNoOfStories4()); 
+                        listAddInfo.add(a);
                 }
                 break;
                 case 5:
@@ -6122,12 +6153,14 @@ public class NextScreenController implements Initializable, IScreenController {
         	        a.setPlumbingcopper1(form.getPlumbingcopper5());
             	        a.setPlumbingpvc1(form.getPlumbingpvc5());
                 	a.setPlumbingother1(form.getPlumbingother5());
+                        a.setPlumbingupdated1(form.getPlumbingupdated5());
                     	a.setFireProtection1(form.getFireProtection5());
 	                a.setSecurity1(form.getSecurity5());
                         a.setAge1(form.getAge5());
                         a.setTotalSqFootage1(form.getTotalSqFootage5());
                         a.setInsdSqFootage1(form.getInsdSqFootage5());
-                        a.setNoOfStories1(form.getNoOfStories5());   
+                        a.setNoOfStories1(form.getNoOfStories5());  
+                        listAddInfo.add(a);
                 }
                 break;
                 case 6:
@@ -6247,12 +6280,14 @@ public class NextScreenController implements Initializable, IScreenController {
         	        a.setPlumbingcopper1(form.getPlumbingcopper6());
             	        a.setPlumbingpvc1(form.getPlumbingpvc6());
                 	a.setPlumbingother1(form.getPlumbingother6());
+                        a.setPlumbingupdated1(form.getPlumbingupdated6());
                     	a.setFireProtection1(form.getFireProtection6());
 	                a.setSecurity1(form.getSecurity6());
                         a.setAge1(form.getAge6());
                         a.setTotalSqFootage1(form.getTotalSqFootage6());
                         a.setInsdSqFootage1(form.getInsdSqFootage6());
-                        a.setNoOfStories1(form.getNoOfStories6());   
+                        a.setNoOfStories1(form.getNoOfStories6());  
+                        listAddInfo.add(a);
                 }
                 break;
                 case 7:
@@ -6372,18 +6407,20 @@ public class NextScreenController implements Initializable, IScreenController {
         	        a.setPlumbingcopper1(form.getPlumbingcopper7());
             	        a.setPlumbingpvc1(form.getPlumbingpvc7());
                 	a.setPlumbingother1(form.getPlumbingother7());
+                        a.setPlumbingupdated1(form.getPlumbingupdated7());
                     	a.setFireProtection1(form.getFireProtection7());
 	                a.setSecurity1(form.getSecurity7());
                         a.setAge1(form.getAge7());
                         a.setTotalSqFootage1(form.getTotalSqFootage7());
                         a.setInsdSqFootage1(form.getInsdSqFootage7());
                         a.setNoOfStories1(form.getNoOfStories7());
+                        listAddInfo.add(a);
                 }
                         break; 
                 }
                     System.out.println(i);
                         System.out.println("above");
-                listAddInfo.add(a);
+                
                 }
                 
                 buildinglimit.setText(Double.toString(form.getBuildingLimit()));
@@ -6482,6 +6519,7 @@ public class NextScreenController implements Initializable, IScreenController {
                 electricalupdated.setText(form.getElectricalupdated());
                 amps.setText(form.getElectricalamps());
                 fireprotectiondistance.setText(form.getFireProtectiondistance());
+                
                 if ((form.getType().equals("Both")) || (form.getType().equals("Auto"))) {
                     if (form.getPremiumTarget() > 0) {
                         ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.setautopremiumtarget(Double.toString(form.getPremiumTarget()));
@@ -6521,6 +6559,14 @@ public class NextScreenController implements Initializable, IScreenController {
                     } else {
                         ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).datePicker17.setSelectedDate(form.getClaimDate6().toGregorianCalendar().getTime());
                     }
+                    ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.setautodescriptionofclaim1(form.getClaimDesc1());
+                    ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.setautodescriptionofclaim2(form.getClaimDesc2());
+                    ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.setautodescriptionofclaim3(form.getClaimDesc3());
+                    ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.setautodescriptionofclaim4(form.getClaimDesc4());
+                    ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.setautodescriptionofclaim5(form.getClaimDesc5());
+                    ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.setautodescriptionofclaim6(form.getClaimDesc6());
+                    
+                    
                     ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.setcommoditiestransported(form.getCommoditiesTransportedBy());
                     ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.setliststate1(form.getFilingState1());
                     ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.setliststate2(form.getFilingState2());
@@ -7146,7 +7192,8 @@ public class NextScreenController implements Initializable, IScreenController {
                         req1.setCurrentInsurer(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentinsurer());
                         req1.setCurrentExpDate((getDate11()));
 
-                        if (!CommonValidations.isStringEmpty(binding4.getautopremiumtarget())) {
+                       if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautopremiumtarget()!=null) 
+                        {
                             req1.setPremiumTarget(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautopremiumtarget()));
                         }
                         req1.setLienHolders1(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getlessholder1());
@@ -7193,19 +7240,22 @@ public class NextScreenController implements Initializable, IScreenController {
                         //req1.setContract((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getnonownedcontract);
                         req1.setTypeOfNonOwned(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeofnonowned());
 
-                        if (!CommonValidations.isStringEmpty(binding4.getanytime())) {
+                        if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getanytime()!=null) {
+                            
                             req1.setAvgNoOfVehicles(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getanytime()));
                         }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getavgvalue())) {
+                       
+                        if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getavgvalue()!=null) {
+                            
                             req1.setAvgValue(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getavgvalue()));
                         }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getmaxannually())) {
+                        
+                        if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getmaxannually() !=null) {
+                         
                             req1.setMaxVehicleValue(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getmaxannually()));
                         }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getmostexpensive())) {
+                        
+                        if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getmostexpensive() !=null) {
                             req1.setMaxCostValue(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getmostexpensive()));
                         }
                         req1.setInstructionNotes(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautosubmissioncomments());
@@ -7504,7 +7554,7 @@ public class NextScreenController implements Initializable, IScreenController {
 
                         req1.setLineHolders1(binding3.getlienholder1());
                         req1.setLineHolders2(binding3.getlienholder2());
-                        req1.setLienHolders3(binding3.getlienholder3());
+                        req1.setLineHolders3(binding3.getlienholder3());
                         req1.setLineHoldersLoc1(binding3.getloc1());
                         req1.setLineHoldersLoc2(binding3.getloc2());
                         req1.setLineHoldersLoc3(binding3.getloc3());
@@ -7524,11 +7574,13 @@ public class NextScreenController implements Initializable, IScreenController {
                         req1.setMarketercomments(binding3.getmarketercomments());
 
                         // Vehicle Details
+                        
                         req1.setCurrentInsurer(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentinsurer());
                         req1.setCurrentExpDate((getDate11()));
-
-                        //req1.setCurrentExpDate(((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentexpirydate()); 
-                        if (!CommonValidations.isStringEmpty(binding4.getautopremiumtarget())) {
+                        
+                        
+                        if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautopremiumtarget()!=null) 
+                        {
                             req1.setPremiumTarget(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautopremiumtarget()));
                         }
                         req1.setLienHolders1(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getlessholder1());
@@ -7570,20 +7622,24 @@ public class NextScreenController implements Initializable, IScreenController {
                         req1.setFilingName2(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getnamerequired2());
                         req1.setFilingName3(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getnamerequired3());
                         req1.setTypeOfNonOwned(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeofnonowned());
-
-                        if (!CommonValidations.isStringEmpty(binding4.getanytime())) {
+                        
+                       
+                        if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getanytime()!=null) {
+                            
                             req1.setAvgNoOfVehicles(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getanytime()));
                         }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getavgvalue())) {
+                       
+                        if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getavgvalue()!=null) {
+                            
                             req1.setAvgValue(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getavgvalue()));
                         }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getmaxannually())) {
+                        
+                        if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getmaxannually() !=null) {
+                         
                             req1.setMaxVehicleValue(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getmaxannually()));
                         }
-
-                        if (!CommonValidations.isStringEmpty(binding4.getmostexpensive())) {
+                        
+                        if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getmostexpensive() !=null) {
                             req1.setMaxCostValue(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getmostexpensive()));
                         }
                         req1.setInstructionNotes(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautosubmissioncomments());
@@ -7731,7 +7787,7 @@ public class NextScreenController implements Initializable, IScreenController {
                                     req1.setWrapUpLimit(a.getWrapUpLimit1());
                                     req1.setWrapUpDeductible(a.getWrapUpDeductible1());
                                     req1.setStdComprehensiveLimit(a.getStdComprehensiveLimit1());
-                                    req1.setStdComprehensiveDeductible(a.getStockDeductible1());
+                                    req1.setStdComprehensiveDeductible(a.getStdComprehensiveDeductible1());
                                     req1.setAirConditioningLimit(a.getAirConditioningLimit1());
                                     req1.setAirConditioningDeductible(a.getAirConditioningDeductible1());
                                     req1.setProductionMachineryLimit(a.getProductionMachineryLimit1());
@@ -7868,7 +7924,7 @@ public class NextScreenController implements Initializable, IScreenController {
                                     req1.setWrapUpLimit1(a.getWrapUpLimit1());
                                     req1.setWrapUpDeductible1(a.getWrapUpDeductible1());
                                     req1.setStdComprehensiveLimit1(a.getStdComprehensiveLimit1());
-                                    req1.setStdComprehensiveDeductible1(a.getStockDeductible1());
+                                    req1.setStdComprehensiveDeductible1(a.getStdComprehensiveDeductible1());
                                     req1.setAirConditioningLimit1(a.getAirConditioningLimit1());
                                     req1.setAirConditioningDeductible1(a.getAirConditioningDeductible1());
                                     req1.setProductionMachineryLimit1(a.getProductionMachineryLimit1());
@@ -7991,7 +8047,7 @@ public class NextScreenController implements Initializable, IScreenController {
                                     req1.setWrapUpLimit2(a.getWrapUpLimit1());
                                     req1.setWrapUpDeductible2(a.getWrapUpDeductible1());
                                     req1.setStdComprehensiveLimit2(a.getStdComprehensiveLimit1());
-                                    req1.setStdComprehensiveDeductible2(a.getStockDeductible1());
+                                    req1.setStdComprehensiveDeductible2(a.getStdComprehensiveDeductible1());
                                     req1.setAirConditioningLimit2(a.getAirConditioningLimit1());
                                     req1.setAirConditioningDeductible2(a.getAirConditioningDeductible1());
                                     req1.setProductionMachineryLimit2(a.getProductionMachineryLimit1());
@@ -8114,7 +8170,7 @@ public class NextScreenController implements Initializable, IScreenController {
                                     req1.setWrapUpLimit3(a.getWrapUpLimit1());
                                     req1.setWrapUpDeductible3(a.getWrapUpDeductible1());
                                     req1.setStdComprehensiveLimit3(a.getStdComprehensiveLimit1());
-                                    req1.setStdComprehensiveDeductible3(a.getStockDeductible1());
+                                    req1.setStdComprehensiveDeductible3(a.getStdComprehensiveDeductible1());
                                     req1.setAirConditioningLimit3(a.getAirConditioningLimit1());
                                     req1.setAirConditioningDeductible3(a.getAirConditioningDeductible1());
                                     req1.setProductionMachineryLimit3(a.getProductionMachineryLimit1());
@@ -8237,7 +8293,7 @@ public class NextScreenController implements Initializable, IScreenController {
                                     req1.setWrapUpLimit4(a.getWrapUpLimit1());
                                     req1.setWrapUpDeductible4(a.getWrapUpDeductible1());
                                     req1.setStdComprehensiveLimit4(a.getStdComprehensiveLimit1());
-                                    req1.setStdComprehensiveDeductible4(a.getStockDeductible1());
+                                    req1.setStdComprehensiveDeductible4(a.getStdComprehensiveDeductible1());
                                     req1.setAirConditioningLimit4(a.getAirConditioningLimit1());
                                     req1.setAirConditioningDeductible4(a.getAirConditioningDeductible1());
                                     req1.setProductionMachineryLimit4(a.getProductionMachineryLimit1());
@@ -8360,7 +8416,7 @@ public class NextScreenController implements Initializable, IScreenController {
                                     req1.setWrapUpLimit5(a.getWrapUpLimit1());
                                     req1.setWrapUpDeductible5(a.getWrapUpDeductible1());
                                     req1.setStdComprehensiveLimit5(a.getStdComprehensiveLimit1());
-                                    req1.setStdComprehensiveDeductible5(a.getStockDeductible1());
+                                    req1.setStdComprehensiveDeductible5(a.getStdComprehensiveDeductible1());
                                     req1.setAirConditioningLimit5(a.getAirConditioningLimit1());
                                     req1.setAirConditioningDeductible5(a.getAirConditioningDeductible1());
                                     req1.setProductionMachineryLimit5(a.getProductionMachineryLimit1());
@@ -8483,7 +8539,7 @@ public class NextScreenController implements Initializable, IScreenController {
                                     req1.setWrapUpLimit6(a.getWrapUpLimit1());
                                     req1.setWrapUpDeductible6(a.getWrapUpDeductible1());
                                     req1.setStdComprehensiveLimit6(a.getStdComprehensiveLimit1());
-                                    req1.setStdComprehensiveDeductible6(a.getStockDeductible1());
+                                    req1.setStdComprehensiveDeductible6(a.getStdComprehensiveDeductible1());
                                     req1.setAirConditioningLimit6(a.getAirConditioningLimit1());
                                     req1.setAirConditioningDeductible6(a.getAirConditioningDeductible1());
                                     req1.setProductionMachineryLimit6(a.getProductionMachineryLimit1());
@@ -8606,7 +8662,7 @@ public class NextScreenController implements Initializable, IScreenController {
                                     req1.setWrapUpLimit7(a.getWrapUpLimit1());
                                     req1.setWrapUpDeductible7(a.getWrapUpDeductible1());
                                     req1.setStdComprehensiveLimit7(a.getStdComprehensiveLimit1());
-                                    req1.setStdComprehensiveDeductible7(a.getStockDeductible1());
+                                    req1.setStdComprehensiveDeductible7(a.getStdComprehensiveDeductible1());
                                     req1.setAirConditioningLimit7(a.getAirConditioningLimit1());
                                     req1.setAirConditioningDeductible7(a.getAirConditioningDeductible1());
                                     req1.setProductionMachineryLimit7(a.getProductionMachineryLimit1());
@@ -8871,19 +8927,156 @@ public class NextScreenController implements Initializable, IScreenController {
                         String message = submitFormMail.toString();
                         
                        
-                 /*       for (AddAnotherInfo addInfo : listAddInfo) {
+              for (AddAnotherInfo addInfo : listAddInfo) {
                             if (addInfo != null) {
                                 emailTemplateGroup = new StringTemplateGroup(
                                         "welcomeloginemail group", new File("bin").getAbsolutePath());
                                 submitFormMail = emailTemplateGroup
-                                        .getInstanceOf("pdfTemplate1");
-                                submitFormMail.setAttribute("address", addInfo.getAddress1());
+                                        .getInstanceOf("pdfTemplate2");
+                                submitFormMail.setAttribute("addressoflocation", addInfo.getAddress1());
+                                submitFormMail.setAttribute("age", addInfo.getAge1());
+                                submitFormMail.setAttribute("tot", addInfo.getTotalSqFootage1());
+                                submitFormMail.setAttribute("inside", addInfo.getInsdSqFootage1());
+                                submitFormMail.setAttribute("stories", addInfo.getNoOfStories1());
+                                submitFormMail.setAttribute("basement", addInfo.getBasement1());
+                                if(addInfo.getWallsframe1()!=null && addInfo.getWallsframe1().contains("selected"))
+                                {submitFormMail.setAttribute("frame1", "yes");}
+                                else
+                                {submitFormMail.setAttribute("frame1", "");}
+                                if(addInfo.getWallshcb1()!=null && addInfo.getWallshcb1().contains("selected"))
+                                {submitFormMail.setAttribute("hcb1", "yes");}
+                                else
+                                {submitFormMail.setAttribute("hcb1", "");}
+                                if(addInfo.getWallssteel1()!=null && addInfo.getWallssteel1().contains("selected"))
+                                {submitFormMail.setAttribute("steel1", "yes");}
+                                else
+                                {submitFormMail.setAttribute("steel1", "");}
                                 
+                                if(addInfo.getWallsbrick1()!=null && addInfo.getWallsbrick1().contains("selected"))
+                                {submitFormMail.setAttribute("brick1", "yes");}
+                                else
+                                {submitFormMail.setAttribute("brick1", "");}
+                                
+                                if(addInfo.getRoofwood1()!=null && addInfo.getRoofwood1().contains("selected"))
+                                {submitFormMail.setAttribute("wj1", "yes");}
+                                else
+                                {submitFormMail.setAttribute("wj1", "");}
+                                
+                                if(addInfo.getRoofsteel1()!=null && addInfo.getRoofsteel1().contains("selected"))
+                                {submitFormMail.setAttribute("sd1", "yes");}
+                                else
+                                {submitFormMail.setAttribute("sd1", "");}
+                                
+                                if(addInfo.getRoofconcrete1()!=null && addInfo.getRoofconcrete1().contains("selected"))
+                                {submitFormMail.setAttribute("rco1", "yes");}
+                                else
+                                {submitFormMail.setAttribute("rco1", "");}
+                                
+                                submitFormMail.setAttribute("roofu", addInfo.getRoofupdated1());
+                                
+                                if(addInfo.getFloorsconcrete1()!=null && addInfo.getFloorsconcrete1().contains("selected"))
+                                {submitFormMail.setAttribute("fco", "yes");}
+                                else
+                                {submitFormMail.setAttribute("fco", "");}
+                                
+                                if(addInfo.getFloorswood1()!=null && addInfo.getFloorswood1().contains("selected"))
+                                {submitFormMail.setAttribute("fwood", "yes");}
+                                else
+                                {submitFormMail.setAttribute("fwood", "");}
+                                
+                                if(addInfo.getHeatinggas1()!=null && addInfo.getHeatinggas1().contains("selected"))
+                                {submitFormMail.setAttribute("fagas", "yes");}
+                                else
+                                {submitFormMail.setAttribute("fagas", "");}
+                                
+                                if(addInfo.getHeatingoil1()!=null && addInfo.getHeatingoil1().contains("selected"))
+                                {submitFormMail.setAttribute("faoil", "yes");}
+                                else
+                                {submitFormMail.setAttribute("faoil", "");}
+                                
+                                if(addInfo.getHeatingelectric1()!=null && addInfo.getHeatingelectric1().contains("selected"))
+                                {submitFormMail.setAttribute("helectric", "yes");}
+                                else
+                                {submitFormMail.setAttribute("helectric", "");}
+                                
+                                if(addInfo.getHeatingother1()!=null && addInfo.getHeatingother1().contains("selected"))
+                                {submitFormMail.setAttribute("hother", "yes");}
+                                else
+                                {submitFormMail.setAttribute("hother", "");}
+                                
+                                submitFormMail.setAttribute("heatingu", addInfo.getHeatingupdated1());
+                                
+                                if(addInfo.getHeatingother1()!=null && addInfo.getHeatingother1().contains("selected"))
+                                {submitFormMail.setAttribute("hother", "yes");}
+                                else
+                                {submitFormMail.setAttribute("hother", "");}
+                                
+                                if(addInfo.getElectricalbreakers1()!=null && addInfo.getElectricalbreakers1().contains("selected"))
+                                {submitFormMail.setAttribute("ebr", "yes");}
+                                else
+                                {submitFormMail.setAttribute("ebr", "");}
+                                
+                                if(addInfo.getElectricalfuses1()!=null && addInfo.getElectricalfuses1().contains("selected"))
+                                {submitFormMail.setAttribute("efuses", "yes");}
+                                else
+                                {submitFormMail.setAttribute("efuses", "");}
+
+                                submitFormMail.setAttribute("amps", addInfo.getElectricalamps1());
+                                submitFormMail.setAttribute("elect", addInfo.getElectricalupdated1());
+                                
+                                if(addInfo.getFireProtection1()!=null && addInfo.getFireProtection1().contains("Sprinklers"))      
+                                {submitFormMail.setAttribute("fps", "yes");}
+                                else if(addInfo.getFireProtection1()!=null && addInfo.getFireProtection1().contains("SVC"))
+                                {submitFormMail.setAttribute("fpsv", "yes");}
+                                else if(addInfo.getFireProtection1()!=null && addInfo.getFireProtection1().contains("Hydrant"))
+                                {submitFormMail.setAttribute("fph", "yes");}
+                                else if(addInfo.getFireProtection1()!=null && addInfo.getFireProtection1().contains("Firehall"))
+                                {submitFormMail.setAttribute("fpf", "yes");}
+                                else if(addInfo.getFireProtection1()!=null && addInfo.getFireProtection1().contains("Unprotected"))
+                                {submitFormMail.setAttribute("fpu", "yes");}
+                                
+                                submitFormMail.setAttribute("dist", addInfo.getFireProtectiondistance1());
+                                
+                                if(addInfo.getSecurity1()!=null && addInfo.getSecurity1().contains("Alarm System"))      
+                                {submitFormMail.setAttribute("sas", "yes");}
+                                else if(addInfo.getSecurity1()!=null && addInfo.getSecurity1().contains("Central Monitored"))
+                                {submitFormMail.setAttribute("scm", "yes");}
+                                else if(addInfo.getSecurity1()!=null && addInfo.getSecurity1().contains("Window Bars"))
+                                {submitFormMail.setAttribute("swb", "yes");}
+                                else if(addInfo.getSecurity1()!=null && addInfo.getSecurity1().contains("Dead Bolts"))
+                                {submitFormMail.setAttribute("sdb", "yes");}
+                                
+                                submitFormMail.setAttribute("additionalcoverage", addInfo.getAdditionalCoverage1());
+                                
+                                submitFormMail.setAttribute("buildingl", addInfo.getBuildingLimit1());
+                                submitFormMail.setAttribute("buildingd", addInfo.getBuildingDeductible1());
+                                submitFormMail.setAttribute("contentsl", addInfo.getContentsLimit1());
+                                submitFormMail.setAttribute("contentsd", addInfo.getContentsDeductible1());
+                                submitFormMail.setAttribute("stockl", addInfo.getStockLimit1());
+                                submitFormMail.setAttribute("stockd", addInfo.getStockDeductible1());
+                                submitFormMail.setAttribute("officel", addInfo.getOfficeContentLimit1());
+                                submitFormMail.setAttribute("officed", addInfo.getOfficeContentDeductible1());
+                                submitFormMail.setAttribute("edpl", addInfo.getEdpLimit1());
+                                submitFormMail.setAttribute("edpd", addInfo.getEdpDeductible1());
+                                submitFormMail.setAttribute("equipmentl", addInfo.getEquipmentLimit1());
+                                submitFormMail.setAttribute("equipmentd", addInfo.getEquipmentDeductible1());
+                                submitFormMail.setAttribute("offl", addInfo.getOffPremisesLimit1());
+                                submitFormMail.setAttribute("offd", addInfo.getOffPremisesDeductible1());
+                                submitFormMail.setAttribute("transitl", addInfo.getTransitLimit1());
+                                submitFormMail.setAttribute("transitd", addInfo.getTransitDeductible1());
                                 message = message + "\n"+submitFormMail.toString();
                             }
                         }
-                   */    
+             
+                        System.out.println("Syso AUto"+((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentinsurer());
+                 if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentinsurer()!=null) 
+                        { System.out.println("Inside auto");
+                             emailTemplateGroup = new StringTemplateGroup("welcomeloginemail group", new File("bin").getAbsolutePath());
+                                submitFormMail = emailTemplateGroup.getInstanceOf("pdfTemplate1");
+                            submitFormMail.setAttribute("currentinsurer", (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentinsurer()));
+                        }
                         
+                        message = message +"\n </body> </html>";
                         
                         BufferedWriter b = null;
                         try {

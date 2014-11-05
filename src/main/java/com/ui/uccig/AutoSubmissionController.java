@@ -51,8 +51,6 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
     @FXML
     private TextField autocurrentinsurer;
 
-    
-
     @FXML
     private TextField autopremiumtarget;
 
