@@ -42,6 +42,10 @@ public class DelayMailSendingBinding {
     private StringProperty unica;    
     private StringProperty zurich;
     private StringProperty delayDate;
+    private StringProperty demail1;
+    private StringProperty demail2;
+    private StringProperty demail3;
+    private StringProperty demail4;
     
     public DelayMailSendingBinding() {
         subject = new SimpleStringProperty();
@@ -76,6 +80,10 @@ public class DelayMailSendingBinding {
         unica=new SimpleStringProperty();
         zurich=new SimpleStringProperty();
         delayDate=new SimpleStringProperty();
+        demail1=new SimpleStringProperty();
+        demail2=new SimpleStringProperty();
+        demail3=new SimpleStringProperty();
+        demail4=new SimpleStringProperty();
     }
 
     public String getDelayDate() {
@@ -461,5 +469,49 @@ public class DelayMailSendingBinding {
 
     public StringProperty zurichProperty() {
         return this.zurich;
+    }
+    public String getdemail1() {
+        return (String) this.demail1.get();
+    }
+
+    public void setdemail1(String demail1) {
+        this.demail1.set(demail1);
+    }
+
+    public StringProperty demail1Property() {
+        return this.demail1;
+    }
+    public String getdemail2() {
+        return (String) this.demail2.get();
+    }
+
+    public void setdemail2(String demail2) {
+        this.demail2.set(demail2);
+    }
+
+    public StringProperty demail2Property() {
+        return this.demail2;
+    }
+    public String getdemail3() {
+        return (String) this.demail3.get();
+    }
+
+    public void setdemail3(String demail3) {
+        this.demail3.set(demail3);
+    }
+
+    public StringProperty demail3Property() {
+        return this.demail3;
+    }
+    public String getdemail4() {
+        return (String) this.demail4.get();
+    }
+
+    public void setdemail4(String demail4) {
+        this.demail4.set(demail4);
+    }
+
+    public StringProperty demail4Property() {
+        return this.demail4;
     }
 }

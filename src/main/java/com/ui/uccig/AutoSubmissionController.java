@@ -26,8 +26,11 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
@@ -523,7 +526,51 @@ public class AutoSubmissionController implements Initializable, IScreenControlle
     
     @FXML
     public void exit() {
-        ((NextScreenController)screenPage.getControlledScreen("NextScreen")).exit();}
+        for (Node node : autocurrentinsurer.getParent().getChildrenUnmodifiable()) {
+            System.out.println("Id: " + node.getId());
+            if (node instanceof TextField) {
+                ((TextField) node).setText("");
+            } else if (node instanceof TextArea) {
+                ((TextArea) node).setText("");
+            } else if (node instanceof ChoiceBox) {
+                ((ChoiceBox) node).getSelectionModel().selectFirst();
+            } else if (node instanceof CheckBox) {
+                ((CheckBox) node).setSelected(false);
+            } else if (node instanceof RadioButton) {
+                ((RadioButton) node).setSelected(false);
+            } else if (node instanceof Pane) {
+                for (Node node1 : ((Pane) node).getChildren()) {
+                    if (node1 instanceof TextField) {
+                        // clear
+                        ((TextField) node1).setText("");
+                    } else if (node1 instanceof TextArea) {
+                        ((TextArea) node1).setText("");
+                    } else if (node1 instanceof ChoiceBox) {
+                        ((ChoiceBox) node1).getSelectionModel().selectFirst();
+                    } else if (node1 instanceof CheckBox) {
+                        ((CheckBox) node1).setSelected(false);
+                    } else if (node1 instanceof RadioButton) {
+                        ((RadioButton) node1).setSelected(false);
+                    } else if (node1 instanceof Pane) {
+                        for (Node node2 : ((Pane) node1).getChildren()) {
+                            if (node2 instanceof TextField) {
+                                ((TextField) node2).setText("");
+                            } else if (node2 instanceof TextArea) {
+                                ((TextArea) node2).setText("");
+                            } else if (node2 instanceof ChoiceBox) {
+                                ((ChoiceBox) node2).getSelectionModel().selectFirst();
+                            } else if (node2 instanceof CheckBox) {
+                                ((CheckBox) node2).setSelected(false);
+                            } else if (node2 instanceof RadioButton) {
+                                ((RadioButton) node2).setSelected(false);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        ((NextScreenController)screenPage.getControlledScreen("NextScreen")).exit();
+    }
     
     
     @FXML

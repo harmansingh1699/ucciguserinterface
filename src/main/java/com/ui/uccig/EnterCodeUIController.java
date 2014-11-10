@@ -1127,6 +1127,10 @@ public class EnterCodeUIController implements Initializable, IScreenController {
          Bindings.bindBidirectional(email2.textProperty(), binding1.email2Property());
          Bindings.bindBidirectional(email3.textProperty(), binding1.email3Property());
          Bindings.bindBidirectional(email4.textProperty(), binding1.email4Property());
+         Bindings.bindBidirectional(delayedemail1.textProperty(), binding3.demail1Property());
+         Bindings.bindBidirectional(delayedemail2.textProperty(), binding3.demail2Property());
+         Bindings.bindBidirectional(delayedemail3.textProperty(), binding3.demail3Property());
+         Bindings.bindBidirectional(delayedemail4.textProperty(), binding3.demail4Property());
          //Bindings.bindBidirectional(emailbody.textProperty(), binding2.mailbodyProperty());
          //Bindings.bindBidirectional(delayemailbody.textProperty(), binding3.mailbodyProperty());
          welcomeName.setText(receivedname);
@@ -1296,7 +1300,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 @FXML
     public void submitSendEmail() {
          BufferedWriter b = null;
-        final File f = new File("Mailbody.txt");
+        final File f = new File("bin\\Mailbody.txt");
         try {
             b = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f)));
            // b.write(binding2.getMailbody());
@@ -1350,8 +1354,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
            mail+=binding1.getemail4()+",";
        }
        req1.setRecpients(mail.substring(0, mail.length()));
-      CommonResponseAttributes response =  port.getInsuranceOperationsPort().sendMailToUnderWriter(req1);
-      
+      CommonResponseAttributes response =  port.getInsuranceOperationsPort().sendMailToUnderWriter(req1); 
       if(response!=null && response.getStatus().equals("SUCCESS")){
           stopLoading1();
           successMessage("Mail successfully sent.");
@@ -1373,25 +1376,17 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     }
     
     @FXML
-    public void submitSendDelayEmail() throws DatatypeConfigurationException {
+    public void submitSendDelayEmail() throws DatatypeConfigurationException, com.rav.insurance.insuranceformoperations.webservice.Exception {
        if(datePicker.getSelectedDate() ==null || datePicker.getSelectedDate().equals(""))
         {InvokeAnimation.attentionSeekerWobble(datePicker);
             datePicker.setPromptText("Enter the date");
         }
        else{
+           stage1.show();
         InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
         PostFormMailRequest req1 = new PostFormMailRequest() ;
-        req1.setFormId(formId);
-        req1.setFrom(receivedemailaddress);
-        GregorianCalendar c1 = new GregorianCalendar();
-           if (datePicker.getSelectedDate() != null) {
-               c1.setTime(datePicker.getSelectedDate());
-               XMLGregorianCalendar date = DatatypeFactory.newInstance().newXMLGregorianCalendar(c1);
-               req1.setSendDate(date);
-           }
-
         BufferedWriter b = null;
-        File f = new File("Mailbodydelay.txt");
+        File f = new File("bin\\Mailbodydelay.txt");
         try {
             b = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f)));
             b.write(binding3.getmailbody());
@@ -1402,6 +1397,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                 try {
                     b.close();
                 } catch (IOException e) {
+                    stopLoading1();
     // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
@@ -1411,22 +1407,37 @@ public class EnterCodeUIController implements Initializable, IScreenController {
            
        req1.setMessage(bytes);
        String mail ="";
-       if(binding1.getmail1()!=null && !binding1.getmail1().trim().equals("")){
-           mail+=binding1.getmail1()+",";
+       
+       if(binding3.getdemail1()!=null && !binding3.getdemail1().trim().equals("")){
+           mail+=binding3.getdemail1()+",";
        }
-       if(binding1.getemail1()!=null && !binding1.getmail1().trim().equals("")){
-           mail+=binding1.getemail1()+",";
-       }
-       if(binding1.getemail2()!=null && !binding1.getemail2().trim().equals("")){
+       if(binding3.getdemail2()!=null && !binding3.getdemail2().trim().equals("")){
            mail+=binding1.getemail2()+",";
        }
-       if(binding1.getemail3()!=null && !binding1.getemail3().trim().equals("")){
-           mail+=binding1.getemail3()+",";
+       if(binding3.getdemail3()!=null && !binding3.getdemail3().trim().equals("")){
+           mail+=binding3.getdemail3()+",";
        }
-       if(binding1.getemail4()!=null && !binding1.getemail4().trim().equals("")){
-           mail+=binding1.getemail4()+",";
+       if(binding3.getdemail4()!=null && !binding3.getdemail4().trim().equals("")){
+           mail+=binding3.getdemail4()+",";
        }
-       req1.setRecpients(mail.substring(0, mail.length()));
+        req1.setRecpients(mail.substring(0, mail.length()));
+        req1.setFormId(formId);
+        req1.setFrom(receivedemailaddress);
+        GregorianCalendar c1 = new GregorianCalendar();
+           if (datePicker.getSelectedDate() != null) {
+               c1.setTime(datePicker.getSelectedDate());
+               XMLGregorianCalendar date = DatatypeFactory.newInstance().newXMLGregorianCalendar(c1);
+               req1.setSendDate(date);
+           }
+           
+           CommonResponseAttributes response =  port.getInsuranceOperationsPort().registerPostFormMail(req1); 
+              if(response!=null && response.getStatus().equals("SUCCESS")){
+                stopLoading1();
+                successMessage("Mail will be sent.");
+      }
+      else{ stopLoading1();
+          errors(response.getErrorMessage());
+      }      
     }
     }
     
@@ -2041,7 +2052,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                         if(binding1.getCloseBounded().equalsIgnoreCase("yes"))
                         {successMessage("Good job! The status of the form has been updated as closed.");}
                         else if (binding1.getCloseBounded().equalsIgnoreCase("no"))
-                        {successMessage("The status of the form has been updated as closed. Hopefully we bound the business next time.");}
+                        {successMessage("The status of the form has been updated as closed.");}
                         closeapplicationpane.setVisible(false);
                     }
                     else{
