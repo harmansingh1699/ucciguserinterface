@@ -1406,6 +1406,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
         byte[] bytes = WriteByteArray.getByteFromFile(f);
            
        req1.setMessage(bytes);
+       req1.setSubject(binding1.getSendDelayedMailSubject());
        String mail ="";
        
        if(binding1.getdemail1()!=null && !binding1.getdemail1().trim().equals("")){
