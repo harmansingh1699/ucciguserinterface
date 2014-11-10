@@ -1127,10 +1127,10 @@ public class EnterCodeUIController implements Initializable, IScreenController {
          Bindings.bindBidirectional(email2.textProperty(), binding1.email2Property());
          Bindings.bindBidirectional(email3.textProperty(), binding1.email3Property());
          Bindings.bindBidirectional(email4.textProperty(), binding1.email4Property());
-         Bindings.bindBidirectional(delayedemail1.textProperty(), binding3.demail1Property());
-         Bindings.bindBidirectional(delayedemail2.textProperty(), binding3.demail2Property());
-         Bindings.bindBidirectional(delayedemail3.textProperty(), binding3.demail3Property());
-         Bindings.bindBidirectional(delayedemail4.textProperty(), binding3.demail4Property());
+         Bindings.bindBidirectional(delayedemail1.textProperty(), binding1.demail1Property());
+         Bindings.bindBidirectional(delayedemail2.textProperty(), binding1.demail2Property());
+         Bindings.bindBidirectional(delayedemail3.textProperty(), binding1.demail3Property());
+         Bindings.bindBidirectional(delayedemail4.textProperty(), binding1.demail4Property());
          //Bindings.bindBidirectional(emailbody.textProperty(), binding2.mailbodyProperty());
          //Bindings.bindBidirectional(delayemailbody.textProperty(), binding3.mailbodyProperty());
          welcomeName.setText(receivedname);
@@ -1389,7 +1389,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
         File f = new File("bin\\Mailbodydelay.txt");
         try {
             b = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f)));
-            b.write(binding3.getmailbody());
+            b.write(delayemailbody.getText());
         } catch (Exception e) {
 
         } finally {
@@ -1408,17 +1408,17 @@ public class EnterCodeUIController implements Initializable, IScreenController {
        req1.setMessage(bytes);
        String mail ="";
        
-       if(binding3.getdemail1()!=null && !binding3.getdemail1().trim().equals("")){
-           mail+=binding3.getdemail1()+",";
+       if(binding1.getdemail1()!=null && !binding1.getdemail1().trim().equals("")){
+           mail+=binding1.getdemail1()+",";
        }
-       if(binding3.getdemail2()!=null && !binding3.getdemail2().trim().equals("")){
+       if(binding1.getdemail2()!=null && !binding1.getdemail2().trim().equals("")){
            mail+=binding1.getemail2()+",";
        }
-       if(binding3.getdemail3()!=null && !binding3.getdemail3().trim().equals("")){
-           mail+=binding3.getdemail3()+",";
+       if(binding1.getdemail3()!=null && !binding1.getdemail3().trim().equals("")){
+           mail+=binding1.getdemail3()+",";
        }
-       if(binding3.getdemail4()!=null && !binding3.getdemail4().trim().equals("")){
-           mail+=binding3.getdemail4()+",";
+       if(binding1.getdemail4()!=null && !binding1.getdemail4().trim().equals("")){
+           mail+=binding1.getdemail4()+",";
        }
         req1.setRecpients(mail.substring(0, mail.length()));
         req1.setFormId(formId);
