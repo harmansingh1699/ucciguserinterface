@@ -210,7 +210,20 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="356.0001220703125">
               <children>
-                <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" onAction="#nextArchive" prefHeight="40.0" prefWidth="150.0" text="Next" />
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Button defaultButton="true" mnemonicParsing="false" onAction="#searcharchiveback1" prefHeight="40.0" prefWidth="150.0" text="Back">
+                                 <font>
+                                    <Font name="Times New Roman Bold" size="16.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                      <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" onAction="#nextArchive" prefHeight="40.0" prefWidth="150.0" text="Next" />
+                           </children>
+                        </HBox>
               </children>
             </HBox>
           </children>
@@ -231,7 +244,6 @@
                      <font>
                         <Font name="Arial Bold" size="22.0" />
                      </font></Label>
-                  <Button mnemonicParsing="false" onAction="#searcharchiveback1" prefHeight="26.0" prefWidth="15.0" text="&lt;" />
           </children>
         </HBox>
       </top>
@@ -336,9 +348,22 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="356.0001220703125">
               <children>
-                <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="356.0">
                   <children>
-                    <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" onAction="#searchSubmit" prefHeight="50.0" prefWidth="165.0" text="Search" />
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Button defaultButton="true" mnemonicParsing="false" onAction="#searcharchiveback2" prefHeight="50.0" prefWidth="153.0" text="Back">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="16.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                          <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" onAction="#searchSubmit" prefHeight="50.0" prefWidth="153.0" text="Search" />
+                                 </children>
+                              </HBox>
                   </children>
                 </HBox>
               </children>
@@ -357,7 +382,6 @@
                      <font>
                         <Font name="Arial Bold" size="22.0" />
                      </font></Label>
-                  <Button mnemonicParsing="false" onAction="#searcharchiveback2" prefHeight="26.0" prefWidth="3.0" text="&lt;" />
           </children>
         </HBox>
       </top>
@@ -1178,10 +1202,15 @@
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="356.0001220703125">
               <children>
                 <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
-                  <children>
-                    <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" onAction="#submitCloseApplication" prefHeight="50.0" prefWidth="165.0" text="Close Application" />
-                  </children>
+                           <children>
+                    <Button cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" onAction="#backCloseApplication" prefHeight="50.0" prefWidth="165.0" text="Go Back" />
+                           </children>
                 </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="closebutton" cancelButton="false" defaultButton="true" font="$x1" mnemonicParsing="false" onAction="#submitCloseApplication" prefHeight="50.0" prefWidth="165.0" text="Close Application" />
+                           </children>
+                        </HBox>
               </children>
             </HBox>
           </children>
@@ -1619,42 +1648,42 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
                <children>
-                  <Label fx:id="l10" text="Label" />
+                  <Label text="Label" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <Label fx:id="l11" text="Label" />
+                  <Label text="Label" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <children>
-                  <Label fx:id="l12" text="Label" />
+                  <Label text="Label" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <children>
-                  <Label fx:id="l13" text="Label" />
+                  <Label text="Label" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
                <children>
-                  <Label fx:id="l14" text="Label" />
+                  <Label text="Label" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
                <children>
-                  <Label fx:id="l15" text="Label" />
+                  <Label text="Label" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="1">
                <children>
-                  <Label fx:id="l16" text="Label" />
+                  <Label text="Label" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="1">
                <children>
-                  <Label fx:id="l17" text="Label" />
+                  <Label text="Label" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2" />
@@ -1880,7 +1909,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
                <children>
-                  <Label fx:id="l1" alignment="CENTER" prefHeight="16.0" prefWidth="114.0" text="Label">
+                  <Label fx:id="l1" alignment="CENTER" prefHeight="16.0" prefWidth="114.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font></Label>
@@ -1888,7 +1917,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <Label fx:id="l2" alignment="CENTER" prefHeight="17.0" prefWidth="187.0" text="Label">
+                  <Label fx:id="l2" alignment="CENTER" prefHeight="17.0" prefWidth="187.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font></Label>
@@ -1896,7 +1925,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <children>
-                  <Label fx:id="l3" alignment="CENTER" prefHeight="16.0" prefWidth="365.0" text="Label">
+                  <Label fx:id="l3" alignment="CENTER" prefHeight="16.0" prefWidth="365.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font></Label>
@@ -1904,12 +1933,12 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="24.0" prefWidth="370.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <children>
-                  <Hyperlink onAction="#hyderlinkAction1" text="Content" />
+                  <Hyperlink fx:id="l4" onAction="#hyderlinkAction1" text="Content" visible="false" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
                <children>
-                  <Label fx:id="l5" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label">
+                  <Label fx:id="l5" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font></Label>
@@ -1917,7 +1946,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
-                  <Label fx:id="l6" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label">
+                  <Label fx:id="l6" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font></Label>
@@ -1925,7 +1954,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <children>
-                  <Label fx:id="l7" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label">
+                  <Label fx:id="l7" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font></Label>
@@ -1933,12 +1962,12 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="24.0" prefWidth="298.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <children>
-                  <Hyperlink onAction="#hyderlinkAction2" text="Content" />
+                  <Hyperlink fx:id="l8" onAction="#hyderlinkAction2" text="Content" visible="false" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
                <children>
-                  <Label fx:id="l9" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label">
+                  <Label fx:id="l9" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -1946,7 +1975,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
                <children>
-                  <Label fx:id="l13" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label">
+                  <Label fx:id="l13" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -1954,7 +1983,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
                <children>
-                  <Label fx:id="l21" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label">
+                  <Label fx:id="l21" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -1962,7 +1991,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="5">
                <children>
-                  <Label fx:id="l17" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label">
+                  <Label fx:id="l17" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -1970,7 +1999,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="7">
                <children>
-                  <Label fx:id="l25" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label">
+                  <Label fx:id="l25" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -1978,7 +2007,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="8">
                <children>
-                  <Label fx:id="l29" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label">
+                  <Label fx:id="l29" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -1986,7 +2015,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="9">
                <children>
-                  <Label fx:id="l33" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label">
+                  <Label fx:id="l33" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -1994,7 +2023,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="10">
                <children>
-                  <Label fx:id="l37" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label">
+                  <Label fx:id="l37" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2004,7 +2033,7 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Label fx:id="l41" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label">
+                        <Label fx:id="l41" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label" visible="false">
                            <font>
                               <Font name="Arial" size="15.0" />
                            </font>
@@ -2014,7 +2043,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="12">
                <children>
-                  <Label fx:id="l45" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label">
+                  <Label fx:id="l45" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2022,13 +2051,13 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="13">
                <children>
-                  <Label fx:id="l49" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label">
+                  <Label fx:id="l49" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
                   </Label>
                </children></HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="14">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" visible="false" GridPane.rowIndex="14">
                <children>
                   <Label fx:id="l53" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label">
                      <font>
@@ -2038,7 +2067,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="15">
                <children>
-                  <Label fx:id="l57" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label">
+                  <Label fx:id="l57" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2046,7 +2075,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="16">
                <children>
-                  <Label fx:id="l61" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label">
+                  <Label fx:id="l61" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2054,7 +2083,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="17">
                <children>
-                  <Label fx:id="l65" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label">
+                  <Label fx:id="l65" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2062,13 +2091,13 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="18">
                <children>
-                  <Label fx:id="l69" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label">
+                  <Label fx:id="l69" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
                   </Label>
                </children></HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="19">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" visible="false" GridPane.rowIndex="19">
                <children>
                   <Label fx:id="l73" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label">
                      <font>
@@ -2078,7 +2107,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="20">
                <children>
-                  <Label fx:id="l77" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label">
+                  <Label fx:id="l77" alignment="CENTER" prefHeight="16.0" prefWidth="113.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2086,7 +2115,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <children>
-                  <Label fx:id="l14" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label">
+                  <Label fx:id="l14" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2094,7 +2123,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <children>
-                  <Label fx:id="l10" alignment="CENTER" prefHeight="17.0" prefWidth="190.0" text="Label">
+                  <Label fx:id="l10" alignment="CENTER" prefHeight="17.0" prefWidth="190.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2102,7 +2131,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <children>
-                  <Label fx:id="l18" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label">
+                  <Label fx:id="l18" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2110,7 +2139,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <children>
-                  <Label fx:id="l22" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label">
+                  <Label fx:id="l22" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2118,7 +2147,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
                <children>
-                  <Label fx:id="l26" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label">
+                  <Label fx:id="l26" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2126,7 +2155,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
                <children>
-                  <Label fx:id="l30" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label">
+                  <Label fx:id="l30" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2134,7 +2163,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
                <children>
-                  <Label fx:id="l34" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label">
+                  <Label fx:id="l34" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2142,7 +2171,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="11">
                <children>
-                  <Label fx:id="l42" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label">
+                  <Label fx:id="l42" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2150,7 +2179,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="12">
                <children>
-                  <Label fx:id="l46" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label">
+                  <Label fx:id="l46" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2158,7 +2187,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="13">
                <children>
-                  <Label fx:id="l50" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label">
+                  <Label fx:id="l50" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2166,7 +2195,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="14">
                <children>
-                  <Label fx:id="l54" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label">
+                  <Label fx:id="l54" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2174,7 +2203,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="16">
                <children>
-                  <Label fx:id="l62" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label">
+                  <Label fx:id="l62" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2182,7 +2211,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="15">
                <children>
-                  <Label fx:id="l58" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label">
+                  <Label fx:id="l58" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2190,7 +2219,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="17">
                <children>
-                  <Label fx:id="l66" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label">
+                  <Label fx:id="l66" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2198,7 +2227,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="18">
                <children>
-                  <Label fx:id="l70" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label">
+                  <Label fx:id="l70" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2206,7 +2235,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="19">
                <children>
-                  <Label fx:id="l74" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label">
+                  <Label fx:id="l74" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2214,7 +2243,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="20">
                <children>
-                  <Label fx:id="l78" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label">
+                  <Label fx:id="l78" alignment="CENTER" prefHeight="16.0" prefWidth="181.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2222,7 +2251,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
                <children>
-                  <Label fx:id="l11" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label">
+                  <Label fx:id="l11" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2230,11 +2259,11 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
                <children>
-                  <Hyperlink fx:id="l12" onAction="#hyderlinkAction3" text="Content" />
+                  <Hyperlink fx:id="l12" onAction="#hyderlinkAction3" text="Content" visible="false" />
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
                <children>
-                  <Label fx:id="l19" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label">
+                  <Label fx:id="l19" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2243,7 +2272,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
                <children>
-                  <Label fx:id="l15" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label">
+                  <Label fx:id="l15" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2252,7 +2281,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
                <children>
-                  <Label fx:id="l23" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label">
+                  <Label fx:id="l23" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2261,7 +2290,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
                <children>
-                  <Label fx:id="l27" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label">
+                  <Label fx:id="l27" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2270,7 +2299,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="8">
                <children>
-                  <Label fx:id="l31" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label">
+                  <Label fx:id="l31" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2279,7 +2308,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="9">
                <children>
-                  <Label fx:id="l35" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label">
+                  <Label fx:id="l35" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2288,7 +2317,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="10">
                <children>
-                  <Label fx:id="l39" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label">
+                  <Label fx:id="l39" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2297,7 +2326,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="11">
                <children>
-                  <Label fx:id="l43" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label">
+                  <Label fx:id="l43" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2306,7 +2335,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="12">
                <children>
-                  <Label fx:id="l47" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label">
+                  <Label fx:id="l47" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2315,7 +2344,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="13">
                <children>
-                  <Label fx:id="l51" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label">
+                  <Label fx:id="l51" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2324,7 +2353,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="14">
                <children>
-                  <Label fx:id="l55" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label">
+                  <Label fx:id="l55" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2333,7 +2362,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="15">
                <children>
-                  <Label fx:id="l59" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label">
+                  <Label fx:id="l59" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2341,7 +2370,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="16">
                <children>
-                  <Label fx:id="l63" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label">
+                  <Label fx:id="l63" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2349,7 +2378,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="17">
                <children>
-                  <Label fx:id="l67" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label">
+                  <Label fx:id="l67" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2357,7 +2386,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="18">
                <children>
-                  <Label fx:id="l71" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label">
+                  <Label fx:id="l71" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2365,7 +2394,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="19">
                <children>
-                  <Label fx:id="l75" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label">
+                  <Label fx:id="l75" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2373,7 +2402,7 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="20">
                <children>
-                  <Label fx:id="l79" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label">
+                  <Label fx:id="l79" alignment="CENTER" prefHeight="16.0" prefWidth="364.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2381,75 +2410,75 @@
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
                <children>
-                  <Hyperlink fx:id="l16" onAction="#hyderlinkAction4" text="Content" />
+                  <Hyperlink fx:id="l16" onAction="#hyderlinkAction4" text="Content" visible="false" />
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
                <children>
-                  <Hyperlink fx:id="l20" onAction="#hyderlinkAction5" text="Content" />
+                  <Hyperlink fx:id="l20" onAction="#hyderlinkAction5" text="Content" visible="false" />
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="6">
                <children>
-                  <Hyperlink fx:id="l24" onAction="#hyderlinkAction6" text="Content" />
+                  <Hyperlink fx:id="l24" onAction="#hyderlinkAction6" text="Content" visible="false" />
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="7">
                <children>
-                  <Hyperlink fx:id="l28" onAction="#hyderlinkAction7" text="Content" />
+                  <Hyperlink fx:id="l28" onAction="#hyderlinkAction7" text="Content" visible="false" />
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="8">
                <children>
-                  <Hyperlink fx:id="l32" onAction="#hyderlinkAction8" text="Content" />
+                  <Hyperlink fx:id="l32" onAction="#hyderlinkAction8" text="Content" visible="false" />
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="9">
                <children>
-                  <Hyperlink fx:id="l36" onAction="#hyderlinkAction9" text="Content" />
+                  <Hyperlink fx:id="l36" onAction="#hyderlinkAction9" text="Content" visible="false" />
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="10">
                <children>
-                  <Hyperlink fx:id="l40" onAction="#hyderlinkAction10" text="Content" />
+                  <Hyperlink fx:id="l40" onAction="#hyderlinkAction10" text="Content" visible="false" />
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="11">
                <children>
-                  <Hyperlink fx:id="l44" onAction="#hyderlinkAction11" text="Content" />
+                  <Hyperlink fx:id="l44" onAction="#hyderlinkAction11" text="Content" visible="false" />
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="12">
                <children>
-                  <Hyperlink fx:id="l48" onAction="#hyderlinkAction12" text="Content" />
+                  <Hyperlink fx:id="l48" onAction="#hyderlinkAction12" text="Content" visible="false" />
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="13">
                <children>
-                  <Hyperlink fx:id="l52" onAction="#hyderlinkAction13" text="Content" />
+                  <Hyperlink fx:id="l52" onAction="#hyderlinkAction13" text="Content" visible="false" />
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="14">
                <children>
-                  <Hyperlink fx:id="l56" onAction="#hyderlinkAction14" text="Content" />
+                  <Hyperlink fx:id="l56" onAction="#hyderlinkAction14" text="Content" visible="false" />
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="15">
                <children>
-                  <Hyperlink fx:id="l60" onAction="#hyderlinkAction15" text="Content" />
+                  <Hyperlink fx:id="l60" onAction="#hyderlinkAction15" text="Content" visible="false" />
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="16">
                <children>
-                  <Hyperlink fx:id="l64" onAction="#hyderlinkAction16" text="Content" />
+                  <Hyperlink fx:id="l64" onAction="#hyderlinkAction16" text="Content" visible="false" />
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="17">
                <children>
-                  <Hyperlink fx:id="l68" onAction="#hyderlinkAction17" text="Content" />
+                  <Hyperlink fx:id="l68" onAction="#hyderlinkAction17" text="Content" visible="false" />
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="18">
                <children>
-                  <Hyperlink fx:id="l72" onAction="#hyderlinkAction18" text="Content" />
+                  <Hyperlink fx:id="l72" onAction="#hyderlinkAction18" text="Content" visible="false" />
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="19">
                <children>
-                  <Hyperlink fx:id="l76" onAction="#hyderlinkAction19" text="Content" />
+                  <Hyperlink fx:id="l76" onAction="#hyderlinkAction19" text="Content" visible="false" />
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="20">
                <children>
-                  <Hyperlink fx:id="l80" onAction="#hyderlinkAction20" text="Content" />
+                  <Hyperlink fx:id="l80" onAction="#hyderlinkAction20" text="Content" visible="false" />
                </children></HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="10">
                <children>
-                  <Label fx:id="l38" alignment="CENTER" prefHeight="21.0" prefWidth="181.0" text="Label">
+                  <Label fx:id="l38" alignment="CENTER" prefHeight="21.0" prefWidth="181.0" text="Label" visible="false">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -2499,7 +2528,7 @@
       <Font name="Times Bold" size="28.0" />
     </font>
   </Label>
-      <Button defaultButton="true" layoutX="1338.0" layoutY="5.0" mnemonicParsing="false" onAction="#searchHome" prefHeight="15.0" prefWidth="121.0" text="Home">
+      <Button defaultButton="true" layoutX="1338.0" layoutY="5.0" mnemonicParsing="false" onAction="#searchHome" prefHeight="15.0" prefWidth="121.0" style="-fx-background-color: #5aea21;" text="Home">
          <font>
             <Font name="Times New Roman" size="16.0" />
          </font>
