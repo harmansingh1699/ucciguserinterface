@@ -71,6 +71,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
@@ -168,6 +169,9 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     private RadioButton searchdate4;
     
     @FXML
+    private Button closebutton;
+    
+    @FXML
     private RadioButton closeboundedno;
     @FXML
     private RadioButton closeboundedyes;
@@ -248,6 +252,46 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     private Label welcomeName;
     
     
+    @FXML
+    private Hyperlink l4;
+    @FXML
+    private Hyperlink l8;
+    @FXML
+    private Hyperlink l12;
+    @FXML
+    private Hyperlink l16;
+    @FXML
+    private Hyperlink l20;
+    @FXML
+    private Hyperlink l24;
+    @FXML
+    private Hyperlink l28;
+    @FXML
+    private Hyperlink l32;
+    @FXML
+    private Hyperlink l36;
+    @FXML
+    private Hyperlink l40;
+    @FXML
+    private Hyperlink l44;
+    @FXML
+    private Hyperlink l48;
+    @FXML
+    private Hyperlink l52;
+    @FXML
+    private Hyperlink l56;
+    @FXML
+    private Hyperlink l60;
+    @FXML
+    private Hyperlink l64;
+    @FXML
+    private Hyperlink l68;
+    @FXML
+    private Hyperlink l72;
+    @FXML
+    private Hyperlink l76;
+    @FXML
+    private Hyperlink l80;
     
     @FXML
     private Label l1;
@@ -1381,6 +1425,8 @@ public class EnterCodeUIController implements Initializable, IScreenController {
         {InvokeAnimation.attentionSeekerWobble(datePicker);
             datePicker.setPromptText("Enter the date");
         }
+       else if(receivedemailaddress==null)
+       {errors("Oops! Only marketer can send the email");}
        else{
            stage1.show();
         InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
@@ -1408,6 +1454,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
        req1.setMessage(bytes);
        req1.setSubject(binding1.getSendDelayedMailSubject());
        String mail ="";
+       delayedemail1.setText(receivedemailaddress);
        
        if(binding1.getdemail1()!=null && !binding1.getdemail1().trim().equals("")){
            mail+=binding1.getdemail1();
@@ -1432,7 +1479,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
            }
            
            CommonResponseAttributes response =  port.getInsuranceOperationsPort().registerPostFormMail(req1); 
-              if(response!=null && response.getStatus().equals("SUCCESS")){
+              if(response==null){
                 stopLoading1();
                 successMessage("Mail will be sent.");
       }
@@ -1467,10 +1514,27 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     @FXML
     public void sendMailNow() {
+        
+        Task task = new Task<Void>() {
+            @Override
+            public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception, Exception {
+                try {
+                    InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
+                    String response = port.getInsuranceOperationsPort().getEmailAddress(formId.replaceAll("UCCIG", ""));                    
+                    if (response != null) {
+                }       
+                }
+                catch (Exception e) {
+                    errors(e.getMessage());
+                    
+                }
+                return null;
+            }
+        };
+        new Thread(task).start();
         sendmailsubject.setText(formId+": Application for New Business");
         emailbody.setText("");
         mail1.setSelected(false);
-        
         email1.setText(receivedemailaddress);
         animatedMovement(-2538, 0);
     }
@@ -1479,6 +1543,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     public void sendMailLater() {
         senddelayedmailsubject.setText(formId+": Application for New Business");
         delayemailbody.setText("");
+        delayedemail1.setText(receivedemailaddress);
         animatedMovement(-2538, -715);
     }
 
@@ -2004,24 +2069,81 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     public void clickCloseApplication() {
         closeapplicationpane.setVisible(true);
     }
-     @FXML
+    @FXML
     public void searcharchiveback2() {
         searcharchive2.setVisible(false);
+        searchwithusyes.setSelected(false);
+        searchwithusno.setSelected(false);
+        searchdate1.setSelected(false);
+        searchdate2.setSelected(false);
+        searchdate3.setSelected(false);
+        searchdate4.setSelected(false);
         searcharchive.setVisible(true);
-        
+
     }
      @FXML
     public void searcharchiveback1() {
-        if(marketerId == null || marketerId.trim().isEmpty())
-        {
+        if (marketerId == null || marketerId.trim().isEmpty()) {
+            searchapplicationid.setText("");
+            searchproducerid.setText("");
+            searchbusinessname.setText("");
+            searchmarketerid.setText("");
+            searchwithusyes.setSelected(false);
+            searchwithusno.setSelected(false);
+            searchdate1.setSelected(false);
+            searchdate2.setSelected(false);
+            searchdate3.setSelected(false);
+            searchdate4.setSelected(false);
             screenPage.setScreen("NextScreen");
+        } else {
+            animatedMovement(0, 0);
+            searchapplicationid.setText("");
+            searchproducerid.setText("");
+            searchbusinessname.setText("");
+            searchmarketerid.setText("");
+            searchwithusyes.setSelected(false);
+            searchwithusno.setSelected(false);
+            searchdate1.setSelected(false);
+            searchdate2.setSelected(false);
+            searchdate3.setSelected(false);
+            searchdate4.setSelected(false);
         }
-        else {animatedMovement(0, 0);}
     }
     
     @FXML
     public void opencloseApplication() {
-         closeapplicationpane.setVisible(true);
+        System.out.println("Inside  opencloseapplication");
+        stage1.show();
+        Task task = new Task<Void>() {
+            @Override
+            public Void call() throws com.rav.insurance.insuranceformoperations.webservice.Exception, Exception {
+                try {
+                    InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
+                    SearchMailRequest req = new SearchMailRequest() ;
+                    req.setFormId(getFormId());
+                    GetCloseFormNQuoteDetailsResponse2 response = port.getInsuranceOperationsPort().getCloseFormNQuoteDetails(req);
+                    if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
+                        System.out.println("Inside if opencloseapplication");
+                        stopLoading1();
+                        setclosedetails(response);
+                        closeapplicationpane.setVisible(true);
+                } 
+                else{   stopLoading1();
+                        errors(response.getErrorMessage());
+                        System.out.println("Inside else opencloseapplication");
+                    }
+                        
+                }catch (Exception e) {
+                    System.out.println("Inside catch opencloseapplication");
+                    stopLoading1();
+                    e.printStackTrace();
+                    closeapplicationpane.setVisible(true);
+                }
+                return null;
+            }
+        };
+        new Thread(task).start();
+         
     }
     
     @FXML
@@ -2029,6 +2151,10 @@ public class EnterCodeUIController implements Initializable, IScreenController {
          closeapplicationpane.setVisible(false);
          sendmailPane.setVisible(false);
          animatedMovement(-1269, -715);
+    }
+    @FXML
+    public void backCloseApplication() {
+         closeapplicationpane.setVisible(false);
     }
 
     @FXML
@@ -2135,12 +2261,22 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     GetInsuranceFormListResponse response = port.getInsuranceOperationsPort().getFormList(req);
 
                     if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
+                        searchproducerid.setText("");
+                        searchmarketerid.setText("");
+                        searchapplicationid.setText("");
+                        searchbusinessname.setText("");
+                        searchwithusyes.setSelected(false);
+                        searchwithusno.setSelected(false);
+                        searchdate1.setSelected(false);
+                        searchdate2.setSelected(false);
+                        searchdate3.setSelected(false);
+                        searchdate4.setSelected(false);
                         abstractFormInfoList = response.getFormList();
                         successSearch();
                     }
                     else{
                         System.out.println(response.getErrorMessage());
-                        successMessage("No Results found!");
+                        successMessage("Oops! No matching results found.");
                     }
                 } catch (Exception e) {
                     successMessage(e.getMessage());
@@ -2183,6 +2319,32 @@ public class EnterCodeUIController implements Initializable, IScreenController {
         //}
     }
     
+    public void setclosedetails(final GetCloseFormNQuoteDetailsResponse2 response) {
+        System.out.println("Inside SetClose");
+        if (response.getBusinessWithUs() != null)
+        {  closebutton.setDisable(true);
+            Platform.runLater(new Runnable() {
+
+            @Override
+            protected Object clone() throws CloneNotSupportedException {
+                return super.clone(); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            public void run() {
+                System.out.println("Inside SetClose");
+                if ((!CommonValidations.isStringEmpty(response.getBusinessWithUs())) && (response.getBusinessWithUs().contains("Yes") || response.getBusinessWithUs().contains("No"))) {
+                    closecompany.setText(response.getCompany());
+                    closequote.setText("" + response.getQuote());
+                    if (response.getBusinessWithUs() != null && response.getBusinessWithUs().contains("Yes")) {
+                        closeboundedyes.setSelected(true);
+                    } else if (response.getBusinessWithUs() != null && response.getBusinessWithUs().contains("No")) {
+                        closeboundedno.setSelected(false);
+                    }
+                }
+            }
+        });
+    }
+    }
     public void setQuote(final GetCloseFormNQuoteDetailsResponse2 response){
          Platform.runLater(new Runnable() {
                 
@@ -2195,7 +2357,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                 System.out.println("Inside SetQuote");
                  if(response.getQuote1()>0){
                            companyname1.setText(response.getCompanyname1());
-                           quote1.setText(""+response.getQuote());
+                           quote1.setText(""+response.getQuote1());
                                comment1.setText(response.getComment1());
                   }
                  System.out.println("Inside SetQuote1");
@@ -2258,101 +2420,181 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                         for(MailInfo a:mailList){
                            switch(i){
                                case 0: 
+                                   l1.setVisible(true);
+                                   l2.setVisible(true);
+                                   l3.setVisible(true);
+                                   l4.setVisible(true);
                                    l1.setText(a.getSentdDate().toString());
                                    l2.setText(a.getFrom());
                                    l3.setText(a.getSubject());
                                    break;
                                case 1:
+                                   l5.setVisible(true);
+                                   l6.setVisible(true);
+                                   l7.setVisible(true);
+                                   l8.setVisible(true);
                                    l5.setText(a.getSentdDate().toString());
                                    l6.setText(a.getFrom());
                                    l7.setText(a.getSubject());
                                    break;
                                case 2:
+                                   l9.setVisible(true);
+                                   l10.setVisible(true);
+                                   l11.setVisible(true);
+                                   l12.setVisible(true);
                                    l9.setText(a.getSentdDate().toString());
                                    l10.setText(a.getFrom());
                                    l11.setText(a.getSubject());
                                    break;
                                case 3:
+                                   l13.setVisible(true);
+                                   l14.setVisible(true);
+                                   l15.setVisible(true);
+                                   l16.setVisible(true);
                                    l13.setText(a.getSentdDate().toString());
                                    l14.setText(a.getFrom());
                                    l15.setText(a.getSubject());
                                    break;
                                case 4:
+                                   l17.setVisible(true);
+                                   l18.setVisible(true);
+                                   l19.setVisible(true);
+                                   l20.setVisible(true);
                                    l17.setText(a.getSentdDate().toString());
                                    l18.setText(a.getFrom());
                                    l19.setText(a.getSubject());
                                    break;
                                case 5:
+                                   l21.setVisible(true);
+                                   l22.setVisible(true);
+                                   l23.setVisible(true);
+                                   l24.setVisible(true);
                                    l21.setText(a.getSentdDate().toString());
                                    l22.setText(a.getFrom());
                                    l23.setText(a.getSubject());
                                    break;
                                case 6:
+                                   l25.setVisible(true);
+                                   l26.setVisible(true);
+                                   l27.setVisible(true);
+                                   l28.setVisible(true);
                                    l25.setText(a.getSentdDate().toString());
                                    l26.setText(a.getFrom());
                                    l27.setText(a.getSubject());
                                    break;
                                case 7:
+                                   l29.setVisible(true);
+                                   l30.setVisible(true);
+                                   l31.setVisible(true);
+                                   l32.setVisible(true);
                                    l29.setText(a.getSentdDate().toString());
                                    l30.setText(a.getFrom());
                                    l31.setText(a.getSubject());
                                    break;
                                case 8:
+                                   l33.setVisible(true);
+                                   l34.setVisible(true);
+                                   l35.setVisible(true);
+                                   l36.setVisible(true);
                                    l33.setText(a.getSentdDate().toString());
                                    l34.setText(a.getFrom());
                                    l35.setText(a.getSubject());
                                    break;
                                case 9:
+                                   l37.setVisible(true);
+                                   l38.setVisible(true);
+                                   l39.setVisible(true);
+                                   l40.setVisible(true);
                                    l37.setText(a.getSentdDate().toString());
                                    l38.setText(a.getFrom());
                                    l39.setText(a.getSubject());
                                    break;   
                                case 10:
+                                   l41.setVisible(true);
+                                   l42.setVisible(true);
+                                   l43.setVisible(true);
+                                   l44.setVisible(true);
                                    l41.setText(a.getSentdDate().toString());
                                    l42.setText(a.getFrom());
                                    l43.setText(a.getSubject());
                                    break; 
                                case 11:
+                                   l45.setVisible(true);
+                                   l46.setVisible(true);
+                                   l47.setVisible(true);
+                                   l48.setVisible(true);
                                    l45.setText(a.getSentdDate().toString());
                                    l46.setText(a.getFrom());
                                    l47.setText(a.getSubject());
                                    break;      
                                case 12:
+                                   l49.setVisible(true);
+                                   l50.setVisible(true);
+                                   l51.setVisible(true);
+                                   l52.setVisible(true);
                                    l49.setText(a.getSentdDate().toString());
                                    l50.setText(a.getFrom());
                                    l51.setText(a.getSubject());
                                    break;   
                                case 13:
+                                   l53.setVisible(true);
+                                   l54.setVisible(true);
+                                   l55.setVisible(true);
+                                   l56.setVisible(true);
                                    l53.setText(a.getSentdDate().toString());
                                    l54.setText(a.getFrom());
                                    l55.setText(a.getSubject());
                                    break;       
                                case 14:
+                                   l57.setVisible(true);
+                                   l59.setVisible(true);
+                                   l58.setVisible(true);
+                                   l60.setVisible(true);
                                    l57.setText(a.getSentdDate().toString());
                                    l58.setText(a.getFrom());
                                    l59.setText(a.getSubject());
                                    break;
                                case 15:
+                                   l61.setVisible(true);
+                                   l62.setVisible(true);
+                                   l63.setVisible(true);
+                                   l64.setVisible(true);
                                    l61.setText(a.getSentdDate().toString());
                                    l62.setText(a.getFrom());
                                    l63.setText(a.getSubject());
                                    break;    
                                case 16:
+                                   l65.setVisible(true);
+                                   l66.setVisible(true);
+                                   l67.setVisible(true);
+                                   l68.setVisible(true);
                                    l65.setText(a.getSentdDate().toString());
                                    l66.setText(a.getFrom());
                                    l67.setText(a.getSubject());
                                    break;   
                                case 17:
+                                   l69.setVisible(true);
+                                   l70.setVisible(true);
+                                   l71.setVisible(true);
+                                   l72.setVisible(true);
                                    l69.setText(a.getSentdDate().toString());
                                    l70.setText(a.getFrom());
                                    l71.setText(a.getSubject());
                                    break;
                                case 18:
+                                   l73.setVisible(true);
+                                   l74.setVisible(true);
+                                   l75.setVisible(true);
+                                   l76.setVisible(true);
                                    l73.setText(a.getSentdDate().toString());
                                    l74.setText(a.getFrom());
                                    l75.setText(a.getSubject());
                                    break;
                                case 19:
+                                   l77.setVisible(true);
+                                   l78.setVisible(true);
+                                   l79.setVisible(true);
+                                   l80.setVisible(true);
                                    l77.setText(a.getSentdDate().toString());
                                    l78.setText(a.getFrom());
                                    l79.setText(a.getSubject());

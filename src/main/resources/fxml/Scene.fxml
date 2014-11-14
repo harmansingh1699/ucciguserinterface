@@ -38,9 +38,9 @@
          <font>
             <Font name="Times Bold" size="15.0" />
          </font></Label>
-    <Label fx:id="businessname" layoutX="110.0" layoutY="64.0" text="UCCIG Pvt. Ltd.">
+    <Label fx:id="businessname" layoutX="108.0" layoutY="67.0" text="UCCIG Pvt. Ltd.">
          <font>
-            <Font name="Times Bold" size="14.0" />
+            <Font name="Times Bold" size="12.0" />
          </font></Label>
     <Hyperlink fx:id="applicationid" layoutX="176.0" layoutY="35.0" onAction="#openForm" text="UCCIG123456" textFill="#0029ff">
       <font>
