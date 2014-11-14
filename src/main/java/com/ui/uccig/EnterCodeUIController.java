@@ -1406,19 +1406,20 @@ public class EnterCodeUIController implements Initializable, IScreenController {
         byte[] bytes = WriteByteArray.getByteFromFile(f);
            
        req1.setMessage(bytes);
+       req1.setSubject(binding1.getSendDelayedMailSubject());
        String mail ="";
        
        if(binding1.getdemail1()!=null && !binding1.getdemail1().trim().equals("")){
-           mail+=binding1.getdemail1()+",";
+           mail+=binding1.getdemail1();
        }
        if(binding1.getdemail2()!=null && !binding1.getdemail2().trim().equals("")){
-           mail+=binding1.getemail2()+",";
+           mail+=","+binding1.getdemail2();
        }
        if(binding1.getdemail3()!=null && !binding1.getdemail3().trim().equals("")){
-           mail+=binding1.getdemail3()+",";
+           mail+=","+binding1.getdemail3();
        }
        if(binding1.getdemail4()!=null && !binding1.getdemail4().trim().equals("")){
-           mail+=binding1.getdemail4()+",";
+           mail+=","+binding1.getdemail4();
        }
         req1.setRecpients(mail.substring(0, mail.length()));
         req1.setFormId(formId);
