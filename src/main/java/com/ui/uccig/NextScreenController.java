@@ -129,7 +129,6 @@ public class NextScreenController implements Initializable, IScreenController {
     private GridPane c4;
     @FXML
     private GridPane c5;
-    
 
     private XMLGregorianCalendar datefromform;
     private XMLGregorianCalendar date11;
@@ -155,7 +154,7 @@ public class NextScreenController implements Initializable, IScreenController {
     public void setDriverflag(boolean driverflag) {
         this.driverflag = driverflag;
     }
-    
+
     boolean vehicleflag;
     boolean driverflag;
     private String applicationid;
@@ -1719,7 +1718,7 @@ public class NextScreenController implements Initializable, IScreenController {
     @FXML
     public void exit() {
         System.out.println("Exit Called");
-        
+
         for (Node node : client1.getParent().getChildrenUnmodifiable()) {
             System.out.println("Id: " + node.getId());
             if (node instanceof TextField) {
@@ -3274,45 +3273,45 @@ public class NextScreenController implements Initializable, IScreenController {
                 e.printStackTrace();
                 System.out.println("Offset8 " + offset);
                 binding4.setlocationaddress("");
-                    binding4.setlocationage("");
-                    binding4.settotsqfootage("");
-                    binding4.setinsidesqfootage("");
-                    binding4.setnoofstories("");
-                    basement.getSelectionModel().selectFirst();
-                    wallsframe.setSelected(false);
-                    wallsbrick.setSelected(false);
-                    wallshcb.setSelected(false);
-                    wallssteel.setSelected(false);
-                    woodjoist.setSelected(false);
-                    steeldeck.setSelected(false);
-                    roofconcrete.setSelected(false);
-                    binding4.setroofupdated("");
-                    floorsconcrete.setSelected(false);
-                    floorswood.setSelected(false);
-                    fagas.setSelected(false);
-                    faoil.setSelected(false);
-                    heatingelectric.setSelected(false);
-                    heatingother.setSelected(false);
-                    binding4.setheatingupdated("");
-                    electricalbreakers.setSelected(false);
-                    electricalfuses.setSelected(false);
-                    binding4.setelectricalupdated("");
-                    binding4.setnoofamps("");
-                    copper.setSelected(false);
-                    pvc.setSelected(false);
-                    plumbingother.setSelected(false);
-                    binding4.setplumbingupdated("");
-                    sprinklers.setSelected(false);
-                    svccontract.setSelected(false);
-                    hydrant.setSelected(false);
-                    firehall.setSelected(false);
-                    unprotected.setSelected(false);
-                    binding4.setFireProtection("");
-                    alarmsystem.setSelected(false);
-                    centralmonitored.setSelected(false);
-                    windowbars.setSelected(false);
-                    deadbolts.setSelected(false);
-                    fireprotectiondistance.setText("");
+                binding4.setlocationage("");
+                binding4.settotsqfootage("");
+                binding4.setinsidesqfootage("");
+                binding4.setnoofstories("");
+                basement.getSelectionModel().selectFirst();
+                wallsframe.setSelected(false);
+                wallsbrick.setSelected(false);
+                wallshcb.setSelected(false);
+                wallssteel.setSelected(false);
+                woodjoist.setSelected(false);
+                steeldeck.setSelected(false);
+                roofconcrete.setSelected(false);
+                binding4.setroofupdated("");
+                floorsconcrete.setSelected(false);
+                floorswood.setSelected(false);
+                fagas.setSelected(false);
+                faoil.setSelected(false);
+                heatingelectric.setSelected(false);
+                heatingother.setSelected(false);
+                binding4.setheatingupdated("");
+                electricalbreakers.setSelected(false);
+                electricalfuses.setSelected(false);
+                binding4.setelectricalupdated("");
+                binding4.setnoofamps("");
+                copper.setSelected(false);
+                pvc.setSelected(false);
+                plumbingother.setSelected(false);
+                binding4.setplumbingupdated("");
+                sprinklers.setSelected(false);
+                svccontract.setSelected(false);
+                hydrant.setSelected(false);
+                firehall.setSelected(false);
+                unprotected.setSelected(false);
+                binding4.setFireProtection("");
+                alarmsystem.setSelected(false);
+                centralmonitored.setSelected(false);
+                windowbars.setSelected(false);
+                deadbolts.setSelected(false);
+                fireprotectiondistance.setText("");
                 System.out.println(binding4.getlocationaddress());
             }
         }
@@ -4049,368 +4048,368 @@ public class NextScreenController implements Initializable, IScreenController {
                 }
             } catch (Exception e) {
                 System.out.println("Offset12 " + offset);
-               if(binding4.getlocationaddress()!=null&& binding4.getlocationaddress().trim().length()>0) 
-               {AddAnotherInfo obj = new AddAnotherInfo();
+                if (binding4.getlocationaddress() != null && binding4.getlocationaddress().trim().length() > 0) {
+                    AddAnotherInfo obj = new AddAnotherInfo();
 
-                obj.setAddress1(binding4.getlocationaddress());
+                    obj.setAddress1(binding4.getlocationaddress());
 
-                if (!CommonValidations.isStringEmpty(binding4.getbuildinglimit())) {
-                    obj.setBuildingLimit1(Double.parseDouble(binding4.getbuildinglimit()));
-                }
-                if (!CommonValidations.isStringEmpty(binding4.getbuildingdeductible())) {
-                    obj.setBuildingDeductible1(Double.parseDouble(binding4.getbuildingdeductible()));
-                }
-                if (!CommonValidations.isStringEmpty(binding4.getcontentslimit())) {
-                    obj.setContentsLimit1(Double.parseDouble(binding4.getcontentslimit()));
-                }
-                if (!CommonValidations.isStringEmpty(binding4.getcontentsdeductible())) {
-                    obj.setContentsDeductible1(Double.parseDouble(binding4.getcontentsdeductible()));
-                }
-                if (!CommonValidations.isStringEmpty(binding4.getstocklimit())) {
-                    obj.setStockLimit1(Double.parseDouble(binding4.getstocklimit()));
-                }
-                if (!CommonValidations.isStringEmpty(binding4.getstockdeductible())) {
-                    obj.setStockDeductible1(Double.parseDouble(binding4.getstockdeductible()));
-                }
-                if (!CommonValidations.isStringEmpty(binding4.getofficelimit())) {
-                    obj.setOfficeContentLimit1(Double.parseDouble(binding4.getofficelimit()));
-                }
-                if (!CommonValidations.isStringEmpty(binding4.getofficedeductible())) {
-                    obj.setOfficeContentDeductible1(Double.parseDouble(binding4.getofficedeductible()));
-                }
-                if (!CommonValidations.isStringEmpty(binding4.getedplimit())) {
-                    obj.setEdpLimit1(Double.parseDouble(binding4.getedplimit()));
-                }
-                if (!CommonValidations.isStringEmpty(binding4.getedpdeductible())) {
-                    obj.setEdpDeductible1(Double.parseDouble(binding4.getedpdeductible()));
-                }
-                if (!CommonValidations.isStringEmpty(binding4.getequipmentlimit())) {
-                    obj.setEquipmentLimit1(Double.parseDouble(binding4.getequipmentlimit()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getbuildinglimit())) {
+                        obj.setBuildingLimit1(Double.parseDouble(binding4.getbuildinglimit()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding4.getbuildingdeductible())) {
+                        obj.setBuildingDeductible1(Double.parseDouble(binding4.getbuildingdeductible()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding4.getcontentslimit())) {
+                        obj.setContentsLimit1(Double.parseDouble(binding4.getcontentslimit()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding4.getcontentsdeductible())) {
+                        obj.setContentsDeductible1(Double.parseDouble(binding4.getcontentsdeductible()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding4.getstocklimit())) {
+                        obj.setStockLimit1(Double.parseDouble(binding4.getstocklimit()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding4.getstockdeductible())) {
+                        obj.setStockDeductible1(Double.parseDouble(binding4.getstockdeductible()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding4.getofficelimit())) {
+                        obj.setOfficeContentLimit1(Double.parseDouble(binding4.getofficelimit()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding4.getofficedeductible())) {
+                        obj.setOfficeContentDeductible1(Double.parseDouble(binding4.getofficedeductible()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding4.getedplimit())) {
+                        obj.setEdpLimit1(Double.parseDouble(binding4.getedplimit()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding4.getedpdeductible())) {
+                        obj.setEdpDeductible1(Double.parseDouble(binding4.getedpdeductible()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding4.getequipmentlimit())) {
+                        obj.setEquipmentLimit1(Double.parseDouble(binding4.getequipmentlimit()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getequipmentdeductible())) {
-                    obj.setEquipmentDeductible1(Double.parseDouble(binding4.getequipmentdeductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getequipmentdeductible())) {
+                        obj.setEquipmentDeductible1(Double.parseDouble(binding4.getequipmentdeductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getoffpremiseslimit())) {
-                    obj.setOffPremisesLimit1(Double.parseDouble(binding4.getoffpremiseslimit()));
-                }
-                if (!CommonValidations.isStringEmpty(binding4.getoffpremisesdeductible())) {
-                    obj.setOffPremisesDeductible1(Double.parseDouble(binding4.getoffpremisesdeductible()));
-                }
-                if (!CommonValidations.isStringEmpty(binding4.gettransitlimit())) {
-                    obj.setTransitLimit1(Double.parseDouble(binding4.gettransitlimit()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getoffpremiseslimit())) {
+                        obj.setOffPremisesLimit1(Double.parseDouble(binding4.getoffpremiseslimit()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding4.getoffpremisesdeductible())) {
+                        obj.setOffPremisesDeductible1(Double.parseDouble(binding4.getoffpremisesdeductible()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding4.gettransitlimit())) {
+                        obj.setTransitLimit1(Double.parseDouble(binding4.gettransitlimit()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.gettransitdeductible())) {
-                    obj.setTransitDeductible1(Double.parseDouble(binding4.gettransitdeductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.gettransitdeductible())) {
+                        obj.setTransitDeductible1(Double.parseDouble(binding4.gettransitdeductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getmiscpropertylimit())) {
-                    obj.setMiscPropertyLimit1(Double.parseDouble(binding4.getmiscpropertylimit()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getmiscpropertylimit())) {
+                        obj.setMiscPropertyLimit1(Double.parseDouble(binding4.getmiscpropertylimit()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getmiscpropertydeductible())) {
-                    obj.setMiscPropertyDeductible1(Double.parseDouble(binding4.getmiscpropertydeductible()));
-                }
-                if (!CommonValidations.isStringEmpty(binding4.getcontractorsequipmentlimit())) {
-                    obj.setContractorEquipmentLimit1(Double.parseDouble(binding4.getcontractorsequipmentlimit()));
-                }
-                if (!CommonValidations.isStringEmpty(binding4.getcontractorsequipmentdeductible())) {
-                    obj.setContractorEquipmentDeductible1(Double.parseDouble(binding4.getcontractorsequipmentdeductible()));
-                }
-                if (!CommonValidations.isStringEmpty(binding4.getinstallationfloatorlimit())) {
-                    obj.setInstallationFloaterLimit1(Double.parseDouble(binding4.getinstallationfloatorlimit()));
-                }
-                if (!CommonValidations.isStringEmpty(binding4.getinstallationfloatordeductible())) {
-                    obj.setInstallationFloaterDeductible1(Double.parseDouble(binding4.getinstallationfloatordeductible()));
-                }
-                if (!CommonValidations.isStringEmpty(binding4.gettoolfloatorlimit())) {
-                    obj.setToolFloaterLimit1(Double.parseDouble(binding4.gettoolfloatorlimit()));
-                }
-                if (!CommonValidations.isStringEmpty(binding4.gettoolfloatordeductible())) {
-                    obj.setToolFloaterDeductible1(Double.parseDouble(binding4.gettoolfloatordeductible()));
-                }
-                if (!CommonValidations.isStringEmpty(binding4.getsignfloatorlimit())) {
-                    obj.setSignFloaterLimit1(Double.parseDouble(binding4.getsignfloatorlimit()));
-                }
-                if (!CommonValidations.isStringEmpty(binding4.getsignfloatordeductible())) {
-                    obj.setSignFloaterDeductible1(Double.parseDouble(binding4.getsignfloatordeductible()));
-                }
-                if (!CommonValidations.isStringEmpty(binding4.getmotortruckcargolimit())) {
-                    obj.setMotorTruckLimit1(Double.parseDouble(binding4.getmotortruckcargolimit()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getmiscpropertydeductible())) {
+                        obj.setMiscPropertyDeductible1(Double.parseDouble(binding4.getmiscpropertydeductible()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding4.getcontractorsequipmentlimit())) {
+                        obj.setContractorEquipmentLimit1(Double.parseDouble(binding4.getcontractorsequipmentlimit()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding4.getcontractorsequipmentdeductible())) {
+                        obj.setContractorEquipmentDeductible1(Double.parseDouble(binding4.getcontractorsequipmentdeductible()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding4.getinstallationfloatorlimit())) {
+                        obj.setInstallationFloaterLimit1(Double.parseDouble(binding4.getinstallationfloatorlimit()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding4.getinstallationfloatordeductible())) {
+                        obj.setInstallationFloaterDeductible1(Double.parseDouble(binding4.getinstallationfloatordeductible()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding4.gettoolfloatorlimit())) {
+                        obj.setToolFloaterLimit1(Double.parseDouble(binding4.gettoolfloatorlimit()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding4.gettoolfloatordeductible())) {
+                        obj.setToolFloaterDeductible1(Double.parseDouble(binding4.gettoolfloatordeductible()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding4.getsignfloatorlimit())) {
+                        obj.setSignFloaterLimit1(Double.parseDouble(binding4.getsignfloatorlimit()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding4.getsignfloatordeductible())) {
+                        obj.setSignFloaterDeductible1(Double.parseDouble(binding4.getsignfloatordeductible()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding4.getmotortruckcargolimit())) {
+                        obj.setMotorTruckLimit1(Double.parseDouble(binding4.getmotortruckcargolimit()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getmotortruckcargodeductible())) {
-                    obj.setMotorTruckDeductible1(Double.parseDouble(binding4.getmotortruckcargodeductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getmotortruckcargodeductible())) {
+                        obj.setMotorTruckDeductible1(Double.parseDouble(binding4.getmotortruckcargodeductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getglasslimit())) {
-                    obj.setGlassLimit1(Double.parseDouble(binding4.getglasslimit()));
-                }
-                if (!CommonValidations.isStringEmpty(binding4.getglassdeductible())) {
-                    obj.setGlassDeductible1(Double.parseDouble(binding4.getglassdeductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getglasslimit())) {
+                        obj.setGlassLimit1(Double.parseDouble(binding4.getglasslimit()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding4.getglassdeductible())) {
+                        obj.setGlassDeductible1(Double.parseDouble(binding4.getglassdeductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getsewerblackupdeductible())) {
-                    obj.setSewerBackupDeductible1(Double.parseDouble(binding4.getsewerblackupdeductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getsewerblackupdeductible())) {
+                        obj.setSewerBackupDeductible1(Double.parseDouble(binding4.getsewerblackupdeductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getflooddeductible())) {
-                    obj.setFloodDeductible1(Double.parseDouble(binding4.getflooddeductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getflooddeductible())) {
+                        obj.setFloodDeductible1(Double.parseDouble(binding4.getflooddeductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getearthquakedeductible())) {
-                    obj.setEarthquakeDeductible1(Double.parseDouble(binding4.getearthquakedeductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getearthquakedeductible())) {
+                        obj.setEarthquakeDeductible1(Double.parseDouble(binding4.getearthquakedeductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getprofitslimit())) {
-                    obj.setProfitLimit1(Double.parseDouble(binding4.getprofitslimit()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getprofitslimit())) {
+                        obj.setProfitLimit1(Double.parseDouble(binding4.getprofitslimit()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getprofitsdeductible())) {
-                    obj.setProfitDeductible1(Double.parseDouble(binding4.getprofitsdeductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getprofitsdeductible())) {
+                        obj.setProfitDeductible1(Double.parseDouble(binding4.getprofitsdeductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getgrossearningslimit())) {
-                    obj.setGrossEarningLimit1(Double.parseDouble(binding4.getgrossearningslimit()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getgrossearningslimit())) {
+                        obj.setGrossEarningLimit1(Double.parseDouble(binding4.getgrossearningslimit()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getgrossearningsdeductible())) {
-                    obj.setGrossEarningDeductible1(Double.parseDouble(binding4.getgrossearningsdeductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getgrossearningsdeductible())) {
+                        obj.setGrossEarningDeductible1(Double.parseDouble(binding4.getgrossearningsdeductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getrentalincomelimit())) {
-                    obj.setRentalIncomeLimit1(Double.parseDouble(binding4.getrentalincomelimit()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getrentalincomelimit())) {
+                        obj.setRentalIncomeLimit1(Double.parseDouble(binding4.getrentalincomelimit()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getrentalincomedeductible())) {
-                    obj.setRentalIncomeDeductible1(Double.parseDouble(binding4.getrentalincomedeductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getrentalincomedeductible())) {
+                        obj.setRentalIncomeDeductible1(Double.parseDouble(binding4.getrentalincomedeductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getextraexpenselimit())) {
-                    obj.setExtraExpenseLimit1(Double.parseDouble(binding4.getextraexpenselimit()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getextraexpenselimit())) {
+                        obj.setExtraExpenseLimit1(Double.parseDouble(binding4.getextraexpenselimit()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getextraexpensedeductible())) {
-                    obj.setExtraExpenseDeductible1(Double.parseDouble(binding4.getextraexpensedeductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getextraexpensedeductible())) {
+                        obj.setExtraExpenseDeductible1(Double.parseDouble(binding4.getextraexpensedeductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getoffpremisespowerlimit())) {
-                    obj.setOffPremisesPowerLimit1(Double.parseDouble(binding4.getoffpremisespowerlimit()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getoffpremisespowerlimit())) {
+                        obj.setOffPremisesPowerLimit1(Double.parseDouble(binding4.getoffpremisespowerlimit()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getoffpremisespowerdeductible())) {
-                    obj.setOffPremisesPowerDeductible1(Double.parseDouble(binding4.getoffpremisespowerdeductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getoffpremisespowerdeductible())) {
+                        obj.setOffPremisesPowerDeductible1(Double.parseDouble(binding4.getoffpremisespowerdeductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getinsideoutsidelimit())) {
-                    obj.setInsideOutsideLimit1(Double.parseDouble(binding4.getinsideoutsidelimit()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getinsideoutsidelimit())) {
+                        obj.setInsideOutsideLimit1(Double.parseDouble(binding4.getinsideoutsidelimit()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getinsideoutsidedeductible())) {
-                    obj.setInsideOutsideDeductible1(Double.parseDouble(binding4.getinsideoutsidedeductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getinsideoutsidedeductible())) {
+                        obj.setInsideOutsideDeductible1(Double.parseDouble(binding4.getinsideoutsidedeductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getbfmoneylimit())) {
-                    obj.setBfMoneyLimit1(Double.parseDouble(binding4.getbfmoneylimit()));
-                }
-                if (!CommonValidations.isStringEmpty(binding4.getbfmoneydeductible())) {
-                    obj.setBfMoneyDeductible1(Double.parseDouble(binding4.getbfmoneydeductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getbfmoneylimit())) {
+                        obj.setBfMoneyLimit1(Double.parseDouble(binding4.getbfmoneylimit()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding4.getbfmoneydeductible())) {
+                        obj.setBfMoneyDeductible1(Double.parseDouble(binding4.getbfmoneydeductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getforgerylimit())) {
-                    obj.setDeopistorForgeryLimit1(Double.parseDouble(binding4.getforgerylimit()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getforgerylimit())) {
+                        obj.setDeopistorForgeryLimit1(Double.parseDouble(binding4.getforgerylimit()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getforgerydeductible())) {
-                    obj.setDeopistorForgeryDeductible1(Double.parseDouble(binding4.getforgerydeductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getforgerydeductible())) {
+                        obj.setDeopistorForgeryDeductible1(Double.parseDouble(binding4.getforgerydeductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getmoneyorderslimit())) {
-                    obj.setMoneyOrdersLimit1(Double.parseDouble(binding4.getmoneyorderslimit()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getmoneyorderslimit())) {
+                        obj.setMoneyOrdersLimit1(Double.parseDouble(binding4.getmoneyorderslimit()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getmoneyordersdeductible())) {
-                    obj.setMoneyOrdersDeductible1(Double.parseDouble(binding4.getmoneyordersdeductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getmoneyordersdeductible())) {
+                        obj.setMoneyOrdersDeductible1(Double.parseDouble(binding4.getmoneyordersdeductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getdishonestylimit())) {
-                    obj.setEmployDishonestyLimit1(Double.parseDouble(binding4.getdishonestylimit()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getdishonestylimit())) {
+                        obj.setEmployDishonestyLimit1(Double.parseDouble(binding4.getdishonestylimit()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getdishonestydeductible())) {
-                    obj.setEmployDishonestyDeductible1(Double.parseDouble(binding4.getdishonestydeductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getdishonestydeductible())) {
+                        obj.setEmployDishonestyDeductible1(Double.parseDouble(binding4.getdishonestydeductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getcgllimit())) {
-                    obj.setCglLimit1(Double.parseDouble(binding4.getcgllimit()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getcgllimit())) {
+                        obj.setCglLimit1(Double.parseDouble(binding4.getcgllimit()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getcgldeductible())) {
-                    obj.setCglDeductible1(Double.parseDouble(binding4.getcgldeductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getcgldeductible())) {
+                        obj.setCglDeductible1(Double.parseDouble(binding4.getcgldeductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.gettenantslimit())) {
-                    obj.setTenantsLegalLimit1(Double.parseDouble(binding4.gettenantslimit()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.gettenantslimit())) {
+                        obj.setTenantsLegalLimit1(Double.parseDouble(binding4.gettenantslimit()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.gettenantsdeductible())) {
-                    obj.setTenantsLegalDeductible1(Double.parseDouble(binding4.gettenantsdeductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.gettenantsdeductible())) {
+                        obj.setTenantsLegalDeductible1(Double.parseDouble(binding4.gettenantsdeductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getnonownedlimit())) {
-                    obj.setNonOwnedAutoLimit1(Double.parseDouble(binding4.getnonownedlimit()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getnonownedlimit())) {
+                        obj.setNonOwnedAutoLimit1(Double.parseDouble(binding4.getnonownedlimit()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getnonowneddeductible())) {
-                    obj.setNonOwnedAutoDeductible1(Double.parseDouble(binding4.getnonowneddeductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getnonowneddeductible())) {
+                        obj.setNonOwnedAutoDeductible1(Double.parseDouble(binding4.getnonowneddeductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getsef96limit())) {
-                    obj.setSef96Limit1(Double.parseDouble(binding4.getsef96limit()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getsef96limit())) {
+                        obj.setSef96Limit1(Double.parseDouble(binding4.getsef96limit()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getsef94deductible())) {
-                    obj.setSef96Deductible1(Double.parseDouble(binding4.getsef96deductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getsef94deductible())) {
+                        obj.setSef96Deductible1(Double.parseDouble(binding4.getsef96deductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getsef94limit())) {
-                    obj.setSef94Limit1(Double.parseDouble(binding4.getsef94limit()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getsef94limit())) {
+                        obj.setSef94Limit1(Double.parseDouble(binding4.getsef94limit()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getsef94deductible())) {
-                    obj.setSef94Deductible1(Double.parseDouble(binding4.getsef94deductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getsef94deductible())) {
+                        obj.setSef94Deductible1(Double.parseDouble(binding4.getsef94deductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getdandlimit())) {
-                    obj.setDoLimit1(Double.parseDouble(binding4.getdandlimit()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getdandlimit())) {
+                        obj.setDoLimit1(Double.parseDouble(binding4.getdandlimit()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getdanddeductible())) {
-                    obj.setDoDeductible1(Double.parseDouble(binding4.getdanddeductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getdanddeductible())) {
+                        obj.setDoDeductible1(Double.parseDouble(binding4.getdanddeductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.geteandlimit())) {
-                    obj.setEoLimit1(Double.parseDouble(binding4.geteandlimit()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.geteandlimit())) {
+                        obj.setEoLimit1(Double.parseDouble(binding4.geteandlimit()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.geteanddeductible())) {
-                    obj.setEoDeductible1(Double.parseDouble(binding4.geteanddeductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.geteanddeductible())) {
+                        obj.setEoDeductible1(Double.parseDouble(binding4.geteanddeductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getemployerslimit())) {
-                    obj.setEmployerLimit1(Double.parseDouble(binding4.getemployerslimit()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getemployerslimit())) {
+                        obj.setEmployerLimit1(Double.parseDouble(binding4.getemployerslimit()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getemployersdeductible())) {
-                    obj.setEmployerDeductible1(Double.parseDouble(binding4.getemployersdeductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getemployersdeductible())) {
+                        obj.setEmployerDeductible1(Double.parseDouble(binding4.getemployersdeductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getumbrellalimit())) {
-                    obj.setUmbrellaLimit1(Double.parseDouble(binding4.getumbrellalimit()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getumbrellalimit())) {
+                        obj.setUmbrellaLimit1(Double.parseDouble(binding4.getumbrellalimit()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getumbrelladeductible())) {
-                    obj.setUmbrellaDeductible1(Double.parseDouble(binding4.getumbrelladeductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getumbrelladeductible())) {
+                        obj.setUmbrellaDeductible1(Double.parseDouble(binding4.getumbrelladeductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getwrapuplimit())) {
-                    obj.setWrapUpLimit1(Double.parseDouble(binding4.getwrapuplimit()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getwrapuplimit())) {
+                        obj.setWrapUpLimit1(Double.parseDouble(binding4.getwrapuplimit()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getwrapupdeductible())) {
-                    obj.setWrapUpDeductible1(Double.parseDouble(binding4.getwrapupdeductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getwrapupdeductible())) {
+                        obj.setWrapUpDeductible1(Double.parseDouble(binding4.getwrapupdeductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getstdlimit())) {
-                    obj.setStdComprehensiveLimit1(Double.parseDouble(binding4.getstdlimit()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getstdlimit())) {
+                        obj.setStdComprehensiveLimit1(Double.parseDouble(binding4.getstdlimit()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getstddeductible())) {
-                    obj.setStdComprehensiveDeductible1(Double.parseDouble(binding4.getstddeductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getstddeductible())) {
+                        obj.setStdComprehensiveDeductible1(Double.parseDouble(binding4.getstddeductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getaclimit())) {
-                    obj.setAirConditioningLimit1(Double.parseDouble(binding4.getaclimit()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getaclimit())) {
+                        obj.setAirConditioningLimit1(Double.parseDouble(binding4.getaclimit()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getacdeductible())) {
-                    obj.setAirConditioningDeductible1(Double.parseDouble(binding4.getacdeductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getacdeductible())) {
+                        obj.setAirConditioningDeductible1(Double.parseDouble(binding4.getacdeductible()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getproductionmachinerylimit())) {
-                    obj.setProductionMachineryLimit1(Double.parseDouble(binding4.getproductionmachinerylimit()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getproductionmachinerylimit())) {
+                        obj.setProductionMachineryLimit1(Double.parseDouble(binding4.getproductionmachinerylimit()));
+                    }
 
-                if (!CommonValidations.isStringEmpty(binding4.getproductionmachinerydeductible())) {
-                    obj.setProductionMachineryDeductible1(Double.parseDouble(binding4.getproductionmachinerydeductible()));
-                }
+                    if (!CommonValidations.isStringEmpty(binding4.getproductionmachinerydeductible())) {
+                        obj.setProductionMachineryDeductible1(Double.parseDouble(binding4.getproductionmachinerydeductible()));
+                    }
 
-                obj.setOthercoverage11(binding4.getothercoverage1());
-                obj.setOthercoverage21(binding4.getothercoverage2());
-                if (binding4.getothercoverage1limit() != null && !(binding4.getothercoverage1limit().trim().equals(""))) {
-                    obj.setOtherCoverageLimit11(Double.parseDouble(binding4.getothercoverage1limit()));
-                }
-                if (binding4.getothercoverage1deductible() != null && !(binding4.getothercoverage1deductible().trim().equals(""))) {
-                    obj.setOtherCoverageDeductible11(Double.parseDouble(binding4.getothercoverage1deductible()));
-                }
-                if (binding4.getothercoverage2limit() != null && !(binding4.getothercoverage2limit().trim().equals(""))) {
-                    obj.setOtherCoverageLimit21(Double.parseDouble(binding4.getothercoverage2limit()));
-                }
-                if (binding4.getothercoverage2deductible() != null && !(binding4.getothercoverage2deductible().trim().equals(""))) {
-                    obj.setOtherCoverageDeductible21(Double.parseDouble(binding4.getothercoverage2deductible()));
-                }
-                obj.setAdditionalCoverage1(binding4.getadditionalcoverage());
-                obj.setRoofupdated1(binding4.getroofupdated());
-                obj.setHeatingupdated1(binding4.getheatingupdated());
-                obj.setElectricalupdated1(binding4.getelectricalupdated());
-                obj.setElectricalamps1(binding4.getnoofamps());
-                obj.setFireProtectiondistance1(binding4.getdistance());
-                obj.setAddress1(binding4.getlocationaddress());
-                obj.setBasement1(binding4.getbasement());
-                obj.setOwner11(binding4.getmotortruckcargoowner());
-                obj.setTruckMan1(binding4.getmotortruckcargotruckman());
-                obj.setGrossEarning801(binding4.getgecheckbox());
-                obj.setWallsframe1(binding4.getwallsframe());
-                obj.setWallshcb1(binding4.getwallshcb());
-                obj.setWallssteel1(binding4.getwallssteel());
-                obj.setWallsbrick1(binding4.getwallsbrick());
-                obj.setRoofwood1(binding4.getwoodjoist());
-                obj.setRoofsteel1(binding4.getsteeldeck());
-                obj.setRoofconcrete1(binding4.getroofconcrete());
-                obj.setFloorsconcrete1(binding4.getfloorsconcrete());
-                obj.setFloorswood1(binding4.getfloorswood());
-                obj.setHeatinggas1(binding4.getfagas());
-                obj.setHeatingoil1(binding4.getfaoil());
-                obj.setHeatingelectric1(binding4.getheatingelectric());
-                obj.setHeatingother1(binding4.getheatingother());
-                obj.setElectricalbreakers1(binding4.getelectricalbreakers());
-                obj.setElectricalfuses1(binding4.getelectricalfuses());
-                obj.setElectricalamps1(binding4.getnoofamps());
-                obj.setPlumbingcopper1(binding4.getcopper());
-                obj.setPlumbingpvc1(binding4.getpvc());
-                obj.setPlumbingother1(binding4.getplumbingother());
-                obj.setPlumbingupdated1(binding4.getplumbingupdated());
-                obj.setFireProtection1(binding4.getFireProtection());
-                obj.setSecurity1(binding4.getSecurity());
+                    obj.setOthercoverage11(binding4.getothercoverage1());
+                    obj.setOthercoverage21(binding4.getothercoverage2());
+                    if (binding4.getothercoverage1limit() != null && !(binding4.getothercoverage1limit().trim().equals(""))) {
+                        obj.setOtherCoverageLimit11(Double.parseDouble(binding4.getothercoverage1limit()));
+                    }
+                    if (binding4.getothercoverage1deductible() != null && !(binding4.getothercoverage1deductible().trim().equals(""))) {
+                        obj.setOtherCoverageDeductible11(Double.parseDouble(binding4.getothercoverage1deductible()));
+                    }
+                    if (binding4.getothercoverage2limit() != null && !(binding4.getothercoverage2limit().trim().equals(""))) {
+                        obj.setOtherCoverageLimit21(Double.parseDouble(binding4.getothercoverage2limit()));
+                    }
+                    if (binding4.getothercoverage2deductible() != null && !(binding4.getothercoverage2deductible().trim().equals(""))) {
+                        obj.setOtherCoverageDeductible21(Double.parseDouble(binding4.getothercoverage2deductible()));
+                    }
+                    obj.setAdditionalCoverage1(binding4.getadditionalcoverage());
+                    obj.setRoofupdated1(binding4.getroofupdated());
+                    obj.setHeatingupdated1(binding4.getheatingupdated());
+                    obj.setElectricalupdated1(binding4.getelectricalupdated());
+                    obj.setElectricalamps1(binding4.getnoofamps());
+                    obj.setFireProtectiondistance1(binding4.getdistance());
+                    obj.setAddress1(binding4.getlocationaddress());
+                    obj.setBasement1(binding4.getbasement());
+                    obj.setOwner11(binding4.getmotortruckcargoowner());
+                    obj.setTruckMan1(binding4.getmotortruckcargotruckman());
+                    obj.setGrossEarning801(binding4.getgecheckbox());
+                    obj.setWallsframe1(binding4.getwallsframe());
+                    obj.setWallshcb1(binding4.getwallshcb());
+                    obj.setWallssteel1(binding4.getwallssteel());
+                    obj.setWallsbrick1(binding4.getwallsbrick());
+                    obj.setRoofwood1(binding4.getwoodjoist());
+                    obj.setRoofsteel1(binding4.getsteeldeck());
+                    obj.setRoofconcrete1(binding4.getroofconcrete());
+                    obj.setFloorsconcrete1(binding4.getfloorsconcrete());
+                    obj.setFloorswood1(binding4.getfloorswood());
+                    obj.setHeatinggas1(binding4.getfagas());
+                    obj.setHeatingoil1(binding4.getfaoil());
+                    obj.setHeatingelectric1(binding4.getheatingelectric());
+                    obj.setHeatingother1(binding4.getheatingother());
+                    obj.setElectricalbreakers1(binding4.getelectricalbreakers());
+                    obj.setElectricalfuses1(binding4.getelectricalfuses());
+                    obj.setElectricalamps1(binding4.getnoofamps());
+                    obj.setPlumbingcopper1(binding4.getcopper());
+                    obj.setPlumbingpvc1(binding4.getpvc());
+                    obj.setPlumbingother1(binding4.getplumbingother());
+                    obj.setPlumbingupdated1(binding4.getplumbingupdated());
+                    obj.setFireProtection1(binding4.getFireProtection());
+                    obj.setSecurity1(binding4.getSecurity());
 
-                if (!CommonValidations.isStringEmpty(binding4.getlocationage())) {
-                    obj.setAge1(Integer.parseInt(binding4.getlocationage()));
+                    if (!CommonValidations.isStringEmpty(binding4.getlocationage())) {
+                        obj.setAge1(Integer.parseInt(binding4.getlocationage()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding4.gettotsqfootage())) {
+                        obj.setTotalSqFootage1(Double.parseDouble(binding4.gettotsqfootage()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding4.getinsidesqfootage())) {
+                        obj.setInsdSqFootage1(Double.parseDouble(binding4.getinsidesqfootage()));
+                    }
+                    if (!CommonValidations.isStringEmpty(binding4.getnoofstories())) {
+                        obj.setNoOfStories1(Integer.parseInt(binding4.getnoofstories()));
+                    }
+                    listAddInfo.add(obj);
                 }
-                if (!CommonValidations.isStringEmpty(binding4.gettotsqfootage())) {
-                    obj.setTotalSqFootage1(Double.parseDouble(binding4.gettotsqfootage()));
-                }
-                if (!CommonValidations.isStringEmpty(binding4.getinsidesqfootage())) {
-                    obj.setInsdSqFootage1(Double.parseDouble(binding4.getinsidesqfootage()));
-                }
-                if (!CommonValidations.isStringEmpty(binding4.getnoofstories())) {
-                    obj.setNoOfStories1(Integer.parseInt(binding4.getnoofstories()));
-                }
-                listAddInfo.add(obj);
-               }
             }
-            System.out.println("Size of list in previous"+listAddInfo.size());
+            System.out.println("Size of list in previous" + listAddInfo.size());
             offset--;
             if (offset <= 0) {
                 offset = 0;
@@ -4838,45 +4837,45 @@ public class NextScreenController implements Initializable, IScreenController {
             } catch (Exception e) {
                 System.out.println("Offset16 " + offset);
                 binding4.setlocationaddress("");
-                    binding4.setlocationage("");
-                    binding4.settotsqfootage("");
-                    binding4.setinsidesqfootage("");
-                    binding4.setnoofstories("");
-                    basement.getSelectionModel().selectFirst();
-                    wallsframe.setSelected(false);
-                    wallsbrick.setSelected(false);
-                    wallshcb.setSelected(false);
-                    wallssteel.setSelected(false);
-                    woodjoist.setSelected(false);
-                    steeldeck.setSelected(false);
-                    roofconcrete.setSelected(false);
-                    binding4.setroofupdated("");
-                    floorsconcrete.setSelected(false);
-                    floorswood.setSelected(false);
-                    fagas.setSelected(false);
-                    faoil.setSelected(false);
-                    heatingelectric.setSelected(false);
-                    heatingother.setSelected(false);
-                    binding4.setheatingupdated("");
-                    electricalbreakers.setSelected(false);
-                    electricalfuses.setSelected(false);
-                    binding4.setelectricalupdated("");
-                    binding4.setnoofamps("");
-                    copper.setSelected(false);
-                    pvc.setSelected(false);
-                    plumbingother.setSelected(false);
-                    binding4.setplumbingupdated("");
-                    sprinklers.setSelected(false);
-                    svccontract.setSelected(false);
-                    hydrant.setSelected(false);
-                    firehall.setSelected(false);
-                    unprotected.setSelected(false);
-                    binding4.setFireProtection("");
-                    alarmsystem.setSelected(false);
-                    centralmonitored.setSelected(false);
-                    windowbars.setSelected(false);
-                    deadbolts.setSelected(false);
-                    fireprotectiondistance.setText("");
+                binding4.setlocationage("");
+                binding4.settotsqfootage("");
+                binding4.setinsidesqfootage("");
+                binding4.setnoofstories("");
+                basement.getSelectionModel().selectFirst();
+                wallsframe.setSelected(false);
+                wallsbrick.setSelected(false);
+                wallshcb.setSelected(false);
+                wallssteel.setSelected(false);
+                woodjoist.setSelected(false);
+                steeldeck.setSelected(false);
+                roofconcrete.setSelected(false);
+                binding4.setroofupdated("");
+                floorsconcrete.setSelected(false);
+                floorswood.setSelected(false);
+                fagas.setSelected(false);
+                faoil.setSelected(false);
+                heatingelectric.setSelected(false);
+                heatingother.setSelected(false);
+                binding4.setheatingupdated("");
+                electricalbreakers.setSelected(false);
+                electricalfuses.setSelected(false);
+                binding4.setelectricalupdated("");
+                binding4.setnoofamps("");
+                copper.setSelected(false);
+                pvc.setSelected(false);
+                plumbingother.setSelected(false);
+                binding4.setplumbingupdated("");
+                sprinklers.setSelected(false);
+                svccontract.setSelected(false);
+                hydrant.setSelected(false);
+                firehall.setSelected(false);
+                unprotected.setSelected(false);
+                binding4.setFireProtection("");
+                alarmsystem.setSelected(false);
+                centralmonitored.setSelected(false);
+                windowbars.setSelected(false);
+                deadbolts.setSelected(false);
+                fireprotectiondistance.setText("");
             }
         }
         for (AddAnotherInfo e : listAddInfo) {
@@ -5208,61 +5207,72 @@ public class NextScreenController implements Initializable, IScreenController {
     public void assign(final GetInsuranceFormResponse form) {
         Platform.runLater(new Runnable() {
             public void run() {
-                String downloadfiles="";
+                String downloadfiles = "";
                 applicationid = form.getFormId();
                 file1 = form.getFile1();
                 fileName1 = form.getFile1Name();
                 System.out.println(fileName1);
 
-                if(file1 != null)
-                    downloadfiles +=fileName1;
+                if (file1 != null) {
+                    downloadfiles += fileName1;
+                }
                 System.out.println(downloadfiles);
                 file2 = form.getFile2();
                 fileName2 = form.getFile2Name();
                 System.out.println(fileName2);
-                 if(file2 != null)
-                    downloadfiles +=", "+fileName2;
-                 System.out.println(downloadfiles);
+                if (file2 != null) {
+                    downloadfiles += ", " + fileName2;
+                }
+                System.out.println(downloadfiles);
                 file3 = form.getFile3();
                 fileName3 = form.getFile3Name();
                 System.out.println(fileName3);
-                 if(file3 != null)
-                    downloadfiles +=", "+fileName3;
-                 System.out.println(downloadfiles);
-                 
+                if (file3 != null) {
+                    downloadfiles += ", " + fileName3;
+                }
+                System.out.println(downloadfiles);
+
                 file4 = form.getFile4();
                 fileName4 = form.getFile4Name();
-                 if(file4 != null)
-                    downloadfiles +=", "+fileName4;
+                if (file4 != null) {
+                    downloadfiles += ", " + fileName4;
+                }
                 file5 = form.getFile5();
                 fileName5 = form.getFile5Name();
-                 if(file5 != null)
-                    downloadfiles +=", "+fileName5;
+                if (file5 != null) {
+                    downloadfiles += ", " + fileName5;
+                }
                 file6 = form.getFile6();
                 fileName6 = form.getFile6Name();
-                 if(file6 != null)
-                    downloadfiles +=", "+fileName6;
+                if (file6 != null) {
+                    downloadfiles += ", " + fileName6;
+                }
                 file7 = form.getFile7();
                 fileName7 = form.getFile7Name();
-                 if(file7 != null)
-                    downloadfiles +=", "+fileName7;
+                if (file7 != null) {
+                    downloadfiles += ", " + fileName7;
+                }
                 file8 = form.getFile8();
                 fileName8 = form.getFile8Name();
-                 if(file8 != null)
-                    downloadfiles +=", "+fileName8;
+                if (file8 != null) {
+                    downloadfiles += ", " + fileName8;
+                }
                 file9 = form.getFile9();
                 fileName9 = form.getFile9Name();
-                 if(file9 != null)
-                    downloadfiles +=", "+fileName9;
+                if (file9 != null) {
+                    downloadfiles += ", " + fileName9;
+                }
                 file10 = form.getFile10();
                 fileName10 = form.getFile10Name();
-                 if(file10 != null)
-                    downloadfiles +=", "+fileName10;
-                 
-                 System.out.println("Final String"+downloadfiles);
-                if(!downloadfiles.trim().equals(""))
-                 downloadlabel.setText(downloadfiles);
-                 
+                if (file10 != null) {
+                    downloadfiles += ", " + fileName10;
+                }
+
+                System.out.println("Final String" + downloadfiles);
+                if (!downloadfiles.trim().equals("")) {
+                    downloadlabel.setText(downloadfiles);
+                }
+
                 System.out.println("Filenames" + fileName1 + fileName2 + fileName3 + fileName4);
 
                 if (form != null) {
@@ -5518,11 +5528,11 @@ public class NextScreenController implements Initializable, IScreenController {
                 returnedname.setText(form.getProducer());
                 returnedbranch.setText(form.getBranch());
                 datefromform = form.getCreationDate();
-                
+
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
                 GregorianCalendar gc = datefromform.toGregorianCalendar();
                 String formatted_date = sdf.format(gc.getTime());
-                
+
                 returneddate.setText(formatted_date);
                 keycontact.setText(form.getKeyContact());
                 keyphone.setText(form.getKeyContactPhone());
@@ -5629,1035 +5639,1028 @@ public class NextScreenController implements Initializable, IScreenController {
                 marketercomments.setText(form.getMarketercomments());
                 //commercial property
                 listAddInfo = new ArrayList<AddAnotherInfo>();
-                offset=0;
-                for(int i=0; i<10;i++)
-                {AddAnotherInfo a = new AddAnotherInfo();
-                     switch (i)
-                        {case 0:
-                                System.out.println("case 0");
-                        if (!CommonValidations.isStringEmpty(form.getAddress())) {
-                            System.out.println("case 0 inside");
-                        a.setBuildingLimit1(form.getBuildingLimit());
-                        a.setBuildingDeductible1(form.getBuildingDeductible());
-                        a.setContentsLimit1(form.getContentsLimit());
-                        a.setContentsDeductible1(form.getContentsDeductible());
-                        a.setStockLimit1(form.getStockLimit());
-                        a.setStockDeductible1(form.getStockDeductible());
-                        a.setOfficeContentLimit1(form.getOfficeContentLimit());
-                        a.setOfficeContentDeductible1(form.getOfficeContentDeductible());
-                        a.setEdpLimit1(form.getEdpLimit());
-                        a.setEdpDeductible1(form.getEdpDeductible());
-                        a.setEquipmentLimit1(form.getEquipmentLimit());
-                        a.setEquipmentDeductible1(form.getEquipmentDeductible());
-                        a.setOffPremisesLimit1(form.getOffPremisesLimit());
-                        a.setOffPremisesDeductible1(form.getOffPremisesDeductible());
-                        a.setTransitLimit1(form.getTransitLimit());
-                        a.setTransitDeductible1(form.getTransitDeductible());
-                        a.setMiscPropertyLimit1(form.getMiscPropertyLimit());
-                        a.setMiscPropertyDeductible1(form.getMiscPropertyDeductible());
-                        a.setContractorEquipmentLimit1(form.getContractorEquipmentLimit());
-                        a.setContractorEquipmentDeductible1(form.getContractorEquipmentDeductible());
-                        a.setInstallationFloaterLimit1(form.getInstallationFloaterLimit());
-                        a.setInstallationFloaterDeductible1(form.getInstallationFloaterDeductible());
-                        a.setToolFloaterLimit1(form.getToolFloaterLimit());                    
-                        a.setToolFloaterDeductible1(form.getToolFloaterDeductible());
-                        a.setSignFloaterLimit1(form.getSignFloaterLimit());
-                        a.setSignFloaterDeductible1(form.getSignFloaterDeductible());
-                        a.setMotorTruckLimit1(form.getMotorTruckLimit());
-                        a.setMotorTruckDeductible1(form.getMotorTruckDeductible());
-                        a.setGlassLimit1(form.getGlassLimit());
-                        a.setGlassDeductible1(form.getGlassDeductible());
-                        a.setSewerBackupDeductible1(form.getSewerBackupDeductible());
-                        a.setFloodDeductible1(form.getFloodDeductible());
-                        a.setEarthquakeDeductible1(form.getEarthquakeDeductible());
-                        a.setProfitLimit1(form.getProfitLimit());
-                        a.setProfitDeductible1(form.getProfitDeductible());
-                        a.setGrossEarningLimit1(form.getGrossEarningLimit());
-                        a.setGrossEarningDeductible1(form.getGrossEarningDeductible());
-                        a.setRentalIncomeLimit1(form.getRentalIncomeLimit());
-                        a.setRentalIncomeDeductible1(form.getRentalIncomeDeductible());
-                        a.setExtraExpenseLimit1(form.getExtraExpenseLimit());
-                        a.setExtraExpenseDeductible1(form.getExtraExpenseDeductible());
-                        a.setOffPremisesPowerLimit1(form.getOffPremisesPowerLimit());
-                        a.setOffPremisesPowerDeductible1(form.getOffPremisesPowerDeductible());
-                        a.setInsideOutsideLimit1(form.getInsideOutsideLimit()); 
-                        a.setInsideOutsideDeductible1(form.getInsideOutsideDeductible());
-                        a.setBfMoneyLimit1(form.getBfMoneyLimit());
-                        a.setBfMoneyDeductible1(form.getBfMoneyDeductible());
-                        a.setDeopistorForgeryLimit1(form.getDeopistorForgeryLimit());
-                        a.setDeopistorForgeryDeductible1(form.getDeopistorForgeryDeductible());
-                        a.setMoneyOrdersLimit1(form.getMoneyOrdersLimit());
-                        a.setMoneyOrdersDeductible1(form.getMoneyOrdersDeductible());
-                        a.setEmployDishonestyLimit1(form.getEmployDishonestyLimit());                    
-                        a.setEmployDishonestyDeductible1(form.getEmployDishonestyDeductible());
-                        a.setCglLimit1(form.getCglLimit());
-                        a.setCglDeductible1(form.getCglDeductible());
-                        a.setTenantsLegalLimit1(form.getTenantsLegalLimit());
-                        a.setTenantsLegalDeductible1(form.getTenantsLegalDeductible());
-                        a.setNonOwnedAutoLimit1(form.getNonOwnedAutoLimit());
-                        a.setNonOwnedAutoDeductible1(form.getNonOwnedAutoDeductible());
-                        a.setSef96Limit1(form.getSef96Limit());
-                        a.setSef96Deductible1(form.getSef96Deductible());
-                        a.setSef94Limit1(form.getSef94Limit());
-                        a.setSef94Deductible1(form.getSef94Deductible());
-                        a.setDoLimit1(form.getDoLimit());
-                        a.setDoDeductible1(form.getDoDeductible());
-                        a.setEoLimit1(form.getEoLimit());
-                        a.setEoDeductible1(form.getEoDeductible());
-                        a.setEmployerLimit1(form.getEmployerLimit());
-                        a.setEmployerDeductible1(form.getEmployerDeductible()); 
-                        a.setUmbrellaLimit1(form.getUmbrellaLimit());
-                        a.setUmbrellaDeductible1(form.getUmbrellaDeductible());
-                        a.setWrapUpLimit1(form.getWrapUpLimit());
-                        a.setWrapUpDeductible1(form.getWrapUpDeductible());
-                        a.setStdComprehensiveLimit1(form.getStdComprehensiveLimit());
-                        a.setStdComprehensiveDeductible1(form.getStdComprehensiveDeductible());
-                        a.setAirConditioningLimit1(form.getAirConditioningLimit());
-                        a.setAirConditioningDeductible1(form.getAirConditioningDeductible());
-                        a.setProductionMachineryLimit1(form.getProductionMachineryLimit());
-                        a.setProductionMachineryDeductible1(form.getProductionMachineryDeductible());
-                    	a.setOthercoverage11(form.getOthercoverage1());
-	                a.setOthercoverage21(form.getOthercoverage2());
-                        a.setOtherCoverageLimit11(form.getOtherCoverageLimit1());
-                        a.setOtherCoverageDeductible11(form.getOtherCoverageDeductible1());
-                        a.setOtherCoverageLimit21(form.getOtherCoverageLimit2());
-                        a.setOtherCoverageDeductible21(form.getOtherCoverageDeductible2());
-    	                a.setAdditionalCoverage1(form.getAdditionalcoverage());
-        	        a.setRoofupdated1(form.getRoofupdated());
-            	        a.setHeatingupdated1(form.getHeatingupdated());
-                	a.setElectricalupdated1(form.getElectricalupdated());
-                    	a.setElectricalamps1(form.getElectricalamps());
-	                a.setFireProtectiondistance1(form.getFireProtectiondistance());
-    	                a.setAddress1(form.getAddress());
-        	        a.setBasement1(form.getBasement());
-            	        a.setOwner11(form.getOwnercb());
-                	a.setTruckMan1(form.getTruckMan());
-                    	a.setGrossEarning801(form.getGrossEarningCheckbox());
-	                a.setWallsframe1(form.getWallsframe());
-    	                a.setWallshcb1(form.getWallshcb());
-	                a.setWallssteel1(form.getWallssteel());
-    	                a.setWallsbrick1(form.getWallsbrick());
-        	        a.setRoofwood1(form.getRoofwood());
-            	        a.setRoofsteel1(form.getRoofsteel());
-                	a.setRoofconcrete1(form.getRoofconcrete());
-                    	a.setFloorsconcrete1(form.getFloorsconcrete());
-	                a.setFloorswood1(form.getFloorswood());
-    	                a.setHeatinggas1(form.getHeatinggas());
-        	        a.setHeatingoil1(form.getHeatingoil());
-            	        a.setHeatingelectric1(form.getHeatingelectric());
-                	a.setHeatingother1(form.getHeatingother());
-                    	a.setElectricalbreakers1(form.getElectricalbreakers());
-	                a.setElectricalfuses1(form.getElectricalfuses());
-        	        a.setPlumbingcopper1(form.getPlumbingcopper());
-            	        a.setPlumbingpvc1(form.getPlumbingpvc());
-                	a.setPlumbingother1(form.getPlumbingother());
-                        a.setPlumbingupdated1(form.getPlumbingupdated());
-                    	a.setFireProtection1(form.getFireProtection());
-	                a.setSecurity1(form.getSecurity());
-                        a.setAge1(form.getAge());
-                        a.setTotalSqFootage1(form.getTotalSqFootage());
-                        a.setInsdSqFootage1(form.getInsdSqFootage());
-                        a.setNoOfStories1(form.getNoOfStories());
-                        listAddInfo.add(a);
-                        }
-                        break;
+                offset = 0;
+                for (int i = 0; i < 10; i++) {
+                    AddAnotherInfo a = new AddAnotherInfo();
+                    switch (i) {
+                        case 0:
+                            System.out.println("case 0");
+                            if (!CommonValidations.isStringEmpty(form.getAddress())) {
+                                System.out.println("case 0 inside");
+                                a.setBuildingLimit1(form.getBuildingLimit());
+                                a.setBuildingDeductible1(form.getBuildingDeductible());
+                                a.setContentsLimit1(form.getContentsLimit());
+                                a.setContentsDeductible1(form.getContentsDeductible());
+                                a.setStockLimit1(form.getStockLimit());
+                                a.setStockDeductible1(form.getStockDeductible());
+                                a.setOfficeContentLimit1(form.getOfficeContentLimit());
+                                a.setOfficeContentDeductible1(form.getOfficeContentDeductible());
+                                a.setEdpLimit1(form.getEdpLimit());
+                                a.setEdpDeductible1(form.getEdpDeductible());
+                                a.setEquipmentLimit1(form.getEquipmentLimit());
+                                a.setEquipmentDeductible1(form.getEquipmentDeductible());
+                                a.setOffPremisesLimit1(form.getOffPremisesLimit());
+                                a.setOffPremisesDeductible1(form.getOffPremisesDeductible());
+                                a.setTransitLimit1(form.getTransitLimit());
+                                a.setTransitDeductible1(form.getTransitDeductible());
+                                a.setMiscPropertyLimit1(form.getMiscPropertyLimit());
+                                a.setMiscPropertyDeductible1(form.getMiscPropertyDeductible());
+                                a.setContractorEquipmentLimit1(form.getContractorEquipmentLimit());
+                                a.setContractorEquipmentDeductible1(form.getContractorEquipmentDeductible());
+                                a.setInstallationFloaterLimit1(form.getInstallationFloaterLimit());
+                                a.setInstallationFloaterDeductible1(form.getInstallationFloaterDeductible());
+                                a.setToolFloaterLimit1(form.getToolFloaterLimit());
+                                a.setToolFloaterDeductible1(form.getToolFloaterDeductible());
+                                a.setSignFloaterLimit1(form.getSignFloaterLimit());
+                                a.setSignFloaterDeductible1(form.getSignFloaterDeductible());
+                                a.setMotorTruckLimit1(form.getMotorTruckLimit());
+                                a.setMotorTruckDeductible1(form.getMotorTruckDeductible());
+                                a.setGlassLimit1(form.getGlassLimit());
+                                a.setGlassDeductible1(form.getGlassDeductible());
+                                a.setSewerBackupDeductible1(form.getSewerBackupDeductible());
+                                a.setFloodDeductible1(form.getFloodDeductible());
+                                a.setEarthquakeDeductible1(form.getEarthquakeDeductible());
+                                a.setProfitLimit1(form.getProfitLimit());
+                                a.setProfitDeductible1(form.getProfitDeductible());
+                                a.setGrossEarningLimit1(form.getGrossEarningLimit());
+                                a.setGrossEarningDeductible1(form.getGrossEarningDeductible());
+                                a.setRentalIncomeLimit1(form.getRentalIncomeLimit());
+                                a.setRentalIncomeDeductible1(form.getRentalIncomeDeductible());
+                                a.setExtraExpenseLimit1(form.getExtraExpenseLimit());
+                                a.setExtraExpenseDeductible1(form.getExtraExpenseDeductible());
+                                a.setOffPremisesPowerLimit1(form.getOffPremisesPowerLimit());
+                                a.setOffPremisesPowerDeductible1(form.getOffPremisesPowerDeductible());
+                                a.setInsideOutsideLimit1(form.getInsideOutsideLimit());
+                                a.setInsideOutsideDeductible1(form.getInsideOutsideDeductible());
+                                a.setBfMoneyLimit1(form.getBfMoneyLimit());
+                                a.setBfMoneyDeductible1(form.getBfMoneyDeductible());
+                                a.setDeopistorForgeryLimit1(form.getDeopistorForgeryLimit());
+                                a.setDeopistorForgeryDeductible1(form.getDeopistorForgeryDeductible());
+                                a.setMoneyOrdersLimit1(form.getMoneyOrdersLimit());
+                                a.setMoneyOrdersDeductible1(form.getMoneyOrdersDeductible());
+                                a.setEmployDishonestyLimit1(form.getEmployDishonestyLimit());
+                                a.setEmployDishonestyDeductible1(form.getEmployDishonestyDeductible());
+                                a.setCglLimit1(form.getCglLimit());
+                                a.setCglDeductible1(form.getCglDeductible());
+                                a.setTenantsLegalLimit1(form.getTenantsLegalLimit());
+                                a.setTenantsLegalDeductible1(form.getTenantsLegalDeductible());
+                                a.setNonOwnedAutoLimit1(form.getNonOwnedAutoLimit());
+                                a.setNonOwnedAutoDeductible1(form.getNonOwnedAutoDeductible());
+                                a.setSef96Limit1(form.getSef96Limit());
+                                a.setSef96Deductible1(form.getSef96Deductible());
+                                a.setSef94Limit1(form.getSef94Limit());
+                                a.setSef94Deductible1(form.getSef94Deductible());
+                                a.setDoLimit1(form.getDoLimit());
+                                a.setDoDeductible1(form.getDoDeductible());
+                                a.setEoLimit1(form.getEoLimit());
+                                a.setEoDeductible1(form.getEoDeductible());
+                                a.setEmployerLimit1(form.getEmployerLimit());
+                                a.setEmployerDeductible1(form.getEmployerDeductible());
+                                a.setUmbrellaLimit1(form.getUmbrellaLimit());
+                                a.setUmbrellaDeductible1(form.getUmbrellaDeductible());
+                                a.setWrapUpLimit1(form.getWrapUpLimit());
+                                a.setWrapUpDeductible1(form.getWrapUpDeductible());
+                                a.setStdComprehensiveLimit1(form.getStdComprehensiveLimit());
+                                a.setStdComprehensiveDeductible1(form.getStdComprehensiveDeductible());
+                                a.setAirConditioningLimit1(form.getAirConditioningLimit());
+                                a.setAirConditioningDeductible1(form.getAirConditioningDeductible());
+                                a.setProductionMachineryLimit1(form.getProductionMachineryLimit());
+                                a.setProductionMachineryDeductible1(form.getProductionMachineryDeductible());
+                                a.setOthercoverage11(form.getOthercoverage1());
+                                a.setOthercoverage21(form.getOthercoverage2());
+                                a.setOtherCoverageLimit11(form.getOtherCoverageLimit1());
+                                a.setOtherCoverageDeductible11(form.getOtherCoverageDeductible1());
+                                a.setOtherCoverageLimit21(form.getOtherCoverageLimit2());
+                                a.setOtherCoverageDeductible21(form.getOtherCoverageDeductible2());
+                                a.setAdditionalCoverage1(form.getAdditionalcoverage());
+                                a.setRoofupdated1(form.getRoofupdated());
+                                a.setHeatingupdated1(form.getHeatingupdated());
+                                a.setElectricalupdated1(form.getElectricalupdated());
+                                a.setElectricalamps1(form.getElectricalamps());
+                                a.setFireProtectiondistance1(form.getFireProtectiondistance());
+                                a.setAddress1(form.getAddress());
+                                a.setBasement1(form.getBasement());
+                                a.setOwner11(form.getOwnercb());
+                                a.setTruckMan1(form.getTruckMan());
+                                a.setGrossEarning801(form.getGrossEarningCheckbox());
+                                a.setWallsframe1(form.getWallsframe());
+                                a.setWallshcb1(form.getWallshcb());
+                                a.setWallssteel1(form.getWallssteel());
+                                a.setWallsbrick1(form.getWallsbrick());
+                                a.setRoofwood1(form.getRoofwood());
+                                a.setRoofsteel1(form.getRoofsteel());
+                                a.setRoofconcrete1(form.getRoofconcrete());
+                                a.setFloorsconcrete1(form.getFloorsconcrete());
+                                a.setFloorswood1(form.getFloorswood());
+                                a.setHeatinggas1(form.getHeatinggas());
+                                a.setHeatingoil1(form.getHeatingoil());
+                                a.setHeatingelectric1(form.getHeatingelectric());
+                                a.setHeatingother1(form.getHeatingother());
+                                a.setElectricalbreakers1(form.getElectricalbreakers());
+                                a.setElectricalfuses1(form.getElectricalfuses());
+                                a.setPlumbingcopper1(form.getPlumbingcopper());
+                                a.setPlumbingpvc1(form.getPlumbingpvc());
+                                a.setPlumbingother1(form.getPlumbingother());
+                                a.setPlumbingupdated1(form.getPlumbingupdated());
+                                a.setFireProtection1(form.getFireProtection());
+                                a.setSecurity1(form.getSecurity());
+                                a.setAge1(form.getAge());
+                                a.setTotalSqFootage1(form.getTotalSqFootage());
+                                a.setInsdSqFootage1(form.getInsdSqFootage());
+                                a.setNoOfStories1(form.getNoOfStories());
+                                listAddInfo.add(a);
+                            }
+                            break;
                         case 1:
                             System.out.println("case 1");
-                        if(!CommonValidations.isStringEmpty(form.getAddress1()))
-                        {
-                            System.out.println("case 1 Inside");
-                        a.setBuildingLimit1(form.getBuildingLimit1());
-                        a.setBuildingDeductible1(form.getBuildingDeductible1());
-                        a.setContentsLimit1(form.getContentsLimit1());
-                        a.setContentsDeductible1(form.getContentsDeductible1());
-                        a.setStockLimit1(form.getStockLimit1());
-                        a.setStockDeductible1(form.getStockDeductible1());
-                        a.setOfficeContentLimit1(form.getOfficeContentLimit1());
-                        a.setOfficeContentDeductible1(form.getOfficeContentDeductible1());
-                        a.setEdpLimit1(form.getEdpLimit1());
-                        a.setEdpDeductible1(form.getEdpDeductible1());
-                        a.setEquipmentLimit1(form.getEquipmentLimit1());
-                        a.setEquipmentDeductible1(form.getEquipmentDeductible1());
-                        a.setOffPremisesLimit1(form.getOffPremisesLimit1());
-                        a.setOffPremisesDeductible1(form.getOffPremisesDeductible1());
-                        a.setTransitLimit1(form.getTransitLimit1());
-                        a.setTransitDeductible1(form.getTransitDeductible1());
-                        a.setMiscPropertyLimit1(form.getMiscPropertyLimit1());
-                        a.setMiscPropertyDeductible1(form.getMiscPropertyDeductible1());
-                        a.setContractorEquipmentLimit1(form.getContractorEquipmentLimit1());
-                        a.setContractorEquipmentDeductible1(form.getContractorEquipmentDeductible1());
-                        a.setInstallationFloaterLimit1(form.getInstallationFloaterLimit1());
-                        a.setInstallationFloaterDeductible1(form.getInstallationFloaterDeductible1());
-                        a.setToolFloaterLimit1(form.getToolFloaterLimit1());                    
-                        a.setToolFloaterDeductible1(form.getToolFloaterDeductible1());
-                        a.setSignFloaterLimit1(form.getSignFloaterLimit1());
-                        a.setSignFloaterDeductible1(form.getSignFloaterDeductible1());
-                        a.setMotorTruckLimit1(form.getMotorTruckLimit1());
-                        a.setMotorTruckDeductible1(form.getMotorTruckDeductible1());
-                        a.setGlassLimit1(form.getGlassLimit1());
-                        a.setGlassDeductible1(form.getGlassDeductible1());
-                        a.setSewerBackupDeductible1(form.getSewerBackupDeductible1());
-                        a.setFloodDeductible1(form.getFloodDeductible1());
-                        a.setEarthquakeDeductible1(form.getEarthquakeDeductible1());
-                        a.setProfitLimit1(form.getProfitLimit1());
-                        a.setProfitDeductible1(form.getProfitDeductible1());
-                        a.setGrossEarningLimit1(form.getGrossEarningLimit1());
-                        a.setGrossEarningDeductible1(form.getGrossEarningDeductible1());
-                        a.setRentalIncomeLimit1(form.getRentalIncomeLimit1());
-                        a.setRentalIncomeDeductible1(form.getRentalIncomeDeductible1());
-                        a.setExtraExpenseLimit1(form.getExtraExpenseLimit1());
-                        a.setExtraExpenseDeductible1(form.getExtraExpenseDeductible1());
-                        a.setOffPremisesPowerLimit1(form.getOffPremisesPowerLimit1());
-                        a.setOffPremisesPowerDeductible1(form.getOffPremisesPowerDeductible1());
-                        a.setInsideOutsideLimit1(form.getInsideOutsideLimit1()); 
-                        a.setInsideOutsideDeductible1(form.getInsideOutsideDeductible1());
-                        a.setBfMoneyLimit1(form.getBfMoneyLimit1());
-                        a.setBfMoneyDeductible1(form.getBfMoneyDeductible1());
-                        a.setDeopistorForgeryLimit1(form.getDeopistorForgeryLimit1());
-                        a.setDeopistorForgeryDeductible1(form.getDeopistorForgeryDeductible1());
-                        a.setMoneyOrdersLimit1(form.getMoneyOrdersLimit1());
-                        a.setMoneyOrdersDeductible1(form.getMoneyOrdersDeductible1());
-                        a.setEmployDishonestyLimit1(form.getEmployDishonestyLimit1());                    
-                        a.setEmployDishonestyDeductible1(form.getEmployDishonestyDeductible1());
-                        a.setCglLimit1(form.getCglLimit1());
-                        a.setCglDeductible1(form.getCglDeductible1());
-                        a.setTenantsLegalLimit1(form.getTenantsLegalLimit1());
-                        a.setTenantsLegalDeductible1(form.getTenantsLegalDeductible1());
-                        a.setNonOwnedAutoLimit1(form.getNonOwnedAutoLimit1());
-                        a.setNonOwnedAutoDeductible1(form.getNonOwnedAutoDeductible1());
-                        a.setSef96Limit1(form.getSef96Limit1());
-                        a.setSef96Deductible1(form.getSef96Deductible1());
-                        a.setSef94Limit1(form.getSef94Limit1());
-                        a.setSef94Deductible1(form.getSef94Deductible1());
-                        a.setDoLimit1(form.getDoLimit1());
-                        a.setDoDeductible1(form.getDoDeductible1());
-                        a.setEoLimit1(form.getEoLimit1());
-                        a.setEoDeductible1(form.getEoDeductible1());
-                        a.setEmployerLimit1(form.getEmployerLimit1());
-                        a.setEmployerDeductible1(form.getEmployerDeductible1()); 
-                        a.setUmbrellaLimit1(form.getUmbrellaLimit1());
-                        a.setUmbrellaDeductible1(form.getUmbrellaDeductible1());
-                        a.setWrapUpLimit1(form.getWrapUpLimit1());
-                        a.setWrapUpDeductible1(form.getWrapUpDeductible1());
-                        a.setStdComprehensiveLimit1(form.getStdComprehensiveLimit1());
-                        a.setStdComprehensiveDeductible1(form.getStdComprehensiveDeductible1());
-                        a.setAirConditioningLimit1(form.getAirConditioningLimit1());
-                        a.setAirConditioningDeductible1(form.getAirConditioningDeductible1());
-                        a.setProductionMachineryLimit1(form.getProductionMachineryLimit1());
-                        a.setProductionMachineryDeductible1(form.getProductionMachineryDeductible1());
-                    	a.setOthercoverage11(form.getOthercoverage11());
-	                a.setOthercoverage21(form.getOthercoverage21());
-                        a.setOtherCoverageLimit11(form.getOtherCoverageLimit11());
-                        a.setOtherCoverageDeductible11(form.getOtherCoverageDeductible11());
-                        a.setOtherCoverageLimit21(form.getOtherCoverageLimit21());
-                        a.setOtherCoverageDeductible21(form.getOtherCoverageDeductible21());
-    	                a.setAdditionalCoverage1(form.getAdditionalcoverage1());
-        	        a.setRoofupdated1(form.getRoofupdated1());
-            	        a.setHeatingupdated1(form.getHeatingupdated1());
-                	a.setElectricalupdated1(form.getElectricalupdated1());
-                    	a.setElectricalamps1(form.getElectricalamps1());
-	                a.setFireProtectiondistance1(form.getFireProtectiondistance1());
-    	                a.setAddress1(form.getAddress1());
-        	        a.setBasement1(form.getBasement1());
-            	        a.setOwner11(form.getOwnercb1());
-                	a.setTruckMan1(form.getTruckMan1());
-                    	a.setGrossEarning801(form.getGrossEarningCheckbox1());
-	                a.setWallsframe1(form.getWallsframe1());
-    	                a.setWallshcb1(form.getWallshcb1());
-	                a.setWallssteel1(form.getWallssteel1());
-    	                a.setWallsbrick1(form.getWallsbrick1());
-        	        a.setRoofwood1(form.getRoofwood1());
-            	        a.setRoofsteel1(form.getRoofsteel1());
-                	a.setRoofconcrete1(form.getRoofconcrete1());
-                    	a.setFloorsconcrete1(form.getFloorsconcrete1());
-	                a.setFloorswood1(form.getFloorswood1());
-    	                a.setHeatinggas1(form.getHeatinggas1());
-        	        a.setHeatingoil1(form.getHeatingoil1());
-            	        a.setHeatingelectric1(form.getHeatingelectric1());
-                	a.setHeatingother1(form.getHeatingother1());
-                    	a.setElectricalbreakers1(form.getElectricalbreakers1());
-	                a.setElectricalfuses1(form.getElectricalfuses1());
-        	        a.setPlumbingcopper1(form.getPlumbingcopper1());
-            	        a.setPlumbingpvc1(form.getPlumbingpvc1());
-                	a.setPlumbingother1(form.getPlumbingother1());
-                        a.setPlumbingupdated1(form.getPlumbingupdated1());
-                    	a.setFireProtection1(form.getFireProtection1());
-	                a.setSecurity1(form.getSecurity1());
-                        a.setAge1(form.getAge1());
-                        a.setTotalSqFootage1(form.getTotalSqFootage1());
-                        a.setInsdSqFootage1(form.getInsdSqFootage1());
-                        a.setNoOfStories1(form.getNoOfStories1());
-                        listAddInfo.add(a);
-                }
-                        break;
-                case 2:
-                if (!CommonValidations.isStringEmpty(form.getAddress2()))
-                {
-                        a.setBuildingLimit1(form.getBuildingLimit2());
-                        a.setBuildingDeductible1(form.getBuildingDeductible2());
-                        a.setContentsLimit1(form.getContentsLimit2());
-                        a.setContentsDeductible1(form.getContentsDeductible2());
-                        a.setStockLimit1(form.getStockLimit2());
-                        a.setStockDeductible1(form.getStockDeductible2());
-                        a.setOfficeContentLimit1(form.getOfficeContentLimit2());
-                        a.setOfficeContentDeductible1(form.getOfficeContentDeductible2());
-                        a.setEdpLimit1(form.getEdpLimit2());
-                        a.setEdpDeductible1(form.getEdpDeductible2());
-                        a.setEquipmentLimit1(form.getEquipmentLimit2());
-                        a.setEquipmentDeductible1(form.getEquipmentDeductible2());
-                        a.setOffPremisesLimit1(form.getOffPremisesLimit2());
-                        a.setOffPremisesDeductible1(form.getOffPremisesDeductible2());
-                        a.setTransitLimit1(form.getTransitLimit2());
-                        a.setTransitDeductible1(form.getTransitDeductible2());
-                        a.setMiscPropertyLimit1(form.getMiscPropertyLimit2());
-                        a.setMiscPropertyDeductible1(form.getMiscPropertyDeductible2());
-                        a.setContractorEquipmentLimit1(form.getContractorEquipmentLimit2());
-                        a.setContractorEquipmentDeductible1(form.getContractorEquipmentDeductible2());
-                        a.setInstallationFloaterLimit1(form.getInstallationFloaterLimit2());
-                        a.setInstallationFloaterDeductible1(form.getInstallationFloaterDeductible2());
-                        a.setToolFloaterLimit1(form.getToolFloaterLimit2());                    
-                        a.setToolFloaterDeductible1(form.getToolFloaterDeductible2());
-                        a.setSignFloaterLimit1(form.getSignFloaterLimit2());
-                        a.setSignFloaterDeductible1(form.getSignFloaterDeductible2());
-                        a.setMotorTruckLimit1(form.getMotorTruckLimit2());
-                        a.setMotorTruckDeductible1(form.getMotorTruckDeductible2());
-                        a.setGlassLimit1(form.getGlassLimit2());
-                        a.setGlassDeductible1(form.getGlassDeductible2());
-                        a.setSewerBackupDeductible1(form.getSewerBackupDeductible2());
-                        a.setFloodDeductible1(form.getFloodDeductible2());
-                        a.setEarthquakeDeductible1(form.getEarthquakeDeductible2());
-                        a.setProfitLimit1(form.getProfitLimit2());
-                        a.setProfitDeductible1(form.getProfitDeductible2());
-                        a.setGrossEarningLimit1(form.getGrossEarningLimit2());
-                        a.setGrossEarningDeductible1(form.getGrossEarningDeductible2());
-                        a.setRentalIncomeLimit1(form.getRentalIncomeLimit2());
-                        a.setRentalIncomeDeductible1(form.getRentalIncomeDeductible2());
-                        a.setExtraExpenseLimit1(form.getExtraExpenseLimit2());
-                        a.setExtraExpenseDeductible1(form.getExtraExpenseDeductible2());
-                        a.setOffPremisesPowerLimit1(form.getOffPremisesPowerLimit2());
-                        a.setOffPremisesPowerDeductible1(form.getOffPremisesPowerDeductible2());
-                        a.setInsideOutsideLimit1(form.getInsideOutsideLimit2()); 
-                        a.setInsideOutsideDeductible1(form.getInsideOutsideDeductible2());
-                        a.setBfMoneyLimit1(form.getBfMoneyLimit2());
-                        a.setBfMoneyDeductible1(form.getBfMoneyDeductible2());
-                        a.setDeopistorForgeryLimit1(form.getDeopistorForgeryLimit2());
-                        a.setDeopistorForgeryDeductible1(form.getDeopistorForgeryDeductible2());
-                        a.setMoneyOrdersLimit1(form.getMoneyOrdersLimit2());
-                        a.setMoneyOrdersDeductible1(form.getMoneyOrdersDeductible2());
-                        a.setEmployDishonestyLimit1(form.getEmployDishonestyLimit2());                    
-                        a.setEmployDishonestyDeductible1(form.getEmployDishonestyDeductible2());
-                        a.setCglLimit1(form.getCglLimit2());
-                        a.setCglDeductible1(form.getCglDeductible2());
-                        a.setTenantsLegalLimit1(form.getTenantsLegalLimit2());
-                        a.setTenantsLegalDeductible1(form.getTenantsLegalDeductible2());
-                        a.setNonOwnedAutoLimit1(form.getNonOwnedAutoLimit2());
-                        a.setNonOwnedAutoDeductible1(form.getNonOwnedAutoDeductible2());
-                        a.setSef96Limit1(form.getSef96Limit2());
-                        a.setSef96Deductible1(form.getSef96Deductible2());
-                        a.setSef94Limit1(form.getSef94Limit2());
-                        a.setSef94Deductible1(form.getSef94Deductible2());
-                        a.setDoLimit1(form.getDoLimit2());
-                        a.setDoDeductible1(form.getDoDeductible2());
-                        a.setEoLimit1(form.getEoLimit2());
-                        a.setEoDeductible1(form.getEoDeductible2());
-                        a.setEmployerLimit1(form.getEmployerLimit2());
-                        a.setEmployerDeductible1(form.getEmployerDeductible2()); 
-                        a.setUmbrellaLimit1(form.getUmbrellaLimit2());
-                        a.setUmbrellaDeductible1(form.getUmbrellaDeductible2());
-                        a.setWrapUpLimit1(form.getWrapUpLimit2());
-                        a.setWrapUpDeductible1(form.getWrapUpDeductible2());
-                        a.setStdComprehensiveLimit1(form.getStdComprehensiveLimit2());
-                        a.setStdComprehensiveDeductible1(form.getStdComprehensiveDeductible2());
-                        a.setAirConditioningLimit1(form.getAirConditioningLimit2());
-                        a.setAirConditioningDeductible1(form.getAirConditioningDeductible2());
-                        a.setProductionMachineryLimit1(form.getProductionMachineryLimit2());
-                        a.setProductionMachineryDeductible1(form.getProductionMachineryDeductible2());
-                    	a.setOthercoverage11(form.getOthercoverage12());
-	                a.setOthercoverage21(form.getOthercoverage22());
-                        a.setOtherCoverageLimit11(form.getOtherCoverageLimit12());
-                        a.setOtherCoverageDeductible11(form.getOtherCoverageDeductible12());
-                        a.setOtherCoverageLimit21(form.getOtherCoverageLimit22());
-                        a.setOtherCoverageDeductible21(form.getOtherCoverageDeductible22());
-    	                a.setAdditionalCoverage1(form.getAdditionalcoverage2());
-        	        a.setRoofupdated1(form.getRoofupdated2());
-            	        a.setHeatingupdated1(form.getHeatingupdated2());
-                	a.setElectricalupdated1(form.getElectricalupdated2());
-                    	a.setElectricalamps1(form.getElectricalamps2());
-	                a.setFireProtectiondistance1(form.getFireProtectiondistance2());
-    	                a.setAddress1(form.getAddress2());
-        	        a.setBasement1(form.getBasement2());
-            	        a.setOwner11(form.getOwnercb2());
-                	a.setTruckMan1(form.getTruckMan2());
-                    	a.setGrossEarning801(form.getGrossEarningCheckbox2());
-	                a.setWallsframe1(form.getWallsframe2());
-    	                a.setWallshcb1(form.getWallshcb2());
-	                a.setWallssteel1(form.getWallssteel2());
-    	                a.setWallsbrick1(form.getWallsbrick2());
-        	        a.setRoofwood1(form.getRoofwood2());
-            	        a.setRoofsteel1(form.getRoofsteel2());
-                	a.setRoofconcrete1(form.getRoofconcrete2());
-                    	a.setFloorsconcrete1(form.getFloorsconcrete2());
-	                a.setFloorswood1(form.getFloorswood2());
-    	                a.setHeatinggas1(form.getHeatinggas2());
-        	        a.setHeatingoil1(form.getHeatingoil2());
-            	        a.setHeatingelectric1(form.getHeatingelectric2());
-                	a.setHeatingother1(form.getHeatingother2());
-                    	a.setElectricalbreakers1(form.getElectricalbreakers2());
-	                a.setElectricalfuses1(form.getElectricalfuses2());
-        	        a.setPlumbingcopper1(form.getPlumbingcopper2());
-            	        a.setPlumbingpvc1(form.getPlumbingpvc2());
-                	a.setPlumbingother1(form.getPlumbingother2());
-                        a.setPlumbingupdated1(form.getPlumbingupdated2());
-                    	a.setFireProtection1(form.getFireProtection2());
-	                a.setSecurity1(form.getSecurity2());
-                        a.setAge1(form.getAge2());
-                        a.setTotalSqFootage1(form.getTotalSqFootage2());
-                        a.setInsdSqFootage1(form.getInsdSqFootage2());
-                        a.setNoOfStories1(form.getNoOfStories2());
-                        listAddInfo.add(a);
-                }
-                break;
-                case 3:
-                if (!CommonValidations.isStringEmpty(form.getAddress3()))
-                {
-                        a.setBuildingLimit1(form.getBuildingLimit3());
-                        a.setBuildingDeductible1(form.getBuildingDeductible3());
-                        a.setContentsLimit1(form.getContentsLimit3());
-                        a.setContentsDeductible1(form.getContentsDeductible3());
-                        a.setStockLimit1(form.getStockLimit3());
-                        a.setStockDeductible1(form.getStockDeductible3());
-                        a.setOfficeContentLimit1(form.getOfficeContentLimit3());
-                        a.setOfficeContentDeductible1(form.getOfficeContentDeductible3());
-                        a.setEdpLimit1(form.getEdpLimit3());
-                        a.setEdpDeductible1(form.getEdpDeductible3());
-                        a.setEquipmentLimit1(form.getEquipmentLimit3());
-                        a.setEquipmentDeductible1(form.getEquipmentDeductible3());
-                        a.setOffPremisesLimit1(form.getOffPremisesLimit3());
-                        a.setOffPremisesDeductible1(form.getOffPremisesDeductible3());
-                        a.setTransitLimit1(form.getTransitLimit3());
-                        a.setTransitDeductible1(form.getTransitDeductible3());
-                        a.setMiscPropertyLimit1(form.getMiscPropertyLimit3());
-                        a.setMiscPropertyDeductible1(form.getMiscPropertyDeductible3());
-                        a.setContractorEquipmentLimit1(form.getContractorEquipmentLimit3());
-                        a.setContractorEquipmentDeductible1(form.getContractorEquipmentDeductible3());
-                        a.setInstallationFloaterLimit1(form.getInstallationFloaterLimit3());
-                        a.setInstallationFloaterDeductible1(form.getInstallationFloaterDeductible3());
-                        a.setToolFloaterLimit1(form.getToolFloaterLimit3());                    
-                        a.setToolFloaterDeductible1(form.getToolFloaterDeductible3());
-                        a.setSignFloaterLimit1(form.getSignFloaterLimit3());
-                        a.setSignFloaterDeductible1(form.getSignFloaterDeductible3());
-                        a.setMotorTruckLimit1(form.getMotorTruckLimit3());
-                        a.setMotorTruckDeductible1(form.getMotorTruckDeductible3());
-                        a.setGlassLimit1(form.getGlassLimit3());
-                        a.setGlassDeductible1(form.getGlassDeductible3());
-                        a.setSewerBackupDeductible1(form.getSewerBackupDeductible3());
-                        a.setFloodDeductible1(form.getFloodDeductible3());
-                        a.setEarthquakeDeductible1(form.getEarthquakeDeductible3());
-                        a.setProfitLimit1(form.getProfitLimit3());
-                        a.setProfitDeductible1(form.getProfitDeductible3());
-                        a.setGrossEarningLimit1(form.getGrossEarningLimit3());
-                        a.setGrossEarningDeductible1(form.getGrossEarningDeductible3());
-                        a.setRentalIncomeLimit1(form.getRentalIncomeLimit3());
-                        a.setRentalIncomeDeductible1(form.getRentalIncomeDeductible3());
-                        a.setExtraExpenseLimit1(form.getExtraExpenseLimit3());
-                        a.setExtraExpenseDeductible1(form.getExtraExpenseDeductible3());
-                        a.setOffPremisesPowerLimit1(form.getOffPremisesPowerLimit3());
-                        a.setOffPremisesPowerDeductible1(form.getOffPremisesPowerDeductible3());
-                        a.setInsideOutsideLimit1(form.getInsideOutsideLimit3()); 
-                        a.setInsideOutsideDeductible1(form.getInsideOutsideDeductible3());
-                        a.setBfMoneyLimit1(form.getBfMoneyLimit3());
-                        a.setBfMoneyDeductible1(form.getBfMoneyDeductible3());
-                        a.setDeopistorForgeryLimit1(form.getDeopistorForgeryLimit3());
-                        a.setDeopistorForgeryDeductible1(form.getDeopistorForgeryDeductible3());
-                        a.setMoneyOrdersLimit1(form.getMoneyOrdersLimit3());
-                        a.setMoneyOrdersDeductible1(form.getMoneyOrdersDeductible3());
-                        a.setEmployDishonestyLimit1(form.getEmployDishonestyLimit3());                    
-                        a.setEmployDishonestyDeductible1(form.getEmployDishonestyDeductible3());
-                        a.setCglLimit1(form.getCglLimit3());
-                        a.setCglDeductible1(form.getCglDeductible3());
-                        a.setTenantsLegalLimit1(form.getTenantsLegalLimit3());
-                        a.setTenantsLegalDeductible1(form.getTenantsLegalDeductible3());
-                        a.setNonOwnedAutoLimit1(form.getNonOwnedAutoLimit3());
-                        a.setNonOwnedAutoDeductible1(form.getNonOwnedAutoDeductible3());
-                        a.setSef96Limit1(form.getSef96Limit3());
-                        a.setSef96Deductible1(form.getSef96Deductible3());
-                        a.setSef94Limit1(form.getSef94Limit3());
-                        a.setSef94Deductible1(form.getSef94Deductible3());
-                        a.setDoLimit1(form.getDoLimit3());
-                        a.setDoDeductible1(form.getDoDeductible3());
-                        a.setEoLimit1(form.getEoLimit3());
-                        a.setEoDeductible1(form.getEoDeductible3());
-                        a.setEmployerLimit1(form.getEmployerLimit3());
-                        a.setEmployerDeductible1(form.getEmployerDeductible3()); 
-                        a.setUmbrellaLimit1(form.getUmbrellaLimit3());
-                        a.setUmbrellaDeductible1(form.getUmbrellaDeductible3());
-                        a.setWrapUpLimit1(form.getWrapUpLimit3());
-                        a.setWrapUpDeductible1(form.getWrapUpDeductible3());
-                        a.setStdComprehensiveLimit1(form.getStdComprehensiveLimit3());
-                        a.setStdComprehensiveDeductible1(form.getStdComprehensiveDeductible3());
-                        a.setAirConditioningLimit1(form.getAirConditioningLimit3());
-                        a.setAirConditioningDeductible1(form.getAirConditioningDeductible3());
-                        a.setProductionMachineryLimit1(form.getProductionMachineryLimit3());
-                        a.setProductionMachineryDeductible1(form.getProductionMachineryDeductible3());
-                    	a.setOthercoverage11(form.getOthercoverage13());
-	                a.setOthercoverage21(form.getOthercoverage23());
-                        a.setOtherCoverageLimit11(form.getOtherCoverageLimit13());
-                        a.setOtherCoverageDeductible11(form.getOtherCoverageDeductible13());
-                        a.setOtherCoverageLimit21(form.getOtherCoverageLimit23());
-                        a.setOtherCoverageDeductible21(form.getOtherCoverageDeductible23());
-    	                a.setAdditionalCoverage1(form.getAdditionalcoverage3());
-        	        a.setRoofupdated1(form.getRoofupdated3());
-            	        a.setHeatingupdated1(form.getHeatingupdated3());
-                	a.setElectricalupdated1(form.getElectricalupdated3());
-                    	a.setElectricalamps1(form.getElectricalamps3());
-	                a.setFireProtectiondistance1(form.getFireProtectiondistance3());
-    	                a.setAddress1(form.getAddress3());
-        	        a.setBasement1(form.getBasement3());
-            	        a.setOwner11(form.getOwnercb3());
-                	a.setTruckMan1(form.getTruckMan3());
-                    	a.setGrossEarning801(form.getGrossEarningCheckbox3());
-	                a.setWallsframe1(form.getWallsframe3());
-    	                a.setWallshcb1(form.getWallshcb3());
-	                a.setWallssteel1(form.getWallssteel3());
-    	                a.setWallsbrick1(form.getWallsbrick3());
-        	        a.setRoofwood1(form.getRoofwood3());
-            	        a.setRoofsteel1(form.getRoofsteel3());
-                	a.setRoofconcrete1(form.getRoofconcrete3());
-                    	a.setFloorsconcrete1(form.getFloorsconcrete3());
-	                a.setFloorswood1(form.getFloorswood3());
-    	                a.setHeatinggas1(form.getHeatinggas3());
-        	        a.setHeatingoil1(form.getHeatingoil3());
-            	        a.setHeatingelectric1(form.getHeatingelectric3());
-                	a.setHeatingother1(form.getHeatingother3());
-                    	a.setElectricalbreakers1(form.getElectricalbreakers3());
-	                a.setElectricalfuses1(form.getElectricalfuses3());
-        	        a.setPlumbingcopper1(form.getPlumbingcopper3());
-            	        a.setPlumbingpvc1(form.getPlumbingpvc3());
-                	a.setPlumbingother1(form.getPlumbingother3());
-                        a.setPlumbingupdated1(form.getPlumbingupdated3());
-                    	a.setFireProtection1(form.getFireProtection3());
-	                a.setSecurity1(form.getSecurity3());
-                        a.setAge1(form.getAge3());
-                        a.setTotalSqFootage1(form.getTotalSqFootage3());
-                        a.setInsdSqFootage1(form.getInsdSqFootage3());
-                        a.setNoOfStories1(form.getNoOfStories3());
-                        listAddInfo.add(a);
-                }
-                break;
-                case 4:
-                if (!CommonValidations.isStringEmpty(form.getAddress4()))
-                {
-                       a.setBuildingLimit1(form.getBuildingLimit4());
-                        a.setBuildingDeductible1(form.getBuildingDeductible4());
-                        a.setContentsLimit1(form.getContentsLimit4());
-                        a.setContentsDeductible1(form.getContentsDeductible4());
-                        a.setStockLimit1(form.getStockLimit4());
-                        a.setStockDeductible1(form.getStockDeductible4());
-                        a.setOfficeContentLimit1(form.getOfficeContentLimit4());
-                        a.setOfficeContentDeductible1(form.getOfficeContentDeductible4());
-                        a.setEdpLimit1(form.getEdpLimit4());
-                        a.setEdpDeductible1(form.getEdpDeductible4());
-                        a.setEquipmentLimit1(form.getEquipmentLimit4());
-                        a.setEquipmentDeductible1(form.getEquipmentDeductible4());
-                        a.setOffPremisesLimit1(form.getOffPremisesLimit4());
-                        a.setOffPremisesDeductible1(form.getOffPremisesDeductible4());
-                        a.setTransitLimit1(form.getTransitLimit4());
-                        a.setTransitDeductible1(form.getTransitDeductible4());
-                        a.setMiscPropertyLimit1(form.getMiscPropertyLimit4());
-                        a.setMiscPropertyDeductible1(form.getMiscPropertyDeductible4());
-                        a.setContractorEquipmentLimit1(form.getContractorEquipmentLimit4());
-                        a.setContractorEquipmentDeductible1(form.getContractorEquipmentDeductible4());
-                        a.setInstallationFloaterLimit1(form.getInstallationFloaterLimit4());
-                        a.setInstallationFloaterDeductible1(form.getInstallationFloaterDeductible4());
-                        a.setToolFloaterLimit1(form.getToolFloaterLimit4());                    
-                        a.setToolFloaterDeductible1(form.getToolFloaterDeductible4());
-                        a.setSignFloaterLimit1(form.getSignFloaterLimit4());
-                        a.setSignFloaterDeductible1(form.getSignFloaterDeductible4());
-                        a.setMotorTruckLimit1(form.getMotorTruckLimit4());
-                        a.setMotorTruckDeductible1(form.getMotorTruckDeductible4());
-                        a.setGlassLimit1(form.getGlassLimit4());
-                        a.setGlassDeductible1(form.getGlassDeductible4());
-                        a.setSewerBackupDeductible1(form.getSewerBackupDeductible4());
-                        a.setFloodDeductible1(form.getFloodDeductible4());
-                        a.setEarthquakeDeductible1(form.getEarthquakeDeductible4());
-                        a.setProfitLimit1(form.getProfitLimit4());
-                        a.setProfitDeductible1(form.getProfitDeductible4());
-                        a.setGrossEarningLimit1(form.getGrossEarningLimit4());
-                        a.setGrossEarningDeductible1(form.getGrossEarningDeductible4());
-                        a.setRentalIncomeLimit1(form.getRentalIncomeLimit4());
-                        a.setRentalIncomeDeductible1(form.getRentalIncomeDeductible4());
-                        a.setExtraExpenseLimit1(form.getExtraExpenseLimit4());
-                        a.setExtraExpenseDeductible1(form.getExtraExpenseDeductible4());
-                        a.setOffPremisesPowerLimit1(form.getOffPremisesPowerLimit4());
-                        a.setOffPremisesPowerDeductible1(form.getOffPremisesPowerDeductible4());
-                        a.setInsideOutsideLimit1(form.getInsideOutsideLimit4()); 
-                        a.setInsideOutsideDeductible1(form.getInsideOutsideDeductible4());
-                        a.setBfMoneyLimit1(form.getBfMoneyLimit4());
-                        a.setBfMoneyDeductible1(form.getBfMoneyDeductible4());
-                        a.setDeopistorForgeryLimit1(form.getDeopistorForgeryLimit4());
-                        a.setDeopistorForgeryDeductible1(form.getDeopistorForgeryDeductible4());
-                        a.setMoneyOrdersLimit1(form.getMoneyOrdersLimit4());
-                        a.setMoneyOrdersDeductible1(form.getMoneyOrdersDeductible4());
-                        a.setEmployDishonestyLimit1(form.getEmployDishonestyLimit4());                    
-                        a.setEmployDishonestyDeductible1(form.getEmployDishonestyDeductible4());
-                        a.setCglLimit1(form.getCglLimit4());
-                        a.setCglDeductible1(form.getCglDeductible4());
-                        a.setTenantsLegalLimit1(form.getTenantsLegalLimit4());
-                        a.setTenantsLegalDeductible1(form.getTenantsLegalDeductible4());
-                        a.setNonOwnedAutoLimit1(form.getNonOwnedAutoLimit4());
-                        a.setNonOwnedAutoDeductible1(form.getNonOwnedAutoDeductible4());
-                        a.setSef96Limit1(form.getSef96Limit4());
-                        a.setSef96Deductible1(form.getSef96Deductible4());
-                        a.setSef94Limit1(form.getSef94Limit4());
-                        a.setSef94Deductible1(form.getSef94Deductible4());
-                        a.setDoLimit1(form.getDoLimit4());
-                        a.setDoDeductible1(form.getDoDeductible4());
-                        a.setEoLimit1(form.getEoLimit4());
-                        a.setEoDeductible1(form.getEoDeductible4());
-                        a.setEmployerLimit1(form.getEmployerLimit4());
-                        a.setEmployerDeductible1(form.getEmployerDeductible4()); 
-                        a.setUmbrellaLimit1(form.getUmbrellaLimit4());
-                        a.setUmbrellaDeductible1(form.getUmbrellaDeductible4());
-                        a.setWrapUpLimit1(form.getWrapUpLimit4());
-                        a.setWrapUpDeductible1(form.getWrapUpDeductible4());
-                        a.setStdComprehensiveLimit1(form.getStdComprehensiveLimit4());
-                        a.setStdComprehensiveDeductible1(form.getStdComprehensiveDeductible4());
-                        a.setAirConditioningLimit1(form.getAirConditioningLimit4());
-                        a.setAirConditioningDeductible1(form.getAirConditioningDeductible4());
-                        a.setProductionMachineryLimit1(form.getProductionMachineryLimit4());
-                        a.setProductionMachineryDeductible1(form.getProductionMachineryDeductible4());
-                    	a.setOthercoverage11(form.getOthercoverage14());
-	                a.setOthercoverage21(form.getOthercoverage24());
-                        a.setOtherCoverageLimit11(form.getOtherCoverageLimit14());
-                        a.setOtherCoverageDeductible11(form.getOtherCoverageDeductible14());
-                        a.setOtherCoverageLimit21(form.getOtherCoverageLimit24());
-                        a.setOtherCoverageDeductible21(form.getOtherCoverageDeductible24());
-    	                a.setAdditionalCoverage1(form.getAdditionalcoverage4());
-        	        a.setRoofupdated1(form.getRoofupdated4());
-            	        a.setHeatingupdated1(form.getHeatingupdated4());
-                	a.setElectricalupdated1(form.getElectricalupdated4());
-                    	a.setElectricalamps1(form.getElectricalamps4());
-	                a.setFireProtectiondistance1(form.getFireProtectiondistance4());
-    	                a.setAddress1(form.getAddress4());
-        	        a.setBasement1(form.getBasement4());
-            	        a.setOwner11(form.getOwnercb4());
-                	a.setTruckMan1(form.getTruckMan4());
-                    	a.setGrossEarning801(form.getGrossEarningCheckbox4());
-	                a.setWallsframe1(form.getWallsframe4());
-    	                a.setWallshcb1(form.getWallshcb4());
-	                a.setWallssteel1(form.getWallssteel4());
-    	                a.setWallsbrick1(form.getWallsbrick4());
-        	        a.setRoofwood1(form.getRoofwood4());
-            	        a.setRoofsteel1(form.getRoofsteel4());
-                	a.setRoofconcrete1(form.getRoofconcrete4());
-                    	a.setFloorsconcrete1(form.getFloorsconcrete4());
-	                a.setFloorswood1(form.getFloorswood4());
-    	                a.setHeatinggas1(form.getHeatinggas4());
-        	        a.setHeatingoil1(form.getHeatingoil4());
-            	        a.setHeatingelectric1(form.getHeatingelectric4());
-                	a.setHeatingother1(form.getHeatingother4());
-                    	a.setElectricalbreakers1(form.getElectricalbreakers4());
-	                a.setElectricalfuses1(form.getElectricalfuses4());
-        	        a.setPlumbingcopper1(form.getPlumbingcopper4());
-            	        a.setPlumbingpvc1(form.getPlumbingpvc4());
-                	a.setPlumbingother1(form.getPlumbingother4());
-                        a.setPlumbingupdated1(form.getPlumbingupdated4());
-                    	a.setFireProtection1(form.getFireProtection4());
-	                a.setSecurity1(form.getSecurity4());
-                        a.setAge1(form.getAge4());
-                        a.setTotalSqFootage1(form.getTotalSqFootage4());
-                        a.setInsdSqFootage1(form.getInsdSqFootage4());
-                        a.setNoOfStories1(form.getNoOfStories4()); 
-                        listAddInfo.add(a);
-                }
-                break;
-                case 5:
-                if (!CommonValidations.isStringEmpty(form.getAddress5()))
-                {
-                        a.setBuildingLimit1(form.getBuildingLimit5());
-                        a.setBuildingDeductible1(form.getBuildingDeductible5());
-                        a.setContentsLimit1(form.getContentsLimit5());
-                        a.setContentsDeductible1(form.getContentsDeductible5());
-                        a.setStockLimit1(form.getStockLimit5());
-                        a.setStockDeductible1(form.getStockDeductible5());
-                        a.setOfficeContentLimit1(form.getOfficeContentLimit5());
-                        a.setOfficeContentDeductible1(form.getOfficeContentDeductible5());
-                        a.setEdpLimit1(form.getEdpLimit5());
-                        a.setEdpDeductible1(form.getEdpDeductible5());
-                        a.setEquipmentLimit1(form.getEquipmentLimit5());
-                        a.setEquipmentDeductible1(form.getEquipmentDeductible5());
-                        a.setOffPremisesLimit1(form.getOffPremisesLimit5());
-                        a.setOffPremisesDeductible1(form.getOffPremisesDeductible5());
-                        a.setTransitLimit1(form.getTransitLimit5());
-                        a.setTransitDeductible1(form.getTransitDeductible5());
-                        a.setMiscPropertyLimit1(form.getMiscPropertyLimit5());
-                        a.setMiscPropertyDeductible1(form.getMiscPropertyDeductible5());
-                        a.setContractorEquipmentLimit1(form.getContractorEquipmentLimit5());
-                        a.setContractorEquipmentDeductible1(form.getContractorEquipmentDeductible5());
-                        a.setInstallationFloaterLimit1(form.getInstallationFloaterLimit5());
-                        a.setInstallationFloaterDeductible1(form.getInstallationFloaterDeductible5());
-                        a.setToolFloaterLimit1(form.getToolFloaterLimit5());                    
-                        a.setToolFloaterDeductible1(form.getToolFloaterDeductible5());
-                        a.setSignFloaterLimit1(form.getSignFloaterLimit5());
-                        a.setSignFloaterDeductible1(form.getSignFloaterDeductible5());
-                        a.setMotorTruckLimit1(form.getMotorTruckLimit5());
-                        a.setMotorTruckDeductible1(form.getMotorTruckDeductible5());
-                        a.setGlassLimit1(form.getGlassLimit5());
-                        a.setGlassDeductible1(form.getGlassDeductible5());
-                        a.setSewerBackupDeductible1(form.getSewerBackupDeductible5());
-                        a.setFloodDeductible1(form.getFloodDeductible5());
-                        a.setEarthquakeDeductible1(form.getEarthquakeDeductible5());
-                        a.setProfitLimit1(form.getProfitLimit5());
-                        a.setProfitDeductible1(form.getProfitDeductible5());
-                        a.setGrossEarningLimit1(form.getGrossEarningLimit5());
-                        a.setGrossEarningDeductible1(form.getGrossEarningDeductible5());
-                        a.setRentalIncomeLimit1(form.getRentalIncomeLimit5());
-                        a.setRentalIncomeDeductible1(form.getRentalIncomeDeductible5());
-                        a.setExtraExpenseLimit1(form.getExtraExpenseLimit5());
-                        a.setExtraExpenseDeductible1(form.getExtraExpenseDeductible5());
-                        a.setOffPremisesPowerLimit1(form.getOffPremisesPowerLimit5());
-                        a.setOffPremisesPowerDeductible1(form.getOffPremisesPowerDeductible5());
-                        a.setInsideOutsideLimit1(form.getInsideOutsideLimit5()); 
-                        a.setInsideOutsideDeductible1(form.getInsideOutsideDeductible5());
-                        a.setBfMoneyLimit1(form.getBfMoneyLimit5());
-                        a.setBfMoneyDeductible1(form.getBfMoneyDeductible5());
-                        a.setDeopistorForgeryLimit1(form.getDeopistorForgeryLimit5());
-                        a.setDeopistorForgeryDeductible1(form.getDeopistorForgeryDeductible5());
-                        a.setMoneyOrdersLimit1(form.getMoneyOrdersLimit5());
-                        a.setMoneyOrdersDeductible1(form.getMoneyOrdersDeductible5());
-                        a.setEmployDishonestyLimit1(form.getEmployDishonestyLimit5());                    
-                        a.setEmployDishonestyDeductible1(form.getEmployDishonestyDeductible5());
-                        a.setCglLimit1(form.getCglLimit5());
-                        a.setCglDeductible1(form.getCglDeductible5());
-                        a.setTenantsLegalLimit1(form.getTenantsLegalLimit5());
-                        a.setTenantsLegalDeductible1(form.getTenantsLegalDeductible5());
-                        a.setNonOwnedAutoLimit1(form.getNonOwnedAutoLimit5());
-                        a.setNonOwnedAutoDeductible1(form.getNonOwnedAutoDeductible5());
-                        a.setSef96Limit1(form.getSef96Limit5());
-                        a.setSef96Deductible1(form.getSef96Deductible5());
-                        a.setSef94Limit1(form.getSef94Limit5());
-                        a.setSef94Deductible1(form.getSef94Deductible5());
-                        a.setDoLimit1(form.getDoLimit5());
-                        a.setDoDeductible1(form.getDoDeductible5());
-                        a.setEoLimit1(form.getEoLimit5());
-                        a.setEoDeductible1(form.getEoDeductible5());
-                        a.setEmployerLimit1(form.getEmployerLimit5());
-                        a.setEmployerDeductible1(form.getEmployerDeductible5()); 
-                        a.setUmbrellaLimit1(form.getUmbrellaLimit5());
-                        a.setUmbrellaDeductible1(form.getUmbrellaDeductible5());
-                        a.setWrapUpLimit1(form.getWrapUpLimit5());
-                        a.setWrapUpDeductible1(form.getWrapUpDeductible5());
-                        a.setStdComprehensiveLimit1(form.getStdComprehensiveLimit5());
-                        a.setStdComprehensiveDeductible1(form.getStdComprehensiveDeductible5());
-                        a.setAirConditioningLimit1(form.getAirConditioningLimit5());
-                        a.setAirConditioningDeductible1(form.getAirConditioningDeductible5());
-                        a.setProductionMachineryLimit1(form.getProductionMachineryLimit5());
-                        a.setProductionMachineryDeductible1(form.getProductionMachineryDeductible5());
-                    	a.setOthercoverage11(form.getOthercoverage15());
-	                a.setOthercoverage21(form.getOthercoverage25());
-                        a.setOtherCoverageLimit11(form.getOtherCoverageLimit15());
-                        a.setOtherCoverageDeductible11(form.getOtherCoverageDeductible15());
-                        a.setOtherCoverageLimit21(form.getOtherCoverageLimit25());
-                        a.setOtherCoverageDeductible21(form.getOtherCoverageDeductible25());
-    	                a.setAdditionalCoverage1(form.getAdditionalcoverage5());
-        	        a.setRoofupdated1(form.getRoofupdated5());
-            	        a.setHeatingupdated1(form.getHeatingupdated5());
-                	a.setElectricalupdated1(form.getElectricalupdated5());
-                    	a.setElectricalamps1(form.getElectricalamps5());
-	                a.setFireProtectiondistance1(form.getFireProtectiondistance5());
-    	                a.setAddress1(form.getAddress5());
-        	        a.setBasement1(form.getBasement5());
-            	        a.setOwner11(form.getOwnercb5());
-                	a.setTruckMan1(form.getTruckMan5());
-                    	a.setGrossEarning801(form.getGrossEarningCheckbox5());
-	                a.setWallsframe1(form.getWallsframe5());
-    	                a.setWallshcb1(form.getWallshcb5());
-	                a.setWallssteel1(form.getWallssteel5());
-    	                a.setWallsbrick1(form.getWallsbrick5());
-        	        a.setRoofwood1(form.getRoofwood5());
-            	        a.setRoofsteel1(form.getRoofsteel5());
-                	a.setRoofconcrete1(form.getRoofconcrete5());
-                    	a.setFloorsconcrete1(form.getFloorsconcrete5());
-	                a.setFloorswood1(form.getFloorswood5());
-    	                a.setHeatinggas1(form.getHeatinggas5());
-        	        a.setHeatingoil1(form.getHeatingoil5());
-            	        a.setHeatingelectric1(form.getHeatingelectric5());
-                	a.setHeatingother1(form.getHeatingother5());
-                    	a.setElectricalbreakers1(form.getElectricalbreakers5());
-	                a.setElectricalfuses1(form.getElectricalfuses5());
-        	        a.setPlumbingcopper1(form.getPlumbingcopper5());
-            	        a.setPlumbingpvc1(form.getPlumbingpvc5());
-                	a.setPlumbingother1(form.getPlumbingother5());
-                        a.setPlumbingupdated1(form.getPlumbingupdated5());
-                    	a.setFireProtection1(form.getFireProtection5());
-	                a.setSecurity1(form.getSecurity5());
-                        a.setAge1(form.getAge5());
-                        a.setTotalSqFootage1(form.getTotalSqFootage5());
-                        a.setInsdSqFootage1(form.getInsdSqFootage5());
-                        a.setNoOfStories1(form.getNoOfStories5());  
-                        listAddInfo.add(a);
-                }
-                break;
-                case 6:
-                if (!CommonValidations.isStringEmpty(form.getAddress6()))
-                {
-                       a.setBuildingLimit1(form.getBuildingLimit6());
-                        a.setBuildingDeductible1(form.getBuildingDeductible6());
-                        a.setContentsLimit1(form.getContentsLimit6());
-                        a.setContentsDeductible1(form.getContentsDeductible6());
-                        a.setStockLimit1(form.getStockLimit6());
-                        a.setStockDeductible1(form.getStockDeductible6());
-                        a.setOfficeContentLimit1(form.getOfficeContentLimit6());
-                        a.setOfficeContentDeductible1(form.getOfficeContentDeductible6());
-                        a.setEdpLimit1(form.getEdpLimit6());
-                        a.setEdpDeductible1(form.getEdpDeductible6());
-                        a.setEquipmentLimit1(form.getEquipmentLimit6());
-                        a.setEquipmentDeductible1(form.getEquipmentDeductible6());
-                        a.setOffPremisesLimit1(form.getOffPremisesLimit6());
-                        a.setOffPremisesDeductible1(form.getOffPremisesDeductible6());
-                        a.setTransitLimit1(form.getTransitLimit6());
-                        a.setTransitDeductible1(form.getTransitDeductible6());
-                        a.setMiscPropertyLimit1(form.getMiscPropertyLimit6());
-                        a.setMiscPropertyDeductible1(form.getMiscPropertyDeductible6());
-                        a.setContractorEquipmentLimit1(form.getContractorEquipmentLimit6());
-                        a.setContractorEquipmentDeductible1(form.getContractorEquipmentDeductible6());
-                        a.setInstallationFloaterLimit1(form.getInstallationFloaterLimit6());
-                        a.setInstallationFloaterDeductible1(form.getInstallationFloaterDeductible6());
-                        a.setToolFloaterLimit1(form.getToolFloaterLimit6());                    
-                        a.setToolFloaterDeductible1(form.getToolFloaterDeductible6());
-                        a.setSignFloaterLimit1(form.getSignFloaterLimit6());
-                        a.setSignFloaterDeductible1(form.getSignFloaterDeductible6());
-                        a.setMotorTruckLimit1(form.getMotorTruckLimit6());
-                        a.setMotorTruckDeductible1(form.getMotorTruckDeductible6());
-                        a.setGlassLimit1(form.getGlassLimit6());
-                        a.setGlassDeductible1(form.getGlassDeductible6());
-                        a.setSewerBackupDeductible1(form.getSewerBackupDeductible6());
-                        a.setFloodDeductible1(form.getFloodDeductible6());
-                        a.setEarthquakeDeductible1(form.getEarthquakeDeductible6());
-                        a.setProfitLimit1(form.getProfitLimit6());
-                        a.setProfitDeductible1(form.getProfitDeductible6());
-                        a.setGrossEarningLimit1(form.getGrossEarningLimit6());
-                        a.setGrossEarningDeductible1(form.getGrossEarningDeductible6());
-                        a.setRentalIncomeLimit1(form.getRentalIncomeLimit6());
-                        a.setRentalIncomeDeductible1(form.getRentalIncomeDeductible6());
-                        a.setExtraExpenseLimit1(form.getExtraExpenseLimit6());
-                        a.setExtraExpenseDeductible1(form.getExtraExpenseDeductible6());
-                        a.setOffPremisesPowerLimit1(form.getOffPremisesPowerLimit6());
-                        a.setOffPremisesPowerDeductible1(form.getOffPremisesPowerDeductible6());
-                        a.setInsideOutsideLimit1(form.getInsideOutsideLimit6()); 
-                        a.setInsideOutsideDeductible1(form.getInsideOutsideDeductible6());
-                        a.setBfMoneyLimit1(form.getBfMoneyLimit6());
-                        a.setBfMoneyDeductible1(form.getBfMoneyDeductible6());
-                        a.setDeopistorForgeryLimit1(form.getDeopistorForgeryLimit6());
-                        a.setDeopistorForgeryDeductible1(form.getDeopistorForgeryDeductible6());
-                        a.setMoneyOrdersLimit1(form.getMoneyOrdersLimit6());
-                        a.setMoneyOrdersDeductible1(form.getMoneyOrdersDeductible6());
-                        a.setEmployDishonestyLimit1(form.getEmployDishonestyLimit6());                    
-                        a.setEmployDishonestyDeductible1(form.getEmployDishonestyDeductible6());
-                        a.setCglLimit1(form.getCglLimit6());
-                        a.setCglDeductible1(form.getCglDeductible6());
-                        a.setTenantsLegalLimit1(form.getTenantsLegalLimit6());
-                        a.setTenantsLegalDeductible1(form.getTenantsLegalDeductible6());
-                        a.setNonOwnedAutoLimit1(form.getNonOwnedAutoLimit6());
-                        a.setNonOwnedAutoDeductible1(form.getNonOwnedAutoDeductible6());
-                        a.setSef96Limit1(form.getSef96Limit6());
-                        a.setSef96Deductible1(form.getSef96Deductible6());
-                        a.setSef94Limit1(form.getSef94Limit6());
-                        a.setSef94Deductible1(form.getSef94Deductible6());
-                        a.setDoLimit1(form.getDoLimit6());
-                        a.setDoDeductible1(form.getDoDeductible6());
-                        a.setEoLimit1(form.getEoLimit6());
-                        a.setEoDeductible1(form.getEoDeductible6());
-                        a.setEmployerLimit1(form.getEmployerLimit6());
-                        a.setEmployerDeductible1(form.getEmployerDeductible6()); 
-                        a.setUmbrellaLimit1(form.getUmbrellaLimit6());
-                        a.setUmbrellaDeductible1(form.getUmbrellaDeductible6());
-                        a.setWrapUpLimit1(form.getWrapUpLimit6());
-                        a.setWrapUpDeductible1(form.getWrapUpDeductible6());
-                        a.setStdComprehensiveLimit1(form.getStdComprehensiveLimit6());
-                        a.setStdComprehensiveDeductible1(form.getStdComprehensiveDeductible6());
-                        a.setAirConditioningLimit1(form.getAirConditioningLimit6());
-                        a.setAirConditioningDeductible1(form.getAirConditioningDeductible6());
-                        a.setProductionMachineryLimit1(form.getProductionMachineryLimit6());
-                        a.setProductionMachineryDeductible1(form.getProductionMachineryDeductible6());
-                    	a.setOthercoverage11(form.getOthercoverage16());
-	                a.setOthercoverage21(form.getOthercoverage26());
-                        a.setOtherCoverageLimit11(form.getOtherCoverageLimit16());
-                        a.setOtherCoverageDeductible11(form.getOtherCoverageDeductible16());
-                        a.setOtherCoverageLimit21(form.getOtherCoverageLimit26());
-                        a.setOtherCoverageDeductible21(form.getOtherCoverageDeductible26());
-    	                a.setAdditionalCoverage1(form.getAdditionalcoverage6());
-        	        a.setRoofupdated1(form.getRoofupdated6());
-            	        a.setHeatingupdated1(form.getHeatingupdated6());
-                	a.setElectricalupdated1(form.getElectricalupdated6());
-                    	a.setElectricalamps1(form.getElectricalamps6());
-	                a.setFireProtectiondistance1(form.getFireProtectiondistance6());
-    	                a.setAddress1(form.getAddress6());
-        	        a.setBasement1(form.getBasement6());
-            	        a.setOwner11(form.getOwnercb6());
-                	a.setTruckMan1(form.getTruckMan6());
-                    	a.setGrossEarning801(form.getGrossEarningCheckbox6());
-	                a.setWallsframe1(form.getWallsframe6());
-    	                a.setWallshcb1(form.getWallshcb6());
-	                a.setWallssteel1(form.getWallssteel6());
-    	                a.setWallsbrick1(form.getWallsbrick6());
-        	        a.setRoofwood1(form.getRoofwood6());
-            	        a.setRoofsteel1(form.getRoofsteel6());
-                	a.setRoofconcrete1(form.getRoofconcrete6());
-                    	a.setFloorsconcrete1(form.getFloorsconcrete6());
-	                a.setFloorswood1(form.getFloorswood6());
-    	                a.setHeatinggas1(form.getHeatinggas6());
-        	        a.setHeatingoil1(form.getHeatingoil6());
-            	        a.setHeatingelectric1(form.getHeatingelectric6());
-                	a.setHeatingother1(form.getHeatingother6());
-                    	a.setElectricalbreakers1(form.getElectricalbreakers6());
-	                a.setElectricalfuses1(form.getElectricalfuses6());
-        	        a.setPlumbingcopper1(form.getPlumbingcopper6());
-            	        a.setPlumbingpvc1(form.getPlumbingpvc6());
-                	a.setPlumbingother1(form.getPlumbingother6());
-                        a.setPlumbingupdated1(form.getPlumbingupdated6());
-                    	a.setFireProtection1(form.getFireProtection6());
-	                a.setSecurity1(form.getSecurity6());
-                        a.setAge1(form.getAge6());
-                        a.setTotalSqFootage1(form.getTotalSqFootage6());
-                        a.setInsdSqFootage1(form.getInsdSqFootage6());
-                        a.setNoOfStories1(form.getNoOfStories6());  
-                        listAddInfo.add(a);
-                }
-                break;
-                case 7:
-                if (!CommonValidations.isStringEmpty(form.getAddress7()))
-                {
-                        a.setBuildingLimit1(form.getBuildingLimit7());
-                        a.setBuildingDeductible1(form.getBuildingDeductible7());
-                        a.setContentsLimit1(form.getContentsLimit7());
-                        a.setContentsDeductible1(form.getContentsDeductible7());
-                        a.setStockLimit1(form.getStockLimit7());
-                        a.setStockDeductible1(form.getStockDeductible7());
-                        a.setOfficeContentLimit1(form.getOfficeContentLimit7());
-                        a.setOfficeContentDeductible1(form.getOfficeContentDeductible7());
-                        a.setEdpLimit1(form.getEdpLimit7());
-                        a.setEdpDeductible1(form.getEdpDeductible7());
-                        a.setEquipmentLimit1(form.getEquipmentLimit7());
-                        a.setEquipmentDeductible1(form.getEquipmentDeductible7());
-                        a.setOffPremisesLimit1(form.getOffPremisesLimit7());
-                        a.setOffPremisesDeductible1(form.getOffPremisesDeductible7());
-                        a.setTransitLimit1(form.getTransitLimit7());
-                        a.setTransitDeductible1(form.getTransitDeductible7());
-                        a.setMiscPropertyLimit1(form.getMiscPropertyLimit7());
-                        a.setMiscPropertyDeductible1(form.getMiscPropertyDeductible7());
-                        a.setContractorEquipmentLimit1(form.getContractorEquipmentLimit7());
-                        a.setContractorEquipmentDeductible1(form.getContractorEquipmentDeductible7());
-                        a.setInstallationFloaterLimit1(form.getInstallationFloaterLimit7());
-                        a.setInstallationFloaterDeductible1(form.getInstallationFloaterDeductible7());
-                        a.setToolFloaterLimit1(form.getToolFloaterLimit7());                    
-                        a.setToolFloaterDeductible1(form.getToolFloaterDeductible7());
-                        a.setSignFloaterLimit1(form.getSignFloaterLimit7());
-                        a.setSignFloaterDeductible1(form.getSignFloaterDeductible7());
-                        a.setMotorTruckLimit1(form.getMotorTruckLimit7());
-                        a.setMotorTruckDeductible1(form.getMotorTruckDeductible7());
-                        a.setGlassLimit1(form.getGlassLimit7());
-                        a.setGlassDeductible1(form.getGlassDeductible7());
-                        a.setSewerBackupDeductible1(form.getSewerBackupDeductible7());
-                        a.setFloodDeductible1(form.getFloodDeductible7());
-                        a.setEarthquakeDeductible1(form.getEarthquakeDeductible7());
-                        a.setProfitLimit1(form.getProfitLimit7());
-                        a.setProfitDeductible1(form.getProfitDeductible7());
-                        a.setGrossEarningLimit1(form.getGrossEarningLimit7());
-                        a.setGrossEarningDeductible1(form.getGrossEarningDeductible7());
-                        a.setRentalIncomeLimit1(form.getRentalIncomeLimit7());
-                        a.setRentalIncomeDeductible1(form.getRentalIncomeDeductible7());
-                        a.setExtraExpenseLimit1(form.getExtraExpenseLimit7());
-                        a.setExtraExpenseDeductible1(form.getExtraExpenseDeductible7());
-                        a.setOffPremisesPowerLimit1(form.getOffPremisesPowerLimit7());
-                        a.setOffPremisesPowerDeductible1(form.getOffPremisesPowerDeductible7());
-                        a.setInsideOutsideLimit1(form.getInsideOutsideLimit7()); 
-                        a.setInsideOutsideDeductible1(form.getInsideOutsideDeductible7());
-                        a.setBfMoneyLimit1(form.getBfMoneyLimit7());
-                        a.setBfMoneyDeductible1(form.getBfMoneyDeductible7());
-                        a.setDeopistorForgeryLimit1(form.getDeopistorForgeryLimit7());
-                        a.setDeopistorForgeryDeductible1(form.getDeopistorForgeryDeductible7());
-                        a.setMoneyOrdersLimit1(form.getMoneyOrdersLimit7());
-                        a.setMoneyOrdersDeductible1(form.getMoneyOrdersDeductible7());
-                        a.setEmployDishonestyLimit1(form.getEmployDishonestyLimit7());                    
-                        a.setEmployDishonestyDeductible1(form.getEmployDishonestyDeductible7());
-                        a.setCglLimit1(form.getCglLimit7());
-                        a.setCglDeductible1(form.getCglDeductible7());
-                        a.setTenantsLegalLimit1(form.getTenantsLegalLimit7());
-                        a.setTenantsLegalDeductible1(form.getTenantsLegalDeductible7());
-                        a.setNonOwnedAutoLimit1(form.getNonOwnedAutoLimit7());
-                        a.setNonOwnedAutoDeductible1(form.getNonOwnedAutoDeductible7());
-                        a.setSef96Limit1(form.getSef96Limit7());
-                        a.setSef96Deductible1(form.getSef96Deductible7());
-                        a.setSef94Limit1(form.getSef94Limit7());
-                        a.setSef94Deductible1(form.getSef94Deductible7());
-                        a.setDoLimit1(form.getDoLimit7());
-                        a.setDoDeductible1(form.getDoDeductible7());
-                        a.setEoLimit1(form.getEoLimit7());
-                        a.setEoDeductible1(form.getEoDeductible7());
-                        a.setEmployerLimit1(form.getEmployerLimit7());
-                        a.setEmployerDeductible1(form.getEmployerDeductible7()); 
-                        a.setUmbrellaLimit1(form.getUmbrellaLimit7());
-                        a.setUmbrellaDeductible1(form.getUmbrellaDeductible7());
-                        a.setWrapUpLimit1(form.getWrapUpLimit7());
-                        a.setWrapUpDeductible1(form.getWrapUpDeductible7());
-                        a.setStdComprehensiveLimit1(form.getStdComprehensiveLimit7());
-                        a.setStdComprehensiveDeductible1(form.getStdComprehensiveDeductible7());
-                        a.setAirConditioningLimit1(form.getAirConditioningLimit7());
-                        a.setAirConditioningDeductible1(form.getAirConditioningDeductible7());
-                        a.setProductionMachineryLimit1(form.getProductionMachineryLimit7());
-                        a.setProductionMachineryDeductible1(form.getProductionMachineryDeductible7());
-                    	a.setOthercoverage11(form.getOthercoverage17());
-	                a.setOthercoverage21(form.getOthercoverage27());
-                        a.setOtherCoverageLimit11(form.getOtherCoverageLimit17());
-                        a.setOtherCoverageDeductible11(form.getOtherCoverageDeductible17());
-                        a.setOtherCoverageLimit21(form.getOtherCoverageLimit27());
-                        a.setOtherCoverageDeductible21(form.getOtherCoverageDeductible27());
-    	                a.setAdditionalCoverage1(form.getAdditionalcoverage7());
-        	        a.setRoofupdated1(form.getRoofupdated7());
-            	        a.setHeatingupdated1(form.getHeatingupdated7());
-                	a.setElectricalupdated1(form.getElectricalupdated7());
-                    	a.setElectricalamps1(form.getElectricalamps7());
-	                a.setFireProtectiondistance1(form.getFireProtectiondistance7());
-    	                a.setAddress1(form.getAddress7());
-        	        a.setBasement1(form.getBasement7());
-            	        a.setOwner11(form.getOwnercb7());
-                	a.setTruckMan1(form.getTruckMan7());
-                    	a.setGrossEarning801(form.getGrossEarningCheckbox7());
-	                a.setWallsframe1(form.getWallsframe7());
-    	                a.setWallshcb1(form.getWallshcb7());
-	                a.setWallssteel1(form.getWallssteel7());
-    	                a.setWallsbrick1(form.getWallsbrick7());
-        	        a.setRoofwood1(form.getRoofwood7());
-            	        a.setRoofsteel1(form.getRoofsteel7());
-                	a.setRoofconcrete1(form.getRoofconcrete7());
-                    	a.setFloorsconcrete1(form.getFloorsconcrete7());
-	                a.setFloorswood1(form.getFloorswood7());
-    	                a.setHeatinggas1(form.getHeatinggas7());
-        	        a.setHeatingoil1(form.getHeatingoil7());
-            	        a.setHeatingelectric1(form.getHeatingelectric7());
-                	a.setHeatingother1(form.getHeatingother7());
-                    	a.setElectricalbreakers1(form.getElectricalbreakers7());
-	                a.setElectricalfuses1(form.getElectricalfuses7());
-        	        a.setPlumbingcopper1(form.getPlumbingcopper7());
-            	        a.setPlumbingpvc1(form.getPlumbingpvc7());
-                	a.setPlumbingother1(form.getPlumbingother7());
-                        a.setPlumbingupdated1(form.getPlumbingupdated7());
-                    	a.setFireProtection1(form.getFireProtection7());
-	                a.setSecurity1(form.getSecurity7());
-                        a.setAge1(form.getAge7());
-                        a.setTotalSqFootage1(form.getTotalSqFootage7());
-                        a.setInsdSqFootage1(form.getInsdSqFootage7());
-                        a.setNoOfStories1(form.getNoOfStories7());
-                        listAddInfo.add(a);
-                }
-                        break; 
-                }
+                            if (!CommonValidations.isStringEmpty(form.getAddress1())) {
+                                System.out.println("case 1 Inside");
+                                a.setBuildingLimit1(form.getBuildingLimit1());
+                                a.setBuildingDeductible1(form.getBuildingDeductible1());
+                                a.setContentsLimit1(form.getContentsLimit1());
+                                a.setContentsDeductible1(form.getContentsDeductible1());
+                                a.setStockLimit1(form.getStockLimit1());
+                                a.setStockDeductible1(form.getStockDeductible1());
+                                a.setOfficeContentLimit1(form.getOfficeContentLimit1());
+                                a.setOfficeContentDeductible1(form.getOfficeContentDeductible1());
+                                a.setEdpLimit1(form.getEdpLimit1());
+                                a.setEdpDeductible1(form.getEdpDeductible1());
+                                a.setEquipmentLimit1(form.getEquipmentLimit1());
+                                a.setEquipmentDeductible1(form.getEquipmentDeductible1());
+                                a.setOffPremisesLimit1(form.getOffPremisesLimit1());
+                                a.setOffPremisesDeductible1(form.getOffPremisesDeductible1());
+                                a.setTransitLimit1(form.getTransitLimit1());
+                                a.setTransitDeductible1(form.getTransitDeductible1());
+                                a.setMiscPropertyLimit1(form.getMiscPropertyLimit1());
+                                a.setMiscPropertyDeductible1(form.getMiscPropertyDeductible1());
+                                a.setContractorEquipmentLimit1(form.getContractorEquipmentLimit1());
+                                a.setContractorEquipmentDeductible1(form.getContractorEquipmentDeductible1());
+                                a.setInstallationFloaterLimit1(form.getInstallationFloaterLimit1());
+                                a.setInstallationFloaterDeductible1(form.getInstallationFloaterDeductible1());
+                                a.setToolFloaterLimit1(form.getToolFloaterLimit1());
+                                a.setToolFloaterDeductible1(form.getToolFloaterDeductible1());
+                                a.setSignFloaterLimit1(form.getSignFloaterLimit1());
+                                a.setSignFloaterDeductible1(form.getSignFloaterDeductible1());
+                                a.setMotorTruckLimit1(form.getMotorTruckLimit1());
+                                a.setMotorTruckDeductible1(form.getMotorTruckDeductible1());
+                                a.setGlassLimit1(form.getGlassLimit1());
+                                a.setGlassDeductible1(form.getGlassDeductible1());
+                                a.setSewerBackupDeductible1(form.getSewerBackupDeductible1());
+                                a.setFloodDeductible1(form.getFloodDeductible1());
+                                a.setEarthquakeDeductible1(form.getEarthquakeDeductible1());
+                                a.setProfitLimit1(form.getProfitLimit1());
+                                a.setProfitDeductible1(form.getProfitDeductible1());
+                                a.setGrossEarningLimit1(form.getGrossEarningLimit1());
+                                a.setGrossEarningDeductible1(form.getGrossEarningDeductible1());
+                                a.setRentalIncomeLimit1(form.getRentalIncomeLimit1());
+                                a.setRentalIncomeDeductible1(form.getRentalIncomeDeductible1());
+                                a.setExtraExpenseLimit1(form.getExtraExpenseLimit1());
+                                a.setExtraExpenseDeductible1(form.getExtraExpenseDeductible1());
+                                a.setOffPremisesPowerLimit1(form.getOffPremisesPowerLimit1());
+                                a.setOffPremisesPowerDeductible1(form.getOffPremisesPowerDeductible1());
+                                a.setInsideOutsideLimit1(form.getInsideOutsideLimit1());
+                                a.setInsideOutsideDeductible1(form.getInsideOutsideDeductible1());
+                                a.setBfMoneyLimit1(form.getBfMoneyLimit1());
+                                a.setBfMoneyDeductible1(form.getBfMoneyDeductible1());
+                                a.setDeopistorForgeryLimit1(form.getDeopistorForgeryLimit1());
+                                a.setDeopistorForgeryDeductible1(form.getDeopistorForgeryDeductible1());
+                                a.setMoneyOrdersLimit1(form.getMoneyOrdersLimit1());
+                                a.setMoneyOrdersDeductible1(form.getMoneyOrdersDeductible1());
+                                a.setEmployDishonestyLimit1(form.getEmployDishonestyLimit1());
+                                a.setEmployDishonestyDeductible1(form.getEmployDishonestyDeductible1());
+                                a.setCglLimit1(form.getCglLimit1());
+                                a.setCglDeductible1(form.getCglDeductible1());
+                                a.setTenantsLegalLimit1(form.getTenantsLegalLimit1());
+                                a.setTenantsLegalDeductible1(form.getTenantsLegalDeductible1());
+                                a.setNonOwnedAutoLimit1(form.getNonOwnedAutoLimit1());
+                                a.setNonOwnedAutoDeductible1(form.getNonOwnedAutoDeductible1());
+                                a.setSef96Limit1(form.getSef96Limit1());
+                                a.setSef96Deductible1(form.getSef96Deductible1());
+                                a.setSef94Limit1(form.getSef94Limit1());
+                                a.setSef94Deductible1(form.getSef94Deductible1());
+                                a.setDoLimit1(form.getDoLimit1());
+                                a.setDoDeductible1(form.getDoDeductible1());
+                                a.setEoLimit1(form.getEoLimit1());
+                                a.setEoDeductible1(form.getEoDeductible1());
+                                a.setEmployerLimit1(form.getEmployerLimit1());
+                                a.setEmployerDeductible1(form.getEmployerDeductible1());
+                                a.setUmbrellaLimit1(form.getUmbrellaLimit1());
+                                a.setUmbrellaDeductible1(form.getUmbrellaDeductible1());
+                                a.setWrapUpLimit1(form.getWrapUpLimit1());
+                                a.setWrapUpDeductible1(form.getWrapUpDeductible1());
+                                a.setStdComprehensiveLimit1(form.getStdComprehensiveLimit1());
+                                a.setStdComprehensiveDeductible1(form.getStdComprehensiveDeductible1());
+                                a.setAirConditioningLimit1(form.getAirConditioningLimit1());
+                                a.setAirConditioningDeductible1(form.getAirConditioningDeductible1());
+                                a.setProductionMachineryLimit1(form.getProductionMachineryLimit1());
+                                a.setProductionMachineryDeductible1(form.getProductionMachineryDeductible1());
+                                a.setOthercoverage11(form.getOthercoverage11());
+                                a.setOthercoverage21(form.getOthercoverage21());
+                                a.setOtherCoverageLimit11(form.getOtherCoverageLimit11());
+                                a.setOtherCoverageDeductible11(form.getOtherCoverageDeductible11());
+                                a.setOtherCoverageLimit21(form.getOtherCoverageLimit21());
+                                a.setOtherCoverageDeductible21(form.getOtherCoverageDeductible21());
+                                a.setAdditionalCoverage1(form.getAdditionalcoverage1());
+                                a.setRoofupdated1(form.getRoofupdated1());
+                                a.setHeatingupdated1(form.getHeatingupdated1());
+                                a.setElectricalupdated1(form.getElectricalupdated1());
+                                a.setElectricalamps1(form.getElectricalamps1());
+                                a.setFireProtectiondistance1(form.getFireProtectiondistance1());
+                                a.setAddress1(form.getAddress1());
+                                a.setBasement1(form.getBasement1());
+                                a.setOwner11(form.getOwnercb1());
+                                a.setTruckMan1(form.getTruckMan1());
+                                a.setGrossEarning801(form.getGrossEarningCheckbox1());
+                                a.setWallsframe1(form.getWallsframe1());
+                                a.setWallshcb1(form.getWallshcb1());
+                                a.setWallssteel1(form.getWallssteel1());
+                                a.setWallsbrick1(form.getWallsbrick1());
+                                a.setRoofwood1(form.getRoofwood1());
+                                a.setRoofsteel1(form.getRoofsteel1());
+                                a.setRoofconcrete1(form.getRoofconcrete1());
+                                a.setFloorsconcrete1(form.getFloorsconcrete1());
+                                a.setFloorswood1(form.getFloorswood1());
+                                a.setHeatinggas1(form.getHeatinggas1());
+                                a.setHeatingoil1(form.getHeatingoil1());
+                                a.setHeatingelectric1(form.getHeatingelectric1());
+                                a.setHeatingother1(form.getHeatingother1());
+                                a.setElectricalbreakers1(form.getElectricalbreakers1());
+                                a.setElectricalfuses1(form.getElectricalfuses1());
+                                a.setPlumbingcopper1(form.getPlumbingcopper1());
+                                a.setPlumbingpvc1(form.getPlumbingpvc1());
+                                a.setPlumbingother1(form.getPlumbingother1());
+                                a.setPlumbingupdated1(form.getPlumbingupdated1());
+                                a.setFireProtection1(form.getFireProtection1());
+                                a.setSecurity1(form.getSecurity1());
+                                a.setAge1(form.getAge1());
+                                a.setTotalSqFootage1(form.getTotalSqFootage1());
+                                a.setInsdSqFootage1(form.getInsdSqFootage1());
+                                a.setNoOfStories1(form.getNoOfStories1());
+                                listAddInfo.add(a);
+                            }
+                            break;
+                        case 2:
+                            if (!CommonValidations.isStringEmpty(form.getAddress2())) {
+                                a.setBuildingLimit1(form.getBuildingLimit2());
+                                a.setBuildingDeductible1(form.getBuildingDeductible2());
+                                a.setContentsLimit1(form.getContentsLimit2());
+                                a.setContentsDeductible1(form.getContentsDeductible2());
+                                a.setStockLimit1(form.getStockLimit2());
+                                a.setStockDeductible1(form.getStockDeductible2());
+                                a.setOfficeContentLimit1(form.getOfficeContentLimit2());
+                                a.setOfficeContentDeductible1(form.getOfficeContentDeductible2());
+                                a.setEdpLimit1(form.getEdpLimit2());
+                                a.setEdpDeductible1(form.getEdpDeductible2());
+                                a.setEquipmentLimit1(form.getEquipmentLimit2());
+                                a.setEquipmentDeductible1(form.getEquipmentDeductible2());
+                                a.setOffPremisesLimit1(form.getOffPremisesLimit2());
+                                a.setOffPremisesDeductible1(form.getOffPremisesDeductible2());
+                                a.setTransitLimit1(form.getTransitLimit2());
+                                a.setTransitDeductible1(form.getTransitDeductible2());
+                                a.setMiscPropertyLimit1(form.getMiscPropertyLimit2());
+                                a.setMiscPropertyDeductible1(form.getMiscPropertyDeductible2());
+                                a.setContractorEquipmentLimit1(form.getContractorEquipmentLimit2());
+                                a.setContractorEquipmentDeductible1(form.getContractorEquipmentDeductible2());
+                                a.setInstallationFloaterLimit1(form.getInstallationFloaterLimit2());
+                                a.setInstallationFloaterDeductible1(form.getInstallationFloaterDeductible2());
+                                a.setToolFloaterLimit1(form.getToolFloaterLimit2());
+                                a.setToolFloaterDeductible1(form.getToolFloaterDeductible2());
+                                a.setSignFloaterLimit1(form.getSignFloaterLimit2());
+                                a.setSignFloaterDeductible1(form.getSignFloaterDeductible2());
+                                a.setMotorTruckLimit1(form.getMotorTruckLimit2());
+                                a.setMotorTruckDeductible1(form.getMotorTruckDeductible2());
+                                a.setGlassLimit1(form.getGlassLimit2());
+                                a.setGlassDeductible1(form.getGlassDeductible2());
+                                a.setSewerBackupDeductible1(form.getSewerBackupDeductible2());
+                                a.setFloodDeductible1(form.getFloodDeductible2());
+                                a.setEarthquakeDeductible1(form.getEarthquakeDeductible2());
+                                a.setProfitLimit1(form.getProfitLimit2());
+                                a.setProfitDeductible1(form.getProfitDeductible2());
+                                a.setGrossEarningLimit1(form.getGrossEarningLimit2());
+                                a.setGrossEarningDeductible1(form.getGrossEarningDeductible2());
+                                a.setRentalIncomeLimit1(form.getRentalIncomeLimit2());
+                                a.setRentalIncomeDeductible1(form.getRentalIncomeDeductible2());
+                                a.setExtraExpenseLimit1(form.getExtraExpenseLimit2());
+                                a.setExtraExpenseDeductible1(form.getExtraExpenseDeductible2());
+                                a.setOffPremisesPowerLimit1(form.getOffPremisesPowerLimit2());
+                                a.setOffPremisesPowerDeductible1(form.getOffPremisesPowerDeductible2());
+                                a.setInsideOutsideLimit1(form.getInsideOutsideLimit2());
+                                a.setInsideOutsideDeductible1(form.getInsideOutsideDeductible2());
+                                a.setBfMoneyLimit1(form.getBfMoneyLimit2());
+                                a.setBfMoneyDeductible1(form.getBfMoneyDeductible2());
+                                a.setDeopistorForgeryLimit1(form.getDeopistorForgeryLimit2());
+                                a.setDeopistorForgeryDeductible1(form.getDeopistorForgeryDeductible2());
+                                a.setMoneyOrdersLimit1(form.getMoneyOrdersLimit2());
+                                a.setMoneyOrdersDeductible1(form.getMoneyOrdersDeductible2());
+                                a.setEmployDishonestyLimit1(form.getEmployDishonestyLimit2());
+                                a.setEmployDishonestyDeductible1(form.getEmployDishonestyDeductible2());
+                                a.setCglLimit1(form.getCglLimit2());
+                                a.setCglDeductible1(form.getCglDeductible2());
+                                a.setTenantsLegalLimit1(form.getTenantsLegalLimit2());
+                                a.setTenantsLegalDeductible1(form.getTenantsLegalDeductible2());
+                                a.setNonOwnedAutoLimit1(form.getNonOwnedAutoLimit2());
+                                a.setNonOwnedAutoDeductible1(form.getNonOwnedAutoDeductible2());
+                                a.setSef96Limit1(form.getSef96Limit2());
+                                a.setSef96Deductible1(form.getSef96Deductible2());
+                                a.setSef94Limit1(form.getSef94Limit2());
+                                a.setSef94Deductible1(form.getSef94Deductible2());
+                                a.setDoLimit1(form.getDoLimit2());
+                                a.setDoDeductible1(form.getDoDeductible2());
+                                a.setEoLimit1(form.getEoLimit2());
+                                a.setEoDeductible1(form.getEoDeductible2());
+                                a.setEmployerLimit1(form.getEmployerLimit2());
+                                a.setEmployerDeductible1(form.getEmployerDeductible2());
+                                a.setUmbrellaLimit1(form.getUmbrellaLimit2());
+                                a.setUmbrellaDeductible1(form.getUmbrellaDeductible2());
+                                a.setWrapUpLimit1(form.getWrapUpLimit2());
+                                a.setWrapUpDeductible1(form.getWrapUpDeductible2());
+                                a.setStdComprehensiveLimit1(form.getStdComprehensiveLimit2());
+                                a.setStdComprehensiveDeductible1(form.getStdComprehensiveDeductible2());
+                                a.setAirConditioningLimit1(form.getAirConditioningLimit2());
+                                a.setAirConditioningDeductible1(form.getAirConditioningDeductible2());
+                                a.setProductionMachineryLimit1(form.getProductionMachineryLimit2());
+                                a.setProductionMachineryDeductible1(form.getProductionMachineryDeductible2());
+                                a.setOthercoverage11(form.getOthercoverage12());
+                                a.setOthercoverage21(form.getOthercoverage22());
+                                a.setOtherCoverageLimit11(form.getOtherCoverageLimit12());
+                                a.setOtherCoverageDeductible11(form.getOtherCoverageDeductible12());
+                                a.setOtherCoverageLimit21(form.getOtherCoverageLimit22());
+                                a.setOtherCoverageDeductible21(form.getOtherCoverageDeductible22());
+                                a.setAdditionalCoverage1(form.getAdditionalcoverage2());
+                                a.setRoofupdated1(form.getRoofupdated2());
+                                a.setHeatingupdated1(form.getHeatingupdated2());
+                                a.setElectricalupdated1(form.getElectricalupdated2());
+                                a.setElectricalamps1(form.getElectricalamps2());
+                                a.setFireProtectiondistance1(form.getFireProtectiondistance2());
+                                a.setAddress1(form.getAddress2());
+                                a.setBasement1(form.getBasement2());
+                                a.setOwner11(form.getOwnercb2());
+                                a.setTruckMan1(form.getTruckMan2());
+                                a.setGrossEarning801(form.getGrossEarningCheckbox2());
+                                a.setWallsframe1(form.getWallsframe2());
+                                a.setWallshcb1(form.getWallshcb2());
+                                a.setWallssteel1(form.getWallssteel2());
+                                a.setWallsbrick1(form.getWallsbrick2());
+                                a.setRoofwood1(form.getRoofwood2());
+                                a.setRoofsteel1(form.getRoofsteel2());
+                                a.setRoofconcrete1(form.getRoofconcrete2());
+                                a.setFloorsconcrete1(form.getFloorsconcrete2());
+                                a.setFloorswood1(form.getFloorswood2());
+                                a.setHeatinggas1(form.getHeatinggas2());
+                                a.setHeatingoil1(form.getHeatingoil2());
+                                a.setHeatingelectric1(form.getHeatingelectric2());
+                                a.setHeatingother1(form.getHeatingother2());
+                                a.setElectricalbreakers1(form.getElectricalbreakers2());
+                                a.setElectricalfuses1(form.getElectricalfuses2());
+                                a.setPlumbingcopper1(form.getPlumbingcopper2());
+                                a.setPlumbingpvc1(form.getPlumbingpvc2());
+                                a.setPlumbingother1(form.getPlumbingother2());
+                                a.setPlumbingupdated1(form.getPlumbingupdated2());
+                                a.setFireProtection1(form.getFireProtection2());
+                                a.setSecurity1(form.getSecurity2());
+                                a.setAge1(form.getAge2());
+                                a.setTotalSqFootage1(form.getTotalSqFootage2());
+                                a.setInsdSqFootage1(form.getInsdSqFootage2());
+                                a.setNoOfStories1(form.getNoOfStories2());
+                                listAddInfo.add(a);
+                            }
+                            break;
+                        case 3:
+                            if (!CommonValidations.isStringEmpty(form.getAddress3())) {
+                                a.setBuildingLimit1(form.getBuildingLimit3());
+                                a.setBuildingDeductible1(form.getBuildingDeductible3());
+                                a.setContentsLimit1(form.getContentsLimit3());
+                                a.setContentsDeductible1(form.getContentsDeductible3());
+                                a.setStockLimit1(form.getStockLimit3());
+                                a.setStockDeductible1(form.getStockDeductible3());
+                                a.setOfficeContentLimit1(form.getOfficeContentLimit3());
+                                a.setOfficeContentDeductible1(form.getOfficeContentDeductible3());
+                                a.setEdpLimit1(form.getEdpLimit3());
+                                a.setEdpDeductible1(form.getEdpDeductible3());
+                                a.setEquipmentLimit1(form.getEquipmentLimit3());
+                                a.setEquipmentDeductible1(form.getEquipmentDeductible3());
+                                a.setOffPremisesLimit1(form.getOffPremisesLimit3());
+                                a.setOffPremisesDeductible1(form.getOffPremisesDeductible3());
+                                a.setTransitLimit1(form.getTransitLimit3());
+                                a.setTransitDeductible1(form.getTransitDeductible3());
+                                a.setMiscPropertyLimit1(form.getMiscPropertyLimit3());
+                                a.setMiscPropertyDeductible1(form.getMiscPropertyDeductible3());
+                                a.setContractorEquipmentLimit1(form.getContractorEquipmentLimit3());
+                                a.setContractorEquipmentDeductible1(form.getContractorEquipmentDeductible3());
+                                a.setInstallationFloaterLimit1(form.getInstallationFloaterLimit3());
+                                a.setInstallationFloaterDeductible1(form.getInstallationFloaterDeductible3());
+                                a.setToolFloaterLimit1(form.getToolFloaterLimit3());
+                                a.setToolFloaterDeductible1(form.getToolFloaterDeductible3());
+                                a.setSignFloaterLimit1(form.getSignFloaterLimit3());
+                                a.setSignFloaterDeductible1(form.getSignFloaterDeductible3());
+                                a.setMotorTruckLimit1(form.getMotorTruckLimit3());
+                                a.setMotorTruckDeductible1(form.getMotorTruckDeductible3());
+                                a.setGlassLimit1(form.getGlassLimit3());
+                                a.setGlassDeductible1(form.getGlassDeductible3());
+                                a.setSewerBackupDeductible1(form.getSewerBackupDeductible3());
+                                a.setFloodDeductible1(form.getFloodDeductible3());
+                                a.setEarthquakeDeductible1(form.getEarthquakeDeductible3());
+                                a.setProfitLimit1(form.getProfitLimit3());
+                                a.setProfitDeductible1(form.getProfitDeductible3());
+                                a.setGrossEarningLimit1(form.getGrossEarningLimit3());
+                                a.setGrossEarningDeductible1(form.getGrossEarningDeductible3());
+                                a.setRentalIncomeLimit1(form.getRentalIncomeLimit3());
+                                a.setRentalIncomeDeductible1(form.getRentalIncomeDeductible3());
+                                a.setExtraExpenseLimit1(form.getExtraExpenseLimit3());
+                                a.setExtraExpenseDeductible1(form.getExtraExpenseDeductible3());
+                                a.setOffPremisesPowerLimit1(form.getOffPremisesPowerLimit3());
+                                a.setOffPremisesPowerDeductible1(form.getOffPremisesPowerDeductible3());
+                                a.setInsideOutsideLimit1(form.getInsideOutsideLimit3());
+                                a.setInsideOutsideDeductible1(form.getInsideOutsideDeductible3());
+                                a.setBfMoneyLimit1(form.getBfMoneyLimit3());
+                                a.setBfMoneyDeductible1(form.getBfMoneyDeductible3());
+                                a.setDeopistorForgeryLimit1(form.getDeopistorForgeryLimit3());
+                                a.setDeopistorForgeryDeductible1(form.getDeopistorForgeryDeductible3());
+                                a.setMoneyOrdersLimit1(form.getMoneyOrdersLimit3());
+                                a.setMoneyOrdersDeductible1(form.getMoneyOrdersDeductible3());
+                                a.setEmployDishonestyLimit1(form.getEmployDishonestyLimit3());
+                                a.setEmployDishonestyDeductible1(form.getEmployDishonestyDeductible3());
+                                a.setCglLimit1(form.getCglLimit3());
+                                a.setCglDeductible1(form.getCglDeductible3());
+                                a.setTenantsLegalLimit1(form.getTenantsLegalLimit3());
+                                a.setTenantsLegalDeductible1(form.getTenantsLegalDeductible3());
+                                a.setNonOwnedAutoLimit1(form.getNonOwnedAutoLimit3());
+                                a.setNonOwnedAutoDeductible1(form.getNonOwnedAutoDeductible3());
+                                a.setSef96Limit1(form.getSef96Limit3());
+                                a.setSef96Deductible1(form.getSef96Deductible3());
+                                a.setSef94Limit1(form.getSef94Limit3());
+                                a.setSef94Deductible1(form.getSef94Deductible3());
+                                a.setDoLimit1(form.getDoLimit3());
+                                a.setDoDeductible1(form.getDoDeductible3());
+                                a.setEoLimit1(form.getEoLimit3());
+                                a.setEoDeductible1(form.getEoDeductible3());
+                                a.setEmployerLimit1(form.getEmployerLimit3());
+                                a.setEmployerDeductible1(form.getEmployerDeductible3());
+                                a.setUmbrellaLimit1(form.getUmbrellaLimit3());
+                                a.setUmbrellaDeductible1(form.getUmbrellaDeductible3());
+                                a.setWrapUpLimit1(form.getWrapUpLimit3());
+                                a.setWrapUpDeductible1(form.getWrapUpDeductible3());
+                                a.setStdComprehensiveLimit1(form.getStdComprehensiveLimit3());
+                                a.setStdComprehensiveDeductible1(form.getStdComprehensiveDeductible3());
+                                a.setAirConditioningLimit1(form.getAirConditioningLimit3());
+                                a.setAirConditioningDeductible1(form.getAirConditioningDeductible3());
+                                a.setProductionMachineryLimit1(form.getProductionMachineryLimit3());
+                                a.setProductionMachineryDeductible1(form.getProductionMachineryDeductible3());
+                                a.setOthercoverage11(form.getOthercoverage13());
+                                a.setOthercoverage21(form.getOthercoverage23());
+                                a.setOtherCoverageLimit11(form.getOtherCoverageLimit13());
+                                a.setOtherCoverageDeductible11(form.getOtherCoverageDeductible13());
+                                a.setOtherCoverageLimit21(form.getOtherCoverageLimit23());
+                                a.setOtherCoverageDeductible21(form.getOtherCoverageDeductible23());
+                                a.setAdditionalCoverage1(form.getAdditionalcoverage3());
+                                a.setRoofupdated1(form.getRoofupdated3());
+                                a.setHeatingupdated1(form.getHeatingupdated3());
+                                a.setElectricalupdated1(form.getElectricalupdated3());
+                                a.setElectricalamps1(form.getElectricalamps3());
+                                a.setFireProtectiondistance1(form.getFireProtectiondistance3());
+                                a.setAddress1(form.getAddress3());
+                                a.setBasement1(form.getBasement3());
+                                a.setOwner11(form.getOwnercb3());
+                                a.setTruckMan1(form.getTruckMan3());
+                                a.setGrossEarning801(form.getGrossEarningCheckbox3());
+                                a.setWallsframe1(form.getWallsframe3());
+                                a.setWallshcb1(form.getWallshcb3());
+                                a.setWallssteel1(form.getWallssteel3());
+                                a.setWallsbrick1(form.getWallsbrick3());
+                                a.setRoofwood1(form.getRoofwood3());
+                                a.setRoofsteel1(form.getRoofsteel3());
+                                a.setRoofconcrete1(form.getRoofconcrete3());
+                                a.setFloorsconcrete1(form.getFloorsconcrete3());
+                                a.setFloorswood1(form.getFloorswood3());
+                                a.setHeatinggas1(form.getHeatinggas3());
+                                a.setHeatingoil1(form.getHeatingoil3());
+                                a.setHeatingelectric1(form.getHeatingelectric3());
+                                a.setHeatingother1(form.getHeatingother3());
+                                a.setElectricalbreakers1(form.getElectricalbreakers3());
+                                a.setElectricalfuses1(form.getElectricalfuses3());
+                                a.setPlumbingcopper1(form.getPlumbingcopper3());
+                                a.setPlumbingpvc1(form.getPlumbingpvc3());
+                                a.setPlumbingother1(form.getPlumbingother3());
+                                a.setPlumbingupdated1(form.getPlumbingupdated3());
+                                a.setFireProtection1(form.getFireProtection3());
+                                a.setSecurity1(form.getSecurity3());
+                                a.setAge1(form.getAge3());
+                                a.setTotalSqFootage1(form.getTotalSqFootage3());
+                                a.setInsdSqFootage1(form.getInsdSqFootage3());
+                                a.setNoOfStories1(form.getNoOfStories3());
+                                listAddInfo.add(a);
+                            }
+                            break;
+                        case 4:
+                            if (!CommonValidations.isStringEmpty(form.getAddress4())) {
+                                a.setBuildingLimit1(form.getBuildingLimit4());
+                                a.setBuildingDeductible1(form.getBuildingDeductible4());
+                                a.setContentsLimit1(form.getContentsLimit4());
+                                a.setContentsDeductible1(form.getContentsDeductible4());
+                                a.setStockLimit1(form.getStockLimit4());
+                                a.setStockDeductible1(form.getStockDeductible4());
+                                a.setOfficeContentLimit1(form.getOfficeContentLimit4());
+                                a.setOfficeContentDeductible1(form.getOfficeContentDeductible4());
+                                a.setEdpLimit1(form.getEdpLimit4());
+                                a.setEdpDeductible1(form.getEdpDeductible4());
+                                a.setEquipmentLimit1(form.getEquipmentLimit4());
+                                a.setEquipmentDeductible1(form.getEquipmentDeductible4());
+                                a.setOffPremisesLimit1(form.getOffPremisesLimit4());
+                                a.setOffPremisesDeductible1(form.getOffPremisesDeductible4());
+                                a.setTransitLimit1(form.getTransitLimit4());
+                                a.setTransitDeductible1(form.getTransitDeductible4());
+                                a.setMiscPropertyLimit1(form.getMiscPropertyLimit4());
+                                a.setMiscPropertyDeductible1(form.getMiscPropertyDeductible4());
+                                a.setContractorEquipmentLimit1(form.getContractorEquipmentLimit4());
+                                a.setContractorEquipmentDeductible1(form.getContractorEquipmentDeductible4());
+                                a.setInstallationFloaterLimit1(form.getInstallationFloaterLimit4());
+                                a.setInstallationFloaterDeductible1(form.getInstallationFloaterDeductible4());
+                                a.setToolFloaterLimit1(form.getToolFloaterLimit4());
+                                a.setToolFloaterDeductible1(form.getToolFloaterDeductible4());
+                                a.setSignFloaterLimit1(form.getSignFloaterLimit4());
+                                a.setSignFloaterDeductible1(form.getSignFloaterDeductible4());
+                                a.setMotorTruckLimit1(form.getMotorTruckLimit4());
+                                a.setMotorTruckDeductible1(form.getMotorTruckDeductible4());
+                                a.setGlassLimit1(form.getGlassLimit4());
+                                a.setGlassDeductible1(form.getGlassDeductible4());
+                                a.setSewerBackupDeductible1(form.getSewerBackupDeductible4());
+                                a.setFloodDeductible1(form.getFloodDeductible4());
+                                a.setEarthquakeDeductible1(form.getEarthquakeDeductible4());
+                                a.setProfitLimit1(form.getProfitLimit4());
+                                a.setProfitDeductible1(form.getProfitDeductible4());
+                                a.setGrossEarningLimit1(form.getGrossEarningLimit4());
+                                a.setGrossEarningDeductible1(form.getGrossEarningDeductible4());
+                                a.setRentalIncomeLimit1(form.getRentalIncomeLimit4());
+                                a.setRentalIncomeDeductible1(form.getRentalIncomeDeductible4());
+                                a.setExtraExpenseLimit1(form.getExtraExpenseLimit4());
+                                a.setExtraExpenseDeductible1(form.getExtraExpenseDeductible4());
+                                a.setOffPremisesPowerLimit1(form.getOffPremisesPowerLimit4());
+                                a.setOffPremisesPowerDeductible1(form.getOffPremisesPowerDeductible4());
+                                a.setInsideOutsideLimit1(form.getInsideOutsideLimit4());
+                                a.setInsideOutsideDeductible1(form.getInsideOutsideDeductible4());
+                                a.setBfMoneyLimit1(form.getBfMoneyLimit4());
+                                a.setBfMoneyDeductible1(form.getBfMoneyDeductible4());
+                                a.setDeopistorForgeryLimit1(form.getDeopistorForgeryLimit4());
+                                a.setDeopistorForgeryDeductible1(form.getDeopistorForgeryDeductible4());
+                                a.setMoneyOrdersLimit1(form.getMoneyOrdersLimit4());
+                                a.setMoneyOrdersDeductible1(form.getMoneyOrdersDeductible4());
+                                a.setEmployDishonestyLimit1(form.getEmployDishonestyLimit4());
+                                a.setEmployDishonestyDeductible1(form.getEmployDishonestyDeductible4());
+                                a.setCglLimit1(form.getCglLimit4());
+                                a.setCglDeductible1(form.getCglDeductible4());
+                                a.setTenantsLegalLimit1(form.getTenantsLegalLimit4());
+                                a.setTenantsLegalDeductible1(form.getTenantsLegalDeductible4());
+                                a.setNonOwnedAutoLimit1(form.getNonOwnedAutoLimit4());
+                                a.setNonOwnedAutoDeductible1(form.getNonOwnedAutoDeductible4());
+                                a.setSef96Limit1(form.getSef96Limit4());
+                                a.setSef96Deductible1(form.getSef96Deductible4());
+                                a.setSef94Limit1(form.getSef94Limit4());
+                                a.setSef94Deductible1(form.getSef94Deductible4());
+                                a.setDoLimit1(form.getDoLimit4());
+                                a.setDoDeductible1(form.getDoDeductible4());
+                                a.setEoLimit1(form.getEoLimit4());
+                                a.setEoDeductible1(form.getEoDeductible4());
+                                a.setEmployerLimit1(form.getEmployerLimit4());
+                                a.setEmployerDeductible1(form.getEmployerDeductible4());
+                                a.setUmbrellaLimit1(form.getUmbrellaLimit4());
+                                a.setUmbrellaDeductible1(form.getUmbrellaDeductible4());
+                                a.setWrapUpLimit1(form.getWrapUpLimit4());
+                                a.setWrapUpDeductible1(form.getWrapUpDeductible4());
+                                a.setStdComprehensiveLimit1(form.getStdComprehensiveLimit4());
+                                a.setStdComprehensiveDeductible1(form.getStdComprehensiveDeductible4());
+                                a.setAirConditioningLimit1(form.getAirConditioningLimit4());
+                                a.setAirConditioningDeductible1(form.getAirConditioningDeductible4());
+                                a.setProductionMachineryLimit1(form.getProductionMachineryLimit4());
+                                a.setProductionMachineryDeductible1(form.getProductionMachineryDeductible4());
+                                a.setOthercoverage11(form.getOthercoverage14());
+                                a.setOthercoverage21(form.getOthercoverage24());
+                                a.setOtherCoverageLimit11(form.getOtherCoverageLimit14());
+                                a.setOtherCoverageDeductible11(form.getOtherCoverageDeductible14());
+                                a.setOtherCoverageLimit21(form.getOtherCoverageLimit24());
+                                a.setOtherCoverageDeductible21(form.getOtherCoverageDeductible24());
+                                a.setAdditionalCoverage1(form.getAdditionalcoverage4());
+                                a.setRoofupdated1(form.getRoofupdated4());
+                                a.setHeatingupdated1(form.getHeatingupdated4());
+                                a.setElectricalupdated1(form.getElectricalupdated4());
+                                a.setElectricalamps1(form.getElectricalamps4());
+                                a.setFireProtectiondistance1(form.getFireProtectiondistance4());
+                                a.setAddress1(form.getAddress4());
+                                a.setBasement1(form.getBasement4());
+                                a.setOwner11(form.getOwnercb4());
+                                a.setTruckMan1(form.getTruckMan4());
+                                a.setGrossEarning801(form.getGrossEarningCheckbox4());
+                                a.setWallsframe1(form.getWallsframe4());
+                                a.setWallshcb1(form.getWallshcb4());
+                                a.setWallssteel1(form.getWallssteel4());
+                                a.setWallsbrick1(form.getWallsbrick4());
+                                a.setRoofwood1(form.getRoofwood4());
+                                a.setRoofsteel1(form.getRoofsteel4());
+                                a.setRoofconcrete1(form.getRoofconcrete4());
+                                a.setFloorsconcrete1(form.getFloorsconcrete4());
+                                a.setFloorswood1(form.getFloorswood4());
+                                a.setHeatinggas1(form.getHeatinggas4());
+                                a.setHeatingoil1(form.getHeatingoil4());
+                                a.setHeatingelectric1(form.getHeatingelectric4());
+                                a.setHeatingother1(form.getHeatingother4());
+                                a.setElectricalbreakers1(form.getElectricalbreakers4());
+                                a.setElectricalfuses1(form.getElectricalfuses4());
+                                a.setPlumbingcopper1(form.getPlumbingcopper4());
+                                a.setPlumbingpvc1(form.getPlumbingpvc4());
+                                a.setPlumbingother1(form.getPlumbingother4());
+                                a.setPlumbingupdated1(form.getPlumbingupdated4());
+                                a.setFireProtection1(form.getFireProtection4());
+                                a.setSecurity1(form.getSecurity4());
+                                a.setAge1(form.getAge4());
+                                a.setTotalSqFootage1(form.getTotalSqFootage4());
+                                a.setInsdSqFootage1(form.getInsdSqFootage4());
+                                a.setNoOfStories1(form.getNoOfStories4());
+                                listAddInfo.add(a);
+                            }
+                            break;
+                        case 5:
+                            if (!CommonValidations.isStringEmpty(form.getAddress5())) {
+                                a.setBuildingLimit1(form.getBuildingLimit5());
+                                a.setBuildingDeductible1(form.getBuildingDeductible5());
+                                a.setContentsLimit1(form.getContentsLimit5());
+                                a.setContentsDeductible1(form.getContentsDeductible5());
+                                a.setStockLimit1(form.getStockLimit5());
+                                a.setStockDeductible1(form.getStockDeductible5());
+                                a.setOfficeContentLimit1(form.getOfficeContentLimit5());
+                                a.setOfficeContentDeductible1(form.getOfficeContentDeductible5());
+                                a.setEdpLimit1(form.getEdpLimit5());
+                                a.setEdpDeductible1(form.getEdpDeductible5());
+                                a.setEquipmentLimit1(form.getEquipmentLimit5());
+                                a.setEquipmentDeductible1(form.getEquipmentDeductible5());
+                                a.setOffPremisesLimit1(form.getOffPremisesLimit5());
+                                a.setOffPremisesDeductible1(form.getOffPremisesDeductible5());
+                                a.setTransitLimit1(form.getTransitLimit5());
+                                a.setTransitDeductible1(form.getTransitDeductible5());
+                                a.setMiscPropertyLimit1(form.getMiscPropertyLimit5());
+                                a.setMiscPropertyDeductible1(form.getMiscPropertyDeductible5());
+                                a.setContractorEquipmentLimit1(form.getContractorEquipmentLimit5());
+                                a.setContractorEquipmentDeductible1(form.getContractorEquipmentDeductible5());
+                                a.setInstallationFloaterLimit1(form.getInstallationFloaterLimit5());
+                                a.setInstallationFloaterDeductible1(form.getInstallationFloaterDeductible5());
+                                a.setToolFloaterLimit1(form.getToolFloaterLimit5());
+                                a.setToolFloaterDeductible1(form.getToolFloaterDeductible5());
+                                a.setSignFloaterLimit1(form.getSignFloaterLimit5());
+                                a.setSignFloaterDeductible1(form.getSignFloaterDeductible5());
+                                a.setMotorTruckLimit1(form.getMotorTruckLimit5());
+                                a.setMotorTruckDeductible1(form.getMotorTruckDeductible5());
+                                a.setGlassLimit1(form.getGlassLimit5());
+                                a.setGlassDeductible1(form.getGlassDeductible5());
+                                a.setSewerBackupDeductible1(form.getSewerBackupDeductible5());
+                                a.setFloodDeductible1(form.getFloodDeductible5());
+                                a.setEarthquakeDeductible1(form.getEarthquakeDeductible5());
+                                a.setProfitLimit1(form.getProfitLimit5());
+                                a.setProfitDeductible1(form.getProfitDeductible5());
+                                a.setGrossEarningLimit1(form.getGrossEarningLimit5());
+                                a.setGrossEarningDeductible1(form.getGrossEarningDeductible5());
+                                a.setRentalIncomeLimit1(form.getRentalIncomeLimit5());
+                                a.setRentalIncomeDeductible1(form.getRentalIncomeDeductible5());
+                                a.setExtraExpenseLimit1(form.getExtraExpenseLimit5());
+                                a.setExtraExpenseDeductible1(form.getExtraExpenseDeductible5());
+                                a.setOffPremisesPowerLimit1(form.getOffPremisesPowerLimit5());
+                                a.setOffPremisesPowerDeductible1(form.getOffPremisesPowerDeductible5());
+                                a.setInsideOutsideLimit1(form.getInsideOutsideLimit5());
+                                a.setInsideOutsideDeductible1(form.getInsideOutsideDeductible5());
+                                a.setBfMoneyLimit1(form.getBfMoneyLimit5());
+                                a.setBfMoneyDeductible1(form.getBfMoneyDeductible5());
+                                a.setDeopistorForgeryLimit1(form.getDeopistorForgeryLimit5());
+                                a.setDeopistorForgeryDeductible1(form.getDeopistorForgeryDeductible5());
+                                a.setMoneyOrdersLimit1(form.getMoneyOrdersLimit5());
+                                a.setMoneyOrdersDeductible1(form.getMoneyOrdersDeductible5());
+                                a.setEmployDishonestyLimit1(form.getEmployDishonestyLimit5());
+                                a.setEmployDishonestyDeductible1(form.getEmployDishonestyDeductible5());
+                                a.setCglLimit1(form.getCglLimit5());
+                                a.setCglDeductible1(form.getCglDeductible5());
+                                a.setTenantsLegalLimit1(form.getTenantsLegalLimit5());
+                                a.setTenantsLegalDeductible1(form.getTenantsLegalDeductible5());
+                                a.setNonOwnedAutoLimit1(form.getNonOwnedAutoLimit5());
+                                a.setNonOwnedAutoDeductible1(form.getNonOwnedAutoDeductible5());
+                                a.setSef96Limit1(form.getSef96Limit5());
+                                a.setSef96Deductible1(form.getSef96Deductible5());
+                                a.setSef94Limit1(form.getSef94Limit5());
+                                a.setSef94Deductible1(form.getSef94Deductible5());
+                                a.setDoLimit1(form.getDoLimit5());
+                                a.setDoDeductible1(form.getDoDeductible5());
+                                a.setEoLimit1(form.getEoLimit5());
+                                a.setEoDeductible1(form.getEoDeductible5());
+                                a.setEmployerLimit1(form.getEmployerLimit5());
+                                a.setEmployerDeductible1(form.getEmployerDeductible5());
+                                a.setUmbrellaLimit1(form.getUmbrellaLimit5());
+                                a.setUmbrellaDeductible1(form.getUmbrellaDeductible5());
+                                a.setWrapUpLimit1(form.getWrapUpLimit5());
+                                a.setWrapUpDeductible1(form.getWrapUpDeductible5());
+                                a.setStdComprehensiveLimit1(form.getStdComprehensiveLimit5());
+                                a.setStdComprehensiveDeductible1(form.getStdComprehensiveDeductible5());
+                                a.setAirConditioningLimit1(form.getAirConditioningLimit5());
+                                a.setAirConditioningDeductible1(form.getAirConditioningDeductible5());
+                                a.setProductionMachineryLimit1(form.getProductionMachineryLimit5());
+                                a.setProductionMachineryDeductible1(form.getProductionMachineryDeductible5());
+                                a.setOthercoverage11(form.getOthercoverage15());
+                                a.setOthercoverage21(form.getOthercoverage25());
+                                a.setOtherCoverageLimit11(form.getOtherCoverageLimit15());
+                                a.setOtherCoverageDeductible11(form.getOtherCoverageDeductible15());
+                                a.setOtherCoverageLimit21(form.getOtherCoverageLimit25());
+                                a.setOtherCoverageDeductible21(form.getOtherCoverageDeductible25());
+                                a.setAdditionalCoverage1(form.getAdditionalcoverage5());
+                                a.setRoofupdated1(form.getRoofupdated5());
+                                a.setHeatingupdated1(form.getHeatingupdated5());
+                                a.setElectricalupdated1(form.getElectricalupdated5());
+                                a.setElectricalamps1(form.getElectricalamps5());
+                                a.setFireProtectiondistance1(form.getFireProtectiondistance5());
+                                a.setAddress1(form.getAddress5());
+                                a.setBasement1(form.getBasement5());
+                                a.setOwner11(form.getOwnercb5());
+                                a.setTruckMan1(form.getTruckMan5());
+                                a.setGrossEarning801(form.getGrossEarningCheckbox5());
+                                a.setWallsframe1(form.getWallsframe5());
+                                a.setWallshcb1(form.getWallshcb5());
+                                a.setWallssteel1(form.getWallssteel5());
+                                a.setWallsbrick1(form.getWallsbrick5());
+                                a.setRoofwood1(form.getRoofwood5());
+                                a.setRoofsteel1(form.getRoofsteel5());
+                                a.setRoofconcrete1(form.getRoofconcrete5());
+                                a.setFloorsconcrete1(form.getFloorsconcrete5());
+                                a.setFloorswood1(form.getFloorswood5());
+                                a.setHeatinggas1(form.getHeatinggas5());
+                                a.setHeatingoil1(form.getHeatingoil5());
+                                a.setHeatingelectric1(form.getHeatingelectric5());
+                                a.setHeatingother1(form.getHeatingother5());
+                                a.setElectricalbreakers1(form.getElectricalbreakers5());
+                                a.setElectricalfuses1(form.getElectricalfuses5());
+                                a.setPlumbingcopper1(form.getPlumbingcopper5());
+                                a.setPlumbingpvc1(form.getPlumbingpvc5());
+                                a.setPlumbingother1(form.getPlumbingother5());
+                                a.setPlumbingupdated1(form.getPlumbingupdated5());
+                                a.setFireProtection1(form.getFireProtection5());
+                                a.setSecurity1(form.getSecurity5());
+                                a.setAge1(form.getAge5());
+                                a.setTotalSqFootage1(form.getTotalSqFootage5());
+                                a.setInsdSqFootage1(form.getInsdSqFootage5());
+                                a.setNoOfStories1(form.getNoOfStories5());
+                                listAddInfo.add(a);
+                            }
+                            break;
+                        case 6:
+                            if (!CommonValidations.isStringEmpty(form.getAddress6())) {
+                                a.setBuildingLimit1(form.getBuildingLimit6());
+                                a.setBuildingDeductible1(form.getBuildingDeductible6());
+                                a.setContentsLimit1(form.getContentsLimit6());
+                                a.setContentsDeductible1(form.getContentsDeductible6());
+                                a.setStockLimit1(form.getStockLimit6());
+                                a.setStockDeductible1(form.getStockDeductible6());
+                                a.setOfficeContentLimit1(form.getOfficeContentLimit6());
+                                a.setOfficeContentDeductible1(form.getOfficeContentDeductible6());
+                                a.setEdpLimit1(form.getEdpLimit6());
+                                a.setEdpDeductible1(form.getEdpDeductible6());
+                                a.setEquipmentLimit1(form.getEquipmentLimit6());
+                                a.setEquipmentDeductible1(form.getEquipmentDeductible6());
+                                a.setOffPremisesLimit1(form.getOffPremisesLimit6());
+                                a.setOffPremisesDeductible1(form.getOffPremisesDeductible6());
+                                a.setTransitLimit1(form.getTransitLimit6());
+                                a.setTransitDeductible1(form.getTransitDeductible6());
+                                a.setMiscPropertyLimit1(form.getMiscPropertyLimit6());
+                                a.setMiscPropertyDeductible1(form.getMiscPropertyDeductible6());
+                                a.setContractorEquipmentLimit1(form.getContractorEquipmentLimit6());
+                                a.setContractorEquipmentDeductible1(form.getContractorEquipmentDeductible6());
+                                a.setInstallationFloaterLimit1(form.getInstallationFloaterLimit6());
+                                a.setInstallationFloaterDeductible1(form.getInstallationFloaterDeductible6());
+                                a.setToolFloaterLimit1(form.getToolFloaterLimit6());
+                                a.setToolFloaterDeductible1(form.getToolFloaterDeductible6());
+                                a.setSignFloaterLimit1(form.getSignFloaterLimit6());
+                                a.setSignFloaterDeductible1(form.getSignFloaterDeductible6());
+                                a.setMotorTruckLimit1(form.getMotorTruckLimit6());
+                                a.setMotorTruckDeductible1(form.getMotorTruckDeductible6());
+                                a.setGlassLimit1(form.getGlassLimit6());
+                                a.setGlassDeductible1(form.getGlassDeductible6());
+                                a.setSewerBackupDeductible1(form.getSewerBackupDeductible6());
+                                a.setFloodDeductible1(form.getFloodDeductible6());
+                                a.setEarthquakeDeductible1(form.getEarthquakeDeductible6());
+                                a.setProfitLimit1(form.getProfitLimit6());
+                                a.setProfitDeductible1(form.getProfitDeductible6());
+                                a.setGrossEarningLimit1(form.getGrossEarningLimit6());
+                                a.setGrossEarningDeductible1(form.getGrossEarningDeductible6());
+                                a.setRentalIncomeLimit1(form.getRentalIncomeLimit6());
+                                a.setRentalIncomeDeductible1(form.getRentalIncomeDeductible6());
+                                a.setExtraExpenseLimit1(form.getExtraExpenseLimit6());
+                                a.setExtraExpenseDeductible1(form.getExtraExpenseDeductible6());
+                                a.setOffPremisesPowerLimit1(form.getOffPremisesPowerLimit6());
+                                a.setOffPremisesPowerDeductible1(form.getOffPremisesPowerDeductible6());
+                                a.setInsideOutsideLimit1(form.getInsideOutsideLimit6());
+                                a.setInsideOutsideDeductible1(form.getInsideOutsideDeductible6());
+                                a.setBfMoneyLimit1(form.getBfMoneyLimit6());
+                                a.setBfMoneyDeductible1(form.getBfMoneyDeductible6());
+                                a.setDeopistorForgeryLimit1(form.getDeopistorForgeryLimit6());
+                                a.setDeopistorForgeryDeductible1(form.getDeopistorForgeryDeductible6());
+                                a.setMoneyOrdersLimit1(form.getMoneyOrdersLimit6());
+                                a.setMoneyOrdersDeductible1(form.getMoneyOrdersDeductible6());
+                                a.setEmployDishonestyLimit1(form.getEmployDishonestyLimit6());
+                                a.setEmployDishonestyDeductible1(form.getEmployDishonestyDeductible6());
+                                a.setCglLimit1(form.getCglLimit6());
+                                a.setCglDeductible1(form.getCglDeductible6());
+                                a.setTenantsLegalLimit1(form.getTenantsLegalLimit6());
+                                a.setTenantsLegalDeductible1(form.getTenantsLegalDeductible6());
+                                a.setNonOwnedAutoLimit1(form.getNonOwnedAutoLimit6());
+                                a.setNonOwnedAutoDeductible1(form.getNonOwnedAutoDeductible6());
+                                a.setSef96Limit1(form.getSef96Limit6());
+                                a.setSef96Deductible1(form.getSef96Deductible6());
+                                a.setSef94Limit1(form.getSef94Limit6());
+                                a.setSef94Deductible1(form.getSef94Deductible6());
+                                a.setDoLimit1(form.getDoLimit6());
+                                a.setDoDeductible1(form.getDoDeductible6());
+                                a.setEoLimit1(form.getEoLimit6());
+                                a.setEoDeductible1(form.getEoDeductible6());
+                                a.setEmployerLimit1(form.getEmployerLimit6());
+                                a.setEmployerDeductible1(form.getEmployerDeductible6());
+                                a.setUmbrellaLimit1(form.getUmbrellaLimit6());
+                                a.setUmbrellaDeductible1(form.getUmbrellaDeductible6());
+                                a.setWrapUpLimit1(form.getWrapUpLimit6());
+                                a.setWrapUpDeductible1(form.getWrapUpDeductible6());
+                                a.setStdComprehensiveLimit1(form.getStdComprehensiveLimit6());
+                                a.setStdComprehensiveDeductible1(form.getStdComprehensiveDeductible6());
+                                a.setAirConditioningLimit1(form.getAirConditioningLimit6());
+                                a.setAirConditioningDeductible1(form.getAirConditioningDeductible6());
+                                a.setProductionMachineryLimit1(form.getProductionMachineryLimit6());
+                                a.setProductionMachineryDeductible1(form.getProductionMachineryDeductible6());
+                                a.setOthercoverage11(form.getOthercoverage16());
+                                a.setOthercoverage21(form.getOthercoverage26());
+                                a.setOtherCoverageLimit11(form.getOtherCoverageLimit16());
+                                a.setOtherCoverageDeductible11(form.getOtherCoverageDeductible16());
+                                a.setOtherCoverageLimit21(form.getOtherCoverageLimit26());
+                                a.setOtherCoverageDeductible21(form.getOtherCoverageDeductible26());
+                                a.setAdditionalCoverage1(form.getAdditionalcoverage6());
+                                a.setRoofupdated1(form.getRoofupdated6());
+                                a.setHeatingupdated1(form.getHeatingupdated6());
+                                a.setElectricalupdated1(form.getElectricalupdated6());
+                                a.setElectricalamps1(form.getElectricalamps6());
+                                a.setFireProtectiondistance1(form.getFireProtectiondistance6());
+                                a.setAddress1(form.getAddress6());
+                                a.setBasement1(form.getBasement6());
+                                a.setOwner11(form.getOwnercb6());
+                                a.setTruckMan1(form.getTruckMan6());
+                                a.setGrossEarning801(form.getGrossEarningCheckbox6());
+                                a.setWallsframe1(form.getWallsframe6());
+                                a.setWallshcb1(form.getWallshcb6());
+                                a.setWallssteel1(form.getWallssteel6());
+                                a.setWallsbrick1(form.getWallsbrick6());
+                                a.setRoofwood1(form.getRoofwood6());
+                                a.setRoofsteel1(form.getRoofsteel6());
+                                a.setRoofconcrete1(form.getRoofconcrete6());
+                                a.setFloorsconcrete1(form.getFloorsconcrete6());
+                                a.setFloorswood1(form.getFloorswood6());
+                                a.setHeatinggas1(form.getHeatinggas6());
+                                a.setHeatingoil1(form.getHeatingoil6());
+                                a.setHeatingelectric1(form.getHeatingelectric6());
+                                a.setHeatingother1(form.getHeatingother6());
+                                a.setElectricalbreakers1(form.getElectricalbreakers6());
+                                a.setElectricalfuses1(form.getElectricalfuses6());
+                                a.setPlumbingcopper1(form.getPlumbingcopper6());
+                                a.setPlumbingpvc1(form.getPlumbingpvc6());
+                                a.setPlumbingother1(form.getPlumbingother6());
+                                a.setPlumbingupdated1(form.getPlumbingupdated6());
+                                a.setFireProtection1(form.getFireProtection6());
+                                a.setSecurity1(form.getSecurity6());
+                                a.setAge1(form.getAge6());
+                                a.setTotalSqFootage1(form.getTotalSqFootage6());
+                                a.setInsdSqFootage1(form.getInsdSqFootage6());
+                                a.setNoOfStories1(form.getNoOfStories6());
+                                listAddInfo.add(a);
+                            }
+                            break;
+                        case 7:
+                            if (!CommonValidations.isStringEmpty(form.getAddress7())) {
+                                a.setBuildingLimit1(form.getBuildingLimit7());
+                                a.setBuildingDeductible1(form.getBuildingDeductible7());
+                                a.setContentsLimit1(form.getContentsLimit7());
+                                a.setContentsDeductible1(form.getContentsDeductible7());
+                                a.setStockLimit1(form.getStockLimit7());
+                                a.setStockDeductible1(form.getStockDeductible7());
+                                a.setOfficeContentLimit1(form.getOfficeContentLimit7());
+                                a.setOfficeContentDeductible1(form.getOfficeContentDeductible7());
+                                a.setEdpLimit1(form.getEdpLimit7());
+                                a.setEdpDeductible1(form.getEdpDeductible7());
+                                a.setEquipmentLimit1(form.getEquipmentLimit7());
+                                a.setEquipmentDeductible1(form.getEquipmentDeductible7());
+                                a.setOffPremisesLimit1(form.getOffPremisesLimit7());
+                                a.setOffPremisesDeductible1(form.getOffPremisesDeductible7());
+                                a.setTransitLimit1(form.getTransitLimit7());
+                                a.setTransitDeductible1(form.getTransitDeductible7());
+                                a.setMiscPropertyLimit1(form.getMiscPropertyLimit7());
+                                a.setMiscPropertyDeductible1(form.getMiscPropertyDeductible7());
+                                a.setContractorEquipmentLimit1(form.getContractorEquipmentLimit7());
+                                a.setContractorEquipmentDeductible1(form.getContractorEquipmentDeductible7());
+                                a.setInstallationFloaterLimit1(form.getInstallationFloaterLimit7());
+                                a.setInstallationFloaterDeductible1(form.getInstallationFloaterDeductible7());
+                                a.setToolFloaterLimit1(form.getToolFloaterLimit7());
+                                a.setToolFloaterDeductible1(form.getToolFloaterDeductible7());
+                                a.setSignFloaterLimit1(form.getSignFloaterLimit7());
+                                a.setSignFloaterDeductible1(form.getSignFloaterDeductible7());
+                                a.setMotorTruckLimit1(form.getMotorTruckLimit7());
+                                a.setMotorTruckDeductible1(form.getMotorTruckDeductible7());
+                                a.setGlassLimit1(form.getGlassLimit7());
+                                a.setGlassDeductible1(form.getGlassDeductible7());
+                                a.setSewerBackupDeductible1(form.getSewerBackupDeductible7());
+                                a.setFloodDeductible1(form.getFloodDeductible7());
+                                a.setEarthquakeDeductible1(form.getEarthquakeDeductible7());
+                                a.setProfitLimit1(form.getProfitLimit7());
+                                a.setProfitDeductible1(form.getProfitDeductible7());
+                                a.setGrossEarningLimit1(form.getGrossEarningLimit7());
+                                a.setGrossEarningDeductible1(form.getGrossEarningDeductible7());
+                                a.setRentalIncomeLimit1(form.getRentalIncomeLimit7());
+                                a.setRentalIncomeDeductible1(form.getRentalIncomeDeductible7());
+                                a.setExtraExpenseLimit1(form.getExtraExpenseLimit7());
+                                a.setExtraExpenseDeductible1(form.getExtraExpenseDeductible7());
+                                a.setOffPremisesPowerLimit1(form.getOffPremisesPowerLimit7());
+                                a.setOffPremisesPowerDeductible1(form.getOffPremisesPowerDeductible7());
+                                a.setInsideOutsideLimit1(form.getInsideOutsideLimit7());
+                                a.setInsideOutsideDeductible1(form.getInsideOutsideDeductible7());
+                                a.setBfMoneyLimit1(form.getBfMoneyLimit7());
+                                a.setBfMoneyDeductible1(form.getBfMoneyDeductible7());
+                                a.setDeopistorForgeryLimit1(form.getDeopistorForgeryLimit7());
+                                a.setDeopistorForgeryDeductible1(form.getDeopistorForgeryDeductible7());
+                                a.setMoneyOrdersLimit1(form.getMoneyOrdersLimit7());
+                                a.setMoneyOrdersDeductible1(form.getMoneyOrdersDeductible7());
+                                a.setEmployDishonestyLimit1(form.getEmployDishonestyLimit7());
+                                a.setEmployDishonestyDeductible1(form.getEmployDishonestyDeductible7());
+                                a.setCglLimit1(form.getCglLimit7());
+                                a.setCglDeductible1(form.getCglDeductible7());
+                                a.setTenantsLegalLimit1(form.getTenantsLegalLimit7());
+                                a.setTenantsLegalDeductible1(form.getTenantsLegalDeductible7());
+                                a.setNonOwnedAutoLimit1(form.getNonOwnedAutoLimit7());
+                                a.setNonOwnedAutoDeductible1(form.getNonOwnedAutoDeductible7());
+                                a.setSef96Limit1(form.getSef96Limit7());
+                                a.setSef96Deductible1(form.getSef96Deductible7());
+                                a.setSef94Limit1(form.getSef94Limit7());
+                                a.setSef94Deductible1(form.getSef94Deductible7());
+                                a.setDoLimit1(form.getDoLimit7());
+                                a.setDoDeductible1(form.getDoDeductible7());
+                                a.setEoLimit1(form.getEoLimit7());
+                                a.setEoDeductible1(form.getEoDeductible7());
+                                a.setEmployerLimit1(form.getEmployerLimit7());
+                                a.setEmployerDeductible1(form.getEmployerDeductible7());
+                                a.setUmbrellaLimit1(form.getUmbrellaLimit7());
+                                a.setUmbrellaDeductible1(form.getUmbrellaDeductible7());
+                                a.setWrapUpLimit1(form.getWrapUpLimit7());
+                                a.setWrapUpDeductible1(form.getWrapUpDeductible7());
+                                a.setStdComprehensiveLimit1(form.getStdComprehensiveLimit7());
+                                a.setStdComprehensiveDeductible1(form.getStdComprehensiveDeductible7());
+                                a.setAirConditioningLimit1(form.getAirConditioningLimit7());
+                                a.setAirConditioningDeductible1(form.getAirConditioningDeductible7());
+                                a.setProductionMachineryLimit1(form.getProductionMachineryLimit7());
+                                a.setProductionMachineryDeductible1(form.getProductionMachineryDeductible7());
+                                a.setOthercoverage11(form.getOthercoverage17());
+                                a.setOthercoverage21(form.getOthercoverage27());
+                                a.setOtherCoverageLimit11(form.getOtherCoverageLimit17());
+                                a.setOtherCoverageDeductible11(form.getOtherCoverageDeductible17());
+                                a.setOtherCoverageLimit21(form.getOtherCoverageLimit27());
+                                a.setOtherCoverageDeductible21(form.getOtherCoverageDeductible27());
+                                a.setAdditionalCoverage1(form.getAdditionalcoverage7());
+                                a.setRoofupdated1(form.getRoofupdated7());
+                                a.setHeatingupdated1(form.getHeatingupdated7());
+                                a.setElectricalupdated1(form.getElectricalupdated7());
+                                a.setElectricalamps1(form.getElectricalamps7());
+                                a.setFireProtectiondistance1(form.getFireProtectiondistance7());
+                                a.setAddress1(form.getAddress7());
+                                a.setBasement1(form.getBasement7());
+                                a.setOwner11(form.getOwnercb7());
+                                a.setTruckMan1(form.getTruckMan7());
+                                a.setGrossEarning801(form.getGrossEarningCheckbox7());
+                                a.setWallsframe1(form.getWallsframe7());
+                                a.setWallshcb1(form.getWallshcb7());
+                                a.setWallssteel1(form.getWallssteel7());
+                                a.setWallsbrick1(form.getWallsbrick7());
+                                a.setRoofwood1(form.getRoofwood7());
+                                a.setRoofsteel1(form.getRoofsteel7());
+                                a.setRoofconcrete1(form.getRoofconcrete7());
+                                a.setFloorsconcrete1(form.getFloorsconcrete7());
+                                a.setFloorswood1(form.getFloorswood7());
+                                a.setHeatinggas1(form.getHeatinggas7());
+                                a.setHeatingoil1(form.getHeatingoil7());
+                                a.setHeatingelectric1(form.getHeatingelectric7());
+                                a.setHeatingother1(form.getHeatingother7());
+                                a.setElectricalbreakers1(form.getElectricalbreakers7());
+                                a.setElectricalfuses1(form.getElectricalfuses7());
+                                a.setPlumbingcopper1(form.getPlumbingcopper7());
+                                a.setPlumbingpvc1(form.getPlumbingpvc7());
+                                a.setPlumbingother1(form.getPlumbingother7());
+                                a.setPlumbingupdated1(form.getPlumbingupdated7());
+                                a.setFireProtection1(form.getFireProtection7());
+                                a.setSecurity1(form.getSecurity7());
+                                a.setAge1(form.getAge7());
+                                a.setTotalSqFootage1(form.getTotalSqFootage7());
+                                a.setInsdSqFootage1(form.getInsdSqFootage7());
+                                a.setNoOfStories1(form.getNoOfStories7());
+                                listAddInfo.add(a);
+                            }
+                            break;
+                    }
                     System.out.println(i);
-                        System.out.println("above");
-                
+                    System.out.println("above");
+
                 }
-                
+
                 buildinglimit.setText(Double.toString(form.getBuildingLimit()));
                 buildingdeductible.setText(Double.toString(form.getBuildingDeductible()));
                 contentslimit.setText(Double.toString(form.getContentsLimit()));
@@ -6754,7 +6757,7 @@ public class NextScreenController implements Initializable, IScreenController {
                 electricalupdated.setText(form.getElectricalupdated());
                 amps.setText(form.getElectricalamps());
                 fireprotectiondistance.setText(form.getFireProtectiondistance());
-                
+
                 if ((form.getType().equals("Both")) || (form.getType().equals("Auto"))) {
                     if (form.getPremiumTarget() > 0) {
                         ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.setautopremiumtarget(Double.toString(form.getPremiumTarget()));
@@ -6800,8 +6803,7 @@ public class NextScreenController implements Initializable, IScreenController {
                     ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.setautodescriptionofclaim4(form.getClaimDesc4());
                     ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.setautodescriptionofclaim5(form.getClaimDesc5());
                     ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.setautodescriptionofclaim6(form.getClaimDesc6());
-                    
-                    
+
                     ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.setcommoditiestransported(form.getCommoditiesTransportedBy());
                     ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.setliststate1(form.getFilingState1());
                     ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.setliststate2(form.getFilingState2());
@@ -6850,7 +6852,7 @@ public class NextScreenController implements Initializable, IScreenController {
                 }
             }
         });
-                }
+    }
 
     @FXML
 
@@ -6882,8 +6884,7 @@ public class NextScreenController implements Initializable, IScreenController {
                             req1.setType("Both");
                         }
                         //choicebox
-                        if(listAddInfo == null || (listAddInfo!=null && listAddInfo.size()==0))
-                        {
+                        if (listAddInfo == null || (listAddInfo != null && listAddInfo.size() == 0)) {
                             addAdditionNext();
                         }
                         req1.setFormId(getFormId());
@@ -7431,8 +7432,7 @@ public class NextScreenController implements Initializable, IScreenController {
                         req1.setCurrentInsurer(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentinsurer());
                         req1.setCurrentExpDate((getDate11()));
 
-                       if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautopremiumtarget()!=null) 
-                        {
+                        if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautopremiumtarget() != null) {
                             req1.setPremiumTarget(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautopremiumtarget()));
                         }
                         req1.setLienHolders1(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getlessholder1());
@@ -7479,22 +7479,22 @@ public class NextScreenController implements Initializable, IScreenController {
                         //req1.setContract((AutoSubmissionController)screenPage.getControlledScreen("AutoSubmission")).binding4.getnonownedcontract);
                         req1.setTypeOfNonOwned(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeofnonowned());
 
-                        if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getanytime()!=null) {
-                            
+                        if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getanytime() != null) {
+
                             req1.setAvgNoOfVehicles(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getanytime()));
                         }
-                       
-                        if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getavgvalue()!=null) {
-                            
+
+                        if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getavgvalue() != null) {
+
                             req1.setAvgValue(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getavgvalue()));
                         }
-                        
-                        if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getmaxannually() !=null) {
-                         
+
+                        if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getmaxannually() != null) {
+
                             req1.setMaxVehicleValue(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getmaxannually()));
                         }
-                        
-                        if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getmostexpensive() !=null) {
+
+                        if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getmostexpensive() != null) {
                             req1.setMaxCostValue(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getmostexpensive()));
                         }
                         req1.setInstructionNotes(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautosubmissioncomments());
@@ -7556,38 +7556,38 @@ public class NextScreenController implements Initializable, IScreenController {
                                 i++;
                             }
                         }
-                       /* StringTemplateGroup emailTemplateGroup = new StringTemplateGroup(
-                                "welcomeloginemail group", new File("bin").getAbsolutePath());
-                        StringTemplate submitFormMail = emailTemplateGroup
-                                .getInstanceOf("pdfTemplate");
-                        submitFormMail.setAttribute("date", new SimpleDateFormat("yyyy/mm/dd").format(Calendar.getInstance().getTime()));
-                        String message = submitFormMail.toString();
-                        BufferedWriter b = null;
-                        try {
-                            b = new BufferedWriter(new FileWriter(new File("pdf.html")));
-                            b.append(message);
+                        /* StringTemplateGroup emailTemplateGroup = new StringTemplateGroup(
+                         "welcomeloginemail group", new File("bin").getAbsolutePath());
+                         StringTemplate submitFormMail = emailTemplateGroup
+                         .getInstanceOf("pdfTemplate");
+                         submitFormMail.setAttribute("date", new SimpleDateFormat("yyyy/mm/dd").format(Calendar.getInstance().getTime()));
+                         String message = submitFormMail.toString();
+                         BufferedWriter b = null;
+                         try {
+                         b = new BufferedWriter(new FileWriter(new File("pdf.html")));
+                         b.append(message);
 
-                        } catch (Exception e) {
-                            stopLoading();
-                            e.printStackTrace();
-                            errors(e.getMessage());
-                        } finally {
-                            if (b != null) {
-                                b.close();
-                            }
-                        }
-                               */
+                         } catch (Exception e) {
+                         stopLoading();
+                         e.printStackTrace();
+                         errors(e.getMessage());
+                         } finally {
+                         if (b != null) {
+                         b.close();
+                         }
+                         }
+                         */
                         //HTMLToPDF.convertHtmlToPdf(new File("pdf.html").getAbsolutePath());
                         CommonResponseAttributes response = port.getInsuranceOperationsPort().editFormSubmission(req1);
                         if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
                             stopLoading();
-                            System.out.println("Insurance type flag"+insurancetypeflag);
+                            System.out.println("Insurance type flag" + insurancetypeflag);
                             if (insurancetypeflag == 2 || insurancetypeflag == 3) {
                                 String str = "Application has been successfully updated.";
-                                isEdit=false;
+                                isEdit = false;
                                 ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).autosuccessMessage(str);
                             } else {
-                                isEdit=false;
+                                isEdit = false;
                                 successMessage("Application has been successfully updated.");
                             }
                         } else {
@@ -7595,9 +7595,9 @@ public class NextScreenController implements Initializable, IScreenController {
                             if (insurancetypeflag == 2 || insurancetypeflag == 3) {
                                 String str = response.getErrorMessage();
                                 ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).autoerrorMessage(str);
+                            } else {
+                                errors(response.getErrorMessage());
                             }
-                            else{
-                            errors(response.getErrorMessage());}
                         }
                     } else {
                         InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
@@ -7611,8 +7611,7 @@ public class NextScreenController implements Initializable, IScreenController {
                         } else if (insurancetypeflag == 3) {
                             req1.setType("Both");
                         }
-                        if(listAddInfo == null || (listAddInfo!=null && listAddInfo.size()==0))
-                        {
+                        if (listAddInfo == null || (listAddInfo != null && listAddInfo.size() == 0)) {
                             addAdditionNext();
                         }
                         //choicebox
@@ -7817,13 +7816,10 @@ public class NextScreenController implements Initializable, IScreenController {
                         req1.setMarketercomments(binding3.getmarketercomments());
 
                         // Vehicle Details
-                        
                         req1.setCurrentInsurer(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentinsurer());
                         req1.setCurrentExpDate((getDate11()));
-                        
-                        
-                        if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautopremiumtarget()!=null) 
-                        {
+
+                        if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautopremiumtarget() != null) {
                             req1.setPremiumTarget(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautopremiumtarget()));
                         }
                         req1.setLienHolders1(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getlessholder1());
@@ -7865,24 +7861,23 @@ public class NextScreenController implements Initializable, IScreenController {
                         req1.setFilingName2(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getnamerequired2());
                         req1.setFilingName3(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getnamerequired3());
                         req1.setTypeOfNonOwned(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.gettypeofnonowned());
-                        
-                       
-                        if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getanytime()!=null) {
-                            
+
+                        if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getanytime() != null) {
+
                             req1.setAvgNoOfVehicles(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getanytime()));
                         }
-                       
-                        if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getavgvalue()!=null) {
-                            
+
+                        if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getavgvalue() != null) {
+
                             req1.setAvgValue(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getavgvalue()));
                         }
-                        
-                        if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getmaxannually() !=null) {
-                         
+
+                        if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getmaxannually() != null) {
+
                             req1.setMaxVehicleValue(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getmaxannually()));
                         }
-                        
-                        if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getmostexpensive() !=null) {
+
+                        if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getmostexpensive() != null) {
                             req1.setMaxCostValue(Double.parseDouble(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getmostexpensive()));
                         }
                         req1.setInstructionNotes(((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautosubmissioncomments());
@@ -8435,7 +8430,7 @@ public class NextScreenController implements Initializable, IScreenController {
                                     req1.setInsdSqFootage3(a.getInsdSqFootage1());
                                     req1.setNoOfStories3(a.getNoOfStories1());
                                     break;
-                                    case 4:
+                                case 4:
                                     req1.setAddress4(a.getAddress1());
                                     req1.setBasement4(a.getBasement1());
                                     req1.setOwnercb4(a.getOwner11());
@@ -8558,8 +8553,8 @@ public class NextScreenController implements Initializable, IScreenController {
                                     req1.setInsdSqFootage4(a.getInsdSqFootage1());
                                     req1.setNoOfStories4(a.getNoOfStories1());
                                     break;
-                                    case 5:
-                                        req1.setAddress5(a.getAddress1());
+                                case 5:
+                                    req1.setAddress5(a.getAddress1());
                                     req1.setBasement5(a.getBasement1());
                                     req1.setOwnercb5(a.getOwner11());
                                     req1.setTruckMan5(a.getTruckMan1());
@@ -8680,9 +8675,9 @@ public class NextScreenController implements Initializable, IScreenController {
                                     req1.setTotalSqFootage5(a.getTotalSqFootage1());
                                     req1.setInsdSqFootage5(a.getInsdSqFootage1());
                                     req1.setNoOfStories5(a.getNoOfStories1());
-                                        break;
-                                    case 6: 
-                                        req1.setAddress6(a.getAddress1());
+                                    break;
+                                case 6:
+                                    req1.setAddress6(a.getAddress1());
                                     req1.setBasement6(a.getBasement1());
                                     req1.setOwnercb6(a.getOwner11());
                                     req1.setTruckMan6(a.getTruckMan1());
@@ -8803,9 +8798,9 @@ public class NextScreenController implements Initializable, IScreenController {
                                     req1.setTotalSqFootage6(a.getTotalSqFootage1());
                                     req1.setInsdSqFootage6(a.getInsdSqFootage1());
                                     req1.setNoOfStories6(a.getNoOfStories1());
-                                        break;
-                                    case 7: 
-                                        req1.setAddress7(a.getAddress1());
+                                    break;
+                                case 7:
+                                    req1.setAddress7(a.getAddress1());
                                     req1.setBasement7(a.getBasement1());
                                     req1.setOwnercb7(a.getOwner11());
                                     req1.setTruckMan7(a.getTruckMan1());
@@ -8926,7 +8921,7 @@ public class NextScreenController implements Initializable, IScreenController {
                                     req1.setTotalSqFootage7(a.getTotalSqFootage1());
                                     req1.setInsdSqFootage7(a.getInsdSqFootage1());
                                     req1.setNoOfStories7(a.getNoOfStories1());
-                                        break;
+                                    break;
                             }
                             i++;
                         }
@@ -8966,486 +8961,483 @@ public class NextScreenController implements Initializable, IScreenController {
                                 i++;
                             }
                         }
-                        
-                                            if(contractorflag)
-                                            {
-                                                System.out.println("Contractor Yes");
-                                                if(os.contains("Windows"))
-                                                {byte[] bytes = WriteByteArray.getByteFromFile(new File("C:\\bin\\Contractors.doc"));
-                                                req1.setFile8(bytes);
-                                                req1.setFile8Name("Contractors.doc");
-                                                
-                                                }
-                                                else
-                                                {byte[] bytes = WriteByteArray.getByteFromFile(new File("/Users/harsimransingh/Desktop/bin/Contractors.doc"));
-                                                req1.setFile8(bytes);
-                                                req1.setFile8Name("Contractors.doc");}
-                                            }
-                                            
-                                           if(driverflag)
-                                           {    
-                                                System.out.println("Driver Yes");
-                                                if(os.contains("Windows"))
-                                                {byte[] bytes = WriteByteArray.getByteFromFile(new File("C:\\bin\\DriverSchedule.xls"));
-                                                req1.setFile9(bytes);
-                                                req1.setFile9Name("DriverSchedule.doc");}
-                                                else {
-                                                byte[] bytes = WriteByteArray.getByteFromFile(new File("/Users/harsimransingh/Desktop/bin/DriverSchedule.xls"));
-                                                req1.setFile9(bytes);
-                                                req1.setFile9Name("DriverSchedule.doc");}
-                                           }
-                                           if(vehicleflag)
-                                           {
-                                               System.out.println("Vehicle Yes");
-                                               if(os.contains("Windows"))
-                                               {byte[] bytes = WriteByteArray.getByteFromFile(new File("C:\\bin\\VehicleSchedule.xls"));
-                                                req1.setFile10(bytes);
-                                                req1.setFile10Name("VehicleSchedule.doc");}
-                                               else 
-                                               {
-                                                   byte[] bytes = WriteByteArray.getByteFromFile(new File("/Users/harsimransingh/Desktop/bin/VehicleSchedule.xls"));
-                                                req1.setFile10(bytes);
-                                                req1.setFile10Name("VehicleSchedule.doc");
-                                               }
-                                           }
-                        
+
+                        if (contractorflag) {
+                            System.out.println("Contractor Yes");
+                            if (os.contains("Windows")) {
+                                byte[] bytes = WriteByteArray.getByteFromFile(new File("C:\\bin\\Contractors.doc"));
+                                req1.setFile8(bytes);
+                                req1.setFile8Name("Contractors.doc");
+
+                            } else {
+                                byte[] bytes = WriteByteArray.getByteFromFile(new File("/Users/harsimransingh/Desktop/bin/Contractors.doc"));
+                                req1.setFile8(bytes);
+                                req1.setFile8Name("Contractors.doc");
+                            }
+                        }
+
+                        if (driverflag) {
+                            System.out.println("Driver Yes");
+                            if (os.contains("Windows")) {
+                                byte[] bytes = WriteByteArray.getByteFromFile(new File("C:\\bin\\DriverSchedule.xls"));
+                                req1.setFile9(bytes);
+                                req1.setFile9Name("DriverSchedule.doc");
+                            } else {
+                                byte[] bytes = WriteByteArray.getByteFromFile(new File("/Users/harsimransingh/Desktop/bin/DriverSchedule.xls"));
+                                req1.setFile9(bytes);
+                                req1.setFile9Name("DriverSchedule.doc");
+                            }
+                        }
+                        if (vehicleflag) {
+                            System.out.println("Vehicle Yes");
+                            if (os.contains("Windows")) {
+                                byte[] bytes = WriteByteArray.getByteFromFile(new File("C:\\bin\\VehicleSchedule.xls"));
+                                req1.setFile10(bytes);
+                                req1.setFile10Name("VehicleSchedule.doc");
+                            } else {
+                                byte[] bytes = WriteByteArray.getByteFromFile(new File("/Users/harsimransingh/Desktop/bin/VehicleSchedule.xls"));
+                                req1.setFile10(bytes);
+                                req1.setFile10Name("VehicleSchedule.doc");
+                            }
+                        }
+
                         System.out.println("123");
-                      /*  StringTemplateGroup emailTemplateGroup = new StringTemplateGroup(
-                                "welcomeloginemail group", new File("bin").getAbsolutePath());
-                        StringTemplate submitFormMail = emailTemplateGroup
-                                .getInstanceOf("pdfTemplate");
-                       // submitFormMail.setAttribute("date", new SimpleDateFormat("yyyy/mm/dd").format(datefromform));
-                        System.out.println("producer"+returnedname.getText());
-                        System.out.println("branch"+returnedbranch.getText());
-                        System.out.println("keycontact"+binding.getKeyContact());
-                        submitFormMail.setAttribute("date", returneddate.getText());
-                        submitFormMail.setAttribute("producer", returnedname.getText());
-                        submitFormMail.setAttribute("branch", returnedbranch.getText());
-                        submitFormMail.setAttribute("keycontact", binding.getKeyContact());
-                        submitFormMail.setAttribute("keyPhone", binding.getKeyPhone());
-                        submitFormMail.setAttribute("keyEmail", binding.getKeyEmail());
-                        submitFormMail.setAttribute("secondaryContact", binding.getSecondaryContact());
-                        submitFormMail.setAttribute("secondaryPhone", binding.getSecondaryPhone());
-                        submitFormMail.setAttribute("secondaryEmail", binding.getSecondaryEmail());
-                        submitFormMail.setAttribute("businessName", binding.getBusinessName());
-                        submitFormMail.setAttribute("mailingAddress", binding.getMailingAddress());
-                        submitFormMail.setAttribute("fax", binding.getFax());
-                        submitFormMail.setAttribute("website", binding.getWebsite());
-                        submitFormMail.setAttribute("nooflocations", binding.getNoOfLocations());
-                        submitFormMail.setAttribute("noofownedautos", binding.getNoOfOwnedAutos());
-                        submitFormMail.setAttribute("entityType", binding.getEntityType());
-                        submitFormMail.setAttribute("profitornonprofit", binding.getProfit());
-                        submitFormMail.setAttribute("years", binding.getYears());
-                        submitFormMail.setAttribute("relatedexperience", binding.getRelatedExperience());
-                        submitFormMail.setAttribute("owner1", binding.getOwner1());
-                        submitFormMail.setAttribute("owner2", binding.getOwner2());
-                        submitFormMail.setAttribute("owner3", binding.getOwner3());
-                        submitFormMail.setAttribute("owner4", binding.getOwner4());
-                        submitFormMail.setAttribute("bod1", binding.getBod1());
-                        submitFormMail.setAttribute("bod2", binding.getBod2());
-                        submitFormMail.setAttribute("bod3", binding.getBod3());
-                        submitFormMail.setAttribute("bod4", binding.getBod4());
-                        submitFormMail.setAttribute("FYE", binding2.getfinYearEnd());
-                        submitFormMail.setAttribute("staff", binding2.getNoofStaff());
-                        submitFormMail.setAttribute("payroll", binding2.getpayroll());
-                        submitFormMail.setAttribute("groupbenefits", binding2.getgroupBenefits());
-                        submitFormMail.setAttribute("pension", binding2.getpensionPlan());
-                        submitFormMail.setAttribute("description1", binding2.getdescriptionOfOpAndRev1());
-                        submitFormMail.setAttribute("description2", binding2.getdescriptionOfOpAndRev2());
-                        submitFormMail.setAttribute("description3", binding2.getdescriptionOfOpAndRev3());
-                        submitFormMail.setAttribute("description4", binding2.getdescriptionOfOpAndRev4());
-                        submitFormMail.setAttribute("revenue1", binding2.getamount1());
-                        submitFormMail.setAttribute("revenue2", binding2.getamount2());
-                        submitFormMail.setAttribute("revenue3", binding2.getamount3());
-                        submitFormMail.setAttribute("revenue4", binding2.getamount4());
-                        submitFormMail.setAttribute("currency1", binding2.getcurrency1());
-                        submitFormMail.setAttribute("currency2", binding2.getcurrency2());
-                        submitFormMail.setAttribute("currency3", binding2.getcurrency3());
-                        submitFormMail.setAttribute("currency4", binding2.getCurrency4());
-                        submitFormMail.setAttribute("totalsalescanada", binding2.gettotalSale());
-                        submitFormMail.setAttribute("totalsalesus", binding2.getperOfUsSales());
-                        submitFormMail.setAttribute("on", binding2.getperOfOnPremises());
-                        submitFormMail.setAttribute("off", binding2.getperOfOffPremises());
-                        submitFormMail.setAttribute("res", binding2.getperOfResidential());
-                        submitFormMail.setAttribute("comm", binding2.getperOfCommercial());
-                        submitFormMail.setAttribute("sub", binding2.getperOfSubContracted());
-                        submitFormMail.setAttribute("project1", binding2.getlargestCustomerOrProject1());
-                        submitFormMail.setAttribute("project2", binding2.getlargestCustomerOrProject2());
-                        submitFormMail.setAttribute("project3", binding2.getlargestCustomerOrProject3());
-                        submitFormMail.setAttribute("project4", binding2.getlargestCustomerOrProject4());
-                        submitFormMail.setAttribute("supplier1", binding2.getlargestSuppliers1());
-                        submitFormMail.setAttribute("supplier2", binding2.getlargestSuppliers2());
-                        submitFormMail.setAttribute("supplier3", binding2.getlargestSuppliers3());
-                        submitFormMail.setAttribute("supplier4", binding2.getlargestSuppliers4());
-                        if(binding2.geteCommerce()!=null&& binding2.geteCommerce().contains("selected"))
-                        {submitFormMail.setAttribute("commerce", "yes");}
-                        else 
-                        {submitFormMail.setAttribute("commerce", binding2.geteCommerce());}
+                        /*  StringTemplateGroup emailTemplateGroup = new StringTemplateGroup(
+                         "welcomeloginemail group", new File("bin").getAbsolutePath());
+                         StringTemplate submitFormMail = emailTemplateGroup
+                         .getInstanceOf("pdfTemplate");
+                         // submitFormMail.setAttribute("date", new SimpleDateFormat("yyyy/mm/dd").format(datefromform));
+                         System.out.println("producer"+returnedname.getText());
+                         System.out.println("branch"+returnedbranch.getText());
+                         System.out.println("keycontact"+binding.getKeyContact());
+                         submitFormMail.setAttribute("date", returneddate.getText());
+                         submitFormMail.setAttribute("producer", returnedname.getText());
+                         submitFormMail.setAttribute("branch", returnedbranch.getText());
+                         submitFormMail.setAttribute("keycontact", binding.getKeyContact());
+                         submitFormMail.setAttribute("keyPhone", binding.getKeyPhone());
+                         submitFormMail.setAttribute("keyEmail", binding.getKeyEmail());
+                         submitFormMail.setAttribute("secondaryContact", binding.getSecondaryContact());
+                         submitFormMail.setAttribute("secondaryPhone", binding.getSecondaryPhone());
+                         submitFormMail.setAttribute("secondaryEmail", binding.getSecondaryEmail());
+                         submitFormMail.setAttribute("businessName", binding.getBusinessName());
+                         submitFormMail.setAttribute("mailingAddress", binding.getMailingAddress());
+                         submitFormMail.setAttribute("fax", binding.getFax());
+                         submitFormMail.setAttribute("website", binding.getWebsite());
+                         submitFormMail.setAttribute("nooflocations", binding.getNoOfLocations());
+                         submitFormMail.setAttribute("noofownedautos", binding.getNoOfOwnedAutos());
+                         submitFormMail.setAttribute("entityType", binding.getEntityType());
+                         submitFormMail.setAttribute("profitornonprofit", binding.getProfit());
+                         submitFormMail.setAttribute("years", binding.getYears());
+                         submitFormMail.setAttribute("relatedexperience", binding.getRelatedExperience());
+                         submitFormMail.setAttribute("owner1", binding.getOwner1());
+                         submitFormMail.setAttribute("owner2", binding.getOwner2());
+                         submitFormMail.setAttribute("owner3", binding.getOwner3());
+                         submitFormMail.setAttribute("owner4", binding.getOwner4());
+                         submitFormMail.setAttribute("bod1", binding.getBod1());
+                         submitFormMail.setAttribute("bod2", binding.getBod2());
+                         submitFormMail.setAttribute("bod3", binding.getBod3());
+                         submitFormMail.setAttribute("bod4", binding.getBod4());
+                         submitFormMail.setAttribute("FYE", binding2.getfinYearEnd());
+                         submitFormMail.setAttribute("staff", binding2.getNoofStaff());
+                         submitFormMail.setAttribute("payroll", binding2.getpayroll());
+                         submitFormMail.setAttribute("groupbenefits", binding2.getgroupBenefits());
+                         submitFormMail.setAttribute("pension", binding2.getpensionPlan());
+                         submitFormMail.setAttribute("description1", binding2.getdescriptionOfOpAndRev1());
+                         submitFormMail.setAttribute("description2", binding2.getdescriptionOfOpAndRev2());
+                         submitFormMail.setAttribute("description3", binding2.getdescriptionOfOpAndRev3());
+                         submitFormMail.setAttribute("description4", binding2.getdescriptionOfOpAndRev4());
+                         submitFormMail.setAttribute("revenue1", binding2.getamount1());
+                         submitFormMail.setAttribute("revenue2", binding2.getamount2());
+                         submitFormMail.setAttribute("revenue3", binding2.getamount3());
+                         submitFormMail.setAttribute("revenue4", binding2.getamount4());
+                         submitFormMail.setAttribute("currency1", binding2.getcurrency1());
+                         submitFormMail.setAttribute("currency2", binding2.getcurrency2());
+                         submitFormMail.setAttribute("currency3", binding2.getcurrency3());
+                         submitFormMail.setAttribute("currency4", binding2.getCurrency4());
+                         submitFormMail.setAttribute("totalsalescanada", binding2.gettotalSale());
+                         submitFormMail.setAttribute("totalsalesus", binding2.getperOfUsSales());
+                         submitFormMail.setAttribute("on", binding2.getperOfOnPremises());
+                         submitFormMail.setAttribute("off", binding2.getperOfOffPremises());
+                         submitFormMail.setAttribute("res", binding2.getperOfResidential());
+                         submitFormMail.setAttribute("comm", binding2.getperOfCommercial());
+                         submitFormMail.setAttribute("sub", binding2.getperOfSubContracted());
+                         submitFormMail.setAttribute("project1", binding2.getlargestCustomerOrProject1());
+                         submitFormMail.setAttribute("project2", binding2.getlargestCustomerOrProject2());
+                         submitFormMail.setAttribute("project3", binding2.getlargestCustomerOrProject3());
+                         submitFormMail.setAttribute("project4", binding2.getlargestCustomerOrProject4());
+                         submitFormMail.setAttribute("supplier1", binding2.getlargestSuppliers1());
+                         submitFormMail.setAttribute("supplier2", binding2.getlargestSuppliers2());
+                         submitFormMail.setAttribute("supplier3", binding2.getlargestSuppliers3());
+                         submitFormMail.setAttribute("supplier4", binding2.getlargestSuppliers4());
+                         if(binding2.geteCommerce()!=null&& binding2.geteCommerce().contains("selected"))
+                         {submitFormMail.setAttribute("commerce", "yes");}
+                         else 
+                         {submitFormMail.setAttribute("commerce", binding2.geteCommerce());}
                         
-                        if(binding2.getprofLiability()!=null&& binding2.getprofLiability().contains("selected"))
-                        {submitFormMail.setAttribute("prof", "yes");}
-                        else 
-                        {submitFormMail.setAttribute("prof", binding2.getprofLiability());}
+                         if(binding2.getprofLiability()!=null&& binding2.getprofLiability().contains("selected"))
+                         {submitFormMail.setAttribute("prof", "yes");}
+                         else 
+                         {submitFormMail.setAttribute("prof", binding2.getprofLiability());}
                         
-                        if(binding2.getcyberLiability()!=null&& binding2.getcyberLiability().contains("selected"))
-                        {submitFormMail.setAttribute("cyber", "yes");}
-                        else 
-                        {submitFormMail.setAttribute("cyber", binding2.getcyberLiability());}
+                         if(binding2.getcyberLiability()!=null&& binding2.getcyberLiability().contains("selected"))
+                         {submitFormMail.setAttribute("cyber", "yes");}
+                         else 
+                         {submitFormMail.setAttribute("cyber", binding2.getcyberLiability());}
                         
-                        if(binding2.getpollExposure()!=null&& binding2.getpollExposure().contains("selected"))
-                        {submitFormMail.setAttribute("poll", "yes");}
-                        else 
-                        {submitFormMail.setAttribute("poll", binding2.getpollExposure());}
+                         if(binding2.getpollExposure()!=null&& binding2.getpollExposure().contains("selected"))
+                         {submitFormMail.setAttribute("poll", "yes");}
+                         else 
+                         {submitFormMail.setAttribute("poll", binding2.getpollExposure());}
                         
-                        if(binding2.getaccBenefits()!=null&& binding2.getaccBenefits().contains("selected"))
-                        {submitFormMail.setAttribute("acc", "yes");}
-                        else 
-                        {submitFormMail.setAttribute("acc", binding2.getaccBenefits());}
+                         if(binding2.getaccBenefits()!=null&& binding2.getaccBenefits().contains("selected"))
+                         {submitFormMail.setAttribute("acc", "yes");}
+                         else 
+                         {submitFormMail.setAttribute("acc", binding2.getaccBenefits());}
                         
-                        if(binding2.getmalExposure()!=null&& binding2.getmalExposure().contains("selected"))
-                        {submitFormMail.setAttribute("mal", "yes");}
-                        else 
-                        {submitFormMail.setAttribute("mal", binding2.getmalExposure());}
+                         if(binding2.getmalExposure()!=null&& binding2.getmalExposure().contains("selected"))
+                         {submitFormMail.setAttribute("mal", "yes");}
+                         else 
+                         {submitFormMail.setAttribute("mal", binding2.getmalExposure());}
                         
-                        if(binding2.getabuseExposure()!=null&& binding2.getabuseExposure().contains("selected"))
-                        {submitFormMail.setAttribute("abuse", "yes");}
-                        else 
-                        {submitFormMail.setAttribute("abuse", binding2.getabuseExposure());}
+                         if(binding2.getabuseExposure()!=null&& binding2.getabuseExposure().contains("selected"))
+                         {submitFormMail.setAttribute("abuse", "yes");}
+                         else 
+                         {submitFormMail.setAttribute("abuse", binding2.getabuseExposure());}
                         
-                        if(binding2.getbondOpportunity()!=null&& binding2.getbondOpportunity().contains("selected"))
-                        {submitFormMail.setAttribute("bonding", "yes");}
-                        else 
-                        {submitFormMail.setAttribute("bonding", binding2.getbondOpportunity());}
+                         if(binding2.getbondOpportunity()!=null&& binding2.getbondOpportunity().contains("selected"))
+                         {submitFormMail.setAttribute("bonding", "yes");}
+                         else 
+                         {submitFormMail.setAttribute("bonding", binding2.getbondOpportunity());}
                         
-                        submitFormMail.setAttribute("future", binding3.getfutureopportunity());
-                        submitFormMail.setAttribute("competition", binding3.getdescribecompetition());
-                        submitFormMail.setAttribute("apart", binding3.getbusinessapart());
-                        submitFormMail.setAttribute("advertising", binding3.getadvertising());
-                        submitFormMail.setAttribute("seriousclaim", binding3.getrecover());
+                         submitFormMail.setAttribute("future", binding3.getfutureopportunity());
+                         submitFormMail.setAttribute("competition", binding3.getdescribecompetition());
+                         submitFormMail.setAttribute("apart", binding3.getbusinessapart());
+                         submitFormMail.setAttribute("advertising", binding3.getadvertising());
+                         submitFormMail.setAttribute("seriousclaim", binding3.getrecover());
                         
-                        if(binding3.getbiw()!=null&& binding3.getbiw().contains("selected"))
-                        {submitFormMail.setAttribute("biw", "yes");}
-                        else 
-                        {submitFormMail.setAttribute("biw", binding2.getbondOpportunity());}
+                         if(binding3.getbiw()!=null&& binding3.getbiw().contains("selected"))
+                         {submitFormMail.setAttribute("biw", "yes");}
+                         else 
+                         {submitFormMail.setAttribute("biw", binding2.getbondOpportunity());}
                         
-                        submitFormMail.setAttribute("detail1", binding3.getdateclaimdd1()+", "+binding3.getclaimcause1()+", "+binding3.getclaimamount1());
-                        submitFormMail.setAttribute("detail2", binding3.getdateclaimdd2()+", "+binding3.getclaimcause2()+", "+binding3.getclaimamount2());
-                        submitFormMail.setAttribute("detail3", binding3.getdateclaimdd3()+", "+binding3.getclaimcause3()+", "+binding3.getclaimamount3());
+                         submitFormMail.setAttribute("detail1", binding3.getdateclaimdd1()+", "+binding3.getclaimcause1()+", "+binding3.getclaimamount1());
+                         submitFormMail.setAttribute("detail2", binding3.getdateclaimdd2()+", "+binding3.getclaimcause2()+", "+binding3.getclaimamount2());
+                         submitFormMail.setAttribute("detail3", binding3.getdateclaimdd3()+", "+binding3.getclaimcause3()+", "+binding3.getclaimamount3());
                         
-                        submitFormMail.setAttribute("type1", binding3.getciptype1());
-                        submitFormMail.setAttribute("type2", binding3.getciptype2());
-                        submitFormMail.setAttribute("type3", binding3.getciptype3());
-                        submitFormMail.setAttribute("carrier1", binding3.getcipcarrier1());
-                        submitFormMail.setAttribute("carrier2", binding3.getcipcarrier2());
-                        submitFormMail.setAttribute("carrier3", binding3.getcipcarrier3());
-                        submitFormMail.setAttribute("expiry1", binding3.getcipexpirymm1());
-                        submitFormMail.setAttribute("expiry2", binding3.getcipexpirymm2());
-                        submitFormMail.setAttribute("expiry3", binding3.getcipexpirymm3());
-                        submitFormMail.setAttribute("lienholders1", binding3.getlienholder1());
-                        submitFormMail.setAttribute("lienholders2", binding3.getlienholder2());
-                        submitFormMail.setAttribute("lienholders3", binding3.getlienholder3());
-                        submitFormMail.setAttribute("loc1", binding3.getloc1());
-                        submitFormMail.setAttribute("loc2", binding3.getloc2());
-                        submitFormMail.setAttribute("loc3", binding3.getloc3());
-                        submitFormMail.setAttribute("aol1", binding3.getaoladdress1());
-                        submitFormMail.setAttribute("aol2", binding3.getaoladdress2());
-                        submitFormMail.setAttribute("aol3", binding3.getaoladdress3());
-                        submitFormMail.setAttribute("aol4", binding3.getaoladdress4());
-                        submitFormMail.setAttribute("use1", binding3.getaoluse1());
-                        submitFormMail.setAttribute("use2", binding3.getaoluse2());
-                        submitFormMail.setAttribute("use3", binding3.getaoluse3());
-                        submitFormMail.setAttribute("use4", binding3.getaoluse4());
-                        submitFormMail.setAttribute("owned1", binding3.getaolownedy1());
-                        submitFormMail.setAttribute("owned2", binding3.getaolownedy2());
-                        submitFormMail.setAttribute("owned3", binding3.getaolownedy3());
-                        submitFormMail.setAttribute("owned4", binding3.getaolownedy4());
-                        submitFormMail.setAttribute("occupancy1", binding3.getlrtooccupancy1());
-                        submitFormMail.setAttribute("occupancy2", binding3.getlrtooccupancy2());
-                        submitFormMail.setAttribute("occupancy3", binding3.getlrtooccupancy3());
-                        submitFormMail.setAttribute("occupancy4", binding3.getlrtooccupancy4());
-                        submitFormMail.setAttribute("comments", binding3.getproducercomments());
+                         submitFormMail.setAttribute("type1", binding3.getciptype1());
+                         submitFormMail.setAttribute("type2", binding3.getciptype2());
+                         submitFormMail.setAttribute("type3", binding3.getciptype3());
+                         submitFormMail.setAttribute("carrier1", binding3.getcipcarrier1());
+                         submitFormMail.setAttribute("carrier2", binding3.getcipcarrier2());
+                         submitFormMail.setAttribute("carrier3", binding3.getcipcarrier3());
+                         submitFormMail.setAttribute("expiry1", binding3.getcipexpirymm1());
+                         submitFormMail.setAttribute("expiry2", binding3.getcipexpirymm2());
+                         submitFormMail.setAttribute("expiry3", binding3.getcipexpirymm3());
+                         submitFormMail.setAttribute("lienholders1", binding3.getlienholder1());
+                         submitFormMail.setAttribute("lienholders2", binding3.getlienholder2());
+                         submitFormMail.setAttribute("lienholders3", binding3.getlienholder3());
+                         submitFormMail.setAttribute("loc1", binding3.getloc1());
+                         submitFormMail.setAttribute("loc2", binding3.getloc2());
+                         submitFormMail.setAttribute("loc3", binding3.getloc3());
+                         submitFormMail.setAttribute("aol1", binding3.getaoladdress1());
+                         submitFormMail.setAttribute("aol2", binding3.getaoladdress2());
+                         submitFormMail.setAttribute("aol3", binding3.getaoladdress3());
+                         submitFormMail.setAttribute("aol4", binding3.getaoladdress4());
+                         submitFormMail.setAttribute("use1", binding3.getaoluse1());
+                         submitFormMail.setAttribute("use2", binding3.getaoluse2());
+                         submitFormMail.setAttribute("use3", binding3.getaoluse3());
+                         submitFormMail.setAttribute("use4", binding3.getaoluse4());
+                         submitFormMail.setAttribute("owned1", binding3.getaolownedy1());
+                         submitFormMail.setAttribute("owned2", binding3.getaolownedy2());
+                         submitFormMail.setAttribute("owned3", binding3.getaolownedy3());
+                         submitFormMail.setAttribute("owned4", binding3.getaolownedy4());
+                         submitFormMail.setAttribute("occupancy1", binding3.getlrtooccupancy1());
+                         submitFormMail.setAttribute("occupancy2", binding3.getlrtooccupancy2());
+                         submitFormMail.setAttribute("occupancy3", binding3.getlrtooccupancy3());
+                         submitFormMail.setAttribute("occupancy4", binding3.getlrtooccupancy4());
+                         submitFormMail.setAttribute("comments", binding3.getproducercomments());
                         
                          
                         
-                        String message = submitFormMail.toString();
+                         String message = submitFormMail.toString();
                         
-                       // System.out.println("Output "+listAddInfo.get(0).getAddress1());
-                        int fileNumber = 1;
-              for (AddAnotherInfo addInfo : listAddInfo) {
-                  System.out.println("Inside addanother");
-                  System.out.println("Output "+addInfo.getAddress1());
-                            if (addInfo != null) {
-                                System.out.println("Inside addanother1");
-                                StringTemplateGroup emailTemplateGroup1 = new StringTemplateGroup("welcomeloginemail group", new File("bin").getAbsolutePath());
+                         // System.out.println("Output "+listAddInfo.get(0).getAddress1());
+                         int fileNumber = 1;
+                         for (AddAnotherInfo addInfo : listAddInfo) {
+                         System.out.println("Inside addanother");
+                         System.out.println("Output "+addInfo.getAddress1());
+                         if (addInfo != null) {
+                         System.out.println("Inside addanother1");
+                         StringTemplateGroup emailTemplateGroup1 = new StringTemplateGroup("welcomeloginemail group", new File("bin").getAbsolutePath());
                                
-                                submitFormMail = emailTemplateGroup1.getInstanceOf("pdfTemplate2");
+                         submitFormMail = emailTemplateGroup1.getInstanceOf("pdfTemplate2");
                                
-                                submitFormMail.setAttribute("addressoflocation", addInfo.getAddress1());
-                                submitFormMail.setAttribute("age", addInfo.getAge1());
-                                submitFormMail.setAttribute("tot", addInfo.getTotalSqFootage1());
-                                submitFormMail.setAttribute("inside", addInfo.getInsdSqFootage1());
-                                submitFormMail.setAttribute("stories", addInfo.getNoOfStories1());
-                                submitFormMail.setAttribute("basement", addInfo.getBasement1());
-                                if(addInfo.getWallsframe1()!=null && addInfo.getWallsframe1().contains("selected"))
-                                {submitFormMail.setAttribute("frame1", "yes");}
-                                else
-                                {submitFormMail.setAttribute("frame1", "");}
-                                if(addInfo.getWallshcb1()!=null && addInfo.getWallshcb1().contains("selected"))
-                                {submitFormMail.setAttribute("hcb1", "yes");}
-                                else
-                                {submitFormMail.setAttribute("hcb1", "");}
-                                if(addInfo.getWallssteel1()!=null && addInfo.getWallssteel1().contains("selected"))
-                                {submitFormMail.setAttribute("steel1", "yes");}
-                                else
-                                {submitFormMail.setAttribute("steel1", "");}
+                         submitFormMail.setAttribute("addressoflocation", addInfo.getAddress1());
+                         submitFormMail.setAttribute("age", addInfo.getAge1());
+                         submitFormMail.setAttribute("tot", addInfo.getTotalSqFootage1());
+                         submitFormMail.setAttribute("inside", addInfo.getInsdSqFootage1());
+                         submitFormMail.setAttribute("stories", addInfo.getNoOfStories1());
+                         submitFormMail.setAttribute("basement", addInfo.getBasement1());
+                         if(addInfo.getWallsframe1()!=null && addInfo.getWallsframe1().contains("selected"))
+                         {submitFormMail.setAttribute("frame1", "yes");}
+                         else
+                         {submitFormMail.setAttribute("frame1", "");}
+                         if(addInfo.getWallshcb1()!=null && addInfo.getWallshcb1().contains("selected"))
+                         {submitFormMail.setAttribute("hcb1", "yes");}
+                         else
+                         {submitFormMail.setAttribute("hcb1", "");}
+                         if(addInfo.getWallssteel1()!=null && addInfo.getWallssteel1().contains("selected"))
+                         {submitFormMail.setAttribute("steel1", "yes");}
+                         else
+                         {submitFormMail.setAttribute("steel1", "");}
                                 
-                                if(addInfo.getWallsbrick1()!=null && addInfo.getWallsbrick1().contains("selected"))
-                                {submitFormMail.setAttribute("brick1", "yes");}
-                                else
-                                {submitFormMail.setAttribute("brick1", "");}
+                         if(addInfo.getWallsbrick1()!=null && addInfo.getWallsbrick1().contains("selected"))
+                         {submitFormMail.setAttribute("brick1", "yes");}
+                         else
+                         {submitFormMail.setAttribute("brick1", "");}
                                 
-                                if(addInfo.getRoofwood1()!=null && addInfo.getRoofwood1().contains("selected"))
-                                {submitFormMail.setAttribute("wj1", "yes");}
-                                else
-                                {submitFormMail.setAttribute("wj1", "");}
+                         if(addInfo.getRoofwood1()!=null && addInfo.getRoofwood1().contains("selected"))
+                         {submitFormMail.setAttribute("wj1", "yes");}
+                         else
+                         {submitFormMail.setAttribute("wj1", "");}
                                 
-                                if(addInfo.getRoofsteel1()!=null && addInfo.getRoofsteel1().contains("selected"))
-                                {submitFormMail.setAttribute("sd1", "yes");}
-                                else
-                                {submitFormMail.setAttribute("sd1", "");}
+                         if(addInfo.getRoofsteel1()!=null && addInfo.getRoofsteel1().contains("selected"))
+                         {submitFormMail.setAttribute("sd1", "yes");}
+                         else
+                         {submitFormMail.setAttribute("sd1", "");}
                                 
-                                if(addInfo.getRoofconcrete1()!=null && addInfo.getRoofconcrete1().contains("selected"))
-                                {submitFormMail.setAttribute("rco1", "yes");}
-                                else
-                                {submitFormMail.setAttribute("rco1", "");}
+                         if(addInfo.getRoofconcrete1()!=null && addInfo.getRoofconcrete1().contains("selected"))
+                         {submitFormMail.setAttribute("rco1", "yes");}
+                         else
+                         {submitFormMail.setAttribute("rco1", "");}
                                 
-                                submitFormMail.setAttribute("roofu", addInfo.getRoofupdated1());
+                         submitFormMail.setAttribute("roofu", addInfo.getRoofupdated1());
                                 
-                                if(addInfo.getFloorsconcrete1()!=null && addInfo.getFloorsconcrete1().contains("selected"))
-                                {submitFormMail.setAttribute("fco", "yes");}
-                                else
-                                {submitFormMail.setAttribute("fco", "");}
+                         if(addInfo.getFloorsconcrete1()!=null && addInfo.getFloorsconcrete1().contains("selected"))
+                         {submitFormMail.setAttribute("fco", "yes");}
+                         else
+                         {submitFormMail.setAttribute("fco", "");}
                                 
-                                if(addInfo.getFloorswood1()!=null && addInfo.getFloorswood1().contains("selected"))
-                                {submitFormMail.setAttribute("fwood", "yes");}
-                                else
-                                {submitFormMail.setAttribute("fwood", "");}
+                         if(addInfo.getFloorswood1()!=null && addInfo.getFloorswood1().contains("selected"))
+                         {submitFormMail.setAttribute("fwood", "yes");}
+                         else
+                         {submitFormMail.setAttribute("fwood", "");}
                                 
-                                if(addInfo.getHeatinggas1()!=null && addInfo.getHeatinggas1().contains("selected"))
-                                {submitFormMail.setAttribute("fagas", "yes");}
-                                else
-                                {submitFormMail.setAttribute("fagas", "");}
+                         if(addInfo.getHeatinggas1()!=null && addInfo.getHeatinggas1().contains("selected"))
+                         {submitFormMail.setAttribute("fagas", "yes");}
+                         else
+                         {submitFormMail.setAttribute("fagas", "");}
                                 
-                                if(addInfo.getHeatingoil1()!=null && addInfo.getHeatingoil1().contains("selected"))
-                                {submitFormMail.setAttribute("faoil", "yes");}
-                                else
-                                {submitFormMail.setAttribute("faoil", "");}
+                         if(addInfo.getHeatingoil1()!=null && addInfo.getHeatingoil1().contains("selected"))
+                         {submitFormMail.setAttribute("faoil", "yes");}
+                         else
+                         {submitFormMail.setAttribute("faoil", "");}
                                 
-                                if(addInfo.getHeatingelectric1()!=null && addInfo.getHeatingelectric1().contains("selected"))
-                                {submitFormMail.setAttribute("helectric", "yes");}
-                                else
-                                {submitFormMail.setAttribute("helectric", "");}
+                         if(addInfo.getHeatingelectric1()!=null && addInfo.getHeatingelectric1().contains("selected"))
+                         {submitFormMail.setAttribute("helectric", "yes");}
+                         else
+                         {submitFormMail.setAttribute("helectric", "");}
                                 
-                                if(addInfo.getHeatingother1()!=null && addInfo.getHeatingother1().contains("selected"))
-                                {submitFormMail.setAttribute("hother", "yes");}
-                                else
-                                {submitFormMail.setAttribute("hother", "");}
+                         if(addInfo.getHeatingother1()!=null && addInfo.getHeatingother1().contains("selected"))
+                         {submitFormMail.setAttribute("hother", "yes");}
+                         else
+                         {submitFormMail.setAttribute("hother", "");}
                                 
-                                submitFormMail.setAttribute("heatingu", addInfo.getHeatingupdated1());
+                         submitFormMail.setAttribute("heatingu", addInfo.getHeatingupdated1());
                                 
-                                if(addInfo.getHeatingother1()!=null && addInfo.getHeatingother1().contains("selected"))
-                                {submitFormMail.setAttribute("hother", "yes");}
-                                else
-                                {submitFormMail.setAttribute("hother", "");}
+                         if(addInfo.getHeatingother1()!=null && addInfo.getHeatingother1().contains("selected"))
+                         {submitFormMail.setAttribute("hother", "yes");}
+                         else
+                         {submitFormMail.setAttribute("hother", "");}
                                 
-                                if(addInfo.getElectricalbreakers1()!=null && addInfo.getElectricalbreakers1().contains("selected"))
-                                {submitFormMail.setAttribute("ebr", "yes");}
-                                else
-                                {submitFormMail.setAttribute("ebr", "");}
+                         if(addInfo.getElectricalbreakers1()!=null && addInfo.getElectricalbreakers1().contains("selected"))
+                         {submitFormMail.setAttribute("ebr", "yes");}
+                         else
+                         {submitFormMail.setAttribute("ebr", "");}
                                 
-                                if(addInfo.getElectricalfuses1()!=null && addInfo.getElectricalfuses1().contains("selected"))
-                                {submitFormMail.setAttribute("efuses", "yes");}
-                                else
-                                {submitFormMail.setAttribute("efuses", "");}
+                         if(addInfo.getElectricalfuses1()!=null && addInfo.getElectricalfuses1().contains("selected"))
+                         {submitFormMail.setAttribute("efuses", "yes");}
+                         else
+                         {submitFormMail.setAttribute("efuses", "");}
 
-                                submitFormMail.setAttribute("amps", addInfo.getElectricalamps1());
-                                submitFormMail.setAttribute("elect", addInfo.getElectricalupdated1());
+                         submitFormMail.setAttribute("amps", addInfo.getElectricalamps1());
+                         submitFormMail.setAttribute("elect", addInfo.getElectricalupdated1());
                                 
-                                if(addInfo.getFireProtection1()!=null && addInfo.getFireProtection1().contains("Sprinklers"))      
-                                {submitFormMail.setAttribute("fps", "yes");}
-                                else if(addInfo.getFireProtection1()!=null && addInfo.getFireProtection1().contains("SVC"))
-                                {submitFormMail.setAttribute("fpsv", "yes");}
-                                else if(addInfo.getFireProtection1()!=null && addInfo.getFireProtection1().contains("Hydrant"))
-                                {submitFormMail.setAttribute("fph", "yes");}
-                                else if(addInfo.getFireProtection1()!=null && addInfo.getFireProtection1().contains("Firehall"))
-                                {submitFormMail.setAttribute("fpf", "yes");}
-                                else if(addInfo.getFireProtection1()!=null && addInfo.getFireProtection1().contains("Unprotected"))
-                                {submitFormMail.setAttribute("fpu", "yes");}
+                         if(addInfo.getFireProtection1()!=null && addInfo.getFireProtection1().contains("Sprinklers"))      
+                         {submitFormMail.setAttribute("fps", "yes");}
+                         else if(addInfo.getFireProtection1()!=null && addInfo.getFireProtection1().contains("SVC"))
+                         {submitFormMail.setAttribute("fpsv", "yes");}
+                         else if(addInfo.getFireProtection1()!=null && addInfo.getFireProtection1().contains("Hydrant"))
+                         {submitFormMail.setAttribute("fph", "yes");}
+                         else if(addInfo.getFireProtection1()!=null && addInfo.getFireProtection1().contains("Firehall"))
+                         {submitFormMail.setAttribute("fpf", "yes");}
+                         else if(addInfo.getFireProtection1()!=null && addInfo.getFireProtection1().contains("Unprotected"))
+                         {submitFormMail.setAttribute("fpu", "yes");}
                                 
-                                submitFormMail.setAttribute("dist", addInfo.getFireProtectiondistance1());
+                         submitFormMail.setAttribute("dist", addInfo.getFireProtectiondistance1());
                                 
-                                if(addInfo.getSecurity1()!=null && addInfo.getSecurity1().contains("Alarm System"))      
-                                {submitFormMail.setAttribute("sas", "yes");}
-                                else if(addInfo.getSecurity1()!=null && addInfo.getSecurity1().contains("Central Monitored"))
-                                {submitFormMail.setAttribute("scm", "yes");}
-                                else if(addInfo.getSecurity1()!=null && addInfo.getSecurity1().contains("Window Bars"))
-                                {submitFormMail.setAttribute("swb", "yes");}
-                                else if(addInfo.getSecurity1()!=null && addInfo.getSecurity1().contains("Dead Bolts"))
-                                {submitFormMail.setAttribute("sdb", "yes");}
+                         if(addInfo.getSecurity1()!=null && addInfo.getSecurity1().contains("Alarm System"))      
+                         {submitFormMail.setAttribute("sas", "yes");}
+                         else if(addInfo.getSecurity1()!=null && addInfo.getSecurity1().contains("Central Monitored"))
+                         {submitFormMail.setAttribute("scm", "yes");}
+                         else if(addInfo.getSecurity1()!=null && addInfo.getSecurity1().contains("Window Bars"))
+                         {submitFormMail.setAttribute("swb", "yes");}
+                         else if(addInfo.getSecurity1()!=null && addInfo.getSecurity1().contains("Dead Bolts"))
+                         {submitFormMail.setAttribute("sdb", "yes");}
                                 
-                                submitFormMail.setAttribute("additionalcoverage", addInfo.getAdditionalCoverage1());
+                         submitFormMail.setAttribute("additionalcoverage", addInfo.getAdditionalCoverage1());
                                 
-                                submitFormMail.setAttribute("buildingl", addInfo.getBuildingLimit1());
-                                submitFormMail.setAttribute("buildingd", addInfo.getBuildingDeductible1());
-                                submitFormMail.setAttribute("contentsl", addInfo.getContentsLimit1());
-                                submitFormMail.setAttribute("contentsd", addInfo.getContentsDeductible1());
-                                submitFormMail.setAttribute("stockl", addInfo.getStockLimit1());
-                                submitFormMail.setAttribute("stockd", addInfo.getStockDeductible1());
-                                submitFormMail.setAttribute("officel", addInfo.getOfficeContentLimit1());
-                                submitFormMail.setAttribute("officed", addInfo.getOfficeContentDeductible1());
-                                submitFormMail.setAttribute("edpl", addInfo.getEdpLimit1());
-                                submitFormMail.setAttribute("edpd", addInfo.getEdpDeductible1());
-                                submitFormMail.setAttribute("equipmentl", addInfo.getEquipmentLimit1());
-                                submitFormMail.setAttribute("equipmentd", addInfo.getEquipmentDeductible1());
-                                submitFormMail.setAttribute("offl", addInfo.getOffPremisesLimit1());
-                                submitFormMail.setAttribute("offd", addInfo.getOffPremisesDeductible1());
-                                submitFormMail.setAttribute("transitl", addInfo.getTransitLimit1());
-                                submitFormMail.setAttribute("transitd", addInfo.getTransitDeductible1());
-                                submitFormMail.setAttribute("misc", addInfo.getMiscPropertyLimit1());
-                                submitFormMail.setAttribute("misd", addInfo.getMiscPropertyDeductible1());
-                                submitFormMail.setAttribute("contractorl", addInfo.getContractorEquipmentLimit1());
-                                submitFormMail.setAttribute("contractord", addInfo.getContractorEquipmentDeductible1());
-                                submitFormMail.setAttribute("installationl", addInfo.getInstallationFloaterLimit1());
-                                submitFormMail.setAttribute("installationd", addInfo.getInstallationFloaterDeductible1());
-                                submitFormMail.setAttribute("tooll", addInfo.getToolFloaterLimit1());
-                                submitFormMail.setAttribute("toold", addInfo.getToolFloaterDeductible1());
-                                submitFormMail.setAttribute("signl", addInfo.getSignFloaterLimit1());
-                                submitFormMail.setAttribute("signd", addInfo.getSignFloaterDeductible1());
-                                submitFormMail.setAttribute("mtcl", addInfo.getMotorTruckLimit1());
-                                submitFormMail.setAttribute("mtcd", addInfo.getMotorTruckDeductible1());
+                         submitFormMail.setAttribute("buildingl", addInfo.getBuildingLimit1());
+                         submitFormMail.setAttribute("buildingd", addInfo.getBuildingDeductible1());
+                         submitFormMail.setAttribute("contentsl", addInfo.getContentsLimit1());
+                         submitFormMail.setAttribute("contentsd", addInfo.getContentsDeductible1());
+                         submitFormMail.setAttribute("stockl", addInfo.getStockLimit1());
+                         submitFormMail.setAttribute("stockd", addInfo.getStockDeductible1());
+                         submitFormMail.setAttribute("officel", addInfo.getOfficeContentLimit1());
+                         submitFormMail.setAttribute("officed", addInfo.getOfficeContentDeductible1());
+                         submitFormMail.setAttribute("edpl", addInfo.getEdpLimit1());
+                         submitFormMail.setAttribute("edpd", addInfo.getEdpDeductible1());
+                         submitFormMail.setAttribute("equipmentl", addInfo.getEquipmentLimit1());
+                         submitFormMail.setAttribute("equipmentd", addInfo.getEquipmentDeductible1());
+                         submitFormMail.setAttribute("offl", addInfo.getOffPremisesLimit1());
+                         submitFormMail.setAttribute("offd", addInfo.getOffPremisesDeductible1());
+                         submitFormMail.setAttribute("transitl", addInfo.getTransitLimit1());
+                         submitFormMail.setAttribute("transitd", addInfo.getTransitDeductible1());
+                         submitFormMail.setAttribute("misc", addInfo.getMiscPropertyLimit1());
+                         submitFormMail.setAttribute("misd", addInfo.getMiscPropertyDeductible1());
+                         submitFormMail.setAttribute("contractorl", addInfo.getContractorEquipmentLimit1());
+                         submitFormMail.setAttribute("contractord", addInfo.getContractorEquipmentDeductible1());
+                         submitFormMail.setAttribute("installationl", addInfo.getInstallationFloaterLimit1());
+                         submitFormMail.setAttribute("installationd", addInfo.getInstallationFloaterDeductible1());
+                         submitFormMail.setAttribute("tooll", addInfo.getToolFloaterLimit1());
+                         submitFormMail.setAttribute("toold", addInfo.getToolFloaterDeductible1());
+                         submitFormMail.setAttribute("signl", addInfo.getSignFloaterLimit1());
+                         submitFormMail.setAttribute("signd", addInfo.getSignFloaterDeductible1());
+                         submitFormMail.setAttribute("mtcl", addInfo.getMotorTruckLimit1());
+                         submitFormMail.setAttribute("mtcd", addInfo.getMotorTruckDeductible1());
                                 
-                                        if(addInfo.getGrossEarning801()!=null && addInfo.getGrossEarning801().contains("selected80") )
-                                        {
-                                            submitFormMail.setAttribute("first", "Yes");
-                                        }
-                                        else if(addInfo.getGrossEarning801()!=null && addInfo.getGrossEarning801().contains("selected50") )
-                                        {
-                                            submitFormMail.setAttribute("second", "Yes");
-                                        } 
-                                submitFormMail.setAttribute("owner", addInfo.getOwner11());
-                                submitFormMail.setAttribute("truckman", addInfo.getTruckMan1());
-                                submitFormMail.setAttribute("glassl", addInfo.getGlassLimit1());
-                                submitFormMail.setAttribute("glassd", addInfo.getGlassDeductible1());
+                         if(addInfo.getGrossEarning801()!=null && addInfo.getGrossEarning801().contains("selected80") )
+                         {
+                         submitFormMail.setAttribute("first", "Yes");
+                         }
+                         else if(addInfo.getGrossEarning801()!=null && addInfo.getGrossEarning801().contains("selected50") )
+                         {
+                         submitFormMail.setAttribute("second", "Yes");
+                         } 
+                         submitFormMail.setAttribute("owner", addInfo.getOwner11());
+                         submitFormMail.setAttribute("truckman", addInfo.getTruckMan1());
+                         submitFormMail.setAttribute("glassl", addInfo.getGlassLimit1());
+                         submitFormMail.setAttribute("glassd", addInfo.getGlassDeductible1());
                                 
-                                submitFormMail.setAttribute("sewerd", addInfo.getSewerBackupDeductible1());
+                         submitFormMail.setAttribute("sewerd", addInfo.getSewerBackupDeductible1());
                                 
-                                submitFormMail.setAttribute("floodd", addInfo.getFloodDeductible1());
+                         submitFormMail.setAttribute("floodd", addInfo.getFloodDeductible1());
                                 
-                                submitFormMail.setAttribute("earthquaked", addInfo.getEarthquakeDeductible1());
-                                submitFormMail.setAttribute("profitsl", addInfo.getProfitLimit1());
-                                submitFormMail.setAttribute("profitsd", addInfo.getProfitDeductible1());
-                                submitFormMail.setAttribute("gel", addInfo.getGrossEarningLimit1());
-                                submitFormMail.setAttribute("ged", addInfo.getGrossEarningDeductible1());
-                                submitFormMail.setAttribute("rentall", addInfo.getRentalIncomeLimit1());
-                                submitFormMail.setAttribute("rentald", addInfo.getRentalIncomeDeductible1());
-                                submitFormMail.setAttribute("extral", addInfo.getExtraExpenseLimit1());
-                                submitFormMail.setAttribute("extrad", addInfo.getExtraExpenseDeductible1());
-                                submitFormMail.setAttribute("oppl", addInfo.getOffPremisesPowerLimit1());
-                                submitFormMail.setAttribute("oppd", addInfo.getOffPremisesPowerDeductible1());
-                                submitFormMail.setAttribute("insidel", addInfo.getInsideOutsideLimit1());
-                                submitFormMail.setAttribute("insided", addInfo.getInsideOutsideDeductible1());
-                                submitFormMail.setAttribute("bfmoneyl", addInfo.getBfMoneyLimit1());
-                                submitFormMail.setAttribute("bfmoneyd", addInfo.getBfMoneyDeductible1());
-                                submitFormMail.setAttribute("forgeryl", addInfo.getDeopistorForgeryLimit1());
-                                submitFormMail.setAttribute("forgeryd", addInfo.getDeopistorForgeryDeductible1());
-                                submitFormMail.setAttribute("mnyordersl", addInfo.getMoneyOrdersLimit1());
-                                submitFormMail.setAttribute("mnyordersd", addInfo.getMoneyOrdersDeductible1());
-                                submitFormMail.setAttribute("dishonestyl", addInfo.getEmployDishonestyLimit1());
-                                submitFormMail.setAttribute("dishonestyd", addInfo.getEmployDishonestyDeductible1());
-                                submitFormMail.setAttribute("cgll", addInfo.getCglLimit1());
-                                submitFormMail.setAttribute("cgld", addInfo.getCglDeductible1());
-                                submitFormMail.setAttribute("tenantsl", addInfo.getTenantsLegalLimit1());
-                                submitFormMail.setAttribute("tenantsd", addInfo.getTenantsLegalDeductible1());
-                                submitFormMail.setAttribute("nonownedd", addInfo.getNonOwnedAutoDeductible1());
-                                submitFormMail.setAttribute("nonownedl", addInfo.getNonOwnedAutoLimit1());
-                                submitFormMail.setAttribute("sef96l", addInfo.getSef96Limit1());
-                                submitFormMail.setAttribute("sef96d", addInfo.getSef96Deductible1());
-                                submitFormMail.setAttribute("sef94l", addInfo.getSef94Limit1());
-                                submitFormMail.setAttribute("sef94d", addInfo.getSef94Deductible1());
-                                submitFormMail.setAttribute("dandol", addInfo.getDoLimit1());
-                                submitFormMail.setAttribute("dandod", addInfo.getDoDeductible1());
-                                submitFormMail.setAttribute("eandol", addInfo.getEoLimit1());
-                                submitFormMail.setAttribute("eandod", addInfo.getEoDeductible1());
-                                submitFormMail.setAttribute("employerl", addInfo.getEmployerLimit1());
-                                submitFormMail.setAttribute("employerd", addInfo.getEmployerDeductible1());
-                                submitFormMail.setAttribute("umbrellal", addInfo.getUmbrellaLimit1());
-                                submitFormMail.setAttribute("umbrellad", addInfo.getUmbrellaDeductible1());
-                                submitFormMail.setAttribute("wrapl", addInfo.getWrapUpLimit1());
-                                submitFormMail.setAttribute("wrapd", addInfo.getWrapUpDeductible1());
-                                submitFormMail.setAttribute("stdl", addInfo.getStdComprehensiveLimit1());
-                                submitFormMail.setAttribute("stdd", addInfo.getStdComprehensiveDeductible1());
-                                submitFormMail.setAttribute("acl", addInfo.getAirConditioningLimit1());
-                                submitFormMail.setAttribute("acd", addInfo.getAirConditioningDeductible1());
-                                submitFormMail.setAttribute("machineryl", addInfo.getProductionMachineryLimit1());
-                                submitFormMail.setAttribute("machineryd", addInfo.getProductionMachineryDeductible1());
-                                submitFormMail.setAttribute("oc1", addInfo.getOthercoverage11());
-                                submitFormMail.setAttribute("ocl", addInfo.getOtherCoverageLimit11());
-                                submitFormMail.setAttribute("ocd", addInfo.getOtherCoverageDeductible11());
+                         submitFormMail.setAttribute("earthquaked", addInfo.getEarthquakeDeductible1());
+                         submitFormMail.setAttribute("profitsl", addInfo.getProfitLimit1());
+                         submitFormMail.setAttribute("profitsd", addInfo.getProfitDeductible1());
+                         submitFormMail.setAttribute("gel", addInfo.getGrossEarningLimit1());
+                         submitFormMail.setAttribute("ged", addInfo.getGrossEarningDeductible1());
+                         submitFormMail.setAttribute("rentall", addInfo.getRentalIncomeLimit1());
+                         submitFormMail.setAttribute("rentald", addInfo.getRentalIncomeDeductible1());
+                         submitFormMail.setAttribute("extral", addInfo.getExtraExpenseLimit1());
+                         submitFormMail.setAttribute("extrad", addInfo.getExtraExpenseDeductible1());
+                         submitFormMail.setAttribute("oppl", addInfo.getOffPremisesPowerLimit1());
+                         submitFormMail.setAttribute("oppd", addInfo.getOffPremisesPowerDeductible1());
+                         submitFormMail.setAttribute("insidel", addInfo.getInsideOutsideLimit1());
+                         submitFormMail.setAttribute("insided", addInfo.getInsideOutsideDeductible1());
+                         submitFormMail.setAttribute("bfmoneyl", addInfo.getBfMoneyLimit1());
+                         submitFormMail.setAttribute("bfmoneyd", addInfo.getBfMoneyDeductible1());
+                         submitFormMail.setAttribute("forgeryl", addInfo.getDeopistorForgeryLimit1());
+                         submitFormMail.setAttribute("forgeryd", addInfo.getDeopistorForgeryDeductible1());
+                         submitFormMail.setAttribute("mnyordersl", addInfo.getMoneyOrdersLimit1());
+                         submitFormMail.setAttribute("mnyordersd", addInfo.getMoneyOrdersDeductible1());
+                         submitFormMail.setAttribute("dishonestyl", addInfo.getEmployDishonestyLimit1());
+                         submitFormMail.setAttribute("dishonestyd", addInfo.getEmployDishonestyDeductible1());
+                         submitFormMail.setAttribute("cgll", addInfo.getCglLimit1());
+                         submitFormMail.setAttribute("cgld", addInfo.getCglDeductible1());
+                         submitFormMail.setAttribute("tenantsl", addInfo.getTenantsLegalLimit1());
+                         submitFormMail.setAttribute("tenantsd", addInfo.getTenantsLegalDeductible1());
+                         submitFormMail.setAttribute("nonownedd", addInfo.getNonOwnedAutoDeductible1());
+                         submitFormMail.setAttribute("nonownedl", addInfo.getNonOwnedAutoLimit1());
+                         submitFormMail.setAttribute("sef96l", addInfo.getSef96Limit1());
+                         submitFormMail.setAttribute("sef96d", addInfo.getSef96Deductible1());
+                         submitFormMail.setAttribute("sef94l", addInfo.getSef94Limit1());
+                         submitFormMail.setAttribute("sef94d", addInfo.getSef94Deductible1());
+                         submitFormMail.setAttribute("dandol", addInfo.getDoLimit1());
+                         submitFormMail.setAttribute("dandod", addInfo.getDoDeductible1());
+                         submitFormMail.setAttribute("eandol", addInfo.getEoLimit1());
+                         submitFormMail.setAttribute("eandod", addInfo.getEoDeductible1());
+                         submitFormMail.setAttribute("employerl", addInfo.getEmployerLimit1());
+                         submitFormMail.setAttribute("employerd", addInfo.getEmployerDeductible1());
+                         submitFormMail.setAttribute("umbrellal", addInfo.getUmbrellaLimit1());
+                         submitFormMail.setAttribute("umbrellad", addInfo.getUmbrellaDeductible1());
+                         submitFormMail.setAttribute("wrapl", addInfo.getWrapUpLimit1());
+                         submitFormMail.setAttribute("wrapd", addInfo.getWrapUpDeductible1());
+                         submitFormMail.setAttribute("stdl", addInfo.getStdComprehensiveLimit1());
+                         submitFormMail.setAttribute("stdd", addInfo.getStdComprehensiveDeductible1());
+                         submitFormMail.setAttribute("acl", addInfo.getAirConditioningLimit1());
+                         submitFormMail.setAttribute("acd", addInfo.getAirConditioningDeductible1());
+                         submitFormMail.setAttribute("machineryl", addInfo.getProductionMachineryLimit1());
+                         submitFormMail.setAttribute("machineryd", addInfo.getProductionMachineryDeductible1());
+                         submitFormMail.setAttribute("oc1", addInfo.getOthercoverage11());
+                         submitFormMail.setAttribute("ocl", addInfo.getOtherCoverageLimit11());
+                         submitFormMail.setAttribute("ocd", addInfo.getOtherCoverageDeductible11());
                                 
-                                message = submitFormMail.toString();
+                         message = submitFormMail.toString();
                                 
-                               BufferedWriter b=null;
-                               try{
-                                   b= new BufferedWriter(new FileWriter(new File("Clientprofile"+fileNumber+".html"))); 
-                                   b.append(message);
-                                }catch(Exception e){
-                                    e.printStackTrace();
-                                }finally{
-                                   try{b.close();
+                         BufferedWriter b=null;
+                         try{
+                         b= new BufferedWriter(new FileWriter(new File("Clientprofile"+fileNumber+".html"))); 
+                         b.append(message);
+                         }catch(Exception e){
+                         e.printStackTrace();
+                         }finally{
+                         try{b.close();
                                    
-                                   }catch(Exception e){
-                                       e.printStackTrace();
-                                   }
-                               }
-                               fileNumber++;
-                            }
-                        }
+                         }catch(Exception e){
+                         e.printStackTrace();
+                         }
+                         }
+                         fileNumber++;
+                         }
+                         }
              
-                        System.out.println("Syso AUto"+((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentinsurer());
-                 if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentinsurer()!=null) 
-                        { System.out.println("Inside auto");
-                             emailTemplateGroup = new StringTemplateGroup("welcomeloginemail group", new File("bin").getAbsolutePath());
-                                submitFormMail = emailTemplateGroup.getInstanceOf("pdfTemplate1");
-                            submitFormMail.setAttribute("currentinsurer", (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentinsurer()));
-                        }
+                         System.out.println("Syso AUto"+((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentinsurer());
+                         if (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentinsurer()!=null) 
+                         { System.out.println("Inside auto");
+                         emailTemplateGroup = new StringTemplateGroup("welcomeloginemail group", new File("bin").getAbsolutePath());
+                         submitFormMail = emailTemplateGroup.getInstanceOf("pdfTemplate1");
+                         submitFormMail.setAttribute("currentinsurer", (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentinsurer()));
+                         }
                         
-                        message = message +"\n </body> </html>";
+                         message = message +"\n </body> </html>";
                         
-                        BufferedWriter b = null;
-                        try {
-                            b = new BufferedWriter(new FileWriter(new File("Clientprofile.html")));
-                            b.append(message);
-                            System.out.println(message);
+                         BufferedWriter b = null;
+                         try {
+                         b = new BufferedWriter(new FileWriter(new File("Clientprofile.html")));
+                         b.append(message);
+                         System.out.println(message);
 
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        } finally {
-                            if (b != null) {
-                                b.close();
-                            }
-                        }
-                              
+                         } catch (Exception e) {
+                         e.printStackTrace();
+                         } finally {
+                         if (b != null) {
+                         b.close();
+                         }
+                         }
+                         */
                         System.out.println("ClientProfile");
-                                               if(os.contains("Windows"))
-                                               {byte[] bytes = WriteByteArray.getByteFromFile(new File("C:\\Clientprofile.html"));
-                                                req1.setFile7(bytes);
-                                                req1.setFile7Name("Clientprofile.html");}
-                                               else 
-                                               {
-                                                   byte[] bytes = WriteByteArray.getByteFromFile(new File("/Users/harsimransingh/NetBeansProjects/UCCIG/target/Clientprofile.html"));
-                                                req1.setFile7(bytes);
-                                                req1.setFile7Name("Clientprofile.html");
-                                               }*/
+                        if (os.contains("Windows")) {
+                            byte[] bytes = WriteByteArray.getByteFromFile(new File("C:\\bin\\Coverage.docx"));
+                            req1.setFile7(bytes);
+                            req1.setFile7Name("Clientprofile.docx");
+                        } else {
+
+                            byte[] bytes = WriteByteArray.getByteFromFile(new File("/Users/harsimransingh/NetBeansProjects/UCCIG/target/Clientprofile.html"));
+                            req1.setFile7(bytes);
+                            req1.setFile7Name("Clientprofile.html");
+                        }
                         //HTMLToPDF.convertHtmlToPdf(new File("pdf.html").getAbsolutePath());
                         InsuranceFormSubmitResponse response = port.getInsuranceOperationsPort().formSubmission(req1);
                         if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
@@ -9465,14 +9457,14 @@ public class NextScreenController implements Initializable, IScreenController {
                                 String str = response.getErrorMessage();
                                 ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).autoerrorMessage(str);
                             } else {
-                                System.out.println("1"+response.getErrorMessage());
+                                System.out.println("1" + response.getErrorMessage());
                                 errors(response.getErrorMessage());
                             }
                         }
                     }
                 } catch (Exception ex) {
                     stopLoading();
-                    System.out.println("2"+ex.getMessage());
+                    System.out.println("2" + ex.getMessage());
                     if (insurancetypeflag == 2 || insurancetypeflag == 3) {
                         String str = ex.getMessage();
                         ((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).autoerrorMessage(str);
@@ -9574,16 +9566,15 @@ public class NextScreenController implements Initializable, IScreenController {
                 build();
         animatedMove.play();
     }
-    
+
     public void autoback() {
-       if(insurancetypeflag==2)
-       {screenPage.setScreen("NextScreen");
-        animatedMovement(-6345, 0);
-       }
-      else if(insurancetypeflag==3)
-       {screenPage.setScreen("NextScreen");
-        animatedMovement(-7614, 0);
-       }
+        if (insurancetypeflag == 2) {
+            screenPage.setScreen("NextScreen");
+            animatedMovement(-6345, 0);
+        } else if (insurancetypeflag == 3) {
+            screenPage.setScreen("NextScreen");
+            animatedMovement(-7614, 0);
+        }
     }
 
     @FXML
