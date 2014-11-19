@@ -1344,7 +1344,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 @FXML
     public void submitSendEmail() {
          BufferedWriter b = null;
-        final File f = new File("bin\\Mailbody.txt");
+        final File f = new File("C:\\bin\\Mailbody.txt");
         try {
             b = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f)));
            // b.write(binding2.getMailbody());
@@ -1432,7 +1432,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
         InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
         PostFormMailRequest req1 = new PostFormMailRequest() ;
         BufferedWriter b = null;
-        File f = new File("bin\\Mailbodydelay.txt");
+        File f = new File("C:\\bin\\Mailbodydelay.txt");
         try {
             b = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f)));
             b.write(delayemailbody.getText());
