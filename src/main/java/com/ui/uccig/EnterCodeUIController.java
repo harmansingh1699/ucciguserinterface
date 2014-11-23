@@ -1405,6 +1405,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
       }
       else{ stopLoading1();
           errors(response.getErrorMessage());
+          System.out.println(response.getErrorMessage());
       }
                 } catch (Exception e) {
                     stopLoading1();
