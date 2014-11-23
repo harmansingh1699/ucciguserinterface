@@ -7547,24 +7547,167 @@ public class NextScreenController implements Initializable, IScreenController {
                                             req1.setFile9(bytes);
                                             req1.setFile9Name(file.getName());
                                             break;
-                                        case 9:
-                                            req1.setFile10(bytes);
-                                            req1.setFile10Name(file.getName());
-                                            break;
                                     }
                                 }
                                 i++;
                             }
                         }
-                        /* StringTemplateGroup emailTemplateGroup = new StringTemplateGroup(
+                         StringTemplateGroup emailTemplateGroup = new StringTemplateGroup(
                          "welcomeloginemail group", new File("bin").getAbsolutePath());
                          StringTemplate submitFormMail = emailTemplateGroup
                          .getInstanceOf("pdfTemplate");
-                         submitFormMail.setAttribute("date", new SimpleDateFormat("yyyy/mm/dd").format(Calendar.getInstance().getTime()));
+                         //submitFormMail.setAttribute("date", new SimpleDateFormat("yyyy/mm/dd").format(Calendar.getInstance().getTime()));
+                         submitFormMail.setAttribute("date", returneddate.getText());
+                         submitFormMail.setAttribute("producer", returnedname.getText());
+                         submitFormMail.setAttribute("branch", returnedbranch.getText());
+                         submitFormMail.setAttribute("keycontact", binding.getKeyContact());
+                         submitFormMail.setAttribute("keyPhone", binding.getKeyPhone());
+                         submitFormMail.setAttribute("keyEmail", binding.getKeyEmail());
+                         submitFormMail.setAttribute("secondaryContact", binding.getSecondaryContact());
+                         submitFormMail.setAttribute("secondaryPhone", binding.getSecondaryPhone());
+                         submitFormMail.setAttribute("secondaryEmail", binding.getSecondaryEmail());
+                         submitFormMail.setAttribute("businessName", binding.getBusinessName());
+                         submitFormMail.setAttribute("mailingAddress", binding.getMailingAddress());
+                         submitFormMail.setAttribute("fax", binding.getFax());
+                         submitFormMail.setAttribute("website", binding.getWebsite());
+                         submitFormMail.setAttribute("nooflocations", binding.getNoOfLocations());
+                         submitFormMail.setAttribute("noofownedautos", binding.getNoOfOwnedAutos());
+                         submitFormMail.setAttribute("entityType", binding.getEntityType());
+                         submitFormMail.setAttribute("profitornonprofit", binding.getProfit());
+                         submitFormMail.setAttribute("years", binding.getYears());
+                         submitFormMail.setAttribute("relatedexperience", binding.getRelatedExperience());
+                         submitFormMail.setAttribute("owner1", binding.getOwner1());
+                         submitFormMail.setAttribute("owner2", binding.getOwner2());
+                         submitFormMail.setAttribute("owner3", binding.getOwner3());
+                         submitFormMail.setAttribute("owner4", binding.getOwner4());
+                         submitFormMail.setAttribute("bod1", binding.getBod1());
+                         submitFormMail.setAttribute("bod2", binding.getBod2());
+                         submitFormMail.setAttribute("bod3", binding.getBod3());
+                         submitFormMail.setAttribute("bod4", binding.getBod4());
+                         submitFormMail.setAttribute("FYE", binding2.getfinYearEnd());
+                         submitFormMail.setAttribute("staff", binding2.getNoofStaff());
+                         submitFormMail.setAttribute("payroll", binding2.getpayroll());
+                         submitFormMail.setAttribute("groupbenefits", binding2.getgroupBenefits());
+                         submitFormMail.setAttribute("pension", binding2.getpensionPlan());
+                         submitFormMail.setAttribute("description1", binding2.getdescriptionOfOpAndRev1());
+                         submitFormMail.setAttribute("description2", binding2.getdescriptionOfOpAndRev2());
+                         submitFormMail.setAttribute("description3", binding2.getdescriptionOfOpAndRev3());
+                         submitFormMail.setAttribute("description4", binding2.getdescriptionOfOpAndRev4());
+                         submitFormMail.setAttribute("revenue1", binding2.getamount1());
+                         submitFormMail.setAttribute("revenue2", binding2.getamount2());
+                         submitFormMail.setAttribute("revenue3", binding2.getamount3());
+                         submitFormMail.setAttribute("revenue4", binding2.getamount4());
+                         submitFormMail.setAttribute("currency1", binding2.getcurrency1());
+                         submitFormMail.setAttribute("currency2", binding2.getcurrency2());
+                         submitFormMail.setAttribute("currency3", binding2.getcurrency3());
+                         submitFormMail.setAttribute("currency4", binding2.getCurrency4());
+                         submitFormMail.setAttribute("totalsalescanada", binding2.gettotalSale());
+                         submitFormMail.setAttribute("totalsalesus", binding2.getperOfUsSales());
+                         submitFormMail.setAttribute("on", binding2.getperOfOnPremises());
+                         submitFormMail.setAttribute("off", binding2.getperOfOffPremises());
+                         submitFormMail.setAttribute("res", binding2.getperOfResidential());
+                         submitFormMail.setAttribute("comm", binding2.getperOfCommercial());
+                         submitFormMail.setAttribute("sub", binding2.getperOfSubContracted());
+                         submitFormMail.setAttribute("project1", binding2.getlargestCustomerOrProject1());
+                         submitFormMail.setAttribute("project2", binding2.getlargestCustomerOrProject2());
+                         submitFormMail.setAttribute("project3", binding2.getlargestCustomerOrProject3());
+                         submitFormMail.setAttribute("project4", binding2.getlargestCustomerOrProject4());
+                         submitFormMail.setAttribute("supplier1", binding2.getlargestSuppliers1());
+                         submitFormMail.setAttribute("supplier2", binding2.getlargestSuppliers2());
+                         submitFormMail.setAttribute("supplier3", binding2.getlargestSuppliers3());
+                         submitFormMail.setAttribute("supplier4", binding2.getlargestSuppliers4());
+                         if(binding2.geteCommerce()!=null&& binding2.geteCommerce().contains("selected"))
+                         {submitFormMail.setAttribute("commerce", "yes");}
+                         else 
+                         {submitFormMail.setAttribute("commerce", binding2.geteCommerce());}
+                        
+                         if(binding2.getprofLiability()!=null&& binding2.getprofLiability().contains("selected"))
+                         {submitFormMail.setAttribute("prof", "yes");}
+                         else 
+                         {submitFormMail.setAttribute("prof", binding2.getprofLiability());}
+                        
+                         if(binding2.getcyberLiability()!=null&& binding2.getcyberLiability().contains("selected"))
+                         {submitFormMail.setAttribute("cyber", "yes");}
+                         else 
+                         {submitFormMail.setAttribute("cyber", binding2.getcyberLiability());}
+                        
+                         if(binding2.getpollExposure()!=null&& binding2.getpollExposure().contains("selected"))
+                         {submitFormMail.setAttribute("poll", "yes");}
+                         else 
+                         {submitFormMail.setAttribute("poll", binding2.getpollExposure());}
+                        
+                         if(binding2.getaccBenefits()!=null&& binding2.getaccBenefits().contains("selected"))
+                         {submitFormMail.setAttribute("acc", "yes");}
+                         else 
+                         {submitFormMail.setAttribute("acc", binding2.getaccBenefits());}
+                        
+                         if(binding2.getmalExposure()!=null&& binding2.getmalExposure().contains("selected"))
+                         {submitFormMail.setAttribute("mal", "yes");}
+                         else 
+                         {submitFormMail.setAttribute("mal", binding2.getmalExposure());}
+                        
+                         if(binding2.getabuseExposure()!=null&& binding2.getabuseExposure().contains("selected"))
+                         {submitFormMail.setAttribute("abuse", "yes");}
+                         else 
+                         {submitFormMail.setAttribute("abuse", binding2.getabuseExposure());}
+                        
+                         if(binding2.getbondOpportunity()!=null&& binding2.getbondOpportunity().contains("selected"))
+                         {submitFormMail.setAttribute("bonding", "yes");}
+                         else 
+                         {submitFormMail.setAttribute("bonding", binding2.getbondOpportunity());}
+                        
+                         submitFormMail.setAttribute("future", binding3.getfutureopportunity());
+                         submitFormMail.setAttribute("competition", binding3.getdescribecompetition());
+                         submitFormMail.setAttribute("apart", binding3.getbusinessapart());
+                         submitFormMail.setAttribute("advertising", binding3.getadvertising());
+                         submitFormMail.setAttribute("seriousclaim", binding3.getrecover());
+                        
+                         if(binding3.getbiw()!=null&& binding3.getbiw().contains("selected"))
+                         {submitFormMail.setAttribute("biw", "yes");}
+                         else 
+                         {submitFormMail.setAttribute("biw", binding2.getbondOpportunity());}
+                        
+                         submitFormMail.setAttribute("detail1", binding3.getdateclaimdd1()+", "+binding3.getclaimcause1()+", "+binding3.getclaimamount1());
+                         submitFormMail.setAttribute("detail2", binding3.getdateclaimdd2()+", "+binding3.getclaimcause2()+", "+binding3.getclaimamount2());
+                         submitFormMail.setAttribute("detail3", binding3.getdateclaimdd3()+", "+binding3.getclaimcause3()+", "+binding3.getclaimamount3());
+                        
+                         submitFormMail.setAttribute("type1", binding3.getciptype1());
+                         submitFormMail.setAttribute("type2", binding3.getciptype2());
+                         submitFormMail.setAttribute("type3", binding3.getciptype3());
+                         submitFormMail.setAttribute("carrier1", binding3.getcipcarrier1());
+                         submitFormMail.setAttribute("carrier2", binding3.getcipcarrier2());
+                         submitFormMail.setAttribute("carrier3", binding3.getcipcarrier3());
+                         submitFormMail.setAttribute("expiry1", binding3.getcipexpirymm1());
+                         submitFormMail.setAttribute("expiry2", binding3.getcipexpirymm2());
+                         submitFormMail.setAttribute("expiry3", binding3.getcipexpirymm3());
+                         submitFormMail.setAttribute("lienholders1", binding3.getlienholder1());
+                         submitFormMail.setAttribute("lienholders2", binding3.getlienholder2());
+                         submitFormMail.setAttribute("lienholders3", binding3.getlienholder3());
+                         submitFormMail.setAttribute("loc1", binding3.getloc1());
+                         submitFormMail.setAttribute("loc2", binding3.getloc2());
+                         submitFormMail.setAttribute("loc3", binding3.getloc3());
+                         submitFormMail.setAttribute("aol1", binding3.getaoladdress1());
+                         submitFormMail.setAttribute("aol2", binding3.getaoladdress2());
+                         submitFormMail.setAttribute("aol3", binding3.getaoladdress3());
+                         submitFormMail.setAttribute("aol4", binding3.getaoladdress4());
+                         submitFormMail.setAttribute("use1", binding3.getaoluse1());
+                         submitFormMail.setAttribute("use2", binding3.getaoluse2());
+                         submitFormMail.setAttribute("use3", binding3.getaoluse3());
+                         submitFormMail.setAttribute("use4", binding3.getaoluse4());
+                         submitFormMail.setAttribute("owned1", binding3.getaolownedy1());
+                         submitFormMail.setAttribute("owned2", binding3.getaolownedy2());
+                         submitFormMail.setAttribute("owned3", binding3.getaolownedy3());
+                         submitFormMail.setAttribute("owned4", binding3.getaolownedy4());
+                         submitFormMail.setAttribute("occupancy1", binding3.getlrtooccupancy1());
+                         submitFormMail.setAttribute("occupancy2", binding3.getlrtooccupancy2());
+                         submitFormMail.setAttribute("occupancy3", binding3.getlrtooccupancy3());
+                         submitFormMail.setAttribute("occupancy4", binding3.getlrtooccupancy4());
+                         submitFormMail.setAttribute("comments", binding3.getproducercomments());
+                         
                          String message = submitFormMail.toString();
                          BufferedWriter b = null;
                          try {
-                         b = new BufferedWriter(new FileWriter(new File("pdf.html")));
+                         b = new BufferedWriter(new FileWriter(new File("C:\\bin\\Clientprofile.html"))); 
                          b.append(message);
 
                          } catch (Exception e) {
@@ -7576,7 +7719,17 @@ public class NextScreenController implements Initializable, IScreenController {
                          b.close();
                          }
                          }
-                         */
+                         if (os.contains("Windows")) {
+                            byte[] bytes = WriteByteArray.getByteFromFile(new File("C:\\bin\\Clientprofile.html"));
+                            req1.setFile10(bytes);
+                            req1.setFile10Name("Clientprofile.html");
+                        } else {
+
+                            byte[] bytes = WriteByteArray.getByteFromFile(new File("/Users/harsimransingh/NetBeansProjects/UCCIG/target/Clientprofile.html"));
+                            req1.setFile10(bytes);
+                            req1.setFile10Name("Clientprofile.html");
+                        }
+                         
                         //HTMLToPDF.convertHtmlToPdf(new File("pdf.html").getAbsolutePath());
                         CommonResponseAttributes response = port.getInsuranceOperationsPort().editFormSubmission(req1);
                         if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
@@ -8975,17 +9128,27 @@ public class NextScreenController implements Initializable, IScreenController {
                                 req1.setFile8Name("Contractors.doc");
                             }
                         }
+                        /*if (os.contains("Windows")) {
+                                byte[] bytes = WriteByteArray.getByteFromFile(new File("C:\\bin\\Coverage.docx"));
+                                req1.setFile6(bytes);
+                                req1.setFile6Name("Coverage.docx");
 
+                            } else {
+                                byte[] bytes = WriteByteArray.getByteFromFile(new File("/Users/harsimransingh/Desktop/bin/Coverage.docx"));
+                                req1.setFile6(bytes);
+                                req1.setFile6Name("Coverage.docx");
+                            }
+                        */
                         if (driverflag) {
                             System.out.println("Driver Yes");
                             if (os.contains("Windows")) {
                                 byte[] bytes = WriteByteArray.getByteFromFile(new File("C:\\bin\\DriverSchedule.xls"));
                                 req1.setFile9(bytes);
-                                req1.setFile9Name("DriverSchedule.doc");
+                                req1.setFile9Name("DriverSchedule.xls");
                             } else {
                                 byte[] bytes = WriteByteArray.getByteFromFile(new File("/Users/harsimransingh/Desktop/bin/DriverSchedule.xls"));
                                 req1.setFile9(bytes);
-                                req1.setFile9Name("DriverSchedule.doc");
+                                req1.setFile9Name("DriverSchedule.xls");
                             }
                         }
                         if (vehicleflag) {
@@ -8993,23 +9156,20 @@ public class NextScreenController implements Initializable, IScreenController {
                             if (os.contains("Windows")) {
                                 byte[] bytes = WriteByteArray.getByteFromFile(new File("C:\\bin\\VehicleSchedule.xls"));
                                 req1.setFile10(bytes);
-                                req1.setFile10Name("VehicleSchedule.doc");
+                                req1.setFile10Name("VehicleSchedule.xls");
                             } else {
                                 byte[] bytes = WriteByteArray.getByteFromFile(new File("/Users/harsimransingh/Desktop/bin/VehicleSchedule.xls"));
                                 req1.setFile10(bytes);
-                                req1.setFile10Name("VehicleSchedule.doc");
+                                req1.setFile10Name("VehicleSchedule.xls");
                             }
                         }
 
                         System.out.println("123");
-                        /*  StringTemplateGroup emailTemplateGroup = new StringTemplateGroup(
+                          StringTemplateGroup emailTemplateGroup = new StringTemplateGroup(
                          "welcomeloginemail group", new File("bin").getAbsolutePath());
                          StringTemplate submitFormMail = emailTemplateGroup
                          .getInstanceOf("pdfTemplate");
                          // submitFormMail.setAttribute("date", new SimpleDateFormat("yyyy/mm/dd").format(datefromform));
-                         System.out.println("producer"+returnedname.getText());
-                         System.out.println("branch"+returnedbranch.getText());
-                         System.out.println("keycontact"+binding.getKeyContact());
                          submitFormMail.setAttribute("date", returneddate.getText());
                          submitFormMail.setAttribute("producer", returnedname.getText());
                          submitFormMail.setAttribute("branch", returnedbranch.getText());
@@ -9160,7 +9320,7 @@ public class NextScreenController implements Initializable, IScreenController {
                          
                         
                          String message = submitFormMail.toString();
-                        
+                        /*
                          // System.out.println("Output "+listAddInfo.get(0).getAddress1());
                          int fileNumber = 1;
                          for (AddAnotherInfo addInfo : listAddInfo) {
@@ -9410,12 +9570,12 @@ public class NextScreenController implements Initializable, IScreenController {
                          submitFormMail = emailTemplateGroup.getInstanceOf("pdfTemplate1");
                          submitFormMail.setAttribute("currentinsurer", (((AutoSubmissionController) screenPage.getControlledScreen("AutoSubmission")).binding4.getautocurrentinsurer()));
                          }
-                        
-                         message = message +"\n </body> </html>";
+                        */
+                         //message = message +"\n </body> </html>";
                         
                          BufferedWriter b = null;
                          try {
-                         b = new BufferedWriter(new FileWriter(new File("Clientprofile.html")));
+                         b = new BufferedWriter(new FileWriter(new File("C:\\bin\\Clientprofile.html")));
                          b.append(message);
                          System.out.println(message);
 
@@ -9426,12 +9586,11 @@ public class NextScreenController implements Initializable, IScreenController {
                          b.close();
                          }
                          }
-                         */
                         System.out.println("ClientProfile");
                         if (os.contains("Windows")) {
-                            byte[] bytes = WriteByteArray.getByteFromFile(new File("C:\\bin\\Coverage.docx"));
+                            byte[] bytes = WriteByteArray.getByteFromFile(new File("C:\\bin\\Clientprofile.html"));
                             req1.setFile7(bytes);
-                            req1.setFile7Name("Clientprofile.docx");
+                            req1.setFile7Name("Clientprofile.html");
                         } else {
 
                             byte[] bytes = WriteByteArray.getByteFromFile(new File("/Users/harsimransingh/NetBeansProjects/UCCIG/target/Clientprofile.html"));
