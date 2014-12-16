@@ -2414,9 +2414,10 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     
     public void setMailList(final List mail){
          Platform.runLater(new Runnable() {
-
+                    
             public void run() {
                  mailList = mail;
+                 
                         int i =0;
                         for(MailInfo a:mailList){
                            switch(i){
