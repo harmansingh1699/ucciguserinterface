@@ -257,6 +257,37 @@ public class FormEntry4Binding {
     private StringProperty mail28;
     private StringProperty mail29;
     
+    //send delay email-checkbox
+    private StringProperty dmail1;
+    private StringProperty dmail2;
+    private StringProperty dmail3;
+    private StringProperty dmail4;
+    private StringProperty dmail5;
+    private StringProperty dmail6;
+    private StringProperty dmail7;
+    private StringProperty dmail8;
+    private StringProperty dmail9;
+    private StringProperty dmail10;
+    private StringProperty dmail11;
+    private StringProperty dmail12;
+    private StringProperty dmail13;
+    private StringProperty dmail14;
+    private StringProperty dmail15;
+    private StringProperty dmail16;
+    private StringProperty dmail17;
+    private StringProperty dmail18;
+    private StringProperty dmail19;
+    private StringProperty dmail20;
+    private StringProperty dmail21;
+    private StringProperty dmail22;
+    private StringProperty dmail23;
+    private StringProperty dmail24;
+    private StringProperty dmail25;
+    private StringProperty dmail26;
+    private StringProperty dmail27;
+    private StringProperty dmail28;
+    private StringProperty dmail29;
+    
     private StringProperty email1;
     private StringProperty email2;
     private StringProperty email3;
@@ -513,6 +544,36 @@ public class FormEntry4Binding {
         email2=new SimpleStringProperty();
         email4=new SimpleStringProperty();
         email3=new SimpleStringProperty();
+        
+        dmail1=new SimpleStringProperty();
+        dmail2=new SimpleStringProperty();
+        dmail3=new SimpleStringProperty();
+        dmail4=new SimpleStringProperty();
+        dmail5=new SimpleStringProperty();
+        dmail6=new SimpleStringProperty();
+        dmail7=new SimpleStringProperty();
+        dmail8=new SimpleStringProperty();
+        dmail9=new SimpleStringProperty();
+        dmail10=new SimpleStringProperty();
+        dmail11=new SimpleStringProperty();
+        dmail12=new SimpleStringProperty();
+        dmail13=new SimpleStringProperty();
+        dmail14=new SimpleStringProperty();
+        dmail15=new SimpleStringProperty();
+        dmail16=new SimpleStringProperty();
+        dmail17=new SimpleStringProperty();
+        dmail18=new SimpleStringProperty();
+        dmail19=new SimpleStringProperty();
+        dmail20=new SimpleStringProperty();
+        dmail21=new SimpleStringProperty();
+        dmail22=new SimpleStringProperty();
+        dmail23=new SimpleStringProperty();
+        dmail24=new SimpleStringProperty();
+        dmail25=new SimpleStringProperty();
+        dmail26=new SimpleStringProperty();
+        dmail27=new SimpleStringProperty();
+        dmail28=new SimpleStringProperty();
+        dmail29=new SimpleStringProperty();
         demail1=new SimpleStringProperty();
         demail2=new SimpleStringProperty();
         demail4=new SimpleStringProperty();
@@ -996,6 +1057,353 @@ public class FormEntry4Binding {
     public StringProperty mail29Property() {
         return this.mail29;
     }
+    
+    public String getdmail1() {
+        return (String) this.dmail1.get();
+    }
+
+    public void setdmail1(String dmail1) {
+        this.dmail1.set(dmail1);
+    }
+
+    public StringProperty dmail1Property() {
+        return this.dmail1;
+    }
+    
+    public String getdmail2() {
+        return (String) this.dmail2.get();
+    }
+
+    public void setdmail2(String dmail2) {
+        this.dmail2.set(dmail2);
+    }
+
+    public StringProperty dmail2Property() {
+        return this.dmail2;
+    }
+    
+    public String getdmail3() {
+        return (String) this.dmail3.get();
+    }
+
+    public void setdmail3(String dmail3) {
+        this.dmail3.set(dmail3);
+    }
+
+    public StringProperty dmail3Property() {
+        return this.dmail3;
+    }
+    
+    public String getdmail4() {
+        return (String) this.dmail4.get();
+    }
+
+    public void setdmail4(String dmail4) {
+        this.dmail4.set(dmail4);
+    }
+
+    public StringProperty dmail4Property() {
+        return this.dmail4;
+    }
+    
+    public String getdmail5() {
+        return (String) this.dmail5.get();
+    }
+
+    public void setdmail5(String dmail5) {
+        this.dmail5.set(dmail5);
+    }
+
+    public StringProperty dmail5Property() {
+        return this.dmail5;
+    }
+    
+    public String getdmail6() {
+        return (String) this.dmail6.get();
+    }
+
+    public void setdmail6(String dmail6) {
+        this.dmail6.set(dmail6);
+    }
+
+    public StringProperty dmail6Property() {
+        return this.dmail6;
+    }
+    
+    public String getdmail7() {
+        return (String) this.dmail7.get();
+    }
+
+    public void setdmail7(String dmail7) {
+        this.dmail7.set(dmail7);
+    }
+
+    public StringProperty dmail7Property() {
+        return this.dmail7;
+    }
+    
+    public String getdmail8() {
+        return (String) this.dmail8.get();
+    }
+
+    public void setdmail8(String dmail8) {
+        this.dmail8.set(dmail8);
+    }
+
+    public StringProperty dmail8Property() {
+        return this.dmail8;
+    }
+    
+    public String getdmail9() {
+        return (String) this.dmail9.get();
+    }
+
+    public void setdmail9(String dmail9) {
+        this.dmail9.set(dmail9);
+    }
+
+    public StringProperty dmail9Property() {
+        return this.dmail9;
+    }
+    public String getdmail10() {
+        return (String) this.dmail10.get();
+    }
+
+    public void setdmail10(String dmail10) {
+        this.dmail10.set(dmail10);
+    }
+
+    public StringProperty dmail10Property() {
+        return this.dmail10;
+    }
+    public String getdmail11() {
+        return (String) this.dmail11.get();
+    }
+
+    public void setdmail11(String dmail11) {
+        this.dmail11.set(dmail11);
+    }
+
+    public StringProperty dmail11Property() {
+        return this.dmail11;
+    }
+    
+    public String getdmail12() {
+        return (String) this.dmail12.get();
+    }
+
+    public void setdmail12(String dmail12) {
+        this.dmail12.set(dmail12);
+    }
+
+    public StringProperty dmail12Property() {
+        return this.dmail12;
+    }
+    public String getdmail13() {
+        return (String) this.dmail13.get();
+    }
+
+    public void setdmail13(String dmail13) {
+        this.dmail13.set(dmail13);
+    }
+
+    public StringProperty dmail13Property() {
+        return this.dmail13;
+    }
+    
+    public String getdmail14() {
+        return (String) this.dmail14.get();
+    }
+
+    public void setdmail14(String dmail14) {
+        this.dmail14.set(dmail14);
+    }
+
+    public StringProperty dmail14Property() {
+        return this.dmail14;
+    }
+    
+    public String getdmail15() {
+        return (String) this.dmail15.get();
+    }
+
+    public void setdmail15(String dmail15) {
+        this.dmail15.set(dmail15);
+    }
+
+    public StringProperty dmail15Property() {
+        return this.dmail15;
+    }
+    
+    public String getdmail16() {
+        return (String) this.dmail16.get();
+    }
+
+    public void setdmail16(String dmail16) {
+        this.dmail16.set(dmail16);
+    }
+
+    public StringProperty dmail16Property() {
+        return this.dmail16;
+    }
+    public String getdmail17() {
+        return (String) this.dmail17.get();
+    }
+
+    public void setdmail17(String dmail17) {
+        this.dmail17.set(dmail17);
+    }
+
+    public StringProperty dmail17Property() {
+        return this.dmail17;
+    }
+    
+    public String getdmail18() {
+        return (String) this.dmail18.get();
+    }
+
+    public void setdmail18(String dmail18) {
+        this.dmail18.set(dmail18);
+    }
+
+    public StringProperty dmail18Property() {
+        return this.dmail18;
+    }
+    
+    public String getdmail19() {
+        return (String) this.dmail19.get();
+    }
+
+    public void setdmail19(String dmail19) {
+        this.dmail19.set(dmail19);
+    }
+
+    public StringProperty dmail19Property() {
+        return this.dmail19;
+    }
+    
+    public String getdmail20() {
+        return (String) this.dmail20.get();
+    }
+
+    public void setdmail20(String dmail20) {
+        this.dmail20.set(dmail20);
+    }
+
+    public StringProperty dmail20Property() {
+        return this.dmail20;
+    }
+    
+    public String getdmail21() {
+        return (String) this.dmail21.get();
+    }
+
+    public void setdmail21(String dmail21) {
+        this.dmail21.set(dmail21);
+    }
+
+    public StringProperty dmail21Property() {
+        return this.dmail21;
+    }
+    
+    public String getdmail22() {
+        return (String) this.dmail22.get();
+    }
+
+    public void setdmail22(String dmail22) {
+        this.dmail22.set(dmail22);
+    }
+
+    public StringProperty dmail22Property() {
+        return this.dmail22;
+    }
+    
+    public String getdmail23() {
+        return (String) this.dmail23.get();
+    }
+
+    public void setdmail23(String dmail23) {
+        this.dmail23.set(dmail23);
+    }
+
+    public StringProperty dmail23Property() {
+        return this.dmail23;
+    }
+    
+    public String getdmail24() {
+        return (String) this.dmail24.get();
+    }
+
+    public void setdmail24(String dmail24) {
+        this.dmail24.set(dmail24);
+    }
+
+    public StringProperty dmail24Property() {
+        return this.dmail24;
+    }
+    
+    public String getdmail25() {
+        return (String) this.dmail25.get();
+    }
+
+    public void setdmail25(String dmail25) {
+        this.dmail25.set(dmail25);
+    }
+
+    public StringProperty dmail25Property() {
+        return this.dmail25;
+    }
+    
+    public String getdmail26() {
+        return (String) this.dmail26.get();
+    }
+
+    public void setdmail26(String dmail26) {
+        this.dmail26.set(dmail26);
+    }
+
+    public StringProperty dmail26Property() {
+        return this.dmail26;
+    }
+    
+    public String getdmail27() {
+        return (String) this.dmail27.get();
+    }
+
+    public void setdmail27(String dmail27) {
+        this.dmail27.set(dmail27);
+    }
+
+    public StringProperty dmail27Property() {
+        return this.dmail27;
+    }
+    
+    public String getdmail28() {
+        return (String) this.dmail28.get();
+    }
+
+    public void setdmail28(String dmail28) {
+        this.dmail28.set(dmail28);
+    }
+
+    public StringProperty dmail28Property() {
+        return this.dmail28;
+    }
+    
+    public String getdmail29() {
+        return (String) this.dmail29.get();
+    }
+
+    public void setdmail29(String dmail29) {
+        this.dmail29.set(dmail29);
+    }
+
+    public StringProperty dmail29Property() {
+        return this.dmail29;
+    }
+    
+    
+    
     
     public String getmotortruckcargoowner() {
         return (String) this.motortruckcargoowner.get();

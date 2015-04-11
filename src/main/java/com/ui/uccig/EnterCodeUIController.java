@@ -225,6 +225,80 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     private CheckBox mail29;
     
     @FXML
+    private CheckBox dmail1;
+
+    @FXML
+    private CheckBox dmail2;
+    
+    @FXML
+    private CheckBox dmail3;
+    
+    @FXML
+    private CheckBox dmail4;
+    
+    @FXML
+    private CheckBox dmail5;
+    
+    @FXML
+    private CheckBox dmail6;
+    
+    @FXML
+    private CheckBox dmail7;
+    
+    @FXML
+    private CheckBox dmail8;
+    
+    @FXML
+    private CheckBox dmail9;
+    
+    @FXML
+    private CheckBox dmail10;
+    
+    @FXML
+    private CheckBox dmail11;
+    
+    @FXML
+    private CheckBox dmail12;
+    
+    @FXML
+    private CheckBox dmail13;
+    
+    @FXML
+    private CheckBox dmail14;
+    
+    @FXML
+    private CheckBox dmail15;
+    
+    @FXML
+    private CheckBox dmail16;
+    @FXML
+    private CheckBox dmail17;
+    @FXML
+    private CheckBox dmail18;
+    @FXML
+    private CheckBox dmail19;
+    @FXML
+    private CheckBox dmail20;
+    @FXML
+    private CheckBox dmail21;
+    @FXML
+    private CheckBox dmail22;
+    @FXML
+    private CheckBox dmail23;
+    @FXML
+    private CheckBox dmail24;
+    @FXML
+    private CheckBox dmail25;
+    @FXML
+    private CheckBox dmail26;
+    @FXML
+    private CheckBox dmail27;
+    @FXML
+    private CheckBox dmail28;
+    @FXML
+    private CheckBox dmail29;
+    
+    @FXML
     private RadioButton searchdate1;
 
     @FXML
@@ -1540,11 +1614,300 @@ public class EnterCodeUIController implements Initializable, IScreenController {
             }
         };
         mail29.selectedProperty().addListener(listener28);
+        ChangeListener<Boolean> listener50 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail1.isSelected()) {
+                    binding1.setdmail1("quotes@abexinsurance.com");
+                }
+            }
+        };
+        dmail1.selectedProperty().addListener(listener50);
+        
+         ChangeListener<Boolean> listener51 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail2.isSelected()) {
+                    binding1.setdmail2("quotes@amfredericks.com");
+                }
+            }
+        };
+        dmail2.selectedProperty().addListener(listener51);
+        
+        ChangeListener<Boolean> listener52 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail3.isSelected()) {
+                    binding1.setdmail3("toronto@april.ca");
+                }
+            }
+        };
+        dmail3.selectedProperty().addListener(listener52);
+        
+        ChangeListener<Boolean> listener53 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail4.isSelected()) {
+                    binding1.setdmail4("avivaquotes_ottawa@avivacanada.com");
+                }
+            }
+        };
+        dmail4.selectedProperty().addListener(listener53);
+        
+        ChangeListener<Boolean> listener54 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail5.isSelected()) {
+                    binding1.setdmail5("ganderson@cfcunderwriting.com");
+                }
+            }
+        };
+        dmail5.selectedProperty().addListener(listener54);
+        
+        ChangeListener<Boolean> listener55 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail6.isSelected()) {
+                    binding1.setdmail6("tstanton@burns-wilcox.ca");
+                }
+            }
+        };
+        dmail6.selectedProperty().addListener(listener55);
+        
+        
+        ChangeListener<Boolean> listener56 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail7.isSelected()) {
+                    binding1.setdmail7("kevin@chutteruw.com");
+                }
+            }
+        };
+        dmail7.selectedProperty().addListener(listener56);
+        
+         ChangeListener<Boolean> listener57 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail8.isSelected()) {
+                    binding1.setdmail8("lisa.wolfe@cna.com");
+                }
+            }
+        };
+        dmail8.selectedProperty().addListener(listener57);
+        
+        ChangeListener<Boolean> listener58 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail9.isSelected()) {
+                    binding1.setdmail9("info@creechurch.com");
+                }
+            }
+        };
+        dmail9.selectedProperty().addListener(listener58);
+        
+         ChangeListener<Boolean> listener59 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail10.isSelected()) {
+                    binding1.setdmail10("oquotes@travelers.com");
+                }
+            }
+        };
+        dmail10.selectedProperty().addListener(listener59);
+        
+        ChangeListener<Boolean> listener60 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail11.isSelected()) {
+                    binding1.setdmail11("mpollock@eccles-ins.com");
+                }
+            }
+        };
+        dmail11.selectedProperty().addListener(listener60);
+        
+        ChangeListener<Boolean> listener61 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail12.isSelected()) {
+                    binding1.setdmail12("enconapps@encon.ca");
+                }
+            }
+        };
+        dmail12.selectedProperty().addListener(listener61);
+        
+        ChangeListener<Boolean> listener62 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail13.isSelected()) {
+                    binding1.setdmail13("insureit@grouponeu.com");
+                }
+            }
+        };
+        dmail13.selectedProperty().addListener(listener62);
+        
+        ChangeListener<Boolean> listener63 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail14.isSelected()) {
+                    binding1.setdmail14("commercial@goremutual.ca");
+                }
+            }
+        };
+        dmail14.selectedProperty().addListener(listener63);
+        
+         ChangeListener<Boolean> listener64 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail15.isSelected()) {
+                    binding1.setdmail15("eastclassic.ottawa@intact.net");
+                }
+            }
+        };
+        dmail15.selectedProperty().addListener(listener64);
+
+        ChangeListener<Boolean> listener65 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail16.isSelected()) {
+                    binding1.setdmail16("hmcadam@uccig.com");
+                }
+            }
+        };
+        dmail16.selectedProperty().addListener(listener65);
+        
+         ChangeListener<Boolean> listener66 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail17.isSelected()) {
+                    binding1.setdmail17("mr.ontario@nbfc.com");
+                }
+            }
+        };
+        dmail17.selectedProperty().addListener(listener66);
+
+         ChangeListener<Boolean> listener67 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail18.isSelected()) {
+                    binding1.setdmail18("toronto@premiermarine.com");
+                }
+            }
+        };
+        dmail18.selectedProperty().addListener(listener67);
+        
+         ChangeListener<Boolean> listener68 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail19.isSelected()) {
+                    binding1.setdmail19("ontario_commercial@rsagroup.ca");
+                }
+            }
+        };
+        dmail19.selectedProperty().addListener(listener68);
+        
+        ChangeListener<Boolean> listener69 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail20.isSelected()) {
+                    binding1.setdmail20("quotes@swgins.com");
+                }
+            }
+        };
+        dmail20.selectedProperty().addListener(listener69);
+        
+        
+        ChangeListener<Boolean> listener70 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail21.isSelected()) {
+                    binding1.setdmail21("ontario@srim.ca");
+                }
+            }
+        };
+        dmail21.selectedProperty().addListener(listener70);
+        
+        ChangeListener<Boolean> listener71 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail22.isSelected()) {
+                    binding1.setdmail22("jeff.somerville@suminsurance.ca");
+                }
+            }
+        };
+        dmail22.selectedProperty().addListener(listener71);
+        
+        ChangeListener<Boolean> listener72 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail23.isSelected()) {
+                    binding1.setdmail23("jfontaine@tcim.ca");
+                }
+            }
+        };
+        dmail23.selectedProperty().addListener(listener72);
+        
+        ChangeListener<Boolean> listener73 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail24.isSelected()) {
+                    binding1.setdmail24("property@tottengroup.com");
+                }
+            }
+        };
+        dmail24.selectedProperty().addListener(listener73);
+        
+        ChangeListener<Boolean> listener74 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail25.isSelected()) {
+                    binding1.setdmail25("hospitality@tottengroup.com");
+                }
+            }
+        };
+        dmail25.selectedProperty().addListener(listener74);
+        
+        
+        ChangeListener<Boolean> listener75 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail26.isSelected()) {
+                    binding1.setdmail26("professionalliability@tottengroup.com");
+                }
+            }
+        };
+        dmail26.selectedProperty().addListener(listener75);
+        
+        ChangeListener<Boolean> listener76 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail27.isSelected()) {
+                    binding1.setdmail27("casualty@tottengroup.com");
+                }
+            }
+        };
+        dmail27.selectedProperty().addListener(listener76);
+        
+        ChangeListener<Boolean> listener77 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail28.isSelected()) {
+                    binding1.setdmail28("commercial@unicainsurance.com");
+                }
+            }
+        };
+        dmail28.selectedProperty().addListener(listener77);
+        
+        ChangeListener<Boolean> listener78 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (dmail29.isSelected()) {
+                    binding1.setdmail29("zurich.commercial.toronto@zurich.com");
+                }
+            }
+        };
+        dmail29.selectedProperty().addListener(listener78);
     }
     
-    
-   
-
     public EnterCodeUIController() {
     }
     
@@ -1705,7 +2068,9 @@ public class EnterCodeUIController implements Initializable, IScreenController {
             }
         }
         if(binding1.getemail1()== null)
-        { successMessage("Please enter atleast 1 email address");}
+        { errors("Please enter atleast 1 email address");}
+        if(receivedemailaddress==null)
+       {errors("Oops! Only marketer can send the email");}
         else
         {   stage1.show();
             Task task = new Task<Void>() {
@@ -1728,6 +2093,113 @@ public class EnterCodeUIController implements Initializable, IScreenController {
        
        if(binding1.getmail1()!=null && !binding1.getmail1().trim().equals("")){
            mail+=binding1.getmail1()+",";
+       }
+       if(binding1.getmail2()!=null && !binding1.getmail2().trim().equals("")){
+           mail+=binding1.getmail2()+",";
+       }
+       
+       if(binding1.getmail3()!=null && !binding1.getmail3().trim().equals("")){
+           mail+=binding1.getmail3()+",";
+       }
+       
+       if(binding1.getmail4()!=null && !binding1.getmail4().trim().equals("")){
+           mail+=binding1.getmail4()+",";
+       }
+       
+       if(binding1.getmail5()!=null && !binding1.getmail5().trim().equals("")){
+           mail+=binding1.getmail5()+",";
+       }
+       
+       if(binding1.getmail6()!=null && !binding1.getmail6().trim().equals("")){
+           mail+=binding1.getmail6()+",";
+       }
+       
+       if(binding1.getmail7()!=null && !binding1.getmail7().trim().equals("")){
+           mail+=binding1.getmail7()+",";
+       }
+       
+       if(binding1.getmail8()!=null && !binding1.getmail8().trim().equals("")){
+           mail+=binding1.getmail8()+",";
+       }
+       
+       if(binding1.getmail9()!=null && !binding1.getmail9().trim().equals("")){
+           mail+=binding1.getmail9()+",";
+       }
+       
+       if(binding1.getmail10()!=null && !binding1.getmail10().trim().equals("")){
+           mail+=binding1.getmail10()+",";
+       }
+       
+       if(binding1.getmail11()!=null && !binding1.getmail11().trim().equals("")){
+           mail+=binding1.getmail11()+",";
+       }
+       
+       if(binding1.getmail12()!=null && !binding1.getmail12().trim().equals("")){
+           mail+=binding1.getmail12()+",";
+       }
+       
+       if(binding1.getmail13()!=null && !binding1.getmail13().trim().equals("")){
+           mail+=binding1.getmail13()+",";
+       }
+       
+       if(binding1.getmail14()!=null && !binding1.getmail14().trim().equals("")){
+           mail+=binding1.getmail14()+",";
+       }
+       
+       if(binding1.getmail15()!=null && !binding1.getmail15().trim().equals("")){
+           mail+=binding1.getmail15()+",";
+       }
+       if(binding1.getmail16()!=null && !binding1.getmail16().trim().equals("")){
+           mail+=binding1.getmail16()+",";
+       }
+       
+       if(binding1.getmail17()!=null && !binding1.getmail17().trim().equals("")){
+           mail+=binding1.getmail17()+",";
+       }
+       
+       if(binding1.getmail18()!=null && !binding1.getmail18().trim().equals("")){
+           mail+=binding1.getmail18()+",";
+       }
+       
+       if(binding1.getmail19()!=null && !binding1.getmail19().trim().equals("")){
+           mail+=binding1.getmail19()+",";
+       }
+       
+       if(binding1.getmail20()!=null && !binding1.getmail20().trim().equals("")){
+           mail+=binding1.getmail20()+",";
+       }
+       
+       if(binding1.getmail21()!=null && !binding1.getmail21().trim().equals("")){
+           mail+=binding1.getmail21()+",";
+       }
+       
+       if(binding1.getmail22()!=null && !binding1.getmail22().trim().equals("")){
+           mail+=binding1.getmail22()+",";
+       }
+
+       if(binding1.getmail23()!=null && !binding1.getmail23().trim().equals("")){
+           mail+=binding1.getmail23()+",";
+       }
+       if(binding1.getmail24()!=null && !binding1.getmail24().trim().equals("")){
+           mail+=binding1.getmail24()+",";
+       }
+       
+       if(binding1.getmail25()!=null && !binding1.getmail25().trim().equals("")){
+           mail+=binding1.getmail25()+",";
+       }
+       
+       if(binding1.getmail26()!=null && !binding1.getmail26().trim().equals("")){
+           mail+=binding1.getmail26()+",";
+       }
+       
+       if(binding1.getmail27()!=null && !binding1.getmail27().trim().equals("")){
+           mail+=binding1.getmail27()+",";
+       }
+       if(binding1.getmail28()!=null && !binding1.getmail28().trim().equals("")){
+           mail+=binding1.getmail28()+",";
+       }
+       if(binding1.getmail29()!=null && !binding1.getmail29().trim().equals("")){
+           mail+=binding1.getmail29()+",";
        }
        if(binding1.getemail1()!=null && !binding1.getemail1().trim().equals("")){
            mail+=binding1.getemail1()+",";
@@ -1801,7 +2273,116 @@ public class EnterCodeUIController implements Initializable, IScreenController {
        req1.setSubject(binding1.getSendDelayedMailSubject());
        String mail ="";
        delayedemail1.setText(receivedemailaddress);
+       if(binding1.getdmail1()!=null && !binding1.getdmail1().trim().equals("")){
+           mail+=binding1.getdmail1()+",";
+       }
+       if(binding1.getdmail2()!=null && !binding1.getdmail2().trim().equals("")){
+           mail+=binding1.getdmail2()+",";
+       }
        
+       if(binding1.getdmail3()!=null && !binding1.getdmail3().trim().equals("")){
+           mail+=binding1.getdmail3()+",";
+       }
+       
+       if(binding1.getdmail4()!=null && !binding1.getdmail4().trim().equals("")){
+           mail+=binding1.getdmail4()+",";
+       }
+       
+       if(binding1.getdmail5()!=null && !binding1.getdmail5().trim().equals("")){
+           mail+=binding1.getdmail5()+",";
+       }
+       
+       if(binding1.getdmail6()!=null && !binding1.getdmail6().trim().equals("")){
+           mail+=binding1.getdmail6()+",";
+       }
+       
+       if(binding1.getdmail7()!=null && !binding1.getdmail7().trim().equals("")){
+           mail+=binding1.getdmail7()+",";
+       }
+       
+       if(binding1.getdmail8()!=null && !binding1.getdmail8().trim().equals("")){
+           mail+=binding1.getdmail8()+",";
+       }
+       
+       if(binding1.getdmail9()!=null && !binding1.getdmail9().trim().equals("")){
+           mail+=binding1.getdmail9()+",";
+       }
+       
+       if(binding1.getdmail10()!=null && !binding1.getdmail10().trim().equals("")){
+           mail+=binding1.getdmail10()+",";
+       }
+       
+       if(binding1.getdmail11()!=null && !binding1.getdmail11().trim().equals("")){
+           mail+=binding1.getdmail11()+",";
+       }
+       
+       if(binding1.getdmail12()!=null && !binding1.getdmail12().trim().equals("")){
+           mail+=binding1.getdmail12()+",";
+       }
+       
+       if(binding1.getdmail13()!=null && !binding1.getdmail13().trim().equals("")){
+           mail+=binding1.getdmail13()+",";
+       }
+       
+       if(binding1.getdmail14()!=null && !binding1.getdmail14().trim().equals("")){
+           mail+=binding1.getdmail14()+",";
+       }
+       
+       if(binding1.getdmail15()!=null && !binding1.getdmail15().trim().equals("")){
+           mail+=binding1.getdmail15()+",";
+       }
+       if(binding1.getdmail16()!=null && !binding1.getdmail16().trim().equals("")){
+           mail+=binding1.getdmail16()+",";
+       }
+       
+       if(binding1.getdmail17()!=null && !binding1.getdmail17().trim().equals("")){
+           mail+=binding1.getdmail17()+",";
+       }
+       
+       if(binding1.getdmail18()!=null && !binding1.getdmail18().trim().equals("")){
+           mail+=binding1.getdmail18()+",";
+       }
+       
+       if(binding1.getdmail19()!=null && !binding1.getdmail19().trim().equals("")){
+           mail+=binding1.getdmail19()+",";
+       }
+       
+       if(binding1.getdmail20()!=null && !binding1.getdmail20().trim().equals("")){
+           mail+=binding1.getdmail20()+",";
+       }
+       
+       if(binding1.getdmail21()!=null && !binding1.getdmail21().trim().equals("")){
+           mail+=binding1.getdmail21()+",";
+       }
+       
+       if(binding1.getdmail22()!=null && !binding1.getdmail22().trim().equals("")){
+           mail+=binding1.getdmail22()+",";
+       }
+
+       if(binding1.getdmail23()!=null && !binding1.getdmail23().trim().equals("")){
+           mail+=binding1.getdmail23()+",";
+       }
+       if(binding1.getdmail24()!=null && !binding1.getdmail24().trim().equals("")){
+           mail+=binding1.getdmail24()+",";
+       }
+       
+       if(binding1.getdmail25()!=null && !binding1.getdmail25().trim().equals("")){
+           mail+=binding1.getdmail25()+",";
+       }
+       
+       if(binding1.getdmail26()!=null && !binding1.getdmail26().trim().equals("")){
+           mail+=binding1.getdmail26()+",";
+       }
+       
+       if(binding1.getdmail27()!=null && !binding1.getdmail27().trim().equals("")){
+           mail+=binding1.getdmail27()+",";
+       }
+       if(binding1.getdmail28()!=null && !binding1.getdmail28().trim().equals("")){
+           mail+=binding1.getdmail28()+",";
+       }
+       if(binding1.getdmail29()!=null && !binding1.getdmail29().trim().equals("")){
+           mail+=binding1.getdmail29()+",";
+       }
        if(binding1.getdemail1()!=null && !binding1.getdemail1().trim().equals("")){
            mail+=binding1.getdemail1();
        }

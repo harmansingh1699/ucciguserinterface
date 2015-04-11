@@ -931,87 +931,87 @@
           <children>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="quotes@abexinsurance.com" />
+                <CheckBox fx:id="dmail1" font="$x4" mnemonicParsing="false" text="quotes@abexinsurance.com" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="quotes@amfredericks.com" />
+                <CheckBox fx:id="dmail2" font="$x4" mnemonicParsing="false" text="quotes@amfredericks.com" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="toronto@april.ca" />
+                <CheckBox fx:id="dmail3" font="$x4" mnemonicParsing="false" text="toronto@april.ca" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="avivaquotes_ottawa@avivacanada.com" />
+                <CheckBox fx:id="dmail4" font="$x4" mnemonicParsing="false" text="avivaquotes_ottawa@avivacanada.com" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="ganderson@cfcunderwriting.com" />
+                <CheckBox fx:id="dmail5" font="$x4" mnemonicParsing="false" text="ganderson@cfcunderwriting.com" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="tstanton@burns-wilcox.ca" />
+                <CheckBox fx:id="dmail6" font="$x4" mnemonicParsing="false" text="tstanton@burns-wilcox.ca" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="kevin@chutteruw.com" />
+                <CheckBox fx:id="dmail7" font="$x4" mnemonicParsing="false" text="kevin@chutteruw.com" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="lisa.wolfe@cna.com" />
+                <CheckBox fx:id="dmail8" font="$x4" mnemonicParsing="false" text="lisa.wolfe@cna.com" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="info@creechurch.com" />
+                <CheckBox fx:id="dmail9" font="$x4" mnemonicParsing="false" text="info@creechurch.com" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="oquotes@travelers.com" />
+                <CheckBox fx:id="dmail10" font="$x4" mnemonicParsing="false" text="oquotes@travelers.com" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="mpollock@eccles-ins.com" />
+                <CheckBox fx:id="dmail11" font="$x4" mnemonicParsing="false" text="mpollock@eccles-ins.com" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="enconapps@encon.ca" />
+                <CheckBox fx:id="dmail12" font="$x4" mnemonicParsing="false" text="enconapps@encon.ca" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="insureit@grouponeu.com" />
+                <CheckBox fx:id="dmail13" font="$x4" mnemonicParsing="false" text="insureit@grouponeu.com" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="commercial@goremutual.ca" />
+                <CheckBox fx:id="dmail14" font="$x4" mnemonicParsing="false" text="commercial@goremutual.ca" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="eastclassic.ottawa@intact.net" />
+                <CheckBox fx:id="dmail15" font="$x4" mnemonicParsing="false" text="eastclassic.ottawa@intact.net" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="hmcadam@uccig.com" />
+                <CheckBox fx:id="dmail16" font="$x4" mnemonicParsing="false" text="hmcadam@uccig.com" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="mr.ontario@nbfc.com" />
+                <CheckBox fx:id="dmail17" font="$x4" mnemonicParsing="false" text="mr.ontario@nbfc.com" />
               </children>
             </HBox>
           </children>
@@ -1030,62 +1030,62 @@
           <children>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="toronto@premiermarine.com" />
+                <CheckBox fx:id="dmail18" font="$x4" mnemonicParsing="false" text="toronto@premiermarine.com" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="ontario_commercial@rsagroup.ca" />
+                <CheckBox fx:id="dmail19" font="$x4" mnemonicParsing="false" text="ontario_commercial@rsagroup.ca" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="quotes@swgins.com" />
+                <CheckBox fx:id="dmail20" font="$x4" mnemonicParsing="false" text="quotes@swgins.com" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="ontario@srim.ca" />
+                <CheckBox fx:id="dmail21" font="$x4" mnemonicParsing="false" text="ontario@srim.ca" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="jeff.somerville@suminsurance.ca" />
+                <CheckBox fx:id="dmail22" font="$x4" mnemonicParsing="false" text="jeff.somerville@suminsurance.ca" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="jfontaine@tcim.ca" />
+                <CheckBox fx:id="dmail23" font="$x4" mnemonicParsing="false" text="jfontaine@tcim.ca" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="property@tottengroup.com" />
+                <CheckBox fx:id="dmail24" font="$x4" mnemonicParsing="false" text="property@tottengroup.com" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="hospitality@tottengroup.com" />
+                <CheckBox fx:id="dmail25" font="$x4" mnemonicParsing="false" text="hospitality@tottengroup.com" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="professionalliability@tottengroup.com" />
+                <CheckBox fx:id="dmail26" font="$x4" mnemonicParsing="false" text="professionalliability@tottengroup.com" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="casualty@tottengroup.com" />
+                <CheckBox fx:id="dmail27" font="$x4" mnemonicParsing="false" text="casualty@tottengroup.com" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="commercial@unicainsurance.com" />
+                <CheckBox fx:id="dmail28" font="$x4" mnemonicParsing="false" text="commercial@unicainsurance.com" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="zurich.commercial.toronto@zurich.com" />
+                <CheckBox fx:id="dmail29" font="$x4" mnemonicParsing="false" text="zurich.commercial.toronto@zurich.com" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
@@ -1132,7 +1132,7 @@
     </GridPane>
     <Button defaultButton="true" font="$x6" layoutX="2903.0" layoutY="1334.0" mnemonicParsing="false" onAction="#submitSendDelayEmail" prefHeight="50.0" prefWidth="183.0" text="Send Email" />
     <Label font="$x6" layoutX="2635.0" layoutY="1248.0" text="Date:" />
-    <Label font="$x6" layoutX="2903.0" layoutY="1246.0" text="*Mail will be sent at 00:01" />
+    <Label font="$x6" layoutX="2903.0" layoutY="1246.0" text="*Mail will be sent at 00:00" />
     <Button defaultButton="true" font="$x2" layoutX="2593.0" layoutY="19.0" mnemonicParsing="false" onAction="#backMail" prefHeight="34.0" prefWidth="124.0" text="Back" />
     <Button defaultButton="true" font="$x2" layoutX="2582.0" layoutY="737.0" mnemonicParsing="false" onAction="#backDelayMail" prefHeight="34.0" prefWidth="124.0" text="Back" />
     <BorderPane id="registrationPane" fx:id="closeapplicationpane" layoutX="1800.0" layoutY="950.0" prefHeight="355.0" prefWidth="356.0" style="-fx-background-color: rgba(245,245,245, 0.8);&#10;-fx-background-radius: 10;" visible="false">
