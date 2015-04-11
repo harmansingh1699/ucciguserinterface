@@ -157,6 +157,74 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     private CheckBox mail2;
     
     @FXML
+    private CheckBox mail3;
+    
+    @FXML
+    private CheckBox mail4;
+    
+    @FXML
+    private CheckBox mail5;
+    
+    @FXML
+    private CheckBox mail6;
+    
+    @FXML
+    private CheckBox mail7;
+    
+    @FXML
+    private CheckBox mail8;
+    
+    @FXML
+    private CheckBox mail9;
+    
+    @FXML
+    private CheckBox mail10;
+    
+    @FXML
+    private CheckBox mail11;
+    
+    @FXML
+    private CheckBox mail12;
+    
+    @FXML
+    private CheckBox mail13;
+    
+    @FXML
+    private CheckBox mail14;
+    
+    @FXML
+    private CheckBox mail15;
+    
+    @FXML
+    private CheckBox mail16;
+    @FXML
+    private CheckBox mail17;
+    @FXML
+    private CheckBox mail18;
+    @FXML
+    private CheckBox mail19;
+    @FXML
+    private CheckBox mail20;
+    @FXML
+    private CheckBox mail21;
+    @FXML
+    private CheckBox mail22;
+    @FXML
+    private CheckBox mail23;
+    @FXML
+    private CheckBox mail24;
+    @FXML
+    private CheckBox mail25;
+    @FXML
+    private CheckBox mail26;
+    @FXML
+    private CheckBox mail27;
+    @FXML
+    private CheckBox mail28;
+    @FXML
+    private CheckBox mail29;
+    
+    @FXML
     private RadioButton searchdate1;
 
     @FXML
@@ -1199,7 +1267,281 @@ public class EnterCodeUIController implements Initializable, IScreenController {
             }
         };
         mail2.selectedProperty().addListener(listener1);
+        
+        ChangeListener<Boolean> listener2 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail3.isSelected()) {
+                    binding1.setmail3("toronto@april.ca");
+                }
+            }
+        };
+        mail3.selectedProperty().addListener(listener2);
+        
+        ChangeListener<Boolean> listener3 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail4.isSelected()) {
+                    binding1.setmail4("avivaquotes_ottawa@avivacanada.com");
+                }
+            }
+        };
+        mail4.selectedProperty().addListener(listener3);
+        
+        ChangeListener<Boolean> listener4 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail5.isSelected()) {
+                    binding1.setmail5("ganderson@cfcunderwriting.com");
+                }
+            }
+        };
+        mail5.selectedProperty().addListener(listener4);
+        
+        ChangeListener<Boolean> listener5 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail6.isSelected()) {
+                    binding1.setmail6("tstanton@burns-wilcox.ca");
+                }
+            }
+        };
+        mail6.selectedProperty().addListener(listener5);
+        
+        
+        ChangeListener<Boolean> listener6 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail7.isSelected()) {
+                    binding1.setmail7("kevin@chutteruw.com");
+                }
+            }
+        };
+        mail7.selectedProperty().addListener(listener6);
+        
+         ChangeListener<Boolean> listener7 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail8.isSelected()) {
+                    binding1.setmail8("lisa.wolfe@cna.com");
+                }
+            }
+        };
+        mail8.selectedProperty().addListener(listener7);
+        
+        ChangeListener<Boolean> listener8 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail9.isSelected()) {
+                    binding1.setmail9("info@creechurch.com");
+                }
+            }
+        };
+        mail9.selectedProperty().addListener(listener8);
+        
+         ChangeListener<Boolean> listener9 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail10.isSelected()) {
+                    binding1.setmail10("oquotes@travelers.com");
+                }
+            }
+        };
+        mail10.selectedProperty().addListener(listener9);
+        
+        ChangeListener<Boolean> listener10 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail11.isSelected()) {
+                    binding1.setmail11("mpollock@eccles-ins.com");
+                }
+            }
+        };
+        mail11.selectedProperty().addListener(listener10);
+        
+        ChangeListener<Boolean> listener11 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail12.isSelected()) {
+                    binding1.setmail12("enconapps@encon.ca");
+                }
+            }
+        };
+        mail12.selectedProperty().addListener(listener11);
+        
+        ChangeListener<Boolean> listener12 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail13.isSelected()) {
+                    binding1.setmail13("insureit@grouponeu.com");
+                }
+            }
+        };
+        mail13.selectedProperty().addListener(listener12);
+        
+        ChangeListener<Boolean> listener13 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail14.isSelected()) {
+                    binding1.setmail14("commercial@goremutual.ca");
+                }
+            }
+        };
+        mail14.selectedProperty().addListener(listener13);
+        
+         ChangeListener<Boolean> listener14 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail15.isSelected()) {
+                    binding1.setmail15("eastclassic.ottawa@intact.net");
+                }
+            }
+        };
+        mail15.selectedProperty().addListener(listener14);
+
+        ChangeListener<Boolean> listener15 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail16.isSelected()) {
+                    binding1.setmail16("hmcadam@uccig.com");
+                }
+            }
+        };
+        mail16.selectedProperty().addListener(listener15);
+        
+         ChangeListener<Boolean> listener16 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail17.isSelected()) {
+                    binding1.setmail17("mr.ontario@nbfc.com");
+                }
+            }
+        };
+        mail17.selectedProperty().addListener(listener16);
+
+         ChangeListener<Boolean> listener17 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail18.isSelected()) {
+                    binding1.setmail18("toronto@premiermarine.com");
+                }
+            }
+        };
+        mail18.selectedProperty().addListener(listener17);
+        
+         ChangeListener<Boolean> listener18 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail19.isSelected()) {
+                    binding1.setmail19("ontario_commercial@rsagroup.ca");
+                }
+            }
+        };
+        mail19.selectedProperty().addListener(listener18);
+        
+        ChangeListener<Boolean> listener19 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail20.isSelected()) {
+                    binding1.setmail20("quotes@swgins.com");
+                }
+            }
+        };
+        mail20.selectedProperty().addListener(listener19);
+        
+        
+        ChangeListener<Boolean> listener20 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail21.isSelected()) {
+                    binding1.setmail21("ontario@srim.ca");
+                }
+            }
+        };
+        mail21.selectedProperty().addListener(listener20);
+        
+        ChangeListener<Boolean> listener21 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail22.isSelected()) {
+                    binding1.setmail22("jeff.somerville@suminsurance.ca");
+                }
+            }
+        };
+        mail22.selectedProperty().addListener(listener21);
+        
+        ChangeListener<Boolean> listener22 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail23.isSelected()) {
+                    binding1.setmail23("jfontaine@tcim.ca");
+                }
+            }
+        };
+        mail23.selectedProperty().addListener(listener22);
+        
+        ChangeListener<Boolean> listener23 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail24.isSelected()) {
+                    binding1.setmail24("property@tottengroup.com");
+                }
+            }
+        };
+        mail24.selectedProperty().addListener(listener23);
+        
+        ChangeListener<Boolean> listener24 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail25.isSelected()) {
+                    binding1.setmail25("hospitality@tottengroup.com");
+                }
+            }
+        };
+        mail25.selectedProperty().addListener(listener24);
+        
+        
+        ChangeListener<Boolean> listener25 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail26.isSelected()) {
+                    binding1.setmail26("professionalliability@tottengroup.com");
+                }
+            }
+        };
+        mail26.selectedProperty().addListener(listener25);
+        
+        ChangeListener<Boolean> listener26 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail27.isSelected()) {
+                    binding1.setmail27("casualty@tottengroup.com");
+                }
+            }
+        };
+        mail27.selectedProperty().addListener(listener26);
+        
+        ChangeListener<Boolean> listener27 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail28.isSelected()) {
+                    binding1.setmail28("commercial@unicainsurance.com");
+                }
+            }
+        };
+        mail28.selectedProperty().addListener(listener27);
+        
+        ChangeListener<Boolean> listener28 = new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
+                if (mail29.isSelected()) {
+                    binding1.setmail29("zurich.commercial.toronto@zurich.com");
+                }
+            }
+        };
+        mail29.selectedProperty().addListener(listener28);
     }
+    
     
    
 
@@ -1382,6 +1724,8 @@ public class EnterCodeUIController implements Initializable, IScreenController {
            
        req1.setMessage(bytes);
        String mail ="";
+       
+       
        if(binding1.getmail1()!=null && !binding1.getmail1().trim().equals("")){
            mail+=binding1.getmail1()+",";
        }
@@ -1397,6 +1741,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
        if(binding1.getemail4()!=null && !binding1.getemail4().trim().equals("")){
            mail+=binding1.getemail4()+",";
        }
+       System.out.println(mail);
        req1.setRecpients(mail.substring(0, mail.length()));
       CommonResponseAttributes response =  port.getInsuranceOperationsPort().sendMailToUnderWriter(req1); 
       if(response!=null && response.getStatus().equals("SUCCESS")){

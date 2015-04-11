@@ -677,6 +677,325 @@ public class FormEntry4Binding {
         return this.mail2;
     }
     
+    public String getmail3() {
+        return (String) this.mail3.get();
+    }
+
+    public void setmail3(String mail3) {
+        this.mail3.set(mail3);
+    }
+
+    public StringProperty mail3Property() {
+        return this.mail3;
+    }
+    
+    public String getmail4() {
+        return (String) this.mail4.get();
+    }
+
+    public void setmail4(String mail4) {
+        this.mail4.set(mail4);
+    }
+
+    public StringProperty mail4Property() {
+        return this.mail4;
+    }
+    
+    public String getmail5() {
+        return (String) this.mail5.get();
+    }
+
+    public void setmail5(String mail5) {
+        this.mail5.set(mail5);
+    }
+
+    public StringProperty mail5Property() {
+        return this.mail5;
+    }
+    
+    public String getmail6() {
+        return (String) this.mail6.get();
+    }
+
+    public void setmail6(String mail6) {
+        this.mail6.set(mail6);
+    }
+
+    public StringProperty mail6Property() {
+        return this.mail6;
+    }
+    
+    public String getmail7() {
+        return (String) this.mail7.get();
+    }
+
+    public void setmail7(String mail7) {
+        this.mail7.set(mail7);
+    }
+
+    public StringProperty mail7Property() {
+        return this.mail7;
+    }
+    
+    public String getmail8() {
+        return (String) this.mail8.get();
+    }
+
+    public void setmail8(String mail8) {
+        this.mail8.set(mail8);
+    }
+
+    public StringProperty mail8Property() {
+        return this.mail8;
+    }
+    
+    public String getmail9() {
+        return (String) this.mail9.get();
+    }
+
+    public void setmail9(String mail9) {
+        this.mail9.set(mail9);
+    }
+
+    public StringProperty mail9Property() {
+        return this.mail9;
+    }
+    public String getmail10() {
+        return (String) this.mail10.get();
+    }
+
+    public void setmail10(String mail10) {
+        this.mail10.set(mail10);
+    }
+
+    public StringProperty mail10Property() {
+        return this.mail10;
+    }
+    public String getmail11() {
+        return (String) this.mail11.get();
+    }
+
+    public void setmail11(String mail11) {
+        this.mail11.set(mail11);
+    }
+
+    public StringProperty mail11Property() {
+        return this.mail11;
+    }
+    
+    public String getmail12() {
+        return (String) this.mail12.get();
+    }
+
+    public void setmail12(String mail12) {
+        this.mail12.set(mail12);
+    }
+
+    public StringProperty mail12Property() {
+        return this.mail12;
+    }
+    public String getmail13() {
+        return (String) this.mail13.get();
+    }
+
+    public void setmail13(String mail13) {
+        this.mail13.set(mail13);
+    }
+
+    public StringProperty mail13Property() {
+        return this.mail13;
+    }
+    
+    public String getmail14() {
+        return (String) this.mail14.get();
+    }
+
+    public void setmail14(String mail14) {
+        this.mail14.set(mail14);
+    }
+
+    public StringProperty mail14Property() {
+        return this.mail14;
+    }
+    
+    public String getmail15() {
+        return (String) this.mail15.get();
+    }
+
+    public void setmail15(String mail15) {
+        this.mail15.set(mail15);
+    }
+
+    public StringProperty mail15Property() {
+        return this.mail15;
+    }
+    
+    public String getmail16() {
+        return (String) this.mail16.get();
+    }
+
+    public void setmail16(String mail16) {
+        this.mail16.set(mail16);
+    }
+
+    public StringProperty mail16Property() {
+        return this.mail16;
+    }
+    public String getmail17() {
+        return (String) this.mail17.get();
+    }
+
+    public void setmail17(String mail17) {
+        this.mail17.set(mail17);
+    }
+
+    public StringProperty mail17Property() {
+        return this.mail17;
+    }
+    
+    public String getmail18() {
+        return (String) this.mail18.get();
+    }
+
+    public void setmail18(String mail18) {
+        this.mail18.set(mail18);
+    }
+
+    public StringProperty mail18Property() {
+        return this.mail18;
+    }
+    
+    public String getmail19() {
+        return (String) this.mail19.get();
+    }
+
+    public void setmail19(String mail19) {
+        this.mail19.set(mail19);
+    }
+
+    public StringProperty mail19Property() {
+        return this.mail19;
+    }
+    
+    public String getmail20() {
+        return (String) this.mail20.get();
+    }
+
+    public void setmail20(String mail20) {
+        this.mail20.set(mail20);
+    }
+
+    public StringProperty mail20Property() {
+        return this.mail20;
+    }
+    
+    public String getmail21() {
+        return (String) this.mail21.get();
+    }
+
+    public void setmail21(String mail21) {
+        this.mail21.set(mail21);
+    }
+
+    public StringProperty mail21Property() {
+        return this.mail21;
+    }
+    
+    public String getmail22() {
+        return (String) this.mail22.get();
+    }
+
+    public void setmail22(String mail22) {
+        this.mail22.set(mail22);
+    }
+
+    public StringProperty mail22Property() {
+        return this.mail22;
+    }
+    
+    public String getmail23() {
+        return (String) this.mail23.get();
+    }
+
+    public void setmail23(String mail23) {
+        this.mail23.set(mail23);
+    }
+
+    public StringProperty mail23Property() {
+        return this.mail23;
+    }
+    
+    public String getmail24() {
+        return (String) this.mail24.get();
+    }
+
+    public void setmail24(String mail24) {
+        this.mail24.set(mail24);
+    }
+
+    public StringProperty mail24Property() {
+        return this.mail24;
+    }
+    
+    public String getmail25() {
+        return (String) this.mail25.get();
+    }
+
+    public void setmail25(String mail25) {
+        this.mail25.set(mail25);
+    }
+
+    public StringProperty mail25Property() {
+        return this.mail25;
+    }
+    
+    public String getmail26() {
+        return (String) this.mail26.get();
+    }
+
+    public void setmail26(String mail26) {
+        this.mail26.set(mail26);
+    }
+
+    public StringProperty mail26Property() {
+        return this.mail26;
+    }
+    
+    public String getmail27() {
+        return (String) this.mail27.get();
+    }
+
+    public void setmail27(String mail27) {
+        this.mail27.set(mail27);
+    }
+
+    public StringProperty mail27Property() {
+        return this.mail27;
+    }
+    
+    public String getmail28() {
+        return (String) this.mail28.get();
+    }
+
+    public void setmail28(String mail28) {
+        this.mail28.set(mail28);
+    }
+
+    public StringProperty mail28Property() {
+        return this.mail28;
+    }
+    
+    public String getmail29() {
+        return (String) this.mail29.get();
+    }
+
+    public void setmail29(String mail29) {
+        this.mail29.set(mail29);
+    }
+
+    public StringProperty mail29Property() {
+        return this.mail29;
+    }
     
     public String getmotortruckcargoowner() {
         return (String) this.motortruckcargoowner.get();
