@@ -749,7 +749,7 @@
             </HBox>
             <HBox fx:id="mail9" alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="info@creechurch.com" />
+                <CheckBox fx:id="mail9" font="$x4" mnemonicParsing="false" text="info@creechurch.com" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
@@ -843,7 +843,7 @@
             </HBox>
             <HBox fx:id="mail25" alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox font="$x4" mnemonicParsing="false" text="hospitality@tottengroup.com" />
+                <CheckBox fx:id="mail25" font="$x4" mnemonicParsing="false" text="hospitality@tottengroup.com" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
