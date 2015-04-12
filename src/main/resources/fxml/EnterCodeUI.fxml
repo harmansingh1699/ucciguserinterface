@@ -747,7 +747,7 @@
                 <CheckBox fx:id="mail8" font="$x4" mnemonicParsing="false" text="lisa.wolfe@cna.com" />
               </children>
             </HBox>
-            <HBox fx:id="mail9" alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
                 <CheckBox fx:id="mail9" font="$x4" mnemonicParsing="false" text="info@creechurch.com" />
               </children>
@@ -841,7 +841,7 @@
                 <CheckBox fx:id="mail24" font="$x4" mnemonicParsing="false" text="property@tottengroup.com" />
               </children>
             </HBox>
-            <HBox fx:id="mail25" alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
                 <CheckBox fx:id="mail25" font="$x4" mnemonicParsing="false" text="hospitality@tottengroup.com" />
               </children>
