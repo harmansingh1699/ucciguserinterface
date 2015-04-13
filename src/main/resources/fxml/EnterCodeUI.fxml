@@ -729,7 +729,7 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox fx:id="mail5" font="$x4" mnemonicParsing="false" text="ganderson@cfcunderwriting.com" />
+                <CheckBox fx:id="mail5" font="$x4" mnemonicParsing="false" text="enquiries@cfcunderwriting.com" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
@@ -754,7 +754,7 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox fx:id="mail10" font="$x4" mnemonicParsing="false" text="oquotes@travelers.com" />
+                <CheckBox fx:id="mail10" font="$x4" mnemonicParsing="false" text="bisubmissions@travelers.com" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
@@ -951,7 +951,7 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox fx:id="dmail5" font="$x4" mnemonicParsing="false" text="ganderson@cfcunderwriting.com" />
+                <CheckBox fx:id="dmail5" font="$x4" mnemonicParsing="false" text="enquiries@cfcunderwriting.com" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
@@ -976,7 +976,7 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
               <children>
-                <CheckBox fx:id="dmail10" font="$x4" mnemonicParsing="false" text="oquotes@travelers.com" />
+                <CheckBox fx:id="dmail10" font="$x4" mnemonicParsing="false" text="bisubmissions@travelers.com" />
               </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" padding="$x1a" prefHeight="100.0" prefWidth="200.0">
