@@ -64,7 +64,7 @@ public class MainApp extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        launch(args);
+        try{launch(args);}catch(Exception e){e.printStackTrace();}
     }
 
 }

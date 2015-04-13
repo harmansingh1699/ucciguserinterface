@@ -1366,7 +1366,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
                 if (mail5.isSelected()) {
-                    binding1.setmail5("ganderson@cfcunderwriting.com");
+                    binding1.setmail5("enquiries@cfcunderwriting.com");
                 }
             }
         };
@@ -1417,7 +1417,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
                 if (mail10.isSelected()) {
-                    binding1.setmail10("oquotes@travelers.com");
+                    binding1.setmail10("bisubmissions@travelers.com");
                 }
             }
         };
@@ -1658,7 +1658,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
                 if (dmail5.isSelected()) {
-                    binding1.setdmail5("ganderson@cfcunderwriting.com");
+                    binding1.setdmail5("enquiries@cfcunderwriting.com");
                 }
             }
         };
@@ -1709,7 +1709,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
             @Override
             public void changed(ObservableValue<? extends Boolean> prop, Boolean old, Boolean val) {
                 if (dmail10.isSelected()) {
-                    binding1.setdmail10("oquotes@travelers.com");
+                    binding1.setdmail10("bisubmissions@travelers.com");
                 }
             }
         };
