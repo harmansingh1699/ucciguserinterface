@@ -2839,9 +2839,14 @@ public class EnterCodeUIController implements Initializable, IScreenController {
 
     @FXML
     public void submitRenewBusiness() {
+        System.out.println("Inside Submit");
         NextScreenController controller = (NextScreenController) screenPage.getControlledScreen("NextScreen");
-        controller.viewApplication(form,form.getFormId());
+        System.out.println("Inside Submit1");
+        System.out.println("Hel"+formId);
+        controller.viewApplication(form,formId);
+        System.out.println("Inside Submit2");
         screenPage.setScreen("NextScreen");
+        System.out.println("Inside Submit3");
         switch (form.getType()) {
             case "Auto":
                 controller.submitActionAuto();

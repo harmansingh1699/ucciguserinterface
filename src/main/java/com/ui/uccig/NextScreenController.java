@@ -2113,6 +2113,7 @@ public class NextScreenController implements Initializable, IScreenController {
 
     @FXML
     public void addAdditionNext() {
+        
         System.out.println("Next clicked");
         if (offset < 10 && offset >= 0) {
             try {
@@ -5207,6 +5208,7 @@ public class NextScreenController implements Initializable, IScreenController {
     public void assign(final GetInsuranceFormResponse form) {
         Platform.runLater(new Runnable() {
             public void run() {
+               
                 String downloadfiles = "";
                 applicationid = form.getFormId();
                 file1 = form.getFile1();
@@ -5639,6 +5641,7 @@ public class NextScreenController implements Initializable, IScreenController {
                 marketercomments.setText(form.getMarketercomments());
                 //commercial property
                 listAddInfo = new ArrayList<AddAnotherInfo>();
+                System.out.println(listAddInfo.size());
                 offset = 0;
                 for (int i = 0; i < 10; i++) {
                     AddAnotherInfo a = new AddAnotherInfo();
@@ -6868,6 +6871,8 @@ public class NextScreenController implements Initializable, IScreenController {
                     System.out.println("edit " + isEdit);
                     if (isEdit) {
                         System.out.println("View Application");
+                        if(listAddInfo!=null)
+                        System.out.println("Size of list"+listAddInfo.size());
                         InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
                         EditFormSubmissionRequest req1 = new EditFormSubmissionRequest();
 
