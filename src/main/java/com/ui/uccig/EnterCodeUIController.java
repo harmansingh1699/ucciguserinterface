@@ -3011,7 +3011,8 @@ public class EnterCodeUIController implements Initializable, IScreenController {
         searchdate3.setSelected(false);
         searchdate4.setSelected(false);
         searcharchive.setVisible(true);
-
+        binding.setsearchwithusyes("");
+        binding.setsearchdate1("");
     }
      @FXML
     public void searcharchiveback1() {
@@ -3026,9 +3027,17 @@ public class EnterCodeUIController implements Initializable, IScreenController {
             searchdate2.setSelected(false);
             searchdate3.setSelected(false);
             searchdate4.setSelected(false);
+            binding.setsearchapplicationid("");
+            binding.setsearchbusinessname("");
+            binding.setsearchmarketerid("");
+            binding.setsearchproducerid("");
             screenPage.setScreen("NextScreen");
         } else {
             animatedMovement(0, 0);
+             binding.setsearchapplicationid("");
+            binding.setsearchbusinessname("");
+            binding.setsearchmarketerid("");
+            binding.setsearchproducerid("");
             searchapplicationid.setText("");
             searchproducerid.setText("");
             searchbusinessname.setText("");
@@ -3129,6 +3138,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     int foo;
     @FXML
     public void searchSubmit() {
+        stage.show();
         Task task;
         task = new Task<Void>() {
             @Override
@@ -3136,6 +3146,10 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                 try {
                     InsuranceOperationsService_Service port = new InsuranceOperationsService_Service();
                     GetInsuranceFormListRequest req = new GetInsuranceFormListRequest();
+                    System.out.println("producer"+binding.getsearchproducerid());
+                    System.out.println("marketer"+binding.getsearchmarketerid());
+                    System.out.println("business"+binding.getsearchbusinessname());
+                    System.out.println("id"+binding.getsearchapplicationid());
                     
                     req.setProducerId(binding.getsearchproducerid());
                     req.setMarketerId(binding.getsearchmarketerid());
@@ -3154,13 +3168,13 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     {searchformid=binding.getsearchapplicationid().replace("uccig", "").trim();}
                     else 
                     {searchformid=binding.getsearchapplicationid().trim();}
-                        System.out.println(searchformid);
+                        System.out.println("form id"+searchformid);
                      foo=Integer.parseInt(searchformid.trim());
                         System.out.println(foo);
                     }
                     req.setFormId(foo);
-                    System.out.println(binding.getsearchdate1());
-                    System.out.println(binding.getsearchwithusyes());
+                    System.out.println("date"+binding.getsearchdate1());
+                    System.out.println("Bounded"+binding.getsearchwithusyes());
                     if(!CommonValidations.isStringEmpty(binding.getsearchdate1()))
                     {switch (binding.getsearchdate1()) {
                         case "0-3 months":
@@ -3204,13 +3218,16 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                         searchdate3.setSelected(false);
                         searchdate4.setSelected(false);
                         abstractFormInfoList = response.getFormList();
+                        stopLoading();
                         successSearch();
                     }
                     else{
+                        stopLoading();
                         System.out.println(response.getErrorMessage());
                         successMessage("Oops! No matching results found.");
                     }
                 } catch (Exception e) {
+                    stopLoading();
                     successMessage(e.getMessage());
                     e.printStackTrace();
                 }
