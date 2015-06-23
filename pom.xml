@@ -139,7 +139,8 @@
                         </goals>
                         <configuration>
                             <wsdlUrls>
-                                <wsdlUrl>http://localhost:8080/InsuranceWebService/UserOperationsService?wsdl</wsdlUrl>
+                                <wsdlUrl>http://192.168.105.17:9090/InsuranceWebService/UserOperationsService?wsdl</wsdlUrl> 
+
                             </wsdlUrls>
                             <xnocompile>false</xnocompile>
                         </configuration>
@@ -156,7 +157,8 @@
                                 </arg>
                             </args>
                             <wsdlUrls>
-                                <wsdlUrl>http://localhost:8080/InsuranceWebService/InsuranceOperationsService?wsdl</wsdlUrl>
+                                <wsdlUrl>http://192.168.105.17:9090/InsuranceWebService/InsuranceOperationsService?wsdl</wsdlUrl> 
+
                             </wsdlUrls>
                             <xnocompile>false</xnocompile>
                         </configuration>
