@@ -2921,13 +2921,43 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     request.setCompanyname8(binding1.getCompanyName8());
                     request.setCompanyname9(binding1.getCompanyName9());
                     request.setCompanyname10(binding1.getCompanyName10());
-                    System.out.println("savequotesformid"+formId);
                     request.setFormId(formId);
                     
                     CommonResponseAttributes response = port.getInsuranceOperationsPort().quoteDetails(request);
                     if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
                         stopLoading1();
                         successMessage("Quotes successfully saved.");
+                        //Enter
+                        companyname1.setText("");
+                        quote1.setText("");
+                        comment1.setText("");
+                        companyname2.setText("");
+                        quote2.setText("");
+                        comment2.setText("");
+                        companyname3.setText("");
+                        quote3.setText("");
+                        comment3.setText("");
+                        companyname4.setText("");
+                        quote4.setText("");
+                        comment4.setText("");
+                        companyname5.setText("");
+                        quote5.setText("");
+                        comment5.setText("");
+                        companyname6.setText("");
+                        quote6.setText("");
+                        comment6.setText("");
+                        companyname7.setText("");
+                        quote7.setText("");
+                        comment7.setText("");
+                        companyname8.setText("");
+                        quote8.setText("");
+                        comment8.setText("");
+                        companyname9.setText("");
+                        quote9.setText("");
+                        comment9.setText("");
+                        companyname10.setText("");
+                        quote10.setText("");
+                        comment10.setText("");
                         animatedMovement(-1269,-715);
                     }
                     else
@@ -2978,7 +3008,8 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                         setQuote(response);
                         animatedMovement(-1269, -1430);
                 } 
-                else{   stopLoading1();
+                else{   
+                        stopLoading1();
                         errors(response.getErrorMessage());
                     }
                         
