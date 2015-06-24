@@ -3089,9 +3089,90 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     
     @FXML
     public void backSaveQuote() {
-         closeapplicationpane.setVisible(false);
-         sendmailPane.setVisible(false);
-         animatedMovement(-1269, -715);
+        closeapplicationpane.setVisible(false);
+        sendmailPane.setVisible(false); // here 
+         //hiding all labels
+        l1.setVisible(false);
+        l2.setVisible(false);
+        l3.setVisible(false);
+        l4.setVisible(false);
+        l5.setVisible(false);
+        l6.setVisible(false);
+        l7.setVisible(false);
+        l8.setVisible(false);
+        l9.setVisible(false);
+        l10.setVisible(false);
+        l11.setVisible(false);
+        l12.setVisible(false);
+        l13.setVisible(false);
+        l14.setVisible(false);
+        l15.setVisible(false);
+        l16.setVisible(false);
+        l17.setVisible(false);
+        l18.setVisible(false);
+        l19.setVisible(false);
+        l20.setVisible(false);
+        l21.setVisible(false);
+                                   l22.setVisible(false);
+                                   l23.setVisible(false);
+                                   l24.setVisible(false);
+                                   l25.setVisible(false);
+                                   l26.setVisible(false);
+                                   l27.setVisible(false);
+                                   l28.setVisible(false);
+                                   l29.setVisible(false);
+                                   l30.setVisible(false);
+                                   l31.setVisible(false);
+                                   l32.setVisible(false);
+                                   l33.setVisible(false);
+                                   l34.setVisible(false);
+                                   l35.setVisible(false);
+                                   l36.setVisible(false);
+                                   l37.setVisible(false);
+                                   l38.setVisible(false);
+                                   l39.setVisible(false);
+                                   l40.setVisible(false);
+                                   l41.setVisible(false);
+                                   l42.setVisible(false);
+                                   l43.setVisible(false);
+                                   l44.setVisible(false);
+                                   l45.setVisible(false);
+                                   l46.setVisible(false);
+                                   l47.setVisible(false);
+                                   l48.setVisible(false);
+                                   l49.setVisible(false);
+                                   l50.setVisible(false);
+                                   l51.setVisible(false);
+                                   l52.setVisible(false);
+                                   l53.setVisible(false);
+                                   l54.setVisible(false);
+                                   l55.setVisible(false);
+                                   l56.setVisible(false);
+                                   l57.setVisible(false);
+        l59.setVisible(false);
+        l58.setVisible(false);
+        l60.setVisible(false);
+        l61.setVisible(false);
+        l62.setVisible(false);
+        l63.setVisible(false);
+        l64.setVisible(false);
+        l65.setVisible(false);
+        l66.setVisible(false);
+        l67.setVisible(false);
+        l68.setVisible(false);
+        l69.setVisible(false);
+        l70.setVisible(false);
+        l71.setVisible(false);
+        l72.setVisible(false);
+        l73.setVisible(false);
+        l74.setVisible(false);
+        l75.setVisible(false);
+        l76.setVisible(false);
+        l77.setVisible(false);
+        l78.setVisible(false);
+        l79.setVisible(false);
+        l80.setVisible(false);
+        animatedMovement(-1269, -715);
     }
     @FXML
     public void backCloseApplication() {
