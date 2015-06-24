@@ -2975,7 +2975,6 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     GetCloseFormNQuoteDetailsResponse2 response = port.getInsuranceOperationsPort().getCloseFormNQuoteDetails(req);
                     if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
                         stopLoading1();
-                        System.out.println("Insideif");
                         setQuote(response);
                         animatedMovement(-1269, -1430);
                 } 
@@ -3064,18 +3063,16 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     req.setFormId(getFormId());
                     GetCloseFormNQuoteDetailsResponse2 response = port.getInsuranceOperationsPort().getCloseFormNQuoteDetails(req);
                     if (response.getStatus() != null && response.getStatus().equals("SUCCESS")) {
-                        System.out.println("Inside if opencloseapplication");
                         stopLoading1();
                         setclosedetails(response);
                         closeapplicationpane.setVisible(true);
                 } 
-                else{   stopLoading1();
-                        errors(response.getErrorMessage());
-                        System.out.println("Inside else opencloseapplication");
-                    }
+                else{   
+                    stopLoading1();
+                    errors(response.getErrorMessage());
+                }
                         
                 }catch (Exception e) {
-                    System.out.println("Inside catch opencloseapplication");
                     stopLoading1();
                     e.printStackTrace();
                     closeapplicationpane.setVisible(true);
@@ -3090,8 +3087,40 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     @FXML
     public void backSaveQuote() {
         closeapplicationpane.setVisible(false);
-        sendmailPane.setVisible(false); // here 
-         //hiding all labels
+        sendmailPane.setVisible(false); 
+        //clearing fields from quote page
+        companyname1.setText("");
+        quote1.setText("");
+        comment1.setText("");
+        companyname2.setText("");
+        quote2.setText("");
+        comment2.setText("");
+        companyname3.setText("");
+        quote3.setText("");
+        comment3.setText("");
+        companyname4.setText("");
+        quote4.setText("");
+        comment4.setText("");
+        companyname5.setText("");
+        quote5.setText("");
+        comment5.setText("");
+        companyname6.setText("");
+        quote6.setText("");
+        comment6.setText("");
+        companyname7.setText("");
+        quote7.setText("");
+        comment7.setText("");
+        companyname8.setText("");
+        quote8.setText("");
+        comment8.setText("");
+        companyname9.setText("");
+        quote9.setText("");
+        comment9.setText("");
+        companyname10.setText("");
+        quote10.setText("");
+        comment10.setText("");
+        
+        //hiding all labels from conversation window
         l1.setVisible(false);
         l2.setVisible(false);
         l3.setVisible(false);
@@ -3113,42 +3142,42 @@ public class EnterCodeUIController implements Initializable, IScreenController {
         l19.setVisible(false);
         l20.setVisible(false);
         l21.setVisible(false);
-                                   l22.setVisible(false);
-                                   l23.setVisible(false);
-                                   l24.setVisible(false);
-                                   l25.setVisible(false);
-                                   l26.setVisible(false);
-                                   l27.setVisible(false);
-                                   l28.setVisible(false);
-                                   l29.setVisible(false);
-                                   l30.setVisible(false);
-                                   l31.setVisible(false);
-                                   l32.setVisible(false);
-                                   l33.setVisible(false);
-                                   l34.setVisible(false);
-                                   l35.setVisible(false);
-                                   l36.setVisible(false);
-                                   l37.setVisible(false);
-                                   l38.setVisible(false);
-                                   l39.setVisible(false);
-                                   l40.setVisible(false);
-                                   l41.setVisible(false);
-                                   l42.setVisible(false);
-                                   l43.setVisible(false);
-                                   l44.setVisible(false);
-                                   l45.setVisible(false);
-                                   l46.setVisible(false);
-                                   l47.setVisible(false);
-                                   l48.setVisible(false);
-                                   l49.setVisible(false);
-                                   l50.setVisible(false);
-                                   l51.setVisible(false);
-                                   l52.setVisible(false);
-                                   l53.setVisible(false);
-                                   l54.setVisible(false);
-                                   l55.setVisible(false);
-                                   l56.setVisible(false);
-                                   l57.setVisible(false);
+        l22.setVisible(false);
+        l23.setVisible(false);
+        l24.setVisible(false);
+        l25.setVisible(false);
+        l26.setVisible(false);
+        l27.setVisible(false);
+        l28.setVisible(false);
+        l29.setVisible(false);
+        l30.setVisible(false);
+        l31.setVisible(false);
+        l32.setVisible(false);
+        l33.setVisible(false);
+        l34.setVisible(false);
+        l35.setVisible(false);
+        l36.setVisible(false);
+        l37.setVisible(false);
+        l38.setVisible(false);
+        l39.setVisible(false);
+        l40.setVisible(false);
+        l41.setVisible(false);
+        l42.setVisible(false);
+        l43.setVisible(false);
+        l44.setVisible(false);
+        l45.setVisible(false);
+        l46.setVisible(false);
+        l47.setVisible(false);
+        l48.setVisible(false);
+        l49.setVisible(false);
+        l50.setVisible(false);
+        l51.setVisible(false);
+        l52.setVisible(false);
+        l53.setVisible(false);
+        l54.setVisible(false);
+        l55.setVisible(false);
+        l56.setVisible(false);
+        l57.setVisible(false);
         l59.setVisible(false);
         l58.setVisible(false);
         l60.setVisible(false);
@@ -3177,6 +3206,11 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     @FXML
     public void backCloseApplication() {
          closeapplicationpane.setVisible(false);
+         // here 
+         closecompany.setText("");
+         closequote.setText("");
+         closeboundedyes.setSelected(false);
+         closeboundedno.setSelected(false);
     }
 
     @FXML
@@ -3350,7 +3384,6 @@ public class EnterCodeUIController implements Initializable, IScreenController {
     }
     
     public void setclosedetails(final GetCloseFormNQuoteDetailsResponse2 response) {
-        System.out.println("Inside SetClose");
         if (response.getBusinessWithUs() != null)
         {  closebutton.setDisable(true);
             Platform.runLater(new Runnable() {
@@ -3368,7 +3401,7 @@ public class EnterCodeUIController implements Initializable, IScreenController {
                     if (response.getBusinessWithUs() != null && response.getBusinessWithUs().contains("Yes")) {
                         closeboundedyes.setSelected(true);
                     } else if (response.getBusinessWithUs() != null && response.getBusinessWithUs().contains("No")) {
-                        closeboundedno.setSelected(false);
+                        closeboundedno.setSelected(true);
                     }
                 }
             }
